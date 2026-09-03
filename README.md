@@ -37,7 +37,8 @@ infrastructure ops and content production are not mixed. See the
 
 | Path | Purpose |
 |------|---------|
-| `docs/AUTO-EDIT-STAGE-DESIGN.md` | Design for the auto-editing stage — long video in, finished 9:16 clips out. **DESIGN ONLY, nothing built yet.** |
+| `docs/AUTO-EDIT-STAGE-DESIGN.md` | Design for the auto-editing stage — long video in, finished 9:16 clips out. |
+| `kaggle/` | **Build-order step 1** — the free-GPU setup notebook (`generate_notebook.py` → `AutoEdit_Kaggle_Setup.ipynb`) + the reused `remote_exec_bridge.py`, to prove one video end-to-end. Start with `kaggle/RUN_GUIDE.md`. |
 
 ## The pipeline in one line
 
@@ -61,5 +62,7 @@ runs — see the design doc for the full rationale.
 
 ## Status
 
-**Design phase.** Nothing is built or deployed. Start with
-`docs/AUTO-EDIT-STAGE-DESIGN.md`, section by section; build order is in §7.
+**Step 1 (prove the Kaggle path) is scaffolded, not yet run.** The design is in
+`docs/AUTO-EDIT-STAGE-DESIGN.md` (build order in §7); the step-1 setup lives in
+`kaggle/`. Nothing is deployed — the next action is to run the Kaggle notebook
+against one real video and record the speed/quality result.
