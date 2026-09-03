@@ -41,6 +41,7 @@ infrastructure ops and content production are not mixed. See the
 | `docs/STEP1-FINDINGS.md` | **Results of the live proof run** — what worked, the exact fixes required, honest caveats, and the command that works. |
 | `docs/VIRAL-FONTS.md` | The rotating **viral caption font mix** (7 free/OFL Arabic fonts) + how per-video rotation works, and why we avoid the paid Foda Kufi. |
 | `kaggle/` | The free-GPU setup notebook (`generate_notebook.py` → `AutoEdit_Kaggle_Setup.ipynb`, now with the proven fixes baked in) + the reused `remote_exec_bridge.py`. Start with `kaggle/RUN_GUIDE.md`. |
+| `batch_runner/` | **Step 2a** — PC-side script: drop videos in an inbox → run one command → finished clips land in Drive routing folders by brand. Start with `batch_runner/README.md`. |
 
 ## The pipeline in one line
 
@@ -70,6 +71,11 @@ captioned 9:16 clips on a free Kaggle T4 at $0, and the output was reviewed and
 approved. The notebook in `kaggle/` now bakes in the three fixes the run
 required (dependency vise, Arabic caption font, `large-v3` Whisper).
 
-**Next: build-order step 2** — wire the inbox → Drive routing folders so a
-dropped video is auto-processed and clips land where the existing
-social-publishing pipeline (`empire-server-forge`) picks them up.
+**Step 2a (batch runner) is built** — `batch_runner/` turns "drop videos in a
+folder → run one command → finished clips in Drive routing folders by brand"
+into reality. Upstream half of the pipeline is now connected end to end.
+
+**Next: step 2b (downstream)** — the social-publishing pipeline in
+`empire-server-forge` (still design-only) that picks up clips from Drive and
+posts them. That starts with owner-gated credential setup (Google/Meta/TikTok/
+R2) per `empire-server-forge/docs/SOCIAL-PUBLISHING-SETUP.md`.
