@@ -8,6 +8,10 @@ multi-platform posting.
 **Parent brand:** Empire English Community — for full cross-project context,
 see `empireenglishcommunity-glitch/empire-nexus`.
 
+> 📍 **Resuming work / new session? START HERE →
+> [`docs/PROJECT-STATUS.md`](docs/PROJECT-STATUS.md)** — the single source of
+> truth for what's done, where the values live, and the exact next action.
+
 ## Why this repo exists (scope boundary)
 
 This is a **distinct concern** from the repos it touches, and is kept
@@ -37,6 +41,7 @@ infrastructure ops and content production are not mixed. See the
 
 | Path | Purpose |
 |------|---------|
+| `docs/PROJECT-STATUS.md` | **START HERE** — handoff/status: what's done, credential state, exact next action. |
 | `docs/AUTO-EDIT-STAGE-DESIGN.md` | Design for the auto-editing stage — long video in, finished 9:16 clips out. |
 | `docs/STEP1-FINDINGS.md` | **Results of the live proof run** — what worked, the exact fixes required, honest caveats, and the command that works. |
 | `docs/VIRAL-FONTS.md` | The rotating **viral caption font mix** (7 free/OFL Arabic fonts) + how per-video rotation works, and why we avoid the paid Foda Kufi. |
