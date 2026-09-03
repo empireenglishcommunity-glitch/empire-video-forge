@@ -99,18 +99,22 @@ md("""## 2. Clone OpenShorts + install deps (with the proven fixes)
 > required, so this is a single clean pass rather than the trial-and-error the
 > first run went through.
 
-The three baked-in fixes:
+The baked-in fixes:
 1. **Dependency vise** — pin `mediapipe==0.10.21` (keeps the legacy
    `mp.solutions` API `main.py` uses; `1.0.x` removed it) and **remove
    TensorFlow** (unused by OpenShorts; only mediapipe's optional doc-import
    dragged it in, and its protobuf pin fought mediapipe's).
-2. **Arabic captions** — install Noto Arabic fonts and point the auto-caption
-   style at `Noto Sans Arabic` (the bundled `Anton` font has no Arabic glyphs
-   → tofu boxes).
+2. **Viral Arabic font rotation** — install 7 free/OFL Arabic display fonts
+   (Tajawal Black, Cairo, Lalezar, Lemonada, Changa, Reem Kufi, Marhey) and
+   patch `subtitles.py` so **each video picks a different one automatically**
+   (feed looks varied, not templated). Force one with `EMPIRE_FONT=<name>`.
+   All verified rendering Arabic through libass. See `docs/VIRAL-FONTS.md`.
+   (This also fixes the original tofu-box bug — the bundled `Anton` font had
+   no Arabic glyphs.)
 3. **Whisper `large-v3`** — set at run time (Cell 4); `small` garbled
    colloquial Arabic.
 
-Takes a few minutes (torch + the font packages).
+Takes a few minutes (torch + the fonts).
 """)
 
 code("""%cd /kaggle/working
@@ -122,19 +126,53 @@ code("""%cd /kaggle/working
 # Fix 1: dependency vise
 !pip install -q "mediapipe==0.10.21"
 !pip uninstall -y tensorflow tensorflow-cpu tf-keras keras >/dev/null 2>&1
-# Fix 2: Arabic-capable caption font
+
+# Fix 2: install the viral Arabic font pool (all OFL / commercial-safe).
+# See docs/VIRAL-FONTS.md. All verified rendering Arabic through libass.
+import os as _os
+_os.makedirs("/usr/share/fonts/truetype/viral", exist_ok=True)
+%cd /usr/share/fonts/truetype/viral
+B = "https://github.com/google/fonts/raw/main/ofl"
+!wget -q "{B}/cairo/Cairo%5Bslnt,wght%5D.ttf" -O Cairo.ttf
+!wget -q "{B}/tajawal/Tajawal-Black.ttf" -O Tajawal-Black.ttf
+!wget -q "{B}/lalezar/Lalezar-Regular.ttf" -O Lalezar.ttf
+!wget -q "{B}/lemonada/Lemonada%5Bwght%5D.ttf" -O Lemonada.ttf
+!wget -q "{B}/changa/Changa%5Bwght%5D.ttf" -O Changa.ttf
+!wget -q "{B}/reemkufi/ReemKufi%5Bwght%5D.ttf" -O ReemKufi.ttf
+!wget -q "{B}/marhey/Marhey%5Bwght%5D.ttf" -O Marhey.ttf
+!fc-cache -f >/dev/null 2>&1
+%cd /kaggle/working/openshorts
+
+# Fix 3: patch subtitles.py — rotate through the viral font pool per run.
 import pathlib
 sp = pathlib.Path("subtitles.py"); s = sp.read_text()
-s = s.replace('"font_name": "Anton",', '"font_name": "Noto Sans Arabic",')
+if "import random" not in s:
+    s = s.replace("import os\\n", "import os\\nimport random\\n", 1)
+pool = '''
+VIRAL_FONT_POOL = [
+    ("Tajawal Black", 52), ("Cairo", 52), ("Lalezar", 54),
+    ("Lemonada", 50), ("Changa", 54), ("Reem Kufi", 54), ("Marhey", 52),
+]
+def _pick_viral_font():
+    forced = os.environ.get("EMPIRE_FONT", "").strip()
+    if forced:
+        for _n, _sz in VIRAL_FONT_POOL:
+            if _n.lower() == forced.lower():
+                return _n, _sz
+        return forced, 52
+    return random.choice(VIRAL_FONT_POOL)
+_EMPIRE_FONT_NAME, _EMPIRE_FONT_SIZE = _pick_viral_font()
+print("\\U0001F3A8 Caption font this run:", _EMPIRE_FONT_NAME, f"({_EMPIRE_FONT_SIZE}pt)")
+
+'''
+if "VIRAL_FONT_POOL" not in s:
+    s = s.replace("AUTO_CAPTION_STYLE = {", pool + "AUTO_CAPTION_STYLE = {", 1)
+s = s.replace('"font_name": "Anton",', '"font_name": _EMPIRE_FONT_NAME,')
+s = s.replace('"font_size": 44,', '"font_size": _EMPIRE_FONT_SIZE,')
+# bolder outline for the viral look
+s = s.replace('"border_width": 4,', '"border_width": 6,')
 sp.write_text(s)
-fm = pathlib.Path("fonts/openshorts-fontmap.conf")
-c = fm.read_text()
-if "Noto Sans Arabic" not in c:
-    fm.write_text(c.replace("</fontconfig>",
-        '  <alias binding="strong"><family>Anton</family>'
-        '<prefer><family>Noto Sans Arabic</family></prefer></alias>\\n</fontconfig>'))
-!fc-cache -f >/dev/null 2>&1
-print("OpenShorts installed + all 3 fixes applied.")
+print("OpenShorts installed + deps fixed + 7 viral fonts + rotation applied.")
 """)
 
 
