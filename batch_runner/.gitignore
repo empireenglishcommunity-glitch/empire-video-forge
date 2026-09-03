@@ -1,0 +1,12 @@
+# Local working folders — never commit videos or clips
+inbox/
+output/
+processed/
+
+# Local config with real paths/tokens — commit only the template
+config.local.yaml
+*.mp4
+*.mov
+*.mkv
+__pycache__/
+*.pyc

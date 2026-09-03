@@ -1,0 +1,31 @@
+# ═══════════════════════════════════════════════════════════════
+# Empire Video Forge — Batch Runner Configuration
+# ═══════════════════════════════════════════════════════════════
+# Edit this file with your local paths. Never commit real tokens.
+
+# ── Paths (adjust to your PC) ────────────────────────────────
+
+# Where you drop raw videos to be processed. Three brand subfolders are
+# created automatically: 01-EEC-only/, 02-EEC-and-MACAL/, 03-MACAL-only/.
+inbox_dir: "C:/Users/97150/empire-video-forge/inbox"
+
+# Where finished clips land. Point this at your Google Drive sync folder
+# so clips auto-sync to Drive and the future n8n trigger picks them up.
+# Each brand subfolder mirrors the inbox structure (routing: folder-in →
+# folder-out, one-to-one).
+output_dir: "C:/Users/97150/Google Drive/empire-video-forge/output"
+
+# Source videos are moved here after processing so they're not re-processed.
+processed_dir: "C:/Users/97150/empire-video-forge/processed"
+
+# ── Kaggle bridge ────────────────────────────────────────────
+# Paste the BRIDGE_URL from the Kaggle notebook each session.
+# Or pass --bridge-url on the command line (overrides this).
+bridge_url: ""
+
+# ── Telegram alerts (optional) ───────────────────────────────
+# Uses the existing admin bot token from empire-server-forge, or set
+# via env vars TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID.
+# NEVER commit real token values here — use env vars or paste at runtime.
+telegram_bot_token: ""
+telegram_chat_id: ""

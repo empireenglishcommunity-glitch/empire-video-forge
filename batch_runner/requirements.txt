@@ -1,0 +1,4 @@
+# Empire Video Forge — Batch Runner (PC-side)
+# Install: pip install -r requirements.txt
+requests>=2.31.0
+pyyaml>=6.0.1
