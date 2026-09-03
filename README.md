@@ -39,6 +39,7 @@ infrastructure ops and content production are not mixed. See the
 |------|---------|
 | `docs/AUTO-EDIT-STAGE-DESIGN.md` | Design for the auto-editing stage — long video in, finished 9:16 clips out. |
 | `docs/STEP1-FINDINGS.md` | **Results of the live proof run** — what worked, the exact fixes required, honest caveats, and the command that works. |
+| `docs/VIRAL-FONTS.md` | The rotating **viral caption font mix** (7 free/OFL Arabic fonts) + how per-video rotation works, and why we avoid the paid Foda Kufi. |
 | `kaggle/` | The free-GPU setup notebook (`generate_notebook.py` → `AutoEdit_Kaggle_Setup.ipynb`, now with the proven fixes baked in) + the reused `remote_exec_bridge.py`. Start with `kaggle/RUN_GUIDE.md`. |
 
 ## The pipeline in one line
