@@ -38,7 +38,8 @@ infrastructure ops and content production are not mixed. See the
 | Path | Purpose |
 |------|---------|
 | `docs/AUTO-EDIT-STAGE-DESIGN.md` | Design for the auto-editing stage — long video in, finished 9:16 clips out. |
-| `kaggle/` | **Build-order step 1** — the free-GPU setup notebook (`generate_notebook.py` → `AutoEdit_Kaggle_Setup.ipynb`) + the reused `remote_exec_bridge.py`, to prove one video end-to-end. Start with `kaggle/RUN_GUIDE.md`. |
+| `docs/STEP1-FINDINGS.md` | **Results of the live proof run** — what worked, the exact fixes required, honest caveats, and the command that works. |
+| `kaggle/` | The free-GPU setup notebook (`generate_notebook.py` → `AutoEdit_Kaggle_Setup.ipynb`, now with the proven fixes baked in) + the reused `remote_exec_bridge.py`. Start with `kaggle/RUN_GUIDE.md`. |
 
 ## The pipeline in one line
 
@@ -62,7 +63,12 @@ runs — see the design doc for the full rationale.
 
 ## Status
 
-**Step 1 (prove the Kaggle path) is scaffolded, not yet run.** The design is in
-`docs/AUTO-EDIT-STAGE-DESIGN.md` (build order in §7); the step-1 setup lives in
-`kaggle/`. Nothing is deployed — the next action is to run the Kaggle notebook
-against one real video and record the speed/quality result.
+**Step 1 (prove the Kaggle path) is DONE and PROVEN** (2026-09-03 live run — see
+`docs/STEP1-FINDINGS.md`). A real Arabic video was turned into 2 finished,
+captioned 9:16 clips on a free Kaggle T4 at $0, and the output was reviewed and
+approved. The notebook in `kaggle/` now bakes in the three fixes the run
+required (dependency vise, Arabic caption font, `large-v3` Whisper).
+
+**Next: build-order step 2** — wire the inbox → Drive routing folders so a
+dropped video is auto-processed and clips land where the existing
+social-publishing pipeline (`empire-server-forge`) picks them up.

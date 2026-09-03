@@ -91,150 +91,120 @@ else:
 # ---------------------------------------------------------------------------
 # Cell 3 — Clone OpenShorts + system deps
 # ---------------------------------------------------------------------------
-md("""## 2. Clone OpenShorts and install system dependencies
+md("""## 2. Clone OpenShorts + install deps (with the proven fixes)
 
-Clones the MIT-licensed engine and makes sure `ffmpeg` is present (it is the
-cut/burn workhorse). This takes a few minutes.
+> **Confirmed by the 2026-09-03 live run (see `docs/STEP1-FINDINGS.md`):**
+> OpenShorts runs as a **standalone CLI** (`main.py`) — **no Docker/compose,
+> no API server needed.** This cell also applies the three fixes the live run
+> required, so this is a single clean pass rather than the trial-and-error the
+> first run went through.
 
-> **Step-1 unknown to validate (flagged in the design doc):** OpenShorts ships
-> as a Docker-Compose app (API + render-service + DB). Kaggle notebooks are not
-> a clean Docker host, so this notebook runs the **backend/pipeline directly**
-> rather than via `docker compose`. If a component insists on the full compose
-> stack, that is exactly the finding step 1 exists to surface — record it and
-> fall back to the parts-based CLI (`faster-whisper` + `PySceneDetect` +
-> `ffmpeg`) described in design doc §2.
+The three baked-in fixes:
+1. **Dependency vise** — pin `mediapipe==0.10.21` (keeps the legacy
+   `mp.solutions` API `main.py` uses; `1.0.x` removed it) and **remove
+   TensorFlow** (unused by OpenShorts; only mediapipe's optional doc-import
+   dragged it in, and its protobuf pin fought mediapipe's).
+2. **Arabic captions** — install Noto Arabic fonts and point the auto-caption
+   style at `Noto Sans Arabic` (the bundled `Anton` font has no Arabic glyphs
+   → tofu boxes).
+3. **Whisper `large-v3`** — set at run time (Cell 4); `small` garbled
+   colloquial Arabic.
+
+Takes a few minutes (torch + the font packages).
 """)
 
 code("""%cd /kaggle/working
-!apt-get -qq update && apt-get -qq install -y ffmpeg >/dev/null 2>&1
-!ffmpeg -version | head -1
+!apt-get -qq update >/dev/null 2>&1
+!apt-get -qq install -y ffmpeg fonts-noto-core fonts-noto-cjk >/dev/null 2>&1
 !git clone --depth 1 https://github.com/mutonby/openshorts.git
 %cd openshorts
-!ls -la
-print("\\nOpenShorts cloned. Inspect the repo layout above before installing.")
+!pip install -q -r requirements.txt
+# Fix 1: dependency vise
+!pip install -q "mediapipe==0.10.21"
+!pip uninstall -y tensorflow tensorflow-cpu tf-keras keras >/dev/null 2>&1
+# Fix 2: Arabic-capable caption font
+import pathlib
+sp = pathlib.Path("subtitles.py"); s = sp.read_text()
+s = s.replace('"font_name": "Anton",', '"font_name": "Noto Sans Arabic",')
+sp.write_text(s)
+fm = pathlib.Path("fonts/openshorts-fontmap.conf")
+c = fm.read_text()
+if "Noto Sans Arabic" not in c:
+    fm.write_text(c.replace("</fontconfig>",
+        '  <alias binding="strong"><family>Anton</family>'
+        '<prefer><family>Noto Sans Arabic</family></prefer></alias>\\n</fontconfig>'))
+!fc-cache -f >/dev/null 2>&1
+print("OpenShorts installed + all 3 fixes applied.")
 """)
 
 
 # ---------------------------------------------------------------------------
-# Cell 4 — Python deps + Whisper on GPU
+# Cell 4 — Verify deps + set GPU/Whisper env
 # ---------------------------------------------------------------------------
-md("""## 3. Install Python dependencies (GPU transcription)
+md("""## 3. Verify the environment
 
-Installs the backend requirements and the CLI. We pin Whisper to run on CUDA
-with a turbo model — the T4 is what makes this fast. `small` is a safe start
-(better than `base` on non-English audio, per OpenShorts' own `.env`
-guidance); step up to `large-v3-turbo` once the pipeline is proven.
+Confirms CUDA is live and mediapipe's face detector initialises (this is what
+the dependency vise used to break). If this prints `ENV_OK`, the heavy stuff
+works.
 """)
 
-code("""%cd /kaggle/working/openshorts
-
-# Backend requirements (path may differ per repo layout — adjust if needed after
-# inspecting Cell 3 output). Try common locations.
-import os, subprocess
-for req in ["requirements.txt", "render-service/requirements.txt", "backend/requirements.txt"]:
-    if os.path.exists(req):
-        print(f"Installing {req} ...")
-        subprocess.run(["pip", "install", "-q", "-r", req], check=False)
-
-# The zero-dependency CLI that drives a running instance
-!pip install -q openshorts
-
-print("Dependencies installed (review any pip errors above).")
+code("""import torch, mediapipe, faster_whisper
+mediapipe.solutions.face_detection.FaceDetection(model_selection=1, min_detection_confidence=0.5)
+assert torch.cuda.is_available(), "No CUDA — set Accelerator to GPU"
+print(f"ENV_OK  cuda={torch.cuda.is_available()}  mediapipe={mediapipe.__version__}")
 """)
 
 
 # ---------------------------------------------------------------------------
-# Cell 5 — Configure .env (GPU Whisper + moment-scoring)
+# Cell 5 — Moment-scoring key (Kaggle Secrets — the safe way)
 # ---------------------------------------------------------------------------
-md("""## 4. Configure the engine (`.env`)
+md("""## 4. Load the Gemini key from Kaggle Secrets
 
-Two decisions here, both covered in design doc §4:
-
-- **Whisper on GPU:** `WHISPER_DEVICE=cuda`, turbo model.
-- **Moment-scoring:** paste a **free Google Gemini key** below for the simplest
-  first run. The private, zero-dependency alternative (local Ollama, design §4
-  Option B) is shown commented-out — OpenShorts supports any OpenAI-compatible
-  `LLM_BASE_URL`, at which point the Gemini key becomes optional.
-
-> **SECURITY:** the key you paste lives only in this ephemeral Kaggle session's
-> `.env`. Never commit it, never paste it into the repo or a chat that gets
-> committed — same rule as every other Empire credential.
+**Do NOT paste the key into a cell or the chat.** Store it in **Add-ons →
+Secrets** as `GEMINI_API_KEY`, then this cell loads it into the session's
+`.env` without ever printing the value. (The private, zero-dependency
+alternative is local Ollama via `LLM_BASE_URL` — design §4 Option B — in which
+case the Gemini key is optional.)
 """)
 
-code("""import os
-
-# --- moment-scoring: EITHER a Gemini free-tier key ... ---
-GEMINI_API_KEY = ""  # <-- paste your free key from aistudio.google.com (session-only)
-
-# --- ... OR local Ollama (design doc §4 Option B; leave Gemini blank to use) ---
-# LLM_BASE_URL = "http://host.docker.internal:11434/v1"
-# LLM_MODEL    = "qwen2.5:14b"
-
-env_lines = [
-    "WHISPER_MODEL=small",          # step up to large-v3-turbo once proven
-    "WHISPER_DEVICE=cuda",
-    "WHISPER_COMPUTE=float16",
-    "TRANSCRIBE_BACKEND=whisper",
-]
-if GEMINI_API_KEY:
-    env_lines.append(f"GEMINI_API_KEY={GEMINI_API_KEY}")
-# else: configure LLM_BASE_URL / LLM_MODEL above for local scoring
-
-with open("/kaggle/working/openshorts/.env", "w") as f:
-    f.write("\\n".join(env_lines) + "\\n")
-
-# Print WITHOUT the secret value, so this cell's output is safe to screenshot
-print("Wrote .env with keys:", [l.split("=")[0] for l in env_lines])
-if not GEMINI_API_KEY:
-    print("No Gemini key set — configure a local LLM_BASE_URL for moment-scoring.")
+code("""from kaggle_secrets import UserSecretsClient
+k = UserSecretsClient().get_secret("GEMINI_API_KEY")
+with open("/kaggle/working/openshorts/.env", "a") as f:
+    f.write("\\nGEMINI_API_KEY=%s\\n" % k)
+print("Key loaded from Secrets into .env — loaded=%s length=%d (value never printed)"
+      % (bool(k), len(k)))
 """)
 
 
 # ---------------------------------------------------------------------------
-# Cell 6 — Start the OpenShorts API in the background
+# Cell 6 — Run the pipeline directly (no API server)
 # ---------------------------------------------------------------------------
-md("""## 5. Start the OpenShorts backend (API on :8000)
+md("""## 5. Run the pipeline on your video
 
-The CLI talks to a running instance at `OPENSHORTS_API_URL`. This starts the
-backend in the background and waits for its health endpoint.
+`main.py` is a standalone CLI. **Upload your source video to Kaggle as a
+Dataset** and use `-i` with its `/kaggle/input/...` path — this is the
+reliable input path. (YouTube `-u` download tends to hit an anti-bot block
+from Kaggle IPs.)
 
-The exact start command depends on the repo layout you saw in Cell 3 — the
-candidates below cover the common ones. If none come up healthy, that is a
-step-1 finding: capture the error and switch to the parts-based fallback
-(design §2).
+`large-v3` Whisper is set here (first use downloads ~3GB, one-time per
+session). Output: `subtitled_*_clip_N.mp4` + a `*_metadata.json` with
+AI titles, hooks and per-platform captions.
 """)
 
-code("""import subprocess, time, os, urllib.request
+code("""import os, glob
+# EDIT this to your uploaded file's path (Input panel shows /kaggle/input/<dataset>/<file>)
+INPUT = glob.glob("/kaggle/input/**/*.mp4", recursive=True)
+INPUT = INPUT[0] if INPUT else "/kaggle/input/<your-dataset>/<your-video>.mp4"
+print("Processing:", INPUT)
 
-os.environ["OPENSHORTS_API_URL"] = "http://localhost:8000"
+os.environ["WHISPER_MODEL"] = "large-v3"
+os.environ["WHISPER_DEVICE"] = "cuda"
+os.environ["WHISPER_COMPUTE"] = "float16"
 
-# Try the likely backend entrypoints in order; keep the first that boots.
-CANDIDATES = [
-    "python -m uvicorn app.main:app --host 0.0.0.0 --port 8000",
-    "python -m uvicorn main:app --host 0.0.0.0 --port 8000",
-    "python render-service/main.py",
-]
-
-log = open("/kaggle/working/openshorts_api.log", "w")
-proc = None
-for cmd in CANDIDATES:
-    print(f"Trying: {cmd}")
-    proc = subprocess.Popen(cmd, shell=True, cwd="/kaggle/working/openshorts",
-                            stdout=log, stderr=subprocess.STDOUT)
-    time.sleep(20)
-    try:
-        urllib.request.urlopen("http://localhost:8000/health", timeout=5)
-        print("API is healthy on :8000")
-        break
-    except Exception:
-        print("  ...not healthy, trying next candidate")
-        proc.terminate()
-        proc = None
-
-if proc is None:
-    print("\\nNo entrypoint came up. Tail the log to see why:")
-    !tail -40 /kaggle/working/openshorts_api.log
-    print("\\nThis is a valid step-1 result — record it and use the parts-based fallback.")
+%cd /kaggle/working/openshorts
+!python main.py -i "{INPUT}" -o /kaggle/working/clips_out --format vertical
+print("\\nDone. Finished clips + metadata are in /kaggle/working/clips_out/")
+!ls -lh /kaggle/working/clips_out/
 """)
 
 
