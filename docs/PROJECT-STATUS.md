@@ -2,7 +2,103 @@
 
 > **Purpose:** single source of truth for where the auto-edit + auto-publish
 > project stands. Any new session or agent should read this first to resume
-> without re-deriving context. Last updated: **2026-09-04**.
+> without re-deriving context. Last updated: **2026-09-04 (session 2)**.
+
+---
+
+## ⏭️ RESUME HERE (session 2 checkpoint) — the n8n workflow is built & wired; 4 credentials remain
+
+**What this session accomplished:** recovered n8n access, connected to it via
+the MCP server, and **built + fixed + wired most of the Phase-1 publishing
+workflow directly inside n8n.** The workflow validates clean (`valid: true,
+0 errors`). What's left is creating/authorizing 4 credentials (owner-gated)
+and testing.
+
+### Exact next actions (in order)
+1. **Create the YouTube credential.** Blocked last time because Google no
+   longer lets you re-view a client secret, and "Add secret" glitched. **Plan:
+   create a NEW OAuth client** in Google Cloud (project `empire-english-n8n`,
+   Clients → + Create client → Web application → name `n8n-empire-video-2` →
+   redirect URI `https://bot.empireenglish.online/rest/oauth2-credential/callback`).
+   The creation dialog shows the secret once — SAVE IT. Then in n8n, open the
+   "YouTube EEC: upload (Short)" node → create YouTube OAuth2 credential with
+   that Client ID/Secret → Sign in with Google (empireenglishcommunity@gmail.com,
+   accept the "unverified app" warning) → attach to the node.
+2. **Instagram ×2 credentials.** Node "IG EEC: create REELS container" +
+   "IG EEC: publish" need an HTTP Header Auth credential named `IG - EEC`
+   (Header: `Authorization`, Value: `Bearer <EEC IG token from notepad>`).
+   Same for `IG - MACAL` on the two MACAL IG nodes. Tokens are in the owner's
+   notepad (generated last session). IG user IDs are already set as env vars.
+3. **R2/S3 credential.** Nodes "R2 stage (EEC IG)" + "R2 stage (MACAL IG)"
+   need an S3 credential named `R2 - social-staging`: endpoint = the S3 API URL
+   from the R2 bucket Settings page, region `auto`, access key + secret from
+   notepad. Bucket + public base already set as env vars.
+4. **Ledger Google Sheet.** Create a Google Sheet with a tab named `ledger`,
+   copy its ID, set it as env var `LEDGER_SHEET_ID` in `/opt/n8n/docker-compose.yml`
+   (same method as the other env vars — see below), attach the existing
+   `Google Sheets account` credential to the "Ledger: append row" node.
+5. **Test** — put one clip in Drive `output/01-EEC-only/`, manually execute the
+   workflow, watch YouTube upload first, then IG. Only after EEC works, test MACAL.
+6. **Activate** the workflow (toggle active) once tested.
+
+### How to reconnect to n8n via MCP (for the next agent)
+- MCP endpoint: `https://mcp.empireenglish.online/mcp` (n8n-mcp v2.60.0).
+- **NEW MCP AUTH_TOKEN** (rotated 2026-09-04, in owner's notepad — starts `226bfba1…`).
+  Old token was rotated out for security.
+- n8n API key for MCP: a key named `mcp-access` was created in n8n Settings →
+  n8n API (owner `macalempire@gmail.com`). If reset again, create a fresh key
+  and swap into `/opt/n8n-mcp/docker-compose.yml` `N8N_API_KEY`, then
+  `cd /opt/n8n-mcp && docker compose up -d`.
+- MCP call pattern (curl): POST /mcp with `Authorization: Bearer <token>`,
+  `Accept: application/json, text/event-stream`; do `initialize` (capture the
+  `mcp-session-id` response header), send `notifications/initialized` on that
+  session, then `tools/call`. Key tools: `n8n_get_workflow`,
+  `n8n_update_partial_workflow`, `n8n_validate_workflow`, `n8n_list_workflows`,
+  `n8n_manage_credentials` (action:list/get — cannot read secret values).
+
+### State of the workflow in n8n (already done — do NOT redo)
+- Workflow **"Social Publishing — Phase 1"**, id **`RdtmJTVYU4jFFCvF`**, currently **inactive**. `valid: true, 0 errors, 28 (cosmetic) warnings`.
+- Code nodes (Classify, Guard) — **fixed** (had imported empty; now populated with the routing + fail-closed guard logic).
+- Switch node — **fixed** (brand `outputKey`s EEC/MACAL set).
+- Drive Trigger + Download — **wired** to credential `Google Drive account`
+  (id `FDFZdH8pQKLZQFzz`, already authorized & working). Trigger watches the
+  `output` folder id `1bKV8ALl6luA31CKayW2O3loofEWWHmHh`.
+- Env vars set in `/opt/n8n/docker-compose.yml` (n8n restarted, healthy):
+  `DRIVE_OUTPUT_FOLDER_ID=1bKV8ALl6luA31CKayW2O3loofEWWHmHh`,
+  `IG_EEC_USER_ID=17841439275631104`, `IG_MACAL_USER_ID=17841475049428664`,
+  `R2_BUCKET=empire-social-staging`,
+  `R2_PUBLIC_BASE=https://social-staging.empireenglish.online`.
+  (`LEDGER_SHEET_ID` still TODO — action 4 above.)
+
+### To add an env var to n8n (proven method — paste-safe with awk)
+```
+cd /opt/n8n && cp docker-compose.yml docker-compose.yml.bak-$(date +%s)
+printf '      - LEDGER_SHEET_ID=YOUR_SHEET_ID\n' > /tmp/ne.txt
+awk '{print} /- R2_PUBLIC_BASE=/{while((getline l < "/tmp/ne.txt")>0) print l}' docker-compose.yml > dc.new && mv dc.new docker-compose.yml
+docker compose up -d
+```
+(Inline python heredocs with `\n` get mangled by paste — use awk from a temp file.)
+
+### Drive folders
+Owner created Google Drive `empire-video-forge/output/` with subfolders
+`01-EEC-only`, `02-EEC-and-MACAL`, `03-MACAL-only`. `output` id above.
+
+### n8n access recovery note (happened this session)
+n8n owner login was lost; recovered via `docker exec -u node -it empire-n8n
+n8n user-management:reset` → restart → re-claim owner via Owner Setup page in
+an Incognito window. This detached the OLD n8n API key (it authenticated but
+saw 0 workflows) — fixed by creating a fresh key under the new owner. 34
+existing workflows survived (backup at `/root/wf-backup-20260904.json`).
+New n8n owner password is in the owner's notepad.
+
+### Workflow source of truth
+The clean workflow JSON is in `empire-server-forge/n8n-workflows/social-publishing/`
+(`social-publishing-phase1.json` + `BUILD-NOTES.md`). NOTE: the version now
+running in n8n has the fixes above applied on top of that JSON — if re-importing
+from the repo file, re-apply the Code-node/Switch/trigger fixes (or export the
+live one from n8n and commit it, credential-stripped).
+
+---
 
 ## The goal (in one line)
 
