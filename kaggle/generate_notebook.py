@@ -274,7 +274,55 @@ for _c in _clips:
             _os.remove(_tmp)
         print("  faststart FAILED (kept original):", _os.path.basename(_c), _r.stderr[:200])
 
-print("\\nDone. Finished, Instagram-ready clips + metadata are in /kaggle/working/clips_out/")
+# --- Thumbnail + duration for the publishing engine ---
+# For each finished clip we produce two extra things the YouTube engine consumes:
+#  1) <clip>_thumb.jpg  -> uploaded via YouTube thumbnails.set (optional; skipped if absent)
+#  2) duration / is_long / format merged into <clip>_metadata.json
+#     -> lets the engine pick Shorts vs long-form titling automatically.
+# ffmpeg + ffprobe are already installed (Cell 2). All best-effort; never fatal.
+import json as _json
+def _probe_duration(path):
+    try:
+        r = _sp.run(["ffprobe","-v","error","-show_entries","format=duration",
+                     "-of","default=noprint_wrappers=1:nokey=1", path],
+                    capture_output=True, text=True)
+        return float((r.stdout or "0").strip() or 0)
+    except Exception:
+        return 0.0
+
+for _c in _clips:
+    _base = _c[:-4]  # strip .mp4
+    # 1) grab a representative frame ~1s in, scaled to a 9:16-friendly width, as the thumbnail
+    _thumb = _base + "_thumb.jpg"
+    _tr = _sp.run(
+        ["ffmpeg","-y","-loglevel","error","-ss","1","-i",_c,
+         "-frames:v","1","-vf","scale=720:-2","-q:v","3",_thumb],
+        capture_output=True, text=True,
+    )
+    if _tr.returncode == 0 and _os.path.exists(_thumb):
+        print("  thumb OK:", _os.path.basename(_thumb))
+    else:
+        # fallback: first frame
+        _sp.run(["ffmpeg","-y","-loglevel","error","-i",_c,"-frames:v","1",
+                 "-vf","scale=720:-2","-q:v","3",_thumb], capture_output=True, text=True)
+    # 2) duration + is_long/format into the sidecar metadata json (create if missing)
+    _dur = round(_probe_duration(_c), 2)
+    _is_long = _dur > 180  # >3 min => long-form; else Short
+    _meta_path = _base + "_metadata.json"
+    _m = {}
+    if _os.path.exists(_meta_path):
+        try: _m = _json.load(open(_meta_path))
+        except Exception: _m = {}
+    _m["duration"] = _dur
+    _m["is_long"] = _is_long
+    _m["format"] = "long" if _is_long else "short"
+    try:
+        _json.dump(_m, open(_meta_path, "w"), ensure_ascii=False)
+        print(f"  meta OK: {_os.path.basename(_meta_path)} (duration={_dur}s, {'long' if _is_long else 'short'})")
+    except Exception as _e:
+        print("  meta write failed:", _e)
+
+print("\\nDone. Instagram-ready clips + thumbnails + enriched metadata in /kaggle/working/clips_out/")
 !ls -lh /kaggle/working/clips_out/
 """)
 
