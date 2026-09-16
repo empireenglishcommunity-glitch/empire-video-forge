@@ -227,6 +227,17 @@ from Kaggle IPs.)
 `large-v3` Whisper is set here (first use downloads ~3GB, one-time per
 session). Output: `subtitled_*_clip_N.mp4` + a `*_metadata.json` with
 AI titles, hooks and per-platform captions.
+
+> **`+faststart` remux (required for Instagram):** OpenShorts writes MP4s with
+> the `moov` atom at the **end** of the file. Instagram's Reels processor
+> streams the video via byte-range requests, expects `moov` near the front, and
+> sets the media container to **ERROR** ("failed to process") when it isn't —
+> even though the file is a valid H.264/AAC 9:16 clip and YouTube accepts it
+> fine. So after OpenShorts finishes, we remux every clip in place with
+> `ffmpeg -c copy -movflags +faststart`. This is a **lossless container rewrite**
+> (no re-encode): it just relocates the index, costs a few seconds and ~no CPU,
+> and makes each clip Instagram-ready. Confirmed root cause of IG container
+> subcode 2207026/ERROR during the 2026-09 publishing test.
 """)
 
 code("""import os, glob
@@ -241,7 +252,29 @@ os.environ["WHISPER_COMPUTE"] = "float16"
 
 %cd /kaggle/working/openshorts
 !python main.py -i "{INPUT}" -o /kaggle/working/clips_out --format vertical
-print("\\nDone. Finished clips + metadata are in /kaggle/working/clips_out/")
+
+# --- Instagram-readiness: move the moov atom to the front of every clip ---
+# Lossless remux (-c copy), NOT a re-encode. Without this, IG rejects the clip
+# with container status ERROR even though it plays fine everywhere else.
+import glob as _glob, os as _os, subprocess as _sp
+_clips = sorted(_glob.glob("/kaggle/working/clips_out/*.mp4"))
+print(f"\\nApplying +faststart to {len(_clips)} clip(s) for Instagram compatibility...")
+for _c in _clips:
+    _tmp = _c + ".faststart.mp4"
+    _r = _sp.run(
+        ["ffmpeg", "-y", "-loglevel", "error", "-i", _c,
+         "-c", "copy", "-movflags", "+faststart", _tmp],
+        capture_output=True, text=True,
+    )
+    if _r.returncode == 0 and _os.path.exists(_tmp) and _os.path.getsize(_tmp) > 0:
+        _os.replace(_tmp, _c)   # overwrite original in place
+        print("  faststart OK:", _os.path.basename(_c))
+    else:
+        if _os.path.exists(_tmp):
+            _os.remove(_tmp)
+        print("  faststart FAILED (kept original):", _os.path.basename(_c), _r.stderr[:200])
+
+print("\\nDone. Finished, Instagram-ready clips + metadata are in /kaggle/working/clips_out/")
 !ls -lh /kaggle/working/clips_out/
 """)
 
