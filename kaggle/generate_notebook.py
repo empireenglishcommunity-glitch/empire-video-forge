@@ -276,11 +276,15 @@ for _c in _clips:
 
 # --- Thumbnail + duration for the publishing engine ---
 # For each finished clip we produce two extra things the YouTube engine consumes:
-#  1) <clip>_thumb.jpg  -> uploaded via YouTube thumbnails.set (optional; skipped if absent)
+#  1) <clip>_thumb.jpg  -> an AI HYBRID thumbnail: Gemini ("Nano Banana") generates a
+#     topic-relevant 9:16 background (no text — AI text rendering is unreliable), then we
+#     overlay a crisp Arabic hook (from the clip's metadata) + brand tag with PIL using the
+#     installed viral Arabic fonts. Falls back to a plain video frame if AI/compositing fails.
+#     Uploaded via YouTube thumbnails.set (optional; skipped if absent).
 #  2) duration / is_long / format merged into <clip>_metadata.json
 #     -> lets the engine pick Shorts vs long-form titling automatically.
 # ffmpeg + ffprobe are already installed (Cell 2). All best-effort; never fatal.
-import json as _json
+import json as _json, base64 as _b64, urllib.request as _url, textwrap as _tw
 def _probe_duration(path):
     try:
         r = _sp.run(["ffprobe","-v","error","-show_entries","format=duration",
@@ -290,21 +294,137 @@ def _probe_duration(path):
     except Exception:
         return 0.0
 
+# Read the Gemini key from the .env we wrote in Cell 4 (never printed).
+def _gemini_key():
+    try:
+        for line in open("/kaggle/working/openshorts/.env"):
+            if line.startswith("GEMINI_API_KEY="):
+                return line.split("=",1)[1].strip()
+    except Exception:
+        pass
+    return _os.environ.get("GEMINI_API_KEY","")
+
+# Nano Banana (Gemini image) -> a topic-relevant 9:16 background PNG. Returns path or None.
+def _ai_background(topic_hint, out_png):
+    key = _gemini_key()
+    if not key:
+        return None
+    prompt = ("Vertical 9:16 YouTube thumbnail BACKGROUND for an Arabic English-learning channel "
+              "'Empire English Community'. Clean, modern, high-contrast, vibrant but not busy, leaves "
+              "the upper third empty for text overlay. Theme: " + str(topic_hint) + ". "
+              "NO text, NO words, NO letters in the image. Cinematic, professional, education vibe.")
+    body = _json.dumps({"contents":[{"parts":[{"text":prompt}]}]}).encode()
+    # try current + legacy image models, best-effort
+    for model in ("gemini-3.1-flash-image","gemini-2.5-flash-image"):
+        try:
+            req = _url.Request(
+                "https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent?key=%s" % (model, key),
+                data=body, headers={"Content-Type":"application/json"})
+            resp = _json.loads(_url.urlopen(req, timeout=90).read().decode())
+            for part in resp.get("candidates",[{}])[0].get("content",{}).get("parts",[]):
+                inline = part.get("inlineData") or part.get("inline_data")
+                if inline and inline.get("data"):
+                    open(out_png,"wb").write(_b64.b64decode(inline["data"]))
+                    return out_png
+        except Exception as _e:
+            continue
+    return None
+
+# Compose final 1080x1920 thumbnail: AI background (or video frame) + Arabic hook text overlay.
+def _compose_thumb(clip_path, bg_png, hook_text, out_jpg):
+    try:
+        from PIL import Image, ImageDraw, ImageFont, ImageFilter
+        import arabic_reshaper
+        from bidi.algorithm import get_display
+    except Exception:
+        return False
+    W,H = 1080,1920
+    # base image: AI bg if present, else a frame from the clip
+    base = None
+    if bg_png and _os.path.exists(bg_png):
+        try: base = Image.open(bg_png).convert("RGB")
+        except Exception: base = None
+    if base is None:
+        frame = clip_path[:-4] + "_frame.jpg"
+        _sp.run(["ffmpeg","-y","-loglevel","error","-ss","1","-i",clip_path,"-frames:v","1",frame],
+                capture_output=True, text=True)
+        if _os.path.exists(frame):
+            try: base = Image.open(frame).convert("RGB")
+            except Exception: base = None
+    if base is None:
+        base = Image.new("RGB",(W,H),(11,18,40))
+    # cover-fit to 1080x1920
+    bw,bh = base.size; scale = max(W/bw, H/bh)
+    base = base.resize((int(bw*scale),int(bh*scale))).crop((0,0,W,H)) if (bw and bh) else base
+    # dark gradient band at top for text legibility
+    ov = Image.new("RGBA",(W,H),(0,0,0,0)); od = ImageDraw.Draw(ov)
+    od.rectangle([0,0,W,int(H*0.42)], fill=(0,0,0,150))
+    canvas = Image.alpha_composite(base.convert("RGBA"), ov)
+    # Arabic-safe text
+    hook = (hook_text or "تعلّم الإنجليزي").strip()
+    reshaped = get_display(arabic_reshaper.reshape(hook))
+    # pick an installed viral font
+    fpath = None
+    for p in ["/usr/share/fonts/truetype/viral/Tajawal-Black.ttf",
+              "/usr/share/fonts/truetype/viral/Cairo.ttf",
+              "/usr/share/fonts/truetype/viral/Changa.ttf"]:
+        if _os.path.exists(p): fpath = p; break
+    d = ImageDraw.Draw(canvas)
+    size = 96
+    font = ImageFont.truetype(fpath,size) if fpath else ImageFont.load_default()
+    # wrap to width
+    lines = _tw.wrap(reshaped, width=18) or [reshaped]
+    y = 120
+    for ln in lines[:3]:
+        tw2 = d.textlength(ln, font=font); x = (W - tw2)//2
+        # outline
+        for dx in (-4,0,4):
+            for dy in (-4,0,4):
+                d.text((x+dx,y+dy), ln, font=font, fill=(0,0,0))
+        d.text((x,y), ln, font=font, fill=(255,214,10))  # brand gold
+        y += size + 24
+    # brand tag bottom
+    try:
+        bf = ImageFont.truetype(fpath, 54) if fpath else font
+        tag = get_display(arabic_reshaper.reshape("Empire English 👑"))
+        d.text(((W - d.textlength(tag,font=bf))//2, H-160), tag, font=bf, fill=(255,255,255))
+    except Exception: pass
+    canvas.convert("RGB").save(out_jpg, "JPEG", quality=88)
+    return _os.path.exists(out_jpg)
+
+# ensure PIL + arabic text libs (fast if cached)
+_sp.run(["pip","install","-q","pillow","arabic_reshaper","python-bidi"], capture_output=True, text=True)
+
 for _c in _clips:
     _base = _c[:-4]  # strip .mp4
-    # 1) grab a representative frame ~1s in, scaled to a 9:16-friendly width, as the thumbnail
     _thumb = _base + "_thumb.jpg"
-    _tr = _sp.run(
-        ["ffmpeg","-y","-loglevel","error","-ss","1","-i",_c,
-         "-frames:v","1","-vf","scale=720:-2","-q:v","3",_thumb],
-        capture_output=True, text=True,
-    )
-    if _tr.returncode == 0 and _os.path.exists(_thumb):
-        print("  thumb OK:", _os.path.basename(_thumb))
+    # --- AI hybrid thumbnail: Gemini background + Arabic hook overlay ---
+    _hook = ""; _topic = "English learning tip"
+    _mp = _base + "_metadata.json"
+    if _os.path.exists(_mp):
+        try:
+            _mm = _json.load(open(_mp))
+            _hook = (_mm.get("title") or _mm.get("caption") or "").split(chr(10))[0][:60]
+            _topic = _mm.get("topic") or _mm.get("title") or _topic
+        except Exception: pass
+    _bg = _base + "_bg.png"
+    _ai = _ai_background(_topic, _bg)
+    _ok = False
+    try:
+        _ok = _compose_thumb(_c, _ai, _hook, _thumb)
+    except Exception as _e:
+        _ok = False
+    if _ok and _os.path.exists(_thumb):
+        print("  AI thumb OK:", _os.path.basename(_thumb), "(bg=%s)" % ("AI" if _ai else "frame"))
     else:
-        # fallback: first frame
-        _sp.run(["ffmpeg","-y","-loglevel","error","-i",_c,"-frames:v","1",
-                 "-vf","scale=720:-2","-q:v","3",_thumb], capture_output=True, text=True)
+        # hard fallback: plain frame grab (original behaviour)
+        _tr = _sp.run(["ffmpeg","-y","-loglevel","error","-ss","1","-i",_c,
+                       "-frames:v","1","-vf","scale=720:-2","-q:v","3",_thumb],
+                      capture_output=True, text=True)
+        if not (_tr.returncode == 0 and _os.path.exists(_thumb)):
+            _sp.run(["ffmpeg","-y","-loglevel","error","-i",_c,"-frames:v","1",
+                     "-vf","scale=720:-2","-q:v","3",_thumb], capture_output=True, text=True)
+        print("  thumb (fallback frame):", _os.path.basename(_thumb))
     # 2) duration + is_long/format into the sidecar metadata json (create if missing)
     _dur = round(_probe_duration(_c), 2)
     _is_long = _dur > 180  # >3 min => long-form; else Short
