@@ -5,15 +5,21 @@
 > on ONE real clip via the Kaggle bridge before moving on. Requirement refs in
 > brackets. Ship each phase as its own PR with a test artifact.
 >
-> **Build status:** NOT STARTED — spec awaiting owner sign-off.
+> **Build status:** Phase 0 signed off (2026-09-16). Executing Phase 1.
+>
+> **Owner decisions (Phase 0.1, locked):**
+> - Music: **rotate a few tracks per topic** (variety). [R5.3]
+> - Long-form captions: **soft CC by default**, burned-in as per-video opt-in. [R3.2]
+> - Intro/outro: **animated logo sting** (2–3s, logo + gold/navy motion). [R3.3]
 
 ---
 
 ## Phase 0 — Foundations & sign-off gate
 
-- [ ] **0.1 Approve spec.** Owner reviews requirements/design; confirms the 3
-  open decisions (music variety depth; long-form burned vs soft CC; intro style).
+- [x] **0.1 Approve spec.** Owner signed off; 3 decisions locked (see header):
+  music=rotate per topic; long-form=soft CC default (+opt-in burn); intro=animated sting.
 - [ ] **0.2 Confirm recording format is landscape 16:9.** [C4, R1.1, R3.1]
+  - _Pending: owner to confirm future recordings are shot landscape._
 - [ ] **0.3 Fetch + commit the channel logo** (from YouTube profile) into
   `assets/brand/` for intro/outro + thumbnails. [R6.1]
 
