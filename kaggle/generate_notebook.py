@@ -309,9 +309,9 @@ def _ai_background(topic_hint, out_png):
     key = _gemini_key()
     if not key:
         return None
-    prompt = ("Vertical 9:16 YouTube thumbnail BACKGROUND for an Arabic English-learning channel "
+    prompt = ("Landscape 16:9 YouTube thumbnail BACKGROUND for an Arabic English-learning channel "
               "'Empire English Community'. Clean, modern, high-contrast, vibrant but not busy, leaves "
-              "the upper third empty for text overlay. Theme: " + str(topic_hint) + ". "
+              "the upper two-thirds relatively clear for a text overlay. Theme: " + str(topic_hint) + ". "
               "NO text, NO words, NO letters in the image. Cinematic, professional, education vibe.")
     body = _json.dumps({"contents":[{"parts":[{"text":prompt}]}]}).encode()
     # try current + legacy image models, best-effort
@@ -359,19 +359,22 @@ def _viral_font(size):
             return ImageFont.truetype(p, size)
     return ImageFont.load_default()
 
-# Compose final 1080x1920 thumbnail.
-#  - If an AI background PNG exists (billing-enabled Gemini key), cover-fit it and
-#    overlay the Arabic hook in the upper area over a dark band.
-#  - If NOT (free key can't generate images), DON'T reuse the video frame: our clips
-#    already have burned-in captions + a watermark, so a frame overlay clashes badly.
-#    Instead draw a clean on-brand navy gradient CARD with the hook centered. This is
-#    the reliable, professional look that works with the free tier.
+# Compose final YouTube thumbnail — MUST be 16:9 (1280x720).
+# CRITICAL: YouTube's thumbnails.set accepts a POST with HTTP 200 even for a 9:16
+# portrait image, then SILENTLY discards it (no custom thumbnail appears). Thumbnails
+# must be 16:9 landscape. This was the root cause of the 2026-09 "grey thumbnail"
+# bug — the clip is a vertical Short, but its THUMBNAIL still has to be 1280x720.
+#  - If an AI background PNG exists (billing-enabled Gemini key), cover-fit it 16:9 and
+#    overlay the Arabic hook over dark bands.
+#  - If NOT (free key can't generate images), draw a clean on-brand navy gradient CARD.
+#    We do NOT reuse a video frame: the clips already have burned-in captions + a
+#    watermark, so a frame overlay clashes badly.
 def _compose_thumb(clip_path, bg_png, hook_text, out_jpg):
     try:
         from PIL import Image, ImageDraw, ImageFont
     except Exception:
         return False
-    W, H = 1080, 1920
+    W, H = 1280, 720  # 16:9 — required by YouTube
     hook = (hook_text or "تعلّم الإنجليزي").strip()
     have_ai = bool(bg_png and _os.path.exists(bg_png))
 
@@ -387,10 +390,9 @@ def _compose_thumb(clip_path, bg_png, hook_text, out_jpg):
         x0 = (base.size[0] - W) // 2; y0 = (base.size[1] - H) // 2
         base = base.crop((x0, y0, x0 + W, y0 + H))
         ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
-        od.rectangle([0, 0, W, int(H * 0.40)], fill=(0, 0, 0, 165))
-        od.rectangle([0, int(H * 0.86), W, H], fill=(0, 0, 0, 150))
+        od.rectangle([0, 0, W, int(H * 0.72)], fill=(0, 0, 0, 150))   # top band for hook
+        od.rectangle([0, int(H * 0.86), W, H], fill=(0, 0, 0, 150))    # bottom band for brand
         canvas = Image.alpha_composite(base.convert("RGBA"), ov).convert("RGB")
-        hook_y = 150
     else:
         # clean brand-navy vertical gradient card
         canvas = Image.new("RGB", (W, H))
@@ -405,37 +407,35 @@ def _compose_thumb(clip_path, bg_png, hook_text, out_jpg):
             for x in range(W):
                 px[x, y] = row
         d0 = ImageDraw.Draw(canvas)
-        d0.rectangle([0, 255, W, 263], fill=(255, 214, 10))  # gold accent bar
-        hook_y = None  # center vertically below
+        d0.rectangle([90, 92, W - 90, 100], fill=(255, 214, 10))  # gold accent bar near top
 
     d = ImageDraw.Draw(canvas)
     cx = W // 2
-    size = 100
+    size = 92
     font = _viral_font(size)
-    lines = _wrap_ar(hook, 16)
-    if hook_y is None:
-        total_h = len(lines) * (size + 26)
-        hook_y = (H - total_h) // 2 - 60
-    y = hook_y
+    lines = _wrap_ar(hook, 18)
+    # center the hook block in the upper-middle, leaving room for kicker + brand
+    total_h = len(lines) * (size + 18)
+    y = (H - total_h) // 2 - 30
     for ln in lines:
-        for dx in (-6, -3, 0, 3, 6):
-            for dy in (-6, -3, 0, 3, 6):
-                _draw_rtl(d, (cx + dx, y + dy), ln, font, (0, 0, 0))
-        _draw_rtl(d, (cx, y), ln, font, (255, 214, 10))  # brand gold
-        y += size + 26
+        for dx in (-5, 0, 5):
+            for dy in (-5, 0, 5):
+                _draw_rtl(d, (cx + dx, y + dy), ln, font, (0, 0, 0), anchor="mm")
+        _draw_rtl(d, (cx, y), ln, font, (255, 214, 10), anchor="mm")  # brand gold
+        y += size + 18
     # English kicker
     try:
-        d.text((cx, y + 20), "ENGLISH WITH EMPIRE", font=_viral_font(44),
-               fill=(180, 200, 255), anchor="ma")
+        d.text((cx, y + 6), "ENGLISH WITH EMPIRE", font=_viral_font(38),
+               fill=(180, 200, 255), anchor="mm")
     except Exception:
         pass
     # brand tag bottom (ASCII only — avoids emoji tofu boxes)
     try:
-        bf = _viral_font(60)
-        for dx in (-3, 0, 3):
-            for dy in (-3, 0, 3):
-                d.text((cx + dx, H - 190 + dy), "Empire English", font=bf, fill=(0, 0, 0), anchor="ma")
-        d.text((cx, H - 190), "Empire English", font=bf, fill=(255, 255, 255), anchor="ma")
+        bf = _viral_font(48)
+        for dx in (-2, 0, 2):
+            for dy in (-2, 0, 2):
+                d.text((cx + dx, H - 60 + dy), "Empire English", font=bf, fill=(0, 0, 0), anchor="mm")
+        d.text((cx, H - 60), "Empire English", font=bf, fill=(255, 255, 255), anchor="mm")
     except Exception:
         pass
     canvas.save(out_jpg, "JPEG", quality=90)
