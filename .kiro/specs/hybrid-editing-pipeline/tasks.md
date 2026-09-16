@@ -25,14 +25,14 @@
 
 ## Phase 1 — Shared pre-pass (helps BOTH tracks) ⭐ highest impact
 
-- [~] **1.1 Silence / dead-air removal.** [R2.2, R2.4] — BUILT, needs raw-footage test
+- [x] **1.1 Silence / dead-air removal.** [R2.2, R2.4] — DONE, validated on real EEC content
   - Implemented in `kaggle/editing/silence_removal.py` using **pure ffmpeg**
     (`silencedetect` + trim/concat). NOTE: `auto-editor` rejected — its binary
     needs GLIBC 2.38 which the Kaggle image lacks (confirmed on box 2026-09).
-  - Configurable noise floor (-30dB), min-silence (0.6s), margin (0.15s); re-probes duration.
-  - _Verified on box: valid in-sync output, audio intact, fail-soft returns original._
-  - _Pending: test on RAW unedited footage to demonstrate real cut % (the ref
-    creator's video was already tightly edited → only 0.1% removed, as expected)._
+  - Configurable noise floor (-30dB), min-silence (0.6s), margin (0.15s).
+  - _✅ Verified on the owner's RAW clip (english-pronunciation-tip): 41.5s → 37.1s,
+    removed 4.5s (10.7%) of dead air; output 1080×1920 preserved, AAC audio intact,
+    in sync. Fail-soft returns original on any error._
 - [ ] **1.2 Light warm color grade.** [R2.3]
   - Single reusable ffmpeg filter; apply in pre-pass.
   - _Test: before/after frames pulled via bridge; confirm subtle, not oversaturated._
