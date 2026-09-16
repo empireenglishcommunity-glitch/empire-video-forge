@@ -1,8 +1,10 @@
 # Hybrid Editing Pipeline — Requirements
 
-> One landscape recording → two polished, platform-correct outputs (a long-form
-> 16:9 video **and** short 9:16 clips), edited automatically to a quality that
-> matches strong Arabic-education creators. Grounded in a real analysis of
+> **Format-agnostic:** accept ANY input (vertical, landscape, or square) and
+> automatically produce the right polished outputs — Shorts (9:16) always, plus
+> a long-form 16:9 (where a proper landscape source exists, or a blurred-fill
+> long-form from vertical if desired). Edited to a quality that matches strong
+> Arabic-education creators. Grounded in a real analysis of
 > reference creator @fatmhisoka and the constraints of the YouTube publishing
 > engine (see `../youtube-publishing-engine/` in empire-server-forge).
 >
@@ -27,10 +29,17 @@
 
 ---
 
-## R1 — Dual-track output from one recording
+## R1 — Format-agnostic, adaptive output
 
-- **R1.1** WHEN a raw landscape recording is processed, the system SHALL produce
-  **both** a long-form 16:9 output and 1–3 short 9:16 clips from the same source.
+- **R1.0** The system SHALL auto-detect the source orientation (from width/height)
+  and adapt without any manual flag:
+  - **Landscape (w>h):** long-form 16:9 (native) + Shorts 9:16 (face-tracked crop).
+  - **Vertical (h>w):** Shorts 9:16 (native) + OPTIONAL long-form 16:9 via
+    blurred-fill (vertical centered on a blurred 16:9 background).
+  - **Square (w≈h):** Shorts native + optional blurred-fill 16:9 long-form.
+- **R1.1** The system SHALL ALWAYS produce at least the Shorts output(s) (1–3
+  clips) for any input, and SHALL produce a long-form output when the source is
+  landscape (or when blurred-fill long-form is enabled for vertical/square).
 - **R1.2** The system SHALL write long-form output to `output/<brand>/long/` and
   short output to `output/<brand>/shorts/`, preserving the brand-routing rule
   (folder-in → folder-out, one-to-one) already used by the batch runner.

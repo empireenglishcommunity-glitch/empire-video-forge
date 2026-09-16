@@ -25,6 +25,12 @@
 
 ## Phase 1 — Shared pre-pass (helps BOTH tracks) ⭐ highest impact
 
+- [x] **1.0 Format-agnostic orientation detection.** [R1.0, R1.1]
+  - `kaggle/editing/orientation.py` auto-detects landscape/vertical/square from
+    dims and returns the track plan (no manual flag). Owner sends ANY video.
+  - _✅ Verified on owner's raw clip: correctly detected vertical (0.562) →
+    plan: shorts native 9:16 + optional blurred-fill 16:9 long-form._
+
 - [x] **1.1 Silence / dead-air removal.** [R2.2, R2.4] — DONE, validated on real EEC content
   - Implemented in `kaggle/editing/silence_removal.py` using **pure ffmpeg**
     (`silencedetect` + trim/concat). NOTE: `auto-editor` rejected — its binary
