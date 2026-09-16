@@ -165,3 +165,21 @@ Each block ships as its own PR with a test clip for review.
 real @fatmhisoka video. Third-party observations are described in our own words;
 no third-party assets are copied — only the general approach is used as
 inspiration.*
+
+
+---
+
+## 8. Formal spec
+
+This document is the narrative overview. The **formal, executable spec** —
+requirements, design, and a phased task checklist we work through in order — lives in:
+
+```
+.kiro/specs/hybrid-editing-pipeline/
+  ├── requirements.md   (EARS-style, R1–R8, constraints C1–C5)
+  ├── design.md         (architecture, tool choices, the hard RTL-karaoke part)
+  └── tasks.md          (Phase 0–6, checkable tasks, execution rules)
+```
+
+Execute phase-by-phase from `tasks.md`; nothing is marked done until its test
+passes on a real clip, and the Arabic karaoke block is gated on visual sign-off.
