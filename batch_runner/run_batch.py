@@ -231,6 +231,7 @@ def process_one_video(bridge_url: str, video_path: Path, brand: str,
     entries = bridge_list(bridge_url, remote_out_dir)
     clip_entries = [e for e in entries if e["name"].startswith("subtitled_") and e["name"].endswith(".mp4")]
     metadata_entries = [e for e in entries if e["name"].endswith("_metadata.json")]
+    thumb_entries = [e for e in entries if e["name"].endswith("_thumb.jpg")]
 
     downloaded = []
     brand_out = output_dir / brand
@@ -247,6 +248,15 @@ def process_one_video(bridge_url: str, video_path: Path, brand: str,
         remote = f"{remote_out_dir}/{entry['name']}"
         local = brand_out / entry["name"]
         bridge_download(bridge_url, remote, local)
+
+    # Also download AI-generated thumbnails (Gemini background + Arabic hook overlay)
+    for entry in thumb_entries:
+        remote = f"{remote_out_dir}/{entry['name']}"
+        local = brand_out / entry["name"]
+        bridge_download(bridge_url, remote, local)
+
+    print(f"  📥 Downloaded: {len(downloaded)} clip(s), "
+          f"{len(metadata_entries)} metadata, {len(thumb_entries)} thumbnail(s)")
 
     return downloaded
 
