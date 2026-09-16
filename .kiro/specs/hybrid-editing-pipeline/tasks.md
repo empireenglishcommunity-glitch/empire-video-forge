@@ -25,10 +25,14 @@
 
 ## Phase 1 — Shared pre-pass (helps BOTH tracks) ⭐ highest impact
 
-- [ ] **1.1 Silence / dead-air removal.** [R2.2, R2.4]
-  - Add `auto-editor` install + a pre-pass step producing `master_clean.mp4`.
-  - Configurable gap threshold (default 0.5s) + speech margin; re-probe duration.
-  - _Test: one clip; verify pacing tighter, audio in sync, no clipped words._
+- [~] **1.1 Silence / dead-air removal.** [R2.2, R2.4] — BUILT, needs raw-footage test
+  - Implemented in `kaggle/editing/silence_removal.py` using **pure ffmpeg**
+    (`silencedetect` + trim/concat). NOTE: `auto-editor` rejected — its binary
+    needs GLIBC 2.38 which the Kaggle image lacks (confirmed on box 2026-09).
+  - Configurable noise floor (-30dB), min-silence (0.6s), margin (0.15s); re-probes duration.
+  - _Verified on box: valid in-sync output, audio intact, fail-soft returns original._
+  - _Pending: test on RAW unedited footage to demonstrate real cut % (the ref
+    creator's video was already tightly edited → only 0.1% removed, as expected)._
 - [ ] **1.2 Light warm color grade.** [R2.3]
   - Single reusable ffmpeg filter; apply in pre-pass.
   - _Test: before/after frames pulled via bridge; confirm subtle, not oversaturated._
