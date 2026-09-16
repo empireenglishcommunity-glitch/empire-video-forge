@@ -10,7 +10,13 @@
 > **Owner decisions (Phase 0.1, locked):**
 > - Music: **rotate a few tracks per topic** (variety). [R5.3]
 > - Long-form captions: **soft CC by default**, burned-in as per-video opt-in. [R3.2]
-> - Intro/outro: **animated logo sting** (2–3s, logo + gold/navy motion). [R3.3]
+> - Intro/outro: **animated logo sting** (2–3s, gold-on-black; logo's built-in
+>   equalizer bars pulse). [R3.3, R6.1]
+> - **Input policy: owner sends TRULY RAW clips** — no captions/overlays/Telegram
+>   tags baked into the picture — so the pipeline can add professional karaoke
+>   captions cleanly. (A semi-edited clip with burned-in text was seen 2026-09;
+>   raw is required for Phase 3 to work.) [R4.3]
+> - Format-agnostic: any orientation accepted (see R1.0). [R1.0]
 
 ---
 
@@ -42,9 +48,13 @@
 - [ ] **1.2 Light warm color grade.** [R2.3]
   - Single reusable ffmpeg filter; apply in pre-pass.
   - _Test: before/after frames pulled via bridge; confirm subtle, not oversaturated._
-- [ ] **1.3 Persist word-level timings once (`words.json`).** [R2.1]
-  - Ensure Whisper word timestamps are saved for reuse by CC + karaoke.
-  - _Test: words.json has {word,start,end}; counts match transcript._
+- [x] **1.3 Persist word-level timings once (`words.json`).** [R2.1] — DONE, validated
+  - `kaggle/editing/transcribe_words.py` runs faster-whisper large-v3 (GPU) →
+    `words.json` [{word,start,end}] + `segments.json` for SRT. One source of
+    timing for karaoke (Shorts) + soft CC (long-form). Fail-soft to empty lists.
+  - _✅ On the owner's raw clip: 85 words + 21 segments, Arabic, cuda; timings
+    accurate (e.g. النظام 0.46–1.14). NOTE: box needs `pip install faster-whisper`
+    if the OpenShorts setup cells weren't run this session._
 
 ## Phase 2 — Long-form track (unlocks the thumbnail payoff)
 
