@@ -330,83 +330,151 @@ def _ai_background(topic_hint, out_png):
             continue
     return None
 
-# Compose final 1080x1920 thumbnail: AI background (or video frame) + Arabic hook text overlay.
-def _compose_thumb(clip_path, bg_png, hook_text, out_jpg):
-    try:
-        from PIL import Image, ImageDraw, ImageFont, ImageFilter
-        import arabic_reshaper
-        from bidi.algorithm import get_display
-    except Exception:
-        return False
-    W,H = 1080,1920
-    # base image: AI bg if present, else a frame from the clip
-    base = None
-    if bg_png and _os.path.exists(bg_png):
-        try: base = Image.open(bg_png).convert("RGB")
-        except Exception: base = None
-    if base is None:
-        frame = clip_path[:-4] + "_frame.jpg"
-        _sp.run(["ffmpeg","-y","-loglevel","error","-ss","1","-i",clip_path,"-frames:v","1",frame],
-                capture_output=True, text=True)
-        if _os.path.exists(frame):
-            try: base = Image.open(frame).convert("RGB")
-            except Exception: base = None
-    if base is None:
-        base = Image.new("RGB",(W,H),(11,18,40))
-    # cover-fit to 1080x1920
-    bw,bh = base.size; scale = max(W/bw, H/bh)
-    base = base.resize((int(bw*scale),int(bh*scale))).crop((0,0,W,H)) if (bw and bh) else base
-    # dark gradient band at top for text legibility
-    ov = Image.new("RGBA",(W,H),(0,0,0,0)); od = ImageDraw.Draw(ov)
-    od.rectangle([0,0,W,int(H*0.42)], fill=(0,0,0,150))
-    canvas = Image.alpha_composite(base.convert("RGBA"), ov)
-    # Arabic-safe text
-    hook = (hook_text or "تعلّم الإنجليزي").strip()
-    reshaped = get_display(arabic_reshaper.reshape(hook))
-    # pick an installed viral font
-    fpath = None
+# Arabic-safe RTL text drawing. PIL on Kaggle ships with raqm (libraqm) which does
+# proper complex-script shaping + bidi ITSELF. So we must pass the RAW Arabic string
+# with direction="rtl"/language="ar" and let raqm shape it. Pre-shaping with
+# arabic_reshaper + python-bidi here double-shapes the text -> disconnected/reversed
+# garbled glyphs. (Root cause of the 2026-09 garbled-thumbnail bug.)
+def _draw_rtl(d, xy, text, font, fill, anchor="ma"):
+    d.text(xy, text, font=font, fill=fill, anchor=anchor, direction="rtl", language="ar")
+
+def _wrap_ar(text, n):
+    words = (text or "").split()
+    lines, cur = [], ""
+    for w in words:
+        if len(cur) + len(w) + 1 <= n:
+            cur = (cur + " " + w).strip()
+        else:
+            if cur: lines.append(cur)
+            cur = w
+    if cur: lines.append(cur)
+    return lines[:3] or [""]
+
+def _viral_font(size):
+    from PIL import ImageFont
     for p in ["/usr/share/fonts/truetype/viral/Tajawal-Black.ttf",
               "/usr/share/fonts/truetype/viral/Cairo.ttf",
               "/usr/share/fonts/truetype/viral/Changa.ttf"]:
-        if _os.path.exists(p): fpath = p; break
-    d = ImageDraw.Draw(canvas)
-    size = 96
-    font = ImageFont.truetype(fpath,size) if fpath else ImageFont.load_default()
-    # wrap to width
-    lines = _tw.wrap(reshaped, width=18) or [reshaped]
-    y = 120
-    for ln in lines[:3]:
-        tw2 = d.textlength(ln, font=font); x = (W - tw2)//2
-        # outline
-        for dx in (-4,0,4):
-            for dy in (-4,0,4):
-                d.text((x+dx,y+dy), ln, font=font, fill=(0,0,0))
-        d.text((x,y), ln, font=font, fill=(255,214,10))  # brand gold
-        y += size + 24
-    # brand tag bottom
+        if _os.path.exists(p):
+            return ImageFont.truetype(p, size)
+    return ImageFont.load_default()
+
+# Compose final 1080x1920 thumbnail.
+#  - If an AI background PNG exists (billing-enabled Gemini key), cover-fit it and
+#    overlay the Arabic hook in the upper area over a dark band.
+#  - If NOT (free key can't generate images), DON'T reuse the video frame: our clips
+#    already have burned-in captions + a watermark, so a frame overlay clashes badly.
+#    Instead draw a clean on-brand navy gradient CARD with the hook centered. This is
+#    the reliable, professional look that works with the free tier.
+def _compose_thumb(clip_path, bg_png, hook_text, out_jpg):
     try:
-        bf = ImageFont.truetype(fpath, 54) if fpath else font
-        tag = get_display(arabic_reshaper.reshape("Empire English 👑"))
-        d.text(((W - d.textlength(tag,font=bf))//2, H-160), tag, font=bf, fill=(255,255,255))
-    except Exception: pass
-    canvas.convert("RGB").save(out_jpg, "JPEG", quality=88)
+        from PIL import Image, ImageDraw, ImageFont
+    except Exception:
+        return False
+    W, H = 1080, 1920
+    hook = (hook_text or "تعلّم الإنجليزي").strip()
+    have_ai = bool(bg_png and _os.path.exists(bg_png))
+
+    if have_ai:
+        try:
+            base = Image.open(bg_png).convert("RGB")
+        except Exception:
+            have_ai = False
+    if have_ai:
+        bw, bh = base.size
+        scale = max(W / bw, H / bh)
+        base = base.resize((int(bw * scale), int(bh * scale)))
+        x0 = (base.size[0] - W) // 2; y0 = (base.size[1] - H) // 2
+        base = base.crop((x0, y0, x0 + W, y0 + H))
+        ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
+        od.rectangle([0, 0, W, int(H * 0.40)], fill=(0, 0, 0, 165))
+        od.rectangle([0, int(H * 0.86), W, H], fill=(0, 0, 0, 150))
+        canvas = Image.alpha_composite(base.convert("RGBA"), ov).convert("RGB")
+        hook_y = 150
+    else:
+        # clean brand-navy vertical gradient card
+        canvas = Image.new("RGB", (W, H))
+        top, bot = (9, 14, 38), (23, 42, 84)
+        px = canvas.load()
+        for y in range(H):
+            t = y / H
+            r = int(top[0] + (bot[0] - top[0]) * t)
+            g = int(top[1] + (bot[1] - top[1]) * t)
+            b = int(top[2] + (bot[2] - top[2]) * t)
+            row = (r, g, b)
+            for x in range(W):
+                px[x, y] = row
+        d0 = ImageDraw.Draw(canvas)
+        d0.rectangle([0, 255, W, 263], fill=(255, 214, 10))  # gold accent bar
+        hook_y = None  # center vertically below
+
+    d = ImageDraw.Draw(canvas)
+    cx = W // 2
+    size = 100
+    font = _viral_font(size)
+    lines = _wrap_ar(hook, 16)
+    if hook_y is None:
+        total_h = len(lines) * (size + 26)
+        hook_y = (H - total_h) // 2 - 60
+    y = hook_y
+    for ln in lines:
+        for dx in (-6, -3, 0, 3, 6):
+            for dy in (-6, -3, 0, 3, 6):
+                _draw_rtl(d, (cx + dx, y + dy), ln, font, (0, 0, 0))
+        _draw_rtl(d, (cx, y), ln, font, (255, 214, 10))  # brand gold
+        y += size + 26
+    # English kicker
+    try:
+        d.text((cx, y + 20), "ENGLISH WITH EMPIRE", font=_viral_font(44),
+               fill=(180, 200, 255), anchor="ma")
+    except Exception:
+        pass
+    # brand tag bottom (ASCII only — avoids emoji tofu boxes)
+    try:
+        bf = _viral_font(60)
+        for dx in (-3, 0, 3):
+            for dy in (-3, 0, 3):
+                d.text((cx + dx, H - 190 + dy), "Empire English", font=bf, fill=(0, 0, 0), anchor="ma")
+        d.text((cx, H - 190), "Empire English", font=bf, fill=(255, 255, 255), anchor="ma")
+    except Exception:
+        pass
+    canvas.save(out_jpg, "JPEG", quality=90)
     return _os.path.exists(out_jpg)
 
-# ensure PIL + arabic text libs (fast if cached)
-_sp.run(["pip","install","-q","pillow","arabic_reshaper","python-bidi"], capture_output=True, text=True)
+# ensure PIL is present (fast if cached). Arabic shaping is handled by PIL/raqm
+# directly — we intentionally do NOT use arabic_reshaper/python-bidi (they double-shape).
+_sp.run(["pip","install","-q","pillow"], capture_output=True, text=True)
 
-for _c in _clips:
+# OpenShorts writes ONE rich sidecar per SOURCE video (…<source>.mp4_metadata.json)
+# containing a "shorts" array with the real per-clip title + viral_hook_text +
+# captions. Load it so each clip's thumbnail + sidecar use the ACTUAL AI copy
+# (not the filename or a generic string, which is what produced weak thumbnails).
+_source_shorts = []
+for _mj in _glob.glob("/kaggle/working/clips_out/*_metadata.json"):
+    try:
+        _cand = _json.load(open(_mj))
+        if isinstance(_cand, dict) and isinstance(_cand.get("shorts"), list) and _cand["shorts"]:
+            _source_shorts = _cand["shorts"]
+            break
+    except Exception:
+        continue
+
+# Only thumbnail the finished, caption-burned clips (subtitled_*), matched to the
+# shorts array in order. This avoids thumbnailing the intermediate raw clips too.
+_subtitled = sorted([c for c in _clips if _os.path.basename(c).startswith("subtitled_")])
+_targets = _subtitled if _subtitled else _clips
+
+for _i, _c in enumerate(_targets):
     _base = _c[:-4]  # strip .mp4
     _thumb = _base + "_thumb.jpg"
-    # --- AI hybrid thumbnail: Gemini background + Arabic hook overlay ---
-    _hook = ""; _topic = "English learning tip"
-    _mp = _base + "_metadata.json"
-    if _os.path.exists(_mp):
-        try:
-            _mm = _json.load(open(_mp))
-            _hook = (_mm.get("title") or _mm.get("caption") or "").split(chr(10))[0][:60]
-            _topic = _mm.get("topic") or _mm.get("title") or _topic
-        except Exception: pass
+    # real per-clip copy from the shorts array (by order), with safe fallbacks
+    _short = _source_shorts[_i] if _i < len(_source_shorts) else {}
+    _hook = (_short.get("viral_hook_text") or _short.get("video_title_for_youtube_short") or "").strip()
+    _title = (_short.get("video_title_for_youtube_short") or _hook).strip()
+    _caption = (_short.get("video_description_for_instagram")
+                or _short.get("video_description_for_tiktok") or "").strip()
+    _topic = _short.get("topic") or "English learning"
+    # --- AI hybrid thumbnail: Gemini background (if billing-enabled key) + Arabic hook ---
     _bg = _base + "_bg.png"
     _ai = _ai_background(_topic, _bg)
     _ok = False
@@ -415,17 +483,14 @@ for _c in _clips:
     except Exception as _e:
         _ok = False
     if _ok and _os.path.exists(_thumb):
-        print("  AI thumb OK:", _os.path.basename(_thumb), "(bg=%s)" % ("AI" if _ai else "frame"))
+        print("  thumb OK:", _os.path.basename(_thumb), "(bg=%s)" % ("AI" if _ai else "brand-card"))
     else:
-        # hard fallback: plain frame grab (original behaviour)
-        _tr = _sp.run(["ffmpeg","-y","-loglevel","error","-ss","1","-i",_c,
-                       "-frames:v","1","-vf","scale=720:-2","-q:v","3",_thumb],
-                      capture_output=True, text=True)
-        if not (_tr.returncode == 0 and _os.path.exists(_thumb)):
-            _sp.run(["ffmpeg","-y","-loglevel","error","-i",_c,"-frames:v","1",
-                     "-vf","scale=720:-2","-q:v","3",_thumb], capture_output=True, text=True)
+        # last-resort frame grab (only if PIL compositing itself failed)
+        _sp.run(["ffmpeg","-y","-loglevel","error","-ss","1","-i",_c,
+                 "-frames:v","1","-vf","scale=720:-2","-q:v","3",_thumb],
+                capture_output=True, text=True)
         print("  thumb (fallback frame):", _os.path.basename(_thumb))
-    # 2) duration + is_long/format into the sidecar metadata json (create if missing)
+    # 2) enrich the per-clip sidecar: duration/format + the real title/hook/caption/topic
     _dur = round(_probe_duration(_c), 2)
     _is_long = _dur > 180  # >3 min => long-form; else Short
     _meta_path = _base + "_metadata.json"
@@ -436,6 +501,10 @@ for _c in _clips:
     _m["duration"] = _dur
     _m["is_long"] = _is_long
     _m["format"] = "long" if _is_long else "short"
+    if _title:   _m["title"] = _title
+    if _hook:    _m["hook"] = _hook
+    if _caption: _m["caption"] = _caption
+    _m["topic"] = _topic
     try:
         _json.dump(_m, open(_meta_path, "w"), ensure_ascii=False)
         print(f"  meta OK: {_os.path.basename(_meta_path)} (duration={_dur}s, {'long' if _is_long else 'short'})")
