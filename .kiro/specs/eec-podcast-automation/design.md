@@ -29,9 +29,9 @@ n8n triggers and delivers; the heavy lifting is host-side (like the editor was).
   ```json
   {
     "episode": 3, "level": "B1", "title": "...",
-    "characters": ["Omar","Sara","Coach"],
+    "characters": ["Macal","Nour","Coach"],
     "lines": [
-      {"speaker":"Omar","lang":"en","text":"...", "note":null},
+      {"speaker":"Macal","lang":"en","text":"...", "note":null},
       {"speaker":"Coach","lang":"ar","text":"...", "phrase":"break the ice"}
     ],
     "phrase_of_episode": {"en":"break the ice","ar":"يكسر الحاجز"},
@@ -42,15 +42,30 @@ n8n triggers and delivers; the heavy lifting is host-side (like the editor was).
   story progress so episodes connect. Updated after each episode.
 - Guardrails: brand voice, honesty rules, level-appropriate difficulty.
 
-### 2.2 Voice Synthesis (Piper)
-- Piper installed in the podcast venv; voice models downloaded once to
-  `/opt/eec-podcast/voices/` (en_US + ar). Map each character -> a voice model.
-- For each line: synth WAV, measure duration -> build a timeline (start/end per line)
-  used for caption sync and audio stitching.
-- Coach (Arabic) uses an Arabic Piper voice; characters use distinct English voices
-  (different speakers / speeds for variety).
-- Fail-soft + retry per line; if Arabic voice quality is inadequate in testing, fall
-  back to a chosen alternative (documented decision in tasks 1.x).
+### 2.2 Voice Synthesis — SPLIT ENGINE (locked 2026-09, owner-approved)
+> We evaluated Piper (robotic), Edge TTS (synthy), Kokoro (robotic), and cloud
+> options. Winner = a split engine, each language on its best-fit engine. See
+> `voice-casting.md` for the full brief. This is the OFFICIAL voice design.
+
+**English cast (Macal, Nour, guests) -> Chatterbox (Resemble AI), on GPU:**
+- Chatterbox beats ElevenLabs in ~65% of blind tests; MIT-licensed (commercial-safe).
+- It needs a GPU, which our server lacks -> run it on **Kaggle free GPU in BATCH**
+  (see 2.6b). Each character voice is **cloned from a locked reference clip**, so
+  voices are consistent across every episode.
+- **Locked references** (`voice-refs/`): `macal_ref.wav` = the OWNER'S OWN VOICE
+  (cloned); `nour_ref.wav` = Emma (Edge neural, warm US female); guest refs by role.
+- Per line: `model.generate(text, audio_prompt_path=ref, exaggeration, cfg_weight)`
+  -> WAV; measure duration -> timeline for caption sync + stitching.
+
+**Arabic Coach -> Gemini TTS (`gemini-2.5-flash-preview-tts`), voice "Kore":**
+- Runs via the existing `googlePalmApi` cred (no new account). Natural Egyptian
+  Arabic, controllable style ("warm encouraging Egyptian coach"). Free tier is
+  tight but the Coach is only ~1/3 of lines, so it fits; pace + retry on 429.
+
+**Why split:** English quality (Chatterbox) + Arabic quality (Gemini) + $0, and
+neither engine's free limit is a bottleneck because the load is divided.
+- Fail-soft + retry per line. Voices are DATA (swap a ref clip to change a voice;
+  no code change). Speaker->voice map lives in `season.json`.
 
 ### 2.3 Audio Assembly (ffmpeg)
 - Concatenate line WAVs with natural micro-gaps; normalize loudness (loudnorm).
@@ -75,11 +90,27 @@ n8n triggers and delivers; the heavy lifting is host-side (like the editor was).
 - Optional 9:16 highlight uploaded separately -> auto-Short.
 
 ### 2.6 Orchestration
-- A single host script `run_episode.py` chains stages 1–5 with fail-soft + logging.
+- A single host script `run_episode.py` chains the server-side stages (script,
+  Coach voice, audio assembly, video, deliver) with fail-soft + logging.
 - n8n **weekly Schedule Trigger** -> calls the host (internal webhook, same pattern as
   the probe) -> `run_episode.py` -> reports status back (Telegram notify on done/fail).
 - Optional review gate: pipeline can pause after video assembly and post the file for
   approval before delivering to Drive.
+
+### 2.6b English voice — Kaggle BATCH pattern (solves session-expiry)
+The English voices (Chatterbox) need GPU, so they are generated on Kaggle in a
+**decoupled batch**, NOT called live each week (Kaggle sessions expire):
+1. `gen_script.py` produces script.json for the next N episodes -> pushed to the repo
+   (or Drive).
+2. **Owner runs the Kaggle notebook** (kaggle/chatterbox_cast.py) periodically (e.g.
+   once per few weeks): it reads the pending scripts + the locked reference clips,
+   clones each character's English lines, and pushes the per-line WAVs + timeline
+   back to Drive/GitHub.
+3. The **server pipeline** then picks up ready English audio, synthesizes the Arabic
+   Coach lines (Gemini), assembles audio+video, and auto-publishes on schedule.
+This keeps publishing fully automated while GPU voice is "banked" in short sessions.
+Future upgrade path (optional): a paid GPU endpoint (or Chatterbox turbo) to make
+even the English step fully unattended.
 
 ## 3. Data & state
 - `/opt/eec-podcast/season.json` — cast, voice map, current episode #, story state.
@@ -89,14 +120,20 @@ n8n triggers and delivers; the heavy lifting is host-side (like the editor was).
 ## 4. Security & resource model
 - Any new host endpoint binds to the docker gateway only + ufw-restricted (like the
   probe); never internet-exposed.
-- All ffmpeg/Piper runs `nice -n 15`, single/low thread, so the 10 live containers are
-  never starved. Disk watched (episodes pruned/archived after publish).
+- All ffmpeg runs `nice -n 15`, single/low thread, so the 10+ live containers are
+  never starved. Disk watched (episodes pruned/archived after publish). Chatterbox
+  runs on Kaggle GPU (off-server), so it never loads the box.
 
 ## 5. Cost model
-- **$0 recurring:** Piper (free), ffmpeg (free), Gemini (existing cred/free tier),
-  Drive + n8n (existing). ElevenLabs is an optional paid upgrade flag only.
+- **$0 recurring:** Chatterbox (free, on Kaggle GPU), Gemini Coach (existing cred,
+  free tier), ffmpeg (free), Drive + n8n (existing). No ElevenLabs, no cloud TTS bill.
+- Optional future spend: a paid GPU endpoint to make the English step fully unattended
+  (only if weekly cadence outgrows the Kaggle-batch pattern).
 
-## 6. Key decisions (to confirm during Phase 1)
-- Piper Arabic voice quality bar (test before locking; fallback options documented).
-- Character scene visual style (stylized cards v1; richer later).
-- Exact cast + season premise (write the "series bible" in Phase 1).
+## 6. Key decisions — RESOLVED (2026-09)
+- Voice engine: **split — Chatterbox (English, Kaggle GPU, cloned voices) + Gemini
+  Kore (Arabic Coach).** LOCKED. (Piper/Edge/Kokoro rejected as robotic/synthy.)
+- Cast: **Macal = owner's cloned voice; Nour = Emma clone; Coach = Gemini Kore;
+  guests = Chatterbox clones by role.** LOCKED + owner-approved.
+- Series bible (cast/premise/arc) written + locked (`series-bible.md`).
+- Still open: character scene VISUAL style (stylized cards v1 -> Phase 4 gate).
