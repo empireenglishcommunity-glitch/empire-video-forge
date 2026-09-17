@@ -17,9 +17,14 @@ if (meta.is_long === true || String(meta.format||'').toLowerCase()==='long' || S
 else if (meta.duration !== undefined && meta.duration !== null) { const d = Number(meta.duration); if (!isNaN(d) && d > 180) isShort = false; }
 const fmt = isShort ? 'short' : 'long';
 let title = clean(g.title || (meta.video_title_for_youtube_short || meta.title) || 'تعلّم الإنجليزي بثقة مع Empire English 🚀');
-if (isShort) { if (title.length > 90) title = title.slice(0,90).trim(); if (!/#shorts/i.test(title)) title = (title + ' #Shorts').slice(0,100); }
-else { title = title.replace(/\s*#shorts/ig,'').trim(); if (title.length > 95) title = title.slice(0,95).trim(); }
+// 2026 best practice: Shorts titles are truncated on mobile ~40-50 chars -> keep tight, then append #Shorts.
+function cut(s, n){ if (s.length <= n) return s; let t = s.slice(0, n); const sp = t.lastIndexOf(' '); if (sp > n * 0.6) t = t.slice(0, sp); return t.trim(); }
+if (isShort) { title = cut(title, 50); if (!/#shorts/i.test(title)) title = (title + ' #Shorts'); }
+else { title = title.replace(/\s*#shorts/ig,'').trim(); title = cut(title, 95); }
+// keyword-rich opening line (search/Google read the first line first). Fallback to caption's essence.
+let firstLine = clean(g.first_line || '');
 let caption = clean(g.caption || meta.caption || 'درس إنجليزي سريع يفرق معاك! 💪 اتفرّج للآخر وطبّق النهارده.');
+if (!firstLine) firstLine = caption.split(/[.!؟\n]/)[0].slice(0,90).trim();
 const cta = 'قولنا في الكومنتات: إيه أصعب كلمة نطقتها النهاردة؟ 👇🔥';
 // topic (normalize to one of 5 keys; default 'tips')
 const VALID=['pronunciation','grammar','vocabulary','conversation','tips'];
@@ -31,6 +36,20 @@ for (const t of BRAND){ if(!hashtags.some(h=>h.toLowerCase()===t.toLowerCase()))
 hashtags = hashtags.slice(0,5);
 const hashtagBlock = hashtags.map(t=>'#'+t).join(' ');
 const tags = ['تعلم الانجليزية','English pronunciation','learn English','Empire English','English for Arabic speakers','English tips'].slice(0,6);
+// --- Long-form chapters (timestamps) — boosts watch-time navigation + SEO. Only for long videos. ---
+let chapterBlock = '';
+if (!isShort && Array.isArray(g.chapters) && g.chapters.length >= 2) {
+  const lines = [];
+  let hasZero = false;
+  for (const c of g.chapters) {
+    const t = clean((c && c.t) || ''); const label = clean((c && c.label) || '');
+    if (!/^\d{1,2}:\d{2}(:\d{2})?$/.test(t) || !label) continue;
+    if (t === '0:00' || t === '00:00') hasZero = true;
+    lines.push(t + ' ' + label);
+  }
+  // YouTube requires the first chapter to start at 0:00 to render chapters
+  if (lines.length >= 2 && hasZero) chapterBlock = ['⏱️ الفصول:'].concat(lines).join('\n');
+}
 // --- EEC standardized funnel block (added 2026-09): subscribe + community + placement test ---
 const FUNNEL = [
   '🔔 اشترك في القناة عشان توصلك كل دروس Empire English.',
@@ -40,7 +59,11 @@ const FUNNEL = [
   '',
   'إنجليزي حقيقي، نظام مش حيل. Forged in Language. Crowned in Mastery. 👑'
 ].join('\n');
-const description = [caption, '', cta, '', FUNNEL, '', hashtagBlock, '', '— Empire English Community 👑'].join('\n').trim();
+// Description order: keyword-first line -> value caption -> chapters(long) -> comment CTA -> funnel -> hashtags -> signature
+const parts = [firstLine, '', caption];
+if (chapterBlock) { parts.push('', chapterBlock); }
+parts.push('', cta, '', FUNNEL, '', hashtagBlock, '', '— Empire English Community 👑');
+const description = parts.join('\n').trim();
 const PIN=['ما أصعب كلمة إنجليزية في النطق بالنسبة لك؟ اكتبها 👇🔥','إيه أكتر حاجة بتقفلك وإنت بتتعلم إنجليزي؟ 🤔 قولنا 👇','جرّب تنطقها وقولنا نتيجتك في الكومنتات! 🎯','عايز فيديو عن موضوع معيّن؟ اطلبه تحت 👇✨','قيّم نطقك من 10 وإحنا نساعدك تتحسّن! 💪'];
 let seed=0; const fid=(src.file_id||title); for(let i=0;i<fid.length;i++) seed=(seed+fid.charCodeAt(i))%PIN.length;
 // append the community funnel to the pinned comment (subscribe + telegram)
