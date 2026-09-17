@@ -6,18 +6,25 @@
 > then automation. Never disrupt the 10 live containers (throttle everything).
 
 ## Phase 0 — Foundations & the "series bible"
-- [ ] 0.1 Approve spec (this doc) — requirements + design signed off. [R8]
-- [ ] 0.2 Write the **series bible**: cast (names, personalities, voices), the season
-      premise/arc, tone, and the fixed episode template. [R1.3, R1.4, R8.1]
-- [ ] 0.3 Create `/opt/eec-podcast/` workspace (venv, voices, assets, episodes, logs).
+- [x] 0.1 Approve spec — requirements + design signed off. [R8]
+- [x] 0.2 Write the **series bible** (`series-bible.md`): cast (Macal/Nour/Coach +
+      guests), Season 1 arc "Landing in Dubai", tone, episode template. LOCKED. [R1.3,R1.4]
+- [x] 0.3 Create `/opt/eec-podcast/` workspace (venv, voices, assets, episodes, logs).
 
-## Phase 1 — Voice engine (prove the hardest unknown first) ⭐
-- [ ] 1.1 Install **Piper** in the podcast venv; download en_US + ar voice models. [R3.1]
-- [ ] 1.2 Synthesize a **voice sample sheet**: each candidate character voice + the
-      Arabic Coach voice saying real lines. **GATE: owner listens + approves quality.**
-      If Arabic is inadequate, evaluate fallbacks (document the decision). [R3.2, R8]
-- [ ] 1.3 Build `synth_lines.py`: script.json -> per-line WAV + timeline.json, with
-      per-line retry/fail-soft. [R3.3, R3.5]
+## Phase 1 — Voice engine ⭐ DONE (split engine, owner-approved)
+> Evaluated Piper/Edge/Kokoro (robotic) and cloud (account/quota walls). LOCKED on a
+> split engine — see `voice-casting.md` + design 2.2/2.6b.
+- [x] 1.1 Voice engine chosen: **Chatterbox (English, Kaggle GPU, cloned voices) +
+      Gemini Kore (Arabic Coach)**. Chatterbox beats ElevenLabs in blind tests, MIT.
+- [x] 1.2 **GATE PASSED:** owner heard + approved the cloned cast — Macal = owner's own
+      voice; Nour = Emma clone; Coach = Gemini Kore. Locked reference clips in
+      `voice-refs/`. Kaggle notebook `kaggle/chatterbox_cast.py` proven working.
+- [ ] 1.3 Build the synth steps:
+      - `synth_english.py` (Kaggle/GPU batch): script.json + refs -> per-line WAV via
+        Chatterbox voice cloning (per-character ref map). Batch pattern (design 2.6b).
+      - `synth_coach.py` (server): Coach lines -> Gemini Kore (existing cred),
+        retry/pace on 429.
+      - Both emit per-line WAV + timeline.json. Fail-soft per line. [R3.3, R3.5]
 
 ## Phase 2 — Script generator
 - [ ] 2.1 Build `gen_script.py`: Gemini prompt (brand voice + level + season memory +
