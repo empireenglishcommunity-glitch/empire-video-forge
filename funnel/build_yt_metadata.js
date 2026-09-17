@@ -1,0 +1,50 @@
+const src = $('Compose YT prompt').item.json;
+const gem = $json;
+function clean(s){ return (s||'').toString().replace(/\s+/g,' ').trim(); }
+let g = {};
+let raw = (gem.content && gem.content.parts && gem.content.parts[0] && gem.content.parts[0].text) || gem.text || gem.response || gem.output || '';
+raw = (raw||'').toString().replace(/```json|```/g,'').trim();
+try { g = JSON.parse(raw); } catch(e) { const m = raw.match(/\{[\s\S]*\}/); if (m) { try { g = JSON.parse(m[0]); } catch(_){} } }
+const meta = src.metadata || {};
+// EEC policy (2026): vertical clips <=3min are auto-classified as Shorts by YouTube
+// regardless of the hashtag, and custom thumbnails on Shorts require YouTube Partner
+// Program (1000+ subs). Channel is pre-YPP, so we lean into Shorts for growth/reach.
+// We still generate + attempt the branded thumbnail (it shows in search/channel/
+// playlists and will apply automatically once the channel reaches YPP). Short by
+// default; treat >3min (or explicit long) as regular long-form.
+let isShort = true;
+if (meta.is_long === true || String(meta.format||'').toLowerCase()==='long' || String(meta.format||'').toLowerCase()==='longform') isShort = false;
+else if (meta.duration !== undefined && meta.duration !== null) { const d = Number(meta.duration); if (!isNaN(d) && d > 180) isShort = false; }
+const fmt = isShort ? 'short' : 'long';
+let title = clean(g.title || (meta.video_title_for_youtube_short || meta.title) || 'تعلّم الإنجليزي بثقة مع Empire English 🚀');
+if (isShort) { if (title.length > 90) title = title.slice(0,90).trim(); if (!/#shorts/i.test(title)) title = (title + ' #Shorts').slice(0,100); }
+else { title = title.replace(/\s*#shorts/ig,'').trim(); if (title.length > 95) title = title.slice(0,95).trim(); }
+let caption = clean(g.caption || meta.caption || 'درس إنجليزي سريع يفرق معاك! 💪 اتفرّج للآخر وطبّق النهارده.');
+const cta = 'قولنا في الكومنتات: إيه أصعب كلمة نطقتها النهاردة؟ 👇🔥';
+// topic (normalize to one of 5 keys; default 'tips')
+const VALID=['pronunciation','grammar','vocabulary','conversation','tips'];
+let topic=(g.topic||'').toString().toLowerCase().trim();
+if(!VALID.includes(topic)) topic='tips';
+let hashtags = Array.isArray(meta.hashtags) ? meta.hashtags.map(h=>h.replace(/^#/,'')) : [];
+const BRAND = isShort ? ['تعلم_الإنجليزية','إنجليزي','LearnEnglish','EmpireEnglish','Shorts'] : ['تعلم_الإنجليزية','إنجليزي','LearnEnglish','EmpireEnglish','English'];
+for (const t of BRAND){ if(!hashtags.some(h=>h.toLowerCase()===t.toLowerCase())) hashtags.push(t); }
+hashtags = hashtags.slice(0,5);
+const hashtagBlock = hashtags.map(t=>'#'+t).join(' ');
+const tags = ['تعلم الانجليزية','English pronunciation','learn English','Empire English','English for Arabic speakers','English tips'].slice(0,6);
+// --- EEC standardized funnel block (added 2026-09): subscribe + community + placement test ---
+const FUNNEL = [
+  '🔔 اشترك في القناة عشان توصلك كل دروس Empire English.',
+  '',
+  '📲 انضم لمجتمعنا على تليجرام: https://t.me/Empire_English_Community',
+  '🧪 اعرف مستواك الحقيقي — اختبار تحديد المستوى مجاني (٣٠ دقيقة): https://assessment.empireenglish.online',
+  '',
+  'إنجليزي حقيقي، نظام مش حيل. Forged in Language. Crowned in Mastery. 👑'
+].join('\n');
+const description = [caption, '', cta, '', FUNNEL, '', hashtagBlock, '', '— Empire English Community 👑'].join('\n').trim();
+const PIN=['ما أصعب كلمة إنجليزية في النطق بالنسبة لك؟ اكتبها 👇🔥','إيه أكتر حاجة بتقفلك وإنت بتتعلم إنجليزي؟ 🤔 قولنا 👇','جرّب تنطقها وقولنا نتيجتك في الكومنتات! 🎯','عايز فيديو عن موضوع معيّن؟ اطلبه تحت 👇✨','قيّم نطقك من 10 وإحنا نساعدك تتحسّن! 💪'];
+let seed=0; const fid=(src.file_id||title); for(let i=0;i<fid.length;i++) seed=(seed+fid.charCodeAt(i))%PIN.length;
+// append the community funnel to the pinned comment (subscribe + telegram)
+const pinComment = PIN[seed] + '\n\n📲 انضم لمجتمعنا وابدأ رحلتك: https://t.me/Empire_English_Community 👑';
+let publishAt=''; const wantSchedule=(meta.schedule===true)||src.yt_schedule===true;
+if(wantSchedule){ const now=new Date(); const t=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate(),17,0,0)); if(t.getTime()<=now.getTime()) t.setUTCDate(t.getUTCDate()+1); publishAt=t.toISOString(); }
+return [{ json: Object.assign({}, src, { yt_title:title, yt_description:description, yt_tags:tags, yt_hashtags:hashtagBlock, yt_pin_comment:pinComment, yt_publish_at:publishAt, yt_format:fmt, yt_topic:topic }), binary: $('Compose YT prompt').item.binary }];
