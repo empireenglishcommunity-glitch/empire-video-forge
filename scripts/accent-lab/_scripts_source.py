@@ -1,0 +1,157 @@
+# -*- coding: utf-8 -*-
+"""Accent Lab series scripts (EEC). Hook-first, Egyptian Arabic, brand voice.
+Each episode: title, hook, problem, fix (with a physical technique), drill, CTA,
+on-screen text cues, production notes, and a suggested YouTube title."""
+
+SERIES = "Accent Lab · مختبر النطق"
+BRAND = "Empire English Community (EEC)"
+
+EPISODES = [
+    {
+        "num": 1,
+        "topic": "P vs B",
+        "title_ar": "الحلقة ١: حرف P — بتقول Bebsi ولا Pepsi؟",
+        "yt_title": "بتقول Bebsi ولا Pepsi؟ 🥤 سر حرف P",
+        "hook": "لو بتقول «بيبسي».. إنت بتتكلم عربي مش إنجليزي! 🥤",
+        "hook_en": "(If you say \"Bebsi\" — you're speaking Arabic, not English!)",
+        "problem": [
+            "في العربي مفيش حرف P خالص — عندنا الباء بس (ب).",
+            "عشان كده مخّك بيحوّل كل P لـ B من غير ما تحس:",
+            "Park بتبقى Bark، وPepsi بتبقى Bebsi، وPencil بتبقى Bencil. 😅",
+        ],
+        "fix": [
+            "الفرق تحسّه بإيدك:",
+            "• الـ B: الحبال الصوتية بتهتز ومفيش هوا بيطلع.",
+            "• الـ P: فيه نفخة هوا صغيرة بتطلع من بقك. 💨",
+            "الإثبات: حط ورقة صغيّرة قدام بقك — قول B الورقة تثبت، قول P الورقة تترمي بالهوا! 📄💨",
+        ],
+        "drill": ["قولها معايا بالنفخة:", "Pepsi … Park … Pencil … People 🔥"],
+        "cta": "قولّي في الكومنتات: كنت بتقول Bebsi ولا Pepsi؟ 👇😂",
+        "onscreen": ["Bebsi ❌  Pepsi ✅", "Park / Bark", "Pepsi / Bebsi", "P = نفخة هوا 💨"],
+        "minimal_pairs": "pin/bin · pack/back · cap/cab · rope/robe",
+    },
+    {
+        "num": 2,
+        "topic": "F vs V",
+        "title_ar": "الحلقة ٢: حرف V — «فان» ولا Van؟",
+        "yt_title": "«فان» ولا Van؟ 🚐 سر حرف V",
+        "hook": "لو بتقول «فان» بدل Van.. إنت مش لوحدك — بس النهاردة هنصلّحها! 🚐",
+        "hook_en": "(If you say \"fan\" instead of \"van\" — we're fixing it today!)",
+        "problem": [
+            "العربي فيه فاء (ف) بس مفيهوش V.",
+            "فبنحوّل كل V لـ F من غير ما ناخد بالنا:",
+            "Van تبقى Fan، وSeven تبقى Seffen، وVery تبقى Fery. 😬",
+        ],
+        "fix": [
+            "الحيلة سهلة وبتحسّها في رقبتك:",
+            "• الـ F: بتحط سنانك على شفتك التحتانية وتنفخ — مفيش اهتزاز.",
+            "• الـ V: نفس الوضع بالظبط، بس الحبال الصوتية بتهتز — حط إيدك على رقبتك تحسها. 🔊",
+        ],
+        "drill": ["حط إيدك على رقبتك وقول:", "Van … Very … Seven … Love 🔥"],
+        "cta": "قولّي كلمة فيها V كنت بتغلط فيها 👇",
+        "onscreen": ["Fan ❌  Van ✅", "F = مفيش اهتزاز", "V = اهتزاز في الرقبة 🔊", "سنان + شفة"],
+        "minimal_pairs": "fan/van · fine/vine · few/view · leaf/leave",
+    },
+    {
+        "num": 3,
+        "topic": "TH",
+        "title_ar": "الحلقة ٣: صوت TH — Think مش Sink!",
+        "yt_title": "Think مش Sink! 👅 سر صوت TH",
+        "hook": "لو بتقول «سينك» بدل Think.. لسانك في المكان الغلط! 👅",
+        "hook_en": "(If you say \"sink\" instead of \"think\" — your tongue is in the wrong place!)",
+        "problem": [
+            "صوت TH مالوش مقابل مظبوط في العربي،",
+            "فبنستبدله بـ S أو T أو Z: Think تبقى Sink، وThree تبقى Sree. 😅",
+            "بس الصوت ده بسيط جدًا لما تعرف السر.",
+        ],
+        "fix": [
+            "السر: طرف لسانك بيطلع بين سنانك (مش وراهم).",
+            "• TH بلا صوت (think, three): لسانك بره شوية وتنفخ هوا.",
+            "• TH بصوت (this, that): نفس الوضع بس مع اهتزاز الحبال الصوتية.",
+            "بص في المراية — لو مش شايف طرف لسانك، يبقى غلط! 🪞",
+        ],
+        "drill": ["طلّع لسانك شوية وقول:", "Think … Three … This … That 🔥"],
+        "cta": "قولّي: كنت بتنطق Think إزاي قبل الفيديو ده؟ 👇",
+        "onscreen": ["Sink ❌  Think ✅", "اللسان بين السنان 👅", "بص في المراية 🪞"],
+        "minimal_pairs": "think/sink · three/tree · thin/tin · they/day",
+    },
+    {
+        "num": 4,
+        "topic": "American R",
+        "title_ar": "الحلقة ٤: الـ R الأمريكاني — سر النطق الحقيقي",
+        "yt_title": "سر الـ R الأمريكاني 🇺🇸 (مش الراء العربي!)",
+        "hook": "الـ R الأمريكاني مش الراء بتاعتنا — لو بتلفّها، إنت بتغلط! 🇺🇸",
+        "hook_en": "(The American R is NOT the Arabic \"raa\" — if you roll it, it's wrong!)",
+        "problem": [
+            "في العربي الراء (ر) بترجّرج/بتتلفّ على سقف الحلق.",
+            "الأمريكاني عكس كده تمامًا: لسانك ما بيلمسش أي حاجة!",
+            "عشان كده Car وRed وSorry بتطلع بلكنة عربي واضحة. 🚗",
+        ],
+        "fix": [
+            "السر: اسحب لسانك لورا وشيله لفوق شوية من غير ما يلمس سقف بقك.",
+            "• الشفايف بتتقرّب لبعض شوية (زي شكل الـ W الخفيف).",
+            "• مفيش رجرجة خالص — الصوت جوّه من غير لمس.",
+            "جرّب: قول «errr» وحس إن لسانك واقف في النص من غير لمس. 👅",
+        ],
+        "drill": ["من غير رجرجة، قول:", "Car … Red … Sorry … Girl 🔥"],
+        "cta": "قولّي: أصعب كلمة فيها R بالنسبالك إيه؟ 👇",
+        "onscreen": ["الراء العربي ❌", "R الأمريكاني: اللسان ما بيلمسش ✅", "شفايف زي W خفيفة"],
+        "minimal_pairs": "car · red · sorry · girl · world · four",
+    },
+    {
+        "num": 5,
+        "topic": "Consonant clusters",
+        "title_ar": "الحلقة ٥: ليه بتقول iSchool وiStreet؟",
+        "yt_title": "بتقول iSchool ولا School؟ 🏫 سر الحروف الساكنة",
+        "hook": "لو بتقول «إسكول» بدل School.. إنت بتزوّد حرف مش موجود! 🏫",
+        "hook_en": "(If you say \"ischool\" instead of \"school\" — you're adding a sound that isn't there!)",
+        "problem": [
+            "العربي مبيبدأش كلمة بساكنين ورا بعض،",
+            "فمخّك بيزوّد صوت «إ» قبلها عشان يسهّلها:",
+            "School تبقى iSchool، وStreet تبقى iStreet، وSpeak تبقى iSpeak. 😅",
+        ],
+        "fix": [
+            "السر: ابدأ الكلمة بالصوتين ملزوقين من غير أي «إ» قبلهم.",
+            "• قول الـ S قصيّرة جدًا وعدّي على اللي بعدها على طول.",
+            "• جرّب تقولها بسرعة: s-kool مش i-skool.",
+            "ابدأ بطيء وزوّد السرعة بالتكرار. ⏱️",
+        ],
+        "drill": ["من غير «إ» في الأول:", "School … Street … Speak … Stop 🔥"],
+        "cta": "قولّي كلمة كنت بتزوّد فيها «إ» في الأول 👇",
+        "onscreen": ["iSchool ❌  School ✅", "مفيش «إ» في الأول", "s-kool مش i-skool"],
+        "minimal_pairs": "school · street · speak · stop · spring · student",
+    },
+    {
+        "num": 6,
+        "topic": "Short vs long vowels",
+        "title_ar": "الحلقة ٦: Ship ولا Sheep؟ 🚢🐑",
+        "yt_title": "Ship ولا Sheep؟ 🚢🐑 الفرق اللي بيغيّر المعنى",
+        "hook": "كلمة واحدة غلط ممكن تخلّيك تقول «خروف» وإنت قصدك «مركب»! 🚢🐑",
+        "hook_en": "(One wrong vowel turns \"ship\" into \"sheep\"!)",
+        "problem": [
+            "في الإنجليزي فيه فرق بين حرف علة قصير وطويل:",
+            "• Ship (قصيرة /ɪ/) — Sheep (طويلة /iː/).",
+            "لو نطقتهم زي بعض، المعنى بيتغيّر تمامًا! 😅",
+        ],
+        "fix": [
+            "السر في طول الصوت وشكل بقك:",
+            "• القصيرة /ɪ/: بق مرتخي، صوت سريع — ship, bit, live.",
+            "• الطويلة /iː/: بق مبتسم شوية، صوت أطول — sheep, beat, leave.",
+            "ابتسم وإنت بتقول الطويلة — هتفرق معاك. 😁",
+        ],
+        "drill": ["فرّق بينهم:", "Ship / Sheep … Bit / Beat … Live / Leave 🔥"],
+        "cta": "قولّي: قدرت تسمع الفرق؟ اكتب Ship ولا Sheep 👇",
+        "onscreen": ["Ship 🚢 ≠ Sheep 🐑", "قصيرة: بق مرتخي", "طويلة: ابتسم 😁"],
+        "minimal_pairs": "ship/sheep · bit/beat · live/leave · fit/feet",
+    },
+]
+
+PROD_NOTES = [
+    "أول ٣ ثواني هي كل حاجة: افتح على الـ Hook فورًا — من غير مقدمة أو لوجو في البداية.",
+    "خلي البراند (اللوجو + اسم القناة) في الآخر مش في الأول — عشان ما يكسرش الـ retention.",
+    "الطول المثالي: ٤٥–٦٠ ثانية، بدون أي وقت ميت.",
+    "اعرض التقنية الجسدية (الورقة/المراية/الإيد على الرقبة) قريب من الكاميرا — دي اللحظة اللي بتتشير.",
+    "احرق الكابشن العربي (أغلب الناس بتتفرّج من غير صوت).",
+    "اقفل بجملة تخلي الناس تكمّل السلسلة: «تابع الحلقة الجاية».",
+    "لما ترفع الفيديو على الدرايف، الـ pipeline هيعمل العنوان والوصف والهاشتاجات والكومنت تلقائيًا — بس تقدر تستخدم العنوان المقترح لكل حلقة.",
+]
