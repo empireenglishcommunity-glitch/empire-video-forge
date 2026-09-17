@@ -5,30 +5,56 @@
 > on ONE real clip via the Kaggle bridge before moving on. Requirement refs in
 > brackets. Ship each phase as its own PR with a test artifact.
 >
-> **Build status:** NOT STARTED — spec awaiting owner sign-off.
+> **Build status:** Phase 0 signed off (2026-09-16). Executing Phase 1.
+>
+> **Owner decisions (Phase 0.1, locked):**
+> - Music: **rotate a few tracks per topic** (variety). [R5.3]
+> - Long-form captions: **soft CC by default**, burned-in as per-video opt-in. [R3.2]
+> - Intro/outro: **animated logo sting** (2–3s, gold-on-black; logo's built-in
+>   equalizer bars pulse). [R3.3, R6.1]
+> - **Input policy: owner sends TRULY RAW clips** — no captions/overlays/Telegram
+>   tags baked into the picture — so the pipeline can add professional karaoke
+>   captions cleanly. (A semi-edited clip with burned-in text was seen 2026-09;
+>   raw is required for Phase 3 to work.) [R4.3]
+> - Format-agnostic: any orientation accepted (see R1.0). [R1.0]
 
 ---
 
 ## Phase 0 — Foundations & sign-off gate
 
-- [ ] **0.1 Approve spec.** Owner reviews requirements/design; confirms the 3
-  open decisions (music variety depth; long-form burned vs soft CC; intro style).
+- [x] **0.1 Approve spec.** Owner signed off; 3 decisions locked (see header):
+  music=rotate per topic; long-form=soft CC default (+opt-in burn); intro=animated sting.
 - [ ] **0.2 Confirm recording format is landscape 16:9.** [C4, R1.1, R3.1]
+  - _Pending: owner to confirm future recordings are shot landscape._
 - [ ] **0.3 Fetch + commit the channel logo** (from YouTube profile) into
   `assets/brand/` for intro/outro + thumbnails. [R6.1]
 
 ## Phase 1 — Shared pre-pass (helps BOTH tracks) ⭐ highest impact
 
-- [ ] **1.1 Silence / dead-air removal.** [R2.2, R2.4]
-  - Add `auto-editor` install + a pre-pass step producing `master_clean.mp4`.
-  - Configurable gap threshold (default 0.5s) + speech margin; re-probe duration.
-  - _Test: one clip; verify pacing tighter, audio in sync, no clipped words._
+- [x] **1.0 Format-agnostic orientation detection.** [R1.0, R1.1]
+  - `kaggle/editing/orientation.py` auto-detects landscape/vertical/square from
+    dims and returns the track plan (no manual flag). Owner sends ANY video.
+  - _✅ Verified on owner's raw clip: correctly detected vertical (0.562) →
+    plan: shorts native 9:16 + optional blurred-fill 16:9 long-form._
+
+- [x] **1.1 Silence / dead-air removal.** [R2.2, R2.4] — DONE, validated on real EEC content
+  - Implemented in `kaggle/editing/silence_removal.py` using **pure ffmpeg**
+    (`silencedetect` + trim/concat). NOTE: `auto-editor` rejected — its binary
+    needs GLIBC 2.38 which the Kaggle image lacks (confirmed on box 2026-09).
+  - Configurable noise floor (-30dB), min-silence (0.6s), margin (0.15s).
+  - _✅ Verified on the owner's RAW clip (english-pronunciation-tip): 41.5s → 37.1s,
+    removed 4.5s (10.7%) of dead air; output 1080×1920 preserved, AAC audio intact,
+    in sync. Fail-soft returns original on any error._
 - [ ] **1.2 Light warm color grade.** [R2.3]
   - Single reusable ffmpeg filter; apply in pre-pass.
   - _Test: before/after frames pulled via bridge; confirm subtle, not oversaturated._
-- [ ] **1.3 Persist word-level timings once (`words.json`).** [R2.1]
-  - Ensure Whisper word timestamps are saved for reuse by CC + karaoke.
-  - _Test: words.json has {word,start,end}; counts match transcript._
+- [x] **1.3 Persist word-level timings once (`words.json`).** [R2.1] — DONE, validated
+  - `kaggle/editing/transcribe_words.py` runs faster-whisper large-v3 (GPU) →
+    `words.json` [{word,start,end}] + `segments.json` for SRT. One source of
+    timing for karaoke (Shorts) + soft CC (long-form). Fail-soft to empty lists.
+  - _✅ On the owner's raw clip: 85 words + 21 segments, Arabic, cuda; timings
+    accurate (e.g. النظام 0.46–1.14). NOTE: box needs `pip install faster-whisper`
+    if the OpenShorts setup cells weren't run this session._
 
 ## Phase 2 — Long-form track (unlocks the thumbnail payoff)
 
