@@ -12,9 +12,17 @@ const meta = src.metadata || {};
 // We still generate + attempt the branded thumbnail (it shows in search/channel/
 // playlists and will apply automatically once the channel reaches YPP). Short by
 // default; treat >3min (or explicit long) as regular long-form.
+// PRIMARY signal (EEC rule): orientation from the probe service — vertical => Short, horizontal => Long.
+// Fail-soft to sidecar meta, then default Short.
 let isShort = true;
-if (meta.is_long === true || String(meta.format||'').toLowerCase()==='long' || String(meta.format||'').toLowerCase()==='longform') isShort = false;
-else if (meta.duration !== undefined && meta.duration !== null) { const d = Number(meta.duration); if (!isNaN(d) && d > 180) isShort = false; }
+let orient = '';
+try { const pr = $('Probe orientation').item.json; if (pr && pr.ok === true && pr.orientation) orient = String(pr.orientation); } catch(e) { orient = ''; }
+if (orient === 'horizontal') isShort = false;
+else if (orient === 'vertical' || orient === 'square') isShort = true;
+else {
+  if (meta.is_long === true || String(meta.format||'').toLowerCase()==='long' || String(meta.format||'').toLowerCase()==='longform') isShort = false;
+  else if (meta.duration !== undefined && meta.duration !== null) { const d = Number(meta.duration); if (!isNaN(d) && d > 180) isShort = false; }
+}
 const fmt = isShort ? 'short' : 'long';
 let title = clean(g.title || (meta.video_title_for_youtube_short || meta.title) || 'تعلّم الإنجليزي بثقة مع Empire English 🚀');
 // 2026 best practice: Shorts titles are truncated on mobile ~40-50 chars -> keep tight, then append #Shorts.
