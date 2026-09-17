@@ -12,10 +12,18 @@ try {
 const clip = (meta.title || meta.caption || meta.hook || '').toString().trim();
 let hint = (base.file_name || '').replace(/\.[^.]+$/, '').replace(/^(subtitled_|hooked_|hook_|recut_|clip_)+/gi,'').replace(/[_\-]+/g,' ').trim();
 const context = clip || hint || 'English learning tip';
-// Detect format the same way Build YT metadata does, so the prompt matches the destination.
+// PRIMARY signal (EEC rule): orientation from the probe service — vertical => Short, horizontal => Long.
+// Fail-soft: if the probe is unavailable/errored, fall back to sidecar meta, then default Short.
 let isShort = true;
-if (meta.is_long === true || String(meta.format||'').toLowerCase()==='long' || String(meta.format||'').toLowerCase()==='longform') isShort = false;
-else if (meta.duration !== undefined && meta.duration !== null) { const d = Number(meta.duration); if (!isNaN(d) && d > 180) isShort = false; }
+let orient = '';
+try { const pr = $('Probe orientation').item.json; if (pr && pr.ok === true && pr.orientation) orient = String(pr.orientation); } catch(e) { orient = ''; }
+if (orient === 'horizontal') isShort = false;
+else if (orient === 'vertical' || orient === 'square') isShort = true;
+else {
+  // fallback: explicit meta flags, then duration
+  if (meta.is_long === true || String(meta.format||'').toLowerCase()==='long' || String(meta.format||'').toLowerCase()==='longform') isShort = false;
+  else if (meta.duration !== undefined && meta.duration !== null) { const d = Number(meta.duration); if (!isNaN(d) && d > 180) isShort = false; }
+}
 
 const common = [
 'You write YouTube metadata for "Empire English Community" (EEC), an English TRANSFORMATION SYSTEM for Arabic speakers (Egypt/MENA). Brand voice: confident, warm, honest coach. NEVER use "hack", "secret", "fluent in X days", or "guaranteed". Prefer "system", "step by step", "real". Content language: Egyptian Arabic with the English term included.',
