@@ -141,32 +141,32 @@ CSS = """
 :root{ --ink:#1a1c22; --ink-soft:#4a4e5a; --gold:#c69d34; --gold-deep:#a6801f;
   --bg:#faf9f6; --card:#fff; --line:#e7e3d8; --charcoal:#16171c; --en:#6b7280; }
 html,body{ background:var(--bg); color:var(--ink); font-family:'Cairo',sans-serif; -webkit-font-smoothing:antialiased; }
-.page{ width:210mm; min-height:297mm; padding:0 0 24mm; position:relative; page-break-after:always; }
+.page{ width:210mm; min-height:297mm; padding:0 0 14mm; position:relative; page-break-after:always; display:flex; flex-direction:column; }
 .page:last-child{ page-break-after:auto; }
 .band{ background:var(--charcoal); color:#fff; padding:20px 24mm 18px; display:flex; align-items:center; justify-content:space-between; }
 .band .series{ font-weight:900; font-size:19px; color:var(--gold); }
 .band .ep{ direction:ltr; font-family:'Inter',sans-serif; font-size:13px; color:#c9c9d2; font-weight:600; }
 .goldrule{ height:4px; background:linear-gradient(90deg,var(--gold),var(--gold-deep)); }
-.wrap{ padding:22px 24mm 0; }
-.h1{ font-size:29px; font-weight:900; line-height:1.4; }
+.wrap{ padding:12px 24mm 0; flex:1; }
+.h1{ font-size:26px; font-weight:900; line-height:1.35; }
 .meta{ direction:ltr; text-align:left; font-family:'Inter',sans-serif; font-size:12px; color:var(--en); margin-top:8px; }
 .meta b{ color:var(--ink-soft); font-weight:600; }
 .yt{ font-size:15px; color:var(--ink-soft); margin-top:3px; font-weight:600; }
 .pill{ display:inline-block; direction:ltr; font-family:'Inter',sans-serif; font-size:11px; font-weight:700;
-  color:var(--gold-deep); border:1.5px solid var(--gold); border-radius:20px; padding:3px 12px; margin-top:10px; }
-.card{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:15px 20px; margin-top:14px; }
+  color:var(--gold-deep); border:1.5px solid var(--gold); border-radius:20px; padding:3px 12px; margin-top:8px; }
+.card{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:9px 18px; margin-top:7px; }
 .card.hook{ border-color:var(--gold); background:linear-gradient(180deg,#fffdf5,#fff); }
-.sec-h{ display:flex; align-items:center; gap:10px; margin-bottom:9px; }
+.sec-h{ display:flex; align-items:center; gap:10px; margin-bottom:6px; }
 .sec-h .dot{ width:9px; height:9px; border-radius:50%; background:var(--gold); flex:none; }
 .sec-h .t{ font-size:16px; font-weight:900; }
 .sec-h .time{ font-family:'Cairo','Inter',sans-serif; font-size:11px; font-weight:700; color:#fff;
   background:var(--gold-deep); border-radius:6px; padding:2px 9px; }
-.line{ font-size:17px; line-height:1.95; }
-.line.big{ font-size:22px; font-weight:700; line-height:1.6; }
+.line{ font-size:15.5px; line-height:1.65; }
+.line.big{ font-size:20px; font-weight:700; line-height:1.5; }
 .en{ direction:ltr; text-align:left; font-family:'Inter','Cairo',sans-serif; font-size:12.5px; color:var(--en); margin-top:8px; font-style:italic; }
 ul.clean{ list-style:none; }
-ul.clean li{ font-size:16px; line-height:2; padding-right:20px; position:relative; }
-ul.clean li::before{ content:""; position:absolute; right:2px; top:12px; width:7px; height:7px; background:var(--gold); border-radius:2px; }
+ul.clean li{ font-size:15px; line-height:1.55; padding-right:20px; position:relative; }
+ul.clean li::before{ content:""; position:absolute; right:2px; top:9px; width:6px; height:6px; background:var(--gold); border-radius:2px; }
 .chips{ direction:ltr; display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
 .chip{ font-family:'Inter',sans-serif; font-weight:700; font-size:14px; background:#f3efe2; color:var(--ink);
   border:1px solid var(--line); border-radius:8px; padding:5px 12px; }
@@ -179,8 +179,7 @@ ul.clean li::before{ content:""; position:absolute; right:2px; top:12px; width:7
 .cue{ direction:ltr; font-family:'Inter','Cairo',sans-serif; font-size:13px; font-weight:600; background:var(--charcoal);
   color:#fff; border-radius:8px; padding:6px 12px; }
 .cue .x{ color:#ff8a7a; text-decoration:line-through; } .cue .g{ color:var(--gold); }
-.footer{ position:absolute; bottom:12mm; left:24mm; right:24mm; display:flex; justify-content:space-between;
-  align-items:center; border-top:1px solid var(--line); padding-top:8px; }
+.footer{ margin:10px 24mm 0; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--line); padding-top:8px; }
 .footer .brand{ direction:ltr; font-family:'Inter',sans-serif; font-size:11px; color:var(--en); font-weight:600; }
 .footer .tag{ font-family:'Inter',sans-serif; font-size:11.5px; color:var(--gold-deep); font-weight:700; }
 /* cover */
