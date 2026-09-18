@@ -56,7 +56,9 @@
 
 ## Integration into the pipeline (task 6 -> spec)
 - `voices/refs/{macal,nour,guest_m1,guest_f1,...}.wav` — locked reference clips.
-- `synth_english.py` (Kaggle/GPU batch): script.json + refs -> per-line WAV via
-  Chatterbox voice cloning.
-- `synth_coach.py` (server): Coach lines -> Gemini Kore.
-- Speaker->voice map lives in `season.json` so casting is data-driven + consistent.
+- `kaggle/synth_episode_en.py` (Kaggle/GPU batch): script.json + refs -> per-line
+  WAV via Chatterbox voice cloning.
+- `kaggle/synth_episode_ar.py` (Kaggle/GPU batch): Arabic lines -> VoiceTut through
+  the shared Egyptian lexicon (Coach = "Sayed"). (Replaced the earlier Gemini-Kore
+  coach step.)
+- Speaker->voice map lives in `cast.json` so casting is data-driven + consistent.

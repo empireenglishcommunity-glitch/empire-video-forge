@@ -1,39 +1,39 @@
-# Chatterbox Voice Test on Kaggle (free GPU)
+# Two Worlds — Kaggle synth notebooks (free GPU)
 
-Goal: hear **Chatterbox** — the open model that beats ElevenLabs in ~65% of blind
-tests — say our real "Two Worlds" lines in a **natural native-American** voice, using
-Kaggle's **free GPU**. This is the quality test before we lock the English voice engine.
+These are the **production** synthesizers. The cast + voice engines are LOCKED:
+- **Arabic** → VoiceTut (Egyptian voices, Coach = "Sayed") through the shared
+  Egyptian pronunciation lexicon.
+- **English** → Chatterbox (each character's locked ~10s reference clip).
 
-## Steps (≈10 minutes)
-1. Go to **kaggle.com** → sign in (free account) → **Create → New Notebook**.
-2. In the right-hand panel:
-   - **Accelerator** → **GPU T4 x2** (or any GPU option).
-   - **Internet** → **ON** (required to install + download the model).
-3. Delete the default cell. Paste the **entire** contents of
-   `chatterbox_voice_test.py` into one cell.
-4. Click **Run All** (▶▶). First run takes a few minutes (installs + downloads model).
-5. When it prints **DONE**, open the **Output** panel (right side, `/kaggle/working`).
-   You'll see:
-   - `macal_takeA.mp3`, `macal_takeB_energetic.mp3`
-   - `nour_takeA.mp3`, `nour_takeB_warm.mp3`
-   - `sample_paragraph.mp3`
-6. **Download those .mp3 files** and send them back (or drop them in the Drive folder).
+VoiceTut and Chatterbox clash on `transformers`/`torch` in one kernel, so the two
+passes run as **separate notebooks**. Both write per-line WAVs + update the shared
+`manifest.json` (the single source of truth), which the server assembler stitches.
 
-## What we're judging
-- Does it sound **genuinely native-American and natural** (not robotic like Kokoro/Edge)?
-- Which take/delivery fits **Macal** and **Nour**?
+## Files here
+| File | Role |
+|------|------|
+| `synth_episode_ar.py` | Arabic pass — VoiceTut + shared lexicon, manifest-driven. |
+| `synth_episode_en.py` | English pass — Chatterbox + character refs, manifest-driven. |
+| `synth_arabic_qa.py`  | Arabic synth + ASR-QA that auto-flags words to add to the lexicon. |
+| `manifest_lib.py`     | Shared source of truth (line order, per-line status, text hash). Fetched at runtime by the notebooks; a byte-identical copy lives in `pipeline/` for the server. |
 
-## If quality is great (expected)
-We then design the **sustainable architecture** so you don't babysit Kaggle:
-- Generate a **batch** of episodes' English audio in one GPU session, push to Drive.
-- The server pipeline picks up ready audio → assembles video → auto-publishes.
-- Arabic Coach stays on **Gemini (Kore)**. This is the split-engine plan.
+## How to run (per pass)
+1. **kaggle.com** → New Notebook → **Accelerator = GPU T4**, **Internet = ON**.
+2. Paste the entire contents of `synth_episode_ar.py` (or `_en.py`) into one cell.
+3. **Run All.** First run installs + downloads the model (a few minutes).
+   The notebook fetches `script.json`, `cast.json`, `egyptian_lexicon.json`, the
+   voice-refs, and `manifest_lib.py` from this repo
+   (branch `podcast-v2-review-and-publish`) automatically.
+4. When it finishes, download the `epNN/` folder from `/kaggle/working` (per-line
+   WAVs + `manifest.<pass>.json`) — or push it to Drive `raw-audio`.
+5. Run the other pass the same way. The server merges both manifests and assembles
+   `epNN_audio_plain.m4a` via `pipeline/assemble_audio.py --plain`.
 
-## Optional next step: exact voice cloning
-Chatterbox can lock an **exact** voice per character from a ~10s reference clip
-(`audio_prompt_path=...`). If you want specific American voices for Macal/Nour/guests,
-we provide reference clips and get perfectly consistent voices across every episode.
+## Fixing a mispronounced Arabic word (permanent)
+Add the word (fully voweled Egyptian form) to `pipeline/egyptian_lexicon.json`, then
+re-run `synth_episode_ar.py` for the affected line(s). One fix → every cast voice
+says it right, forever. `synth_arabic_qa.py` auto-flags candidate words during synth.
 
-> Troubleshooting: if `chatterbox-tts` install errors on a dependency, add a cell:
-> `!pip install -q chatterbox-tts --no-deps` then `!pip install -q librosa transformers accelerate safetensors`.
-> If GPU shows as unavailable, re-check Accelerator = GPU in Settings and restart.
+> Troubleshooting: if an install errors on a dependency, retry the pip line with
+> `--no-deps` and then install the missing libs explicitly. If GPU shows
+> unavailable, re-check Accelerator = GPU in Settings and restart the runtime.

@@ -33,7 +33,7 @@ import soundfile as sf
 
 EPISODE = 1
 PASS = "ar"   # ARABIC-ONLY notebook (VoiceTut) — avoids Chatterbox dep clash
-BRANCH = "podcast-v2-arabic-test"
+BRANCH = "podcast-v2-review-and-publish"
 RAW = f"https://raw.githubusercontent.com/empireenglishcommunity-glitch/empire-video-forge/{BRANCH}/.kiro/specs/eec-podcast-automation/"
 
 WORK = f"/kaggle/working/ep{EPISODE:02d}"

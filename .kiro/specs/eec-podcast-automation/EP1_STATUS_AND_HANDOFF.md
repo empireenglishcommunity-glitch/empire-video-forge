@@ -1,86 +1,87 @@
 # Two Worlds — Ep1 Status & Session Handoff
 
 > Checkpoint written to survive a session switch. **Focus: finish Episode 1
-> (fix Arabic pronunciation → owner approves → post), THEN Ep2.** Nothing about
-> Ep2 should proceed until Ep1 is posted.
+> (owner reviews the assembled audio → fixes as needed → post), THEN Ep2.**
+> Nothing about Ep2 proceeds until Ep1 is posted.
 
-## THE ONE OPEN PROBLEM
-Owner listened to the assembled Ep1 plain audio (40.6 min) and heard **Arabic
-pronunciation mistakes**. We designed + built a review/fix tool to solve this,
-but **have NOT actually used it to fix Ep1 yet.** Ep1 audio still has the errors.
+## LOCKED-DOWN PROGRESS (the real, proven state)
+- **Ep1 was generated with the REAL voice models** — Arabic = VoiceTut
+  (Coach = "Sayed") through the shared Egyptian lexicon; English = Chatterbox
+  (cloned character refs). This is done, not stubbed.
+- **The episode is assembled**: `ep01_audio_plain.m4a` (40.6 min, 276 lines) is
+  built and lives on the server.
+- **Models are locked.** Auditions are complete and the cast is chosen; the
+  audition/experiment notebooks have been removed from the repo (they served
+  their purpose). The production synth path is the only thing that remains.
+- **The Human-in-the-Loop review tool has been RETIRED.** The owner reviews the
+  assembled audio directly (not through the Streamlit/Colab regenerate loop),
+  so `streamlit_review.py`, `review_app_launcher.py`, `regen_engine.py`, and
+  `REVIEW_WORKFLOW.md` were deleted. If a specific clip needs a fix, re-run the
+  production synth notebook for that line, or add the word to the shared lexicon
+  and re-synth.
 
-## WHAT IS PROVEN vs. NOT PROVEN (be honest with the owner)
-| Component | Built | Proven with REAL model? |
-|-----------|-------|-------------------------|
-| `kaggle/manifest_lib.py` — clip list / source of truth | ✅ | ✅ real Ep1 (276/276) |
-| `kaggle/regen_engine.py` — regenerate ONE clip on GPU | ✅ | ❌ only with a FAKE/stub TTS |
-| `kaggle/streamlit_review.py` — review dashboard | ✅ | ❌ never launched once |
-| `kaggle/review_app_launcher.py` — Colab runner | ✅ | ❌ never run |
-| `pipeline/assemble_audio.py` — manifest-driven assembly | ✅ | ✅ Ep1 assembled 40.6min |
+## THE ONE OPEN ITEM
+Owner is **reviewing the assembled Ep1 audio** for Arabic pronunciation. Any word
+that's wrong gets fixed the permanent way — add it to
+`pipeline/egyptian_lexicon.json` (the shared pronunciation brain, one fix → every
+cast voice says it right forever) — then re-synth the affected lines with the
+production notebook and re-assemble. Prefer the lexicon fix over a one-off.
 
-**=> The review tool's plumbing is proven (edit→stale→re-stitch), but
-"regenerate with real VoiceTut/Chatterbox on a GPU" has NEVER been executed.
-It needs ONE real test run before we trust it for the whole Ep1 review.**
+## PRODUCTION PIPELINE (what actually makes an episode)
+| File | Role | Proven with REAL model? |
+|------|------|-------------------------|
+| `kaggle/synth_episode_ar.py` | Arabic synth pass (VoiceTut + lexicon), manifest-driven | ✅ Ep1 |
+| `kaggle/synth_episode_en.py` | English synth pass (Chatterbox + refs), manifest-driven | ✅ Ep1 |
+| `kaggle/synth_arabic_qa.py` | Arabic synth + ASR-QA that flags words for the lexicon | ✅ |
+| `kaggle/manifest_lib.py` | Shared source of truth (line order, status, text hash) | ✅ Ep1 (276/276) |
+| `pipeline/assemble_audio.py` | Manifest-driven ffmpeg assembly | ✅ Ep1 (40.6 min) |
+| `pipeline/manifest_lib.py` | Server-side copy of the manifest lib (byte-identical) | ✅ |
 
-## HOW THE REVIEW TOOL WORKS (option B — runs in Colab next to the GPU)
-1. Owner opens a Colab notebook (free GPU), runs 3 cells from
-   `kaggle/review_app_launcher.py` (install → fetch code+data+unpack zips+merge
-   manifests → launch Streamlit + public URL).
-2. Owner uploads the two Ep1 voice zips (or mounts Drive `raw-audio`).
-3. In the browser dashboard: listen to each clip (grouped by section) → hear a
-   wrong Arabic word → edit that line's text → clip turns 🟡 "needs regen" →
-   click **Regenerate this clip** (GPU, seconds) → click **Re-assemble episode**
-   (ffmpeg) → download the fixed `ep01_audio_plain.m4a`.
+> Note: `manifest_lib.py` intentionally exists in BOTH `kaggle/` and `pipeline/`.
+> The Kaggle synth notebooks fetch the `kaggle/` copy over raw GitHub at runtime;
+> the server assembler imports the `pipeline/` copy locally. They are identical —
+> keep them in sync if either is edited.
 
-**Two fix strategies (BOTH matter):**
-- One clip: edit the line's text in the app → regenerate just it.
-- Permanent for ALL cast forever: add the word to
-  `pipeline/egyptian_lexicon.json` (the shared pronunciation brain). This is what
-  the owner asked for originally. Prefer this for any word that could recur.
-
-## THE PLAN TO FINISH EP1 (agreed; nothing runs without owner's OK)
-- **Step 1 — Prove the tool.** Launch the review app in Colab, load Ep1, and
-  regenerate ONE clip for real. If it comes back clean → tool is trusted.
-- **Step 2 — Owner reviews Ep1**, marks every mispronounced Arabic word.
-- **Step 3 — Fix them.** Per word: "one clip" vs "add to lexicon" (prefer lexicon
-  for recurring words). Regenerate affected clips.
-- **Step 4 — Re-assemble → owner approves the final audio.**
-- **Step 5 — Post Ep1** (owner adds music/video/cover, then publish via the
+## THE PLAN TO FINISH EP1
+- **Step 1 — Owner reviews Ep1** (`ep01_audio_plain.m4a`), notes any mispronounced
+  Arabic words.
+- **Step 2 — Fix them permanently.** Add each word to `pipeline/egyptian_lexicon.json`,
+  re-run the Arabic synth notebook for the affected lines, re-assemble.
+- **Step 3 — Owner approves the final audio.**
+- **Step 4 — Post Ep1** (owner adds music/video/cover, then publish via the
   YouTube forwarder + RSS feed). THEN move to Ep2.
-
-Open questions for Step 1: owner has a Google account for Colab? Owner remembers
-some wrong words already, or catch them fresh in the app?
 
 ## WHERE EVERYTHING LIVES
 - **Repo**: `/projects/sandbox/empire-video-forge`
 - **Branch**: `podcast-v2-review-and-publish` → **PR #32** (open, NOT merged).
 - **Spec dir**: `.kiro/specs/eec-podcast-automation/`
-  - `kaggle/` — synth notebooks + review tool (manifest_lib, regen_engine,
-    streamlit_review, review_app_launcher, REVIEW_WORKFLOW.md)
+  - `kaggle/` — production synth notebooks (`synth_episode_ar`, `synth_episode_en`,
+    `synth_arabic_qa`), `manifest_lib.py`, `README.md`
   - `pipeline/` — server scripts (assemble_audio, run_podcast, publish_*,
-    egyptian_lexicon.json, cast.json, PODCAST_DISTRIBUTION.md, SECURITY_ROTATION.md)
+    egyptian_lexicon.json, cast.json, manifest_lib.py, PODCAST_DISTRIBUTION.md,
+    SECURITY_ROTATION.md)
   - `EP1_STATUS_AND_HANDOFF.md` — THIS FILE
 - **Server**: `ssh eec-editor` (⚠️ fail2ban bans rapid reconnects — use SINGLE
   sessions, wait ~45s after a refusal). Podcast home `/opt/eec-podcast`.
   - `episodes/ep01/synth/` — the 276 line WAVs + manifest.json + manifest.ar/en.json
   - `episodes/ep01/script.json` — the 276-line master (title "The Arrival")
-  - `episodes/ep01/ep01_audio_plain.m4a` — assembled 40.6min (HAS the pronunciation errors)
+  - `episodes/ep01/ep01_audio_plain.m4a` — assembled 40.6 min
   - `.env` (chmod 600) — EEC_LLM_* (OpenRouter, Gemini-free)
 - **Drive raw-audio** (`1GLKvNq3LAKZ6BaACIMvYeUSJomFErav0`): ep01_arabic.zip,
   ep01_english.zip, EEC_TwoWorlds_Ep01_The-Arrival_plain.m4a
-- **Voice engine**: Arabic=VoiceTut (Coach=Sayed), English=Chatterbox. Both on
-  Kaggle GPU (clash in one kernel → two notebooks). Server has NO GPU — never
-  synth on server.
+- **Voice engine**: Arabic = VoiceTut (Coach = Sayed), English = Chatterbox. Both
+  on Kaggle GPU (they clash in one kernel → two notebooks). Server has NO GPU —
+  never synth on the server.
 
-## ⚠️ PREMATURE / TO DECIDE
+## ⚠️ PREMATURE / TO DECIDE (do NOT act until Ep1 is posted)
 - **Ep2 script was generated prematurely** (`episodes/ep02/script.json` exists;
-  `season.json` advanced to `current_episode: 3`). This jumped ahead — Ep1 isn't
-  done. DECISION NEEDED: set aside, or roll `season.json` back to 2 and remove
-  ep02 until Ep1 is posted. (Do NOT act on Ep2 until Ep1 is posted.)
+  `season.json` advanced to `current_episode: 3`). This jumped ahead. DECISION
+  NEEDED once Ep1 is posted: leave it, or roll `season.json` back to 2 and remove
+  ep02 until Ep1 ships.
 
 ## SANDBOX GOTCHAS
 - No ffmpeg / no soundfile locally in the sandbox — heavy audio ops run on the
-  server (ffmpeg 8.0.1) or in Colab.
+  server (ffmpeg 8.0.1) or in Colab/Kaggle.
 - `str_replace`/file tools operate on the LOCAL repo, NOT the server — push edits
   to the server with `cat file | ssh eec-editor 'cat > /path'`.
 - 12 live containers on the server — never disrupt them.
