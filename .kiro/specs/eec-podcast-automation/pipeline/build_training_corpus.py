@@ -115,19 +115,39 @@ def main():
     if not api_key:
         print("ERROR: set GEMINI_API_KEY", file=sys.stderr); sys.exit(2)
 
+    # RESUMABLE: load anything already written so a re-run continues, never restarts.
     seen = set()
     rows = []
+    if os.path.exists(args.out):
+        for line in open(args.out, encoding="utf-8"):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except Exception:
+                continue
+            rows.append(r)
+            seen.add(re.sub(r"\s+", "", r.get("text", "")))
+        if rows:
+            print(f"  resuming: {len(rows)} lines already on disk")
+
+    # append incrementally so free-tier quota interruptions never lose progress
+    out_f = open(args.out, "a", encoding="utf-8")
     theme_i = 0
-    while len(rows) < args.count:
+    stalls = 0
+    while len(rows) < args.count and stalls < 12:
         theme = THEMES[theme_i % len(THEMES)]
         theme_i += 1
         prompt = build_prompt(args.per_call, theme, STYLES)
         try:
             items = extract_json(call_gemini(prompt, api_key))
         except Exception as e:
-            print(f"  gen failed ({str(e)[:80]}), retrying...", file=sys.stderr)
-            time.sleep(3)
+            print(f"  gen failed ({str(e)[:80]}), backing off...", file=sys.stderr)
+            stalls += 1
+            time.sleep(min(5 * stalls, 30))
             continue
+        added = 0
         for it in items:
             t = (it.get("text") or "").strip()
             style = (it.get("style") or "warm").strip()
@@ -135,21 +155,21 @@ def main():
             if not valid_line(t) or key in seen:
                 continue
             seen.add(key)
-            rows.append({
-                "id": f"line{len(rows)+1:04d}",
-                "text": t, "style": style if style in STYLES else "warm",
-                "lang": "ar",
-                "has_codeswitch": bool(LAT.search(t)),
-                "len_words": len(t.split()),
-            })
+            r = {"id": f"line{len(rows)+1:04d}", "text": t,
+                 "style": style if style in STYLES else "warm", "lang": "ar",
+                 "has_codeswitch": bool(LAT.search(t)), "len_words": len(t.split())}
+            rows.append(r)
+            out_f.write(json.dumps(r, ensure_ascii=False) + "\n")
+            out_f.flush()
+            added += 1
             if len(rows) >= args.count:
                 break
-        print(f"  collected {len(rows)}/{args.count} (theme: {theme[:30]})", flush=True)
+        stalls = 0 if added else stalls + 1
+        print(f"  collected {len(rows)}/{args.count} (+{added}, theme: {theme[:28]})", flush=True)
         time.sleep(1)
-
-    with open(args.out, "w", encoding="utf-8") as f:
-        for r in rows:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    out_f.close()
+    if len(rows) < args.count:
+        print(f"  NOTE: stopped at {len(rows)} (quota/stall) — re-run to resume+top-up.")
 
     # quick balance report
     cs = sum(1 for r in rows if r["has_codeswitch"])
