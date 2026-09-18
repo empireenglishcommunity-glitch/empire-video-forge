@@ -40,6 +40,10 @@ try:
     import manifest_lib
 except Exception:
     manifest_lib = None
+try:
+    import structure_check   # LOCKED story/teaching separation gate (series-bible §10)
+except Exception:
+    structure_check = None
 
 SR = 24000  # both engines emit 24kHz mono; keep the whole chain at one rate
 
@@ -249,12 +253,38 @@ def main():
     ap.add_argument("--plain", action="store_true",
                     help="PLAIN mode: dry voices only — no music bed, no intro/outro "
                          "stings. The owner adds their own music/branding downstream.")
+    ap.add_argument("--force", action="store_true",
+                    help="bypass the structure gate (assemble even if the script "
+                         "violates the story/teaching separation rule). Use only for "
+                         "deliberate edge cases.")
     args = ap.parse_args()
 
     ep = args.episode
     ep_dir = args.dir or os.path.join(args.home, "episodes", f"ep{ep:02d}")
     if not os.path.isdir(ep_dir):
         print(f"ERROR: no episode dir {ep_dir}", file=sys.stderr); sys.exit(2)
+
+    # STRUCTURE GATE (series-bible §10): refuse to assemble a script whose story/
+    # teaching separation is broken (Coach lines inside story scenes) — that is the
+    # root cause of "messy" audio. Fail-closed with the exact offending idx so it's a
+    # clear error, never a silently-shipped bad episode. Bypass only with --force.
+    script_path = os.path.join(ep_dir, "script.json")
+    if structure_check is not None and os.path.exists(script_path):
+        try:
+            _script = json.load(open(script_path, encoding="utf-8"))
+            _violations = structure_check.check_script(_script)
+        except Exception as _e:
+            _violations = []
+            print(f"  (structure gate skipped: {str(_e)[:80]})")
+        if _violations:
+            print(structure_check.format_report(_violations), file=sys.stderr)
+            if not args.force:
+                print("ERROR: script violates the LOCKED structure rule "
+                      "(series-bible §10). Fix the section tags / re-order (or pass "
+                      "--force to override). Refusing to assemble a messy episode.",
+                      file=sys.stderr)
+                sys.exit(5)
+            print("  --force: assembling despite structure violations", file=sys.stderr)
 
     # auto-discover branding assets if not passed — SKIPPED entirely in --plain mode
     assets = os.path.join(args.home, "assets")
