@@ -12,13 +12,19 @@
 #
 # Requires: Kaggle GPU = T4, Internet = ON.
 # --------------------------------------------------------------------------
-# CELL 1 (install + restart) — run FIRST, wait for "Kernel Restarting" -> Ok:
-#   !pip install -q chatterbox-tts
+# CELL 1 (install + restart) — run FIRST, wait for "Kernel Restarting" -> Ok.
+# Install the LATEST from source so you get Multilingual V3 (better Arabic).
+# If the git install is slow/flaky, the plain pip line also works (older, but the
+# notebook auto-falls-back and still tests Arabic).
+#   !pip install -q git+https://github.com/resemble-ai/chatterbox.git
 #   !pip uninstall -q -y torchvision
 #   !pip install -q "numpy==1.26.4"
 #   import os; os._exit(0)
 #
-# CELL 2 (this file) — run AFTER the kernel restarts.
+#   # (fallback if the git line fails: !pip install -q chatterbox-tts )
+#
+# CELL 2 (this file) — run AFTER the kernel restarts. The code tries V3 and
+# gracefully falls back to whatever multilingual build is installed.
 # ==========================================================================
 import os, urllib.request
 import torch, soundfile as sf, numpy as np
@@ -29,8 +35,15 @@ print("Device:", device, "| numpy", np.__version__)
 if device != "cuda":
     print("WARNING: enable the T4 GPU for usable speed/quality.")
 
-# --- load the Multilingual V3 model (23 langs incl. Arabic 'ar') ----------
-model = ChatterboxMultilingualTTS.from_pretrained(device=device, t3_model="v3")
+# --- load the Multilingual model (23 langs incl. Arabic 'ar') -------------
+# Newer chatterbox-tts accepts t3_model="v3"; older pip builds don't. Try the
+# V3 arg, fall back to the plain loader so this works on whatever Kaggle installs.
+try:
+    model = ChatterboxMultilingualTTS.from_pretrained(device=device, t3_model="v3")
+    print("loaded Multilingual V3")
+except TypeError:
+    model = ChatterboxMultilingualTTS.from_pretrained(device=device)
+    print("loaded Multilingual (pip default — older than V3, still supports Arabic)")
 print("model sr:", model.sr)
 
 # --- pull the Egyptian-Arabic reference clip from the repo (raw GitHub) ----
