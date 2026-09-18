@@ -171,7 +171,11 @@ def main():
     if len(rows) < args.count:
         print(f"  NOTE: stopped at {len(rows)} (quota/stall) — re-run to resume+top-up.")
 
-    # quick balance report
+    # quick balance report (guard empty)
+    if not rows:
+        print("\nNo lines collected (Gemini quota exhausted?). Re-run later to resume,"
+              " or use the dataset-seeded corpus path.")
+        return
     cs = sum(1 for r in rows if r["has_codeswitch"])
     styles = {}
     for r in rows:
