@@ -26,3 +26,9 @@ the previously-failing words now pronounce correctly, in the good voices.
 - Re-audition the full 17 voices WITH the lexicon -> lock the final cast (Arabic).
 - Build lexicon-aware synth into the pipeline (auto-apply lexicon to every line).
 - Then: English cast (Chatterbox) + the 30-min story generator + produce Ep1.
+
+## CONFIRMED 2026-09-18 ✅
+Owner ran synth_arabic_qa.py — "متنساش" (and the hard words) now pronounce
+correctly across all tested voices. The shared pronunciation brain + auto-QA is
+proven end-to-end. Arabic voice = DONE. No more voice tests. Proceed to production:
+cast lock -> unified synth -> 30-min story generator -> Episode 1.
