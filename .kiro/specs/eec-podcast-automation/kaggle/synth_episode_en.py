@@ -111,10 +111,15 @@ if PASS in ("ar", "both"):
 # ======================= ENGLISH PASS (Chatterbox) =========================
 if PASS in ("en", "both"):
     import torch
+    print("CUDA available:", torch.cuda.is_available(),
+          "| GPU:", (torch.cuda.get_device_name(0) if torch.cuda.is_available() else "NONE — enable T4!"))
+    print("Loading Chatterbox (first load downloads ~GBs, 2-4 min — DO NOT interrupt; "
+          "wait for 'Chatterbox ready')...", flush=True)
     from chatterbox.mtl_tts import ChatterboxMultilingualTTS
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     try: cb = ChatterboxMultilingualTTS.from_pretrained(device=dev, t3_model="v3")
     except TypeError: cb = ChatterboxMultilingualTTS.from_pretrained(device=dev)
+    print("Chatterbox ready ✅", flush=True)
     # fetch english refs
     os.makedirs("/kaggle/refs", exist_ok=True)
     refs = {}
