@@ -78,8 +78,14 @@ flagged = {}
 
 # ======================= ARABIC PASS (VoiceTut) ============================
 if PASS in ("ar", "both"):
+    import torch
+    print("CUDA available:", torch.cuda.is_available(),
+          "| GPU:", (torch.cuda.get_device_name(0) if torch.cuda.is_available() else "NONE — enable T4!"))
+    print("Loading VoiceTut model (first load downloads ~GBs, can take 2-4 min — "
+          "DO NOT interrupt; wait for 'VoiceTut ready')...", flush=True)
     from voicetut_tts import VoiceTutTTS
     vt = VoiceTutTTS.from_pretrained("mohammedaly22/VoiceTut-TTS")
+    print("VoiceTut ready ✅", flush=True)
     try:
         vt.add_lexicon(LEX["lexicon"])
         if LEX.get("names_en_ar") and hasattr(vt, "add_names"): vt.add_names(LEX["names_en_ar"])
