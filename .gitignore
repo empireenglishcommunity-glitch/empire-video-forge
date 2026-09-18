@@ -1,1 +1,36 @@
+# --- Python noise ---
+__pycache__/
+*.pyc
+*.pyo
 kaggle/__pycache__/
+.kiro/specs/eec-podcast-automation/kaggle/__pycache__/
+
+# --- Secrets: NEVER commit credentials ---
+# Env / secret files
+.env
+.env.*
+*.env
+!*.env.example
+# Keys & certs
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+# Cloud / service credentials
+credentials.json
+client_secret*.json
+service-account*.json
+*_credentials.json
+rclone.conf
+# Runtime tokens
+access_token.txt
+*_token.txt
+
+# --- Local artifacts we don't version ---
+*.log
+feed_state.json
+episodes/**/synth/
+episodes/**/*.m4a
+episodes/**/*.wav
