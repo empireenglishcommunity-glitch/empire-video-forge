@@ -34,6 +34,8 @@ Resumable: partial acts are cached in episodes/epNN/_acts/ so a quota stall
 doesn't lose work; re-run to continue.
 """
 import os, sys, json, re, argparse, time, urllib.request, urllib.error
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import llm_backend  # pluggable: local Qwen (Kaggle) / free OpenAI-compatible API / gemini
 
 MODEL = os.environ.get("EEC_SCRIPT_MODEL", "gemini-3.6-flash")
 HOME = os.environ.get("EEC_PODCAST_HOME", "/opt/eec-podcast")
@@ -88,16 +90,9 @@ def save_season(s):
         json.dump(s, f, ensure_ascii=False, indent=2)
 
 
-def call_gemini(prompt, api_key, temp=0.95):
-    url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
-           f"{MODEL}:generateContent?key={api_key}")
-    body = {"contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": temp, "response_mime_type": "application/json"}}
-    req = urllib.request.Request(url, data=json.dumps(body).encode("utf-8"),
-                                headers={"Content-Type": "application/json"}, method="POST")
-    with urllib.request.urlopen(req, timeout=180) as r:
-        data = json.loads(r.read().decode("utf-8"))
-    return data["candidates"][0]["content"]["parts"][0]["text"]
+def call_gemini(prompt, api_key=None, temp=0.95):
+    # backend-agnostic now: routes to local Qwen / free API / gemini via llm_backend
+    return llm_backend.chat(prompt, temperature=temp)
 
 
 def extract_json(raw):
@@ -150,9 +145,14 @@ def main():
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
+    # backend is pluggable now — need a usable one (local Qwen / free API / gemini)
     api_key = os.environ.get("GEMINI_API_KEY")
-    if not api_key:
-        print("ERROR: set GEMINI_API_KEY", file=sys.stderr); sys.exit(2)
+    backend = llm_backend.which()
+    if backend == "gemini" and not api_key:
+        print("ERROR: no LLM backend — set EEC_LLM_BASE_URL+EEC_LLM_KEY (free API), "
+              "or EEC_FORCE_LOCAL=1 (Kaggle Qwen), or GEMINI_API_KEY.", file=sys.stderr)
+        sys.exit(2)
+    print(f"LLM backend: {backend}")
 
     ep = args.episode
     plan = next((p for p in SEASON1 if p[0] == ep), None)
