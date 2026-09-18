@@ -1,0 +1,27 @@
+{
+  "_comment": "Egyptian pronunciation lexicon for Two Worlds. Maps hard/colloquial Egyptian words to a diacritized (tashkeel) spelling that the TTS reads with the CORRECT Egyptian pronunciation. Fed to VoiceTut via add_lexicon(). Grows over time: solve each hard word ONCE, every cast voice says it right forever. The value is the fully-voweled Egyptian form.",
+  "lexicon": {
+    "الجداد": "الجُدَاد",
+    "جداد": "جُدَاد",
+    "دلوقتي": "دِلْوَأْتِي",
+    "إزيك": "إِزَّيَّك",
+    "عايز": "عَايِز",
+    "عاوز": "عَاوِز",
+    "خد": "خُد",
+    "بتاعي": "بِتَاعِي",
+    "كده": "كِدَه",
+    "أهو": "أَهُوَّ",
+    "دا": "دَه",
+    "دي": "دِي",
+    "معلش": "مَعْلِش",
+    "يلا": "يَاللَّا",
+    "بص": "بُصّ",
+    "عشان": "عَشَان",
+    "علشان": "عَلَشَان"
+  },
+  "names_en_ar": {
+    "Macal": "مَاكَال",
+    "Nour": "نُور",
+    "Dubai": "دُبَيّ"
+  }
+}
