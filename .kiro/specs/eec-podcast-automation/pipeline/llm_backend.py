@@ -40,14 +40,16 @@ def _openai_models():
 def _one_call(base, key, model, prompt, temperature):
     body = {"model": model,
             "messages": [{"role": "user", "content": prompt}],
-            "temperature": temperature}
+            "temperature": temperature,
+            "max_tokens": int(os.environ.get("EEC_LLM_MAXTOK", "1500")),
+            "reasoning": {"enabled": False}}  # skip slow "thinking" on reasoning models
     req = urllib.request.Request(base + "/chat/completions",
                                  data=json.dumps(body).encode("utf-8"),
                                  headers={"Content-Type": "application/json",
                                           "Authorization": "Bearer " + key,
                                           "X-Title": "EEC Two Worlds"},
                                  method="POST")
-    with urllib.request.urlopen(req, timeout=180) as r:
+    with urllib.request.urlopen(req, timeout=90) as r:   # fail fast -> rotate model
         data = json.loads(r.read().decode("utf-8"))
     return data["choices"][0]["message"]["content"]
 
