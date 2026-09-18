@@ -22,6 +22,26 @@
       "accent": "clear confident mild-accent (aspirational-but-reachable)",
       "role": "guide/friend", "performance": "warm, confident, encouraging",
       "exaggeration": 0.6, "cfg_weight": 0.5, "status": "planned"
+    },
+    "TaxiDriver": {
+      "engine": "chatterbox", "voice_ref": "guest_m1_ref.wav", "lang": "en",
+      "role": "friendly working-man guest", "performance": "warm, easygoing",
+      "exaggeration": 0.5, "cfg_weight": 0.5, "status": "planned"
+    },
+    "Official": {
+      "engine": "chatterbox", "voice_ref": "guest_m1_ref.wav", "lang": "en",
+      "role": "airport/office official", "performance": "polite, composed",
+      "exaggeration": 0.4, "cfg_weight": 0.5, "status": "planned"
+    },
+    "Landlord": {
+      "engine": "chatterbox", "voice_ref": "guest_m1_ref.wav", "lang": "en",
+      "role": "landlord", "performance": "steady, mature",
+      "exaggeration": 0.5, "cfg_weight": 0.5, "status": "planned"
+    },
+    "Barista": {
+      "engine": "chatterbox", "voice_ref": "guest_f1_ref.wav", "lang": "en",
+      "role": "cafe barista", "performance": "bright, upbeat",
+      "exaggeration": 0.6, "cfg_weight": 0.5, "status": "planned"
     }
   },
   "arabic_voice_pool": {
