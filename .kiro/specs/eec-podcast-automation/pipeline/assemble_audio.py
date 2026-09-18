@@ -34,7 +34,12 @@ Usage:
   python3 assemble_audio.py --episode 1 [--music assets/music/bed.mp3]
                             [--gap 0.35] [--coach-gap 0.7] [--no-normalize]
 """
-import os, sys, json, subprocess, argparse, tempfile, shutil
+import os, sys, json, subprocess, argparse, tempfile, shutil, glob
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    import manifest_lib
+except Exception:
+    manifest_lib = None
 
 SR = 24000  # both engines emit 24kHz mono; keep the whole chain at one rate
 
@@ -49,24 +54,81 @@ def probe_dur(path):
     return float(out)
 
 
-def build_order(episode_dir):
+def build_order_from_manifest(episode_dir, wav_dir):
+    """Build the placement order from the MERGED manifest(s) in wav_dir.
+
+    The two synth passes each drop a pass-tagged manifest (manifest.ar.json,
+    manifest.en.json) plus a plain manifest.json. We merge every manifest we
+    find over a fresh skeleton (from script.json) so neither pass clobbers the
+    other. Returns (script, placed, skipped) or None if no manifest is usable.
+    """
+    if manifest_lib is None:
+        return None
+    mans = sorted(glob.glob(os.path.join(wav_dir, "manifest*.json")))
+    if not mans:
+        return None
+    try:
+        with open(os.path.join(episode_dir, "script.json"), encoding="utf-8") as f:
+            script = json.load(f)
+    except Exception:
+        return None
+    merged = manifest_lib.build_skeleton(script)
+    for mp in mans:
+        try:
+            merged = manifest_lib.merge_pass(merged, json.load(open(mp, encoding="utf-8")))
+        except Exception:
+            continue
+    placed, skipped = [], []
+    for e in merged["lines"]:
+        cand = os.path.join(wav_dir, e["file"])
+        if e.get("status") == "rendered" and os.path.exists(cand) and os.path.getsize(cand) > 1000:
+            placed.append({"section": e.get("section"), "speaker": e["speaker"],
+                           "lang": e["lang"], "text": e["text"], "file": cand})
+        else:
+            skipped.append((e["lang"], e["speaker"], (e.get("text") or "")[:40]))
+    return script, placed, skipped
+
+
+def build_order(episode_dir, wav_dir=None):
     """Return the ordered list of placed lines using script.json as master.
 
-    Each English line maps to kaggle_en/lineNNN_*.wav (NNN = running EN index),
-    each Arabic line to coachNNN_Coach.wav (NNN = running AR index) — matching
-    exactly how the two synth stages number their outputs.
+    Two supported WAV naming schemes, tried in order:
+
+    1. GLOBAL-IDX (current unified synth): every line -- EN and AR alike -- is
+       emitted as ``lineNNN_<Speaker>.wav`` where NNN is the line's GLOBAL index
+       in script.json (1-based), all in one flat directory (``--wav-dir``,
+       default ``<episode>/synth``). Source of truth when present.
+
+    2. LEGACY per-language: English -> ``kaggle_en/lineNNN_*.wav`` (running EN
+       index), Arabic -> ``coachNNN_Coach.wav`` (running AR index).
     """
     with open(os.path.join(episode_dir, "script.json"), encoding="utf-8") as f:
         script = json.load(f)
 
-    en_dir = os.path.join(episode_dir, "kaggle_en")
+    wav_dir = wav_dir or os.path.join(episode_dir, "synth")
+    use_global = os.path.isdir(wav_dir) and any(
+        n.startswith("line") and n.endswith(".wav") for n in os.listdir(wav_dir))
+
     placed, skipped = [], []
+    if use_global:
+        for i, ln in enumerate(script["lines"], 1):
+            lang = ln.get("lang")
+            if lang not in ("en", "ar"):
+                continue
+            cand = _find(wav_dir, f"line{i:03d}_")
+            if cand and os.path.getsize(cand) > 1000:
+                placed.append({"section": ln.get("section"), "speaker": ln["speaker"],
+                               "lang": lang, "text": ln["text"], "file": cand})
+            else:
+                skipped.append((lang, ln["speaker"], ln["text"][:40]))
+        return script, placed, skipped
+
+    en_dir = os.path.join(episode_dir, "kaggle_en")
     en_i = ar_i = 0
     for ln in script["lines"]:
         lang = ln.get("lang")
         if lang == "en":
             en_i += 1
-            # file name embeds the speaker; glob by the numeric prefix
             cand = _find(en_dir, f"line{en_i:03d}_")
         elif lang == "ar":
             ar_i += 1
@@ -79,6 +141,7 @@ def build_order(episode_dir):
         else:
             skipped.append((lang, ln["speaker"], ln["text"][:40]))
     return script, placed, skipped
+
 
 
 def _find(d, prefix):
@@ -173,6 +236,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--episode", type=int, required=True)
     ap.add_argument("--dir", default=None)
+    ap.add_argument("--wav-dir", default=None,
+                    help="flat dir of lineNNN_<Speaker>.wav (global-idx synth); "
+                         "default <episode>/synth")
     ap.add_argument("--home", default=os.environ.get("EEC_PODCAST_HOME", "/opt/eec-podcast"))
     ap.add_argument("--music", default=None, help="music bed path (optional)")
     ap.add_argument("--intro", default=None)
@@ -205,7 +271,14 @@ def main():
                 beds = [f for f in sorted(os.listdir(md)) if f.lower().endswith((".mp3", ".wav", ".m4a"))]
                 args.music = os.path.join(md, beds[0]) if beds else None
 
-    script, placed, skipped = build_order(ep_dir)
+    wav_dir = args.wav_dir or os.path.join(ep_dir, "synth")
+    mres = build_order_from_manifest(ep_dir, wav_dir)
+    if mres is not None:
+        script, placed, skipped = mres
+        print(f"  (order source: merged manifest in {wav_dir})")
+    else:
+        script, placed, skipped = build_order(ep_dir, args.wav_dir)
+        print("  (order source: script.json + filename match)")
     if not placed:
         print("ERROR: no line WAVs found — run the synth stages first", file=sys.stderr)
         sys.exit(1)
