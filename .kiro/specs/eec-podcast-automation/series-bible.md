@@ -97,3 +97,37 @@ Difficulty rises across the season (A2 -> B2) so learners grow with Macal.
 ## 9. Still tested later (not creative — technical)
 - Exact Piper voices per character (Phase 1 voice sample sheet gate).
 - Character scene visual style (Phase 4 gate).
+
+
+## 10. STRUCTURE RULE — story vs. teaching separation (LOCKED, machine-enforced)
+
+> Why this exists: an episode is audio. If the Coach's Arabic commentary is
+> sprinkled *inside* a live English scene, the listener gets language whiplash
+> (English tension → sudden Arabic aside → English) and it sounds messy. The fix
+> is a hard rule, enforced by `pipeline/structure_check.py` at generation time AND
+> before assembly — a violating script can never be assembled/shipped.
+
+**Two kinds of section:**
+- **STORY sections** (in-world scene, English drama): `cold_open`, `act1`, `act2`,
+  `act3`, `act4`.
+- **COACH sections** (teaching, Egyptian Arabic): `coach_intro`, `coach_break1`,
+  `coach_break2`, `coach_break3`, `coach_outro`.
+
+**The rules (all enforced):**
+1. **`cold_open` is a PURE story hook** — only in-world characters (Macal, guests),
+   English. **No Coach line, no Arabic, in the cold_open.** The Coach first speaks
+   in `coach_intro`.
+2. **The Coach speaks ONLY in COACH sections.** No Coach line may appear inside any
+   STORY section. Teaching happens in its own beat, never mid-scene.
+3. **Story characters speak ONLY in STORY sections.** No in-world dialogue leaks into
+   a COACH section.
+4. **Canonical section order** (a scene, then its breakdown, repeating):
+   `cold_open → coach_intro → act1 → coach_break1 → act2 → coach_break2 → act3 →
+   coach_break3 → act4 → coach_outro`. (Episodes may use fewer acts/breaks, but a
+   COACH break must follow the STORY scene it explains — never split a scene.)
+5. A COACH breakdown may be several consecutive Coach lines (that's fine — it's one
+   teaching beat); what's forbidden is putting those lines *inside* a story section's
+   idx range.
+
+**Result:** playback is always "full English scene → clean cut to Coach breakdown →
+next scene," which is the professional format the series was designed around (§5).

@@ -36,6 +36,7 @@ doesn't lose work; re-run to continue.
 import os, sys, json, re, argparse, time, urllib.request, urllib.error
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import llm_backend  # pluggable: local Qwen (Kaggle) / free OpenAI-compatible API / gemini
+import structure_check  # LOCKED story/teaching separation rule (series-bible §10)
 
 MODEL = os.environ.get("EEC_SCRIPT_MODEL", "gemini-3.6-flash")
 HOME = os.environ.get("EEC_PODCAST_HOME", "/opt/eec-podcast")
@@ -62,7 +63,7 @@ SEASON1 = [
 # model writes LONG. min_words per act is enforced (short acts get auto-expanded).
 # (act_key, brief, min_words)
 ACTS = [
-    ("cold_open", "a gripping COLD OPEN (~90 sec): drop the listener into a tense/curious moment near the episode's climax, then pull back. 5-7 story lines. A HOOK that makes them NEED to keep listening.", 120),
+    ("cold_open", "a gripping COLD OPEN (~90 sec): drop the listener into a tense/curious moment near the episode's climax, then pull back. 5-7 story lines. A HOOK that makes them NEED to keep listening. PURE STORY — only in-world characters speaking English (Macal + guests). ABSOLUTELY NO Coach line and NO Arabic here; the Coach first speaks in coach_intro.", 120),
     ("coach_intro", "the COACH INTRO (Egyptian Arabic, Coach only): warmly welcome the listener, set today's situation with personality and humor, and name the 3-4 English phrases to listen for. 6-8 lines. Warm, fun, never dry.", 180),
     ("act1", "ACT 1 — the opening scene, LONG and immersive: 22-30 lines of natural {level} English between Macal and the guest(s). Real, human, funny. Establish the situation richly, with back-and-forth, small talk, and reactions. Weave in target phrases naturally. Do NOT rush — let the scene breathe.", 600),
     ("coach_break1", "COACH BREAK 1 (Egyptian Arabic, Coach): pause to unpack 2-3 key English phrases from Act 1 (meaning + when to use + an example each) + 1 common mistake learners make. 8-10 lines. Warm teacher energy, with detail.", 300),
@@ -143,9 +144,22 @@ def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season
         length = (f"Your previous version was TOO SHORT. Rewrite this section MUCH LONGER "
                   f"— AT LEAST {min_words} words. Add more dialogue turns, more detail, "
                   f"more characters/beats. Keep it natural, do not pad with filler.")
+    STORY_ACTS = {"cold_open", "act1", "act2", "act3", "act4"}
+    if act_key in STORY_ACTS:
+        sep_rule = ("SECTION TYPE: STORY (in-world scene). Speakers are ONLY story "
+                    "characters (Macal, Nour, guests) speaking ENGLISH. The Coach does "
+                    "NOT appear here and there is NO Arabic in this section — all teaching "
+                    "happens later in the dedicated coach break, never mid-scene. Do NOT "
+                    "insert any Coach line or any commentary about the English.")
+    else:
+        sep_rule = ("SECTION TYPE: COACH (teaching beat). The ONLY speaker is Coach, "
+                    "speaking Egyptian Arabic (lang \"ar\"). No story characters speak "
+                    "here.")
     return f"""You are the head writer for "Two Worlds", a serialized bilingual English-learning
 DRAMA podcast by Empire English Community for Egyptian/Arab learners. Mission:
 LEARN WITH FUN — a story so good people binge it, that teaches English by living it.
+
+{sep_rule}
 
 BRAND VOICE: warm, honest, encouraging. NEVER "hack/secret/guaranteed" or shaming.
 Egyptian Arabic for the Coach; natural, native, level-appropriate English for the story.
@@ -297,7 +311,36 @@ def main():
             l["text"] = ct
             cleaned.append(l)
     script["lines"] = cleaned
-    script["word_count"] = sum(len(l["text"].split()) for l in cleaned)
+
+    # STRUCTURE ENFORCEMENT (series-bible §10): acts are generated in isolation, so a
+    # model can still leak a Coach/Arabic line into a STORY section. Auto-correct the
+    # ONE safe way — drop any Coach/Arabic line that leaked into a STORY section (it's
+    # stray commentary; real teaching lives in the coach sections) — then HARD-GATE on
+    # the validator so a structurally-messy script can never be saved as final.
+    STORY = structure_check.STORY_SECTIONS
+    kept, dropped = [], []
+    for l in script["lines"]:
+        if l.get("section") in STORY and (l.get("speaker") == "Coach" or l.get("lang") == "ar"):
+            dropped.append(l)
+        else:
+            kept.append(l)
+    if dropped:
+        print(f"  STRUCTURE: dropped {len(dropped)} stray Coach/Arabic line(s) that "
+              f"leaked into STORY sections (teaching belongs in coach breaks):",
+              flush=True)
+        for l in dropped[:10]:
+            print(f"    - [{l.get('section')}] {(l.get('text') or '')[:50]}")
+    script["lines"] = kept
+    script["word_count"] = sum(len(l["text"].split()) for l in script["lines"])
+
+    violations = structure_check.check_script(script)
+    if violations:
+        print("\n" + structure_check.format_report(violations), file=sys.stderr)
+        print("ERROR: generated script violates the LOCKED structure rule "
+              "(series-bible §10) — NOT saving. Re-run to regenerate the offending "
+              "section(s).", file=sys.stderr)
+        sys.exit(4)
+    print("  STRUCTURE OK — story/teaching separation clean")
 
     out = args.out or os.path.join(ep_dir, "script.json")
     os.makedirs(os.path.dirname(out), exist_ok=True)

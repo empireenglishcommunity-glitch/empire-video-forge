@@ -23,12 +23,6 @@
     },
     {
       "section": "cold_open",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "Imagine you are in this car right now. Your heart is pounding. Your head is empty. What do you say next? Don’t panic. Listen closely to how Macal changes the situation."
-    },
-    {
-      "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
       "text": "Wait... Is that... my card? Under the seat? Oh, thank goodness. I found it."
@@ -40,7 +34,13 @@
       "text": "I told you it was here. See? It’s just a small city. You will be fine. Now, where exactly is this office?"
     },
     {
-      "section": "cold_open",
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "Imagine you are in this car right now. Your heart is pounding. Your head is empty. What do you say next? Don’t panic. Listen closely to how Macal changes the situation."
+    },
+    {
+      "section": "coach_intro",
       "speaker": "Coach",
       "lang": "ar",
       "text": "You see? One wrong word can make a situation stressful. But one clear question can fix it. Let’s go back to the airport and see how Macal started this journey."
@@ -322,7 +322,7 @@
       "text": "Okay. I trust you. Let’s go. Hello, Dubai. I’m ready for you."
     },
     {
-      "section": "act1",
+      "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
       "text": "شفتوا؟ إزاي ماكل استخدم الكلمات الأربعة بتاعتنا؟ 'Where is the taxi?' 'How much is the fare?' 'Please take me to this address.' و 'Is it far?' كلها جمل بسيطة وسهلة. هو بس محتاج يهدي شوية. بس إحنا هنخليه يتعلم من أخطائه. يلا نكمّل."
@@ -1114,37 +1114,37 @@
       "text": "Thank you. Thank you so much. I will. I will explore. I will go to the mall. Maybe not. Maybe I will go home. My feet are tired. Haha. Thank you, Sarah. It was a pleasure. Goodbye. Goodbye."
     },
     {
-      "section": "act3",
+      "section": "coach_break3",
       "speaker": "Coach",
       "lang": "ar",
       "text": "أهلاً بيكم، إزيكم؟ إحنا خلصنا تاني جزء من قصة Macal، وهو داخل على المقابلة. أنا فخورة بيه جدًا، لأنه كان شجاع وواجه توتره. يلا ناخد كام حاجة من اللي حصلنا عليها."
     },
     {
-      "section": "act3",
+      "section": "coach_break3",
       "speaker": "Coach",
       "lang": "ar",
       "text": "أول حاجة، لاحظوا إزاي Macal كان بيدرب على الكلام وهو في الأسانسير. كان بيقول: 'My name is Macal. I am here for the interview.' ده بيسمى Self-Talk، يعني إنك تكلم نفسك بالإنجليزي. تمرن رائع جدًا. جربوه في البيت قدام المراية."
     },
     {
-      "section": "act3",
+      "section": "coach_break3",
       "speaker": "Coach",
       "lang": "ar",
       "text": "تاني حاجة، لما سألته عن نقاط القوة والضعف، قال بطريقة بسيطة: 'I am a hard worker.' و'I am nervous sometimes.' مش محتاجين كلام معقد. بس كلمات بسيطة وصادقة. ودي أهم حاجة في المقابلات: الصدق."
     },
     {
-      "section": "act3",
+      "section": "coach_break3",
       "speaker": "Coach",
       "lang": "ar",
       "text": "برضه، هو استخدم قصة من خبرته في الشغل في مصر. فاكرين لما حكى قصة الضيف الغضبان؟ 'He was very angry.' ده مثال ممتاز لقاعدة إني أحكي قصة صغيرة. مش لازم قصة طويلة، بس تبقى واضحة. البداية، المشكلة، الحل."
     },
     {
-      "section": "act3",
+      "section": "coach_break3",
       "speaker": "Coach",
       "lang": "ar",
       "text": "وعندما سألوه عن حلمه، قال كلام من قلبه: 'I want to make my mother proud.' الكلام ده قوي جدًا. لأنه بين الشخصية والطموح. ودي حاجة بيحبها أصحاب العمل جدًا. إنك تكون عندك هدف."
     },
     {
-      "section": "act3",
+      "section": "coach_break3",
       "speaker": "Coach",
       "lang": "ar",
       "text": "فكروا كده في حلمكم إيه؟ قولوه بالإنجليزي في سركم. 'I want to be a...' أو 'I want to learn...' دي أول خطوة لبناء الثقة."
@@ -1588,7 +1588,7 @@
       "text": "Oh, no. Oh, no, no, no. I need to prepare. I need to practice. I need Nour!"
     },
     {
-      "section": "act4",
+      "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
       "text": "أهلاً بيكم يا أبطال. لسه الخبر الرهيب! Macal جه له رد من الشغل، وعايزين يشوفوه تاني. إحنا في انتظاركم في الحلقة الجاية عشان نشوف إزاي هيتصرف في المقابلة التانية. يلا نكمل معاه."

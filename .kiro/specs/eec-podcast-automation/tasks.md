@@ -71,9 +71,11 @@
 
 ## Phase 6 — Automation & scheduling
 - [x] 6.1 Weekly automation trigger wired (live n8n workflow).
-- [ ] 6.2 Re-point the weekly automation at the NEW synth path (currently references
-      the old Gemini-Kore coach step in `run_podcast.py`). Update to VoiceTut + the
-      manifest assembly, or gate on the Kaggle batch being present.
+- [x] 6.2 Weekly automation already on the modern path: the n8n workflow
+      (`Two Worlds — Weekly Podcast Generate`, INACTIVE) calls `eec-podcast-trigger.service`
+      → `run_podcast.py` (VoiceTut + manifest assembly; no Gemini-Kore). Added a
+      no-skip-ahead guard to the trigger (refuses episode N if an earlier episode
+      never shipped; `force` override). Workflow left inactive until Ep1 is posted.
 - [ ] 6.3 Optional human-review gate before publish (owner listens to the assembled
       plain audio and approves before the publish step runs).
 
@@ -82,13 +84,18 @@
 - [ ] 7.2 ⏳ **OWNER ACTION:** rotate the 3 live tokens (n8n-mcp AUTH_TOKEN, n8n API
       key, R2 keys) per `SECURITY_ROTATION.md`. None internet-exposed → low urgency.
 - [x] 7.3 Disk hygiene: archived stale Ep1 draft samples; working files kept lean.
-- [ ] 7.4 Produce Episode 2 end-to-end to validate the full pipeline on a 2nd episode.
-- [ ] 7.5 Update README + OPERATIONS with the audio-only workflow.
+- [ ] 7.4 (DEFERRED — do NOT start until Ep1 is posted) Produce Episode 2. A
+      premature Ep2 was generated and has been REMOVED (server `episodes/ep02/`
+      deleted, `season.json` rolled back to `current_episode: 2`). Ep2 begins only
+      on the owner's explicit go, after Ep1 ships.
+- [x] 7.5 `OPERATIONS.md` written — end-to-end audio-only runbook (script → Kaggle
+      voices → assemble → deliver → publish), lexicon-fix loop, automation notes,
+      troubleshooting. `design.md` also brought in sync with the shipped architecture.
 
 ## What's actually left (agent-doable)
-1. **6.2** — modernize `run_podcast.py`/weekly trigger for the VoiceTut + manifest path.
-2. **7.4** — generate the Episode 2 script (proves the OpenRouter generator on ep2).
-3. **7.5** — README/OPERATIONS docs for the current pipeline.
+- (none of the code/doc items remain — Group A complete; server hygiene done separately)
+
+> Ep2 (7.4) is intentionally NOT on this list — finish + post Ep1 first.
 
 ## Owner-only actions (can't be done from the sandbox)
 - Publish Ep1 video + audio and submit the RSS feed (needs owner's accounts).

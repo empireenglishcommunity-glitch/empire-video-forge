@@ -50,15 +50,34 @@ def load_env():
     return env
 
 
-def next_episode():
-    """Next episode = (max delivered in season/state) + 1, default 1."""
-    # look at which epNN dirs already produced plain audio
-    done = []
+def delivered_episodes():
+    """Set of episode numbers that have already produced a plain-audio file."""
+    done = set()
     for p in glob.glob(os.path.join(HOME, "episodes", "ep*", "ep*_audio_plain.m4a")):
         m = re.search(r"ep(\d{2})_audio_plain", os.path.basename(p))
         if m:
-            done.append(int(m.group(1)))
+            done.add(int(m.group(1)))
+    return done
+
+
+def next_episode():
+    """Next episode = (max produced plain audio) + 1, default 1."""
+    done = delivered_episodes()
     return (max(done) + 1) if done else 1
+
+
+def prior_gap(ep):
+    """Return the first earlier episode (< ep) that has NOT produced plain audio,
+    or None if every episode below `ep` is already done. Used to refuse skipping
+    ahead (the 'jumped to Ep3 before Ep1 shipped' class of mistake) at the
+    automation level. Episode 1 has no prerequisite."""
+    if ep <= 1:
+        return None
+    done = delivered_episodes()
+    for e in range(1, ep):
+        if e not in done:
+            return e
+    return None
 
 
 def do_run(ep):
@@ -117,6 +136,15 @@ class Handler(http.server.BaseHTTPRequestHandler):
         except Exception:
             req = {}
         ep = req.get("episode") or next_episode()
+        # GUARD: don't skip ahead. Refuse ep N if an earlier episode never shipped
+        # (prevents the 'jumped to Ep3 before Ep1 was posted' mistake). Override
+        # with {"force": true} for a deliberate out-of-order run.
+        gap = prior_gap(ep)
+        if gap is not None and not req.get("force"):
+            return self._send({"ok": False, "episode": ep, "started": False,
+                               "reason": f"episode {gap} not delivered yet; refusing "
+                                         f"to skip ahead to {ep}. Send {{\"force\":true}} "
+                                         f"to override."}, 409)
         with _lock:
             already = _runs.get(ep, {}).get("state") == "running"
         if already:
