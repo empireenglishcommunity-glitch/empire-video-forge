@@ -51,10 +51,19 @@
 - [ ] 3.3 Render Episode 1 AUDIO end-to-end; owner listens. [gate]
 
 ## Phase 4 — Video assembly
-- [ ] 4.1 Design character scene cards + branded 16:9 frame (stylized v1). [R4.1]
-- [ ] 4.2 Build `assemble_video.py`: scenes switch by speaker (timeline) + karaoke ASS
-      captions (EN top, AR for key lines) + mux, yuv420p/High/faststart, nice. [R4.1,R4.2]
-- [ ] 4.3 Render Episode 1 VIDEO (16:9). **GATE: owner visual sign-off.** [R8.3]
+- [x] 4.1 Branded 16:9 frame (v1 = typographic scene cards): brand near-black + subtle
+      radial, per-SPEAKER accent-dot badge (name + role) that switches by timeline. [R4.1]
+- [x] 4.2 Build `assemble_video.py`: looped static branded bg (cheap) + libass ASS
+      captions (EN centered white / Coach AR large gold, RTL) with per-line CHUNKING so
+      long Coach breaks appear progressively; phrase-of-episode lower-third; title card
+      on the intro. Mux -> H.264 High, yuv420p, +faststart, nice -19. [R4.1,R4.2]
+      - ⚠️ **Arabic font:** MUST use **Amiri** (fonts-hosny-amiri, full presentation-form
+        coverage). Cairo/Tajawal subsets render hamza/alef combos as tofu boxes. Installed
+        Amiri on the box + copied to assets/fonts. Latin stays Cairo.
+      - ⚠️ **Perf:** never regenerate the bg per-frame (gradients+blend was slow + spiked
+        load, risking live containers) — render bg ONCE as PNG, loop it, burn captions.
+- [ ] 4.3 Render Episode 1 VIDEO (16:9) — DONE, delivered to Drive as 'VIDEO draft'.
+      **GATE: awaiting owner visual sign-off.** [R8.3]
 - [ ] 4.4 Optional: auto-cut the 9:16 shorts highlight from `shorts_highlight`. [R4.4]
 
 ## Phase 5 — Delivery + publish integration
