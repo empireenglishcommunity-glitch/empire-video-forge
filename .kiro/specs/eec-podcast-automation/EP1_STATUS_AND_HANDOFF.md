@@ -73,11 +73,13 @@ production notebook and re-assemble. Prefer the lexicon fix over a one-off.
   on Kaggle GPU (they clash in one kernel → two notebooks). Server has NO GPU —
   never synth on the server.
 
-## ⚠️ PREMATURE / TO DECIDE (do NOT act until Ep1 is posted)
-- **Ep2 script was generated prematurely** (`episodes/ep02/script.json` exists;
-  `season.json` advanced to `current_episode: 3`). This jumped ahead. DECISION
-  NEEDED once Ep1 is posted: leave it, or roll `season.json` back to 2 and remove
-  ep02 until Ep1 ships.
+## EP2 — REMOVED (was generated prematurely)
+- The prematurely-generated Ep2 was deleted on the server: `episodes/ep02/`
+  (script.json + `_acts/`, no audio was ever synthesized) removed, and
+  `season.json` rolled back to `current_episode: 2` with the Ep2 tag cleaned out
+  of `story_so_far`. A backup of the old season.json is kept on the server
+  (`season.json.bak.*`). Ep2 does not start until the owner says so, after Ep1
+  is posted.
 
 ## SANDBOX GOTCHAS
 - No ffmpeg / no soundfile locally in the sandbox — heavy audio ops run on the

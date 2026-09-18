@@ -82,13 +82,17 @@
 - [ ] 7.2 ⏳ **OWNER ACTION:** rotate the 3 live tokens (n8n-mcp AUTH_TOKEN, n8n API
       key, R2 keys) per `SECURITY_ROTATION.md`. None internet-exposed → low urgency.
 - [x] 7.3 Disk hygiene: archived stale Ep1 draft samples; working files kept lean.
-- [ ] 7.4 Produce Episode 2 end-to-end to validate the full pipeline on a 2nd episode.
+- [ ] 7.4 (DEFERRED — do NOT start until Ep1 is posted) Produce Episode 2. A
+      premature Ep2 was generated and has been REMOVED (server `episodes/ep02/`
+      deleted, `season.json` rolled back to `current_episode: 2`). Ep2 begins only
+      on the owner's explicit go, after Ep1 ships.
 - [ ] 7.5 Update README + OPERATIONS with the audio-only workflow.
 
 ## What's actually left (agent-doable)
 1. **6.2** — modernize `run_podcast.py`/weekly trigger for the VoiceTut + manifest path.
-2. **7.4** — generate the Episode 2 script (proves the OpenRouter generator on ep2).
-3. **7.5** — README/OPERATIONS docs for the current pipeline.
+2. **7.5** — README/OPERATIONS docs for the current pipeline.
+
+> Ep2 (7.4) is intentionally NOT on this list — finish + post Ep1 first.
 
 ## Owner-only actions (can't be done from the sandbox)
 - Publish Ep1 video + audio and submit the RSS feed (needs owner's accounts).
