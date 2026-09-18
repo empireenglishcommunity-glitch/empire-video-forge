@@ -71,9 +71,11 @@
 
 ## Phase 6 — Automation & scheduling
 - [x] 6.1 Weekly automation trigger wired (live n8n workflow).
-- [ ] 6.2 Re-point the weekly automation at the NEW synth path (currently references
-      the old Gemini-Kore coach step in `run_podcast.py`). Update to VoiceTut + the
-      manifest assembly, or gate on the Kaggle batch being present.
+- [x] 6.2 Weekly automation already on the modern path: the n8n workflow
+      (`Two Worlds — Weekly Podcast Generate`, INACTIVE) calls `eec-podcast-trigger.service`
+      → `run_podcast.py` (VoiceTut + manifest assembly; no Gemini-Kore). Added a
+      no-skip-ahead guard to the trigger (refuses episode N if an earlier episode
+      never shipped; `force` override). Workflow left inactive until Ep1 is posted.
 - [ ] 6.3 Optional human-review gate before publish (owner listens to the assembled
       plain audio and approves before the publish step runs).
 
@@ -86,11 +88,12 @@
       premature Ep2 was generated and has been REMOVED (server `episodes/ep02/`
       deleted, `season.json` rolled back to `current_episode: 2`). Ep2 begins only
       on the owner's explicit go, after Ep1 ships.
-- [ ] 7.5 Update README + OPERATIONS with the audio-only workflow.
+- [x] 7.5 `OPERATIONS.md` written — end-to-end audio-only runbook (script → Kaggle
+      voices → assemble → deliver → publish), lexicon-fix loop, automation notes,
+      troubleshooting. `design.md` also brought in sync with the shipped architecture.
 
 ## What's actually left (agent-doable)
-1. **6.2** — modernize `run_podcast.py`/weekly trigger for the VoiceTut + manifest path.
-2. **7.5** — README/OPERATIONS docs for the current pipeline.
+- (none of the code/doc items remain — Group A complete; server hygiene done separately)
 
 > Ep2 (7.4) is intentionally NOT on this list — finish + post Ep1 first.
 
