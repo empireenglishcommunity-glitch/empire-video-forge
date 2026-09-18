@@ -103,13 +103,32 @@ def call_gemini(prompt, api_key=None, temp=0.95):
 
 def extract_json(raw):
     raw = raw.strip().replace("```json", "").replace("```", "").strip()
+    # 1) straight parse
     try:
-        return json.loads(raw)
+        v = json.loads(raw)
+        return v if isinstance(v, list) else v.get("lines", v)
     except Exception:
-        m = re.search(r"\{[\s\S]*\}|\[[\s\S]*\]", raw)
-        if m:
+        pass
+    # 2) grab the outermost array
+    m = re.search(r"\[[\s\S]*\]", raw)
+    if m:
+        try:
             return json.loads(m.group(0))
-        raise
+        except Exception:
+            pass
+    # 3) SALVAGE: pull every {...} line-object individually (handles truncation,
+    #    concatenation, trailing junk). Each object must have speaker+text.
+    objs = []
+    for om in re.finditer(r"\{[^{}]*\}", raw):
+        try:
+            o = json.loads(om.group(0))
+            if isinstance(o, dict) and o.get("text"):
+                objs.append(o)
+        except Exception:
+            continue
+    if objs:
+        return objs
+    raise ValueError("no JSON objects found")
 
 
 def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season, prev_lines, expand=False):

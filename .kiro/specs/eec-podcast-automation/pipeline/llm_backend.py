@@ -51,6 +51,11 @@ def _one_call(base, key, model, prompt, temperature):
                                  method="POST")
     with urllib.request.urlopen(req, timeout=90) as r:   # fail fast -> rotate model
         data = json.loads(r.read().decode("utf-8"))
+    # OpenRouter can return HTTP 200 with an {"error":...} body (upstream 429 etc.)
+    if "error" in data and "choices" not in data:
+        code = (data["error"] or {}).get("code", 0)
+        raise urllib.error.HTTPError(base, code or 429,
+                                     str(data["error"])[:200], None, None)
     return data["choices"][0]["message"]["content"]
 
 
