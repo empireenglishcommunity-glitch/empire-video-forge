@@ -169,6 +169,9 @@ Return STRICT JSON only: a list of line objects, each:
 {{"section":"{act_key}","speaker":"<one of the cast ids>","lang":"en" or "ar","text":"..."}}
 Rules: Coach lines are ALWAYS lang "ar" (Egyptian Arabic). Story lines are lang "en".
 Keep English at level {level}. Natural spoken lines (contractions, real reactions).
+CRITICAL: this is an AUDIO drama — write ONLY spoken dialogue. NO stage directions,
+NO narration, NO asterisks (*...*), NO brackets ([...]). Every "text" must be words
+a character actually SAYS out loud. Show action through what people SAY, not narration.
 No markdown, no commentary — just the JSON list of lines for THIS section."""
 
 
@@ -203,11 +206,26 @@ def main():
     def act_words(lines):
         return sum(len(l.get("text", "").split()) for l in lines)
 
+    def clean_lines(lines, act_key):
+        # keep only well-formed lines (speaker + text); fix lang; drop junk
+        out = []
+        for l in lines:
+            if not isinstance(l, dict):
+                continue
+            sp = l.get("speaker"); tx = l.get("text")
+            if not sp or not tx or not str(tx).strip():
+                continue
+            l["section"] = act_key
+            l["lang"] = "ar" if sp == "Coach" else l.get("lang", "en")
+            out.append({"section": act_key, "speaker": sp,
+                        "lang": l["lang"], "text": str(tx).strip()})
+        return out
+
     all_lines = []
     for act_key, act_desc, min_words in ACTS:
         cache = os.path.join(acts_dir, f"{act_key}.json")
         if os.path.exists(cache):  # resume: reuse already-generated acts
-            lines = json.load(open(cache, encoding="utf-8"))
+            lines = clean_lines(json.load(open(cache, encoding="utf-8")), act_key)
             all_lines += lines
             print(f"  [{act_key}] cached ({len(lines)} lines, {act_words(lines)}w)")
             continue
@@ -252,6 +270,7 @@ def main():
         if not lines:
             print(f"  [{act_key}] gave up after ~6h — re-run to resume from here.", file=sys.stderr)
             sys.exit(1)
+        lines = clean_lines(lines, act_key)
         json.dump(lines, open(cache, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
         all_lines += lines
         words = sum(len(l["text"].split()) for l in all_lines)
@@ -266,6 +285,20 @@ def main():
         "word_count": sum(len(l["text"].split()) for l in all_lines),
         "cast_used": sorted({l["speaker"] for l in all_lines}),
     }
+    # AUDIO-READY: strip any stray stage directions / narration (belt-and-braces)
+    def _clean_text(t):
+        t = re.sub(r"\*[^*]*\*", " ", t or "").replace("*", " ")
+        t = re.sub(r"\[[^\]]*\]", " ", t)
+        return re.sub(r"\s+", " ", t).strip()
+    cleaned = []
+    for l in script["lines"]:
+        ct = _clean_text(l["text"])
+        if ct:
+            l["text"] = ct
+            cleaned.append(l)
+    script["lines"] = cleaned
+    script["word_count"] = sum(len(l["text"].split()) for l in cleaned)
+
     out = args.out or os.path.join(ep_dir, "script.json")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     json.dump(script, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
