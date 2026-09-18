@@ -31,7 +31,26 @@ Usage (server):
 import os, sys, json, re, argparse, urllib.request, urllib.parse, subprocess, tempfile
 
 FOR_YOUTUBE = "1zCDvLwgAZ9Ea61eNVs63FaN1HyJMcS81"   # owner's handback folder
-EEC_WATCHED = "19WOAX2ME-YWN477ipaMZhuRr5HXqwDOS"    # 01-EEC-only (engine watches)
+
+# --- FAIL-CLOSED DESTINATION TABLE ----------------------------------------
+# The live "YouTube — Publishing" workflow already routes by the folder a video
+# lands in (its "Classify (folder -> brand + destinations)" node), with a
+# fail-closed guard that aborts on an unknown folder or a MACAL->EEC leak.
+# This forwarder mirrors that table so it can ONLY drop a podcast episode into a
+# sanctioned EEC destination. Any other target must be added here EXPLICITLY;
+# an unmapped --target is refused (fail-closed) rather than guessed.
+DESTINATIONS = {
+    "eec-only": {
+        "folder_id": "19WOAX2ME-YWN477ipaMZhuRr5HXqwDOS",   # 01-EEC-only
+        "label": "01-EEC-only", "brand": "EEC",
+        "note": "EEC YouTube (long-form) + IG. The podcast's home.",
+    },
+    # 02-EEC-and-MACAL and 03-MACAL-only exist in the engine but are NOT valid
+    # podcast targets — the podcast is an EEC-only property. Left out on purpose
+    # so the forwarder cannot publish the podcast under MACAL.
+}
+DEFAULT_TARGET = "eec-only"   # the ONLY sanctioned podcast destination
+EEC_WATCHED = DESTINATIONS[DEFAULT_TARGET]["folder_id"]   # back-compat alias
 
 EP_META = {
     1: ("The Arrival", "A2"), 2: ("The Apartment", "A2"), 3: ("The Interview", "B1"),
@@ -119,11 +138,22 @@ def build_sidecar(ep, dur, home):
         except Exception:
             pass
     en, ar = poe.get("en", ""), poe.get("ar", "")
+    # Sidecar contract read by the engine's "Build YT metadata" node:
+    #   meta.is_long / meta.format / meta.duration -> long-form (not a Short)
+    #   meta.title / meta.video_title_for_youtube_short -> title fallback
+    #   meta.caption -> caption fallback
+    #   meta.hashtags -> merged with brand hashtags
+    # topic is normally inferred by Gemini; "conversation" here is our intent so
+    # a story episode lands in the Conversation playlist (engine falls back to
+    # Tips if Gemini disagrees). Extra keys (episode/level/podcast/series) are
+    # harmless metadata for our own traceability.
     return {
         "title": f"Two Worlds — الحلقة {ep}: {title} | تعلّم إنجليزي بالمواقف",
+        "video_title_for_youtube_short": f"Two Worlds — الحلقة {ep}: {title}",
         "caption": (f"حلقة {ep} من بودكاست Two Worlds: قصة بالإنجليزي الطبيعي مع شرح "
                     f"بالعربي من الكوتش. جملة الحلقة: \"{en}\" — {ar}. {story}").strip(),
         "hook": f"إزاي تستخدم \"{en}\" صح؟ اتعلمها في سياق حقيقي.",
+        "hashtags": ["TwoWorlds", "تعلم_الإنجليزية", "إنجليزي", "LearnEnglish", "Podcast"],
         "topic": "conversation", "format": "long", "is_long": True,
         "duration": dur or 120, "episode": ep, "level": level,
         "podcast": True, "series": "Two Worlds",
@@ -147,9 +177,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--home", default=os.environ.get("EEC_PODCAST_HOME", "/opt/eec-podcast"))
     ap.add_argument("--episode", type=int, default=None)
+    ap.add_argument("--target", default=DEFAULT_TARGET,
+                    help="destination key from the fail-closed table "
+                         f"(allowed: {', '.join(sorted(DESTINATIONS))})")
     ap.add_argument("--confirm", action="store_true",
-                    help="actually forward into 01-EEC-only (triggers publish)")
+                    help="actually forward into the target folder (triggers publish)")
     args = ap.parse_args()
+
+    # FAIL-CLOSED: refuse any target not explicitly sanctioned for the podcast.
+    dest = DESTINATIONS.get(args.target)
+    if dest is None:
+        print(f"REFUSED: '{args.target}' is not a sanctioned podcast destination.\n"
+              f"Allowed targets: {', '.join(sorted(DESTINATIONS))}.\n"
+              "The podcast is an EEC-only property; add a mapping in DESTINATIONS "
+              "only if you truly intend a new destination.", file=sys.stderr)
+        sys.exit(2)
+    dest_folder = dest["folder_id"]
 
     at = token()
     files = list_folder(at, FOR_YOUTUBE)
@@ -191,6 +234,8 @@ def main():
         json.dump(sidecar, f, ensure_ascii=False, indent=2)
 
     print(f"Episode {ep}: '{sidecar['title']}'")
+    print(f"  destination: {args.target} -> {dest['label']} "
+          f"(brand={dest['brand']}) [{dest_folder}]")
     print(f"  video:   {target['name']} ({dur}s) -> will publish as {video_name}")
     print(f"  thumb:   {thumb['name'] if thumb else '(none — engine makes one)'}")
     print(f"  sidecar: {sidecar_name}")
@@ -200,16 +245,16 @@ def main():
         print("\nDRY RUN — nothing forwarded. Re-run with --confirm to publish.")
         sys.exit(0)
 
-    r1 = upload(at, video_name, EEC_WATCHED, vpath, "video/mp4")
-    r2 = upload(at, sidecar_name, EEC_WATCHED, spath, "application/json")
+    r1 = upload(at, video_name, dest_folder, vpath, "video/mp4")
+    r2 = upload(at, sidecar_name, dest_folder, spath, "application/json")
     print(f"  forwarded video   id={r1.get('id')}")
     print(f"  forwarded sidecar id={r2.get('id')}")
     if thumb:
         tpath = os.path.join(work, thumb["name"])
         download(at, thumb["id"], tpath)
-        r3 = upload(at, base + os.path.splitext(thumb["name"])[1], EEC_WATCHED, tpath, "image/jpeg")
+        r3 = upload(at, base + os.path.splitext(thumb["name"])[1], dest_folder, tpath, "image/jpeg")
         print(f"  forwarded thumb   id={r3.get('id')}")
-    print("\nForwarded to 01-EEC-only. The engine should publish within ~1 minute.")
+    print(f"\nForwarded to {dest['label']}. The engine should publish within ~1 minute.")
 
 
 if __name__ == "__main__":

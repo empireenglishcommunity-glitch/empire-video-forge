@@ -122,6 +122,20 @@ def hms(sec):
     return f"{h:d}:{m:02d}:{s:02d}" if h else f"{m:d}:{s:02d}"
 
 
+def mime_for(filename):
+    """RSS enclosure MIME type MUST match the actual audio container, or Apple/
+    Spotify may reject the episode. We ship .m4a (AAC) plain audio, so a blanket
+    'audio/mpeg' would be wrong."""
+    ext = os.path.splitext(filename or "")[1].lower()
+    return {
+        ".mp3": "audio/mpeg",
+        ".m4a": "audio/x-m4a",   # AAC in an MP4 container (Apple's expected type)
+        ".aac": "audio/aac",
+        ".wav": "audio/wav",
+        ".ogg": "audio/ogg",
+    }.get(ext, "audio/mpeg")
+
+
 def episode_meta(ep, home):
     """Pull the phrase + story for a rich episode description."""
     poe, story = {}, ""
@@ -150,7 +164,7 @@ def build_rss(state, public_base, cover_url):
       <itunes:episodeType>full</itunes:episodeType>
       <description><![CDATA[{desc}]]></description>
       <itunes:summary><![CDATA[{desc}]]></itunes:summary>
-      <enclosure url="{esc(enc_url)}" length="{ep.get('bytes',0)}" type="audio/mpeg"/>
+      <enclosure url="{esc(enc_url)}" length="{ep.get('bytes',0)}" type="{ep.get('mime') or mime_for(ep.get('file',''))}"/>
       <guid isPermaLink="false">two-worlds-ep{ep['episode']:02d}</guid>
       <pubDate>{pub}</pubDate>
       <itunes:duration>{hms(ep.get('duration',0))}</itunes:duration>
@@ -253,7 +267,7 @@ def main():
                 continue
         state["episodes"].append({
             "episode": ep, "title": title, "description": desc, "file": pub_name,
-            "duration": dur, "bytes": nbytes,
+            "duration": dur, "bytes": nbytes, "mime": mime_for(pub_name),
             "pub_date": format_datetime(datetime.datetime.now(datetime.timezone.utc)),
         })
 
