@@ -84,9 +84,22 @@ def build_skeleton(script):
 
 def load_or_init(path, script):
     """Load an existing manifest and RECONCILE it against the current script,
-    or create a fresh skeleton. Reconciliation keeps already-rendered slots but
-    refreshes text/section/speaker from the script and flags any line whose
-    text changed since it was rendered as stale (status back to 'pending')."""
+    or create a fresh skeleton.
+
+    SOURCE-OF-TRUTH RULE:
+      Once a line exists in the manifest, the MANIFEST owns its text and render
+      state — an edit made through the review app (mark(text=...) + re-render)
+      is authoritative and is never reverted by the script. The script only
+      SEEDS lines that the manifest has never seen (new/added lines) and
+      supplies structural fields (section/speaker/lang) if the manifest lacks
+      them. Re-generating an episode upstream is a separate, explicit action
+      that resets the manifest (see reset_from_script); it does not silently
+      fight the manifest here.
+
+    This keeps the review loop stable: editing a line's text in the app and
+    regenerating it makes the manifest the truth, and a later reload preserves
+    exactly that — no spurious 'stale' flips.
+    """
     skel = build_skeleton(script)
     if not os.path.exists(path):
         return skel
@@ -98,14 +111,22 @@ def load_or_init(path, script):
     for e in skel["lines"]:
         old = prev_by_idx.get(e["idx"])
         if not old:
-            continue
-        # carry forward render state
-        for k in ("status", "engine", "voice", "params", "duration", "synth_pass"):
+            continue  # new line not in the manifest yet -> keep script seed (pending)
+        # manifest wins for existing lines: carry EVERYTHING forward
+        for k in ("status", "engine", "voice", "params", "duration", "synth_pass",
+                  "text", "text_hash"):
             if k in old:
                 e[k] = old[k]
-        # STALE CHECK: text changed since last render -> must re-generate
-        if old.get("status") == "rendered" and old.get("text_hash") != e["text_hash"]:
-            e["status"] = "pending"
+    return skel
+
+
+def reset_from_script(path, script):
+    """Explicit upstream reset: rebuild the manifest from a freshly generated
+    script, marking every line 'pending'. Call this (not load_or_init) when the
+    episode SCRIPT was re-generated and you want the whole thing re-synthesized.
+    Kept separate so a routine reload never wipes rendered work."""
+    skel = build_skeleton(script)
+    save(skel, path)
     return skel
 
 
