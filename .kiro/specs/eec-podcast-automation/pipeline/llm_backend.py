@@ -28,22 +28,53 @@ DEFAULT_OPENAI_MODEL = os.environ.get("EEC_LLM_MODEL", "qwen/qwen3-32b")  # prov
 DEFAULT_LOCAL_MODEL = os.environ.get("EEC_LLM_MODEL", "Qwen/Qwen2.5-14B-Instruct-AWQ")
 
 
-# ---- backend 1: OpenAI-compatible free API (Groq/Cerebras/OpenRouter/...) --
-def _chat_openai(prompt, temperature):
-    base = os.environ["EEC_LLM_BASE_URL"].rstrip("/")   # e.g. https://api.groq.com/openai/v1
-    key = os.environ["EEC_LLM_KEY"]
-    model = os.environ.get("EEC_LLM_MODEL", DEFAULT_OPENAI_MODEL)
+# ---- backend 1: OpenAI-compatible free API (OpenRouter/Groq/Cerebras/...) --
+# Comma-separated model list -> automatic failover (if one :free 429s, try next).
+def _openai_models():
+    m = os.environ.get("EEC_LLM_MODEL", DEFAULT_OPENAI_MODEL)
+    extra = os.environ.get("EEC_LLM_FALLBACKS", "")  # comma-separated
+    models = [m] + [x.strip() for x in extra.split(",") if x.strip()]
+    return models
+
+
+def _one_call(base, key, model, prompt, temperature):
     body = {"model": model,
             "messages": [{"role": "user", "content": prompt}],
             "temperature": temperature}
     req = urllib.request.Request(base + "/chat/completions",
                                  data=json.dumps(body).encode("utf-8"),
                                  headers={"Content-Type": "application/json",
-                                          "Authorization": "Bearer " + key},
+                                          "Authorization": "Bearer " + key,
+                                          "X-Title": "EEC Two Worlds"},
                                  method="POST")
     with urllib.request.urlopen(req, timeout=180) as r:
         data = json.loads(r.read().decode("utf-8"))
     return data["choices"][0]["message"]["content"]
+
+
+def _chat_openai(prompt, temperature):
+    """Transient 429/5xx on free models are per-MINUTE/capacity, not daily.
+    Rotate across the model list AND retry with short backoff, so the caller
+    rarely sees a failure. ~6 rounds over the models."""
+    import time
+    base = os.environ["EEC_LLM_BASE_URL"].rstrip("/")
+    key = os.environ["EEC_LLM_KEY"]
+    models = _openai_models()
+    last_err = None
+    for rnd in range(6):
+        for model in models:
+            try:
+                return _one_call(base, key, model, prompt, temperature)
+            except urllib.error.HTTPError as e:
+                last_err = e
+                if e.code in (429, 502, 503):
+                    continue          # try next model immediately
+                raise
+            except Exception as e:
+                last_err = e
+                continue
+        time.sleep(min(8 * (rnd + 1), 40))  # all models busy -> short wait, retry round
+    raise last_err if last_err else RuntimeError("all free models busy")
 
 
 # ---- backend 2: local Qwen on GPU (Kaggle) — truly unlimited ---------------
