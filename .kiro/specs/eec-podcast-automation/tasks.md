@@ -67,9 +67,17 @@
 - [ ] 4.4 Optional: auto-cut the 9:16 shorts highlight from `shorts_highlight`. [R4.4]
 
 ## Phase 5 — Delivery + publish integration
-- [ ] 5.1 Deliver Episode 1 to the watched Drive folder + sidecar meta (episode/level/
-      podcast). Confirm orientation probe -> long-form, engine publishes correctly,
-      lands in the **Empire English Podcast** playlist. [R5]
+- [x] 5.0 Build `deliver_episode.py`: writes the `<basename>_metadata.json` sidecar
+      (Arabic-first seed title + caption from phrase/story, topic=conversation,
+      format=long/is_long fail-soft flags, podcast=true playlist hint) and uploads
+      video+sidecar to Drive. SAFETY: requires --confirm to hit the LIVE watched
+      folder; without it stages to a non-watched folder. **Dry-run verified** on Ep1.
+- [x] 5.0a Verified live engine: workflow `RdtmJTVYU4jFFCvF` "YouTube — Publishing"
+      is **active**, Drive Trigger polls **01-EEC-only** (`19WOAX2ME-...WDOS`) every
+      minute (NOT the output parent — review uploads there are safe/non-triggering).
+- [ ] 5.1 **GATE: owner go/no-go** to deliver Ep1 to the LIVE folder (real YouTube
+      publish). On go: run deliver_episode.py --confirm; confirm probe->long-form,
+      publish OK, lands in **Empire English Podcast** playlist. [R5]
 - [ ] 5.2 End-to-end dry run: one manual trigger -> published episode, verified. [R6.2]
 
 ## Phase 6 — Automation & scheduling
