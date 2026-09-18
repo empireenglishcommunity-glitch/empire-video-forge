@@ -12,8 +12,13 @@
 #
 # Requires: Kaggle GPU = T4, Internet ON. Fresh notebook.
 # --------------------------------------------------------------------------
-# CELL 1 (install + restart) — ARABIC ONLY (VoiceTut). Do NOT add chatterbox here:
-#   !pip install -q torch --index-url https://download.pytorch.org/whl/cu121
+# CELL 1 (install + restart) — ARABIC ONLY (VoiceTut).
+# CRITICAL: do NOT reinstall torch — Kaggle's torch already works with the GPU.
+# Reinstalling a cuXXX torch breaks it vs transformers>=5.3 (the 'torch has no
+# attribute _utils' error). OmniVoice needs transformers>=5.3.0 (has
+# HiggsAudioV2TokenizerModel). So: upgrade transformers, install voicetut+omnivoice,
+# leave torch alone.
+#   !pip install -q -U "transformers>=5.3.0"
 #   !pip install -q git+https://github.com/k2-fsa/OmniVoice.git
 #   !pip install -q voicetut-tts catt-tashkeel faster-whisper
 #   import os; os._exit(0)
