@@ -1,0 +1,41 @@
+{
+  "_comment": "Two Worlds CAST REGISTRY — the voice-identity library (per the Arabic TTS Arena thesis). Each character maps to an engine + voice identity + dialect + default performance. Adding a character = adding an entry. The synth pipeline reads this to route every script line to the right voice. Arabic voices run through the shared pronunciation brain (egyptian_lexicon.json). English voices use Chatterbox. Confirm/expand after the owner locks the final cast audition.",
+  "engines": {
+    "voicetut": {"role": "arabic", "note": "VoiceTut built-in voices + shared Egyptian lexicon; num_step=64, guidance=2.5"},
+    "chatterbox": {"role": "english", "note": "Chatterbox multilingual; expressive English; exaggeration/cfg per character"}
+  },
+  "cast": {
+    "Coach": {
+      "engine": "voicetut", "voice": "Sayed", "lang": "ar", "dialect": "egyptian",
+      "role": "the teacher/narrator", "performance": "warm, encouraging, clear",
+      "num_step": 64, "guidance_scale": 2.5, "speed": 1.0,
+      "status": "locked-candidate"
+    },
+    "Macal": {
+      "engine": "chatterbox", "voice_ref": "macal_ref.wav", "lang": "en",
+      "accent": "arabic-accented english (learner, evolves across season)",
+      "role": "learner-hero", "performance": "earnest, hopeful, a little nervous",
+      "exaggeration": 0.5, "cfg_weight": 0.5, "status": "planned"
+    },
+    "Nour": {
+      "engine": "chatterbox", "voice_ref": "nour_ref.wav", "lang": "en",
+      "accent": "clear confident mild-accent (aspirational-but-reachable)",
+      "role": "guide/friend", "performance": "warm, confident, encouraging",
+      "exaggeration": 0.6, "cfg_weight": 0.5, "status": "planned"
+    }
+  },
+  "arabic_voice_pool": {
+    "_comment": "Owner-confirmed clean VoiceTut voices (round 1) + others pending the lexicon re-audition. Cast creatively by role/energy/age when assigning recurring characters.",
+    "male": ["Sayed", "Omar", "Essam", "Ahmed", "Abdullah"],
+    "female": ["Yasmin", "Sarah"],
+    "pending_lexicon_reaudition": ["Abdelrahman", "Kamal", "Hossam", "Mohamed", "Zaki", "Aly", "Asmaa", "Esraa", "Hanan", "Omnia"]
+  },
+  "casting_notes": {
+    "_comment": "Creative casting guidance for assigning pool voices to characters as the story grows.",
+    "warm_elder": "a lower, slower male (e.g. Essam) for a landlord/wise-uncle character",
+    "energetic_youth": "brighter voices (e.g. Omar) for young/excited characters",
+    "female_lead": "Yasmin/Sarah — warm, clear",
+    "authoritative": "Ahmed/Abdullah — steady, for officials/interviewers",
+    "kids_gulf_levantine": "not in VoiceTut's set — sourced/added later as new voice identities"
+  }
+}
