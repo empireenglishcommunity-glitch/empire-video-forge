@@ -1,0 +1,112 @@
+{
+  "episode": 1,
+  "title": "The Arrival",
+  "level": "A2",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Excuse me, hi! Is this the right way to the taxis?"
+    },
+    {
+      "section": "scene1",
+      "speaker": "guest_m1",
+      "lang": "en",
+      "text": "Yes, right out those doors, mate! Follow the blue sign."
+    },
+    {
+      "section": "scene1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Awesome, thanks! Hi there, are you available?"
+    },
+    {
+      "section": "scene1",
+      "speaker": "guest_driver",
+      "lang": "en",
+      "text": "Yes, hop in! Where are we going today?"
+    },
+    {
+      "section": "scene1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Downtown Dubai, please. How long does it take?"
+    },
+    {
+      "section": "scene1",
+      "speaker": "guest_driver",
+      "lang": "en",
+      "text": "About twenty minutes with light traffic. First time here?"
+    },
+    {
+      "section": "scene1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes, I just landed. I'm moving here for a new job."
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أهلاً بيك في أول حلقة من Two Worlds! ماكال لسه واصل دبي وبيتكلم مع سواق التاكسي. خد بالك من الجملتين دول: الأولى 'How long does it take?' يعني 'بياخد وقت قد إيه؟'. والجملة التانية 'I just landed' يعني 'أنا لسه واصل بالطيارة حالاً'. غلطة شائعة بنشوفها كتير: ناس تقول 'How long it takes?' من غير 'does' — افتكر دايماً ترتيب السؤال الصحيح: How long does it take?",
+      "teaches": [
+        "How long does it take?",
+        "I just landed"
+      ]
+    },
+    {
+      "section": "scene2",
+      "speaker": "guest_driver",
+      "lang": "en",
+      "text": "Here we are! That's Downtown Dubai."
+    },
+    {
+      "section": "scene2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Great! Thanks for the ride. Have a good one!"
+    },
+    {
+      "section": "scene2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal! Over here! You made it!"
+    },
+    {
+      "section": "scene2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Nour! It's so good to see you! Thanks for waiting for me."
+    },
+    {
+      "section": "scene2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Of course! Welcome to Dubai. Let's get your bags and grab some coffee."
+    },
+    {
+      "section": "coach_break2",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "نور استقبلت ماكال بكلمة 'You made it!'، ودي مش معناها الحرفي 'أنت صنعتها'، معناها 'حمد الله على السلامة / أخيرًا وصلت!'. ولما ماكال رد قال: 'It's so good to see you' يعني 'مبسوط جداً إني شفتك'. معلومة ثقافة سريعة: في الخليج ودبي تحديداً، عبارة 'Have a good one' هي أسلوب يومي شايع جداً وسريع للوداع بدل 'Goodbye'.",
+      "teaches": [
+        "You made it!",
+        "It's so good to see you"
+      ]
+    },
+    {
+      "section": "outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دي كانت خطوة ماكال الأولى. في الحلقة الجاية، ماكال ونور هيروحوا كافيه وهيكون فيه اختبار حقيقي لمستواه في الإنجليزي. اشترك دلوقتي في قناة التليجرام عشان تتمرن على جمل النهاردة بصوتك!"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "How long does it take?",
+    "ar": "بياخد وقت قد إيه؟"
+  },
+  "shorts_highlight_hint": "Macal asking 'How long does it take?' followed by Coach explaining the 'does' mistake.",
+  "next_episode_teaser": "Macal tries to order his first coffee in Dubai, but the fast-talking barista catches him off guard.",
+  "story_update": "Macal arrived in Dubai, successfully took a taxi from the airport to Downtown, and met up with Nour."
+}
