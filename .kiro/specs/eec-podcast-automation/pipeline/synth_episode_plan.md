@@ -28,10 +28,12 @@ Per-line language tag routes to the right engine; both fit on a T4 (VoiceTut
 ~3GB, Chatterbox ~4-6GB — load sequentially if VRAM tight: do all AR lines, free,
 then all EN lines). The script already tags lang, so routing is trivial.
 
-## Build order
-1. (next) build synth_episode.py Kaggle notebook implementing the above.
-2. needs a real 30-min script (from the story generator) OR test on Ep1 script.
-3. server-side assemble_audio.py --plain already exists -> stitches the output.
+## Build order (DONE — implemented as the split notebooks)
+The unified `synth_episode.py` sketch was superseded by the two manifest-driven
+Kaggle notebooks (VoiceTut and Chatterbox clash in one kernel, so the passes are
+split): `kaggle/synth_episode_ar.py` + `kaggle/synth_episode_en.py`, with
+`kaggle/synth_arabic_qa.py` for the ASR-QA proof. Both were run for real on Ep1.
+Server-side `assemble_audio.py --plain` stitches the merged output.
 
 ## Self-improving pronunciation (locked)
 Every Arabic line: shared lexicon + auto-diacritize + ASR-QA. Flagged words ->

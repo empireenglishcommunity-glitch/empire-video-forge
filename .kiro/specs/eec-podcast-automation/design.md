@@ -102,12 +102,13 @@ The English voices (Chatterbox) need GPU, so they are generated on Kaggle in a
 **decoupled batch**, NOT called live each week (Kaggle sessions expire):
 1. `gen_script.py` produces script.json for the next N episodes -> pushed to the repo
    (or Drive).
-2. **Owner runs the Kaggle notebook** (kaggle/chatterbox_cast.py) periodically (e.g.
-   once per few weeks): it reads the pending scripts + the locked reference clips,
-   clones each character's English lines, and pushes the per-line WAVs + timeline
-   back to Drive/GitHub.
-3. The **server pipeline** then picks up ready English audio, synthesizes the Arabic
-   Coach lines (Gemini), assembles audio+video, and auto-publishes on schedule.
+2. **Owner runs the Kaggle notebooks** (`kaggle/synth_episode_en.py` for English
+   Chatterbox, `kaggle/synth_episode_ar.py` for Arabic VoiceTut) periodically (e.g.
+   once per few weeks): they read the pending scripts + the locked reference clips /
+   Egyptian lexicon, synthesize each character's lines, and push the per-line WAVs +
+   manifest back to Drive/GitHub.
+3. The **server pipeline** then picks up the ready audio (both languages produced on
+   Kaggle now), assembles audio+video, and auto-publishes on schedule.
 This keeps publishing fully automated while GPU voice is "banked" in short sessions.
 Future upgrade path (optional): a paid GPU endpoint (or Chatterbox turbo) to make
 even the English step fully unattended.

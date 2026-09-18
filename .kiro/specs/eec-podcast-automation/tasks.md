@@ -47,15 +47,15 @@
 - [x] 3.3 **GATE PASSED:** Ep1 assembled 40.6 min (276/276, 0 skipped), delivered to
       Drive `raw-audio`. Audio validated (−17.1 dB mean / −1.1 dB peak, 48k AAC).
 
-## Phase 4 — Human-in-the-Loop review ✅ DONE
-> Replaces in-house video (owner makes video). Lets the owner fix a mispronounced
-> clip WITHOUT re-generating the whole episode.
-- [x] 4.1 `regen_engine.py`: re-synthesizes ONE line by idx with the exact engine/
-      voice/params from the manifest (lazy-loaded VoiceTut/Chatterbox).
-- [x] 4.2 `streamlit_review.py`: per-line player + editable text + status badges;
-      regenerate one/all pending; re-assemble via ffmpeg. `review_app_launcher.py`
-      runs it next to the GPU (Colab/Kaggle). Validated end-to-end.
-- [x] 4.3 `REVIEW_WORKFLOW.md`: owner runbook.
+## Phase 4 — Review approach ✅ DECIDED (in-app review tool RETIRED)
+> Original plan was a Human-in-the-Loop Streamlit/Colab tool to fix a mispronounced
+> clip without re-generating the whole episode. The owner reviews the assembled
+> audio DIRECTLY instead, so that tool was removed (`regen_engine.py`,
+> `streamlit_review.py`, `review_app_launcher.py`, `REVIEW_WORKFLOW.md` deleted).
+- [x] 4.1 Review path decided: owner listens to `ep01_audio_plain.m4a` directly.
+- [x] 4.2 Fix path: for any wrong Arabic word, add it to `egyptian_lexicon.json`
+      (one fix → whole cast, forever) and re-run the production synth notebook for
+      the affected line(s), then re-assemble. Prefer the lexicon fix over one-offs.
 
 ## Phase 5 — Delivery + publish integration
 - [x] 5.1 `run_podcast.py` orchestrator: script → verify EN batch → coach → assemble
@@ -74,7 +74,8 @@
 - [ ] 6.2 Re-point the weekly automation at the NEW synth path (currently references
       the old Gemini-Kore coach step in `run_podcast.py`). Update to VoiceTut + the
       manifest assembly, or gate on the Kaggle batch being present.
-- [ ] 6.3 Optional human-review gate before publish (Streamlit review = the gate).
+- [ ] 6.3 Optional human-review gate before publish (owner listens to the assembled
+      plain audio and approves before the publish step runs).
 
 ## Phase 7 — Hardening & scale
 - [x] 7.1 Security: `.gitignore` hardened; repo history clean; `SECURITY_ROTATION.md`.
