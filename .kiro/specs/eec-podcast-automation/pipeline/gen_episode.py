@@ -33,7 +33,7 @@ Usage: GEMINI_API_KEY=... python3 gen_episode.py --episode 1 [--level A2]
 Resumable: partial acts are cached in episodes/epNN/_acts/ so a quota stall
 doesn't lose work; re-run to continue.
 """
-import os, sys, json, re, argparse, time, urllib.request
+import os, sys, json, re, argparse, time, urllib.request, urllib.error
 
 MODEL = os.environ.get("EEC_SCRIPT_MODEL", "gemini-3.6-flash")
 HOME = os.environ.get("EEC_PODCAST_HOME", "/opt/eec-podcast")
@@ -176,23 +176,38 @@ def main():
             continue
         prompt = act_prompt(ep, title, level, situation, act_key, act_desc, season, all_lines)
         lines = None
-        for attempt in range(1, 5):
+        # QUOTA-PATIENT: keep trying across quota resets. 429 -> long backoff
+        # (free tier resets daily), so this self-completes overnight, no re-run.
+        # Cap total wait ~6h; other errors give up faster.
+        attempt = 0
+        deadline = time.time() + 6 * 3600
+        while time.time() < deadline:
+            attempt += 1
             try:
-                lines = extract_json(call_gemini(prompt, api_key))
+                raw = call_gemini(prompt, api_key)
+                lines = extract_json(raw)
                 assert isinstance(lines, list) and lines
-                # tag/validate
                 for ln in lines:
                     ln["section"] = act_key
                     ln.setdefault("lang", "ar" if ln.get("speaker") == "Coach" else "en")
                     if ln.get("speaker") == "Coach":
                         ln["lang"] = "ar"
                 break
-            except Exception as e:
-                print(f"  [{act_key}] attempt {attempt}: {str(e)[:80]}", file=sys.stderr)
+            except urllib.error.HTTPError as e:
                 lines = None
-                time.sleep(min(6 * attempt, 30))
+                if e.code == 429:  # quota — wait long for reset
+                    wait = min(120 * attempt, 900)
+                    print(f"  [{act_key}] 429 (quota) attempt {attempt}; waiting {wait}s", file=sys.stderr)
+                    time.sleep(wait)
+                else:  # 5xx etc — shorter backoff
+                    print(f"  [{act_key}] HTTP {e.code} attempt {attempt}", file=sys.stderr)
+                    time.sleep(min(15 * attempt, 120))
+            except Exception as e:
+                lines = None
+                print(f"  [{act_key}] attempt {attempt}: {str(e)[:80]}", file=sys.stderr)
+                time.sleep(min(10 * attempt, 120))
         if not lines:
-            print(f"  [{act_key}] FAILED — re-run to resume from here.", file=sys.stderr)
+            print(f"  [{act_key}] gave up after ~6h — re-run to resume from here.", file=sys.stderr)
             sys.exit(1)
         json.dump(lines, open(cache, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
         all_lines += lines
