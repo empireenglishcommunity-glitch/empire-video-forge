@@ -205,10 +205,10 @@ def host_put(host, local_path, remote_name, remote, serve_dir):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--home", default=os.environ.get("EEC_PODCAST_HOME", "/opt/eec-podcast"))
-    ap.add_argument("--host", choices=["rclone", "local"], default="local")
-    ap.add_argument("--remote", default="r2:empire-social-staging/podcast")
+    ap.add_argument("--host", choices=["rclone", "local"], default="rclone")
+    ap.add_argument("--remote", default="r2pod:two-worlds-podcast")
     ap.add_argument("--serve-dir", default="/opt/eec-podcast/public/podcast")
-    ap.add_argument("--public-base", default="https://social-staging.empireenglish.online/podcast")
+    ap.add_argument("--public-base", default="https://media.empireenglish.online")
     ap.add_argument("--cover", default="", help="show cover URL (public) or local path")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--confirm", action="store_true")
