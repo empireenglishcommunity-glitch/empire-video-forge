@@ -35,7 +35,7 @@ print("model sr:", model.sr)
 
 # --- pull the Egyptian-Arabic reference clip from the repo (raw GitHub) ----
 RAW = ("https://raw.githubusercontent.com/empireenglishcommunity-glitch/"
-       "empire-video-forge/main/.kiro/specs/eec-podcast-automation/voice-refs/")
+       "empire-video-forge/podcast-v2-arabic-test/.kiro/specs/eec-podcast-automation/voice-refs/")
 os.makedirs("/kaggle/refs", exist_ok=True)
 ref = "/kaggle/refs/coach_ar_ref.wav"
 try:
