@@ -25,10 +25,20 @@
     }
   },
   "arabic_voice_pool": {
-    "_comment": "Owner-confirmed clean VoiceTut voices (round 1) + others pending the lexicon re-audition. Cast creatively by role/energy/age when assigning recurring characters.",
-    "male": ["Sayed", "Omar", "Essam", "Ahmed", "Abdullah"],
-    "female": ["Yasmin", "Sarah"],
-    "pending_lexicon_reaudition": ["Abdelrahman", "Kamal", "Hossam", "Mohamed", "Zaki", "Aly", "Asmaa", "Esraa", "Hanan", "Omnia"]
+    "_comment": "ALL 17 VoiceTut voices are now usable — the shared lexicon fixed the pronunciation that made some stumble (owner confirmed متنساش fixed across voices). Full pool available for creative casting.",
+    "male": ["Sayed", "Omar", "Essam", "Ahmed", "Abdullah", "Abdelrahman", "Kamal", "Hossam", "Mohamed", "Zaki", "Aly"],
+    "female": ["Yasmin", "Sarah", "Asmaa", "Esraa", "Hanan", "Omnia"]
+  },
+  "arabic_recurring_cast": {
+    "_comment": "Creative role-casting from the pool (director's picks; adjustable). Each recurring Arabic character = a locked voice identity so they sound consistent every episode.",
+    "Coach": {"voice": "Sayed", "why": "warm, teacherly, owner-approved"},
+    "TaxiDriver": {"voice": "Essam", "why": "lower, friendly working-man warmth"},
+    "Barista": {"voice": "Omnia", "why": "bright, upbeat young female"},
+    "Landlord": {"voice": "Abdullah", "why": "steady, mature authority"},
+    "Interviewer": {"voice": "Ahmed", "why": "composed, professional"},
+    "Friend_M": {"voice": "Omar", "why": "energetic young male"},
+    "Friend_F": {"voice": "Yasmin", "why": "warm, expressive female"},
+    "Official": {"voice": "Kamal", "why": "formal, firm"}
   },
   "casting_notes": {
     "_comment": "Creative casting guidance for assigning pool voices to characters as the story grows.",
