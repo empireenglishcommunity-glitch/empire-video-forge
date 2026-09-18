@@ -19,19 +19,30 @@
 - [x] 1.2 **GATE PASSED:** owner heard + approved the cloned cast — Macal = owner's own
       voice; Nour = Emma clone; Coach = Gemini Kore. Locked reference clips in
       `voice-refs/`. Kaggle notebook `kaggle/chatterbox_cast.py` proven working.
-- [ ] 1.3 Build the synth steps:
-      - `synth_english.py` (Kaggle/GPU batch): script.json + refs -> per-line WAV via
-        Chatterbox voice cloning (per-character ref map). Batch pattern (design 2.6b).
-      - `synth_coach.py` (server): Coach lines -> Gemini Kore (existing cred),
-        retry/pace on 429.
-      - Both emit per-line WAV + timeline.json. Fail-soft per line. [R3.3, R3.5]
+- [x] 1.3 Build the synth steps:
+      - `kaggle/synth_english.py` (Kaggle/GPU batch): reads committed script.json + refs
+        (raw GitHub) -> per-line WAV via Chatterbox voice cloning. Speaker map: recurring
+        chars explicit, any `guest_*` id resolved to the guest library by gender heuristic.
+        Emits `timeline.en.json`. Fail-soft per line (retry once, skip, never abort batch).
+      - `pipeline/synth_coach.py` (server): Coach (Arabic) lines -> Gemini Kore (existing
+        cred), 429/5xx backoff, **RESUMABLE** (keeps already-good WAVs so a re-run only
+        fills gaps). Emits `timeline.ar.json`. **TESTED on real Ep1** — produced valid
+        24kHz WAVs. [R3.3, R3.5]
+      - ⚠️ **Quota reality (measured):** free-tier Gemini TTS =
+        `GenerateRequestsPerDayPerProjectPerModel-FreeTier`, **limit 10 requests/DAY**
+        (not per-minute). Ep1 has 3 Coach lines; a weekly cadence fits easily, but the
+        Coach step must be resumable across days (done) and paced. Options if we scale:
+        rotate to `gemini-2.5-flash-lite`/other free model, or a tiny paid bump.
 
-## Phase 2 — Script generator
-- [ ] 2.1 Build `gen_script.py`: Gemini prompt (brand voice + level + season memory +
-      segment structure) -> validated script.json. [R1.1, R1.2, R2]
-- [ ] 2.2 Implement `season.json` state read/update (cast + story continuity). [R1.4]
-- [ ] 2.3 Generate + review **Episode 1 script** on the real template. Owner approves
-      pedagogical value + voice. [R2.4, R8.2]
+## Phase 2 — Script generator ✅ DONE (PR #28, owner-approved)
+- [x] 2.1 Build `pipeline/gen_script.py`: Gemini prompt (brand voice + level + season
+      memory + fixed segment structure) -> validated script.json. Fail-soft (validate +
+      retry once, never emit a broken script). Model env-overridable
+      (`EEC_SCRIPT_MODEL`, default `gemini-3.6-flash`). [R1.1, R1.2, R2]
+- [x] 2.2 `season.json` state read/update (cast + voice map + story continuity +
+      phrases-taught). [R1.4]
+- [x] 2.3 **GATE PASSED:** Episode 1 "The Arrival" (A2) generated + owner-approved.
+      Committed at `episodes/ep01/script.json`. [R2.4, R8.2]
 
 ## Phase 3 — Audio assembly
 - [ ] 3.1 Build `assemble_audio.py`: stitch line WAVs + micro-gaps, loudnorm,
