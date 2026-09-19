@@ -54,8 +54,14 @@ Every casting decision must satisfy both:
 - R1b.1 Scripts are written with **DeepSeek (R1 + V3)** via the existing OpenRouter
   free tier — for stronger long-form, dramatic, soap-opera-style writing.
 - R1b.2 Two-pass authoring (recommended): **R1 (reasoning)** plans the episode's story
-  beats/structure; **V3** writes the natural spoken dialogue. Fallbacks (other free
+  beats/structure; **V3** writes the natural spoken dialogue **and a short per-line
+  acting `direction`** (emotional/delivery note) fed to Qwen3-TTS. Fallbacks (other free
   models) remain configured so a rate-limit never blocks a run.
+- R1b.5 **Per-line `direction` field:** each line may carry a natural-language acting
+  note (e.g. "angry, rapid" / "calm, reassuring"). It drives Qwen3-TTS emotional
+  delivery for English lines, is never spoken/shown, and does not affect the gates.
+  Voice **identity** stays fixed per character (voice-design + seed, Option A — no
+  cloning); `direction` only varies **emotion** per line.
 - R1b.3 This is a **configuration** of the existing `llm_backend.py` (model + fallback
   env vars) — no new engine dependency, still commercial-safe (DeepSeek = MIT/open) and
   $0 on the free tier.

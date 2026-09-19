@@ -27,8 +27,10 @@ Goal: agree WHAT the season is before writing it.
 Goal: all 10 short scripts exist + approved, so the full cast is known.
 - [ ] A.0 🤖 **Adopt DeepSeek for scriptwriting**: set `EEC_LLM_MODEL` /
       `EEC_LLM_FALLBACKS` (DeepSeek R1 + V3, via OpenRouter free) in the server `.env`;
-      confirm the exact free model strings resolve; optionally add a two-pass
-      (R1 beats → V3 dialogue) mode to `gen_episode.py`. Verify one test generation.
+      confirm the exact free model strings resolve; add the optional two-pass
+      (R1 beats → V3 dialogue) mode to `gen_episode.py`, and have V3 emit a per-line
+      **`direction`** acting note (schema §3.3). Verify one test generation + that the
+      gates ignore `direction`.
 - [ ] A.1 🤖 Generate **Eps 2-10** short scripts (`gen_episode.py`, ~7 min, `--no-advance`
       handling per episode), each passing **structure + duration gates**. Ep1 already exists.
 - [ ] A.2 🤖 Reconcile Ep1 into the season (it already exists short); ensure continuity
@@ -59,9 +61,9 @@ Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.1 🤖 **Rename Coach → Mahmoud**: `cast.json` (`display_name`), the Arabic
       self-intro line(s) in scripts, and the lexicon name entry. Keep speaker id `Coach`
       so gates/pipeline are untouched (design §6).
-- [ ] C.2 🤖 Build `kaggle/synth_episode_en_qwen.py` (Macal-stage-aware) replacing the
-      Chatterbox English notebook; update `run_podcast.py`/docs; archive the Chatterbox
-      path (not deleted).
+- [ ] C.2 🤖 Build `kaggle/synth_episode_en_qwen.py` (Macal-stage-aware; passes each
+      line's **`direction`** to Qwen3-TTS for delivery) replacing the Chatterbox English
+      notebook; update `run_podcast.py`/docs; archive the Chatterbox path (not deleted).
 - [ ] C.3 🤖 Update `series-bible.md` casting section (realism + pedagogy + Macal arc)
       and `OPERATIONS.md` (new English engine + audition workflow).
 - [ ] C.4 🧑 **Re-synth Ep1 English on Qwen3-TTS** (Macal Stage 1) via the new notebook;

@@ -41,8 +41,14 @@ Two engines, one manifest pipeline:
   English**, and **native American** convincingly, and how to specify each. Confirm
   whether "accent strength / fluency" is dial-able enough to express **Macal's 3-stage
   arc** (or whether we express the arc via 3 distinct descriptions).
-- V4. **Reproducibility:** confirm a voice is stable across runs via a **seed** and/or a
-  fixed voice-design spec (so an actor sounds the same every episode).
+- V4. **Reproducibility (voice identity method):** **Option A (DEFAULT, owner-chosen)** —
+  each actor is a fixed **voice-design description + seed**, no cloning, no reference
+  clips. Confirm a design+seed reproduces the same voice across runs/episodes.
+  **Option B (FALLBACK ONLY, validated in audition, not the default):** if seed-only
+  consistency proves shaky, generate one clean sample from the approved design and use
+  that **self-generated** sample as a clone reference for future episodes. Option B still
+  honors "owner provides no clips" (the reference is machine-generated). Do NOT adopt
+  Option B unless Option A fails the consistency check.
 - V5. **Kaggle install recipe:** exact pip/deps, GPU/VRAM needs, torch compatibility
   (validate to avoid the Chatterbox "--no-deps / silent-fail" class of problem).
 - V6. **Output format/rate** for clean handoff to the existing 24 kHz mono manifest/
@@ -56,7 +62,9 @@ models by env (`EEC_LLM_MODEL`), supports a comma-separated fallback list
 - **Two-pass authoring (recommended):**
   - **R1 (reasoning)** → plan the episode: story beats, the scene→coach structure, the
     2-3 target phrases, the cliffhanger. (`reasoning.enabled = true` for this pass.)
-  - **V3** → write the natural spoken dialogue from R1's plan (fast, fluent).
+  - **V3** → write the natural spoken dialogue from R1's plan (fast, fluent), and emit a
+    short **per-line `direction`** (acting note, e.g. "calm, reassuring" / "anxious,
+    rapid") that Qwen3-TTS consumes for emotional delivery (see §3.3).
 - **Config (illustrative; exact model strings confirmed at adoption):**
   `EEC_LLM_MODEL=deepseek/deepseek-r1:free`,
   `EEC_LLM_FALLBACKS=deepseek/deepseek-chat-v3:free, qwen/qwen3-32b:free`.
@@ -133,15 +141,42 @@ Notes:
 }
 ```
 
+### 3.3 Script line schema (adds per-line acting `direction`)
+Each script line gains an optional **`direction`** — a short natural-language acting note
+that V3 (the scriptwriter) writes per line and that Qwen3-TTS consumes as an emotional/
+delivery instruction. This turns every line into a directed performance.
+```jsonc
+{
+  "section": "act1",
+  "speaker": "Macal",
+  "lang": "en",
+  "text": "Wait — tonight? Like, an interview? Now?",
+  "direction": "anxious, rising panic, speaking quickly"   // NEW — optional per line
+}
+```
+Rules:
+- `direction` is **optional**; if absent, the character's base `voice_design` (calm
+  default) is used. If present, it is combined with the voice_design at synth time
+  (identity from voice_design + emotion from direction).
+- `direction` is a performance note only — it is **stripped from any on-screen text**
+  and never spoken. The audio-cleaner already removes bracketed/parenthetical stage
+  directions from `text`; `direction` lives in its own field so it's never read aloud.
+- Arabic (Coach/Mahmoud, VoiceTut) currently ignores `direction` (VoiceTut has no
+  natural-language emotion control); it applies only to Qwen3-TTS English lines.
+- The structure + duration gates operate on `text`/`speaker`/`section` as before —
+  `direction` does not affect them.
+
 ## 4. Notebooks (Kaggle, owner-run)
 - `kaggle/audition_qwen.py` — NEW. For each character, generate 3-4 candidate
   voice-designs (Macal: the 3 arc stages) reading real Season-1 lines; emit labeled
-  clips + a zip. Pure audition; writes no cast state.
+  clips + a zip. Pure audition; writes no cast state. (Uses a neutral direction so
+  candidates are compared on voice identity, not performance.)
 - `kaggle/synth_episode_en_qwen.py` — NEW (replaces `synth_episode_en.py`). Reads
   `cast.json`, routes each English line to its character's designed voice; for Macal,
-  picks the stage from `stage_map` given the episode number. Writes `lineNNN_*.wav` +
-  a pass manifest, same contract as today.
-- `kaggle/synth_episode_ar.py` — UNCHANGED (VoiceTut; Coach lines).
+  picks the stage from `stage_map` given the episode number; passes the line's
+  **`direction`** (if any) to Qwen3-TTS as the delivery instruction. Writes
+  `lineNNN_*.wav` + a pass manifest, same contract as today.
+- `kaggle/synth_episode_ar.py` — UNCHANGED (VoiceTut; Coach lines; ignores `direction`).
 
 ## 5. Gates (unchanged, applied every episode)
 - **Structure gate** (`structure_check.py`, series-bible §10): cold_open pure story;
