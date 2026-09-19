@@ -12,6 +12,36 @@
 3. Never touch the Arabic engine (VoiceTut). Never disrupt the 12 live containers.
 4. Push ALL commits to a branch BEFORE opening a PR (avoid the merged-early split).
 5. Keep the retired Chatterbox path archived (not deleted) until the new cast is proven.
+6. **All execution runs through a LIVE TASK LIST (mandatory — see the Execution
+   Protocol below).** No task is done from memory; nothing is dropped.
+
+## Execution protocol — the live task list is MANDATORY
+> This is a hard process rule, not a suggestion. It exists so that across a long,
+> multi-phase, multi-session effort we **never drop, skip, or lose track of a task** —
+> no matter what interruptions, context switches, or session breaks happen.
+
+**Rules of the live task list:**
+- **P1 — One source of truth.** When execution begins, the agent creates a live task
+  list mirroring this plan (Phases 0-E, every task). This tasks.md is the durable
+  reference; the live list is the working tracker. They must not diverge.
+- **P2 — Update on the go (real time).** The agent marks a task **in-progress** when it
+  starts and **complete IMMEDIATELY** when its artifact is produced AND verified — never
+  in a batch at the end, never from memory. Task status must always reflect reality.
+- **P3 — Definition of done per task.** A task is complete ONLY when its concrete
+  artifact exists and is verified (file written, output produced, check passed). A
+  command exiting without error is NOT proof of done. Owner-run (🧑) tasks are marked
+  complete only after the owner confirms.
+- **P4 — Gates are hard stops in the list.** A GATE task cannot be marked complete until
+  the owner explicitly signs off. Work does not cross a gate on assumption.
+- **P5 — Add, don't silently drop.** If new work is discovered mid-phase, ADD it to the
+  live list (and reflect it here) rather than doing it untracked. If a task becomes
+  unnecessary, mark it removed with a one-line reason — never delete silently.
+- **P6 — Survive session breaks.** At any stop/handoff, the live list + the handoff doc
+  must together state exactly which tasks are done, in-progress, and next — so a fresh
+  session resumes with zero loss. On resume, re-sync the live list from this tasks.md
+  before doing anything.
+- **P7 — Nothing outside the list.** No execution step happens that isn't represented as
+  a task. If it's worth doing, it's worth tracking.
 
 ---
 
