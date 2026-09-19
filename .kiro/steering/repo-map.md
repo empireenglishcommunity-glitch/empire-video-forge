@@ -60,8 +60,15 @@ long video → drop in inbox/<brand>/ → [Kaggle GPU: cut · reframe 9:16 · ca
   (https://assessment.empireenglish.online) + tagline.
 - Honesty guardrails enforced in prompts: never "hack/secret/guaranteed"; prefer
   "system/step by step/real". Content = Egyptian Arabic + English term.
-- KNOWN LIMIT: existing videos' titles/descriptions can't be edited via current
-  credential (upload scope only → 403 on videos.update); those are dashboard edits.
+- Privacy is data-driven (fixed 2026-09-19): `Build YT metadata` emits `yt_privacy` =
+  'private' only when a `publishAt` schedule is set (YouTube needs private+publishAt to
+  auto-publish later), else 'public'. Upload node privacyStatus = `{{ $json.yt_privacy || 'public' }}`.
+  A sidecar `meta.privacy` (public|private|unlisted) overrides. NEVER hardcode privacyStatus
+  to private — that leaves auto-dropped clips private forever (Studio shows "Oops" on the
+  public edit page).
+- KNOWN LIMIT: existing videos' titles/descriptions/PRIVACY can't be edited via current
+  credential (upload scope only → 403 on videos.update); those are dashboard edits. So
+  videos uploaded before the privacy fix must be flipped to Public manually in YouTube Studio.
 
 ## Deploy discipline for the live engine (from the docs)
 deactivate → patch nodes → `n8n_validate_workflow` (must be 0 errors) → verify code
