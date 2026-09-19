@@ -186,12 +186,12 @@ json.dump({"episode": EPISODE, "pass": PASS,
            "flagged": dict(sorted(flagged.items(), key=lambda kv: -kv[1]))},
           open(f"{WORK}/qa_flagged.json","w",encoding="utf-8"), ensure_ascii=False, indent=2)
 s = manifest_lib.summary(manifest)
-print(f"\nDONE ep{EPISODE:02d} [PASS={PASS}]: {s['rendered']}/{s['total']} rendered, "
-      f"{s['failed']} failed, {s['pending']} pending (other pass), ~{s['duration_min']}min")
-if s["failed_idx"]: print("  FAILED idx:", s["failed_idx"])
+print("DONE ep{:02d} [PASS={}]: {}/{} rendered, {} failed, {} pending (other pass), ~{}min".format(
+    EPISODE, PASS, s["rendered"], s["total"], s["failed"], s["pending"], s["duration_min"]))
+if s["failed_idx"]:
+    print("  FAILED idx:", s["failed_idx"])
 print("QA flagged words (add to egyptian_lexicon.json):", flagged or "NONE - clean!")
-print(f"Zip {WORK} (includes manifest.json) and download -> server merges manifest "
-      f"-> assembles plain audio -> raw-audio.")
+print("Zip {} (includes manifest.json), download it, drop in Drive raw-audio -> server merges + assembles.".format(WORK))
 
 
 
@@ -202,7 +202,7 @@ print(f"Zip {WORK} (includes manifest.json) and download -> server merges manife
 # raw-audio folder. The server merges manifest.json from both passes.
 # ==========================================================================
 # import shutil, os
-# zip_path = shutil.make_archive(f"/kaggle/working/ep{EPISODE:02d}_{PASS}", "zip", WORK)
+# zip_path = shutil.make_archive("/kaggle/working/ep{:02d}_{}".format(EPISODE, PASS), "zip", WORK)
 # print("Zip ready:", zip_path, "(", round(os.path.getsize(zip_path)/1e6, 1), "MB )")
 # # In Kaggle: the file appears under /kaggle/working — use the download button,
 # # or the notebook's Output tab, to pull ep01_en.zip to your machine.
