@@ -23,7 +23,7 @@ passes run as **separate notebooks**. Both write per-line WAVs + update the shar
 3. **Run All.** First run installs + downloads the model (a few minutes).
    The notebook fetches `script.json`, `cast.json`, `egyptian_lexicon.json`, the
    voice-refs, and `manifest_lib.py` from this repo
-   (branch `podcast-v2-review-and-publish`) automatically.
+   (branch `main`) automatically.
 4. When it finishes, download the `epNN/` folder from `/kaggle/working` (per-line
    WAVs + `manifest.<pass>.json`) — or push it to Drive `raw-audio`.
 5. Run the other pass the same way. The server merges both manifests and assembles

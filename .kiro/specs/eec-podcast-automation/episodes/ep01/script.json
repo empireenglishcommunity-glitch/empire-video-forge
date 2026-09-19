@@ -7,1671 +7,318 @@
       "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Please! My phone is dead and I have no money. I’m lost!"
+      "text": "Wow, look at that building. It’s so tall!"
     },
     {
       "section": "cold_open",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "Look, man, I don’t want to argue. My shift ends in ten minutes. If you can’t pay, I have to drop you off."
+      "text": "Yeah, that's the Burj Khalifa. First time in Dubai?"
     },
     {
       "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
-      "text": "I just need to reach the blue building on Zayed Road. Please give me two minutes to find my wallet."
-    },
-    {
-      "section": "cold_open",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Wait... Is that... my card? Under the seat? Oh, thank goodness. I found it."
+      "text": "Yes, first time. I just got off the plane... I feel a little lost."
     },
     {
       "section": "cold_open",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "I told you it was here. See? It’s just a small city. You will be fine. Now, where exactly is this office?"
+      "text": "Don't worry, my friend. You're safe now. Where are you going?"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I have an address here... but I think my phone is dead."
+    },
+    {
+      "section": "cold_open",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "No problem. Just read it to me. I know this city well."
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Thanks. I hope my English is good enough for this."
+    },
+    {
+      "section": "cold_open",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Your English is fine. Let's go."
     },
     {
       "section": "coach_intro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "Imagine you are in this car right now. Your heart is pounding. Your head is empty. What do you say next? Don’t panic. Listen closely to how Macal changes the situation."
+      "text": "أهلاً بيكم في أولى حلقات 'Two Worlds'! وحشتوني؟ أنا كوتش، وصوتكم اللي بيرافقكم في رحلة الإنجليزي. النهاردة إحنا مع ماكال في أول يوم في دبي. واقف في المطار تايه شوية، بس تمام، إحنا معاه."
     },
     {
       "section": "coach_intro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "You see? One wrong word can make a situation stressful. But one clear question can fix it. Let’s go back to the airport and see how Macal started this journey."
+      "text": "إحنا هنتعلم النهاردة إزاي نأخد تاكسي برة مصر، وإزاي نتكلم مع السواق. يعني إيه؟ قلقان؟ ممنوع الخوف! السواق في الرواية بيقول: 'Your English is fine.' يعني إنجليزيتك كويسة. شفتوا؟ ثقة!"
     },
     {
       "section": "coach_intro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "أهلاً بيك يا صديقي! وحشتني من أول ثانية؟ يا سلام، إنت لسه نازل في المطار وقلبك واقف؟ مش مشكلة. خد نفس عميق. النهارده إحنا مع ماكل في أول يوم ليه في دبي. وطبعاً إنت معاه خطوة بخطوة."
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "ماكل زي بالظبط زي إنت بالظبط: طموح، خايف شوية، ولسه بيتعلم. بس الفرق إن عنده كلام جاهز يطلّع بيه نفسه من أي موقف. النهارده هنتعلم إزاي تقول كلام صغير ومهم في نفس الوقت."
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "طيب، إحنا هنسافر معاه من أول ما يطلّع من الباب. في المطار، في التاكسي، في الشارع. وهنسمع كلام حقيقي بيقولوه الناس في دبي. مش كلام كتب، لأ، كلام حي."
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "فيه كلمات بسيطة كده لو عرفتها، هتفتح لك الأبواب. اسمعوا كويس لأن النهارده عندنا أربع جمل مفتاحية. أولاً: 'Excuse me, where is the taxi?' ثانياً: 'How much is the fare to the city?' ثالثاً: 'Please take me to this address.' ورابعاً: 'Is it far from here?'"
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "أربع جمل. يلا نسمعهم في الحكاية. إنت عض الورق والقلم؟ لأ؟ طيب برضه خلينا نسمع. لأن الكلام الحلو بيفيد في أكل المواقف."
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "الموضوع مش حفظ، ولا عذاب. الموضوع إنك تعيش الموقف مع ماكل. هو يغلط، وإنت تتعلم. هو ينجح، وإنت تفرح. وفي الآخر، تطلع كسبان كلام جديد في جيبتك."
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "يلا بينا، إحنا معاك في السكه. سيبني أيدك واقفل عينيك ثانية، نلاقي الطيارة نازلة. هاتسمع صوت عربي وإنجليزي، وكل كلمة إنت واخدها بجد. يلا نبدأ أول خطوة مع ماكل في 'العالمين'."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Wow… okay. This is it. Dubai. I’m really here."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I can’t believe I made it. The airport is so big. And so shiny. Everything is so clean."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay, Macal, breathe. You are in Dubai. New life. New job. New everything. Just... don’t mess it up."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I need to find the taxi. Where is the taxi? I should ask someone. But my English is... ah, I’m too nervous to ask."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay, I’m an adult. I can do this. I’ll just ask. Excuse me... excuse me. Um... where is the taxi? Please."
+      "text": "استنّوا ليه؟ اسمعوا كويس الجمل دي: 'I feel a little lost' يعني حاسس إني ضايع شوية. و 'Just read it to me' يعني اقراهاولي بس. دي تلات جمل هتخليك تمشي في الدنيا. يلا نبدأ الرحلة!"
     },
     {
       "section": "act1",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "Yeah, you’re looking for a taxi? You’re at the arrivals exit. Taxis are outside, to your left. You can’t miss them."
+      "text": "So, you have the address? Just read it to me, my friend. Take your time."
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Oh! Yes! Thank you. Thank you so much. I’m sorry, I’m new here,"
+      "text": "Okay, let me check my bag. I wrote it on a paper. Here it is. It's in... Al Barsha? Is that right?"
     },
     {
       "section": "act1",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "No need to say sorry. First time in Dubai? You picked a good place to start. Where you from?"
+      "text": "Yes, Al Barsha! Very good. I know that area well. Do you have a flat there, or are you staying with friends?"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "I’m from Egypt. Cairo. I just moved here for work. I’m a bit lost, to be honest."
+      "text": "No, I rented a small flat online. My friend Nour helped me find it. She lives in Dubai, too."
     },
     {
       "section": "act1",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "Ah, Cairo! Big city. This is also a big city, but different, no? Don’t worry. After one week, you’ll feel at home. Come, I take your bags."
+      "text": "That's smart. It's always good to have a friend in a new city. So, first time in the UAE?"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Oh, no, no. I got it. I’m fine. Thank you. I’m Macal, by the way."
+      "text": "Yes, first time. Everything is so big and bright. I feel a little lost, to be honest. It's a lot to take in."
     },
     {
       "section": "act1",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "Nice to meet you, Macal. I’m Rashid. Come. My taxi is right here. The black one. We can go now. You need a ride into the city?"
+      "text": "Don't worry, my friend. Everyone feels that way at first. You'll get used to it in a week. Dubai is very easy to live in."
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Yes, please. I need to go to Zayed Road. Do you know it? The blue office building?"
+      "text": "I hope so. The flight was long, and I didn't sleep much. I just want to put my bags down and rest."
     },
     {
       "section": "act1",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "Zayed Road? Sure, I know it. It’s a long road, but we can go. How much you want to pay? The meter will show, but it’s a good trip."
+      "text": "Of course. We are on the highway now. It will take about thirty minutes. You can relax. Look out the window — that's the Burj Khalifa on your right."
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Um... how much is the fare to the city? I mean, to Zayed Road? Just so I know I have enough money."
+      "text": "Wow, it's so tall! I see it from far away, but up here it's... amazing. Can I take a photo?"
     },
     {
       "section": "act1",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "It’s not too bad. With the meter, it’s maybe 60 or 70 dirhams. But don’t worry, I’ll take the best way. You just sit and relax."
+      "text": "Sure, go ahead! Everyone takes photos on their first day. So, what brings you to Dubai? Work or study?"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Sixty or seventy? Okay. That’s fine. I have my card. I think. Oh, I hope I have my card."
+      "text": "Work. I'm looking for a job in marketing. I have some interviews next week. I'm a little nervous about my English, though."
     },
     {
       "section": "act1",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "You will be fine. Come on, get in. It’s hot out here. Let’s go. I turn on the air conditioner. You like it cold?"
+      "text": "Your English is fine, my friend. You're speaking clearly, and I understand you perfectly. Just be confident. That's the most important thing."
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Actually, yes. Cold is perfect. It’s so hot here. But I like it. It’s a good kind of hot. It means I’m going somewhere."
+      "text": "Thank you, really. That makes me feel better. How much is the ride to Al Barsha?"
     },
     {
       "section": "act1",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "Ha! I like you. You are positive. So, what do you do, Macal from Cairo? What’s your job here?"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I... I’m a graphic designer. I got a job with a company near the Dubai Mall. It’s a good opportunity. I hope I don’t mess it up."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Mess it up? No, no. You didn’t come all this way to mess up. You came to do good. Don’t worry so much. So, this is your first day?"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Yes. My first day. I’m a little nervous. My English is not perfect. I feel... I feel shy to speak."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Your English is good. You are talking to me, no? That’s all you need. People are friendly here. Just say what you need. Simple. Like you did just now. You asked me where the taxi is. See? Easy."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Ha, you are right. Thank you. So... is it far from here? To Zayed Road, I mean."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Not too far. Maybe twenty minutes. Depends on the traffic. We are lucky now, it’s not rush hour. So, relax. I will put on some music. You like music?"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Yes, I love music. What do you have?"
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "I have a little bit of everything. Arabic music, English music, some new stuff. You tell me. You want to practice your English with a song?"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. Yes. Let’s do it. But I am warning you, my singing is very, very bad."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Ha! I don’t believe you. Everyone is a singer in the shower. But first, you buckle up, my friend. We are going to see the city."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Please take me to this address. This is my phone... oh no. Wait, where is my phone? Please tell me it’s in my pocket."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Easy. Check your other pocket. You just had it in your hand. It’s probably in your lap."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Oh. Oh, it’s here. I’m sorry. I am so nervous. I almost had a heart attack. My phone is my life right now. It has all my maps and my new job details."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Then you need to be careful. But don’t worry, I know the address. You said the blue building on Zayed Road, right? The one with the big clock? Or the one with the glass windows?"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Um, I don’t remember the clock. I just have a picture. Can I show you? Please take me to this address. This is the email from my boss."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Yes, yes, show me. I’m not driving yet. Let me see. Ah, I know this building. It’s the one with the coffee shop downstairs. Good coffee, by the way. No problem. We go."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thank you, Rashid. You are very kind. I’m sorry I’m so anxious. Everything is new."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Anxious is okay. But you are here now. Tomorrow, you will look back and laugh. Wait and see. Okay, hold on. We are going. And don’t worry, I will make sure you get there safe. With my music, we make the trip fun."
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. I trust you. Let’s go. Hello, Dubai. I’m ready for you."
+      "text": "Don't worry about that now. The meter is running. We'll check it when we arrive. Just sit back and enjoy the view. You're in Dubai now — the city of dreams!"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "شفتوا؟ إزاي ماكل استخدم الكلمات الأربعة بتاعتنا؟ 'Where is the taxi?' 'How much is the fare?' 'Please take me to this address.' و 'Is it far?' كلها جمل بسيطة وسهلة. هو بس محتاج يهدي شوية. بس إحنا هنخليه يتعلم من أخطائه. يلا نكمّل."
+      "text": "شفتوا ماكال إزاي؟ كان قلقان شوية، بس اتكلم وعدّى الموقف. عايزين نركز على تلات جمل مهمين سمعناهم في المحادثة دي."
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "أهلاً بيكم تاني يا جماعة. حبيت أوقفكم شوية قبل ما ندخل في الجزء التاني من الحلقة، عشان نراجع مع بعض الكلمات والجمل المهمة اللي سمعناها من ماكل في التاكسي."
+      "text": "أول جملة: 'Take your time.' دي بتقال لما حد بيعمل حاجة ببطء، وانت عايز تقوله: متستعجلش، خد وقتك. يعني لما حد يبقى قلقان وبيقولك: 'I'm sorry, I'm slow today'، ترد عليه بكل هدوء: 'No problem, take your time.'"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "أول جملة عايزين نركز عليها هي: I almost had a heart attack. يعني كدت أصيب بأزمة قلبية. طبعاً هو مش هيموت حقيقي، دي مجرد طريقة مضخمة أو Exaggeration بنقولها لما نكون خفنا جداً أو اتفزعنا من حاجة بسيطة زي ما ماكل خاف على موبايله."
+      "text": "الجملة التانية: 'I feel a little lost.' دي بتقال لما تحس إنك تايه أو مش فاهم حاجة. مش لازم تقول: 'I am lost' وتخليها شكلها كبير، لأ، قول: 'a little lost' يعني ضايع شوية، دي بتدي انطباع إنك لسه بتتعود."
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "تخيلوا معايا الموقف: بتدور على مفاتيحك في الصبح ولما تلاقيهم، تتنفس الصعداء وتقول: I almost had a heart attack! I thought I lost my keys. يعني ربنا كدت ياخدني من كتر الخوف. دي جملة بتدل على إنك اتخوفت جداً بس الموقف عدى على خير."
+      "text": "الجملة التالتة: 'What brings you to Dubai?' السواق سألها بدل ما يقول: 'Why are you here?' لأنها أتهذب أكتر. يعني إيه اللي جابك دبي؟ تقدر تستخدمها في أي مكان، مثلاً تقول لحد في القاهرة: 'What brings you to Cairo today?'"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "الجملة التانية اللي عجبتني جداً هي لما سائق التاكسي قاله: buckle up. يعني اربط حزام الأمان. كلمة buckle معناها الزرار أو المشبك اللي بيقفل، و up معناها فوق أو لفوق، فبكده الجملة كلها بقت معناها اربط حزامك عشان هنتحرك."
+      "text": "بس كمان خدوا بالكم من غلطة شائعة جداً. ناس كتير بتقول: 'I came for work.' في الغلط تقول: 'I came for working.' الصح إنك تقول: 'for work' أو 'to work.' متضيفش 'ing' في الحالة دي."
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "تقدروا تستخدموها لو ركبتوا مع حد عشان تنبهوه فيخرج بلكي: Hey, buckle up, we are leaving now. يعني اربط حزامك عشان هنمشى دلوقتي. بسيطة وسهلة وكمان بتدي انطباع إنك مهتم بالأمان."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "الجملة التالتة والأخيرة هي: I trust you. يعني أنا بثق فيك. ماكل قالها لما السائق طمنه إنه هيوصله لمكانه بأمان. دي جملة بتدي إحساس بالراحة والاطمئنان للشخص اللي قدامك."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "لو صاحبك شاف إنك متخوف من حاجة وعايز يطمنك، تقدر تقوله بعد ما يشرحلك: Okay, I trust you. Let's do it. يعني خلاص أنا بثق فيك يلا ننفذ اللي بتقوله. ملهاش تعقيد خالص."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "دلوقتي عايز أكلمكم عن غلطة شائعة جداً بنقع فيها كلنا. لما بنكون عايزين نعتذر عن حاجة زي ما ماكل عمل، بيقول: I'm sorry I'm so anxious. صح كده؟ أيوة صح، هو استخدمها صح."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "بس الغلطة بتحصل لما نيجي نستخدم كلمة nervous أو anxious. ناس كتير بتقول: I am nervous for the interview. ده غلط. الصح إننا نقول: I am nervous about the interview. يعني بنستخدم about مش for لما نتكلم عن الخوف أو التوتر من حاجة معينة."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "عارف إن الفرق بيبدو صغير، بس في الإنجليزي بيفرق جداً. لو قلت for، اللي بيسمعك هيستغرب شوية ويمكن متفهمش قصدك صح. فخلوا بالكم منها المرة الجاية."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "في الجملة دي برضه، ماكل قال للسائق: You are very kind. يعني أنت طيب جداً أو أنت شخص لطيف. دي جملة شكر تانية غير thank you ممكن نستخدمها لما حد بيساعدنا وبيتعامل معانا بلطف."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "تقدروا تقولوها لأي حد بيعمل معروف معاكم: You are very kind. Thank you for your help. بتجمعوا بين الجملتين فبكده بتدي شكر مضاعف وبتظهر احترامك وتقديرك للشخص اللي قدامك بشكل أكبر وأكتر تأثير."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "كمان لاحظوا إن السائق قال له: Anxious is okay. يعني التوتر عادي أو مفيش مشكلة من التوتر. هو بيرد على اعتذار ماكل وبطمنه إن خوفه ده طبيعي ومش حاجة لازم يخجل منها."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "دي حاجة عايزكم تتعلموها برضه، إن لما حد يعتذر لكم عن توتره أو خوفه، تقدروا تطمنوه وتقولوله: It's okay to be nervous. Everyone feels that way. يعني مفيش مشكلة إنك تتوتر، كل الناس بتحس كده. بتبني جسر ثقة بينكم وبينه."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "خلاصة بقى، الجمل اللي أخدناها النهاردة: I almost had a heart attack لما نتخوف، buckle up عشان نربط الحزام، و I trust you لما نطمن حد إننا بنعتمد عليه. وخلوا بالكم من nervous about مش nervous for."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "كده بقى عندنا أدوات كويسة جداً. يلا نرجع لماكل ونشوف هو هياخد إيه كمان في رحلته على Zayed Road، وهل السائق هيفيه فعلاً ويشغلله موسيقى ولا لأ. يلا نكمّل."
+      "text": "يلا، ماكال كده اتكسر خوفه وشوية بقى واثق. خلونا نسمع اللي هيحصل لما يوصل الشقة ويلقى مين مستنياه."
     },
     {
       "section": "act2",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "So, you live in Jumeirah? That area is very beautiful. You like the sea, right?"
+      "text": "Okay, sir, here we are — Al Barsha. That will be forty-five dirhams, please."
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Yes. I love the sea. But... is it far from here? I don't know this road. It looks very wide."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Oh, it is not far. But today, the traffic on Zayed Road is very bad. Many cars, many people. You know, everyone goes to work now. It is morning rush hour."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. Rush hour. I don't like waiting. I am late for my new job interview. It starts at nine o'clock."
+      "text": "Here you go. Thanks for the ride — and for the good advice."
     },
     {
       "section": "act2",
       "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "Don't worry, my friend. I know the shortcuts. We will take the small street here. It is faster, maybe. I am from Dubai for twenty years. I know every corner."
+      "text": "Anytime, my friend. Good luck with your interviews. You'll do great."
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Thank you. I hope you are right. My heart is beating very fast. My phone... where is my phone?"
+      "text": "Thanks. Have a good night."
     },
     {
       "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Your phone? Do you see it? In your bag?"
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "No! I had it in my hand. I checked it ten minutes ago. It had my interview map. And my phone number... the company number is in the notes app. If I lose the phone, I lose the number. This is bad."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Easy, easy. Breathe. Maybe it is in your pocket. Check your pocket."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I checked. It is not there. Oh no. I think it is in the taxi. I put it on the seat next to you when we started."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Wait. I see it. Is that your phone? On the floor between the seats?"
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Yes! That is it! Thank God. I almost screamed. I thought I lost it again. I am so happy. I can stop breathing now."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "You are very lucky. Be careful next time. Put it in your bag or pocket. Driving is not safe for things on the floor. The car bumps. Things fall."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "You are right. I was so nervous that I forgot everything. I should be more careful. What should I do with it now?"
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Just put it in your bag. And relax. Look at the scenery. It is nice outside. The sun is shining."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I can't look at the scenery. I am thinking about my interview. Do I look good? Is my shirt clean?"
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Yes, you look very clean. You look professional. Why are you shaking?"
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Because I am scared. This is my first job in a new country. I don't want to make mistakes. I don't want to say the wrong words."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Everyone makes mistakes. It is okay. You speak good English. I can understand you. That is good."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Really? You think my English is good? I am still making small errors. I forget prepositions. I forget verb tenses."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Small errors do not matter. Communication matters. If I say 'I go to store yesterday', you understand, right? Yes. That is enough."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I think you are right. But I want to be perfect. I want to be the best. That is why I am stressed."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Perfection is not possible. Be happy. Be kind. Be yourself. That is better."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Be myself. That is hard. In Egypt, I am different. Here, I am new. I don't know the rules yet."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "There are no strict rules. Just be polite. Say hello, say thank you. Smile. That is the key."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Smile. Okay. I will smile. But my face feels tight. I can't smile when I am afraid."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Try it. Just a little smile. For me. Come on."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Like this? It feels fake. I feel silly."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "No, no. That is good. Natural. You look friendly now. Much better."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thanks. I feel a little better. But the traffic is stopping again. We are not moving."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Yes, it is bad. I am sorry. I will try to move when it opens. It is like a snake. It stops, it moves. Stop, move. Repeat."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "It is frustrating. I hate waiting. In Cairo, we wait too. But here, everything is big. And slow."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Dubai is big. Everything is big. The cars, the buildings, the air conditioning. It takes time to get used to it."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I know. It is so hot today. Even in the taxi, it is warm. Is it always this hot?"
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Yes. In summer, it is very hot. But in winter, it is cool. Maybe four months later, you will love the weather."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I hope so. I miss the breeze in Egypt. Here, the air feels dry. My skin is dry. I need water."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Do you have water? You should drink water. It is good for your health."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I forgot to buy water. I was in a hurry. Maybe I can buy some at the cafe near my office later."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Good idea. Stay hydrated. It helps with stress too. Drink water, breathe deep. Stress will go away."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Hydrated. New word. I will remember that. Thank you for the advice. You are very helpful."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "It is my job. And I like talking. Silence is boring. You like talking?"
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Yes, I like talking. But sometimes I don't know what to say. Small talk is difficult for me."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Small talk is easy. Ask about the weather. Ask about the traffic. Ask about the food. People like to talk about food. Do you like Arabic food?"
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I love Arabic food. Koshari, Fatta... I miss them a lot. What about you? Do you eat Egyptian food?"
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "I love Koshari. It is my favorite. I go to a shop near Marina Square. The owner is from Alexandria. Very nice man."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Marina Square? I have heard about it. Is it far from Jumeirah?"
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Not far. Maybe twenty minutes by car. It is a big mall. Many restaurants, many shops. Good place for the weekend."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I should go there. Maybe with my friend Nour. She lives near the beach. I think it is a good idea."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Good plan. Bring your friend. We will enjoy the food. And the sea. Is the sea open? Yes, the beach is open."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Yes, the beach is open. I want to walk on the sand. Just to feel the sun. It will make me happy."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "You need happiness. Life here is fast. You need to slow down sometimes. Sit, drink tea, look at the sea. That is peace."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Peace. I really need peace. My mind is like a storm. Too many thoughts. I need silence."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Then be quiet now. I will drive. You can think or sleep. I will call you when we arrive."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. Thank you. I will close my eyes for a minute. Just a minute."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "No problem. Sleep well. Or just rest. I will check the mirrors. You are safe with me."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I feel safe. Really. This taxi is like a small home on the road. Thanks for making it comfortable."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "My pleasure. Enjoy the rest. Maybe you will wake up in Dubai. Dream of a good job."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I am dreaming of it. But I am still awake. I can't sleep when I am nervous."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Nervousness goes away. Watch the road. You will see the office building soon. It is a tall glass building. You will see it."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I see it. There it is. It is very shiny. It looks modern. Is that the right building?"
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Yes. That is the correct one. The entrance is on the side. I will park the car near the main gate."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. I will get ready. I need to fix my hair. And check my phone again. Is the time right? It is eight fifty-five."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Five minutes left. Good time. You will not be late. You will not be early. Perfect."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Perfect. I hope so. My stomach is tight. I feel something in my chest. Is it fear? Or excitement?"
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "It is both. Fear and excitement. It is normal. It means you care. You want to do well. Good sign."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I hope you are right. I want to do well. I want to succeed. This is my chance."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Yes, it is your chance. Take it. Now, I will stop the car. Hold on. I am reversing now."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. Hold on. I am ready. Let's go. This is it. The beginning."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "We are stopped. Door is open. Good luck, my friend. Go with confidence."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thank you. Thank you very much for everything. You were very kind. And helpful."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Anytime. Come back safe. And good luck with the interview. I will wait here for a minute, just in case you need anything."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "You are too kind. I will meet you here when I finish. Or maybe not. Maybe I will run home. I don't know yet."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Laugh! Yes, laugh. It is good. You are smiling now. Go. Make it happen."
-    },
-    {
-      "section": "act2",
       "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. I am going. Bye. Thanks again. This was... a lot. But good."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
       "lang": "en",
-      "text": "Bye. See you soon. Drive safe. I mean, walk safe. Go slowly."
+      "text": "Okay, Macal. You're here. Let's find the building."
     },
     {
       "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I will. I promise. Bye."
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "أهلاً بيكم تاني في قصتنا. إحنا وقفنا عند لحظة مهمة، لحظة ما قبل المقابلة. معايا كام عبارة حلوين من اللي السواق قالهم لـ Macal وحابب ناخدهم مع بعض."
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "أول حاجة، لما السواق قال له: \"You will not be late. You will not be early. Perfect.\" هو كده بيقول له: \"مش هتأخر، ومش هتبدر، يعني في المعاد بالظبط.\" لاحظوا كلمة Perfect إزاي بتلخص إحساس إن كل حاجة تمام. تقدر تستخدمها في أي حاجة: الإجابة تمام، الأكل تمام، اليوم تمام."
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "تاني حاجة، لما Macal قال: \"My stomach is tight. I feel something in my chest. Is it fear? Or excitement?\" المهم هنا إنه وصف الإحساس بالتوتر. وفي اللغة، في تعبير شهير: \"Butterflies in my stomach\" يعني إحساس بالفراشات في البطن من التوتر أو الحماس. قولوها معايا: \"I have butterflies in my stomach.\" حلوة، أهي كده."
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "لما السواق رد عليه وقال: \"It is both. Fear and excitement. It is normal. It means you care.\" هنا جمال الكلام. هو بيقول له إن ده طبيعي، وده معناه إنك مهتم ومتحمس. ففي نصائح مهمة: لما تروح مقابلة شغل، مش لازم تحس إنك ملكش في الكلام. لا، التوتر دليل إنك عايز تنجح."
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "برضه، السواق قال له: \"I will wait here for a minute, just in case you need anything.\" كلمة \"just in case\" معناها \"في حالة إن\". بتستخدمها لما تعمل حاجة احتياطية. مثال: \"I will take my jacket just in case it rains.\" يعني \"هاخد الجاكيت في حالة إن الدنيا مطرت.\" سهلة، صح؟"
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "والنصيحة الأخيرة اللي عجبتني: \"Go with confidence.\" يعني \"امشي بثقة\". هو مش بيقول له \"متقلقش\" لأ، بيقول له \"روح بثقة\". إحنا في الخليج، وفي دبي بشكل خاص، الحياة سريعة ومليانة فرص، والثقة في النفس وبتتعامل بالإنجليزي بشكل يومي. فالثقة بالنفس وباللغة هي مفتاح النجاح."
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "كمان، لاحظوا إن السواق قال له: \"I will park the car near the main gate.\" يعني \"هوقف العربية قدام الباب الرئيسي\". وده طلب شائع جدًا. وتقدر تستخدمه في أي مكان: \"Please park here.\" أو \"Where can I park?\". دي أساسيات."
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "في الآخر، Macal بدأ يضحك مع السواق، والسواق قال له: \"Laugh! Yes, laugh. It is good. You are smiling now.\" ده مهم جدًا، إنك تحاول تفرغ التوتر بالضحك أو بنفس عميق. ودي حاجة عملية من الآخر. في دبي، هتلاقوا ناس من كل الجنسيات بتتكلم إنجليزي بلكنات مختلفة، فمتقلقوش لو سمعتوا لهجات ثانية."
-    },
-    {
-      "section": "coach_break2",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "آخر حاجة، لما قال له: \"Go slowly.\" هو بيقولها بنكتة لطيفة بعد ما قاله \"walk safe\"، يعني \"امشي بهدوء\". فدي كانت نصيحة غير مباشرة: خد بالك وانت ماشي، ومتتعجلش. كويس؟ يلا نكمل قصة Macal وهو داخل المبنى، ونتعلم معاه إزاي يتكلم مع الناس هناك."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. Deep breath. You can do this. Just walk inside. It is just a building. People enter buildings every day."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Oh. The door is heavy. Okay. I push. Wait, no, I pull. Haha. Okay. I am inside. Good. I am inside. I did it."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Wow. This place is... big. Very big. And tall. The lights are so bright. Is this a building or a city? Haha. Focus. Focus."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. I see a list. A list of names. Let me find... let me see... where is the company? Ah, there it is. Floor 14. Room 3B."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. Fourteen. Floor fourteen. I can do that. I can count. I can count to fourteen. One, two, three... no, no. The elevator. I need the elevator."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Excuse me. Sorry. I need to find the elevator. Ah, there it is. With the shiny buttons. Okay. Press the button. I press. I wait. I wait. I wait. Is it coming? Why is it slow?"
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Ding! Oh. It is here. The door is opening. Okay. I step in. I am in. Now... which button? Floor 14. Number 14. I press 14. Good."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "The doors are closing. My heart is beating fast again. Beat. Beat. Beat. Calm down. My stomach feels funny. The butterflies from the taxi are back. Haha. They like me."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay, you know what? Let me practice. I am Macal. I am here for the interview. Nice to meet you. No, that's not right. I am Macal, here for the interview. Yes, that is better."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "The phone. I check the phone. The messages from Nour. She sent a message. 'You got this! Remember, they are people too. Not robots. Haha. Call me after!' She is a good friend. She is... a robot? No. She is a good friend."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Ding! Floor 14. Okay. This is me. This is my floor. I step out. I look at the signs. Room 3A... 3B... Ah. There it is. Room 3B. The door is... closed. Of course it is closed."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I look at my shirt. I pull it down. I fix my hair. Is my hair okay? My hair is okay. I need a mirror. I use my phone. Okay. I look... okay. I look good. I look like a professional. Okay. I am ready."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I take a deep breath. I look at the door. I see a small window. I look inside. I see... a woman. She is smiling. Is she smiling at me? Oh no. She sees me. I look away. I look at the floor. The floor is very interesting. Yes. The floor."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. No more waiting. I will just... I will just do it. One, two, three. I knock. Knock. Knock. Oh no. Did I knock too loud? Did I knock too soft? I hope I knocked okay. The door is opening. Oh. It is the woman from the window."
-    },
-    {
-      "section": "act3",
-      "speaker": "Official",
-      "lang": "en",
-      "text": "Hello there. Are you the candidate? Are you Mr. Macal? We saw you standing out here. Please, come in. Don't be shy. My name is Sarah, by the way. I am the HR manager. Please, have a seat. Make yourself comfortable. We have a lot to talk about."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Oh. Uh... thank you. Yes. Macal. I am Macal. Yes. The candidate. Haha. That is me. You can call me Macal. Yes. Nice to meet you, Sarah. It is a pleasure. A big pleasure. No, wait, it's just a pleasure."
-    },
-    {
-      "section": "act3",
-      "speaker": "Official",
-      "lang": "en",
-      "text": "Haha. It is nice to meet you too, Macal. Please, sit down. We have some questions for you. But first, how are you? How was your flight? How is Dubai so far? First time here?"
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Oh, thank you for asking. Yes, my first time. The flight was good. Long, but good. I slept a little. And Dubai is... wow. Big. Hot. Very hot. But good. The taxi driver was nice. He helped me with my bags. Many bags. Haha."
-    },
-    {
-      "section": "act3",
-      "speaker": "Official",
-      "lang": "en",
-      "text": "That is great to hear. I am glad you had a good trip. We are very happy to have you here. I see from your CV that you have strong experience in customer service. Can you tell me a little about yourself? For example, one of your strengths. And one weakness, maybe. Haha, no pressure."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Yes, of course. A strength... a strength I have is... I am a very hard worker. I like to help people. I like to talk to people. In Egypt, I worked in a big hotel. I learned a lot about customer service. How to make people happy. How to solve problems. My weakness... haha. My weakness is... I get nervous sometimes. Like now. I am very nervous. But I am trying to be calm."
-    },
-    {
-      "section": "act3",
-      "speaker": "Official",
-      "lang": "en",
-      "text": "That is a very honest answer. We like honesty here. Everyone gets nervous. It shows you care. And you said you like to help people. That is a very important quality. We have a great team. I think you will fit in well. Now, can you give me an example of a time when you had a problem with a customer? How did you fix it?"
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Oh, yes. Good question. Hmm. One time, a guest at the hotel. He was very angry. Because his room was not ready. He waited for a long time. I told him, 'I am very sorry for the wait, sir. Please, let me get you a free drink from our restaurant.' And I talked to my manager. We gave him a coupon for a discount on his next stay. He left happy. He said thank you. I learned it is important to listen and say sorry first."
-    },
-    {
-      "section": "act3",
-      "speaker": "Official",
-      "lang": "en",
-      "text": "Excellent. Very good. You listen, you apologize, and you offer a solution. That is a perfect example of good customer service. I am very impressed, Macal. One last question. And this one is important. Where do you see yourself in five years? What is your dream in life?"
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "In five years? I want to grow. I want to learn. I want to be a manager, like you. I want to help other young people, like me, come to Dubai and start their new life. I want to build my life here. I want to be the person that my family is proud of. My mother in Egypt, she is watching from the sky. I want to make her proud. I want to show her that her son can do it. I want to be the best version of myself. That is my dream. To be the best Macal I can be. And to help people. Yes."
-    },
-    {
-      "section": "act3",
-      "speaker": "Official",
-      "lang": "en",
-      "text": "That is a beautiful answer, Macal. Truly. Thank you for sharing that with us. It takes courage to be that open. We can see that you are a good person with a good heart. And that matters more than anything. Thank you for coming in today."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thank you. Thank you so much. So... what happens now? I mean, when will I know? I don't want to be pushy. I am just... excited. And nervous. Haha."
-    },
-    {
-      "section": "act3",
-      "speaker": "Official",
-      "lang": "en",
-      "text": "We have a few more candidates to see this week. We will make our decision by next Monday. So if we choose you, when can you start? We need someone who is flexible. Is that okay for you?"
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Oh. Oh, yes! Any day. I can start tomorrow. I can start today. I can start right now. Just tell me the time and the place. I will be here. With my notebook. And my pen. I am very flexible. Very. Yes."
-    },
-    {
-      "section": "act3",
-      "speaker": "Official",
-      "lang": "en",
-      "text": "Haha. That is the energy we love. Okay, Macal. It was lovely to meet you. We will be in touch very soon. Enjoy the rest of your day. Explore Dubai a little. It is a beautiful city. Take care."
-    },
-    {
-      "section": "act3",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thank you. Thank you so much. I will. I will explore. I will go to the mall. Maybe not. Maybe I will go home. My feet are tired. Haha. Thank you, Sarah. It was a pleasure. Goodbye. Goodbye."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "أهلاً بيكم، إزيكم؟ إحنا خلصنا تاني جزء من قصة Macal، وهو داخل على المقابلة. أنا فخورة بيه جدًا، لأنه كان شجاع وواجه توتره. يلا ناخد كام حاجة من اللي حصلنا عليها."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "أول حاجة، لاحظوا إزاي Macal كان بيدرب على الكلام وهو في الأسانسير. كان بيقول: 'My name is Macal. I am here for the interview.' ده بيسمى Self-Talk، يعني إنك تكلم نفسك بالإنجليزي. تمرن رائع جدًا. جربوه في البيت قدام المراية."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "تاني حاجة، لما سألته عن نقاط القوة والضعف، قال بطريقة بسيطة: 'I am a hard worker.' و'I am nervous sometimes.' مش محتاجين كلام معقد. بس كلمات بسيطة وصادقة. ودي أهم حاجة في المقابلات: الصدق."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "برضه، هو استخدم قصة من خبرته في الشغل في مصر. فاكرين لما حكى قصة الضيف الغضبان؟ 'He was very angry.' ده مثال ممتاز لقاعدة إني أحكي قصة صغيرة. مش لازم قصة طويلة، بس تبقى واضحة. البداية، المشكلة، الحل."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وعندما سألوه عن حلمه، قال كلام من قلبه: 'I want to make my mother proud.' الكلام ده قوي جدًا. لأنه بين الشخصية والطموح. ودي حاجة بيحبها أصحاب العمل جدًا. إنك تكون عندك هدف."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "فكروا كده في حلمكم إيه؟ قولوه بالإنجليزي في سركم. 'I want to be a...' أو 'I want to learn...' دي أول خطوة لبناء الثقة."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "أهلاً بيكم تاني، يا أبطال. إزيكم؟ إحنا شفنا Macal وهو بيخرج من المقابلة، وهو حاسس إنه عمل اللي عليه. وأنا فخورة بيه جدًا. هو كان واثق، وده أهم حاجة."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "يلا ناخد كام حاجة من اللي حصلناها في الجزء ده. أول حاجة، لاحظوا إزاي Macal لما سألوه عن نقاط الضعف، قال: 'I get nervous sometimes.' يعني أنا بتوتر أحيانًا. هو مش خجل يقول إنه بيتوتر. ده بيخليه إنسان. وبيّن إنه واعي بنفسه. ودي حاجة حلوة جدًا في المقابلات. إنك تعترف بنقط ضعفك، بس تبيّن إنك شغال عليها. هو قال 'but I am trying to be calm.' يعني بس أنا بحاول أكون هادي. ده بيوريهم إن عنده إصرار يتحسن."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "تاني حاجة، لما حكى قصة الضيف الغضبان. فاكرين؟ قال: 'He was very angry.' الضيف كان زعلان. بس Macal ما ردش عليه بغضب. هو سمع، اعتذر، وقدم حل. دي القصة القصيرة: المشكلة، الحل، والنتيجة. هو قال: 'I told him, I am sorry for the wait, sir.' وبعدين عمل حاجة: 'Let me get you a free drink.' وفي الآخر الضيف ساب وهو سعيد. ده مثال رائع للـ Customer Service. يعني خدمة العملاء."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "ولو لاحظتم، Macal استخدم كلمات بسيطة. مش قال: 'I apologized profusely.' لأ، هو قال: 'I said sorry first.' يعني ببساطة، قال: أنا اعتذرت الأول. الكلمات البسيطة دي هي اللي بتوصل المعنى. احنا مش محتاجين كلام صعب. احنا محتاجين كلام واضح ومفهوم."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وحاجة تانية، لما سألوه عن حلمه في خمس سنين، Macal مش قال: 'I want a big salary.' ولا 'I want a big car.' لأ، هو قال: 'I want to make my family proud.' يعني محتاج يفرح أهله. وخصوصًا أمه اللي في السماء. ده كلام من القلب. وبيوري إنه عنده دوافع حقيقية. وأصحاب العمل بيحبوا الناس اللي عندها أهداف مش بس فلوس."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "فإحنا كمان نتعلم من Macal. في مقابلاتنا، لازم نكون صادقين. لازم نعترف بمواهبنا بس كمان نعترف بمخاوفنا. ولو عملنا كده، هنبين إننا ناضجين."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "دلوقتي، أنا عايزاكم تجربوا في البيت. قولوا جملة وحدة عن حلمكم، بنفس الطريقة اللي قالها Macal. قولوا: 'I want to...' وكمّلوا ببساطة. مش محتاجين حاجة معقدة. ولو في كلمات مش عارفينها، ابعتوا لي وأنا أساعدكم."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "خلوا الموضوع زي لعبة. كل يوم هتتمرنوا على جملة جديدة. وهتشوفوا الفرق في ثقتكم بنفسكم."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "كمان، لاحظوا إزاي Macal لما خرج من المقابلة، قال: 'I did it. I gave it my best.' يعني أنا عملتها، أنا عملت اللي عليا. مش مستني نتيجة لسه. هو فرحان بنفسه أنه حاول. ودي رسالة مهمة لنا كلنا: النجاح مش بس في النتيجة، النجاح في إننا نحاول بجد."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "أنا عايزة أقوللكم نصيحة أخيرة. لما تمشوا في الطريق وانتوا بتفكروا في مقابلة شغل، أو أي موقف محتاجين فيه إنجليزي، قولوا لأنفسكم زي Macal: 'I am a hard worker.' و'I am calm.' تمرنوا على الكلمات اللي بتريحكم. وهتكسبوا ثقة أكتر."
-    },
-    {
-      "section": "coach_break3",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "يلا، يلا نتكمل في القصة. Macal لسه قدامه خطوات كتير في حياته الجديدة في دبي. وهو في طريقه يقابل صاحبه Nour، اللي هيساعده يتعلم إزاي يعيش في المدينة الجديدة."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I have a message from Nour. She says, “How was the interview? Come meet me at the cafe near my office. I have a surprise for you.” I smile. I need to hear a friendly voice. I start walking to the metro station."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "The sun is hot, but I feel light. I did it. I gave it my best. And now… I can breathe. I can walk. I can be in this new city, with my head up."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Hmm. I think this is the right train. Red line. Yes. I go to Union Station, then change to the green line. Okay. I can do this."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I can’t believe I am here. My mom would be happy. I hope she is watching me."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "There she is!"
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Nour! It is so good to see you!"
-    },
-    {
-      "section": "act4",
       "speaker": "Nour",
       "lang": "en",
-      "text": "Macal! I am so happy you are here! How was the interview? Tell me everything!"
+      "text": "Macal! Over here! I came to surprise you!"
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "I think it was… good. I mean, I was nervous. But I gave it my best. I told them about my job in Egypt. And about the angry guest. I told them I want to make my family proud."
+      "text": "Nour! What are you doing here? I thought you were at work!"
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "That is perfect, Macal. You were honest. That is the most important thing. So, what happens now?"
+      "text": "I told them I had a family thing. Come on, let me help you with your bags. How was the flight?"
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Now… I wait. They said they will call me in a few days. But I don’t want to sit and worry. I want to see the city. I want to learn my way around. Can you help me?"
+      "text": "Long, but the driver was nice. He said I should be confident about my English."
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "Of course! That is why I am here. Come on, let’s get some coffee. I will teach you some small talk for when you meet new people. You will be ready for anything."
+      "text": "He's right. You sound great. Now let's get you upstairs. Oh — before I forget — there's someone else who wants to meet you."
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Small talk? Like what?"
+      "text": "Who? Is everything okay?"
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "Like this. When you meet someone new, you say: ‘Hello, nice to meet you. How are you today?’ And they say: ‘I’m good, thank you. And you?’ You don’t need to say a lot. Just friendly words."
+      "text": "Don't worry, it's a good thing. He's a friend of mine — he works at a big marketing company. And he said he's free tonight."
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Okay. Hello, nice to meet you. How are you today? I am good. Thank you. And you? I sound like a robot."
+      "text": "Wait — tonight? Like, an interview? Now?"
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "Haha, a friendly robot! That’s good for now. You will get better with practice. Trust me."
+      "text": "Just a quick chat. That's all. But we need to go soon — his coffee meeting is at seven."
     },
     {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Hello. Can I have a coffee, please? And maybe a little water?"
+      "text": "Nour, I haven't even unpacked. And I look like I slept on the plane."
     },
     {
-      "section": "act4",
-      "speaker": "Barista",
-      "lang": "en",
-      "text": "Of course, sir. One coffee and one water. Would you like anything to eat?"
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Hmm… do you have something with eggs? Like a sandwich?"
-    },
-    {
-      "section": "act4",
-      "speaker": "Barista",
-      "lang": "en",
-      "text": "Yes, we have an egg and cheese sandwich. Very good."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Great. I will have that, please."
-    },
-    {
-      "section": "act4",
-      "speaker": "Barista",
-      "lang": "en",
-      "text": "Perfect. I will bring that for you."
-    },
-    {
-      "section": "act4",
+      "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "See? You are speaking English and ordering food! You are doing great, Macal."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "It is because you are here. When I am alone, I feel small. I am afraid to make mistakes."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Mistakes are okay. Everyone makes mistakes. The important thing is that you try. And you are trying so hard. I am proud of you."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thank you, Nour. That means a lot to me. So… what is the surprise? You said you had a surprise."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Ah, yes! I almost forgot. I found you a place to stay. It is a small apartment near the marina. It is not very big, but it is clean, and it is in a good area. I talked to the landlord. He is a nice old man. He is waiting to meet you."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Nour… really? You found me an apartment? I was so worried about where I would sleep tonight."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Of course, I told you. I have your back. Come on, finish your coffee. We will go and see it now. Then you can have a good rest. You have had a big day."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I can’t believe it. I am so happy. You are amazing."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "I know I am. Finish your sandwich. We have to go."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay, I am ready."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Hello, where are you from?"
-    },
-    {
-      "section": "act4",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Hello! I am from Egypt. And you? Where are you from?"
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Oh, I am from Egypt too! Alexandria."
-    },
-    {
-      "section": "act4",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Ah, Alexandria! A beautiful city. Welcome to Dubai, my friend. You will love it here. How long have you been here?"
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I just arrived today. I am still learning my way around the city."
-    },
-    {
-      "section": "act4",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Good, good. Dubai is a great city. Busy, but great. You will be fine. Just be patient and kind. That is the secret."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thank you, my friend. I will remember that."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "See? You are already making friends."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thank you for the ride. Have a good day."
-    },
-    {
-      "section": "act4",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "You too, my friend. Good luck!"
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay, Nour. Let’s go and meet the landlord."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Let’s go! He lives on the third floor. His name is Mr. Ali."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Ah, Nour! My dear, you are here. And this must be the young man!"
-    },
-    {
-      "section": "act4",
-      "speaker": "Landlord",
-      "lang": "en",
-      "text": "Hello, sir. My name is Macal. It is a pleasure to meet you."
-    },
-    {
-      "section": "act4",
-      "speaker": "Landlord",
-      "lang": "en",
-      "text": "The pleasure is mine. Please, come in, come in. Nour told me about you. She says you are a very hard worker. Welcome to your new home."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "This is… perfect. I could not have asked for a better home."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Yes, of course. Thank you so much, Mr. Ali. I promise I will take good care of the apartment."
-    },
-    {
-      "section": "act4",
-      "speaker": "Landlord",
-      "lang": "en",
-      "text": "I know you will. You seem like a good man. Now, let me show you the bathroom and the closet."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "This is amazing. I can’t believe this is real."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "It is real, Macal. You are here. You have a place to stay. You have a new city. And you have me. Everything is going to be okay."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I am here. I am really here. I am not running away anymore."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Are you okay? Do you need anything?"
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I am more than okay. I am… happy. For the first time in a long time, I feel like I am where I am supposed to be."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "That is beautiful, Macal. Now, get some rest. You have a big day tomorrow. You need to go and look for a job, or maybe practice your English with new friends. I will come and see you in the morning."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thank you, Nour. For everything. I don’t know what I would do without you."
-    },
-    {
-      "section": "act4",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "You will never have to find out. Sleep well, my friend."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I see the Marina, the lights of the boats, the tall buildings. It is like a postcard. I am in Dubai. I am home."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Hey, Mama. I made it. I am here. I will make you proud. I promise. When I get a job, I will save money. I will send some to you. And I will visit you soon. But for now… I need to rest. I need to dream about tomorrow."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Goodnight, Dubai. I will see you in the morning."
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "“Dear Mr. Macal. This is the manager from the hotel. We would like to give you a second interview. Today. At 2 PM. Please call this number to confirm. Thank you.”"
-    },
-    {
-      "section": "act4",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Oh, no. Oh, no, no, no. I need to prepare. I need to practice. I need Nour!"
+      "text": "You look fine. But if we hurry, we can stop and get you a proper coffee first. Come on — your new life in Dubai starts now!"
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "أهلاً بيكم يا أبطال. لسه الخبر الرهيب! Macal جه له رد من الشغل، وعايزين يشوفوه تاني. إحنا في انتظاركم في الحلقة الجاية عشان نشوف إزاي هيتصرف في المقابلة التانية. يلا نكمل معاه."
+      "text": "شفتوا؟ ماكال اتحرك وشاف الدنيا قدامه. وشوية شوية بقى عربي وإنجليزي في النص."
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "أهلاً بيكم تاني يا أبطال في ختام أول حلقة من Two Worlds. واو، حلقة طويلة ومليانة أحداث وتعلم، صح؟ Macal عمل رحلة طويلة النهارده، من المطار لحد شقته الجديدة في دبي."
+      "text": "النهاردة ناخد كلمة واحدة بس، بس قويّة. هو فيه أحسن من 'better late than never'؟ يعني إيه؟ إن الأصوب دايماً الأصوب، حتى لو أهو متأخر شوية."
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "خلونا نراجع الجمل والكلمات المهمة اللي تعلمناها معاه في المطار ومع التاكسي. أول جملة مهمة جداً لما تيجي تسأل عن شخص: 'Excuse me, are you Mr. Ali?' يعني لو سمحت، هل حضرتك مستر علي؟ ورد التاكسي راجل مهذب وقال: 'Yes, that's me. How can I help you?' يعني أيوه، أنا هو. أقدر أساعدك في حاجة؟"
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وبعدين Macal سأل التاكسي سؤال محترم ومهم جداً: 'How much is the ride to the Marina?' يعني الرحلة للمارينا بكام؟ والتاكسي رد وقال: 'It's about 50 dirhams.' يعني حوالي خمسين درهم. جملة بسيطة بس هتنقذك كتير لما تيجي تسأل عن الأسعار في أي حتة."
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وبعدين عملنا small talk يعني كلام خفيف ولطيف في التاكسي، والكلام الخفيف ده أهم حاجة في الثقافة الإنجليزي. التاكسي سأل: 'Is this your first time in Dubai?' يعني هل دي أول مرة ليك في دبي؟ وMacal رد بثقة وقال: 'Yes, it's my first time. I'm very excited.' يعني أيوه أول مرة وأنا متحمس جداً."
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وبعدين سأل سؤال جميل عشان يتعلم أكتر: 'What do you recommend I visit first?' يعني تنصحني أزور إيه الأول؟ والتاكسي نصحه وقال: 'You should see the Marina and the Burj Khalifa.' يعني لازم تشوف المارينا وبرج خليفة. جملة 'You should' دي بنستخدمها عشان ننصح حد بحاجة."
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "ولما وصلوا الشقة، المالك سأل سؤال مهم جداً في إيجار الشقق: 'How long do you plan to stay?' يعني بتخطط تقعد قد إيه؟ وMacal رد بصدق وقال: 'I plan to stay for at least one year.' يعني بنوي أقعد سنة على الأقل. وجملة 'at least' دي معناها على الأقل، بتستخدم كتير في الإنجليزي."
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وبعدين المالك قال جملة محترمة جداً: 'You seem like a good man.' يعني أنت شكلك راجل كويس. وده رد جميل لما حد يمدحك. وMacal رد وقال: 'I promise I will take good care of the apartment.' يعني بوعد إني هعتني بالشقة كويس. جملة 'take care of' يعني يعتني بـ، دي من أهم الجمل في اللغة كلها."
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وفي النهاية، لما Macal قعد لوحده في الغرفة، قال جملة جميلة جداً وعميقة: 'I am not running away anymore.' يعني أنا مش هربان تاني. وده بيقول إنه قرر يواجه مستقبله ويبني حياته بثقة. وبعدين قال: 'I am where I am supposed to be.' يعني أنا في المكان اللي المفروض أكون فيه. جملة معناها جميل جداً، إنك حاسس إنك في المكان الصح."
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "دلوقتي وقت التحدي يا جماعة! عندي لكم تشالينج حلو جداً في جروب التيليجرام بتاعنا في Empire English Community. التحدي هو إنكم تكتبوا لنا في الجروب جملة بتقول فيها إنت بتخطط تعمل إيه في دبي أو في أي مدينة جديدة، وتستخدموا فيها جملة 'I plan to' زي ما Macal قال. مثلاً تكتبوا: 'I plan to study English every day' أو 'I plan to visit the Burj Khalifa next year.' اكتبوا جملكم في الجروب وخليونا نشوف إبداعاتكم، وأنا شخصياً هقرأها وهرد عليكم."
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وبعدين عايزكم تعملوا حاجة مهمة جداً عشان خاطري وخاطر الفريق كله: اشتركوا في البودكاست، اضغطوا على زرار المتابعة أو Subscribe، واعملوا تقييم خمس نجوم لو عجبتكم الحلقة. ده بيساعدنا نوصل لشباب أكتر في كل مصر والعالم العربي، وبيدفعنا نعمل محتوى أحلى وأقوى لكم. متنسوش تعملوا شير للحلقة مع صحابكم اللي بيتعلموا إنجليزي، عشان نكبر العيلة بتاعتنا."
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "طب وإيه اللي هيحصل في الحلقة الجاية؟ Macal لسه صاحي من النوم، لقى رسالة على الموبايل بتقوله إن الفندق عايز يشوفه تاني في مقابلة تانية النهارده الساعة 2 الضهر! وهو لسه ما اتجهزش وما تدربش. هيقدر ينجح في المقابلة التانية؟ إزاي هيستعد في أربع ساعات بس؟ وإيه الأسئلة اللي هيسألوها فيه؟ ده اللي هنعرفه في الحلقة الجاية، حلقة مليانة مقابلات شغل وطبعة إنجليزي مهمة جداً لكل واحد بيبحث عن فرصة. اشتركوا دلوقتي عشان متفوتوش الحلقة. أنا Coach بتاعكم، ودي كانت أول حلقة من Two Worlds. أشوفكم الحلقة الجاية، سلام!"
+      "text": "قبل ما نكمل، لو فيه حد فيكوا حاسس إنه ضعيف في الإنجليزية، أنا عايزكم تقولوا لنفسييتكم: أنا زيه بالظبط. كل مرة كلمة وحدة، كل مرة موقف، وخلاص."
     }
   ],
   "phrase_of_episode": {
     "en": "",
     "ar": ""
   },
-  "word_count": 7485,
+  "word_count": 991,
   "cast_used": [
-    "Barista",
     "Coach",
-    "Landlord",
     "Macal",
     "Nour",
-    "Official",
     "TaxiDriver"
   ]
 }
