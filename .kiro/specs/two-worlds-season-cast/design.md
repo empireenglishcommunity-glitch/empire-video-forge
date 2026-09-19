@@ -194,6 +194,64 @@ Rules:
 - The structure + duration gates operate on `text`/`speaker`/`section` as before —
   `direction` does not affect them.
 
+## 3.4 SCRIPTING CRAFT — how Phase A writes each episode (owner-approved rules)
+> These rules turn "generate a script" into "produce a tight, teachable, dramatic
+> 7-minute episode." The generator (DeepSeek R1 beats + V3 dialogue) MUST apply them;
+> our review checks against §3.5.
+
+### CRAFT-1 — Timing / word budget (in-media-res)
+- A ~7-min episode ≈ **~400 words of spoken English** total across the STORY sections.
+- **Per-section budget** (enforced softly by the generator, checked in review):
+  cold_open ≈ 45-70w · act1 ≈ 150-190w · act2 ≈ 120-170w (Arabic coach sections are
+  separate and paced ~150 wpm). This stops act1 ballooning and starving act2.
+- **Start in-media-res.** cold_open and act1 drop into a scene ALREADY in motion —
+  no throat-clearing, no "hello, my name is" setup. Exposition emerges through conflict.
+
+### CRAFT-2 — Macal's voice-stage script markers (phonetic, in the text)
+Qwen3-TTS reads text semantically, so the **accent + fluency stage is written into the
+script**, not just the voice description:
+- **S1 (eps 1-3):** uncontracted forms ("I am not sure", "I do not know"); explicit
+  micro-pauses `...`; simple tenses; occasional L1-transfer rhythm. Deliberate, earnest.
+- **S2 (eps 4-7):** contractions appear ("I've been", "I'm not sure"); self-corrections
+  ("I mean...", "sorry — let me say that again"); basic linking; emerging present-perfect/
+  conditionals.
+- **S3 (eps 8-10):** natural reductions in casual lines ("gonna", "wanna", reduced
+  prepositions); native-like sentence stress; can joke, hedge, negotiate.
+- **PEDAGOGY CAVEAT (critical):** Macal's scripted English is **grammatical-but-accented**
+  (pauses, uncontracted forms, rhythm) — learners imitate what they hear, so we do NOT
+  scatter broken English. **Actual errors are reserved for the ONE planted mistake per
+  episode** (CRAFT-3), which the Coach then corrects. Realism = accent/pacing; the
+  teachable error = one deliberate, framed spot.
+
+### CRAFT-3 — The mistake→correction→triumph loop (REQUIRED every episode)
+Every episode contains one planted-error arc that is both pedagogy and drama:
+1. **act1:** Macal makes ONE realistic L2 mistake, natural for his current stage
+   (often an Arabic-structure transfer, e.g. "I live here since two years").
+2. **coach_break1:** Mahmoud unpacks 2-3 target phrases AND corrects that ONE mistake —
+   explaining **why** it happens (the Arabic→English transfer) before giving the natural
+   American form. Under 60 seconds, zero shaming.
+3. **act2:** Macal **reuses the corrected form** in a new context as a small **triumph
+   beat** — the correction becomes a character win, not just a grammar note.
+
+### CRAFT-4 — Target phrases
+- 2-3 **high-use American English phrases** per episode, appearing **naturally in act1**,
+  unpacked in coach_break1, then **reused in act2** and recited as the "Phrase of the
+  Episode" in coach_outro.
+
+### CRAFT-5 — Guest accent accessibility
+- Guests carry authentic Dubai-real accents (Indian/Filipino/Pakistani/Gulf) for realism,
+  but stay **clear and A2/B1-accessible**: no dense slang, no rapid-fire delivery. The
+  learner's focus stays on Macal + Nour. Realism = accent color, not comprehension load.
+
+## 3.5 SCRIPTING QA CHECKLIST (per section — used by generator + review)
+| Section | Drama objective | Language objective | Quality check |
+|---|---|---|---|
+| cold_open | Establish immediate friction, in-media-res | Expose the target situation | Zero coach / zero Arabic? Ends on a question or conflict? |
+| act1 | Escalate the conflict | Deliver 2-3 target phrases naturally | Does Macal make ONE realistic L2 mistake tied to his current voice stage? |
+| coach_break1 | (teaching beat) | Unpack phrases + correct the ONE mistake, explain WHY | ≤60s, zero shaming, correction ties to act1's mistake? |
+| act2 | Resolve scene + drop cliffhanger | Reuse target phrase in a new context | Does Macal apply the coach's correction as a triumph beat? |
+| coach_outro | (wrap) | Recap + Phrase of the Episode + CTA | Ends on confidence; cliffhanger is story-driven, not a quiz? |
+
 ## 4. Notebooks (Kaggle, owner-run)
 - `kaggle/audition_qwen.py` — NEW. For each character, generate 3-4 candidate
   voice-designs (Macal: the 3 arc stages) reading real Season-1 lines; emit labeled

@@ -75,6 +75,13 @@ Every casting decision must satisfy both:
   delivery for English lines, is never spoken/shown, and does not affect the gates.
   Voice **identity** stays fixed per character (voice-design + seed, Option A — no
   cloning); `direction` only varies **emotion** per line.
+- R1b.6 **Scripting craft (design §3.4/§3.5):** every episode is written in-media-res
+  with a per-section word budget (~400w English total); Macal's voice-stage is written
+  into the text (phonetic markers per stage); each episode has the REQUIRED
+  mistake→correction→triumph loop (one planted L2 error in act1 → Mahmoud corrects it
+  with the "why" in coach_break1 → Macal reuses the fix in act2); 2-3 target phrases
+  land in act1/reused in act2; guest accents stay clear/accessible. The per-section QA
+  checklist (§3.5) governs generation + review.
 - R1b.3 This is a **configuration** of the existing `llm_backend.py` (model + fallback
   env vars) — no new engine dependency, still commercial-safe (DeepSeek = MIT/open) and
   $0 on the free tier.

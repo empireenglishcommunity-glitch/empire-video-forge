@@ -96,10 +96,14 @@ Goal: all 10 short scripts exist + approved, so the full cast is known.
       **`direction`** acting note (schema §3.3). Verify one test generation + that the
       gates ignore `direction`.
 - [ ] A.1 🤖 Generate **Eps 2-10** short scripts (`gen_episode.py`, ~7 min, `--no-advance`
-      handling per episode), each passing **structure + duration gates**. Ep1 already exists.
+      handling per episode), each passing **structure + duration gates** AND applying the
+      **scripting-craft rules (design §3.4)**: in-media-res + per-section word budgets;
+      Macal voice-stage phonetic markers; the REQUIRED mistake→correction→triumph loop;
+      target phrases in act1 reused in act2; guest-accent clarity.
 - [ ] A.2 🤖 Reconcile Ep1 into the season (it already exists short); ensure continuity
       (`story_so_far`) flows across all 10.
-- [ ] A.3 🧑 **Review all 10 short scripts** (story + teaching). Iterate 🤖↔🧑 until good.
+- [ ] A.3 🧑 **Review all 10 short scripts** against the **QA checklist (design §3.5)**
+      (story + teaching). Iterate 🤖↔🧑 until good.
 - [ ] A.4 🤖 **Derive the full cast list** from the 10 approved scripts (every speaker).
 - [ ] A.5 🧑 **GATE A:** owner approves the 10 scripts + the derived cast list. Scripts LOCKED.
 
