@@ -1,89 +1,92 @@
 # Two Worlds — Ep1 Status & Session Handoff
 
-> Checkpoint written to survive a session switch. **Focus: finish Episode 1
-> (owner reviews the assembled audio → fixes as needed → post), THEN Ep2.**
-> Nothing about Ep2 proceeds until Ep1 is posted.
+> Checkpoint to resume cleanly. **Current focus: finish the NEW SHORT Ep1
+> (~6.6 min) → owner reviews → post.** All work is committed to `main`.
+> Last updated: 2026-09-19 (end of session — everything synced & locked).
 
-## LOCKED-DOWN PROGRESS (the real, proven state)
-- **Ep1 was generated with the REAL voice models** — Arabic = VoiceTut
-  (Coach = "Sayed") through the shared Egyptian lexicon; English = Chatterbox
-  (cloned character refs). This is done, not stubbed.
-- **The episode is assembled**: `ep01_audio_plain.m4a` (40.6 min, 276 lines) is
-  built and lives on the server.
-- **Models are locked.** Auditions are complete and the cast is chosen; the
-  audition/experiment notebooks have been removed from the repo (they served
-  their purpose). The production synth path is the only thing that remains.
-- **The Human-in-the-Loop review tool has been RETIRED.** The owner reviews the
-  assembled audio directly (not through the Streamlit/Colab regenerate loop),
-  so `streamlit_review.py`, `review_app_launcher.py`, `regen_engine.py`, and
-  `REVIEW_WORKFLOW.md` were deleted. If a specific clip needs a fix, re-run the
-  production synth notebook for that line, or add the word to the shared lexicon
-  and re-synth.
+## ⏸️ WHERE WE STOPPED (resume here tomorrow)
+**Next action is OWNER's: run the two Kaggle voice notebooks for the new short
+Ep1, drop the WAVs on the server, then tell the agent "synth done."** The agent
+then re-assembles + delivers. Details in "THE IMMEDIATE NEXT STEP" below.
 
-## THE ONE OPEN ITEM
-Owner is **reviewing the assembled Ep1 audio** for Arabic pronunciation. Any word
-that's wrong gets fixed the permanent way — add it to
-`pipeline/egyptian_lexicon.json` (the shared pronunciation brain, one fix → every
-cast voice says it right forever) — then re-synth the affected lines with the
-production notebook and re-assemble. Prefer the lexicon fix over a one-off.
+## THE BIG DECISION THIS SESSION: short episodes
+- The old 40-min Ep1 was **abandoned** (too long to review/produce; also had
+  Arabic pronunciation mistakes). The whole system moved to a **TIGHT 5-10 min
+  format (default ~7 min)**.
+- **Ep1 was regenerated short**: `episodes/ep01/script.json` = **51 lines, ~991
+  words, ~6.6 min**, title "The Arrival", level A2. It PASSES both gates
+  (structure + duration). Script was reviewed + 3 text fixes applied (Macal name
+  →ماكال, "first episode" wording, stripped a stray stage direction).
+- The old long Ep1 is preserved on the server at
+  `episodes/_abandoned_ep01_long_20260919000034/` (script, synth WAVs, the 40-min
+  audio, timelines — nothing deleted).
 
-## PRODUCTION PIPELINE (what actually makes an episode)
-| File | Role | Proven with REAL model? |
-|------|------|-------------------------|
-| `kaggle/synth_episode_ar.py` | Arabic synth pass (VoiceTut + lexicon), manifest-driven | ✅ Ep1 |
-| `kaggle/synth_episode_en.py` | English synth pass (Chatterbox + refs), manifest-driven | ✅ Ep1 |
-| `kaggle/synth_arabic_qa.py` | Arabic synth + ASR-QA that flags words for the lexicon | ✅ |
-| `kaggle/manifest_lib.py` | Shared source of truth (line order, status, text hash) | ✅ Ep1 (276/276) |
-| `pipeline/assemble_audio.py` | Manifest-driven ffmpeg assembly | ✅ Ep1 (40.6 min) |
-| `pipeline/manifest_lib.py` | Server-side copy of the manifest lib (byte-identical) | ✅ |
+## THE IMMEDIATE NEXT STEP (owner → then agent)
+1. **OWNER (Kaggle GPU):** two notebooks, each = new Kaggle notebook, GPU T4,
+   Internet ON, paste the whole file, Run All. They auto-fetch the new 51-line
+   script from `main`:
+   - `kaggle/synth_episode_ar.py` → Arabic Coach lines (VoiceTut, voice "Sayed"). ~11 lines.
+   - `kaggle/synth_episode_en.py` → English lines (Chatterbox). ~40 lines.
+   Download each notebook's `ep01/` output (`lineNNN_*.wav` + `manifest.ar.json` /
+   `manifest.en.json`) and drop BOTH into `/opt/eec-podcast/episodes/ep01/synth/`.
+2. **AGENT (after "synth done"):** re-assemble through the structure gate
+   (`run_podcast.py --episode 1 --skip-deliver` or `assemble_audio.py`), verify
+   ~5-10 min + 51/51 rendered + clean, then deliver to Drive `raw-audio`
+   (`drive_upload.py`). Then commit final state.
+3. **OWNER:** review the finished plain audio → add music/video/cover → publish
+   (YouTube forwarder + RSS feed).
 
-> Note: `manifest_lib.py` intentionally exists in BOTH `kaggle/` and `pipeline/`.
-> The Kaggle synth notebooks fetch the `kaggle/` copy over raw GitHub at runtime;
-> the server assembler imports the `pipeline/` copy locally. They are identical —
-> keep them in sync if either is edited.
+## WHAT'S LOCKED (all merged to `main`)
+- **Short-episode format** — `gen_episode.py`: compact 6-section template
+  (cold_open, coach_intro, act1, coach_break1, act2, coach_outro) via
+  `build_acts(minutes)`; `--minutes` (default 7), `--force`, `--no-advance`;
+  **DURATION GUARD** (won't save outside 5-10 min unless `--force`).
+- **Story/teaching STRUCTURE GATE** — `structure_check.py` (series-bible §10):
+  cold_open is pure story; Coach speaks ONLY in coach sections; no Coach line
+  inside a story scene. Enforced in BOTH `gen_episode.py` (post-gen) and
+  `assemble_audio.py` (pre-assembly, fail-closed; `--force` to override). This
+  fixed the earlier "messy audio" root cause (it was a script-order bug, NOT an
+  assembler bug — assembly is mechanically sound).
+- **Automation** — n8n workflow `Two Worlds — Weekly Podcast Generate`
+  (id `IRVBwGGJBF1SpePA`) is **INACTIVE** (correct; don't activate until Ep1
+  ships). It calls `eec-podcast-trigger.service` (172.18.0.1:8904) →
+  `run_podcast.py` (modern VoiceTut+manifest path). Trigger has a **no-skip-ahead
+  guard** (refuses ep N if an earlier episode never shipped; `force` override).
+- **Ep2 removed / season rolled back** to `current_episode: 2`.
+- Docs synced to reality: `design.md`, `OPERATIONS.md` (runbook), `series-bible.md`
+  (§5 short template + §10 structure rule).
 
-## THE PLAN TO FINISH EP1
-- **Step 1 — Owner reviews Ep1** (`ep01_audio_plain.m4a`), notes any mispronounced
-  Arabic words.
-- **Step 2 — Fix them permanently.** Add each word to `pipeline/egyptian_lexicon.json`,
-  re-run the Arabic synth notebook for the affected lines, re-assemble.
-- **Step 3 — Owner approves the final audio.**
-- **Step 4 — Post Ep1** (owner adds music/video/cover, then publish via the
-  YouTube forwarder + RSS feed). THEN move to Ep2.
+## STATE SNAPSHOT (verified at session end)
+- Repo `main`: clean, all work merged (PRs #33, #34, #35 merged). Nothing pending.
+- Server `/opt/eec-podcast/bin` ↔ repo `pipeline/`: **hash-matched** for
+  gen_episode, assemble_audio, structure_check, manifest_lib, run_podcast.
+- Server `episodes/ep01/`: new short `script.json` (+ `.pretextfix` backup, `_acts/`
+  cache). **`synth/` is EMPTY** — waiting on the owner's Kaggle run.
+- `season.json`: `current_episode: 2`.
+- Drive `raw-audio`: old long Ep1 audio TRASHED; still holds `ep01_english.zip` +
+  `ep01_arabic.zip` (old long-Ep1 batches — harmless, will be superseded).
+- **12 containers: all UP.** Disk 80% (7.4 GB free).
 
-## WHERE EVERYTHING LIVES
-- **Repo**: `/projects/sandbox/empire-video-forge`
-- **Branch**: `podcast-v2-review-and-publish` → **PR #32** (open, NOT merged).
-- **Spec dir**: `.kiro/specs/eec-podcast-automation/`
-  - `kaggle/` — production synth notebooks (`synth_episode_ar`, `synth_episode_en`,
-    `synth_arabic_qa`), `manifest_lib.py`, `README.md`
-  - `pipeline/` — server scripts (assemble_audio, run_podcast, publish_*,
-    egyptian_lexicon.json, cast.json, manifest_lib.py, PODCAST_DISTRIBUTION.md,
-    SECURITY_ROTATION.md)
-  - `EP1_STATUS_AND_HANDOFF.md` — THIS FILE
-- **Server**: `ssh eec-editor` (⚠️ fail2ban bans rapid reconnects — use SINGLE
-  sessions, wait ~45s after a refusal). Podcast home `/opt/eec-podcast`.
-  - `episodes/ep01/synth/` — the 276 line WAVs + manifest.json + manifest.ar/en.json
-  - `episodes/ep01/script.json` — the 276-line master (title "The Arrival")
-  - `episodes/ep01/ep01_audio_plain.m4a` — assembled 40.6 min
-  - `.env` (chmod 600) — EEC_LLM_* (OpenRouter, Gemini-free)
-- **Drive raw-audio** (`1GLKvNq3LAKZ6BaACIMvYeUSJomFErav0`): ep01_arabic.zip,
-  ep01_english.zip, EEC_TwoWorlds_Ep01_The-Arrival_plain.m4a
-- **Voice engine**: Arabic = VoiceTut (Coach = Sayed), English = Chatterbox. Both
-  on Kaggle GPU (they clash in one kernel → two notebooks). Server has NO GPU —
-  never synth on the server.
+## VOICE ENGINE (locked)
+- Arabic = VoiceTut (Coach = "Sayed") via shared `egyptian_lexicon.json`.
+- English = Chatterbox (cloned refs in `voice-refs/` = server `voices/refs/`).
+- Both on Kaggle GPU (clash in one kernel → two notebooks). Server has NO GPU —
+  never synth on the server. Notebooks fetch script/config from `BRANCH = "main"`.
 
-## EP2 — REMOVED (was generated prematurely)
-- The prematurely-generated Ep2 was deleted on the server: `episodes/ep02/`
-  (script.json + `_acts/`, no audio was ever synthesized) removed, and
-  `season.json` rolled back to `current_episode: 2` with the Ep2 tag cleaned out
-  of `story_so_far`. A backup of the old season.json is kept on the server
-  (`season.json.bak.*`). Ep2 does not start until the owner says so, after Ep1
-  is posted.
+## STILL OPEN (owner findings, deferred by the short-episode decision)
+The owner earlier raised: (#2) drop Macal's cloned voice, (#3) weak/uncreative
+character choices, (#4) review burden. The move to short episodes set these aside
+for now (short + regenerated Ep1 makes review tractable). Revisit AFTER Ep1 ships
+if still desired.
 
-## SANDBOX GOTCHAS
-- No ffmpeg / no soundfile locally in the sandbox — heavy audio ops run on the
-  server (ffmpeg 8.0.1) or in Colab/Kaggle.
-- `str_replace`/file tools operate on the LOCAL repo, NOT the server — push edits
-  to the server with `cat file | ssh eec-editor 'cat > /path'`.
-- 12 live containers on the server — never disrupt them.
+## KEY PATHS & GOTCHAS
+- Repo: `/projects/sandbox/empire-video-forge`, spec dir
+  `.kiro/specs/eec-podcast-automation/`.
+- Server: `ssh eec-editor` = `root@77.42.43.250`. ⚠️ **fail2ban** bans rapid
+  reconnects — use SINGLE sessions, wait ~45s after a "Connection refused".
+- SSH key for this sandbox is authorized on the server (added this session).
+- No ffmpeg/soundfile locally in the sandbox — heavy audio ops run on the server.
+- File edits are LOCAL to the repo; push to the server with
+  `cat file | ssh eec-editor 'cat > /path'`.
+- **GitHub PRs merge fast on this repo** — push ALL commits BEFORE opening a PR
+  (a PR merged early once, splitting commits; fixed via a follow-up PR).

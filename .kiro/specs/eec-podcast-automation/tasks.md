@@ -29,6 +29,21 @@
       (VoiceTut) + `kaggle/synth_episode_en.py` (Chatterbox). Install bug root-caused
       + fixed (transformers>=5.3, don't reinstall torch).
 
+## Phase 2b — SHORT EPISODE FORMAT ✅ DONE (5-10 min pivot, 2026-09-19)
+> The 40-min format was too long to review/produce. Switched to a TIGHT 5-10 min
+> format (default ~7 min).
+- [x] 2b.1 `gen_episode.py`: compact 6-section template (cold_open, coach_intro,
+      act1, coach_break1, act2, coach_outro) via `build_acts(minutes)`; `--minutes`
+      (default 7), `--force`, `--no-advance`; DURATION GUARD (won't save outside
+      5-10 min unless --force).
+- [x] 2b.2 Story/teaching STRUCTURE GATE (`structure_check.py`, series-bible §10),
+      enforced in the generator AND the assembler. Fixed the "messy audio" root
+      cause (script-order bug, not the assembler).
+- [x] 2b.3 Ep1 regenerated SHORT: 51 lines / ~991 words / ~6.6 min; passes both
+      gates; text reviewed + fixed. Old 40-min Ep1 archived server-side.
+- [ ] 2b.4 ⏳ **OWNER:** run the two Kaggle voice notebooks on the new short Ep1,
+      drop WAVs into `episodes/ep01/synth/`. THEN agent re-assembles + delivers.
+
 ## Phase 2 — Script generator ✅ DONE (Gemini-free)
 - [x] 2.1 `pipeline/gen_episode.py`: multi-act 30-min generator with word floors +
       auto-expand. Audio-ready (narration/stage-directions stripped).
