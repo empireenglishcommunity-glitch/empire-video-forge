@@ -1,5 +1,10 @@
 const base = $('Switch: brand branch').item.json;
-const clipBin = $('Switch: brand branch').item.binary;
+// The clip binary is dropped by the Probe orientation HTTP node, so the Switch
+// item no longer carries it. Pull it from the last node that still has it
+// (Download clip (bytes)); fall back to the Switch item just in case.
+let clipBin;
+try { clipBin = $('Download clip (bytes)').item.binary; } catch(e) { clipBin = undefined; }
+if (!clipBin || !clipBin.clip) { try { const sb = $('Switch: brand branch').item.binary; if (sb && sb.clip) clipBin = sb; } catch(e) {} }
 let meta = {};
 try {
   const b = $input.item.binary;
