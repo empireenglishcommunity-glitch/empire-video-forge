@@ -96,7 +96,8 @@ Goal: all 10 short scripts exist + approved, so the full cast is known.
       **`direction`** acting note (schema §3.3). Verify one test generation + that the
       gates ignore `direction`.
 - [ ] A.1 🤖 Generate **Eps 2-10** short scripts (`gen_episode.py`, ~7 min, `--no-advance`
-      handling per episode), each passing **structure + duration gates** AND applying the
+      handling per episode), each passing the **structure gate** (duration is now
+      informational, no hard gate) AND applying the
       **scripting-craft rules (design §3.4)**: in-media-res + per-section word budgets;
       Macal voice-stage phonetic markers; the REQUIRED mistake→correction→triumph loop;
       target phrases in act1 reused in act2; guest-accent clarity.

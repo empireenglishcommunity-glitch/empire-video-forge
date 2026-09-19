@@ -355,7 +355,9 @@ After mastering, generate a publish-ready text asset from the episode script + t
 ## 5. Gates (unchanged, applied every episode)
 - **Structure gate** (`structure_check.py`, series-bible §10): cold_open pure story;
   Coach only in coach sections; canonical order. Enforced in generation + assembly.
-- **Duration gate**: 5-10 min band, enforced at generation (`gen_episode.py`).
+- **Duration**: INFORMATIONAL only — `gen_episode.py` prints the estimated minutes but
+  the hard 5-10 min gate was REMOVED (owner decision). ~7 min is still the target via
+  `--minutes`, but a shorter/longer episode is allowed to save.
 - **Manifest completeness gate**: assembly refuses unless every line rendered.
 
 ## 6. The Coach → Mahmoud rename (design)
