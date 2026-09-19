@@ -1,0 +1,375 @@
+{
+  "episode": 3,
+  "title": "The Coffee Order",
+  "level": "A2+",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Hi sir, welcome to Common Grounds. What can I get for you today?",
+      "direction": "warm, upbeat, Indian accent"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Hello. I want... two lattes, please. One with oat milk.",
+      "direction": "earnest, careful, slight pause"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Sure. Hot or iced for the second one?",
+      "direction": "friendly, quick but clear"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I am not sure... sorry, can you say that again, please?",
+      "direction": "anxious, leaning in, polite"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "No problem. Hot or iced? Cold or warm?",
+      "direction": "patient, smiling, slower"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Iced, please. And... medium size. Thank you.",
+      "direction": "relieved, quieter confidence"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا بِيكُمْ يا جَمَاعَة فِي يَلَّا فْلُوِنْت! أَنَا مَحْمُود، وَالنَّهَارْدَه مَعَاكُمْ فِي مَقْهَى كُومِن جْرَاوْنْدْ...",
+      "direction": "warm, welcoming, upbeat"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "مَاكَال بِيِطْلُبْ قَهْوَة لِنُور، وَبِيلَاقِي نَفْسُه مُحْتَاجْ يِسْأَلْ وَيِوَضِّحْ... وَدِي أَوَّلْ مُحَاوَلَة حَقِيقِيَّة لِلتَّوَاصُلْ!",
+      "direction": "playful, building interest"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "رَكِّزُوا مَعَايَا عَلَى تَلَاتَة تَعْبِيرَات: طَلَبْ مُؤَدَّبْ زَي \"I'd like...\"، وَسُؤَالْ عَنْ التَّفْضِيلْ زَي \"Do you prefer...\"، وَطَلَبْ التَّوْضِيحْ زَي \"Could you say that again?\"",
+      "direction": "clear, teaching, slow on the phrases"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا بِيْنَا نِسْمَعْ، وَمَتْخَافُوش مِنَ الغَلَطْ... الغَلَطْ هُوَ الطَّرِيقْ لِلتَّقَدُّمْ!",
+      "direction": "encouraging, energetic"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Two lattes — one oat milk, one iced, both medium. Anything else?",
+      "direction": "brisk, friendly, calling back the order"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "No, that is all. Wait... actually, can I change the first one? I would like it hot, please.",
+      "direction": "earnest, catching himself"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Of course. Hot oat latte and iced latte. Give me two minutes.",
+      "direction": "warm, reassuring"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You remembered my oat milk. I am impressed.",
+      "direction": "teasing, warm"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Of course. You always take it that way... I think.",
+      "direction": "hopeful, slightly unsure"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Every single morning. Okay — since you are buying, what do you prefer? Coffee or tea, I mean.",
+      "direction": "curious, casual"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Honestly, I prefer tea. But I order coffee to... how do you say... to fit in?",
+      "direction": "sheepish, honest"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Wait, really? You drink coffee just to fit in? That is a lot of effort.",
+      "direction": "amused, disbelieving"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I know. I copy how people talk here. I speak like the British men in my office. I do not know why.",
+      "direction": "reflective, a little embarrassed"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Because that is what you hear every day. But Macal — you do not need to sound like them.",
+      "direction": "gentle, sincere"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Maybe. But sometimes I feel my English is not good enough. I live here since two years and I still...",
+      "direction": "quiet, vulnerable"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Hey. Two years and you are ordering coffee for me in a busy shop, no panic. That is good enough. Trust me.",
+      "direction": "firm, encouraging"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Two lattes ready! Hot oat, iced. Enjoy.",
+      "direction": "cheerful, calling out"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Thank you. And... thank you, Nour. Really.",
+      "direction": "soft, grateful"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّبْ يا جَمَاعَة، تَعَالُوا نْشُوفْ أَحْلَى تَلَاتَة تَعْبِيرَاتْ مِنَ المَشْهَدْ دَه...",
+      "direction": "warm, inviting"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَوَّلْ وَاحِدَة: I'd like... وْمَعْنَاهَا عَايِزْ أَوْ نَفْسِي فِي حَاجَة، وْبِنِسْتَخْدِمْهَا لَمَّا نِطْلُبْ بِأَدَبْ... زَي مَا مَاكَال قَالْ: I'd like it hot, please.",
+      "direction": "clear, teaching"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَانِي وَاحِدَة: Do you prefer... وْمَعْنَاهَا بِتَفَضِّلْ إِيهْ؟ وْبِنِسْأَلْ بِيهَا عَنِ الاخْتِيَارَاتْ... زَي: Do you prefer coffee or tea?",
+      "direction": "encouraging"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَالْت وَاحِدَة: Could you say that again? وْمَعْنَاهَا تِقْدَرْ تِقُولْ تَانِي؟ وْبِنِسْتَخْدِمْهَا لَمَّا مِشْ سَامْعِينْ كْوَيِّسْ أَوْ مِحْتَاجِينْ تَوْضِيحْ... زَي لَمَّا البَارِيسْتَا تِتْكَلِّمْ بِسُرْعَة.",
+      "direction": "patient, clear"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وْدِلْوَقْتِي الغَلْطَة المَشْهُورَة... مَاكَال قَالْ: I live here since two years. دِي غَلْطَة بِنْعْمِلْهَا كُلِّنَا!",
+      "direction": "warm, playful"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "لِيهْ بِنْغَلَطْ؟ عَشَانْ فِي العَرَبِي بِنْقُولْ \"مِنْ سَنِتَيْن\" وْنِفَكِّرْ إِنْ since مَعْنَاهَا مِنْ... لَكِنْ فِي الإِنْجِلِيزِي since بْتِيجِي مَعَ الـ present perfect.",
+      "direction": "explaining gently"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "الصَّحْ: I've lived here for two years. أَوْ: I've been here for two years. خَلِّي بَالَكْ: for مَعَ المُدَّة، وْsince مَعَ البِدَايَة.",
+      "direction": "firm but kind"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وْآخِرْ حَاجَة... مَاكَال بِيِقَلِّدْ الإِنْجِلِيزِي البِرِيطَانِي عَشَانْ زُمَلَاهْ بِيِتْكَلْمُوا كِدَه. وْدِي طَبِيعِي! لَكِنْ نُور عَنْدَهَا حَقّ... مِشْ لَازِمْ تِبْقَى زَي حَدْ تَانِي. إِنْتَ إِنْتَ.",
+      "direction": "warm, reassuring"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا، نِسْمَعْ الحِوَارْ تَانِي وْنِشُوفْ إِزَّايْ مَاكَال هِيِكَمِّلْ...",
+      "direction": "energetic, inviting"
+    },
+    {
+      "section": "act2",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Excuse me — you forgot your change. And here, a small cookie. For the tall one who always says thank you.",
+      "direction": "warm, cheerful, Filipino accent"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Oh! Thank you. I did not expect that. Nour, this is for you. I know you like sweet things.",
+      "direction": "surprised, then earnest"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Look at you. Do you prefer chocolate or the plain one?",
+      "direction": "playful, teasing"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I prefer... hmm. I have lived in Dubai for two years, so I choose both.",
+      "direction": "slow, then proud little laugh"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Both? That is a very Dubai answer. Okay, I respect it.",
+      "direction": "laughing, approving"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Wait — I said that right? For two years? With for? Yes. Finally.",
+      "direction": "quiet triumph, almost to himself"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You said it perfectly. See? You do not need to sound like anyone else. Just sound like Macal.",
+      "direction": "warm, sincere"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. Then... could you say that again? I want to remember it.",
+      "direction": "soft, sincere, a little shy"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "I said, just sound like Macal. Oh — and one more thing. I am from Michigan, not London.",
+      "direction": "light, teasing, dropping the truth"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "What? Michigan? But your English sounds so... American. Wait, that is the point, yes?",
+      "direction": "confused, then dawning realization"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Exactly the point. Anyway — Tarek just posted something. Look.",
+      "direction": "casual, then slightly tense"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "\"Rising Voices — my first week.\" He already made a video? It looks so... professional.",
+      "direction": "worried, reading aloud slowly"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Do not watch it now. Coffee first. But Macal... maybe you should think about your own video.",
+      "direction": "gentle, encouraging, hinting at what's next"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّبْ يَا جَمَاعَة... نِلَخِّصْ بِسُرْعَة. عَشَانْ تِقُولْ مُدَّة،، اسْتَخْدِمْ for،، زَي: I have lived here for two years. وْعَشَانْ تِقُولْ البِدَايَة،، اسْتَخْدِمْ since،، زَي: I have lived here since 2022.",
+      "direction": "warm, quick recap"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وْعِبَارَة الحَلْقَة النَّهَارْدَة... Just sound like Macal. مِشْ لَازِمْ تِبْقَى زَي حَدْ،، إِنْتَ إِنْتَ!",
+      "direction": "proud, encouraging"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وْطَبْعاً،، فِيهْ تِفَاصِيلْ صَغِيرَة بِنِسْتَخْدِمْهَا كَتِير،، زَي: I prefer،، وْcould you say that again. جَرِّبْهَا النَّهَارْدَة مَعَ حَدْ.",
+      "direction": "friendly, inviting"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "لَوْ عَجَبَكْ،، اشْتَرِكْ فِي البُودْكَاسْت،، وْانْضَمْ لِنَا عَلَى التِّلِيجْرَام. اكْتُبْ لِي: إِنْتَ مِصْرِي وْلا مِنِين؟ وْاسْمَعْ المَشْهَدْ مَرَّة تَانْيَة.",
+      "direction": "warm call to action"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وْالحَلْقَة الجَايَة... مَاكَال هَيِقَرَّرْ يِعْمِلْ الفِيدْيُو بْتِعُه. لَكِنْ فِيهْ سُؤَال: هَلْ هَيِلْحَقْ تَارِك؟ يَلَّا،، بَاكِرْ!",
+      "direction": "curious, teasing next episode"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "",
+    "ar": ""
+  },
+  "word_count": 785,
+  "cast_used": [
+    "Barista",
+    "Coach",
+    "Macal",
+    "Nour"
+  ]
+}

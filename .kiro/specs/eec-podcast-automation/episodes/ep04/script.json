@@ -1,0 +1,312 @@
+{
+  "episode": 4,
+  "title": "The Complaint",
+  "level": "B1",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Mr. Macal, we have a problem. The suite was double-booked. The client is here now, and he is not happy.",
+      "direction": "tense, clipped, urgent"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I understand. I'm sorry about this. Give me two minutes — I mean, I'll fix it now.",
+      "direction": "calm but tight, slight self-correction"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Two minutes? I've been waiting one hour. My family is outside. This is not okay.",
+      "direction": "furious, controlled anger"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "You're right. Let me confirm one thing, and I promise — you'll have a room tonight.",
+      "direction": "steady, reassuring, low and firm"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا يَا صَاحْبِي! أَنَا مَحْمُود، وَمَعَاك فِي Yalla Fluent... النَّهَارْدَة مَاكَال عِنْدُه مُشْكِلَة كَبِيرَة، زَبُون زَعْلَان جِدًّا، وَالْأُوضَة مَحْجُوزَة مَرَّتَيْن!",
+      "direction": "warm, energetic welcome"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "اسْمَع كَوَيْس... مَاكَال لَازِم يِهَدِّي الْوَضْع، وَيِتَكَلَّم بِإِنْجِلِيزِي تَحْت الضَّغْط. رَكِّز عَلَى تَلَاتَة تَعْبِيرَات:",
+      "direction": "building suspense, slowing down"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَوَّلًا... I'm sorry about this... يَعْنِي أَنَا آسِف عَلَى دَه. تَانِيًا... Let me confirm one thing... يَعْنِي خَلِّينِي أَتْأَكَّد مِنْ حَاجَة. وَتَالْتًا... you'll have a room tonight... يَعْنِي هَتْخُد أُوضَة النَّهَارْدَة بِاللَّيْل!",
+      "direction": "clear, teaching each phrase with care"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَالَّا بِنَا نِسْمَع مَاكَال... وَشُوف هُوَ هَيِقْدَر يِهَدِّي الزَّبُون وَلَا لَأ!",
+      "direction": "playful, inviting the listener in"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Look, I don't want excuses. I booked this suite three weeks ago. Three weeks! And now your man at the desk tells me there's no room.",
+      "direction": "angry, voice rising"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I'm sorry about this, sir. I really am. I've been checking the system since you arrived, and I can see the mistake is on our side.",
+      "direction": "calm, sincere"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "On your side? My wife and my two kids are sitting in the car. They are tired. What am I supposed to tell them?",
+      "direction": "frustrated, impatient"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "You're right, and I understand. Let me confirm one thing with the front desk, and I'll come back to you in one minute.",
+      "direction": "steady, reassuring"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "One minute. Not one hour. I have been waiting since four o'clock.",
+      "direction": "firm, warning"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I know. I know. And I live here since two years, so I know how important this weekend is for families like yours.",
+      "direction": "warm, slightly nervous"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Fine. But if there is no room tonight, I want a full refund and I am writing to the manager.",
+      "direction": "blunt, serious"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I hear you. If we can't find the suite, I'll move you to our best available room tonight, and we'll sort out the refund for the difference. But I promise you — you'll have a room tonight.",
+      "direction": "confident, steady"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "A room with two beds. For the kids. That is the minimum.",
+      "direction": "softening slightly"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Two beds, yes. Let me call the desk right now. Please, sit for a moment, and I'll bring you cold water for your family.",
+      "direction": "kind, decisive"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Okay. Okay, I will wait. But please — two beds.",
+      "direction": "tired, calmer"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Two beds. I've got it. Thank you for your patience, sir.",
+      "direction": "quiet, grateful"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب، يَا صَاحْبِي... خُد بَالَك مِنْ تَلَاتَة تَعْبِيرَات، هُمَّا اللي أَنْقَذُوا مَاكَال!",
+      "direction": "warm, energetic opening"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَوَّلًا... I'm sorry about this. يَعْنِي أَنَا آسِف عَلَى دَه. بِنِقُولْهَا لَمَّا الغَلَطَة مِنْ نَاحْيِتْنَا، وَمِشْ عَايِزِين نِبَرِّر، عَايِزِين نِعْتَرِف. مَثَلًا... I'm sorry about this, sir، دِي كَفَايَة عَشَان تِهَدِّي الْحَدِيث.",
+      "direction": "clear, teaching tone"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَانِيًا... Let me confirm one thing. يَعْنِي خَلِّينِي أَتْأَكَّد مِنْ حَاجَة. بِنِقُولْهَا لَمَّا عَايِز تِكْسِب وَقْت، وَتَرْجَع بِمَعْلُومَة صَحِيحَة. مَثَلًا... Let me confirm one thing with the front desk.",
+      "direction": "steady, instructional"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَتَالْتًا... you'll have a room tonight. يَعْنِي هَتْخُد أُوضَة النَّهَارْدَة بِاللَّيْل. دِي وَعْد وَاضِح، بِتَدِّي الزَّبُون أَمَل، وَلَازِم تِوَفِّي بِيه!",
+      "direction": "firm, promising"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَمَّا الْغَلَطَة... مَاكَال قَالَ I live here since two years. الْغَلَطَة دِي جَايَة مِنْ الْعَرَبِي، لِأَنَّنَا بِنِقُول أَنَا عَايِش هِنَا مِنْ سَنِتَيْن. بِالْإِنْجِلِيزِي الصَّح... I've lived here for two years. اِسْتَخْدِم for مَعَ الْعَدَد، وَhave plus p.p. لِلْحَالَة الْمُسْتَمِرَّة.",
+      "direction": "kind, corrective, no shame"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَالَّا... نِكَمِّل وَنِشُوف مَاكَال هَيِعْمِل إِيه مَعَ الْفْرُونْت دِيسْك!",
+      "direction": "encouraging, moving forward"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Sir — good news. I've confirmed it with the front desk. We have a family suite with two beds, and it's yours tonight.",
+      "direction": "calm, warm, relieved"
+    },
+    {
+      "section": "act2",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Two beds? Really? And the price? I don't want any surprises on the bill.",
+      "direction": "skeptical but softening"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Same price you booked. I've lived here for two years, and I know a tired family needs rest, not paperwork. The refund difference — forget it. Consider it handled.",
+      "direction": "confident, generous"
+    },
+    {
+      "section": "act2",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Handled? Hmm. You know, most people just give me excuses. You didn't. My wife will be happy. Thank you... Macal, right?",
+      "direction": "surprised, grateful"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "That's me. I'll walk your family to the suite myself and bring the water. If anything is wrong tonight, ask for me personally.",
+      "direction": "steady, reassuring"
+    },
+    {
+      "section": "act2",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Good. Because my boss will hear about this — and I want to tell her something positive for once. She runs Rising Voices, by the way.",
+      "direction": "casual, dropping a bombshell"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Wait — Rising Voices? The fellowship? Your boss is... Nour's director?",
+      "direction": "stunned, catching his breath"
+    },
+    {
+      "section": "act2",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "That's her. Nour speaks highly of you. My director wants a follow-up call tomorrow about the booking mess. She asked if you'd handle it.",
+      "direction": "matter-of-fact, amused"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I... yes. I'll take the call. But first, let's get your family inside. One thing at a time tonight.",
+      "direction": "nervous laugh, focused"
+    },
+    {
+      "section": "act2",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Then I'll tell her you said yes. Good luck, Macal. You'll need it — she doesn't forgive mistakes easily.",
+      "direction": "half-warning, walking away"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Great. So tomorrow I explain a double booking... to the woman who decides my future. If I've lived here for two years, I should know how to survive one phone call. Right?",
+      "direction": "dry, to himself, uneasy"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب يَا صَاحْبِي، خَلِّينَا نِرَاجِع... I'm sorry about this، و Let me confirm one thing، و you'll have a room tonight.",
+      "direction": "warm, quick recap"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَة الْحَلْقَة النَّهَارْدَة... آسِف عَلَى الْإِزْعَاج، يَا سَيِّدِي. I'm sorry for the inconvenience, sir. دِي بِنِقُولْهَا لَمَّا الْغَلَطَة كَبِيرَة شْوَيَّة، وَالزَّبُون لِسَّه زَعْلَان!",
+      "direction": "clear, teaching slowly"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَمَاكَال عَمَل حَاجَة صَعْبَة جِدًّا... فَضَل هَادِي تَحْت الضَّغْط، وَوَعَد بِحَلّ... وَخَلَّى الْغَلَطَة تَبْقَى فُرْصَة!",
+      "direction": "proud, encouraging"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَعَالَى قُول لِي إِنْتَ... إِمْتَى آخِر مَرَّة اعْتَذَرْت بِالْإِنْجِلِيزِي؟ اِبْعَت لِي عَلَى التِّلِيجْرَام، وَاشْتَرِك فِي الْبُودْكَاسْت عَشَان مِش تِفُوتَك حَلْقَة!",
+      "direction": "friendly, inviting"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَمَرَّة جَايَة... مَاكَال هَيِتْكَلِّم مَعَ مُدِيرَة نُور نَفْسِهَا. يَا تُرَى هَيِقُول إِيه؟ يَالَّا، نِشُوف!",
+      "direction": "suspenseful, teasing next time"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "",
+    "ar": ""
+  },
+  "word_count": 867,
+  "cast_used": [
+    "Coach",
+    "Interviewer",
+    "Landlord",
+    "Macal"
+  ]
+}

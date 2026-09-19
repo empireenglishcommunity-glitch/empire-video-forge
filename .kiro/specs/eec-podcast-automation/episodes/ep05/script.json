@@ -1,0 +1,284 @@
+{
+  "episode": 5,
+  "title": "The Clause",
+  "level": "B1",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Macal, I'm raising the rent. Two thousand more. And I need your visa papers by Sunday.",
+      "direction": "firm but polite, heavy Pakistani accent"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Two thousand? Wait — if you give me one more month, I mean, I can find the money.",
+      "direction": "caught off guard, anxious"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "If I wait, I lose. The law is the law. Sunday, Macal.",
+      "direction": "flat, final, walking away"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ninety days in Dubai... and now the clock is really ticking.",
+      "direction": "quiet, to himself, tense"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا يَا جَمَاعَة! أَنَا مَحْمُود، وَمَعَاكُوا فِي يَلَّا فْلُوَنْت. النَّهَارْدَه، مَكَّال عَنْدُه مُشْكِلَة كَبِيرَة... صَاحِبْ البَيْت عَايِز يِزَوِّد الإِيجَار، وَعَايِز الأَوْرَاق يَوْم الحَدّ!",
+      "direction": "warm, high energy welcome"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "لَمَّا تِحْتَاج تِتَفَاوَض، أَوْ تِخْتَلِف بِأَدَب... فِيه تَلَاتَة تَعْبِيرَات هَتْسَمَعْهُم النَّهَارْدَه، رَكِّز مَعَايَا كُوَيِّس.",
+      "direction": "lean in, teaching tone"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَوَّل وَاحِد: If you give me one more month... تَانِي وَاحِد: I understand your position, but... وَتَالِت وَاحِد: If I wait, I lose.",
+      "direction": "clear, spelling out phrases"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا، نِسْمَع مَكَّال بِيُوَاجِه المَوْقِف. وَبَعْدِين أَنَا هَفَسَّرْلَكُم كُلْ حَاجَة!",
+      "direction": "playful, inviting"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Mr. Qureshi, I've been a good tenant for two years. I always pay on time. If you give me one more month, I mean, I can find the money.",
+      "direction": "tense, polite, slightly pleading"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Macal, I know you are a good tenant. But costs are up everywhere. If I wait, I lose. The law is the law.",
+      "direction": "firm but not cruel, matter-of-fact"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I understand your position, but two thousand more is a lot. That's almost half my salary. Can we meet in the middle? Maybe one thousand?",
+      "direction": "calm, trying to negotiate"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "One thousand, five hundred. Final. And I still need your visa copy by Sunday. Not Monday. Sunday.",
+      "direction": "firm, closing the door"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "My visa... it expires soon. I'm waiting on Dune and Co. to renew it. If they don't sign, I have a real problem.",
+      "direction": "worried, quieter"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Then you should talk to them today. Not tomorrow. If the papers are late, I cannot help you. I have rules too.",
+      "direction": "practical, almost sympathetic"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. I'll bring the visa copy. And I'll bring the money. Thank you for the one month, I mean, the smaller increase.",
+      "direction": "relieved but still stressed"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Good. And Macal — if your company asks for a reference, I will say you are honest. But honest tenants still pay rent.",
+      "direction": "dry, slightly warm"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Understood. I live here since two years, Mr. Qureshi. I don't want to leave. I just need a little more time.",
+      "direction": "sincere, tired"
+    },
+    {
+      "section": "act1",
+      "speaker": "Landlord",
+      "lang": "en",
+      "text": "Then don't waste it. Sunday. Bring everything. And good luck with your company.",
+      "direction": "final, walking away"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ninety days in Dubai. The clock is not just ticking. It's running.",
+      "direction": "to himself, low and determined"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب، يَا جَمَاعَة، تَعَالُوا نْشُوفْ مَكَّال قَالْ إِيهْ... أَوَّل تَعْبِير: If you give me one more month. يَعْنِي: لَوْ تِدِّينِي شَهْر كَمَان. بِنِسْتَخْدِمْهَا لَمَّا تِطْلُبْ فُرْصَة، أَوْ وَقْت زِيَادَة، بِأَدَب. زَيِّ: If you give me one more week, I'll finish the report.",
+      "direction": "warm, teaching, slow and clear"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "التَّانِي: I understand your position, but... يَعْنِي: أَنَا فَاهِمْ وِجْهَة نَظَرَك، لَكِن... دِي أَحْسَنْ طَرِيقَة تِخْتَلِف بِأَدَب... بِتَعْتَرِفْ بِحَقُّه، وَبَعْدِين تِحُطّ رَأْيَك. زَيِّ: I understand your position, but the price is too high for me.",
+      "direction": "encouraging, conversational"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَالتَّالِت: If I wait, I lose. دِي شَرْط... بِنِسْتَخْدِمْ If مَعَ الحَاضِرْ لَمَّا نِتَكَلِّمْ عَنْ نَتِيجَة أَكِيدَة. يَعْنِي: لَوْ أَسْتَحْمَلْ، أَنَا الخَسْرَان. زَيِّ: If I don't call now, I lose the chance.",
+      "direction": "clear, giving rhythm to the phrase"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَمَّا الغَلْطَة... مَكَّال قَالْ: I live here since two years. وَدِي غَلْطَة شَائِعَة جِدًّا، لِأَنَّ فِي العَرَبِي بِنْقُولْ مِنْ سَنَتَيْن... فَبِنِتْرْجِمْهَا حَرْفِيًّا. الصَّح: I've lived here for two years، أَوْ I've been living here for two years.",
+      "direction": "gentle, no shaming, corrective"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "خَلِّي بَالَك... since بِتَجِي مَعَ نُقْطَة المُبْتَدَى، وَ for بِتَجِي مَعَ المُدَّة. يَعْنِي: since two thousand twenty-three، لَكِن for two years. جَرِّبْهَا مَعَايَا... I've worked here for three months. تَحْفَظْهَا كُوَيِّس، وَتَقُولْهَا بِثِقَة!",
+      "direction": "energetic, coaching, final push"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Nour, I did it. I negotiated with the landlord. He agreed to fifteen hundred, not two thousand. If I bring the visa copy by Sunday, I keep the flat.",
+      "direction": "relieved, a little proud, walking fast"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Wait — you actually sat down with him and talked numbers? Macal, that's real progress. A month ago you would've just said yes.",
+      "direction": "warm, genuinely impressed"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I've lived here for two years, you know. I didn't want to lose it. And honestly, I understand his position too — costs are up everywhere.",
+      "direction": "calm, reflective, proud of the tense"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Look at you, using the perfect tense in a real fight. Okay, so what's the problem? You look like there's a problem.",
+      "direction": "playful then sharp, reading his face"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "He needs the visa copy by Sunday. But my visa renewal depends on a full-time offer from Dune and Co. And right now, I only have the internship.",
+      "direction": "voice dropping, tension returning"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Then we go to them tomorrow. If you don't ask for the offer, you won't get it. You just proved you can negotiate — now do it again.",
+      "direction": "firm, encouraging, no hesitation"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yeah. You're right. If I wait, I lose. Tomorrow morning, I'm walking into that office.",
+      "direction": "resolute, quiet fire"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Good. And Macal — whatever happens in there, don't say yes to the first number they give you. Promise me.",
+      "direction": "half-smile, serious warning"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I promise. Ninety days left. And my visa... that clock is louder than ever.",
+      "direction": "low, to himself, cliffhanger weight"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب يَا جَمَاعَة... خَلِّينَا نِلَخِّصْ بِسُرْعَة! عِنْدِنَا ثَلاث تَعْبِيرَات... If you give me one more month، وَ I understand your position, but... وَ If I wait, I lose. دُولْ هُمَّا سِلاحَك فِي أَي مُفَاوَضَة!",
+      "direction": "warm, quick recap, rising energy"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَمَا تِنْسَاش الغَلْطَة... I live here since two years. الصَّح: I've lived here for two years، يَعْنِي since مَعَ النُقْطَة، وَ for مَعَ المُدَّة. احْفَظْهَا كُوَيِّس!",
+      "direction": "playful correction, friendly emphasis"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَة الحَلْقَة النَّهَارْدَة... هِيَّ: If I don't ask, I won't get it. يَعْنِي: لَوْ مَا طَلَبْتْش، مِشْ حَاخُد. قُولْهَا لِنَفْسَك كُلْ يَوْم!",
+      "direction": "proud, giving the phrase with weight"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "انْضَمُّوا لِنَا عَلَى تِلِيجْرَام، وَاشْتَرِكُوا فِي البُودْكَاسْت... كُلْ أُسْبُوع حَلْقَة جَدِيدَة، وَتَدْرِيب مَعَاكُمْ!",
+      "direction": "welcoming, inviting, upbeat"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَالْمَرَّة الجَايَة... مَكَّال رَايِح لِمَكْتَب الشُّرْكَة. هَلْ حَايِخُد العَرْض؟ وَلَا التَّارِيك حَايِسْبِقُه؟ اسْتَعِدُّوا... الحَلْقَة الجَايَة هَتْكُون نَار!",
+      "direction": "suspenseful tease, energetic close"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "",
+    "ar": ""
+  },
+  "word_count": 853,
+  "cast_used": [
+    "Coach",
+    "Landlord",
+    "Macal",
+    "Nour"
+  ]
+}

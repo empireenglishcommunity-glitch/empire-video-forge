@@ -1,0 +1,333 @@
+{
+  "episode": 7,
+  "title": "The Voice",
+  "level": "B1+",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay. Camera's rolling. Just talk to me, not the lens.",
+      "direction": "warm, steady, calm"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I've been thinking about this moment for weeks, and now... my mind is blank.",
+      "direction": "nervous, half-laughing"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Then don't think. Tell me why you're really here. Why Dubai?",
+      "direction": "gentle push, leaning in"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Because I want a future I can't yet see. I mean... a future I have to build myself.",
+      "direction": "quiet, honest, slowing down"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "That. Right there. Say that again — like it matters.",
+      "direction": "soft, inspired, almost a whisper"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا يَا جَمَاعَة! أَنَا مَحْمُود، وَالنَّهَارْدَه مَعَاكُمْ فِي \"يَلَّا فْلُوَنت\"... مَشْهَدْ حِمِيمْ جِدًّا: مَكَّال بِيْسَجِّلْ فِيدْيُو \"رايزِينْج ڤويسِز\"... وَبِيْحِسْ إِنِّ دِمَاغُه فَضِي!",
+      "direction": "warm welcome, bright energy, quick hook"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "بُصُّوا... النَّهَارْدَه هِنِتْعَلِّمْ تَلَاتَة تَعْبِيرَاتْ بِسِيطَة... وَمُهِمَّة جِدًّا: إِزَّايْ تِقُولْ رَأْيَكْ، وَإِزَّايْ تِحْكِي حِكَايَة، وَإِزَّايْ تِتَكَلِّمْ عَنِ الْمُسْتَقْبَلْ.",
+      "direction": "clear, teaching tone, counting on fingers"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "خُدْ بَالَكْ مِنْ تَلَاتَة جُمَلْ: I want a future I can't yet see... وَلَا حِظْ كَلِمَة yet يَا جَمَاعَة، مَعْنَاهَا \"لِسَّه\"، زَيِّ مَا تِقُولْ أَنَا لِسَّه مَا وَصِلْتْ.",
+      "direction": "playful emphasis on the English phrase, slowing down for 'yet'"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَبَعْدِينْ: I want to build my future myself... وَكَلِمَة أَخِيرَة: That's what I'm working for، وَلْزَمْ تِسْمَعُوا إِزَّايْ مَكَّال هِيْقُولْهَا مِنْ قَلْبُه! يَلَّا... نِسْمَعْ.",
+      "direction": "rising excitement, hand-off to the scene"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You froze again. That's the third take. What's going on in there?",
+      "direction": "gentle, curious"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I keep thinking about Tarek. His video looked perfect. And I'm not sure mine will ever be good enough.",
+      "direction": "honest, a bit frustrated"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Forget Tarek. This isn't a competition about cameras. It's about you. So tell me — what do you actually want?",
+      "direction": "warm, pushing him"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Honestly? I want a future I can't yet see. But I've decided I'm going to build it myself, no matter how long it takes.",
+      "direction": "slow, from the heart"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "That's it. See how you just spoke? No script, no tricks. That's the voice they're looking for.",
+      "direction": "encouraging, bright"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "You really think so? Because some days I feel like I'm still learning to speak at all.",
+      "direction": "vulnerable, doubting"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Everyone feels that. But you've grown so much since you got here. Don't you see it?",
+      "direction": "reassuring, firm"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Maybe. I live here since two years, and only now I'm starting to sound like myself.",
+      "direction": "reflective, small smile"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay, that sentence — we'll fix that later. Right now, keep going. Tell me about Egypt. Why did you leave?",
+      "direction": "playful, then sincere"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Because staying felt safe, and safe wasn't enough. My family thinks I already made it. I can't tell them I'm still fighting.",
+      "direction": "quiet, heavy"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Then say that. Say the real thing. When you speak your truth, people listen — and I'm one of them.",
+      "direction": "soft, moved"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. No more hiding. This is what I'm working for — and this time, I mean every word.",
+      "direction": "resolved, steady"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يَا جَمَاعَة، نِفَكِّكْ الْمَشْهَدْ مَعَ بَعْض... أَوَّلْ تَعْبِيرْ: I want a future I can't yet see، يَعْنِي عَايِزْ مُسْتَقْبَلْ لِسَّه مَا شُفْتُهْ، وِالـ yet دِي مَعْنَاهَا \"لِسَّه\"، زَيِّ مَا تِقُولْ: I haven't finished yet.",
+      "direction": "warm, clear, teaching pace"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "التَّعْبِيرْ التَّانِي: That's what I'm working for، يَعْنِي \"دَا اللِّي أَنَا بِشْتَغِلْ عَشَانُه\"... وِتِسْتَخْدِمْهَا لَمَّا تِحِبْ تِقُولْ إِنِّ فِيهْ حَاجَة تَعْبَانْ عَلِيهَا، زَيِّ: My family is what I'm working for.",
+      "direction": "encouraging, steady"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَالتَّالْتْ: I'm still learning to speak at all، يَعْنِي \"لِسَّه بِتْعَلِّمْ أَتْكَلِّمْ أَصْلًا\"... وِالـ still دِي كَلِمَة جَمِيلَة جِدًّا، بِتَقُولْ لِلسَّامِعْ إِنِّ الْحِكَايَة لِسَّه مِكَمِّلَة.",
+      "direction": "soft, motivating"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دَلْوَقْتِي، غَلْطَة مَكَّال: قَالْ I live here since two years... الْغَلْطَة دِي بِنْعَمِلْهَا كُلِّنَا، لِأَنِّ فِي الْعَرَبِي بِنْقُولْ \"أَنَا عَايِشْ هِنَا مِنْ سَنِتَيْنْ\"، فَبِنْنَقِلْهَا زَيِّ مَا هِيَّ... لَكِنْ فِي الْإِنْجِلِيزِي، لَمَّا الْحَاجَة بَدْأَتْ فِي الْمَاضِي وَمِكَمِّلَة، بِنِسْتَخْدِمْ I have lived here for two years، أَوْ I've been living here for two years.",
+      "direction": "kind, corrective, no shame"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "خُدْ بَالَكْ... فِي الْإِنْجِلِيزِي بِنِسْتَخْدِمْ for مَعَ الْمُدَّةْ، وَ since مَعَ نُقْطَة الْبِدَايَة، زَيِّ: since 2022، أَوْ since I arrived.",
+      "direction": "focused, tip-giving"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وِالْأَهَمْ يَا جَمَاعَة... لَمَّا تِتَكَلِّمْ مِنْ قَلْبَكْ زَيِّ مَا مَكَّال عَمِلْ، النَّاسْ بِتِسْمَعْ! إِحْنَا كُلِّنَا بِنْغَلَطْ، وَالْغَلْطَة دِي مُشْ عَيْبْ... دِي خُطْوَة. يَلَّا، نِكَمِّلْ.",
+      "direction": "warm, uplifting, closing energy"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay. Camera's rolling. Just talk to me, not to it.",
+      "direction": "warm, steady"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Right. So... my name is Macal, and I've been living here for two years now.",
+      "direction": "nervous at first, then settling in"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Back in Egypt, everything was safe. But I want a future I can't yet see — so I'm building it, one word at a time.",
+      "direction": "growing confident, sincere"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I'm still learning to speak at all. But that's okay. Being imperfect here beats being invisible back home.",
+      "direction": "quiet pride"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Keep going... that's it. That's the real you.",
+      "direction": "soft, encouraging"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "My family is what I'm working for. Some nights I call them and I say nothing. I just listen.",
+      "direction": "emotional, controlled"
+    },
+    {
+      "section": "act2",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Sorry — your flat white. You two sounded so good, I forgot to bring it earlier.",
+      "direction": "friendly, slightly amused"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "See? You just made someone stop and listen. That's the whole point.",
+      "direction": "laughing, proud"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Honestly? I felt it. For the first time, I wasn't translating. I was just... talking.",
+      "direction": "surprised, light"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "So we send it tonight. Deal? We'll polish it later — I mean, after I check mine.",
+      "direction": "upbeat, distracted by her phone"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Hold on, one second. Sorry — this is from Chicago.",
+      "direction": "curious, reading her screen"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "They're offering me a role. In Chicago. Next month.",
+      "direction": "stunned, quiet"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "...That's amazing, Nour. Really.",
+      "direction": "forced smile, heart sinking"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "I don't know. Let's... talk about it after. We still have your video.",
+      "direction": "conflicted, looking away"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يَا جَمَاعَة... نِلَخِّصْ بِسُرْعَة: عِنْدِنَا I've been living here for two years، وَعِنْدِنَا for مَعَ الْمُدَّةْ، وَ since مَعَ نُقْطَة الْبِدَايَة.",
+      "direction": "warm, quick recap"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَة الْحَلْقَة دِي، خُدْهَا مَعَاكْ: I'm still learning... but I'm building my future، one word at a time.",
+      "direction": "slow, proud emphasis on the English"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وِالْمَرَّة دِي مَكَّال تَكَلَّمْ مِنْ قَلْبُهْ... وَإِنْتَ كَمَانْ تِقْدَرْ! اكْتُبْ لِي عَ التِّلِجْرَامْ: إِيهْ الْجُمْلَة الِّي حَاسِسْ إِنَّهَا بَيْنَتَكْ وِبَيْنَ حُلْمَكْ؟",
+      "direction": "encouraging, inviting"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَمَتْنَسَاش تِعْمِلْ سَابْسْكْرَايْبْ، عَشَانْ الْحَلْقَة الْجَايَة... نُور عَنْدَهَا خَبَرْ كَبِيرْ، وَمَكَّال هَيِقُولْ كَلِمَة صَعْبَة جِدًّا.",
+      "direction": "teasing suspense, warm"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "",
+    "ar": ""
+  },
+  "word_count": 829,
+  "cast_used": [
+    "Barista",
+    "Coach",
+    "Macal",
+    "Nour"
+  ]
+}

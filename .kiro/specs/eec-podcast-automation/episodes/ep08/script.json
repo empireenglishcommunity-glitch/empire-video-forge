@@ -1,0 +1,333 @@
+{
+  "episode": 8,
+  "title": "The Mock",
+  "level": "B2-",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Macal, stop. You keep saying 'I led the project.' Led how? Give me the situation, the task, the action.",
+      "direction": "sharp, testing"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Sure. Picture this. Deadline moved up, two people out sick. I split the work, and we shipped it early.",
+      "direction": "calm, confident"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Wait. That was... actually good. Say it again, slower.",
+      "direction": "surprised, quiet"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Hold on. Did Tarek just admit Macal was good? Somebody write that down.",
+      "direction": "teasing, warm"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا بِيكُمْ يا جَمَاعَة، أَنَا مَحْمُود، وَمَعَاكُمْ فِي Yalla Fluent!",
+      "direction": "warm, welcoming, big smile"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "النَّهَارْدَة، طَارِق وَمَكَال بِيِتَدَرَّبُوا عَلَى مُقَابَلَة شُغْل... وَالْحِوَارْ بَيْنَهُمْ... بَقَى صَرَاحَة!",
+      "direction": "playful surprise, leaning in"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "رَكِّزُوا مَعَايَا عَلَى تَلَاتَة تَعْبِيرَات... الأُولَى: 'Give me the situation.'",
+      "direction": "clear, teaching, slow on the English"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَبَعْدَهَا: 'Can you clarify that?'... وَأَخِيرًا، وَهِيَ الْمُهِمَّة: 'Let me walk you through it.'",
+      "direction": "emphasizing the last phrase, encouraging"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا نِسْمَعْ سَوَا... وَبُصُّوا كُوَيِّس، لِأَنَّ الدَّرْسْ الْيَوْمْ دَهْ... هُوَ الْمِفْتَاحْ!",
+      "direction": "energetic, ready to play the scene"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Okay. Again. But this time, imagine I am the interviewer. I will not smile. I will not help you.",
+      "direction": "dry, playing the stern interviewer"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Fine. Give me the situation. Dune and Co., last quarter. Two designers out sick, and the client moved the deadline up by ten days.",
+      "direction": "calm, structured, confident"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Good. And your task?",
+      "direction": "probing, still stern"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "My task was simple to say, hard to do: keep the team calm and still ship on time. So let me walk you through it.",
+      "direction": "steady, using the phrase naturally"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Wait, wait. You said 'the team was calm.' But who kept them calm? You? Or luck?",
+      "direction": "challenging, leaning in"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Me. I split the work into three tracks, paired the juniors with seniors, and I handled the client calls myself. We shipped two days early.",
+      "direction": "proud but grounded"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay, that one landed. Tarek, be honest. Would you hire him?",
+      "direction": "warm, teasing Tarek"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Honestly? Yes. But the ending was weak. You need a result, not a feeling. Numbers. What changed because of you?",
+      "direction": "honest, coaching now, not competing"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Fair. The result: we kept the client, and they gave us a second contract worth forty thousand dirhams.",
+      "direction": "measured, adding the number"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Better. One more thing. When they ask something you do not understand, do not guess. Ask. Say: 'Can you clarify that?'",
+      "direction": "instructive, sincere"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Can you clarify that? Okay, I like that. I live here since two years, and nobody taught me this in a real way.",
+      "direction": "light, then the planted mistake slips out naturally"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "There. Right there. 'Since two years.' We will fix that after. But Macal, your English is sharper now. I will say it once.",
+      "direction": "dry, quietly impressed"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Twice. You said it twice. Say it a third time and I am recording it for the whole office.",
+      "direction": "laughing, delighted"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّبْ يا جَمَاعَة، تَعَالُوا نْفَكِّكْ التَّلَاتَة تَعْبِيرَات دُولْ... وَاحْدَة وَاحْدَة.",
+      "direction": "warm, inviting"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَوَّلْ وَاحْدَة: 'Give me the situation.' يَعْنِي... احْكِيلي الْوَقْفَة كَانَتْ إِيهْ؟ لَمَّا الْمُقَابِلْ يِقُولْ لَكْ كِدَه، عَايِزْ يِسْمَعْ الْخَلْفِيَّة بِسُرْعَة، مِشْ قِصَّة طَوِيلَة. مِثَالْ: 'Give me the situation at the client meeting.'",
+      "direction": "explaining, clear"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَانِي وَاحْدَة: 'Can you clarify that?' يَعْنِي... مُمْكِنْ تْوَضَّحْلي؟ لَمَّا مِشْ فَاهِمْ سُؤَالْ، مِتْخَمِّنْشْ... اسْأَلْ. مِثَالْ: 'Sorry, can you clarify what you mean by ownership?'",
+      "direction": "encouraging"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَتَالْتَة، وَهِيَ الْأَهَمْ: 'Let me walk you through it.' يَعْنِي... خَلِّينِي أْوَدِّيكْ خَطْوَة خَطْوَة. بِتَسْتَخْدِمْهَا لَمَّا تِشْرَحْ حَاجَة مُرَتَّبَة. مِثَالْ: 'Let me walk you through how we shipped it.'",
+      "direction": "emphasis on key phrase"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "بَسْ خُدْ بَالَكْ مِنْ غَلْطَة مَكَالْ... قَالْ: 'I live here since two years.' الْمُشْكِلَة إِنَّ فِي الْعَرَبِي بِنْقُولْ 'مِنْ سَنَتَيْن'، فَبِنْنَقْلْهَا زِي مَا هِيَ... لَكِنْ فِي الْإِنْجِلِيزِي، 'since' مَعَاهَا نُقْطَة بِدَايَة، مِشْ مُدَّة. يَعْنِي 'since 2022'، أَوْ 'for two years'.",
+      "direction": "gentle, no shaming"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "فَالشَّكْلْ الطَّبِيعِي: 'I have lived here for two years.' أَوْ 'I have been living here for two years.' خَدْ بِالَكْ... دَهْ مِشْ عَيْبْ، دَهْ عَادِي جِدًّا. يَلَّا، نِكَمِّلْ!",
+      "direction": "warm, motivating"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay, Tarek, your turn. You always ask the hard questions. Let's see you answer one.",
+      "direction": "playful, challenging"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Fine. Give me the situation. Last year, our biggest client almost walked away because of a billing mistake.",
+      "direction": "controlled, testing himself"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "And your task?",
+      "direction": "sharp, mirroring earlier"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "My task was to fix the relationship and keep the account. I called the client myself, admitted the error, and rebuilt the trust step by step. Let me walk you through it.",
+      "direction": "steady but slightly stiff"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Wait. That was good. But you skipped the numbers again. What changed because of you?",
+      "direction": "warm, teasing, confident"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "We kept the account. Two million dirhams a year. But honestly, that is not the part I wanted to talk about tonight.",
+      "direction": "voice drops, suddenly serious"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Hey. What's going on? You've been off all week.",
+      "direction": "gentle, concerned"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "My father is sick. Back in Cairo. My mother called me this morning and said he needs surgery. I have not told anyone at work yet.",
+      "direction": "quiet, raw"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Tarek. I have been living here for two years, and I know that feeling. You don't carry that alone. Tell me what you need.",
+      "direction": "soft, sincere, no performance"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "I don't know yet. But thanks. That actually helps.",
+      "direction": "vulnerable, small smile"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Anytime. Now let me check my phone, my mother has been calling me three times.",
+      "direction": "light, shifting mood"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Oh no. She just sent a voice note. She's coming to Dubai. Next week. And she thinks I already have the fellowship.",
+      "direction": "panicked, laughing nervously"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يا جَمَاعَة، نِلَخِّصْ بِسُرْعَة... 'Give me the situation' يَعْنِي احْكِيلي الْوَقْفَة، وَ'Can you clarify that?' يَعْنِي وَضَّحْلي يا بَاشَا، وَ'Let me walk you through it' يَعْنِي خَلِّينِي أْوَدِّيكْ خَطْوَة خَطْوَة.",
+      "direction": "warm, quick recap, brisk energy"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَة الْحَلْقَة، اهْتَمُّوا مَعَايَا... 'for two years' مِشْ 'since two years'. مِشْ 'since two years'! قُولْ: 'I have lived here for two years.'",
+      "direction": "playful emphasis, teacher correcting lovingly"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَبِالْمُنَاسَبَة... الْحَلْقَة دِي كَانَتْ عَنْ الصِّدْق، مِشْ بَسْ عَنْ الْإِنْجِلِيزِي. طَارِكْ فَتَحْ قَلْبُه، وَمَكَالْ سَمِعْ. دَهْ نَجَاحْ حَقِيقِي.",
+      "direction": "soft, sincere, proud of the characters"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَعَالُوا عَلَى تِلِجْرَامْ 'إِمْبَايَرْ إِنْجِلِيشْ كُومْيُونِيتِي'... اكْتُبُوا لِي جُمْلَة بِ 'for' أَوْ 'since'، وَأَنَا هَرُدْ عَلَيْكُمْ. وَاشْتَرِكُوا فِي الْبُودْكَاسْتْ عَشَانْ مِتْفَوِّتْشْ حَلْقَة!",
+      "direction": "inviting, community warmth, upbeat"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَالْمَرَّة الْجَايَة... أُمّ مَكَالْ وَاصْلَة دُبَيْ! وَمَكَالْ لِسَّه مَا خَدْشْ الْفِيلُوشِيبْ. يَا سَاتِرْ... يَلَّا، نِلْتَقِي بُكْرَة!",
+      "direction": "suspenseful tease, then warm goodbye, slight laugh"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "",
+    "ar": ""
+  },
+  "word_count": 848,
+  "cast_used": [
+    "Coach",
+    "Macal",
+    "Nour",
+    "Tarek"
+  ]
+}

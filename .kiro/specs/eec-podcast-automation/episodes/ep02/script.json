@@ -1,0 +1,312 @@
+{
+  "episode": 2,
+  "title": "Taxi to Deira",
+  "level": "A2",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "How far is Deira? I am late for work.",
+      "direction": "anxious, fast, breathless"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Deira? No problem. But the traffic is very bad today.",
+      "direction": "calm, Indian accent, honest"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Please, can you go faster? I cannot lose this job.",
+      "direction": "urgent, polite, worried"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "I will try, my friend. But look at this road.",
+      "direction": "dry, warm, realistic"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. Okay. Just... please take the short way.",
+      "direction": "nervous, micro-pauses, pleading"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Short way? That is what I am doing. You trust me, yes?",
+      "direction": "light laugh, reassuring"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يا هلا يا هلا! أنا محمود، وهنبدأ رحلتنا مع \"Yalla Fluent\". النهارده، مَكَّلْ راكب تاكسي، والوقت بِيْجْرِي، ومحتاج يِتْكَلِّم عشان يِتْفَهْم! ... رَكِّزْ معايا على تلات جُمَل: \"How far is Deira?\" و \"Please, can you go faster?\" و \"Please take the short way.\" ... ياللا نِسْمَع سوا!",
+      "direction": "warm, energetic, welcoming"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Okay, my friend. We move now. But I must ask you something. Why are you going to Deira so early?",
+      "direction": "calm, curious, eyes on road"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I work at Dune and Company. I live here since two years, but I am still late sometimes. Today is very bad.",
+      "direction": "earnest, slightly embarrassed"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Two years? Your English is good, my friend. Do not worry. We will get there.",
+      "direction": "warm, reassuring, slight laugh"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Thank you. But please, can you go faster? My boss is not a patient man.",
+      "direction": "anxious, polite, urgent"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "I understand. But look — this road is full. Every car is going to Deira.",
+      "direction": "patient, gesturing at traffic"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. Okay. Just... please take the short way. The small streets. I know they are faster.",
+      "direction": "hopeful, leaning forward"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "The small streets? Hmm. Okay. But you must tell me — left or right at the next light?",
+      "direction": "testing, friendly challenge"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Left. Then... go straight. Then right after the mosque. I think. I am not sure.",
+      "direction": "uncertain, thinking hard"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "You think? Okay, boss. I trust you. But if we are late, it is your map, not my driving.",
+      "direction": "playful, teasing"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ha! Okay. Deal. Please, just... do not stop. Every minute is important.",
+      "direction": "laughing nervously, tense"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "No stopping. I promise. Look — we are almost there. That tall building? That is Deira.",
+      "direction": "confident, pointing ahead"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Finally! Thank you, my friend. How much is it?",
+      "direction": "relieved, reaching for wallet"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Forty-five dirhams. And good luck with your boss. Run fast, my friend!",
+      "direction": "cheerful, waving him off"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Shukran — I mean, thank you! Have a good day!",
+      "direction": "grateful, rushing out"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "بَرَافُو عَلِيك يا مَكَّلْ! ... سَمِعْتوا الجُمَل الحِلْوَة دي؟ ياللا نْفَكِّكْها مَع بَعْض. ... أَوَّل جُمْلَة: How far is Deira? يَعْنِي: الدِّيرَة بَعِيدَة قَد إِيه؟ ... بِنِسْتَخْدِمْها لَمَّا تِسْأَل عَن المَسَافَة، زَيّ: How far is your office from here?",
+      "direction": "warm, energetic teaching"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تانِي جُمْلَة: Please, can you go faster? يَعْنِي: لَو سَمَحْت، تِقْدَر تِمْشِي أَسْرَع؟ ... كَلِمَة please هِيَّ السِّر... لأ، مَفِيش سِر! هِيَّ الأَدَب. ... لَمَّا تِسْأَل بِـ please، النَّاس بِتِساعْدَك أَكْتَر. ... مِثَال: Please, can you help me?",
+      "direction": "warm, playful correction"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تالِت جُمْلَة: Please take the short way. يَعْنِي: لَو سَمَحْت، خُد الطَّرِيق القَصِير. ... take هِنَا يَعْنِي خُد، مُش وَخُد! ... زَيّ: Please take the stairs, not the elevator.",
+      "direction": "clear, encouraging"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَدُلْوَقْتِي، غَلْطَة صَغِيرَة مِن مَكَّلْ. ... هُوَ قال: I live here since two years. ... المُشْكِلَة؟ كَلِمَة since بِنِسْتَخْدِمْها مَع الزَّمَن المُسْتَمِرّ، زَيّ since 2022. ... لَكِن مَع مُدَّة زَمَن، زَيّ سَنَتَيْن، بِنِقُول for. ... فَالصَّح: I have lived here for two years.",
+      "direction": "gentle, no shaming, clear"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "خُد بِالك مِنِّي: since = مِن وَقْت مُعَيَّن، for = لِمُدَّة. ... مِثَال: I have worked here for three months. ... تَمَام؟ دُلْوَقْتِي، تَعالوا نِشُوف مَكَّلْ في الشُّغْل، وِنْشُوف هُوَ حَيِتْعَامَل إِزَّاي مَع نُور!",
+      "direction": "warm, building excitement"
+    },
+    {
+      "section": "act2",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Deira, my friend. Dune and Company is right there. The big glass building.",
+      "direction": "warm, proud of the drive"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes! I see it. Thank you. Please, can you stop near the front door?",
+      "direction": "relieved, polite, quick"
+    },
+    {
+      "section": "act2",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Of course. Here, sir. Forty-five dirhams. And take your time with the door.",
+      "direction": "friendly, calm"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Here is fifty. Keep the change, my friend. You saved my day.",
+      "direction": "grateful, earnest"
+    },
+    {
+      "section": "act2",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Thank you! Good luck, boss. Do not forget your bag on the seat.",
+      "direction": "cheerful, helpful"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Oh! Yes. My bag. Thank you. I have lived in Dubai for two years, and I still forget my bag!",
+      "direction": "sheepish laugh, then a small proud beat"
+    },
+    {
+      "section": "act2",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Ha! Two years, my friend. Dubai makes everyone busy. Now go, go! Your boss is waiting.",
+      "direction": "laughing, encouraging"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. I am going. Have a good day, sir. And please drive safe.",
+      "direction": "hurried, polite"
+    },
+    {
+      "section": "act2",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Always safe! Yalla, run!",
+      "direction": "playful, waving him off"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I am running... but wait. Why is the front desk so busy? That is Tarek. He is laughing with the girl at reception. He is never early.",
+      "direction": "winded, puzzled, suspicion rising"
+    },
+    {
+      "section": "act2",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "Macal! You are late today. Tarek came in an hour ago. He said he wanted to speak to your manager. Alone.",
+      "direction": "whispered warning, sympathetic"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "He came in early? To speak to my manager? About what, I wonder.",
+      "direction": "tense, quiet, uneasy"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "بَرَافُو عَلِيكوا يا جَمَاعَة! ... دُلْوَقْتِي، رَاجِعْ مَعَايَا: How far is Deira? ... Please, can you go faster? ... Please take the short way. ... وَكَمَان، فَاكِر: I have lived here for two years. ... for مَع المُدَّة، وَ since مَع وَقْت مُعَيَّن.",
+      "direction": "warm, recap energy, slow on key phrases"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَة الحَلْقَة النَّهَارْدَة هِيَّ: ... Please take the short way. ... كَلِمَة please بِتَخَلِّي الكَلَام أَدَب، وَالنَّاس بِتِساعْدَك أَكْتَر!",
+      "direction": "proud, emphasises 'please', smiling"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "لَو عَجَبَكُوا الحَلْقَة، ... تَعالوا عَلى التِلِيجْرَام، وَاشْتَرِكُوا في البُودْكاست، وَاكْتُبُوا لِي: إِيه أَصْعَب عِبَارَة عِنْدَكُوا؟ ... أَنَا مَحْمُود، وَبِسْتَناكُوا هُنَا!",
+      "direction": "inviting, friendly, direct to listener"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَمَرَّة جَايَة... مَكَّلْ دَاخِل الشُّغْل، بِنُور، وَتَارِك عَلى نَار! ... يَاللا، كَمِّلُوا مَعَايَا!",
+      "direction": "suspenseful tease then warm close"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "",
+    "ar": ""
+  },
+  "word_count": 778,
+  "cast_used": [
+    "Coach",
+    "Friend_F",
+    "Macal",
+    "TaxiDriver"
+  ]
+}
