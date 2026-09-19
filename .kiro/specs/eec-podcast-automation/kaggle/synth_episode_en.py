@@ -12,14 +12,18 @@
 #
 # Requires: Kaggle GPU = T4, Internet ON. Fresh notebook.
 # --------------------------------------------------------------------------
-# CELL 1 (install + restart) — ENGLISH ONLY (Chatterbox). Do NOT add voicetut here:
-#   !pip install -q git+https://github.com/resemble-ai/chatterbox.git
-#   !pip uninstall -q -y torchvision
-#   !pip install -q "numpy==1.26.4"
+# CELL 1 (install + restart) — ENGLISH ONLY (Chatterbox). Do NOT add voicetut here.
+# Use the PyPI package (the git URL install is fragile and can leave the module
+# missing -> "No module named 'chatterbox'"). If the deps conflict, the --no-deps
+# fallback + explicit libs recipe works on Kaggle. Then RESTART (os._exit).
+#   !pip install -q chatterbox-tts "numpy==1.26.4"
+#   # If the line above errors on a dependency conflict, use this fallback instead:
+#   # !pip install -q --no-deps chatterbox-tts
+#   # !pip install -q librosa transformers accelerate safetensors "numpy==1.26.4"
 #   import os; os._exit(0)
 #
-#   # If VoiceTut + Chatterbox clash in one kernel, run in TWO passes:
-#   #   PASS=ar (VoiceTut only) then PASS=en (Chatterbox only) — see PASS below.
+# After restart, run CELL 2 (this file). It VERIFIES chatterbox imports and prints
+# a clear message + the exact fix if the install didn't take — no silent failure.
 #
 # CELL 2 (this file) — after restart. Set EPISODE below.
 # ==========================================================================
@@ -132,9 +136,20 @@ if PASS in ("en", "both"):
     import torch
     print("CUDA available:", torch.cuda.is_available(),
           "| GPU:", (torch.cuda.get_device_name(0) if torch.cuda.is_available() else "NONE — enable T4!"))
+    try:
+        from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+    except ModuleNotFoundError:
+        raise SystemExit(
+            "\n*** Chatterbox is NOT installed in this kernel. ***\n"
+            "Run CELL 1 first (install + restart), then re-run this cell:\n"
+            "  !pip install -q chatterbox-tts \"numpy==1.26.4\"\n"
+            "  import os; os._exit(0)\n"
+            "If that errored on a dependency conflict, use the fallback:\n"
+            "  !pip install -q --no-deps chatterbox-tts\n"
+            "  !pip install -q librosa transformers accelerate safetensors \"numpy==1.26.4\"\n"
+            "  import os; os._exit(0)\n")
     print("Loading Chatterbox (first load downloads ~GBs, 2-4 min — DO NOT interrupt; "
           "wait for 'Chatterbox ready')...", flush=True)
-    from chatterbox.mtl_tts import ChatterboxMultilingualTTS
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     try: cb = ChatterboxMultilingualTTS.from_pretrained(device=dev, t3_model="v3")
     except TypeError: cb = ChatterboxMultilingualTTS.from_pretrained(device=dev)
