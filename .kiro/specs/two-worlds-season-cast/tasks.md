@@ -42,6 +42,12 @@
   before doing anything.
 - **P7 — Nothing outside the list.** No execution step happens that isn't represented as
   a task. If it's worth doing, it's worth tracking.
+- **P8 — Step by step, together (owner-in-the-loop).** Any step that needs the owner —
+  a credential, a decision, a Kaggle GPU run, a review, providing/creating anything — is
+  done **one step at a time, together**. The agent presents exactly ONE actionable step,
+  waits for the owner to complete it and confirm, then proceeds to the next. No bundling
+  multiple owner asks at once; no racing ahead of the owner. The agent's job is to make
+  each step small, clear, and easy to act on.
 
 ---
 
