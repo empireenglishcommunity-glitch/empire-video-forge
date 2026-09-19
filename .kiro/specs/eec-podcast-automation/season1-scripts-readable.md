@@ -4,7 +4,9 @@
 
 Generated for review. Each episode: a tight ~5-6 min bilingual drama — English story + Egyptian-Arabic coach breaks (Mahmoud). Coach lines shown in Arabic as recorded.
 
-**This session's enrichments are live in every episode:** a filled *phrase of the episode*, an *Accent Lab* pronunciation drill (season phonetic arc), and a trackable Telegram voice-note challenge.
+**Live in every episode:** filled *phrase of the episode*, an *Accent Lab* pronunciation drill (season phonetic arc), and a trackable Telegram voice-note challenge.
+
+> **Note on file viewing:** each episode also has a standalone file under `review-export/epNN.md` — use those if GitHub truncates the large combined view.
 
 ---
 
@@ -25,7 +27,7 @@ Generated for review. Each episode: a tight ~5-6 min bilingual drama — English
 
 ---
 
-## Episode 1 — “The Voice Note”  ·  A2  ·  ~6.4 min
+## Episode 1 — “The Voice Note”  ·  A2  ·  ~6.7 min
 
 **Situation:** Macal records a fake-success voice note to his mother in Al Nahda, then takes a call from Dune & Co.  
 **Arc beat:** We meet Macal, his dream, his fear. He lies by omission.  
@@ -45,6 +47,7 @@ Generated for review. Each episode: a tight ~5-6 min bilingual drama — English
 **— COACH INTRO (Mahmoud) —**
 
 - **MAHMOUD (coach):** أَهْلًا بِيكُمْ يَا جَمَاعَة فِي يَلَّا فْلُوَنْت! أَنَا مَحْمُود، وَمَعَاكُمْ كُلْ يَوْم، عَشَان نِتْعَلَّم إِنْجِلِيزِي وِإِحْنَا مُبْسُوطِين... النَّهَارْدَة، مَعَانَا مَكَال، مِصْرِي فِي دُبَاي، بِيِحْكِي لِأُمُّه كَلَام كِبِير، وِقَلْبُه مِشْ مِرْتَاح خَالِص.  _(warm, welcoming, a little playful)_
+- **MAHMOUD (coach):** وَبَسْ عَشَان نِبْقَى مُتْفِهْمِين مِنْ أَوِّل يَوْم... يَلَّا فْلُوَنْت دَه اسْم البَرْنَامِج اللِّي بِتِسْمَعُوه دَه. أَمَّا البَيْت بِتَاعْنَا كُلِّنَا، العِيلَة اللِّي هَنِتْمَرَّن فِيهَا سَوَا وِنِبْعَت لِبَعْض، دَه عَلَى تِلِيجْرَام فِي Empire English Community. يَلَّا فْلُوَنْت هُوَ الحِكَايَة، وَ Empire English Community هُوَ البَيْت.  _(friendly, clarifying, matter-of-fact)_
 - **MAHMOUD (coach):** وَبَعْدِين... التِّلِيفُون بِيِرِن، وَالشُّغْل بِيِسْأَلُه سُؤَال صَعْب. يَا تُرَى هَيِقُول إِيه؟ خَلِّيكُمْ مَعَانَا، وِاسْمَعُوا كْوَيِّس.  _(building suspense, gentle energy)_
 - **MAHMOUD (coach):** رَكِّزُوا النَّهَارْدَة عَلَى تَلَاتَة عِبَارَات... لَمَّا تِقَابِل حَد، قُول: Hello, I am... وَتَانِي وَاحِدَة: Nice to meet you. وَلَو مِفْهِمْتِش، قُول بِهُدُوء: Sorry, can you repeat that, please?  _(clear, teaching slowly, encouraging)_
 - **MAHMOUD (coach):** يَلَّا بَيْنَا... نِسْمَع مَكَال، وِنِتْعَلَّم مِنُّه!  _(bright, launching into the story)_
@@ -576,7 +579,8 @@ Generated for review. Each episode: a tight ~5-6 min bilingual drama — English
 - **Macal:** Deal. So — tell me about a time your team disagreed with your plan. And, could you clarify what you mean by 'disagreed'?  _(confident, slight grin, sharp delivery)_
 - **Tarek:** Look at you. You turned my own trick around.  _(caught off guard, genuinely impressed)_
 - **Macal:** I've lived here for two years, habibi. I learn fast.  _(playful, light, proud)_
-- **Tarek:** That was — actually clean. Okay. Honestly? I've been hard on you because I was scared. You're catching up. Fast.  _(quiet, honest, a little vulnerable)_
+- **Tarek:** Ha. Yeah. You do.  _(laughs, then it fades; a long pause, the smile leaving his face, a slow breath before he lets his guard down)_
+- **Tarek:** That was — actually clean. Okay. Honestly? I've been hard on you because I was scared. You're catching up. Fast.  _(quiet now, the joking gone; honest and a little vulnerable)_
 - **Macal:** Scared of what?  _(curious, softer now)_
 - **Tarek:** My father's sick back in Cairo. I might need to go. And if I leave, you're the one they'll pick for the fellowship.  _(heavy, admitting the truth)_
 - **Macal:** Tarek... I didn't know. That's not a race for me. If you need anything, I'm here.  _(warm, sincere, no ego)_
