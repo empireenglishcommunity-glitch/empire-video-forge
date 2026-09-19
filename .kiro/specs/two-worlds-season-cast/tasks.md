@@ -12,6 +12,36 @@
 3. Never touch the Arabic engine (VoiceTut). Never disrupt the 12 live containers.
 4. Push ALL commits to a branch BEFORE opening a PR (avoid the merged-early split).
 5. Keep the retired Chatterbox path archived (not deleted) until the new cast is proven.
+6. **All execution runs through a LIVE TASK LIST (mandatory — see the Execution
+   Protocol below).** No task is done from memory; nothing is dropped.
+
+## Execution protocol — the live task list is MANDATORY
+> This is a hard process rule, not a suggestion. It exists so that across a long,
+> multi-phase, multi-session effort we **never drop, skip, or lose track of a task** —
+> no matter what interruptions, context switches, or session breaks happen.
+
+**Rules of the live task list:**
+- **P1 — One source of truth.** When execution begins, the agent creates a live task
+  list mirroring this plan (Phases 0-E, every task). This tasks.md is the durable
+  reference; the live list is the working tracker. They must not diverge.
+- **P2 — Update on the go (real time).** The agent marks a task **in-progress** when it
+  starts and **complete IMMEDIATELY** when its artifact is produced AND verified — never
+  in a batch at the end, never from memory. Task status must always reflect reality.
+- **P3 — Definition of done per task.** A task is complete ONLY when its concrete
+  artifact exists and is verified (file written, output produced, check passed). A
+  command exiting without error is NOT proof of done. Owner-run (🧑) tasks are marked
+  complete only after the owner confirms.
+- **P4 — Gates are hard stops in the list.** A GATE task cannot be marked complete until
+  the owner explicitly signs off. Work does not cross a gate on assumption.
+- **P5 — Add, don't silently drop.** If new work is discovered mid-phase, ADD it to the
+  live list (and reflect it here) rather than doing it untracked. If a task becomes
+  unnecessary, mark it removed with a one-line reason — never delete silently.
+- **P6 — Survive session breaks.** At any stop/handoff, the live list + the handoff doc
+  must together state exactly which tasks are done, in-progress, and next — so a fresh
+  session resumes with zero loss. On resume, re-sync the live list from this tasks.md
+  before doing anything.
+- **P7 — Nothing outside the list.** No execution step happens that isn't represented as
+  a task. If it's worth doing, it's worth tracking.
 
 ---
 
@@ -25,6 +55,12 @@ Goal: agree WHAT the season is before writing it.
 
 ## PHASE A — Season scripts (must precede casting)
 Goal: all 10 short scripts exist + approved, so the full cast is known.
+- [ ] A.0 🤖 **Adopt DeepSeek for scriptwriting**: set `EEC_LLM_MODEL` /
+      `EEC_LLM_FALLBACKS` (DeepSeek R1 + V3, via OpenRouter free) in the server `.env`;
+      confirm the exact free model strings resolve; add the optional two-pass
+      (R1 beats → V3 dialogue) mode to `gen_episode.py`, and have V3 emit a per-line
+      **`direction`** acting note (schema §3.3). Verify one test generation + that the
+      gates ignore `direction`.
 - [ ] A.1 🤖 Generate **Eps 2-10** short scripts (`gen_episode.py`, ~7 min, `--no-advance`
       handling per episode), each passing **structure + duration gates**. Ep1 already exists.
 - [ ] A.2 🤖 Reconcile Ep1 into the season (it already exists short); ensure continuity
@@ -36,28 +72,38 @@ Goal: all 10 short scripts exist + approved, so the full cast is known.
 ## PHASE B — Cast & voice design (Qwen3-TTS)
 Goal: a locked `cast.json` with an owner-approved voice per character.
 - [ ] B.1 🤖 **Verify Qwen3-TTS engine facts** (design §2, V1-V6): model id, license,
-      voice-design/accent API, seed reproducibility, Kaggle install, output format.
-      Document findings; adjust design if reality differs.
-- [ ] B.2 🤖 Draft **voice-design specs** for the whole roster: Macal's 3 stages, Nour
-      (native American), TaxiDriver (Indian), + every derived guest by realism.
+      **VoiceDesign + VoiceClone** APIs, VoiceClone reproducibility (Option B),
+      Kaggle install (1.7B, bf16, ~8GB VRAM on T4), output format. Document findings;
+      adjust design if reality differs.
+- [ ] B.2 🤖 Draft **voice-design specs** for the whole roster: Macal's 3 stages (with
+      **explicit L2 acoustic markers** for Stage 1 — rolled r's, crisp T's, deliberate
+      pacing, earnest), Nour (native American), TaxiDriver (Indian), + every derived
+      guest by realism.
 - [ ] B.3 🧑 Review/tweak the voice-design descriptions (owner is the casting director).
 - [ ] B.4 🤖 Build `kaggle/audition_qwen.py` (paste-safe): 3-4 candidates/character
       (Macal = 3 stages) reading real Season-1 lines → labeled clips + zip.
 - [ ] B.5 🧑 **Run the audition on Kaggle**; download the clips.
 - [ ] B.6 🧑 **Pick** one voice per character + approve **Macal's 3-stage arc**
       (iterate B.2-B.5 on any character until happy).
-- [ ] B.7 🤖 Write the chosen voices into **`cast.json` (schema v2)**; set statuses to
-      `locked`.
-- [ ] B.8 🧑 **GATE B:** owner approves the locked cast.
+- [ ] B.7 🤖 For each approved voice, **save the canonical ~10-15s reference WAV**
+      (self-generated from the winning audition take) to `voice-refs/` (Macal = 3 refs,
+      one per stage); write chosen voices + `voice_ref` paths into **`cast.json`
+      (schema v2)**; set statuses to `locked`.
+- [ ] B.8 🧑 **GATE B:** owner approves the locked cast (voices + Macal arc).
 
 ## PHASE C — Wire up + prove on Ep1
 Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.1 🤖 **Rename Coach → Mahmoud**: `cast.json` (`display_name`), the Arabic
       self-intro line(s) in scripts, and the lexicon name entry. Keep speaker id `Coach`
       so gates/pipeline are untouched (design §6).
-- [ ] C.2 🤖 Build `kaggle/synth_episode_en_qwen.py` (Macal-stage-aware) replacing the
-      Chatterbox English notebook; update `run_podcast.py`/docs; archive the Chatterbox
-      path (not deleted).
+- [ ] C.2 🤖 Build `kaggle/synth_episode_en_qwen.py`: **VoiceClone** from each
+      character's canonical `voice_ref` (Option B; Macal picks the stage's ref via
+      `stage_map`), passing each line's **`direction`** to Qwen3-TTS for emotional
+      delivery. Replaces the Chatterbox English notebook; update `run_podcast.py`/docs;
+      archive the Chatterbox path (not deleted).
+- [ ] C.2a 🤖 **Verify `direction` sanitization**: assert the text-cleaner, text_hash/
+      manifest builder, timeline, and gates read only `text`/`speaker`/`section` and
+      never see `direction` (add a test).
 - [ ] C.3 🤖 Update `series-bible.md` casting section (realism + pedagogy + Macal arc)
       and `OPERATIONS.md` (new English engine + audition workflow).
 - [ ] C.4 🧑 **Re-synth Ep1 English on Qwen3-TTS** (Macal Stage 1) via the new notebook;

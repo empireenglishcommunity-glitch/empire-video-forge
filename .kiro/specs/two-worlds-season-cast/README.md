@@ -14,13 +14,28 @@ designed **Qwen3-TTS** actor voices (English) + VoiceTut (Arabic, Coach = **Mahm
    (Phases 0-E), owner-vs-agent split, and the gate checklist.
 
 ## Headline decisions (owner-approved in planning)
-- English engine → **Qwen3-TTS** (Apache-2.0, commercial-safe, no reference clips,
-  voice-design). Arabic engine (VoiceTut) **unchanged**.
+- **Scriptwriting → DeepSeek (R1 + V3)** via the existing OpenRouter free tier (better
+  dramatic writing; a config change, not a new dependency).
+- English voice engine → **Qwen3-TTS** (Apache-2.0, commercial-safe, no reference clips,
+  voice-design), **locked as the sole English engine**. Arabic engine (VoiceTut)
+  **unchanged**. Fish Audio S2 Pro was **evaluated and rejected** (non-commercial
+  self-host license / fragile free API) — not used anywhere.
 - Coach renamed **Mahmoud** (introduces himself by name; voice "Sayed" kept).
-- **Macal** = Egyptian-accented English, **3 evolving stages** across the season.
+- **Voice consistency = Option B (VoiceClone from self-generated refs):** invent each
+  voice via VoiceDesign in the audition, save a canonical ~10-15s WAV, then clone from it
+  in production to lock pitch/timbre across all 10 episodes. Per-line `direction` drives
+  emotion on top.
+- **Macal** = Egyptian-**L2**-accented English, **3 evolving stages** across the season
+  (explicit acoustic-marker prompts + script-level L2 reinforcement).
 - **Nour** = native American-born (pure American accent — the taught target).
 - **TaxiDriver** = Indian English (realism: Dubai drivers are typically South-Asian).
 - Work at **season level**: write + approve all 10 scripts, then cast everyone once.
+
+## Execution discipline
+All execution runs through a **mandatory live task list**, updated in real time (see
+`tasks.md` → "Execution protocol"). Tasks are marked done only when their artifact is
+produced AND verified; gates require explicit owner sign-off; nothing is done from memory
+or left untracked — so no task is ever dropped, even across session breaks.
 
 ## Relationship to the base spec
 This builds on `.kiro/specs/eec-podcast-automation/` (the short-episode format,

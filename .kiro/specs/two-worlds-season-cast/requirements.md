@@ -25,6 +25,8 @@ episode by episode.
   English audibly improves over the season.
 - G4. Produce Season 1 (10 short episodes) against the locked cast, keeping the
   existing structure + duration quality gates.
+- G4b. Raise **writing quality** by authoring scripts with **DeepSeek (R1 + V3)** on the
+  existing free LLM backend (better dramatic, serialized storytelling).
 - G5. Keep everything **$0 recurring** (self-hosted on free Kaggle GPU) and
   **commercial-safe** (Apache-2.0 engines only).
 - G6. Rename the Coach to **Mahmoud** — he introduces himself by name, not "Coach".
@@ -48,15 +50,37 @@ Every casting decision must satisfy both:
 - R1.3 A season plan + cast registry lives in `season.json` (episode list, situations,
   cast, Macal stage map, continuity/story-so-far).
 
+### R1b — Scriptwriting engine (dramatic quality)
+- R1b.1 Scripts are written with **DeepSeek (R1 + V3)** via the existing OpenRouter
+  free tier — for stronger long-form, dramatic, soap-opera-style writing.
+- R1b.2 Two-pass authoring (recommended): **R1 (reasoning)** plans the episode's story
+  beats/structure; **V3** writes the natural spoken dialogue **and a short per-line
+  acting `direction`** (emotional/delivery note) fed to Qwen3-TTS. Fallbacks (other free
+  models) remain configured so a rate-limit never blocks a run.
+- R1b.5 **Per-line `direction` field:** each line may carry a natural-language acting
+  note (e.g. "angry, rapid" / "calm, reassuring"). It drives Qwen3-TTS emotional
+  delivery for English lines, is never spoken/shown, and does not affect the gates.
+  Voice **identity** stays fixed per character (voice-design + seed, Option A — no
+  cloning); `direction` only varies **emotion** per line.
+- R1b.3 This is a **configuration** of the existing `llm_backend.py` (model + fallback
+  env vars) — no new engine dependency, still commercial-safe (DeepSeek = MIT/open) and
+  $0 on the free tier.
+- R1b.4 Every generated script still passes the **structure** and **duration** gates.
+
 ### R2 — Cast & voices
 - R2.1 **Mahmoud (Coach)** — Arabic, VoiceTut voice "Sayed" (unchanged). Named Mahmoud
   in-script; introduces himself by name.
-- R2.2 **Macal** — Egyptian-accented English, **3 evolving stages**:
-  - Stage 1: learner-level, clear Egyptian accent, a little hesitant.
+- R2.2 **Macal** — Egyptian-**accented L2** English, **3 evolving stages**:
+  - Stage 1: learner-level, clear Egyptian L2 accent, a little hesitant.
   - Stage 2: more fluent, accent softening, more confident.
   - Stage 3: confident, near-American (the season payoff).
   Warm, earnest throughout. Default stage→episode map: **S1=Eps1-3, S2=Eps4-7,
   S3=Eps8-10** (tunable).
+  - R2.2a **L2 accent is a known hard case** (it's a transfer accent, not a native
+    dialect profile): Stage-1 voice prompts use **explicit acoustic markers** (rolled
+    r's, crisp T's, deliberate pacing), AND the **scripts reinforce it** — DeepSeek V3
+    writes slight L2 phrasing/hesitation in early-stage Macal lines. This is a primary
+    thing the audition must validate.
 - R2.3 **Nour** — **native American-born**, warm/clear/confident **pure American**
   English (a model of the target accent). Not British.
 - R2.4 **TaxiDriver** — **Indian English**, middle-aged, friendly working-man warmth.
@@ -84,8 +108,10 @@ Every casting decision must satisfy both:
 - R4.5 **Ep1 is re-synthesized** on the new cast (Macal Stage 1) to match the season.
 
 ## 5. Non-functional requirements
-- N1. **Commercial-safe:** only Apache-2.0 / MIT engines (Qwen3-TTS = Apache-2.0;
-  VoiceTut = Apache-2.0). No non-commercial-licensed models (e.g. Breeze TTS 2, XTTS).
+- N1. **Commercial-safe:** only permissively-licensed engines — Qwen3-TTS (Apache-2.0),
+  VoiceTut (Apache-2.0), DeepSeek R1/V3 (MIT/open, via OpenRouter). **No
+  non-commercial-licensed models** — e.g. Breeze TTS 2 and Fish Audio S2 Pro (both
+  research/non-commercial self-host licenses) and XTTS are explicitly excluded.
 - N2. **$0 recurring:** self-hosted on free Kaggle GPU (T4); no paid API dependency.
 - N3. **Consistency:** an actor's voice is reproducible across episodes (seed +
   fixed voice-design).
