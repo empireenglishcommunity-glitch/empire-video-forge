@@ -134,6 +134,9 @@ Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.1 🤖 **Rename Coach → Mahmoud**: `cast.json` (`display_name`), the Arabic
       self-intro line(s) in scripts, and the lexicon name entry. Keep speaker id `Coach`
       so gates/pipeline are untouched (design §6).
+- [ ] C.1a 🤖 **Lexicon additions (design §2c Tier 2):** add hand-verified entries for
+      **Mahmoud (مَحْمُود)**, **"Yalla Fluent"**, **EEC**, and standing loan-words
+      (interview→إِنْتَرْفْيُو, session→سِشْن, feedback→فِيدْبَاك) to `egyptian_lexicon.json`.
 - [ ] C.2 🤖 Build `kaggle/synth_episode_en_qwen.py`: **VoiceClone** from each
       character's canonical `voice_ref` (Option B; Macal picks the stage's ref via
       `stage_map`), passing each line's **`direction`** to Qwen3-TTS for emotional
@@ -154,6 +157,9 @@ Goal: the new engine + cast produces a real, approved episode.
 
 ## PHASE C.5 — Mastering & Packaging (post-production; design §4b)
 Goal: a `dist/` folder with broadcast-ready audio + a ready-to-publish text asset.
+- [ ] C5.0 🤖 **Arabic FX for Mahmoud (design §2c Layer 3):** apply the per-clip Arabic
+      FFmpeg chain (low-mid warmth + de-ess + 80 Hz high-pass) to Mahmoud's Arabic clips
+      only, sequenced BEFORE the master. 🧑 Ear-tune the values on Ep1.
 - [ ] C5.1 🤖 Upgrade `assemble_audio.py`'s final master to a chain: **two-pass loudnorm**
       (−16 LUFS, robust JSON parse), gentle EQ, and a **conservative `silenceremove`**.
       Do NOT add a duplicate loudnorm.
@@ -172,7 +178,10 @@ Goal: synthesize the rest of the season against the locked cast.
       (Macal stage auto-selected per episode); drop WAVs per episode.
 - [ ] D.2 🤖 Assemble each episode through the gates; verify; deliver plain audio.
 - [ ] D.3 🧑 Review each episode's audio; iterate on any bad line (re-roll clip / fix
-      text / add lexicon word).
+      text / add lexicon word). **Self-learning loop (design §2c Layer 4, OWNER-GATED):**
+      ASR-QA flags a mispronounced Arabic word → 🧑 owner verifies/fixes the tashkeel →
+      🤖 saves it to `egyptian_lexicon.json` so all future episodes auto-apply the fix.
+      The human fix is REQUIRED before a word enters the permanent lexicon.
 - [ ] D.4 🤖 Update `season.json` continuity + status as episodes complete.
 - [ ] D.5 🧑 **GATE D:** season audio complete + approved (owner then adds music/video/
       cover + publishes — downstream, owner-owned).

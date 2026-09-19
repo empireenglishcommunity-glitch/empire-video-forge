@@ -90,6 +90,60 @@ models by env (`EEC_LLM_MODEL`), supports a comma-separated fallback list
 - `gen_episode.py` may gain an optional two-pass mode (beats→dialogue); if not, a
   single strong model (R1 or V3) is used with the existing prompts. Decided at build.
 
+## 2c. ARABIC VOICE PRODUCTION — making Mahmoud sound human (VoiceTut)
+> The Arabic-side counterpart to §3.4 (English Scripting Craft). Goal: broadcast-grade,
+> natural Egyptian-host delivery. VoiceTut engine is UNCHANGED — we fix the *text* fed to
+> it and add a light Arabic-only FX polish. Built on a 3-tier safety net; Tiers 2 & 3
+> ALREADY EXIST in `synth_episode_ar.py` (prepare_ar + add_lexicon; Whisper ASR-QA).
+
+### The 3-tier accuracy net (authority order)
+- **Tier 1 — DeepSeek draft (advisory):** the LLM prepares TTS-ready Arabic text (rules
+  below). It handles ~85% of conversational Arabic but is NOT trusted as the source of
+  truth — LLMs over-vowel colloquial Amiya with MSA rules.
+- **Tier 2 — Lexicon override (AUTHORITATIVE, exists):** `egyptian_lexicon.json` +
+  `prepare_ar()` deterministically replace high-risk / colloquial / brand / loan words
+  with hand-verified spellings, applied AFTER the LLM text and BEFORE VoiceTut. Lexicon
+  ALWAYS wins over LLM tashkeel.
+- **Tier 3 — ASR-QA gate (exists):** Whisper transcribes each rendered clip; divergence
+  from the intended text flags the line into `qa_flagged.json`. Ship/no-ship gate.
+- **Pipeline order:** LLM draft → lexicon override → VoiceTut synth → Arabic FX → ASR-QA.
+
+### Tier 1 — DeepSeek Arabic text rules (in the scriptwriting prompt)
+1. **Full tashkeel (advisory):** attempt full diacritics on Mahmoud's Arabic. CAVEAT:
+   don't hallucinate MSA voweling on colloquial words; the lexicon (Tier 2) is the
+   authority and ASR-QA (Tier 3) verifies.
+2. **Spell out numbers:** `تِسْعِين يُوم`, never `90 يوم`.
+3. **Arabize INCIDENTAL loan-words** woven into Arabic (`سِشْن`, `فِيدْبَاك`, `إِنْتَرْفْيُو`).
+   **BUT the episode's TARGET-TEACHING English phrases stay REAL English** (they route to
+   the English engine and are what we teach — never transliterate those).
+4. **Prosodic punctuation as acoustic cues (Layer 1):** write punctuation for delivery,
+   not grammar — ellipses `...` for suspense/500-800ms breath before a key takeaway;
+   commas every ~4-7 words as breath groups (micro-pauses, anti-rush); `!` for energetic
+   pitch resets on greetings.
+5. **Spoken Amiya elision (Layer 2, advisory):** write blends as spoken — `عفكرة` (على
+   فكرة), `فالأول` (في الأول), `إنشاللّاه` (إن شاء الله). Same caveat as tashkeel: LLM
+   attempts; lexicon owns the high-frequency blends + loan-words.
+
+### Tier 2 — Lexicon additions required (brand + loan words)
+`egyptian_lexicon.json` must gain hand-verified entries for: **Mahmoud (مَحْمُود)**,
+**"Yalla Fluent"**, **EEC**, and the standing loan-words (`interview→إِنْتَرْفْيُو`,
+`session→سِشْن`, `feedback→فِيدْبَاك`). These are said constantly; lock them once.
+
+### Layer 3 — Arabic-only audio FX (per Mahmoud clip, BEFORE mastering)
+Arabic's dense sibilants/gutturals (خ ح ش ص ق) can get harsh on neural TTS. Apply a light
+FFmpeg chain to **Mahmoud's Arabic clips only** (NOT the English voices, NOT the whole
+mix), sequenced **before** the §4b master (so it complements, not fights, loudnorm):
+- low-mid warmth (~+2.5 dB @ 200 Hz), de-ess (~−3 dB @ ~3.5 kHz), high-pass @ 80 Hz.
+- **Values are a starting point — EAR-TUNE on Ep1** (same discipline as the silence-trim);
+  over-EQ can sound worse than raw. Keep it subtle.
+
+### Layer 4 — Self-learning lexicon loop (OWNER-GATED, not auto)
+Close Tier 3 → Tier 2: when ASR-QA flags a mispronounced word, the owner verifies/fixes
+the tashkeel, and THEN it is saved into `egyptian_lexicon.json` → auto-applied to all
+future episodes. ⚠️ **The human fix is REQUIRED before a word enters the permanent
+lexicon** — a wrong auto-added diacritic would silently corrupt every future episode.
+The loop makes the system smarter each episode, safely.
+
 ## 3. Data schemas
 
 ### 3.1 `cast.json` (schema v2)
