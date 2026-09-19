@@ -1,324 +1,367 @@
 {
   "episode": 1,
-  "title": "The Arrival",
+  "title": "The Voice Note",
   "level": "A2",
   "lines": [
     {
       "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Wow, look at that building. It’s so tall!"
-    },
-    {
-      "section": "cold_open",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Yeah, that's the Burj Khalifa. First time in Dubai?"
+      "text": "Hello, Mama. I am in Dubai. Everything is good. Everything is... very good.",
+      "direction": "earnest, slightly forced cheer"
     },
     {
       "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Yes, first time. I just got off the plane... I feel a little lost."
-    },
-    {
-      "section": "cold_open",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Don't worry, my friend. You're safe now. Where are you going?"
+      "text": "My job is great. The company is big. The money is... yes, it is good. Do not worry.",
+      "direction": "practiced, hollow"
     },
     {
       "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
-      "text": "I have an address here... but I think my phone is dead."
+      "text": "Sorry, what? Sorry, can you repeat that, please? I did not understand.",
+      "direction": "panicked, switching tone"
     },
     {
       "section": "cold_open",
-      "speaker": "TaxiDriver",
+      "speaker": "Interviewer",
       "lang": "en",
-      "text": "No problem. Just read it to me. I know this city well."
+      "text": "Dune and Company. We need your answer by Friday. Are you still with us?",
+      "direction": "professional, clipped"
     },
     {
       "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Thanks. I hope my English is good enough for this."
-    },
-    {
-      "section": "cold_open",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Your English is fine. Let's go."
+      "text": "Yes. Yes, I am here. Sorry, one moment. I am listening.",
+      "direction": "caught, breath held"
     },
     {
       "section": "coach_intro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "أهلاً بيكم في أولى حلقات 'Two Worlds'! وحشتوني؟ أنا كوتش، وصوتكم اللي بيرافقكم في رحلة الإنجليزي. النهاردة إحنا مع ماكال في أول يوم في دبي. واقف في المطار تايه شوية، بس تمام، إحنا معاه."
+      "text": "أَهْلًا بِيكُمْ يَا جَمَاعَة فِي يَلَّا فْلُوَنْت! أَنَا مَحْمُود، وَمَعَاكُمْ كُلْ يَوْم، عَشَان نِتْعَلَّم إِنْجِلِيزِي وِإِحْنَا مُبْسُوطِين... النَّهَارْدَة، مَعَانَا مَكَال، مِصْرِي فِي دُبَاي، بِيِحْكِي لِأُمُّه كَلَام كِبِير، وِقَلْبُه مِشْ مِرْتَاح خَالِص.",
+      "direction": "warm, welcoming, a little playful"
     },
     {
       "section": "coach_intro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "إحنا هنتعلم النهاردة إزاي نأخد تاكسي برة مصر، وإزاي نتكلم مع السواق. يعني إيه؟ قلقان؟ ممنوع الخوف! السواق في الرواية بيقول: 'Your English is fine.' يعني إنجليزيتك كويسة. شفتوا؟ ثقة!"
+      "text": "وَبَسْ عَشَان نِبْقَى مُتْفِهْمِين مِنْ أَوِّل يَوْم... يَلَّا فْلُوَنْت دَه اسْم البَرْنَامِج اللِّي بِتِسْمَعُوه دَه. أَمَّا البَيْت بِتَاعْنَا كُلِّنَا، العِيلَة اللِّي هَنِتْمَرَّن فِيهَا سَوَا وِنِبْعَت لِبَعْض، دَه عَلَى تِلِيجْرَام فِي Empire English Community. يَلَّا فْلُوَنْت هُوَ الحِكَايَة، وَ Empire English Community هُوَ البَيْت.",
+      "direction": "friendly, clarifying, matter-of-fact"
     },
     {
       "section": "coach_intro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "استنّوا ليه؟ اسمعوا كويس الجمل دي: 'I feel a little lost' يعني حاسس إني ضايع شوية. و 'Just read it to me' يعني اقراهاولي بس. دي تلات جمل هتخليك تمشي في الدنيا. يلا نبدأ الرحلة!"
+      "text": "وَبَعْدِين... التِّلِيفُون بِيِرِن، وَالشُّغْل بِيِسْأَلُه سُؤَال صَعْب. يَا تُرَى هَيِقُول إِيه؟ خَلِّيكُمْ مَعَانَا، وِاسْمَعُوا كْوَيِّس.",
+      "direction": "building suspense, gentle energy"
     },
     {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "So, you have the address? Just read it to me, my friend. Take your time."
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "رَكِّزُوا النَّهَارْدَة عَلَى تَلَاتَة عِبَارَات... لَمَّا تِقَابِل حَد، قُول: Hello, I am... وَتَانِي وَاحِدَة: Nice to meet you. وَلَو مِفْهِمْتِش، قُول بِهُدُوء: Sorry, can you repeat that, please?",
+      "direction": "clear, teaching slowly, encouraging"
     },
     {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay, let me check my bag. I wrote it on a paper. Here it is. It's in... Al Barsha? Is that right?"
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Yes, Al Barsha! Very good. I know that area well. Do you have a flat there, or are you staying with friends?"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "No, I rented a small flat online. My friend Nour helped me find it. She lives in Dubai, too."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "That's smart. It's always good to have a friend in a new city. So, first time in the UAE?"
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا بَيْنَا... نِسْمَع مَكَال، وِنِتْعَلَّم مِنُّه!",
+      "direction": "bright, launching into the story"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Yes, first time. Everything is so big and bright. I feel a little lost, to be honest. It's a lot to take in."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Don't worry, my friend. Everyone feels that way at first. You'll get used to it in a week. Dubai is very easy to live in."
+      "text": "No, Mama, I am not tired. Dubai is very nice. The weather is hot, but I am okay.",
+      "direction": "warm but forcing it, voice note energy"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "I hope so. The flight was long, and I didn't sleep much. I just want to put my bags down and rest."
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Of course. We are on the highway now. It will take about thirty minutes. You can relax. Look out the window — that's the Burj Khalifa on your right."
+      "text": "My manager? He is very happy with me. Yes. Everything is fine. I live here since two years now, Mama, and—",
+      "direction": "earnest, rushing to reassure"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Wow, it's so tall! I see it from far away, but up here it's... amazing. Can I take a photo?"
-    },
-    {
-      "section": "act1",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Sure, go ahead! Everyone takes photos on their first day. So, what brings you to Dubai? Work or study?"
+      "text": "Sorry, Mama, one moment. Sorry, one moment. There is another call. I will call you later. Bye.",
+      "direction": "sudden switch, slightly panicked"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Work. I'm looking for a job in marketing. I have some interviews next week. I'm a little nervous about my English, though."
+      "text": "Hello? This is Macal speaking.",
+      "direction": "clear, professional, small nervous pause"
     },
     {
       "section": "act1",
-      "speaker": "TaxiDriver",
+      "speaker": "Interviewer",
       "lang": "en",
-      "text": "Your English is fine, my friend. You're speaking clearly, and I understand you perfectly. Just be confident. That's the most important thing."
+      "text": "Hello, Macal. This is Mrs. Fernandes from Dune and Company. Am I speaking with the right person?",
+      "direction": "polite, brisk, clipped professional"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Thank you, really. That makes me feel better. How much is the ride to Al Barsha?"
+      "text": "Yes, yes. I am Macal. Nice to meet you... I mean, nice to speak with you.",
+      "direction": "flustered, correcting himself"
     },
     {
       "section": "act1",
-      "speaker": "TaxiDriver",
+      "speaker": "Interviewer",
       "lang": "en",
-      "text": "Don't worry about that now. The meter is running. We'll check it when we arrive. Just sit back and enjoy the view. You're in Dubai now — the city of dreams!"
+      "text": "Nice to meet you too. So, Macal, we have your Rising Voices application here. We need your answer by Friday. Are you still with us?",
+      "direction": "warm but testing, direct"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Sorry, can you repeat that, please? I did not understand the last part.",
+      "direction": "quiet, honest, not ashamed"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Of course. I said, are you still interested in the fellowship? Friday is the deadline.",
+      "direction": "patient, clear, slower"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes. Yes, I am interested. Very interested. I am working on my project now. Macal Empire. It is... it is coming.",
+      "direction": "voice cracking slightly, covering doubt"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Good. Send us a short voice note about your idea. Two minutes, no more. Can you do that by Friday?",
+      "direction": "kind, businesslike"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes, of course. Two minutes. Friday. I understand. Thank you, Mrs. Fernandes.",
+      "direction": "determined, hanging up, exhaling"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal? You look like you just saw a ghost. What happened?",
+      "direction": "light, teasing, catching him off guard"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Nour. Hi. Hello. I am fine. I just... I have a voice note to make. A big one.",
+      "direction": "scattered, switching gears fast"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "A voice note? For your mom again?",
+      "direction": "amused, curious"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "No. For Dune and Company. The fellowship. They want my idea in two minutes. My real idea.",
+      "direction": "serious now, eyes wide"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay, then. Let us hear it. Say it to me first. Right now.",
+      "direction": "encouraging, planting her feet"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Now? Here? Nour, I do not know. My English is... okay, but this is important.",
+      "direction": "hesitant, vulnerable"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal. Your English is good. Just talk. Start with hello. Hello, my name is Macal, and I have an idea.",
+      "direction": "coaching-casual, sincere"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Hello. My name is Macal. I am from Egypt. I live in Dubai... and I have an idea. I want to help people learn English. Like me.",
+      "direction": "slow, finding his footing, then warming"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "شفتوا ماكال إزاي؟ كان قلقان شوية، بس اتكلم وعدّى الموقف. عايزين نركز على تلات جمل مهمين سمعناهم في المحادثة دي."
+      "text": "يَلّا يَا جَمَاعَة، وِقْفَة سَرِيعَة مَعَ مَحْمُود!... أَوَّل جُمْلَة: Nice to speak with you. يَعْنِي تَشَرَّفْت بِالكَلَام مَعَاك، بِنِقُولْهَا فِي التِّلِيفُون أَكْتَر مِن الوِيش تو وِيش. مَثَلًا: Hello, nice to speak with you, Mrs. Fernandes. تَانِي جُمْلَة: Can you repeat that, please?... دِي أَهَم جُمْلَة لَمَّا مِتْفَهْمِش، وبِتَدِيك فُرْصَة تِسْمَع تَانِي مِن غِير حَرَج. وَتَلَاتَة: Are you still interested? يَعْنِي لِسَّه مُهْتَم؟",
+      "direction": "warm, energetic, teaching"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "أول جملة: 'Take your time.' دي بتقال لما حد بيعمل حاجة ببطء، وانت عايز تقوله: متستعجلش، خد وقتك. يعني لما حد يبقى قلقان وبيقولك: 'I'm sorry, I'm slow today'، ترد عليه بكل هدوء: 'No problem, take your time.'"
+      "text": "بَس خُد بِالك: مَاكَال قَالَ Nice to meet you فِي التِّلِيفُون. الغَلْطَة دِي طَبِيعِيَّة... لِأَنَّ فِي العَرَبِي كِلْمَة وَاحْدَة 'تَشَرَّفْنَا' لِلْحَاجَتَيْن. فِي الإِنْجِلِيزِي، فِي المُقَابَلَة الوِيش تو وِيش بِتَقُول Nice to meet you، لَكِن فِي التِّلِيفُون بِتَقُول Nice to speak with you.",
+      "direction": "reassuring, no shame"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "الجملة التانية: 'I feel a little lost.' دي بتقال لما تحس إنك تايه أو مش فاهم حاجة. مش لازم تقول: 'I am lost' وتخليها شكلها كبير، لأ، قول: 'a little lost' يعني ضايع شوية، دي بتدي انطباع إنك لسه بتتعود."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "الجملة التالتة: 'What brings you to Dubai?' السواق سألها بدل ما يقول: 'Why are you here?' لأنها أتهذب أكتر. يعني إيه اللي جابك دبي؟ تقدر تستخدمها في أي مكان، مثلاً تقول لحد في القاهرة: 'What brings you to Cairo today?'"
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "بس كمان خدوا بالكم من غلطة شائعة جداً. ناس كتير بتقول: 'I came for work.' في الغلط تقول: 'I came for working.' الصح إنك تقول: 'for work' أو 'to work.' متضيفش 'ing' في الحالة دي."
-    },
-    {
-      "section": "coach_break1",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "يلا، ماكال كده اتكسر خوفه وشوية بقى واثق. خلونا نسمع اللي هيحصل لما يوصل الشقة ويلقى مين مستنياه."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Okay, sir, here we are — Al Barsha. That will be forty-five dirhams, please."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Here you go. Thanks for the ride — and for the good advice."
-    },
-    {
-      "section": "act2",
-      "speaker": "TaxiDriver",
-      "lang": "en",
-      "text": "Anytime, my friend. Good luck with your interviews. You'll do great."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thanks. Have a good night."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay, Macal. You're here. Let's find the building."
+      "text": "دِلْوَقْتِي، لَاب الوَاكْسِنْت!... النَّهَارْدَة عَن Word stress، يَعْنِي إِنْتَه مَبْتِقُولْش الكَلْمَة كِلْهَا بِنَفْس القُوَّة. اسْمَع: application. غَلَط: appliCAtion. صَح: appliCAtion. رَدِّدْ: application. وَكَمَان: interested. غَلَط: interesTED. صَح: INterested. رَدِّدْ: interested. الشِّدَّة بِتَفَرَّق أَكْتَر مِن أَي صَوْت. يَلّا، رَدِّدْ مَعَايَا!",
+      "direction": "playful, drill energy, clear"
     },
     {
       "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "Macal! Over here! I came to surprise you!"
+      "text": "That was good, Macal. Really good. Now send it. Do not think too much.",
+      "direction": "warm, certain"
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Nour! What are you doing here? I thought you were at work!"
+      "text": "Wait. I am not sure about the ending. It is... it is too simple. And the beginning... I said nice to meet you. On a voice note. That is wrong, yes?",
+      "direction": "anxious, self-checking"
     },
     {
       "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "I told them I had a family thing. Come on, let me help you with your bags. How was the flight?"
+      "text": "You are right. It is nice to speak with you. But Macal, listen. One small word is not your whole idea. Your idea is strong.",
+      "direction": "gentle correction, encouraging"
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Long, but the driver was nice. He said I should be confident about my English."
+      "text": "Okay. Okay. I understand. I will fix it. ... Nour, thank you. Really.",
+      "direction": "steadying, grateful"
     },
     {
       "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "He's right. You sound great. Now let's get you upstairs. Oh — before I forget — there's someone else who wants to meet you."
+      "text": "Do not thank me yet. Thank me when they say yes. Go. Record it.",
+      "direction": "playful, pushing him"
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Who? Is everything okay?"
+      "text": "Hello. My name is Macal. Nice to speak with you, Mrs. Fernandes. I am from Egypt. I live in Dubai, and I have an idea. I want to help people learn English. Like me. This is Macal Empire.",
+      "direction": "clear, proud, deliberate pacing"
     },
     {
       "section": "act2",
-      "speaker": "Nour",
+      "speaker": "Official",
       "lang": "en",
-      "text": "Don't worry, it's a good thing. He's a friend of mine — he works at a big marketing company. And he said he's free tonight."
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Wait — tonight? Like, an interview? Now?"
-    },
-    {
-      "section": "act2",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Just a quick chat. That's all. But we need to go soon — his coffee meeting is at seven."
+      "text": "Mr. Macal? This is Dune and Company. Thank you for your voice note. It was good. But we need one more thing.",
+      "direction": "professional, brisk"
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Nour, I haven't even unpacked. And I look like I slept on the plane."
+      "text": "Sorry, can you repeat that, please? I did not understand the last part.",
+      "direction": "polite, calm"
     },
     {
       "section": "act2",
-      "speaker": "Nour",
+      "speaker": "Official",
       "lang": "en",
-      "text": "You look fine. But if we hurry, we can stop and get you a proper coffee first. Come on — your new life in Dubai starts now!"
+      "text": "Yes, of course. We need your two-minute video by Friday. Not a voice note. A video. Do you understand?",
+      "direction": "firm, clear"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes. Yes, I understand. A video. Friday. I can do that. Thank you. Nice to speak with you. Goodbye.",
+      "direction": "shocked but composed"
+    },
+    {
+      "section": "act2",
+      "speaker": "Friend_M",
+      "lang": "en",
+      "text": "Bro, that was Tarek. He says the team is watching. Do not embarrass us.",
+      "direction": "tense, whispered"
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "شفتوا؟ ماكال اتحرك وشاف الدنيا قدامه. وشوية شوية بقى عربي وإنجليزي في النص."
+      "text": "يَلّا يَا جَمَاعَة، نِلَخَّص بِسُرْعَة... فِي التِّلِيفُون بِتَقُول Nice to speak with you، وَمِش Nice to meet you. وَلَمَّا مِتْفَهْمِش، بِتُقُول بِهُدُوء: Can you repeat that, please?",
+      "direction": "warm, quick recap, clear emphasis on the two English phrases"
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "النهاردة ناخد كلمة واحدة بس، بس قويّة. هو فيه أحسن من 'better late than never'؟ يعني إيه؟ إن الأصوب دايماً الأصوب، حتى لو أهو متأخر شوية."
+      "text": "وَدِلْوَقْتِي... عِبَارَة الحَلْقَة! اسْمَع كْوَيِّس: Can you repeat that, please? دِي الْعِبَارَة اللي هَتْفَتْح لَك كُل الأَبْوَاب، لِأَنَّهَا بِتَقُول لِلنَّاس: أَنَا مُحْتَرِم، وَأَنَا بِتَعَلَّم، وَكَمَّل مَعَايَا!",
+      "direction": "proud, building energy, then soft and encouraging"
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "قبل ما نكمل، لو فيه حد فيكوا حاسس إنه ضعيف في الإنجليزية، أنا عايزكم تقولوا لنفسييتكم: أنا زيه بالظبط. كل مرة كلمة وحدة، كل مرة موقف، وخلاص."
+      "text": "فَخُد الوَاجِب دَه... سَجِّل ڤُويس نُوت قَصِير، عَشَر ثَوَانِي بَس، وَقُول فِيهَا: Hello, nice to speak with you. Can you repeat that, please? بِصَوْت وَاضِح، وَبِالثِّقَة، زَي مَا اتَّفَقْنَا.",
+      "direction": "inviting, playful challenge, slow on the English phrase"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَابْعَتَهَا عَلَى تِلِيجْرَام... فِي Empire English Community. إِحْنَا هِنِسْمَع صَوْتَك، وَنِشَجَّعَك، وَنِقُول لَك إِيه اللي حِلْو وَإِيه اللي يِتْحَسَّن. إِنْتَ مِش لَوْحْدَك فِي الحِكَايَة دِي!",
+      "direction": "belonging, warm group feeling, slight smile in the voice"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلّا... المَايك مَعَاك. رُوح سَجِّل، وَأَنَا مُسْتَني سَمَاع صَوْتَك. وَلَاقِينَا فِي الحَلْقَة الجَايَة، وَمَاكَال... لِسَّه عِنْدُه مُشْكِلَة كَبِيرَة!",
+      "direction": "energetic send-off, teasing hook for next episode"
     }
   ],
   "phrase_of_episode": {
-    "en": "",
-    "ar": ""
+    "en": "Can you repeat that, please?",
+    "ar": "مُمْكِن تْعِيد دَه تَانِي، لَوْ سَمَحْت؟"
   },
-  "word_count": 991,
+  "word_count": 966,
   "cast_used": [
     "Coach",
+    "Friend_M",
+    "Interviewer",
     "Macal",
     "Nour",
-    "TaxiDriver"
-  ]
+    "Official"
+  ],
+  "phonetic_focus": {
+    "target": "Word stress",
+    "note": "Which syllable carries the beat (e.g. reCORD the verb vs. REcord the noun). Getting stress right matters more than any single sound."
+  }
 }

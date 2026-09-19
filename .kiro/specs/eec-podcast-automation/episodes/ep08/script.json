@@ -1,0 +1,308 @@
+{
+  "episode": 8,
+  "title": "The Mock",
+  "level": "B2-",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Stop. You're rambling again. Tell me about a time you solved a problem.",
+      "direction": "sharp, cutting him off"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay, okay. So at Dune and Co., we were gonna miss a big deadline, right?",
+      "direction": "confident, quick recovery"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Better. But what was YOUR role in that? Be specific.",
+      "direction": "probing, testing him"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I led it. I broke the task down, and we delivered two days early.",
+      "direction": "steady, proud"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Hm. Honestly? That was strong.",
+      "direction": "quiet, genuine respect"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا يَا صَحْبِي!... أَنَا مَحْمُود، وَمَعَاك فِي يَلَّا فْلُوئِنْت. النَّهَارْدَه مَعَانَا مُقَابَلَة وِهْمِيَّة، مَكَّال وَطَارِق بِيتْدَرَّبُوا... وَالدَّرْس كُلُّه عَنْ إِزَّاي تْرُدّ مِن غِير مَا تْتْلَخْبِط.",
+      "direction": "warm, energetic welcome, one breath"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "خَلِّي وَدْنَك مَعَايَا... وَاسْمَع تَلَاتَة تَعْبِيرَات: Tell me about a time، أَيْ حِكِي لِي عَنْ مَرَّة... وَ STAR method، يَعْنِي تِرْتِب قِصَّتَك... وَآخِر وَاحْدَة: Could you clarify، لَمَّا تِحْتَاج تِسْأَل تَوْضِيح.",
+      "direction": "playful, slowly naming the phrases"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا... نِسْمَع مَكَّال بِيِتْحَسَّن شُوَيَّة شُوَيَّة. رَكِّز مَعَايَا، وَدُوس بْلَاي!",
+      "direction": "encouraging, upbeat close"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Alright, reset. This time I'll be the interviewer from Rising Voices. No mercy.",
+      "direction": "competitive, half-joking"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "No mercy? Fine. Hit me. I've been prepping all week — I even record myself at night.",
+      "direction": "confident, teasing back"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Good. So — tell me about a time you had to handle a difficult teammate.",
+      "direction": "clipped, interviewer tone"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Sure. So last quarter, two people on my team weren't speaking to each other. The work was stalling. I set up a short call, just the three of us. I asked each one what they needed. Turns out it was a misunderstanding about roles. We fixed it in one meeting, and the project moved again. My role? I was the one who pushed to talk it out early.",
+      "direction": "measured, structured, STAR rhythm"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Okay. That's clean. Situation, task, action, result. You actually used the STAR method without sounding like a robot.",
+      "direction": "grudging respect"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I live here since two years — so I've had practice, believe me.",
+      "direction": "relaxed, slight laugh — the small slip goes unnoticed by him"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Good. Now I'm gonna throw you a curve. What's your biggest weakness?",
+      "direction": "sharp, testing"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Hm. Honestly? I used to say yes to everything. I thought it made me useful. Then I missed a deadline because I took on too much. Now I ask more questions before I commit.",
+      "direction": "honest, reflective"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Wait — before you answer something like that, you should ask what they mean. 'Could you clarify what kind of weakness?' It buys you a second and shows you're careful.",
+      "direction": "instructive, leaning in"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Right. Could you clarify... okay, I'll use that next time. That's smart.",
+      "direction": "lightbulb moment, genuine"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "I'm not saying this to be nice, but — you've gotten better. Like, actually better.",
+      "direction": "quiet, sincere, almost reluctant"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "That means a lot, coming from you. Seriously. Let's do one more — I wanna nail this.",
+      "direction": "warm, determined"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يَا صَحْبِي، نِفَكِّك سَوَا... أَوَّل تَعْبِير: Tell me about a time. يَعْنِي حِكِي لِي عَنْ مَرَّة، وِدِي أَكْتَر سُؤَال بِيتْكَرَّر فِي المُقَابَلَات. بِيِسْتَخْدِمُوه عَشَان يِشُوفُوا إِنْتَ عَمَلْت إِيه بِالظَّبْط، مِش إِنْتَ مِين. مَثَلًا: Tell me about a time you solved a problem.",
+      "direction": "warm, clear teacher energy"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَانِي تَعْبِير... الـ STAR method. يَعْنِي تِرْتِب قِصَّتَك: Situation، وَبَعْدِين Task، وَبَعْدِين Action، وَآخِر حَاجَة Result. مَكَّال عَمَلْهَا بْرَاحَة فِي المَشْهَد، وِعَشَان كِدَه طَلَع كَلَامُه مُرَتَّب مِن غِير مَا يْبَان رُوبُوت.",
+      "direction": "explaining, rhythmic"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وِتَالِت تَعْبِير: Could you clarify? يَعْنِي تِسْأَل تَوْضِيح. لَمَّا السُّؤَال يْكُون غَامِض، مَتْرُدّش عَلَطُول... بِسْأَل: Could you clarify what you mean? كِدَه بِيكْسَبك ثَانْيَة، وَبْيُورِّي إِنَّك دَقِيق.",
+      "direction": "playful, encouraging"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَمَّا الغَلْطَة... مَكَّال قَال: I live here since two years. دِي جَايَة مِن العَرَبِي عَشَان إِحْنَا بْنِقُول: أَنَا عَايِش هِنَا مِن سَنَتِين. بِس فِي الإِنْجِلِيزِي، لَمَّا تِتْكَلِّم عَن حَاجَة بَدْأَت فِي المَاضِي وِلِسَّه مُسْتَمِرَّة، بْنِسْتَخْدِم: I've lived here for two years. خَلِّي بَالَك: for، مِش since، مَعَ المُدَّة.",
+      "direction": "gentle, corrective but warm"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَدِلْوَقْتِي... الـ Accent Lab! النَّهَارْدَه عَنْ Sentence stress — يَعْنِي فِي الإِنْجِلِيزِي، بِنْضَغَط عَلَى الكَلِمَات المُهِمَّة: الأَسْمَاء، الأَفْعَال، الصِّفَات... وِبْنِبْلَع الكَلِمَات الصَّغِيرَة زَي the، of، to، a.",
+      "direction": "energetic, signature segment"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "هَات جُمْلَة مِن المَشْهَد: I was the one who pushed to talk it out early. المُصْرِي بِيقُول كُل كِلْمَة بِنَفْس القُوَّة... I-was-the-one-who-pushed. غَلَط! الأَمْرِيكِي بِيعْمِل: I was the ONE who PUSHED to TALK it OUT EARly. جَرِّب مَعَايَا... دُوس عَلَى ONE، PUSHED، TALK، OUT، EARly. كَرِّر بَعْدِي!",
+      "direction": "playful, drilling, call-and-response"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "بْرَافُو يَا بَطَل! حِسِّت الفَرْق؟ كِل مَرَّة تِرْكِّز عَلَى الوَقْت، لُغَتُك تِطْلَع أَكْتَر طَبِيعِيَّة. يَلَّا نِرْجَع لِلْقِصَّة... مَكَّال وَطَارِق لِسَّه فِي التَّدْرِيب!",
+      "direction": "warm, celebratory, transition back"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "One more. And this time, you ask the questions too. An interview goes both ways.",
+      "direction": "challenging, testing him"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Deal. So — tell me about a time your team disagreed with your plan. And, could you clarify what you mean by 'disagreed'?",
+      "direction": "confident, slight grin, sharp delivery"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Look at you. You turned my own trick around.",
+      "direction": "caught off guard, genuinely impressed"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I've lived here for two years, habibi. I learn fast.",
+      "direction": "playful, light, proud"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Ha. Yeah. You do.",
+      "direction": "laughs, then it fades; a long pause, the smile leaving his face, a slow breath before he lets his guard down"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "That was — actually clean. Okay. Honestly? I've been hard on you because I was scared. You're catching up. Fast.",
+      "direction": "quiet now, the joking gone; honest and a little vulnerable"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Scared of what?",
+      "direction": "curious, softer now"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "My father's sick back in Cairo. I might need to go. And if I leave, you're the one they'll pick for the fellowship.",
+      "direction": "heavy, admitting the truth"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Tarek... I didn't know. That's not a race for me. If you need anything, I'm here.",
+      "direction": "warm, sincere, no ego"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Thanks. I'll remember that.",
+      "direction": "grateful, low"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يَا بَطَل، نِلَخَّص بِسُرْعَة... النَّهَارْدَه خَدْنَا تَلَات تَعْبِيرَات: Tell me about a time، عَشَان تِحْكِي قِصَّة مُرَتَّبَة... والـ STAR method، وَهِيَ Situation وَ Task وَ Action وَ Result... وَ Could you clarify، عَشَان تِسْأَل تَوْضِيح بِلُطْف!",
+      "direction": "warm, quick recap, proud energy"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَة الحَلْقَة... هِيَ: Tell me about a time. دِي أَكْتَر جُمْلَة هَتْسَمْعَهَا فِي المُقَابَلَة، فَخَلِّي صَوْتُك حَاضِر، وَبِدَايَة قِصَّتِك وَاضْحَة.",
+      "direction": "slow, emphatic on the English phrase, inviting"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَدِلْوَقْتِي، التَّحَدِّي... سَجِّل رِسَالَة صَوْتِيَّة قَصِيرَة، قُول فِيهَا Tell me about a time، وَرَكِّز عَلَى النَّبْر عَلَى TIME، وَابْعَتَهَا لِنَا عَلَى تِلِيجْرَام فِي مَجْمُوعَة Empire English Community.",
+      "direction": "energetic challenge, clear and warm"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "إِحْنَا هَنِسْمَع صَوْتُك، وَنِشَجِّعُك... وَمَتْخَافِش مِن الغَلَط، كِدَه بِنِتْعَلِّم! يَلَّا، مُسْتَنِّيك بُكْرَة فِي الحَلْقَة الجَايَة... سَلَام!",
+      "direction": "encouraging, big brother warmth, ending bright"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "Tell me about a time",
+    "ar": "حِكِي لِي عَنْ مَرَّة"
+  },
+  "word_count": 855,
+  "cast_used": [
+    "Coach",
+    "Macal",
+    "Tarek"
+  ],
+  "phonetic_focus": {
+    "target": "Sentence stress",
+    "note": "Stress the content words (nouns, verbs, adjectives) and swallow the function words (the, of, to, a). This gives English its rhythm."
+  }
+}

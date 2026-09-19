@@ -31,6 +31,7 @@
       "situation": "Macal records a fake-success voice note to his mother in Al Nahda, then takes a call from Dune & Co.",
       "arc_beat": "We meet Macal, his dream, his fear. He lies by omission.",
       "phrases": "greetings, introducing yourself, asking for repetition",
+      "phonetic_focus": {"target": "Word stress", "note": "Which syllable carries the beat (e.g. reCORD the verb vs. REcord the noun). Getting stress right matters more than any single sound."},
       "cliffhanger": "Caller: we need your two-minute video by Friday. Tarek texts: dont embarrass us."
     },
     {
@@ -41,6 +42,7 @@
       "situation": "Late for work, Macal takes a taxi driven by Ravi through Dubai traffic.",
       "arc_beat": "Macal must speak to be understood. He meets Nour at Dune & Co.",
       "phrases": "directions, time, polite requests",
+      "phonetic_focus": {"target": "Flap-T", "note": "In American English, T between vowels sounds like a soft D: water -> 'wader', city -> 'ciddy', later -> 'lader'."},
       "cliffhanger": "He arrives late and sees Tarek charming the front desk."
     },
     {
@@ -51,6 +53,7 @@
       "situation": "Macal buys coffee for Nour at Common Grounds; Aisha the barista helps him.",
       "arc_beat": "First real connection with Nour. He realizes he has been imitating British English.",
       "phrases": "ordering, preferences, clarifying",
+      "phonetic_focus": {"target": "TH sounds", "note": "Two THs: voiceless in 'think/three' and voiced in 'this/that'. Tongue lightly between the teeth - not 's', not 'z', not 't'."},
       "cliffhanger": "Nour: Im from Michigan, not London. Tarek posts a polished Rising Voices video."
     },
     {
@@ -61,6 +64,7 @@
       "situation": "A client is furious about a double booking at Dune & Co.; Macal must de-escalate.",
       "arc_beat": "Macal stays calm and uses English under pressure.",
       "phrases": "apologizing, offering solutions, confirming",
+      "phonetic_focus": {"target": "Linking", "note": "Native speakers connect words: 'an apartment' -> 'a-napartment', 'pick it up' -> 'pi-ki-tup'. Words flow into each other."},
       "cliffhanger": "The client is Nours boss, who asks Macal to handle the follow-up call."
     },
     {
@@ -71,6 +75,7 @@
       "situation": "Macals landlord Mr. Qureshi raises the rent and mentions visa paperwork.",
       "arc_beat": "The 90-day clock becomes real.",
       "phrases": "negotiating, polite disagreement, conditionals",
+      "phonetic_focus": {"target": "Schwa /\u0259/", "note": "The lazy, unstressed 'uh' vowel - the most common sound in English. 'about' -> 'uh-bout', 'sofa' -> 'sof-uh'. Unstressed syllables shrink to schwa."},
       "cliffhanger": "Macals visa renewal depends on a full-time offer he doesnt have yet."
     },
     {
@@ -81,6 +86,7 @@
       "situation": "Networking event at Dubai Chamber.",
       "arc_beat": "Macal joins conversations and pitches an idea; Tarek takes credit.",
       "phrases": "small talk, joining a group, follow-up",
+      "phonetic_focus": {"target": "/\u014b/ ending", "note": "The '-ing' ending is one nasal sound made at the back: 'walking', not 'walkin' and not 'walkeen'. Don't add a hard G or an extra vowel."},
       "cliffhanger": "Nours boss invites Macal to pitch at Rising Voices."
     },
     {
@@ -91,6 +97,7 @@
       "situation": "Macal records his Rising Voices video with Nours help.",
       "arc_beat": "Their connection deepens; he speaks from truth.",
       "phrases": "expressing opinion, storytelling, future plans",
+      "phonetic_focus": {"target": "Intonation", "note": "The melody of the sentence. Voice rises on yes/no questions, falls on statements and wh-questions. Wrong melody changes the meaning."},
       "cliffhanger": "Nours phone lights up with a Chicago offer; Macal sees it and says nothing."
     },
     {
@@ -101,6 +108,7 @@
       "situation": "Tarek and Macal practice interviews.",
       "arc_beat": "Rivalry cracks into honesty; Macals English sharpens.",
       "phrases": "interview answers, STAR method, clarifying questions",
+      "phonetic_focus": {"target": "Sentence stress", "note": "Stress the content words (nouns, verbs, adjectives) and swallow the function words (the, of, to, a). This gives English its rhythm."},
       "cliffhanger": "Tarek admits his father is sick; Macals mother announces she is visiting Dubai."
     },
     {
@@ -111,6 +119,7 @@
       "situation": "Macal pitches Macal Empire at Rising Voices.",
       "arc_beat": "He owns the room; Nour confesses she recommended him and may leave.",
       "phrases": "persuasive pitch, handling questions, buying time",
+      "phonetic_focus": {"target": "Contrastive stress", "note": "Move the stress to the word you want to correct or highlight: 'I said BLUE, not GREEN.' Stress carries the point of the sentence."},
       "cliffhanger": "Judges announce tomorrow; Nour says she might go back to Chicago."
     },
     {
@@ -121,6 +130,7 @@
       "situation": "Final interview/offer day at Dune & Co.",
       "arc_beat": "Macal negotiates, tells the truth, and chooses his future.",
       "phrases": "summarizing, gratitude, negotiating, expressing intention",
+      "phonetic_focus": {"target": "Review + connected speech", "note": "Put it all together - stress, flap-T, TH, linking, schwa, intonation - in one flowing, confident, natural American delivery."},
       "cliffhanger": "Macal gets the offer; Nour: Im staying if you want me to. Tarek asks to co-build a learning studio. End hook: a new voice message from a learner in Cairo."
     }
   ],

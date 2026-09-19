@@ -1,0 +1,296 @@
+{
+  "episode": 9,
+  "title": "The Pitch",
+  "level": "B2",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ninety days ago, I couldn't finish a sentence. Tonight, I'm gonna finish this pitch.",
+      "direction": "steady, building confidence"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Macal Empire isn't just an idea. It's a bridge — between where I'm from and where we're all going.",
+      "direction": "passionate, controlled"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Mr. Macal — if we fund you, what happens to everything else you're holding?",
+      "direction": "cool, probing"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Let me buy myself a second here... because that question? That's the whole reason I'm standing here.",
+      "direction": "confident, buying time, slight smile"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا يَا جَمَاعَة! أَنَا مَحْمُود، وَمَعَاكُمْ فِي يَلَّا فْلُوَنْت... وَاللَّيْلَة، مَكَّال واقِف قُدَّام غُرْفَة كَامِلَة، وَبِيعْمِل أَهَمّ بِيتْش فِي حَيَاتُه!",
+      "direction": "warm, energetic welcome, big smile"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "الرِّجَّال لَازِم يِكْسَب الغُرْفَة... وَبِنَفْس الوَقْت، نُور هَتْقُولُه سِرّ كَبِير.",
+      "direction": "playful suspense, leaning in"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "خَلِّيكُمْ مَعَايَا، وَرَكِّزُوا عَلَى تَلَاتَة تَعْبِيرَات: Let me buy myself a second... عَشَان تِكْسَب وَقْت، ثُمَّ Here's what I'd do... لَمَّا تِرَدّ عَلَى سُؤَال، وَكَمَان That's the whole reason I'm standing here!",
+      "direction": "clear, teaching emphasis on each English phrase"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا... نِسْمَع مَكَّال!",
+      "direction": "bright, excited handoff"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "So that's the model. Sixteen weeks, forty riders, one neighborhood at a time. And every delivery teaches one kid one new word.",
+      "direction": "measured, building momentum"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Impressive. But we've seen delivery apps before. What makes yours different?",
+      "direction": "cool, testing him"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Let me buy myself a second here... because this is the part that matters.",
+      "direction": "calm, buying time"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "The difference isn't the app. It's the people. Every rider is a student. Every student becomes a teacher. That's the loop nobody else can copy.",
+      "direction": "confident, deliberate"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "And if the funding runs out in six months?",
+      "direction": "pointed, skeptical"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Here's what I'd do. We shrink to one district, cut the fleet, and run on the community model alone. We've done it before — with less.",
+      "direction": "steady, unshaken"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Bold numbers, Macal. But can you really scale that fast in Dubai?",
+      "direction": "polite, needling"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I live here since two years, Tarek. I know these streets better than my own. If I can scale trust in Karama, I can scale it anywhere.",
+      "direction": "firm, slightly defensive"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "You're not answering like a founder. You're answering like someone who's already lived this.",
+      "direction": "intrigued, leaning in"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Because that's the whole reason I'm standing here. Not the money. The proof — that a kid from Cairo can build something this city actually needs.",
+      "direction": "quiet, resolute"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Thank you, Mr. Macal. We'll be in touch this week.",
+      "direction": "warm, final"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal. Can we talk for a minute? Outside.",
+      "direction": "quiet, nervous"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Sure. You okay? You've been watching me like you've got something heavy to say.",
+      "direction": "light, teasing, then serious"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "I do. I recommended you for this fellowship, Macal. Months ago. Nobody knows.",
+      "direction": "vulnerable, confessing"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Wait — you did what? Why didn't you tell me?",
+      "direction": "caught off guard"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Because it wasn't mine to give. And because I might be leaving Dubai next month.",
+      "direction": "steady, but fragile"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يَا جَمَاعَة، نْفَكِّكْ مَعَ بَعْض... أَوَّلًا، \"Let me buy myself a second\"... يَعْنِي اِدِّينِي لَحْظَة أَفَكَّر، وَمَشْ هَرَب، لَأ، دَه ذَكَاء! تِقُولْهَا لَمَّا مَحْتَاج تِجَمَّع أَفْكَارَك، زَي: Let me buy myself a second here — I want to get this right. ثَانِيًا، \"Here's what I'd do\"... دِي لَمَّا تِرَدّ عَلَى سُؤَال صَعْب، بِطَرِيقَة هَادْيَة وَوَاثْقَة. وَثَالِثًا، \"That's the whole reason I'm standing here\"... يَعْنِي دَه السَّبَب الحَقِيقِي إِنِّي وَاقِف هِنَا. تِقُولْهَا لَمَّا تِرْبَط كَلَامَك بِقَلْبَك، وَتَخْلِي النَّاس تِحِسْ بِيك.",
+      "direction": "warm, teaching, energetic"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "بَس خُدْ بَالَك مِن غَلْطَة شَائِعَة... مَكَّال قَال: \"I live here since two years\"... وَدِي تَرْجَمَة حَرْفِيَّة مِن العَرَبِي \"أَنَا عَايِش هِنَا مِن سَنَتَيْن\". الإِنْجِلِيزِي مَايْقُولْهَاش كِدَه! الصَّح: \"I've lived here for two years\"... أَو \"I've been living here for two years\".",
+      "direction": "gentle correction, no shaming"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دِلْوَقْتِي... Accent Lab! النَّهَارْدَه عَن Contrastive stress... يَعْنِي حُط الضَّغْط عَلَى الكَلِمَة الِّي عَايِز تِوَضَّحْهَا. زَي: \"I said BLUE, not GREEN\"... الضَّغْط بِيوَدِّي المَعْنَى. مِن الحِوَار: \"The difference isn't the app... it's the PEOPLE\"... إِسْمَع الفَرْق. مُش APP... PEOPLE. كَرَّرْهَا مَعَايَا: it's the PEOPLE... PEOPLE!",
+      "direction": "playful, drilling, clear emphasis"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Wait. You recommended me? Nour, I've been chasing this thing for months. I thought I was invisible.",
+      "direction": "stunned, then warm"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You weren't invisible. You just never looked up. And listen — I've been living here for three years, Macal. This place is home now. So if I leave, it won't be because I want to.",
+      "direction": "soft, honest"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Hold on. Let me buy myself a second here. You're telling me the person who opened this door might just walk out of it? That's a lot to carry in one night.",
+      "direction": "steady, buying time, reusing the phrase naturally"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "I know. But you didn't need me in that room tonight. You owned it. That's the whole reason I'm standing here telling you the truth.",
+      "direction": "warm, proud"
+    },
+    {
+      "section": "act2",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Mr. Macal — one moment. The panel wants to see you again at nine tomorrow. We're announcing the fellowship results right after.",
+      "direction": "official, calm"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Nine tomorrow. Okay. I'll be there. And Nour — whatever happens with Chicago, you're gonna see this through with me. Right?",
+      "direction": "hopeful, near-break, holding it together"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "We'll see. Results first. Then we talk about Chicago.",
+      "direction": "gentle, cliffhanger"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يَا جَمَاعَة، نِلَخَّص بِسُرْعَة... اتْكَلَّمْنَا عَنْ Let me buy myself a second... يَعْنِي اِدِّينِي لَحْظَة أَفَكَّر. وَعَنْ Here's what I'd do... لَمَّا تِرَدّ بِثِقَة. وَعَنْ That's the whole reason I'm standing here... لَمَّا تِرْبَط كَلَامَك بِقَلْبَك.",
+      "direction": "warm, quick recap"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَفَاكِر... مُش I live here since two years، لَأ. الصَّح: I've lived here for two years. وَالـ Contrastive stress... الضَّغْط بِيوَدِّي المَعْنَى: it's the PEOPLE... مُش APP!",
+      "direction": "firm, playful emphasis on PEOPLE"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب... Phrase of the Episode النَّهَارْدَه هِيَ... Let me buy myself a second... عَجِبَاك؟ دِي الِّي هِنْسَجِّلْهَا مَعَ بَعْض!",
+      "direction": "building excitement"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "عَايِز مِنَّك حَاجَة وَاحْدَة... سَجِّل نُوتَة صَوْت صَغِيرَة، قُول فِيهَا Let me buy myself a second... وَحُط الضَّغْط عَلَى buy... وَابْعَتَهَا لـ Empire English Community عَلَى تِلِيجْرَام. إِحْنَا فِي اسْتِنَاك، وَنِسْمَع لَكِنْتَك وَنِشَجِّعَك!",
+      "direction": "encouraging, community warmth"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا... مِسْتَنِّيك، وَمَتْخَافِش مِن الغَلَط. إِحْنَا عَايِلَة وَاحْدَة!",
+      "direction": "warm sign-off"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "Let me buy myself a second",
+    "ar": "اِدِّينِي لَحْظَة أَفَكَّر"
+  },
+  "word_count": 837,
+  "cast_used": [
+    "Coach",
+    "Interviewer",
+    "Macal",
+    "Nour",
+    "Tarek"
+  ],
+  "phonetic_focus": {
+    "target": "Contrastive stress",
+    "note": "Move the stress to the word you want to correct or highlight: 'I said BLUE, not GREEN.' Stress carries the point of the sentence."
+  }
+}

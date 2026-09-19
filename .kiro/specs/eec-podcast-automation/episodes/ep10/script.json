@@ -1,0 +1,304 @@
+{
+  "episode": 10,
+  "title": "Two Worlds",
+  "level": "B2",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "So, Macal. We love the portfolio. But tell me — why should we pick you over the other finalists?",
+      "direction": "calm, measured, testing him"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Honestly? Because I'm not gonna pretend to be someone else. I know my English isn't perfect, but my work speaks louder than my accent.",
+      "direction": "steady, sincere, quiet confidence"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Interesting. And if we offered you the role today — what would you say?",
+      "direction": "leaning in, curious"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I'd say thank you. Then I'd ask what you're offering — because I've got two worlds counting on this answer.",
+      "direction": "firm, a small smile in his voice"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا يَا جَمَاعَة! أَنَا مَحْمُود، وَمَعَاكُم فِي يَالّا فْلُوِنْت...",
+      "direction": "warm, welcoming"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "النَّهَارْدَه يَوْمْ كَبِيرْ فِي حَيَاةْ مَكَال... يَوْمْ الإِنْتَرْفْيُو الأَخِيرْ فِي دُونْ أَنْدْ كُو، وَقَرَارْ كَبِيرْ عَلَى المَحَكْ!",
+      "direction": "building excitement"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "اسْمَعُوا كُوَيِّسْ لِتَلَاتَة تَعْبِيرَاتْ: \"my work speaks louder than my accent\"، وَ\"what you're offering\"، وَ\"I intend to\"...",
+      "direction": "emphasis, teaching"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دُولْ مِفْتَاحْ كَلَامْ النَّهَارْدَه! يَالّا نِسْمَعْ مَكَالْ بِيِتَفَاوَضْ وَبِيِخْتَارْ مُسْتَقْبَلُه... يَالّا!",
+      "direction": "energetic, playful"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Let's be direct, Macal. Tarek has an MBA and ten years at a top firm. You have three years and a lot of heart. Convince me that's enough.",
+      "direction": "calm, probing, slight Indian accent, measured"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I can't compete with his resume, and I'm not gonna try. What I can tell you is this — I live here since two years, and in that time I've shipped every project on that table. Nobody had to teach me twice.",
+      "direction": "confident, steady, slight warmth underneath"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "That's a fair point. But heart doesn't always survive deadlines. What happens when it gets hard?",
+      "direction": "testing, leaning forward, curious"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "It already got hard. Three months ago I almost lost this chance. I stayed, I learned, I showed up. That's the proof you're asking for — not a diploma, a track record.",
+      "direction": "grounded, honest, not defensive"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Alright. So if we move forward — what are you looking for, exactly?",
+      "direction": "shifting tone, more open now"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Before I answer that, I wanna thank you for this process. It's been honest, and that means something. Now — what you're offering matters more than what I'm asking. So tell me the number, the title, and the growth path. Then I'll tell you if I can say yes.",
+      "direction": "calm, respectful, negotiating with quiet authority"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Fifteen percent above your current salary. Senior associate. And a mentorship track with the design lead.",
+      "direction": "matter-of-fact, watching for reaction"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "That's solid. One thing — I intend to keep building Macal Empire on the side. It doesn't compete with Dune, it feeds it. If that's a problem, we should talk about it now, not later.",
+      "direction": "firm but warm, laying cards on the table"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Honestly? That's the first honest answer I've heard all week. Let me make a call. Give me ten minutes.",
+      "direction": "slight smile, decisive, rising to leave"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Take your time. I'll be right here, breathing.",
+      "direction": "light joke, half-laugh, releasing tension"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّبْ... خُدْ بَالَكْ مِنْ تَلَاتَة تَعْبِيرَاتْ!",
+      "direction": "warm, playful, engaged"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَوَّلْ وَاحِدْ، لَمَّا تِقُولْ: my work speaks louder than my accent... يَعْنِي شُغْلِي بِيِتَكَلَّمْ عَنِّي، أَكْتَرْ مِنْ لَهْجَتِي. تِسْتَعْمِلْهَا لَمَّا حَدْ يِشَكِّكْ فِي قُدْرَتِكْ بِسَبَبْ الإِنْجْلِيزِي. مِثَالْ: I may not sound perfect, but my work speaks louder than my accent.",
+      "direction": "clear, teaching, builds confidence"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَانِي وَاحِدْ: What you're offering... يَعْنِي إِنْتَ بِتَعْرِضْ إِيهْ بِالظَّبْطْ؟ دِي طَرِيقَةْ مُؤَدَّبَةْ إِنَّكْ تِسْأَلْ عَنْ الرَّقَمْ وَاللَّقَبْ، بَدَلْ مَا تِقُولْ: how much? مِثَالْ: Before I decide, tell me what you're offering.",
+      "direction": "patient, instructive"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَالِتْ وَاحِدْ: I intend to... يَعْنِي نَاوِي أَعْمَلْ إِيهْ. دِي أَقْوَى مِنْ I want، لِأَنَّهَا بْتُوضِّحْ نِيَّةْ وَخُطَّةْ. مِثَالْ: I intend to keep learning every single day.",
+      "direction": "firm, encouraging"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "غَلْطَةْ شَائِعَةْ: مَكَالْ قَالْ: I live here since two years. لِيهْ؟ لِأَنَّ فِي العَرَبِي بِنْقُولْ: أَنَا عَايِشْ هِنَا مِنْ سَنِتَيْن، فَبِنْقَلِّدْهَا زِي مَا هِي. الصَّحْ: I've lived here for two years. الـ since مَعَ نُقْطَةْ بِدَايَةْ... وَالـ for مَعَ مُدَّةْ زَمَنْ.",
+      "direction": "gentle, no shaming, corrective"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَالّا بَقَى مَعَ الـ Accent Lab! خُدْ كَلْمَةْ track record... الإِنْجْلِيزِي بِيِقُولْهَا: track record، وَالـ T وَالـ R مَلْزُوقِينْ. مِشْ track... record. كَرَّرْ وَرَايَا: track record.",
+      "direction": "energetic, playful drill"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَكَلْمَةْ تَانْيَةْ: what you're offering... لَمَّا بْتِتْكَلَّمْ بِسُرْعَةْ، الـ t بْتِبْقَى زِي d خَفِيفَةْ: what you're offering... رَبْطْ نَاعِمْ، مِشْ what you are offering. كَرِّرْ: what you're offering. عَاشْ! كِدَا بِقِيتْ أَمْرِيكِي!",
+      "direction": "warm, celebratory, drill"
+    },
+    {
+      "section": "act2",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Alright, Macal. I made the call. The answer is yes — senior associate, fifteen percent, and the mentorship track. But I have one condition.",
+      "direction": "brisk, warm, businesslike"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Name it. I've lived here for two years now, so I've learned to listen before I react.",
+      "direction": "calm, confident, slight smile"
+    },
+    {
+      "section": "act2",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Keep Macal Empire alive. Honestly, that side project is the reason I'm signing you. Just don't let it eat your mornings.",
+      "direction": "dry, sincere"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Deal. And thank you — for being straight with me from the first question. That's rarer than a good salary.",
+      "direction": "grateful, steady"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "So? Don't make me guess — I've been standing in that hallway pretending to read a menu for twenty minutes.",
+      "direction": "bright, teasing, excited"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I got it. Senior associate. And listen — I intend to keep building my studio, and they actually want that.",
+      "direction": "proud, a little breathless"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal. That's huge. I'm staying in Dubai — if you want me to. I mean, for the studio. If you're building something real.",
+      "direction": "soft, sincere, slightly nervous"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Congratulations. I mean it. Look — I've been thinking. What if we co-build a learning studio? Your voice, my structure. Two worlds, one table.",
+      "direction": "measured, surprisingly open"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Two worlds, one table. I like that. But first — I need a minute. My phone's been buzzing all morning.",
+      "direction": "curious, guarded"
+    },
+    {
+      "section": "act2",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "Macal? I'm calling from Cairo. A learner heard your story on the podcast and she wants to know — can she really start from zero?",
+      "direction": "urgent, hopeful, distant phone line"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَالّا نِلَخَّصْ بِسُرْعَةْ... الْيَوْمْ بِنْقُولْ: my work speaks louder than my accent، و what you're offering، و I intend to. وَالْجُمْلَةْ الْأَهَمْ... I've lived here for two years، بِـ for مَعَ الْمُدَّةْ، مِشْ since.",
+      "direction": "warm, quick recap"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَةْ الْحَلْقَةْ... هِيَّ: what you're offering. لِأَنَّهَا بْتُفْتَحْ بِهَا أَيِّ مُفَاوَضَةْ، بِأَدَبْ وَثِقَةْ، مِنْ غِيرْ مَا تِقُولْ how much!",
+      "direction": "proud, emphasizing"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دَلْوَقْتِي دَوْرَكْ إِنْتَ... سَجِّلْ ڤُويْسْ نُوتْ صُغَيَّرْ، قُولْ فِيهْ بِصُوتْ عَالِي: what you're offering، وَخُدْ بَالَكْ مِنْ الرَّبْطْ النَّاعِمْ... رَكِّزْ عَلَى الصَّوْتْ.",
+      "direction": "inviting, encouraging"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَابْعَتَهَا عَلَى تِيلِيجْرَامْ فِي مَجْمُوعَةْ Empire English Community... إِحْنَا مِسْتَحْكِمِينْ، بِنِسْمَعْ لَهْجَتَكْ، وَنِشَجَّعَكْ!",
+      "direction": "warm, welcoming"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "مِتْخَافْشْ مِنْ الْأَكْسِنْتْ... إِنْتَ مِشْ بِتِتْحَنِّمْ، إِنْتَ بِتِتْكَلَّمْ. يَالّا وَرَّنَا صَوْتَكْ، وَنِشُوفْ حَلْقَةْ الْجَايْ!",
+      "direction": "cheerful, rallying"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "what you're offering",
+    "ar": "إِنْتَ بِتَعْرِضْ إِيهْ بِالظَّبْطْ"
+  },
+  "word_count": 909,
+  "cast_used": [
+    "Coach",
+    "Friend_F",
+    "Interviewer",
+    "Macal",
+    "Nour",
+    "Tarek"
+  ],
+  "phonetic_focus": {
+    "target": "Review + connected speech",
+    "note": "Put it all together - stress, flap-T, TH, linking, schwa, intonation - in one flowing, confident, natural American delivery."
+  }
+}

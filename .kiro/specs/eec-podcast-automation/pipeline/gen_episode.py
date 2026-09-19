@@ -43,8 +43,10 @@ MODEL = os.environ.get("EEC_SCRIPT_MODEL", "gemini-3.6-flash")
 HOME = os.environ.get("EEC_PODCAST_HOME", "/opt/eec-podcast")
 SEASON_PATH = os.path.join(HOME, "season.json")
 
-CAST_IDS = ["Coach", "Macal", "Nour", "TaxiDriver", "Barista", "Landlord",
-            "Interviewer", "Friend_M", "Friend_F", "Official"]
+# Speaker ids (keep "Coach" as the id for Mahmoud so structure_check + pipeline are
+# untouched; Mahmoud is the display name). Season-1 roster from the bible/season.json.
+CAST_IDS = ["Coach", "Macal", "Nour", "Tarek", "TaxiDriver", "Barista", "Landlord",
+            "Interviewer", "Official", "Friend_M", "Friend_F"]
 
 SEASON1 = [
     (1, "The Arrival", "A2", "airport + taxi: first steps in Dubai, small talk, directions"),
@@ -70,12 +72,12 @@ BASE_ACTS = [
     ("act1", "ACT 1 — the main scene: 8-12 lines of natural {level} English between Macal and the guest(s). Tight and real — establish the situation and land the target phrases in context. Keep it moving, no filler.", 220),
     ("coach_break1", "COACH BREAK 1 (Egyptian Arabic, Coach): unpack the 2-3 key English phrases from Act 1 (meaning + when to use + one quick example each) + 1 common mistake. 4-6 lines. Warm, concise, no padding.", 140),
     ("act2", "ACT 2 — short resolution + a hook to next episode: 7-10 lines of {level} English. The moment resolves (a small win or surprise), then end on a light cliffhanger. Tight, no rush-padding.", 190),
-    ("coach_outro", "the COACH OUTRO (Egyptian Arabic, Coach): quickly recap the phrases, give the 'phrase of the episode', a short community CTA (Telegram/subscribe), and tease next time. 3-5 lines. Brief and warm.", 110),
+    ("coach_outro", "the COACH OUTRO (Egyptian Arabic, Coach): quickly recap the phrases, give the 'phrase of the episode', then a SPECIFIC TRACKABLE community CTA — challenge the listener to record a short voice note SAYING the phrase-of-the-episode out loud and send it to the Empire English Community Telegram, so we can hear their accent and cheer them on. 4-5 lines. Brief and warm.", 120),
 ]
 BASE_TARGET_WORDS = 825   # sum of base floors ≈ ~5.5 min floor; ~7 min typical
 BASE_MINUTES = 7          # the baseline the BASE_ACTS floors are tuned for
 WPM = 150                 # spoken words per minute (for duration estimates)
-MIN_MINUTES, MAX_MINUTES = 5, 10   # hard acceptance band (duration guard)
+MIN_MINUTES, MAX_MINUTES = 5, 10   # reference band only (duration gate REMOVED — informational)
 
 
 def build_acts(minutes):
@@ -143,7 +145,9 @@ def extract_json(raw):
     raise ValueError("no JSON objects found")
 
 
-def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season, prev_lines, expand=False):
+def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season, prev_lines,
+               expand=False, show="Yalla Fluent", voice_stage="1", arc_beat="",
+               phrases_theme="", cliffhanger="", phonetic_focus=None):
     prev = ""
     if prev_lines:
         prev = "STORY SO FAR IN THIS EPISODE (continue naturally, do not repeat):\n" + \
@@ -154,48 +158,128 @@ def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season
     if expand:
         length = (f"Your previous version was too thin. Add a few more natural dialogue "
                   f"turns to reach about {min_words} words — but stay TIGHT, no filler.")
+
+    # --- Macal voice-stage markers (design §3.4 CRAFT-2) ---
+    stage = str(voice_stage or "1")
+    MACAL_STAGE = {
+        "1": ("MACAL VOICE = STAGE 1 (early, Egyptian L2 learner). Write his English "
+              "grammatical BUT accented in RHYTHM: uncontracted forms ('I am not sure', "
+              "'I do not know'), explicit micro-pauses '...', simple tenses, deliberate/"
+              "earnest pacing. He is understandable, just clearly a learner."),
+        "2": ("MACAL VOICE = STAGE 2 (mid, more fluent). Contractions now appear "
+              "('I've been', 'I'm not sure'); occasional self-correction ('I mean...'); "
+              "basic linking; emerging present-perfect/conditionals. Growing confidence."),
+        "3": ("MACAL VOICE = STAGE 3 (late, confident, near-American). Natural reductions "
+              "in casual lines ('gonna','wanna'), native-like stress, can joke/negotiate."),
+    }.get(stage, "")
+
     STORY_ACTS = {"cold_open", "act1", "act2", "act3", "act4"}
     if act_key in STORY_ACTS:
         sep_rule = ("SECTION TYPE: STORY (in-world scene). Speakers are ONLY story "
-                    "characters (Macal, Nour, guests) speaking ENGLISH. The Coach does "
-                    "NOT appear here and there is NO Arabic in this section — all teaching "
-                    "happens later in the dedicated coach break, never mid-scene. Do NOT "
-                    "insert any Coach line or any commentary about the English.")
+                    "characters (Macal, Nour, guests) speaking ENGLISH. Mahmoud/Coach does "
+                    "NOT appear and there is NO Arabic here — teaching happens later in the "
+                    "coach break, never mid-scene.")
+        craft = (
+            "SCRIPTING CRAFT (mandatory):\n"
+            "- START IN-MEDIA-RES: drop into a scene ALREADY in motion. No 'hello, my "
+            "name is' setup; exposition emerges through the conflict.\n"
+            f"- {MACAL_STAGE}\n"
+            "- GUESTS keep authentic Dubai accents (Indian/Filipino/Pakistani/Gulf as "
+            "cast) BUT stay CLEAR and level-appropriate — no dense slang, no rapid-fire.\n"
+            "- Land the episode's TARGET PHRASES naturally in dialogue (don't announce them)."
+        )
+        if act_key == "act1":
+            craft += (
+                "\n- PLANTED MISTAKE (required): Macal makes ONE realistic L2 mistake here "
+                "(often an Arabic→English transfer, e.g. 'I live here since two years'). "
+                "Exactly ONE, natural, not a pile of broken English — the coach corrects it next."
+            )
+        if act_key == "act2":
+            craft += (
+                "\n- TRIUMPH BEAT (required): Macal REUSES the corrected form from the coach "
+                "break in a new context — a small win showing he learned.\n"
+                f"- END ON THE CLIFFHANGER: {cliffhanger}"
+            )
     else:
-        sep_rule = ("SECTION TYPE: COACH (teaching beat). The ONLY speaker is Coach, "
-                    "speaking Egyptian Arabic (lang \"ar\"). No story characters speak "
-                    "here.")
-    return f"""You are the head writer for "Two Worlds", a serialized bilingual English-learning
+        sep_rule = ("SECTION TYPE: COACH (teaching beat). The ONLY speaker is Coach "
+                    "(the host Mahmoud), speaking Egyptian Arabic (lang \"ar\"). No story "
+                    "characters speak here.")
+        craft = (
+            "ARABIC TTS-READY TEXT (mandatory — this is fed to an Arabic TTS engine):\n"
+            "- FULL TASHKEEL: write Mahmoud's Arabic with full diacritics (حَرَكَات) so the "
+            "engine doesn't guess. Egyptian colloquial voweling, NOT stiff MSA.\n"
+            "- SPELL OUT NUMBERS in Arabic words (تِسْعِين), never digits (90).\n"
+            "- ARABIZE incidental English loan-words in Arabic script (سِشْن، فِيدْبَاك) — BUT "
+            "when Mahmoud quotes the TARGET ENGLISH PHRASE being taught, keep it in real "
+            "English/Latin (that's what the learner must hear correctly).\n"
+            "- PROSODIC PUNCTUATION as acoustic cues: '...' for a suspense/breath before a "
+            "key point; commas every ~4-7 words as breath groups; '!' for warm energy on "
+            "greetings. Mahmoud introduces himself by name in coach_intro."
+        )
+        if act_key == "coach_break1":
+            craft += (
+                "\n- CORRECT MACAL'S MISTAKE from act1: name it, explain WHY it happens "
+                "(the Arabic→English transfer), then give the natural American form. Plus "
+                "unpack the 2-3 target phrases. Under ~60s, ZERO shaming — mistakes are normal."
+            )
+            if phonetic_focus and phonetic_focus.get("target"):
+                craft += (
+                    "\n- ACCENT LAB DRILL (required, the EEC signature): after the phrases, "
+                    "Mahmoud runs a short, focused pronunciation drill on TODAY'S SOUND — "
+                    f"\"{phonetic_focus.get('target')}\". Coach note: {phonetic_focus.get('note','')} "
+                    "Pull 1-2 example WORDS from the actual Act-1 dialogue that contain this "
+                    "sound, say the wrong (Arabic-transfer) way vs. the correct American way, "
+                    "and have the listener repeat. Keep the target English example words in real "
+                    "English/Latin script (the learner must hear them correctly); the rest in "
+                    "full-tashkeel Egyptian Arabic. Warm, playful, ~20-30s — this is the part "
+                    "learners come for."
+                )
+        if act_key == "coach_outro":
+            craft += (
+                "\n- TRACKABLE VOICE-NOTE CHALLENGE (required): end with a specific, "
+                "actionable CTA — Mahmoud picks the PHRASE OF THE EPISODE, asks the listener "
+                "to record themselves saying it out loud (applying today's sound) as a short "
+                "voice note, and send it to the Empire English Community on Telegram so we can "
+                "hear their accent and cheer them on. Name the community by name, make it feel "
+                "like belonging, not homework. Keep the target English phrase in Latin script."
+            )
+
+    return f"""You are the head writer for "{show}", a serialized bilingual English-learning
 DRAMA podcast by Empire English Community for Egyptian/Arab learners. Mission:
 LEARN WITH FUN — a story so good people binge it, that teaches English by living it.
 
 {sep_rule}
 
 BRAND VOICE: warm, honest, encouraging. NEVER "hack/secret/guaranteed" or shaming.
-Egyptian Arabic for the Coach; natural, native, level-appropriate English for the story.
+Egyptian Arabic for Mahmoud (the coach); natural, level-appropriate English for the story.
 
 CHARACTERS (use ONLY these speaker ids): {", ".join(CAST_IDS)}.
-- Macal: Egyptian learner-hero in Dubai; English is natural but improving.
-- Nour: confident friend already settled in Dubai; warm, encouraging.
-- Coach: NOT in the story — the Egyptian-Arabic voice that teaches the audience.
-- Guests by role: TaxiDriver, Barista, Landlord, Interviewer, Friend_M, Friend_F, Official.
+- Macal: Egyptian learner-hero in Dubai; English improving across the season (see stage).
+- Nour: American-born (Chicago) colleague/friend; warm, confident, native American English.
+- Coach: the host MAHMOUD — NOT in the story; the Egyptian-Arabic voice that teaches.
+- Guests by role (Dubai-real): TaxiDriver, Barista, Landlord, Interviewer, Official, etc.
 
-EPISODE {ep}: "{title}" — CEFR level {level}. Situation: {situation}.
+EPISODE {ep}: "{title}" — CEFR level {level}.
+SITUATION: {situation}
+ARC BEAT (advance this): {arc_beat}
+TARGET-PHRASE THEME: {phrases_theme}
 SEASON STORY SO FAR: {season.get('story_so_far','')}
 
 {prev}
 
 WRITE ONLY THIS SECTION: {act_key} — {act_desc.format(level=level)}
 
+{craft}
+
 {length}
 
 Return STRICT JSON only: a list of line objects, each:
-{{"section":"{act_key}","speaker":"<one of the cast ids>","lang":"en" or "ar","text":"..."}}
-Rules: Coach lines are ALWAYS lang "ar" (Egyptian Arabic). Story lines are lang "en".
-Keep English at level {level}. Natural spoken lines (contractions, real reactions).
-CRITICAL: this is an AUDIO drama — write ONLY spoken dialogue. NO stage directions,
-NO narration, NO asterisks (*...*), NO brackets ([...]). Every "text" must be words
-a character actually SAYS out loud. Show action through what people SAY, not narration.
+{{"section":"{act_key}","speaker":"<one of the cast ids>","lang":"en" or "ar","text":"...","direction":"<short acting note, e.g. 'anxious, rapid' or 'warm, reassuring'>"}}
+Rules: Coach/Mahmoud lines are ALWAYS lang "ar". Story lines are lang "en".
+The "direction" field is an acting note for the voice engine — it is NEVER spoken and
+NEVER shown; keep it short. Keep English at level {level}.
+CRITICAL: this is an AUDIO drama — "text" is ONLY spoken words. NO stage directions,
+NO narration, NO asterisks, NO brackets inside "text". Put performance notes in "direction".
 No markdown, no commentary — just the JSON list of lines for THIS section."""
 
 
@@ -216,7 +300,7 @@ def main():
     # build the compact act template scaled to the requested length
     ACTS = build_acts(args.minutes)
     TARGET_WORDS = int(round(args.minutes * WPM))
-    print(f"target: ~{args.minutes} min (~{TARGET_WORDS} words), band {MIN_MINUTES}-{MAX_MINUTES} min")
+    print(f"target: ~{args.minutes} min (~{TARGET_WORDS} words) — no hard gate")
 
     # backend is pluggable now — need a usable one (local Qwen / free API / gemini)
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -228,12 +312,31 @@ def main():
     print(f"LLM backend: {backend}")
 
     ep = args.episode
-    plan = next((p for p in SEASON1 if p[0] == ep), None)
-    if not plan:
-        print(f"ERROR: no plan for episode {ep}", file=sys.stderr); sys.exit(2)
-    _, title, level, situation = plan
-    level = args.level or level
     season = load_season()
+    # PLAN SOURCE = season.json (the locked Season-1 plan). Fall back to the legacy
+    # hardcoded SEASON1 only if season.json has no episodes[] entry for this ep.
+    ep_plan = next((e for e in season.get("episodes", []) if e.get("n") == ep), None)
+    if ep_plan:
+        title = ep_plan["title"]; level = ep_plan.get("level", "A2")
+        situation = ep_plan.get("situation", "")
+        arc_beat = ep_plan.get("arc_beat", "")
+        phrases_theme = ep_plan.get("phrases", "")
+        cliffhanger = ep_plan.get("cliffhanger", "")
+        phonetic_focus = ep_plan.get("phonetic_focus")  # {target, note} per season plan
+        voice_stage = str(ep_plan.get("voice", "S1")).replace("S", "")  # "S1"->"1"
+    else:
+        plan = next((p for p in SEASON1 if p[0] == ep), None)
+        if not plan:
+            print(f"ERROR: no plan for episode {ep} (not in season.json or SEASON1)",
+                  file=sys.stderr); sys.exit(2)
+        _, title, level, situation = plan
+        arc_beat = phrases_theme = cliffhanger = ""
+        phonetic_focus = None
+        # derive stage from the season stage map if present
+        sm = season.get("macal_stage_map", {"1":[1,2,3],"2":[4,5,6,7],"3":[8,9,10]})
+        voice_stage = next((s for s, eps in sm.items() if ep in eps), "1")
+    level = args.level or level
+    show = season.get("show", "Yalla Fluent")
 
     ep_dir = os.path.join(HOME, "episodes", f"ep{ep:02d}")
     acts_dir = os.path.join(ep_dir, "_acts")
@@ -253,8 +356,12 @@ def main():
                 continue
             l["section"] = act_key
             l["lang"] = "ar" if sp == "Coach" else l.get("lang", "en")
-            out.append({"section": act_key, "speaker": sp,
-                        "lang": l["lang"], "text": str(tx).strip()})
+            rec = {"section": act_key, "speaker": sp,
+                   "lang": l["lang"], "text": str(tx).strip()}
+            d = l.get("direction")
+            if d and str(d).strip():
+                rec["direction"] = str(d).strip()   # acting note, never spoken (design §3.3)
+            out.append(rec)
         return out
 
     all_lines = []
@@ -272,7 +379,10 @@ def main():
         while time.time() < deadline:
             attempt += 1
             prompt = act_prompt(ep, title, level, situation, act_key, act_desc,
-                                min_words, season, all_lines, expand=expand)
+                                min_words, season, all_lines, expand=expand,
+                                show=show, voice_stage=voice_stage, arc_beat=arc_beat,
+                                phrases_theme=phrases_theme, cliffhanger=cliffhanger,
+                                phonetic_focus=phonetic_focus)
             try:
                 raw = call_gemini(prompt, api_key)
                 got = extract_json(raw)
@@ -364,20 +474,52 @@ def main():
         sys.exit(4)
     print("  STRUCTURE OK — story/teaching separation clean")
 
-    # DURATION GUARD: keep episodes in the 5-10 min band. A bloated (or too-thin)
-    # episode can't slip through silently — fail unless --force.
+    # PHRASE OF THE EPISODE (#2): fill en/ar. The coach_outro was written to name it;
+    # ask the model to extract the single phrase-of-the-episode from the final script as
+    # {en, ar}. Deterministic fallback: first target-phrase theme (en) + a simple AR gloss.
+    def fill_phrase_of_episode(script, phrases_theme):
+        transcript = "\n".join(
+            f"[{l['section']}][{l['speaker']}/{l['lang']}] {l['text']}" for l in script["lines"]
+        )
+        prompt = (
+            "From this bilingual English-learning drama episode, identify the SINGLE "
+            "'phrase of the episode' — the one short, high-value English phrase the coach "
+            "(Mahmoud) most wants the learner to walk away using. It must be a real English "
+            "phrase spoken/taught in the episode (2-6 words, natural spoken English).\n\n"
+            "Return STRICT JSON only, no commentary:\n"
+            '{"en":"<the English phrase exactly>","ar":"<a short Egyptian-Arabic gloss of what it means, full tashkeel>"}\n\n'
+            f"TARGET-PHRASE THEME (hint): {phrases_theme}\n\n"
+            f"EPISODE TRANSCRIPT:\n{transcript}"
+        )
+        try:
+            raw = call_gemini(prompt, temp=0.3)
+            raw = raw.strip().replace("```json", "").replace("```", "").strip()
+            m = re.search(r"\{[\s\S]*\}", raw)
+            obj = json.loads(m.group(0) if m else raw)
+            en = str(obj.get("en", "")).strip()
+            ar = str(obj.get("ar", "")).strip()
+            if en:
+                return {"en": en, "ar": ar}
+        except Exception as e:
+            print(f"  phrase_of_episode: extraction failed ({str(e)[:60]}) — using fallback",
+                  file=sys.stderr)
+        # deterministic fallback: first phrase-theme token as the phrase, empty AR
+        first = (phrases_theme or "").split(",")[0].strip()
+        return {"en": first, "ar": ""}
+
+    if not (script["phrase_of_episode"].get("en") and script["phrase_of_episode"].get("ar")):
+        script["phrase_of_episode"] = fill_phrase_of_episode(script, phrases_theme)
+    print(f"  phrase_of_episode: en='{script['phrase_of_episode'].get('en','')}' "
+          f"ar='{script['phrase_of_episode'].get('ar','')[:30]}'")
+
+    # record the phonetic focus in the saved script for downstream (packaging/coach notes)
+    if phonetic_focus:
+        script["phonetic_focus"] = phonetic_focus
+
+    # Duration is INFORMATIONAL only (the 5-10 min hard gate was removed per owner
+    # decision). We still print the estimate for awareness, but never block/save-fail.
     est_min = round(script["word_count"] / WPM, 1)
-    if est_min < MIN_MINUTES or est_min > MAX_MINUTES:
-        print(f"\n  DURATION: ~{est_min} min is OUTSIDE the {MIN_MINUTES}-{MAX_MINUTES} "
-              f"min band (words={script['word_count']}).", file=sys.stderr)
-        if not args.force:
-            print("ERROR: episode length out of band — NOT saving. Re-run (the "
-                  "generator will re-roll sections), adjust --minutes, or pass "
-                  "--force to override.", file=sys.stderr)
-            sys.exit(6)
-        print("  --force: saving despite out-of-band length", file=sys.stderr)
-    else:
-        print(f"  DURATION OK — ~{est_min} min (band {MIN_MINUTES}-{MAX_MINUTES})")
+    print(f"  duration: ~{est_min} min (~{script['word_count']} words) — informational, no gate")
 
     out = args.out or os.path.join(ep_dir, "script.json")
     os.makedirs(os.path.dirname(out), exist_ok=True)

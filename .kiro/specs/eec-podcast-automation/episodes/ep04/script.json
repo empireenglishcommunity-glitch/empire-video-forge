@@ -1,0 +1,281 @@
+{
+  "episode": 4,
+  "title": "The Complaint",
+  "level": "B1",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Sir, please — she has been waiting outside for twenty minutes. She is very, very angry.",
+      "direction": "nervous, apologetic, fast"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. Okay, I'm coming. I mean — I'm on my way down right now.",
+      "direction": "tense, breathing hard, calming himself"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "You double-booked my suite. I flew fourteen hours for this. Fourteen!",
+      "direction": "furious, sharp, escalating"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ma'am, I'm so sorry. Please — give me one minute, and I will fix this.",
+      "direction": "steady, sincere, low and calm"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا يَا جَمَاعَة!... أَنَا مَحْمُود، وَمَعَاكُم فِي Yalla Fluent.",
+      "direction": "warm, bright welcome"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "النَّهَارْدَه مَعَانَا مَاكَال فِي مَوْقِف صَعْب... كْلَايَنْت زَعْلَانَة جِدًّا، وَهُوَ لَازِم يِهَدِّي الدِّنْيَا بِالإِنْجِلِيزِي.",
+      "direction": "storytelling, building tension"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "اِسْمَعُوا كْوَيِّس لِتَلَاتَة تَعْبِيرَات... I'm so sorry، وَ Let me fix this، وَ Just to confirm.",
+      "direction": "clear, pointing out key phrases"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا... يِلَا نِتْعَلِّم وَنِتْسَلِّي!",
+      "direction": "energetic, encouraging close"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ma'am, I'm so sorry about this. I've been checking your booking since I got the call. Please, come inside — let's sit down and I'll fix this.",
+      "direction": "calm, sincere, slightly nervous"
+    },
+    {
+      "section": "act1",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "Sit down? I don't want to sit down. I want my room. I booked the Palm Suite three weeks ago, and now your colleague tells me someone else is already inside.",
+      "direction": "angry, voice rising"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I understand. You have every right to be upset. Just to confirm — your name is Ms. Hana, and the reservation is for four nights, yes?",
+      "direction": "steady, trying to slow things down"
+    },
+    {
+      "section": "act1",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "Five nights. Five. And I live here since two years — no, wait, that's not the point. The point is I am tired and I have no room.",
+      "direction": "exhausted, frustrated"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "You're right, and I'm sorry for the mix-up. Here's what I can do right now. We have a sea-view suite on the eighth floor. It's bigger than the Palm Suite, and I can offer it to you tonight at the same price.",
+      "direction": "confident, solution-focused"
+    },
+    {
+      "section": "act1",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "The same price? For a bigger suite? That... that sounds too good. Are you sure you can do that?",
+      "direction": "surprised, softening slightly"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes, I'm sure. And I'll add free breakfast for your whole stay. If that works for you, I'll take you up myself and make sure everything is perfect.",
+      "direction": "warm, reassuring"
+    },
+    {
+      "section": "act1",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "Okay. Okay, fine. But if the room is not ready, I'm going to be very, very unhappy.",
+      "direction": "still tense, but calming"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Deal. Give me two minutes — I'll confirm with the front desk, and then we'll go up together. Thank you for giving me the chance to fix this.",
+      "direction": "grateful, controlled"
+    },
+    {
+      "section": "act1",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "Two minutes. I'll wait here. And... thank you. Most people here just hand me a key and walk away.",
+      "direction": "quiet, a little surprised by the kindness"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب، يَا جَمَاعَة... مَاكَال عَمَلْ حَاجَة صَعْبَة جِدًّا: هَدَّى الدِّنْيَا بِالإِنْجِلِيزِي! خُدُوا بَالْكُمْ مِنْ تَلَاتَة تَعْبِيرَات. أَوَّل وَاحِد: I'm so sorry. مَعْنَاهَا آسِف بِجِدّ... بِنِسْتَخْدِمْهَا لَمَّا الغَلْطَة كَبِيرَة، مِشْ زَيِّ I'm sorry العَادِيَّة. مَثَلًا: I'm so sorry about the delay.",
+      "direction": "warm, teaching clearly"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَانِي تَعْبِير: Let me fix this. يَعْنِي سِيبْنِي أَنَا أَصْلَحْ المَوْقِف. بِنِقُولْهَا لَمَّا الكْلَايَنْت زَعْلَان وِنِحْنَا عَايْزِين نِطَمْنَه. مَثَلًا: Please, give me one minute — let me fix this.",
+      "direction": "reassuring, steady"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَالِت تَعْبِير: Just to confirm. يَعْنِي أَتْأَكَّد بَس. بِنِسْتَخْدِمْهَا لَمَّا نِعِيد المَعْلُومَة بُصُوغَة سُؤَال، عَشَان نِتَأَكَّد إِحْنَا فَاهْمِين صَح. مَثَلًا: Just to confirm — your name is Ms. Hana, yes?",
+      "direction": "clear, practical"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَالغَلْطَة المُشْتَرَكَة... وَلَا يِهِمَّك، كُلِّنَا بِنِعْمِلْهَا. المَصْرِي بِيِقُولْ I live here since two years، لِأَنَّ فِي العَرَبِي بِنِقُولْ \"مِن سَنَتَيْن\". بَسْ بِالإِنْجِلِيزِي الصَّح: I've lived here for two years.",
+      "direction": "gentle, no shaming"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دِلْوَقْتِي... Accent Lab! النَّهَارْدَه عَنْ اللِّينْكِينْغ. الأَمْرِيكَان بِيِوْصَلُوا الكَلِمَات بَعْض، مِشْ بِيِفْصَلُوهَا. مَثَلًا فِي الجُمْلَة: I'm on my way down... بْتُسْمَعْ كِدَه: I-mo-ny-way-down. جَرِّبْ مَعَايَا: I'm on my way. تَانِي مَرَّة: I'm on my way. بْرَافُو!",
+      "direction": "playful, energetic drill"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ms. Hana, your suite is ready. I checked it myself. The view from the eighth floor is honestly better than the Palm Suite.",
+      "direction": "calm, warm, small smile"
+    },
+    {
+      "section": "act2",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "You checked it yourself? Okay... wow. That's good service. I've lived here for two years, and nobody ever did that for me.",
+      "direction": "surprised, softening"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Just to confirm — you'll have breakfast at eight, and I'll call you at seven to make sure everything is fine.",
+      "direction": "professional, reassuring"
+    },
+    {
+      "section": "act2",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "That works. You know what, young man? You should meet my boss. She runs Rising Voices. She's always looking for people who stay calm when clients shout.",
+      "direction": "impressed, thoughtful"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Rising Voices? I mean... that's the fellowship I applied for. Are you serious?",
+      "direction": "stunned, voice cracking slightly"
+    },
+    {
+      "section": "act2",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "Very serious. I'm calling her now. Her name is Nour's manager — Ms. Layla. She'll want a follow-up call tomorrow at nine. Can you handle that?",
+      "direction": "brisk, businesslike"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I can. I've handled worse tonight, right? Just to confirm — tomorrow, nine o'clock. I'll be ready.",
+      "direction": "determined, steady"
+    },
+    {
+      "section": "act2",
+      "speaker": "Friend_F",
+      "lang": "en",
+      "text": "Good. And Macal — fix that mix-up with the booking system. My boss hates double bookings even more than I do.",
+      "direction": "half-joking, walking away"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Noted. Let me fix this one thing first, and then... I have a call to prepare for.",
+      "direction": "to himself, quiet resolve"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب يَا جَمَاعَة... كَمَّلْنَا الحِكَايَة، وَمَاكَال طَلَع مِنْ المَوْقِف كَبِير! رَاجِعُوا مَعَايَا: I'm so sorry... لَمَّا الغَلْطَة كَبِيرَة، و Let me fix this... عَشَان نِطَمْنَه، و Just to confirm... لَمَّا نِتْأَكَّد إِحْنَا فَاهْمِين صَح.",
+      "direction": "warm, recap energy"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَة الحَلْقَة بِطُولْهَا... تِسْمَعُوا كِدَه: \"Just to confirm.\" دِي المَفْتَاح! بِيِسْتَخْدِمْهَا الكُل، فِي الشُّغْل، فِي الحَيَاة، فِي أَي مَكَان. قُولُوهَا مَعَايَا... Just to confirm.",
+      "direction": "pointing, motivating"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَدِلْوَقْتِي التَحَدِّي! سَجِّلُوا ڤويس نُوت صُغَيَّر، قُولُوا فِيه Just to confirm... وَوَرُّونَا اللِّينْكِينْغ بُتَاع النَّهَارْدَه.",
+      "direction": "challenging, playful"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَمَاتْخَافُوش مِنْ الغَلَط... إِحْنَا بِنِشَجِّع بَعْض! اِبْعَتُوا الفويس نُوت عَلَى تِلِجْرَام... Empire English Community. إِحْنَا مُسْتَخْطِرِين نِسْمَع صَوْتَك، وَنِشَجِّعَك!",
+      "direction": "encouraging, belonging"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَاشْطُر هُنَا بَقَى... فِي الحَلْقَة الجَايَة، مَاكَال عِنْدُه مُكَالْمَة مَع Ms. Layla بُتَاع Rising Voices. هَل حَيِقْدَر يِثْبِت نَفْسُه؟ مَا تِفُوتُوش! يَلَّا، فِلُوْنت!",
+      "direction": "suspense, cliffhanger energy"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "Just to confirm",
+    "ar": "يَعْنِي أَتْأَكَّد بَس"
+  },
+  "word_count": 830,
+  "cast_used": [
+    "Coach",
+    "Friend_F",
+    "Macal",
+    "TaxiDriver"
+  ],
+  "phonetic_focus": {
+    "target": "Linking",
+    "note": "Native speakers connect words: 'an apartment' -> 'a-napartment', 'pick it up' -> 'pi-ki-tup'. Words flow into each other."
+  }
+}

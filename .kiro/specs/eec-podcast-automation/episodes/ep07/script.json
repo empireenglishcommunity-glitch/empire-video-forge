@@ -1,0 +1,308 @@
+{
+  "episode": 7,
+  "title": "The Voice",
+  "level": "B1+",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay, the light is good. Just talk to the camera, Macal.",
+      "direction": "calm, encouraging"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Talk to the camera. Right. Easy.",
+      "direction": "nervous, dry laugh"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You've been quiet all week. What are you afraid to say?",
+      "direction": "gently pushing"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "That if I say it out loud, I mean... it becomes real. And I could still fail.",
+      "direction": "honest, vulnerable"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا بِيكُمْ يا جَماعَة في Yalla Fluent! أَنا مَحْمُود، وَالنَّهَارْدَة مَعانا حَلْقَة حَلْوَة... ماكال بِيْسَجِّلْ الفِيدْيُو بُتاعُه مَعْ نُور!",
+      "direction": "warm, energetic welcome"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَبِصْراحَة، هُوَ خايِف... عَشان لَمَّا تِقولْ حاجَة بِصوتْ عالي، بَتَبْقى حَقيقِيَّة.",
+      "direction": "honest, gentle"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "اسْمَعُوا كْوَيِّس عَشان تِلاتَة تَعابِير: في رَأْيي، وَلَمَّا كُنْت صُغَيَّر، وَأَنا ناوِي.",
+      "direction": "clear, teaching emphasis"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا، خُشُّوا عَلى المَشْهَد... وَخَلُّوا وَدْنِكُمْ مَفْتُوحَة!",
+      "direction": "playful, inviting"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay, forget the camera for a second. Talk to me. Why does this video scare you more than the interview did?",
+      "direction": "warm, patient, leaning in"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Because in an interview they ask the questions. Here, I have to choose the words. And in my opinion, my words are still... small.",
+      "direction": "quiet, honest, a little ashamed"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Small? Macal, you moved to a new country alone. You're not small. Start there. When you were young, what did you want to be?",
+      "direction": "encouraging, pushing gently"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "When I was young, I wanted to build things. Real things. My father worked with his hands, and I watched him every day. I live here since two years, but I still hear his voice when I work.",
+      "direction": "softening, remembering, then catching himself"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "That's the truth I was waiting for. Don't lose it. Say it again, but this time look at the lens like it's him.",
+      "direction": "steady, almost a whisper"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. I'm not sure I can do this without shaking, but... I'm going to try. Baba, if you can hear me, I'm not done yet.",
+      "direction": "breathing deep, voice cracking then firm"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Good. Now the last part. What are you going to do with this chance if you get it?",
+      "direction": "calm, focused"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "If I win Rising Voices, I'm going to build something for people like me. A place where our English is not perfect, but it's ours. I'm never going to hide again.",
+      "direction": "rising, determined, eyes wet"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You just said it without stopping. Did you notice? You didn't translate in your head.",
+      "direction": "surprised, proud"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I didn't notice. I was just... talking. To you, and to him. Maybe that's the difference.",
+      "direction": "quiet realization, small smile"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Then that's the whole video. Don't change a word. Ready to go again for real?",
+      "direction": "decisive, kind"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ready. And Nour... thank you. In my opinion, you saw me before I saw myself.",
+      "direction": "grateful, steady"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب... في المَشْهَد دَه ماكال قال تَعابِير حِلْوَة أَوِي. تَعالُوا نْشُوفْهُم مَعَ بَعْض... في رَأْيي، يَعْني in my opinion، لَمَّا تِعْبِر عَن رَأْيَك بِأَدَب. مَثَلًا: In my opinion, this idea is strong. وَتاني تَعْبِير... لَمَّا كُنْت صُغَيَّر، يَعْني when I was young، بِتَبْدَأ بِيهَا أَي حِكايَة مِن طُفُولْتَك. وَتالِتًا... أَنا ناوِي، يَعْني I'm going to، لِلْخُطَط الجايَة.",
+      "direction": "warm, teaching, steady pace"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "بَس خُدْ بالَك مِن غَلْطَة صُغَيَّرَة... ماكال قال I live here since two years. دَه تَرْجَمَة حَرْفِيَّة مِن العَرَبي... في الإِنْجِليزي بِنْقول I've lived here for two years. عَشان since بِتْجِي مَعَ نُقْطَة بِدايَة، وَfor مَعَ مُدَّة.",
+      "direction": "gentle, corrective, no shaming"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَدِلْوَقْتي... الـ Accent Lab! النَّهَارْدَة عَلى الـ Intonation... لَحْن الجُمْلَة. الصوت بِطْلَع فُوق في الأَسْئِلَة، وَبِيِنْزِل في الجُمَل العادِيَّة. إسْمَعُوا... بعض الناس بِقولُو my words are still small... كِدَه مُسَطَّح. لَأ... إرْفَعُوا الصوت في الآخر... my words are still small! كَرِّرُوا مَعايا... Ready? Ready. كَرِّرُوا: my words are still small!",
+      "direction": "playful, energetic, drill mode"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Okay, that was three takes, and every single one was better than the last. I've been doing this for years, and I'm telling you, that last one was real.",
+      "direction": "warm, proud"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I felt it. Usually my head is full of noise, but this time I was just... there. I'm not sure how to explain it.",
+      "direction": "surprised, calm"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You don't have to explain it. You just have to press send. Come on, before you change your mind.",
+      "direction": "playful, nudging"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Wait, wait. Okay. I've lived here for two years, and this is the first time I feel like I belong in my own voice. So... I'm sending it.",
+      "direction": "nervous, then firm"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You did it. And the funny part? If you win, they'll fly you to Chicago for the final round. My whole family is there. You could meet them.",
+      "direction": "light laugh, sincere"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Chicago. Your city. That's a lot of pressure, habibti. I mean... a lot of pressure, Nour.",
+      "direction": "teasing, then correcting himself"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "You'll be fine. Baba says the city is big, but the people are warmer than the winter. You'll see.",
+      "direction": "soft, reassuring"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Hang on, my phone. It's my sister. Give me one second, it might be about the apartment.",
+      "direction": "distracted, reaching for phone"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Take your time. I'm going to watch the video one more time. Just to check the sound, nothing else.",
+      "direction": "casual, but a little proud"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Hold on. This isn't my sister. Macal, look at this.",
+      "direction": "quiet, serious"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "What is it? Nour, you went pale. What does it say?",
+      "direction": "worried, careful"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "It's from the Chicago office. They want me back. Full-time. They said the offer is open, but I have to answer by Friday.",
+      "direction": "shaken, honest"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "...That's amazing news. It's your dream, Nour. You should take it.",
+      "direction": "steady voice, but eyes drop"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيِّب يا جَماعَة... النَّهَارْدَة خُدْنا تَلات تَعابِير مَفْتُوحَة: in my opinion، عَشان تْقُول رَأْيَك؛ when I was young، عَشان تِبْدَأ حِكايَة؛ وَI'm going to، عَشان خُطَطَك الجايَة.",
+      "direction": "warm, clear recap"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَفاكِر... ما تْقُولْش I live here since two years، قُول I've lived here for two years... since مَعَ البِدايَة، وَfor مَعَ المُدَّة.",
+      "direction": "gentle correction, encouraging"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبارَة الحَلْقَة... هِيَّ... I've lived here for two years, and I feel like I belong in my own voice. جُمْلَة مِن القَلْب، فيها زَمَن، وَفيها إحْساس.",
+      "direction": "proud, tender emphasis"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دِلْوَقتي الدَّوْر عَلَيْك... سَجِّل voice note صُغَيَّر، قُول فيه الجُمْلَة دِي بِنَفْس النَّغْمَة اللي اتْدَرَّبْنا عَلَيْها... وَابْعَتَها لِـ Empire English Community عَلى تِليجْرام.",
+      "direction": "inviting, energetic challenge"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "إحْنا مِسْتَنيين نِسْمَع صَوْتَك... وَمِش هَنَقَيِّمَك، إحْنا هَنِشْجَّعَك! يالّا... إحْنا عائِلَة، وَأَصْواتنا بْتِكْبَر مَعَ بَعْض.",
+      "direction": "warm, welcoming, big smile"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "I've lived here for two years",
+    "ar": "أَنَا عَايِش هِنَا بَقَالِي سَنَتَيْن"
+  },
+  "word_count": 870,
+  "cast_used": [
+    "Coach",
+    "Macal",
+    "Nour"
+  ],
+  "phonetic_focus": {
+    "target": "Intonation",
+    "note": "The melody of the sentence. Voice rises on yes/no questions, falls on statements and wh-questions. Wrong melody changes the meaning."
+  }
+}

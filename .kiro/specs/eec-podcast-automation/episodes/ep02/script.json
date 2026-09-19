@@ -1,0 +1,332 @@
+{
+  "episode": 2,
+  "title": "Taxi to Deira",
+  "level": "A2",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Please... can you go faster? I am late for work.",
+      "direction": "anxious, rapid, breathless"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Traffic is heavy today, my friend. But I know a short way.",
+      "direction": "calm, reassuring, Indian accent"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "How long... how much time to Deira?",
+      "direction": "urgent, stumbling, earnest"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Maybe twenty minutes. My brother, you are safe with me.",
+      "direction": "warm, confident"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. Thank you. Please... just please hurry.",
+      "direction": "quiet panic, exhale"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا يَا صَاحْبِي! أَنَا مَحْمُود، وَدِي حَلْقَة تَانِي مِن يَلَّا فْلُوئَنْت... النَّهَارْدَة مَكَّال رَاكِب تَاكْسِي، وَمِتْأَخِّر عَن الشُّغْل، وَالسَّوَاقْ رَاجُو بِيَقُول لُه كَلَام كِتِير!",
+      "direction": "warm, energetic welcome, big smile"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "اسْمَع كْوَيِّس... فِي الْحَلْقَة دِي، هَنِتْعَلَّم تَلَاتَة عِبَارَات مُهِمَّة جِدًّا: الْأَوَّلَانِي 'How long'... يَعْنِي كَم الْوَقْت.",
+      "direction": "slowing down on the English phrase, clear"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَالتَّانْيَة 'go faster'... يَعْنِي امْشِي أَسْرَع. وَالتَّالْتَة 'Can you please'... أَدَبْ وَلُطْف، وَدِي أَهَمّ وَاحْدَة!",
+      "direction": "playful emphasis on the last phrase"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا بِينَا نِسْمَع مَكَّال وَرَاجُو فِي التَّاكْسِي... وَخُد بِالك، هَتِسْمَع كُلْ عِبَارَة دِي بِالْإِنْجِلِيزِي وَاضِح!",
+      "direction": "excited, inviting, gentle handoff to the scene"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Relax, my friend. Look, I take the small road now. We go behind the big mosque, then straight to Deira.",
+      "direction": "calm, friendly, reassuring"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay... okay. But how long now? The time... how long to Deira?",
+      "direction": "anxious, checking watch"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Fifteen minutes, maybe less. Do not worry. My brother, you are safe with me.",
+      "direction": "warm, confident"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "My boss is not happy if I am late again. Can you please go faster? Please.",
+      "direction": "polite, urgent, earnest"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "I go faster, yes. But the police... they stop me if I am too fast. You understand?",
+      "direction": "practical, measured"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes. I understand. I do not want a problem for you. Just... please, go the short way. I live here since two years, but this road is new for me.",
+      "direction": "apologetic, slightly embarrassed"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Two years? You speak good English, my friend. Okay. I take the bridge now. Look, see? Deira is there, near the water.",
+      "direction": "encouraging, pointing"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Thank you. Thank you very much. Can you please stop near the coffee shop? Dune and Company. The big building with the blue glass.",
+      "direction": "relieved, polite request"
+    },
+    {
+      "section": "act1",
+      "speaker": "TaxiDriver",
+      "lang": "en",
+      "text": "Of course. Two minutes. I stop at the corner. You walk small, small to the door.",
+      "direction": "helpful, cheerful"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal! Hey! You made it. I was starting to worry. We have the meeting in ten minutes.",
+      "direction": "warm, slightly teasing, American accent"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Nour... hi. Sorry. The traffic was very bad. But I am here now. I am here.",
+      "direction": "out of breath, relieved"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Breathe. You are fine. Come on, let us go up. Tarek is already in the room.",
+      "direction": "supportive, calm, leading"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يَا صَاحْبِي، نْشُوفْ مَكَّال قَال إِيهْ فِي التَّاكْسِي... أُولَ حَاجَة: How long... يَعْنِي كَم الْوَقْت، وِلَمَّا تِسْأَل عَن مُدَّة، تِقُول: How long to Deira? وَثَانِي حَاجَة: Can you please... دِي أَدَبْ وَلُطْف، زَي: Can you please stop here? وَتَلَاتَة: go faster... يَعْنِي امْشِي أَسْرَع، زَي: Can you please go faster?",
+      "direction": "warm, encouraging, steady pace"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "بَسْ خُد بِالك مِن غَلْطَة صَغِيرَة... مَكَّال قَال: I live here since two years. لِيهْ؟ لِأَن فِي الْعَرَبِي بِنْقُول 'مِن سَنِتَيْن'، فَالدِّمَاغ بِيْجِيب since... لَكِن فِي الْأَمْرِيكِي، بِنْقُول: I have lived here for two years. أَو أَبْسَط: I have been here for two years. غَلْطَة عَادِيَّة جِدًّا، كُل الْعَالَم بِتْعْمِل كِدَا!",
+      "direction": "gentle, reassuring, no shame"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دِلْوَقْتِي الْمُهِمّ... الْأَكْسِنْت لَابْ! النَّهَارْدَة هَنِشْتَغَل عَلَى صَوْت الـ Flap-T. فِي الْأَمْرِيكِي، لَمَّا حَرْف T يِيجِي بَيْن حَرْفِين مُتَحَرِّكِين، بِيْبْقَى زَي دَالْ نَاعْمَة... water بِيْبْقَى wader... city بِيْبْقَى ciddy... later بِيْبْقَى lader.",
+      "direction": "playful, clear articulation, accent lab energy"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيَّب، مِنْ كَلَام مَكَّال فِي التَّاكْسِي... كَلِمَة little. الْغَلَط: لِيتِّل... بِتِّينْ قَوِيَّة. الصَّح: لِيدِل... lader صَوْت الْـ T خَفِيف. وَكَمَان: better... بِيْدَر... جَرِّبْ مَعَايَا: better... better... little... little. كْوَيِّس! مِمْتَاز! دِي الْحَكَايَة، يَلَّا نِرْجَع لِلْأَحْدَاث!",
+      "direction": "coach drill, upbeat, then transitions back to story"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal, wait. Look at the screen. Mr. Rahman moved the meeting. It is at ten thirty now, not ten.",
+      "direction": "relieved, warm, showing her phone"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Ten thirty? So I am not late. Really? I am not late.",
+      "direction": "disbelieving, then lightening"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Not late. You have been here for two years and you still worry like it is your first week.",
+      "direction": "teasing, kind"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I have been here for two years... and I still count every minute. That is true. Okay. I can breathe now.",
+      "direction": "small proud smile, using the corrected form"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Good. Hey, the coffee here is better than the coffee in our building. Can you please get me a small one? I will save us two seats upstairs.",
+      "direction": "casual, friendly request"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Of course. A small coffee. Wait for me near the lift.",
+      "direction": "easy, helpful"
+    },
+    {
+      "section": "act2",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Hello, sir. What can I get for you today?",
+      "direction": "bright, fast, friendly"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "One small coffee, please. And... can you please make it a little sweet? Just a little.",
+      "direction": "clear and polite, relaxed Flap-T on little"
+    },
+    {
+      "section": "act2",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "A little sweet. Got it. That will be twelve dirhams.",
+      "direction": "cheerful, quick"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Here you are. Thank you very much.",
+      "direction": "warm, confident"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal! Up here! Third floor. Come on, we are good on time.",
+      "direction": "calling from a distance, upbeat"
+    },
+    {
+      "section": "act2",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Ah, of course you know the receptionist here too. Everyone loves Tarek.",
+      "direction": "smooth, charming, faintly smug"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal... look who is at the front desk. He is laughing with the new girl like he owns the building.",
+      "direction": "dry, half-amused, wary"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I do not know how he does it. But I have my coffee, I have my time... and I have you on my side. Let us go up.",
+      "direction": "steady, determined, a little nervous"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "طَيَّب يَا جَمَاعَة... نِرَاجِعْ بِسُرْعَة: كُنَّا بِنْسْأَل عَن الْوَقْت بِـ How long، وَبِنْطَلُب بِأَدَب بِـ Can you please، وَبِنِقُول go faster... يَعْنِي امْشِي أَسْرَع. وَكَمَان صَوْت الـ Flap-T: little بِيْبْقَى لِيدِل، better بِيْبْقَى بِيدَر.",
+      "direction": "warm, quick recap, encouraging"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَة الْحَلْقَة النَّهَارْدَة... Can you please go faster? ... دِي هِيَّ! عِبَارَة صَغِيرَة، بَسْ بِتَفْتَح لَك أَبْوَاب كَتَيْر فِي دُبَيْ.",
+      "direction": "playful emphasis on the phrase"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "دِلْوَقْتِي دَوْرَك... سَجِّل فُويس نُوت صَغِير، قُول فِيه Can you please go faster? بِصَوْت وَاضِح، ورَكِّز عَلَى الْـ T الْخَفِيفَة. مَتْخَافْش مِن الْغَلَط، إِحْنَا هِنْشَجِّعَك!",
+      "direction": "motivating, intimate, direct to listener"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَاِبْعَتْهَا لَنَا عَلَى تِلِيجْرَام... فِي Empire English Community. إِحْنَا مَعَاك، هَنِسْمَع صَوْتَك، وَهَنِرَد عَلَيْك. الْعَيْلَة كِبِيرَة، وَأَنْتَ مِنَّا!",
+      "direction": "belonging, proud, warm"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا يَا بَطَل... اِرْفَع صَوْتَك، وَخُد خُطْوَة أَسْرَع! يَلَّا فْلُوَنْت... نِشُوفْك فِي الْحَلْقَة الْجَايَة!",
+      "direction": "energetic, closing, big smile"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "Can you please go faster?",
+    "ar": "مُمْكِن لَو سَمَحْت تِمْشِي أَسْرَع؟"
+  },
+  "word_count": 840,
+  "cast_used": [
+    "Barista",
+    "Coach",
+    "Macal",
+    "Nour",
+    "Tarek",
+    "TaxiDriver"
+  ],
+  "phonetic_focus": {
+    "target": "Flap-T",
+    "note": "In American English, T between vowels sounds like a soft D: water -> 'wader', city -> 'ciddy', later -> 'lader'."
+  }
+}

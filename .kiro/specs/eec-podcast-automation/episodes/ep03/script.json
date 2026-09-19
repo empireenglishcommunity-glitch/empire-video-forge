@@ -1,0 +1,337 @@
+{
+  "episode": 3,
+  "title": "The Coffee Order",
+  "level": "A2+",
+  "lines": [
+    {
+      "section": "cold_open",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Next, please! What can I get for you today?",
+      "direction": "brisk, friendly, cafe rush"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes... one coffee, please. For my friend. She is American...",
+      "direction": "nervous, halting, phone in hand"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Of course. What kind? Latte? Americano?",
+      "direction": "patient, warm"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I... I am not sure. She likes it sweet, but not too sweet.",
+      "direction": "thinking hard, quiet panic"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "No problem. We have a caramel latte. It is sweet, but not too sweet.",
+      "direction": "reassuring, clear"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. Yes. One caramel latte. And... can I ask your name?",
+      "direction": "relieved, then bold"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Aisha. And yours?",
+      "direction": "smiling, curious"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Macal. Nice to meet you, Aisha. This is my first time ordering alone.",
+      "direction": "honest, slightly proud"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا بِيكُمْ يا جَمَاعَة فِي يَلَّا فْلُوئِنْت! أَنَا مَحْمُود... الكُوتشْ بِتَاعْكُمْ، وَالنَّهَارْدَهْ مَعَانَا مَشْهَدْ حِلْو جِدًّا.",
+      "direction": "warm, welcoming, upbeat"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "مَاكَالْ رَايِحْ يِشْتَرِي قَهْوَة لِنُور... أَوَّلْ مَرَّة يِطْلُبْ لَوَحْدُهْ فِي دُبَايْ! وَالْبَارِيسْتَا آيشَا بِتَسَاعْدُهْ.",
+      "direction": "playful, storytelling energy"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "اسْمَعُوا كُوَيِّسْ عَلَى تَلَاتَة تَعْبِيرَاتْ: الأُولَى... What can I get for you today? التَّانْيَة... I am not sure. وَالتَّالْتَة... sweet, but not too sweet.",
+      "direction": "clear, enunciating target phrases slowly"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَبُصُّوا كَمَانْ... مَاكَالْ لِسَّهْ بِيِقَلِّدْ الإِنْجْلِيزِي الْبِرِيطَانِي مِنْ غِيرْ مَا يِحِسْ. يَلَّا نِسْمَعْ المَشْهَدْ مَعَ بَعْضْ!",
+      "direction": "conspiratorial, then excited"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Here you go, Macal. One caramel latte. Are you sure that is all? Your friend, she is waiting outside?",
+      "direction": "warm, friendly, slightly teasing"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes... but no. She is not waiting. I will meet her at the office. Nour is... she is my colleague. And maybe my friend. I do not know yet.",
+      "direction": "earnest, a little nervous, slower rhythm"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "You like her. It is okay. So what does she drink usually? Do you know her order?",
+      "direction": "knowing smile, gentle"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "I am not sure. She always orders something... but I do not remember the name. It is brown, and it has milk.",
+      "direction": "searching for words, honest"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "A mocha? Or maybe a flat white? Do not worry. We can fix this. Is she a sweet person?",
+      "direction": "helpful, patient, light humour"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes, she is very sweet. But the coffee... sweet, but not too sweet. Does that make sense?",
+      "direction": "earnest, thinking out loud"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Perfect sense. So, one caramel latte for her. And for you? It is your first time here alone, yes? Try something new.",
+      "direction": "encouraging, brisk but warm"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. I will take an Americano. Black, please. No sugar. I need to stay awake. I live here since two years, but this city... it never sleeps.",
+      "direction": "relaxing slightly, then earnest"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Two coffees coming up. That will be thirty-five dirhams. You are doing great, by the way. Ordering alone is not easy.",
+      "direction": "kind, matter-of-fact"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Thank you, Aisha. Really. Yesterday I asked for a \"cup of tea\" and everyone was laughing. I think I sound like... a British man?",
+      "direction": "self-deprecating, curious"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "A little. But that is okay. You are learning. Here is your change, and your coffees. Enjoy, Macal.",
+      "direction": "reassuring, brisk"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Wait. Can I ask one more thing? When I give this to Nour... what should I say? Something natural. Not too... formal.",
+      "direction": "hesitant, hopeful"
+    },
+    {
+      "section": "act1",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Just say, \"I got you a caramel latte. I hope it is sweet, but not too sweet.\" Trust me. She will smile.",
+      "direction": "playful, encouraging"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا نِفَكِّكْ تَعْبِيرَاتْ المَشْهَدْ... أُولَ حَاجَةْ: What can I get for you today? يَعْنِي إِيهْ؟ الْبَارِيسْتَا بِتَسْأَلْكَ عَايِزْ تِشْرَبْ إِيهْ. تِسْمَعْهَا كَتِيرْ فِي الْكَافِيهَاتْ. مَثَلًا... Good morning! What can I get for you today?",
+      "direction": "warm, teaching, clear"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "تَانِي حَاجَةْ: I am not sure. يَعْنِي... أَنَا مُشْ مُتَأَكِّدْ. لَمَّا مِشْ عَارِفْ الإِجَابَة، قُولْهَا بِهُدُوءْ. مَثَلًا... I am not sure, can you help me? وِتْلَاتَةْ: sweet, but not too sweet... حِلْوَة، بَسْ مِشْ أَوِي. تِقُولْهَا لَمَّا تِوَصْفْ حَاجَة.",
+      "direction": "encouraging, step-by-step"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَدَلْوَقْتِي... غَلْطَةْ مَاكَالْ. قَالْ: I live here since two years. الْغَلْطَةْ... كَلِمَةْ since مَعَ الْمُضَارِعْ الْمُسْتَمِرْ، مُشْ مَعَ الْمُضَارِعْ الْبَسِيطْ. فِي الْعَرَبِي بِنْقُولْ \"بَاعِيشْ هِنا مِنْ سَنِتَيْن\" — فَبِنْنَقْلْهَا زِي مَا هِيَّ. الصَّحْ... I have lived here for two years. زَمَنْ for، مُشْ since!",
+      "direction": "gentle, correcting, not shaming"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا نِلْعَبْ! الْمَعْمَلْ بَتَاعْ النُّطْقْ... صَوْتْ TH. فِي صَوْتَيْنْ: وَاحِدْ نَاعِمْ زِي think, ووَاحِدْ مَجْهُورْ زِي this. اللِّسَانْ بِيِطْلَعْ شُوَيَّةْ بَيْنْ السِّنَانْ... مُشْ س، مُشْ ز، مُشْ ت.",
+      "direction": "playful, inviting, high energy"
+    },
+    {
+      "section": "coach_break1",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "مِنْ الْمَشْهَدْ... كَلِمَةْ three. لَوْ قُلْتْها تري بِالتَّاءْ... غَلَطْ. الصَّحْ... three. كَرِّرْ بَعْدِي: three! وَكَمَانْ كَلِمَةْ that. مُشْ زاتْ وَلَا داتْ. الصَّحْ... that. كَرِّرْ: that! that! عَاشْ! أَنْتَ بِتِحْسِنْ... وَاحِدَةْ وَاحِدَةْ.",
+      "direction": "playful drill, celebratory end"
+    },
+    {
+      "section": "act2",
+      "speaker": "Barista",
+      "lang": "en",
+      "text": "Here is your change, Macal. And remember — sweet, but not too sweet.",
+      "direction": "warm, playful reminder"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Thank you, Aisha. I will try. I have lived here for two years, but I am still learning... how to speak like myself.",
+      "direction": "earnest, small laugh at himself"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Macal! You got coffee? And it is... wait. Is this a caramel latte?",
+      "direction": "surprised, genuinely pleased"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Yes. I got you a caramel latte. I hope it is sweet, but not too sweet.",
+      "direction": "careful, proud of the line"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "That is exactly what I always order. How did you know? This is so nice. Okay, now I have to tell you something.",
+      "direction": "delighted, leaning in"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Something good? Or something bad? Your face is... I do not know. It is doing two things.",
+      "direction": "nervous, trying to joke"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Not bad. I just heard Tarek is posting his Rising Voices video today. And listen — this accent I have? People think it is British. It is not. I am from Michigan, not London.",
+      "direction": "casual, then firm and honest"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Michigan... not London. So when I copy a British accent, I am copying nobody in the room.",
+      "direction": "slow realization, quiet"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "Nobody but you, Macal. Hey — where are you going? Your coffee is still hot!",
+      "direction": "calling after him, confused smile"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Tarek's video. If he posts it today, I cannot wait for tomorrow. I have to make my own video... today. Right now.",
+      "direction": "sudden urgency, determined"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلَّا، نِلَخِّصْ بِسُرْعَةْ... النَّهَارْدَةْ اتْعَلَّمْنَا: What can I get for you today? يَعْنِي عَايِزْ تِشْرَبْ إِيهْ. وَ I am not sure... أَنَا مُشْ مُتَأَكِّدْ. وَ sweet, but not too sweet... حِلْوَة، بَسْ مِشْ أَوِي. وَأَهَمْ وَاحِدَةْ... I have lived here for two years. زَمَنْ for، مُشْ since!",
+      "direction": "recapping fast and clear, ticking phrases off like a checklist"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَعِبَارَةْ الْحَلْقَةْ النَّهَارْدَةْ هِيَّ... I have lived here for two years. يَلَّا، قُولْهَا مَعَايَا: I have lived here for two years! بِصَوْتْكْ أَنْتَ... مُشْ صَوْتِي أَنَا.",
+      "direction": "proud, slows down for the phrase, then playful challenge"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "وَدَلْوَقْتِي، التَّحَدِّي بَتَاعْنَا... سَجِّلْ فُويْسْنُوتْ صَغِيرْ، فِيهْ تِقُولْ الْعِبَارَةْ دِي بِنَفْسْ النُّطْقْ بَتَاعْ النَّهَارْدَةْ... I have lived here for two years. وَابْعَتْهَا لِـ Empire English Community عَلَى تِلِيجْرَامْ.",
+      "direction": "warm, inviting, building excitement for the challenge"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "إِحْنَا هِنِسْمَعْ صَوْتْكْ، وَنِشَجِّعْكْ... وَاحِدَةْ وَاحِدَةْ. مُشْ وَاجِبْ، دَهْ بَيْتْ. اسْتَعْمِلْ صَوْتْ TH الصَّحِيحْ، وَخَلِّينَا نِسْمَعْكْ!",
+      "direction": "warm, belonging tone, ends with bright energy"
+    },
+    {
+      "section": "coach_outro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَنَا مَحْمُودْ... وَأَنْتَ مُشْ لِوَحْدَكْ. يَلَّا نِتْكَلَّمْ... يَلَّا فْلُوَنْتْ!",
+      "direction": "signing off with warmth and a smile"
+    }
+  ],
+  "phrase_of_episode": {
+    "en": "I have lived here for two years",
+    "ar": "أَنَا عَايِش هِنَا مِنْ سَنِتَيْن"
+  },
+  "word_count": 923,
+  "cast_used": [
+    "Barista",
+    "Coach",
+    "Macal",
+    "Nour"
+  ],
+  "phonetic_focus": {
+    "target": "TH sounds",
+    "note": "Two THs: voiceless in 'think/three' and voiced in 'this/that'. Tongue lightly between the teeth - not 's', not 'z', not 't'."
+  }
+}
