@@ -10,7 +10,8 @@
 [Season plan: season.json]  (10 episodes, situations, cast registry, Macal stage map)
      |
      v
-(A) SCRIPTS   gen_episode.py (short 5-10 min, structure+duration gates) x10  -> owner review
+(A) SCRIPTS   gen_episode.py + DeepSeek R1(beats)/V3(dialogue) via OpenRouter,
+              short 5-10 min, structure+duration gates, x10  -> owner review
      |
      v
 (B) CAST      derive full cast from 10 scripts
@@ -46,6 +47,23 @@ Two engines, one manifest pipeline:
   (validate to avoid the Chatterbox "--no-deps / silent-fail" class of problem).
 - V6. **Output format/rate** for clean handoff to the existing 24 kHz mono manifest/
   assembly chain.
+
+## 2b. Scriptwriting engine — DeepSeek (R1 + V3)
+Scripts are authored with **DeepSeek** via the existing OpenRouter free tier — a
+**config change to `llm_backend.py`, not a new dependency**. That module already selects
+models by env (`EEC_LLM_MODEL`), supports a comma-separated fallback list
+(`EEC_LLM_FALLBACKS`), and has a `reasoning.enabled` toggle for reasoning models.
+- **Two-pass authoring (recommended):**
+  - **R1 (reasoning)** → plan the episode: story beats, the scene→coach structure, the
+    2-3 target phrases, the cliffhanger. (`reasoning.enabled = true` for this pass.)
+  - **V3** → write the natural spoken dialogue from R1's plan (fast, fluent).
+- **Config (illustrative; exact model strings confirmed at adoption):**
+  `EEC_LLM_MODEL=deepseek/deepseek-r1:free`,
+  `EEC_LLM_FALLBACKS=deepseek/deepseek-chat-v3:free, qwen/qwen3-32b:free`.
+- **Commercial-safe** (DeepSeek R1/V3 are MIT/open), **$0** on the free tier, fallbacks
+  keep runs unblocked. Output still passes the **structure** + **duration** gates.
+- `gen_episode.py` may gain an optional two-pass mode (beats→dialogue); if not, a
+  single strong model (R1 or V3) is used with the existing prompts. Decided at build.
 
 ## 3. Data schemas
 

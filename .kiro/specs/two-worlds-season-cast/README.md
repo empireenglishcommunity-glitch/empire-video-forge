@@ -14,8 +14,12 @@ designed **Qwen3-TTS** actor voices (English) + VoiceTut (Arabic, Coach = **Mahm
    (Phases 0-E), owner-vs-agent split, and the gate checklist.
 
 ## Headline decisions (owner-approved in planning)
-- English engine → **Qwen3-TTS** (Apache-2.0, commercial-safe, no reference clips,
-  voice-design). Arabic engine (VoiceTut) **unchanged**.
+- **Scriptwriting → DeepSeek (R1 + V3)** via the existing OpenRouter free tier (better
+  dramatic writing; a config change, not a new dependency).
+- English voice engine → **Qwen3-TTS** (Apache-2.0, commercial-safe, no reference clips,
+  voice-design), **locked as the sole English engine**. Arabic engine (VoiceTut)
+  **unchanged**. Fish Audio S2 Pro was **evaluated and rejected** (non-commercial
+  self-host license / fragile free API) — not used anywhere.
 - Coach renamed **Mahmoud** (introduces himself by name; voice "Sayed" kept).
 - **Macal** = Egyptian-accented English, **3 evolving stages** across the season.
 - **Nour** = native American-born (pure American accent — the taught target).

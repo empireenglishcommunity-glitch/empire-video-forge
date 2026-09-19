@@ -25,6 +25,10 @@ Goal: agree WHAT the season is before writing it.
 
 ## PHASE A — Season scripts (must precede casting)
 Goal: all 10 short scripts exist + approved, so the full cast is known.
+- [ ] A.0 🤖 **Adopt DeepSeek for scriptwriting**: set `EEC_LLM_MODEL` /
+      `EEC_LLM_FALLBACKS` (DeepSeek R1 + V3, via OpenRouter free) in the server `.env`;
+      confirm the exact free model strings resolve; optionally add a two-pass
+      (R1 beats → V3 dialogue) mode to `gen_episode.py`. Verify one test generation.
 - [ ] A.1 🤖 Generate **Eps 2-10** short scripts (`gen_episode.py`, ~7 min, `--no-advance`
       handling per episode), each passing **structure + duration gates**. Ep1 already exists.
 - [ ] A.2 🤖 Reconcile Ep1 into the season (it already exists short); ensure continuity
