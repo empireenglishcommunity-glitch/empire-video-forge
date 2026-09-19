@@ -28,7 +28,7 @@ import soundfile as sf
 
 EPISODE = 1
 PASS = "en"   # ENGLISH-ONLY notebook (Chatterbox) — avoids VoiceTut dep clash
-BRANCH = "podcast-v2-review-and-publish"
+BRANCH = "main"
 RAW = f"https://raw.githubusercontent.com/empireenglishcommunity-glitch/empire-video-forge/{BRANCH}/.kiro/specs/eec-podcast-automation/"
 
 WORK = f"/kaggle/working/ep{EPISODE:02d}"

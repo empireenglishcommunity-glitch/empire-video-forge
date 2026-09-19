@@ -51,13 +51,21 @@ script (server, LLM)  →  voices (OFF-SERVER, Kaggle GPU ×2)  →  assemble pl
 ```bash
 ssh eec-editor
 cd /opt/eec-podcast
-# generate ONLY the script for episode N (uses OpenRouter LLM from .env)
-venv/bin/python3 bin/run_podcast.py --episode N --script-only
+# generate ONLY the short script for episode N (compact 6-section, ~7 min)
+venv/bin/python3 bin/gen_episode.py --episode N --out episodes/epNN/script.json
+#   --minutes 7     target length (band 5-10; default 7)
+#   --no-advance    when REGENERATING an existing episode (don't bump season.json)
+# (run_podcast.py --episode N --script-only also works for the full chain)
 ```
-- Writes `episodes/epNN/script.json` (~276 lines, mixed en/ar).
+- Writes `episodes/epNN/script.json` — a TIGHT 5-10 min episode (compact 6 sections:
+  cold_open, coach_intro, act1, coach_break1, act2, coach_outro).
 - Uses the OpenRouter free-tier backend (`EEC_LLM_*` in `.env`); no Gemini quota.
-- Advancing `season.json` happens here — so only generate when you mean to.
-- **Review the script** before spending GPU time synthesizing it.
+- **Two gates run automatically:** the story/teaching structure rule (series-bible §10)
+  and the 5-10 min duration band — generation FAILS (won't save) if either is violated,
+  unless `--force`.
+- Advancing `season.json` happens here (skip with `--no-advance` when regenerating).
+- **Review the short script** before spending GPU time synthesizing it — it's small
+  enough to read end-to-end.
 
 ## 2. Make the voices (Kaggle GPU — two notebooks)
 VoiceTut (Arabic) and Chatterbox (English) clash in one kernel, so run **two

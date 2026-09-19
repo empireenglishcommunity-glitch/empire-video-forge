@@ -65,15 +65,19 @@ A light throughline so episodes connect (each still works standalone):
 
 Difficulty rises across the season (A2 -> B2) so learners grow with Macal.
 
-## 5. Fixed episode template (~4-7 min long-form)
-1. **Cold-open hook (3s)** — a punchy line/stakes ("Macal's interview starts in 60
-   seconds — and he just forgot the word for 'experience'").
-2. **Scene 1** — the situation plays out in real English (Macal + others).
-3. **Coach break 1** — pause: the key phrase + why + the mistake to avoid (Arabic).
-4. **Scene 2** — the situation continues / resolves.
-5. **Coach break 2** — 1-2 more phrases + cultural note (Arabic).
-6. **Phrase of the Episode** — one takeaway phrase, said 3 ways, drilled.
-7. **Cliff-hook + CTA** — tease next episode + subscribe/Telegram/placement test.
+## 5. Fixed episode template (TIGHT 5-10 min, default ~7 min)
+> Short by design: a learner can finish AND review it in one sitting, and it's more
+> bingeable. Length is a parameter (`gen_episode.py --minutes`, default 7) and is
+> gated to the 5-10 min band. Compact 6-section shape:
+1. **cold_open** (~15-20s) — a punchy hook; pure in-world story, English only (NO Coach).
+2. **coach_intro** (~45s) — Coach (Arabic): set the situation + name 2-3 phrases to listen for.
+3. **act1** (~2-2.5m) — the main scene in real English; land the target phrases in context.
+4. **coach_break1** (~1m) — unpack the 2-3 key phrases + 1 common mistake.
+5. **act2** (~1.5-2m) — short resolution + a light cliffhanger to next episode.
+6. **coach_outro** (~45s) — recap + "Phrase of the Episode" + community CTA (Telegram/subscribe).
+
+(This replaces the earlier long multi-act form. See §10 for the machine-enforced
+story/teaching separation rule that this template obeys.)
 
 ## 6. Recurring signatures (the "show" feel)
 - **"Phrase of the Episode"** — same segment every time; becomes a habit/expectation.

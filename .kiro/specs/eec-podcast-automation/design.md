@@ -36,7 +36,8 @@ publish forwarders feed the existing engine — the engine itself is never modif
 ## 2. Components
 
 ### 2.1 Script Generator
-- `pipeline/gen_episode.py` — multi-act ~30-min generator with per-act word floors
+- `pipeline/gen_episode.py` — compact 6-section generator targeting a TIGHT 5-10 min
+  episode (default ~7 min via `--minutes`), with a duration guard, and per-section word floors
   and auto-expand; strips narration / stage directions so the output is audio-ready.
 - `pipeline/llm_backend.py` — pluggable LLM. Default backend is **OpenRouter free
   tier** (`EEC_LLM_*` env: base URL + key + model + fallbacks), model Qwen with

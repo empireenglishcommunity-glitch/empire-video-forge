@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-EEC "Two Worlds" — 30-MINUTE EPISODE GENERATOR (serialized "learn with fun").
+EEC "Two Worlds" — SHORT EPISODE GENERATOR (5-10 min, "learn with fun").
 
-Upgrades the old 2-min generator into a professional long-form engine: a
-multi-act serialized drama that TEACHES without feeling like a lesson. Each
-episode ~4500-6000 words (~25-35 min spoken), built ACT BY ACT so it stays
-coherent AND fits Gemini's free-tier pacing (each act is one call; resumable).
+A tight serialized drama that TEACHES without feeling like a lesson. Each
+episode targets ~7 min (band 5-10 min; ~750-1500 words at 150 wpm), built
+section-by-section so it stays coherent AND fits free-tier LLM pacing (each
+section is one call; resumable). Length is a parameter (--minutes).
 
-STRUCTURE (the "sandwich that teaches"):
-  cold_open   - drop into a dramatic hook / mini-cliffhanger tease (Macal/Nour)
+COMPACT STRUCTURE (the "sandwich that teaches", tight form):
+  cold_open   - punchy dramatic hook (pure story, English; NO Coach here)
   coach_intro - Coach (Egyptian AR): "today watch for these phrases..."
-  act1        - real scene, natural level-appropriate English, plot advances
+  act1        - the main scene, natural level-appropriate English, plot advances
   coach_break1- Coach unpacks the key phrases from act1 + a common mistake
-  act2        - complication / drama, more English in context
-  coach_break2- Coach: more phrases + a culture note
-  act3        - resolution + a CLIFFHANGER for next week
-  coach_outro - recap the phrases, a community challenge, subscribe CTA
+  act2        - short resolution + a light cliffhanger to next episode
+  coach_outro - recap the phrases + phrase-of-episode + community CTA
+
+Enforced gates: story/teaching separation (structure_check) + the 5-10 min
+duration band (see main()).
 
 Every line is tagged: {section, speaker, lang, text}. speaker must be a CAST id
 (Coach, Macal, Nour, TaxiDriver, Barista, Landlord, Interviewer, Friend_M,
@@ -58,23 +59,33 @@ SEASON1 = [
     (10, "The Presentation", "B2", "the season payoff — Macal presents, everything on the line"),
 ]
 
-# TARGET: a FULL ~30-minute episode. Spoken ~150 wpm -> ~4500 words total.
-# Structure = many acts, each with an explicit LINE COUNT + WORD FLOOR so the
-# model writes LONG. min_words per act is enforced (short acts get auto-expanded).
-# (act_key, brief, min_words)
-ACTS = [
-    ("cold_open", "a gripping COLD OPEN (~90 sec): drop the listener into a tense/curious moment near the episode's climax, then pull back. 5-7 story lines. A HOOK that makes them NEED to keep listening. PURE STORY — only in-world characters speaking English (Macal + guests). ABSOLUTELY NO Coach line and NO Arabic here; the Coach first speaks in coach_intro.", 120),
-    ("coach_intro", "the COACH INTRO (Egyptian Arabic, Coach only): warmly welcome the listener, set today's situation with personality and humor, and name the 3-4 English phrases to listen for. 6-8 lines. Warm, fun, never dry.", 180),
-    ("act1", "ACT 1 — the opening scene, LONG and immersive: 22-30 lines of natural {level} English between Macal and the guest(s). Real, human, funny. Establish the situation richly, with back-and-forth, small talk, and reactions. Weave in target phrases naturally. Do NOT rush — let the scene breathe.", 600),
-    ("coach_break1", "COACH BREAK 1 (Egyptian Arabic, Coach): pause to unpack 2-3 key English phrases from Act 1 (meaning + when to use + an example each) + 1 common mistake learners make. 8-10 lines. Warm teacher energy, with detail.", 300),
-    ("act2", "ACT 2 — the situation deepens, LONG: 22-30 lines of {level} English. A complication or twist raises the stakes. Rich dialogue, real emotion, more characters/beats. Do NOT rush.", 600),
-    ("coach_break2", "COACH BREAK 2 (Egyptian Arabic, Coach): unpack 2-3 more phrases from Act 2 + a culture note about life/English in Dubai/the Gulf. 8-10 lines.", 300),
-    ("act3", "ACT 3 — rising action, LONG: 22-30 lines of {level} English. The drama peaks; the biggest emotional beat of the episode. Rich, immersive dialogue.", 600),
-    ("coach_break3", "COACH BREAK 3 (Egyptian Arabic, Coach): unpack 2 more phrases from Act 3 + encouragement. 6-8 lines.", 250),
-    ("act4", "ACT 4 — resolution + CLIFFHANGER, LONG: 18-26 lines of {level} English. The situation resolves for now (a win or surprise), then END ON A STRONG CLIFFHANGER that sets up next episode. Immersive dialogue.", 500),
-    ("coach_outro", "the COACH OUTRO (Egyptian Arabic, Coach): recap ALL the episode's phrases, give a fun community CHALLENGE for the Telegram group, a warm subscribe CTA, and tease next episode. 8-10 lines.", 250),
+# TARGET: a TIGHT 5-10 minute episode (default ~7 min). Spoken ~150 wpm.
+# COMPACT 6-section template: hook → intro → scene → breakdown → short scene → outro.
+# Each section has a small WORD FLOOR tuned so the total lands in the 5-10 min band.
+# The floors are the ~7-min baseline; --minutes scales them (see build_acts).
+# (act_key, brief, base_min_words)
+BASE_ACTS = [
+    ("cold_open", "a punchy COLD OPEN (~15-20 sec): drop the listener straight into a tense/curious moment, then a beat of intrigue. 3-4 story lines, SHORT and gripping. PURE STORY — only in-world characters (Macal + guests) speaking English. ABSOLUTELY NO Coach line and NO Arabic here; the Coach first speaks in coach_intro.", 55),
+    ("coach_intro", "the COACH INTRO (Egyptian Arabic, Coach only): warmly welcome the listener in one breath, set today's situation, and name the 2-3 English phrases to listen for. 3-4 lines. Warm and fun, NO rambling.", 110),
+    ("act1", "ACT 1 — the main scene: 8-12 lines of natural {level} English between Macal and the guest(s). Tight and real — establish the situation and land the target phrases in context. Keep it moving, no filler.", 220),
+    ("coach_break1", "COACH BREAK 1 (Egyptian Arabic, Coach): unpack the 2-3 key English phrases from Act 1 (meaning + when to use + one quick example each) + 1 common mistake. 4-6 lines. Warm, concise, no padding.", 140),
+    ("act2", "ACT 2 — short resolution + a hook to next episode: 7-10 lines of {level} English. The moment resolves (a small win or surprise), then end on a light cliffhanger. Tight, no rush-padding.", 190),
+    ("coach_outro", "the COACH OUTRO (Egyptian Arabic, Coach): quickly recap the phrases, give the 'phrase of the episode', a short community CTA (Telegram/subscribe), and tease next time. 3-5 lines. Brief and warm.", 110),
 ]
-TARGET_WORDS = 4200   # ~28-30 min spoken
+BASE_TARGET_WORDS = 825   # sum of base floors ≈ ~5.5 min floor; ~7 min typical
+BASE_MINUTES = 7          # the baseline the BASE_ACTS floors are tuned for
+WPM = 150                 # spoken words per minute (for duration estimates)
+MIN_MINUTES, MAX_MINUTES = 5, 10   # hard acceptance band (duration guard)
+
+
+def build_acts(minutes):
+    """Scale the base word floors to the requested target minutes, keeping the
+    same compact 6-section shape. Story acts absorb most of the length change."""
+    scale = max(0.6, min(1.6, minutes / BASE_MINUTES))
+    acts = []
+    for key, brief, base in BASE_ACTS:
+        acts.append((key, brief, max(40, int(round(base * scale)))))
+    return acts
 
 
 def load_season():
@@ -137,13 +148,12 @@ def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season
     if prev_lines:
         prev = "STORY SO FAR IN THIS EPISODE (continue naturally, do not repeat):\n" + \
                "\n".join(f"[{l['section']}][{l['speaker']}] {l['text']}" for l in prev_lines[-18:])
-    length = (f"LENGTH IS CRITICAL: this section MUST be AT LEAST {min_words} words of "
-              f"dialogue text (this is a 30-MINUTE episode — write LONG, rich scenes; "
-              f"do not summarize or rush). Prefer more lines and fuller exchanges.")
+    length = (f"LENGTH TARGET: about {min_words} words for this section (this is a "
+              f"TIGHT 5-10 MINUTE episode — keep it punchy and moving; NO filler, NO "
+              f"padding, no rambling). Quality over quantity.")
     if expand:
-        length = (f"Your previous version was TOO SHORT. Rewrite this section MUCH LONGER "
-                  f"— AT LEAST {min_words} words. Add more dialogue turns, more detail, "
-                  f"more characters/beats. Keep it natural, do not pad with filler.")
+        length = (f"Your previous version was too thin. Add a few more natural dialogue "
+                  f"turns to reach about {min_words} words — but stay TIGHT, no filler.")
     STORY_ACTS = {"cold_open", "act1", "act2", "act3", "act4"}
     if act_key in STORY_ACTS:
         sep_rule = ("SECTION TYPE: STORY (in-world scene). Speakers are ONLY story "
@@ -194,7 +204,19 @@ def main():
     ap.add_argument("--episode", type=int, required=True)
     ap.add_argument("--level", default=None)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--minutes", type=float, default=float(os.environ.get("EEC_TARGET_MIN", 7)),
+                    help="target spoken length in minutes (band 5-10; default 7)")
+    ap.add_argument("--force", action="store_true",
+                    help="save even if the episode falls outside the 5-10 min band")
+    ap.add_argument("--no-advance", action="store_true",
+                    help="do NOT advance season.json current_episode (use when "
+                         "regenerating an existing episode)")
     args = ap.parse_args()
+
+    # build the compact act template scaled to the requested length
+    ACTS = build_acts(args.minutes)
+    TARGET_WORDS = int(round(args.minutes * WPM))
+    print(f"target: ~{args.minutes} min (~{TARGET_WORDS} words), band {MIN_MINUTES}-{MAX_MINUTES} min")
 
     # backend is pluggable now — need a usable one (local Qwen / free API / gemini)
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -342,17 +364,33 @@ def main():
         sys.exit(4)
     print("  STRUCTURE OK — story/teaching separation clean")
 
+    # DURATION GUARD: keep episodes in the 5-10 min band. A bloated (or too-thin)
+    # episode can't slip through silently — fail unless --force.
+    est_min = round(script["word_count"] / WPM, 1)
+    if est_min < MIN_MINUTES or est_min > MAX_MINUTES:
+        print(f"\n  DURATION: ~{est_min} min is OUTSIDE the {MIN_MINUTES}-{MAX_MINUTES} "
+              f"min band (words={script['word_count']}).", file=sys.stderr)
+        if not args.force:
+            print("ERROR: episode length out of band — NOT saving. Re-run (the "
+                  "generator will re-roll sections), adjust --minutes, or pass "
+                  "--force to override.", file=sys.stderr)
+            sys.exit(6)
+        print("  --force: saving despite out-of-band length", file=sys.stderr)
+    else:
+        print(f"  DURATION OK — ~{est_min} min (band {MIN_MINUTES}-{MAX_MINUTES})")
+
     out = args.out or os.path.join(ep_dir, "script.json")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     json.dump(script, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
-    # update season memory
-    season["story_so_far"] = (season.get("story_so_far", "") +
-                              f" [Ep{ep}: {title} — see script]").strip()[-1500:]
-    season["current_episode"] = ep + 1
-    save_season(season)
-
-    est_min = round(script["word_count"] / 150, 1)  # ~150 wpm spoken
+    # update season memory (skip when regenerating an existing episode)
+    if not args.no_advance:
+        season["story_so_far"] = (season.get("story_so_far", "") +
+                                  f" [Ep{ep}: {title} — see script]").strip()[-1500:]
+        season["current_episode"] = ep + 1
+        save_season(season)
+    else:
+        print("  --no-advance: season.json left unchanged")
     print(f"\nOK wrote {out}")
     print(f"  {len(all_lines)} lines, ~{script['word_count']} words (~{est_min} min spoken)")
     print(f"  cast used: {script['cast_used']}")
