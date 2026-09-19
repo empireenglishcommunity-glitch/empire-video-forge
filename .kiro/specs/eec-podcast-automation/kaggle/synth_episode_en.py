@@ -12,14 +12,23 @@
 #
 # Requires: Kaggle GPU = T4, Internet ON. Fresh notebook.
 # --------------------------------------------------------------------------
-# CELL 1 (install + restart) — ENGLISH ONLY (Chatterbox). Do NOT add voicetut here:
-#   !pip install -q git+https://github.com/resemble-ai/chatterbox.git
-#   !pip uninstall -q -y torchvision
-#   !pip install -q "numpy==1.26.4"
+# CELL 1 (install + restart) — ENGLISH ONLY (Chatterbox). Do NOT add voicetut here.
+# WHY --no-deps: chatterbox-tts pins torch==2.6.0 / transformers==5.2.0 / numpy<2 /
+# gradio==6.8.0. A plain `pip install chatterbox-tts` tries to REPLACE Kaggle's
+# working GPU torch, fails the resolve, and leaves the module NOT installed (the
+# "No module named 'chatterbox'" you hit — the -q flag hid the failure). So install
+# WITHOUT deps (keep Kaggle's torch/torchaudio) and add ONLY the extra libs
+# chatterbox imports. Copy CELL 1 EXACTLY, run it, wait for the kernel to restart:
+#
+#   !pip install -q --no-deps chatterbox-tts
+#   !pip install -q --no-deps s3tokenizer resemble-perth conformer diffusers==0.29.0
+#   !pip install -q "numpy<2.0.0" librosa==0.11.0 omegaconf pyloudnorm
 #   import os; os._exit(0)
 #
-#   # If VoiceTut + Chatterbox clash in one kernel, run in TWO passes:
-#   #   PASS=ar (VoiceTut only) then PASS=en (Chatterbox only) — see PASS below.
+# (Do NOT install torch/torchaudio/transformers — Kaggle's versions work.)
+#
+# After restart, run CELL 2 (this file). It VERIFIES chatterbox imports and, if the
+# install still didn't take, stops with the exact commands — no silent failure.
 #
 # CELL 2 (this file) — after restart. Set EPISODE below.
 # ==========================================================================
@@ -132,9 +141,20 @@ if PASS in ("en", "both"):
     import torch
     print("CUDA available:", torch.cuda.is_available(),
           "| GPU:", (torch.cuda.get_device_name(0) if torch.cuda.is_available() else "NONE — enable T4!"))
+    try:
+        from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+    except ModuleNotFoundError:
+        raise SystemExit(
+            "\n*** Chatterbox is NOT installed in this kernel. ***\n"
+            "Run CELL 1 EXACTLY (install with --no-deps so it doesn't fight Kaggle's\n"
+            "torch), then re-run this cell:\n"
+            "  !pip install -q --no-deps chatterbox-tts\n"
+            "  !pip install -q --no-deps s3tokenizer resemble-perth conformer diffusers==0.29.0\n"
+            "  !pip install -q \"numpy<2.0.0\" librosa==0.11.0 omegaconf pyloudnorm\n"
+            "  import os; os._exit(0)\n"
+            "Do NOT install torch/torchaudio/transformers — Kaggle's versions work.\n")
     print("Loading Chatterbox (first load downloads ~GBs, 2-4 min — DO NOT interrupt; "
           "wait for 'Chatterbox ready')...", flush=True)
-    from chatterbox.mtl_tts import ChatterboxMultilingualTTS
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     try: cb = ChatterboxMultilingualTTS.from_pretrained(device=dev, t3_model="v3")
     except TypeError: cb = ChatterboxMultilingualTTS.from_pretrained(device=dev)
