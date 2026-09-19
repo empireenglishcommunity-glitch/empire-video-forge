@@ -7,322 +7,290 @@
       "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
-      "text": "I've been working on this idea for six months. If I get two minutes with the right person—",
-      "direction": "nervous but determined, speaking fast"
+      "text": "Tarek, wait — that pitch about the delivery app? That was mine. I mean, I wrote that last week.",
+      "direction": "tense, controlled anger"
     },
     {
       "section": "cold_open",
       "speaker": "Tarek",
       "lang": "en",
-      "text": "Macal, relax. Let me handle the talking. You just... stand there and look interested.",
-      "direction": "smooth, condescending"
+      "text": "Relax, Macal. It's a networking event. Ideas float around. Nobody owns a conversation.",
+      "direction": "smooth, dismissive"
+    },
+    {
+      "section": "cold_open",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "He just told the whole room it was his idea. And the investor believed him.",
+      "direction": "urgent, protective whisper"
     },
     {
       "section": "cold_open",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Stand there? This is my pitch, Tarek. I mean—it was my pitch.",
-      "direction": "struggling to stay calm, correcting himself"
+      "text": "If I don't say something right now, I've already lost. I'm going in.",
+      "direction": "determined, low breath"
     },
     {
-      "section": "cold_open",
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "أَهْلًا بِيكُم يا جَماعَة فِي يَلّا فْلُوَنْت! أَنا مَحْمُود، وَالنَّهارْدَه مَعانا مَشْهَد مِنْ حَياة ماكال فِي دُبَاي... اْجْتِماع نِتْوَرْكِينْج، وَالْكَلِمْ ماشْي بِالسِّرْعَة!",
+      "direction": "warm, welcoming, energetic"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "ماكال عايِز يِدْخُل جُوَّه الكلامْ... ويِقُول رَأْيُه مِنْ غِير ما يِتْلَخْبَط. وَبِسْ... تارِك سَبَقُه وَخَدْ الفِكْرَة لِحْسابُه!",
+      "direction": "suspenseful, building tension"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "النَّهارْدَه هِنْسْمَع تَلاتَه عِباراتْ حِلْوِين: عِبارَة تِفْتَح بِها الكَلامْ، وَعِبارَة تِدْخُل بِها عَلى جَماعَة بِتِتْكَلِّم... وَعِبارَة تِلْحَق بِها بَعْدِين، يَعْنِي الفُولُو أَبْ.",
+      "direction": "clear, teaching, cheerful"
+    },
+    {
+      "section": "coach_intro",
+      "speaker": "Coach",
+      "lang": "ar",
+      "text": "يَلّا... سَمِّع كوَيِّس، وَخُد بِالكْ مِنْ كِلْ مِثالْ!",
+      "direction": "motivating, punchy"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Excuse me — sorry to cut in. I couldn't help overhearing. You were talking about the delivery app for small shops, right?",
+      "direction": "nervous but determined, polite"
+    },
+    {
+      "section": "act1",
+      "speaker": "Interviewer",
+      "lang": "en",
+      "text": "Yes, that's right. Tarek was just telling us how it works. Are you in this space too?",
+      "direction": "curious, measured, Indian-accented but clear"
+    },
+    {
+      "section": "act1",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Actually, I've been working on something similar for months. The idea is to help shops that don't have their own app yet. I mean... it's not just delivery. It's a full system.",
+      "direction": "finding his footing, then gaining momentum"
+    },
+    {
+      "section": "act1",
       "speaker": "Tarek",
       "lang": "en",
-      "text": "Was. Exactly. Watch and learn, habibi.",
-      "direction": "smug, walking away"
-    },
-    {
-      "section": "cold_open",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Hey. I heard that. Don't let him do this to you.",
-      "direction": "urgent, low voice, supportive"
-    },
-    {
-      "section": "cold_open",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I can't just stand here, Nour. Not again.",
-      "direction": "frustrated, quiet intensity"
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "أَهْلًا أَهْلًا! أَنَا مَحْمُود، وَإِنْتَ فِي Yalla Fluent. النَّهَارْدَه مَعَانَا حَاجَة كِبِيرَة... ماكال رَايِح حَفْلَة تَوَاصُل فِي غُرْفَة دُبَيّ، وَعَايِز يِدْخُل يِتَكَلِّم مَعَ نَاس، وَيِعَرَّف فِكْرِتُه!",
-      "direction": "warm, excited welcome"
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "بَسْ فِي مُشْكِلَة... صَاحْبُه طَارِق عَايِز يِخُد الفِكْرَة لِنَفْسُه، وَيِسِيب ماكال وَاقِف زَي التِّمْثَالْ!",
-      "direction": "playful, suspense"
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "النَّهَارْدَه هِنِتْعَلِّم تَلَاتَة تَعْبِيرَات حَيَاتِيَّة... لَمَّا تِعَايِز تِدْخُل عَلَى جَمَاعَة، تِقُول: mind if I join you? وَلَمَّا تِعَايِز تِفْتَح كَلَام صَغِير، تِقُول: so how do you know the host? وَلَمَّا تِخَلِّص كَلَام مَعَ حَد، تِقُول: I'll follow up with you.",
-      "direction": "clear, teaching, upbeat"
-    },
-    {
-      "section": "coach_intro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "يَلَّا بِنَا... نِسْمَع ماكال بِيِتْكَلِّم! وَرَكِّز مَعَايَا كُوَيِّس، لَأَنَّ الإِنْجِلِيزِي بِتِتْعَلَّم بِالحَيَاة، مِش بِالحِفْظ!",
-      "direction": "encouraging, energetic close"
-    },
-    {
-      "section": "act1",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Look, there's the program manager from the fellowship. She's right there by the coffee stand.",
-      "direction": "urgent, scanning the room"
+      "text": "Interesting. Macal and I work at the same company. We bounce ideas off each other all the time. Right, Macal?",
+      "direction": "smooth, territorial, smiling but cold"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "I see her. But every time I walk up to a group, my brain just... freezes. Like I forget every word I know.",
-      "direction": "frustrated, honest"
-    },
-    {
-      "section": "act1",
-      "speaker": "Nour",
-      "lang": "en",
-      "text": "Then don't walk up to her. Start with the group next to her. Just ease in. Small talk first.",
-      "direction": "coaching, calm"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Okay. Okay, I can do that. Excuse me—mind if I join you?",
-      "direction": "nervous but pushing through"
-    },
-    {
-      "section": "act1",
-      "speaker": "Barista",
-      "lang": "en",
-      "text": "Of course, please. Try the karak. Best in the whole building, I promise you.",
-      "direction": "friendly, Filipino warmth"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "Thanks. So, how do you know the host here? This is my first time at one of these events.",
-      "direction": "warming up, genuine"
-    },
-    {
-      "section": "act1",
-      "speaker": "Barista",
-      "lang": "en",
-      "text": "Everyone at the Chamber knows him. I serve coffee, he talks. But you—you look like you have something to say tonight.",
-      "direction": "curious, encouraging"
-    },
-    {
-      "section": "act1",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I do, actually. I've been working on a platform idea for small businesses. I mean, local shops, people like you. I live here since two years, and I keep seeing the same problem.",
-      "direction": "gaining confidence, then catching himself"
+      "text": "Sure. But this one came from my notebook, not a chat. I can walk you through the numbers if you have five minutes.",
+      "direction": "calm, firm, holding his ground"
     },
     {
       "section": "act1",
       "speaker": "Interviewer",
       "lang": "en",
-      "text": "Sorry, I couldn't help overhearing. A platform for small businesses? That's exactly what the fellowship panel is looking for.",
-      "direction": "interested, stepping in"
+      "text": "Five minutes? I like the confidence. Go ahead, walk me through it.",
+      "direction": "amused, genuinely interested"
+    },
+    {
+      "section": "act1",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "There you are! I've been looking everywhere. Oh — you're already deep in it. Good.",
+      "direction": "warm, quick, supportive, slipping into the group easily"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Really? Then I'd love to share it with you. Can I follow up with you after the panel? Maybe over email?",
-      "direction": "eager, composed"
+      "text": "Nour, this is — sorry, I didn't catch your name. We were just getting into the details.",
+      "direction": "light, natural, covering the social gap"
     },
     {
       "section": "act1",
       "speaker": "Interviewer",
       "lang": "en",
-      "text": "Please do. Here's my card. And if Tarek asks—he's been talking about the same idea all evening. I'd rather hear it from you.",
-      "direction": "measured, pointed"
+      "text": "Faisal. Faisal from Gulf Ventures. And honestly, Macal — you should send me a follow-up this week. Let's talk properly.",
+      "direction": "businesslike, offering the door"
+    },
+    {
+      "section": "act1",
+      "speaker": "Tarek",
+      "lang": "en",
+      "text": "Great. I'll make sure he follows up. We can come together — one team, one pitch.",
+      "direction": "smooth, hijacking again, too eager"
     },
     {
       "section": "act1",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Thank you. I'll follow up with you tomorrow morning. Nour—did you hear that? She wants to hear it from me.",
-      "direction": "stunned, hopeful"
+      "text": "I'll follow up myself, Faisal. I live here since two years, this city is my home now. I won't let this idea stay in a notebook.",
+      "direction": "assertive, planting his flag, slight emotional crack"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "وَقَفْنَا مَع ماكال وَهُوَّ بِيِدْخُل عَلَى جَمَاعَة... وِقَال: mind if I join you? يَعْنِي: تِسْمَح لِي أَقْعَد مَعَاكُم؟ دِي أَدَب وَتَوْفِير... بِتَخَلِّي النَّاسْ تِرَحِّب بِيك، وَمِش بِتَحِسْ إِنَّك غَرِيب!",
-      "direction": "warm, welcoming, teaching energy"
+      "text": "طَيِّب، خُد بِالكْ... ماكال قال: \"I live here since two years.\" دِي غَلْطَة صَغِيرَة، وَبِتْحْصَل عَشان فِي العَرَبِي بِنْقُول \"أَنا عايِش هِنا مِنْ سَنِتَيْن\"... فَالعَقِل بِيْحَوِّلْها حَرْفِي. بَسْ الإِنْجِلِيزِي بِتَحِبْ present perfect مَعَ since... فَالأَصَح: \"I've lived here for two years.\"",
+      "direction": "warm, explaining, not shaming"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "وَبَعْدِين بِيِفْتَح كَلَام صَغِير، وِقَال: so how do you know the host? يَعْنِي: إِنْتَ تِعْرَف المُضِيف إِزَّاي؟ السُّؤَال دَه سِحْر... لَأَنُّه بِيِخَلِّي الطَّرَف التَّانِي يِتْكَلَّم عَنْ نَفْسُه، وَإِنْتَ تِرْتَاح!",
-      "direction": "playful, encouraging"
+      "text": "أُول عِبارَة، عِبارَة تِفْتَح بِها الكَلامْ: \"I couldn't help overhearing.\" يَعْنِي \"مَعْلِش، سِمِعْت نُصّ الكَلامْ وَما قْدِرْتِش أَمْنَع نَفْسِي.\" بِتْقُولَها لَمّا تِيجِي تِدْخُل عَلى جَماعَة... زَيّ: \"I couldn't help overhearing — is this about the delivery app?\"",
+      "direction": "clear, teaching, friendly"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "وَفِي الآخِر، عَايِز يِخَلِّص كَلَام مَع الإِنْتَرْفيُوَر، فَقَال: I'll follow up with you! يَعْنِي: هَتَابِع مَعَاك، هَكَلِّمَك تَانِي عَن الفِكْرَة. دِي الجُمْلَة الذَّهَبِيَّة بَعْد أَي لِقَاء، لَأَنُّهَا بِتَحْفَظ التَّوَاصُل... مِش بِتَسِيبُه يِضِيع!",
-      "direction": "emphasis on the golden phrase, warm"
+      "text": "تَانِي عِبارَة، عِبارَة تِدْخُل بِها عَلى جَماعَة بِتِتْكَلِّم: \"Sorry to cut in.\" يَعْنِي أَسْفَه إِنِّي قَطَعْت الكَلامْ... بَسْ بِتَقُولَها بِأَدَبْ وَثِقَة. مِثال: \"Sorry to cut in — but I've been working on this for months.\"",
+      "direction": "energetic, showing the move"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "بَسْ خُد بَالَك مِن غَلْطَة ماكال الصَّغِيرَة... قَال: I live here since two years. العَرَبِي بِيِقُول: أَنَا عَايِش هِنَا مِن سَنَتَيْن. فَإِحْنَا بِنِقْلِب حَرْفِيًّا، وَنِسْتَخْدِم since... بَسْ الإِنْجِلِيزِي مَا بِيِقُولْهَاش كِدَه!",
-      "direction": "gentle, no shaming, corrective"
+      "text": "تالِت عِبارَة، الفُولُو أَبْ: \"I'll follow up myself.\" يَعْنِي هَتْكَلِّم أَنا بِنَفْسِي، مُش حَدْ تانِي هَيِكَلِّم عَنِّي. دِي قَوِيَّة جِدًّا فِي الشُّغِل... بَتْوَرِّي إِنَّك صاحِب الفِكْرَة.",
+      "direction": "confident, emphasizing ownership"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "الصَّح: I've lived here for two years. بِنِسْتَخْدِم for مَعَ المُدَّة، وَالمَاضِي الْمُسْتَمِرّ... I've lived. تِفْتَكِر: for المدة، وsince بَدَايَة الوَقْت. مِثَال تَانِي: I've worked there for six months. وَالغَلْطَة دِي بِنَعْمِلْهَا كُلَّنَا، فَمَا تِخَافْش!",
-      "direction": "clarifying, reassuring, slow and clear"
+      "text": "وَدِلْوَأْتِي... الأَكْسَنْت لاب! النَّهارْدَه عَلى نُطْق /ŋ/... يَعْنِي آخِر الكَلْمَة اللي بِتْخَلِّص بـ -ing. ما تْقُولِش \"walkin\"... وَما تْقُولِش \"walkeen\"... الصَّوْت مِنْ وَرَا اللِّسَانْ، مَرَّة وَاحْدَة. جَرِّب: \"talking\"... \"working\"... \"walking.\" كَرَّر وَرَايَا!",
+      "direction": "playful drill, slow and clear"
     },
     {
       "section": "coach_break1",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "يَلَّا نِكَمِّل... نُصِّ الحَفْلَة فَاضِل، وَطَارِق لِسَّه بِيِلْعَب لُعْبَتُه!",
-      "direction": "bright, building suspense to next scene"
+      "text": "شَاطِر! اسْمَع الفَرْق... \"talkin\" — غَلَط. \"talking\" — صَح. مَرَّة تانِي: \"I've been working on something similar.\" يَلّا، كَرِّر الجُمْلَة كامْلة، وَوَرِّيني!",
+      "direction": "encouraging, proud of listener"
     },
     {
       "section": "act2",
-      "speaker": "Nour",
+      "speaker": "Interviewer",
       "lang": "en",
-      "text": "That was smooth, Macal. You didn't freeze once. I was watching from the corner.",
-      "direction": "warm, teasing, proud"
+      "text": "Alright, Macal. I've seen a lot of pitches. Yours has something — a real problem, a real system. Send me the follow-up, and I'll read it properly.",
+      "direction": "impressed, measured"
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "Honestly? My hands were shaking. But the words came out. I mean, I've practiced that small talk so many times in my head.",
+      "text": "Thank you, Faisal. I've lived here for two years, and I've seen these shops struggle every day. This isn't just an idea for me — it's my neighborhood.",
+      "direction": "warm, steady, proud"
+    },
+    {
+      "section": "act2",
+      "speaker": "Nour",
+      "lang": "en",
+      "text": "That was smooth. You didn't freeze, you didn't let Tarek take the wheel. I'm actually impressed.",
+      "direction": "teasing, genuinely pleased"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Honestly? My heart was going like a drum. But I couldn't help overhearing him, and I just... I had to say something.",
       "direction": "laughing softly, relieved"
     },
     {
       "section": "act2",
-      "speaker": "Nour",
+      "speaker": "Tarek",
       "lang": "en",
-      "text": "Well, practice paid off. She gave you her card. That never happens at these things.",
-      "direction": "impressed, light"
+      "text": "Nice work, Macal. Really. But Faisal meets a lot of people. Don't get your hopes too high — it's a long road.",
+      "direction": "polite, thin smile, edge underneath"
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "I know. I'm still not sure it's real. I'll send her the pitch tonight before I lose my nerve.",
-      "direction": "determined, a little nervous"
-    },
-    {
-      "section": "act2",
-      "speaker": "Tarek",
-      "lang": "en",
-      "text": "Macal. Good to see you here. I hear you've been talking to the fellowship people. Interesting. I've pitched them the same platform idea, for two years.",
-      "direction": "polished, cold, pointed"
-    },
-    {
-      "section": "act2",
-      "speaker": "Macal",
-      "lang": "en",
-      "text": "I've worked on my version for two years too, Tarek. Since I moved here. So let's see what the panel decides.",
-      "direction": "calm, firm, controlled"
-    },
-    {
-      "section": "act2",
-      "speaker": "Tarek",
-      "lang": "en",
-      "text": "Sure. May the best man win. Oh, and Macal? Next time, maybe read the room first.",
-      "direction": "smiling, sharp, walking away"
+      "text": "Maybe. But I'll follow up myself. That part isn't up to anyone else.",
+      "direction": "calm, firm, not rising to it"
     },
     {
       "section": "act2",
       "speaker": "Nour",
       "lang": "en",
-      "text": "Don't listen to him. He does that to everyone. Come on, let's get some air.",
-      "direction": "reassuring, protective"
-    },
-    {
-      "section": "act2",
-      "speaker": "Interviewer",
-      "lang": "en",
-      "text": "Macal, wait, before you go. I just spoke to Nour's manager. She runs the Rising Voices program. She wants you to pitch at the next round.",
-      "direction": "brisk, excited, official"
+      "text": "Macal — hold on. My boss just texted me. She's here tonight, and she wants to meet the guy with the delivery idea.",
+      "direction": "urgent, excited, hushed"
     },
     {
       "section": "act2",
       "speaker": "Macal",
       "lang": "en",
-      "text": "She wants me? On the stage? In front of the panel?",
-      "direction": "stunned, breath catching"
+      "text": "Wait — your boss? The one who runs Rising Voices? Nour, I'm not ready. I mean... what do I even say?",
+      "direction": "panicked, then catching himself"
     },
     {
       "section": "act2",
-      "speaker": "Interviewer",
+      "speaker": "Nour",
       "lang": "en",
-      "text": "In front of everyone. Three minutes. And Macal, Tarek is also on that list.",
-      "direction": "matter-of-fact, a hint of drama"
+      "text": "You say what you just said to Faisal. Come on — she's by the window, and she's already looking this way.",
+      "direction": "encouraging, pulling him along"
+    },
+    {
+      "section": "act2",
+      "speaker": "Macal",
+      "lang": "en",
+      "text": "Okay. Okay. One pitch. I've been working for this my whole life — I'm not running now.",
+      "direction": "breath in, resolve building, hopeful"
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "يَلَّا نِلَخِّص بِسُرْعَة... دَخَلْت عَلَى جَمَاعَة بِأَدَب: mind if I join you? وَفَتَحْت كَلَام صَغِير: so how do you know the host? وَخَلَّصْت بِذَكَاء: I'll follow up with you! تَلَاتَة تَعْبِيرَات، وَمَعَاهُم تِقْدِر تِدْخُل أَي حَفْلَة!",
-      "direction": "warm, quick recap, smiling energy"
+      "text": "طَيِّب يا جَماعَة... إحْنا وَصَلْنا لآخِر المَشْهَدْ! النَّهارْدَه اتْعَلَّمْنا تَلاتَة عِبارات، تِفْتَح بِها أَي كَلامْ: \"I couldn't help overhearing\"... \"Sorry to cut in\"... وَ\"I'll follow up myself.\" دُوُل مُفْتاحَك عَشان تِدْخُل عَلى أَي جَماعَة، وَتَوَرِّي إِنَّك صاحِب الفِكْرَة.",
+      "direction": "warm, wrapping up, steady rhythm"
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "وَلَا تِنْسَى التَّصْحِيح... مِش I live here since two years، لَأ! قُول: I've lived here for two years. for مَعَ المُدَّة، و since مَعَ البِدَايَة، وَخَلَاص!",
-      "direction": "playful correction, gentle emphasis"
+      "text": "وَعَلى فِكْرَة... نُطْق /ŋ/ النَّهارْدَه كَمان! \"talking\"... \"working\"... \"walking.\" الصَّوْت مِنْ وَرَا اللِّسَانْ، مَرَّة وَاحْدَة، مُش \"talkin\" وَمُش \"walkeen.\"",
+      "direction": "playful emphasis, half-smile"
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "وَعِبَارَة الحَلْقَة... I'll follow up with you. احْفَظْهَا، وَقُولْهَا بَعْد كُل لِقَاء... بِتَخَلِّي التَّوَاصُل عَايِش!",
-      "direction": "proud, encouraging, slow on the key phrase"
+      "text": "وَدِلْوَأْتِي... عِبارَة الحَلْقَة. أَنا اخْتَرْت: \"I'll follow up myself.\" لِيه؟ عَشان دِي عِبارَة المَسْؤُولِيَّة... بَتْقُول: أَنا هَعْمِل كِدَه بِنَفْسِي، مُش هَسْتَنَّى حَدْ. دِي عِبارَة تِخَلِّيك واقِف عَلى رِجْلِيك.",
+      "direction": "proud, clear, slow on the phrase"
     },
     {
       "section": "coach_outro",
       "speaker": "Coach",
       "lang": "ar",
-      "text": "تَعَالَى عَلَى تِلِجْرَام... اكْتُب لِي الجُمْلَة دِي فِي تَعْلِيق، وَاشْتَرِك فِي البُودْكَاسْت، عَشَان تِتْكَلِّم مَعَانَا كُل أُسْبُوع!",
-      "direction": "friendly call to action, inviting"
-    },
-    {
-      "section": "coach_outro",
-      "speaker": "Coach",
-      "lang": "ar",
-      "text": "وَالحَلْقَة الجَايَة... ماكال هَيِطْلَع عَلَى الْمَسْرَح، أَمَام اللَّجْنَة، وَطَارِق كَمَان! ثَلَاث دَقَايِق... يَا تِرْبَح، يَا تِتْعَلِّم. مَا تِفَوِّتْهَاش!",
-      "direction": "suspenseful tease, rising energy at the end"
+      "text": "بَسْ أَنا عايِز أَسْمَعَك! سَجِّل فُويس نُوت صَغِير... قُول فِيه: \"I'll follow up myself\"... وَخَلِّي بالَك مِنْ نُطْقك، وَرِيّنا أَكْسَنْتِك. وَابْعَتْها عَلى تِلِجْرام... عَلى جَماعَة Empire English Community. إحْنا مُسْتَنيين سَمَاعَك، وَهَنِشَجَّعَك، أَصْلًا إِنْتَ مُش لَوَحْدَك فِي الحِكايَة!",
+      "direction": "inviting, encouraging, community warmth, big energy"
     }
   ],
   "phrase_of_episode": {
-    "en": "",
-    "ar": ""
+    "en": "I'll follow up myself",
+    "ar": "هَتْكَلِّم أَنا بِنَفْسِي، مُش حَدْ تانِي هَيِكَلِّم عَنِّي"
   },
-  "word_count": 879,
+  "word_count": 875,
   "cast_used": [
-    "Barista",
     "Coach",
     "Interviewer",
     "Macal",
     "Nour",
     "Tarek"
-  ]
+  ],
+  "phonetic_focus": {
+    "target": "/ŋ/ ending",
+    "note": "The '-ing' ending is one nasal sound made at the back: 'walking', not 'walkin' and not 'walkeen'. Don't add a hard G or an extra vowel."
+  }
 }
