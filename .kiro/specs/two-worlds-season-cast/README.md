@@ -31,6 +31,13 @@ designed **Qwen3-TTS** actor voices (English) + VoiceTut (Arabic, Coach = **Mahm
 - **TaxiDriver** = Indian English (realism: Dubai drivers are typically South-Asian).
 - Work at **season level**: write + approve all 10 scripts, then cast everyone once.
 
+## Creative authorship model
+The owner is **showrunner/approver**, not hand-writer. The models (DeepSeek R1/V3) do the
+heavy creative lifting — including **regenerating the series bible** (Phase 0.5) and
+proposing the season arc — but strictly **within the owner's brand guardrails** (EEC
+voice, honesty rules, pedagogy, Dubai realism). The owner approves each creative
+foundation; the arc + Macal stage split get **locked** so the 10 episodes stay consistent.
+
 ## Execution discipline
 All execution runs through a **mandatory live task list**, updated in real time (see
 `tasks.md` → "Execution protocol"). Tasks are marked done only when their artifact is
