@@ -78,4 +78,12 @@ let seed=0; const fid=(src.file_id||title); for(let i=0;i<fid.length;i++) seed=(
 const pinComment = PIN[seed] + '\n\n📲 انضم لمجتمعنا وابدأ رحلتك: https://t.me/Empire_English_Community 👑';
 let publishAt=''; const wantSchedule=(meta.schedule===true)||src.yt_schedule===true;
 if(wantSchedule){ const now=new Date(); const t=new Date(Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate(),17,0,0)); if(t.getTime()<=now.getTime()) t.setUTCDate(t.getUTCDate()+1); publishAt=t.toISOString(); }
-return [{ json: Object.assign({}, src, { yt_title:title, yt_description:description, yt_tags:tags, yt_hashtags:hashtagBlock, yt_pin_comment:pinComment, yt_publish_at:publishAt, yt_format:fmt, yt_topic:topic }), binary: $('Compose YT prompt').item.binary }];
+// Privacy: YouTube requires a video to be PRIVATE when a publishAt (schedule) is set —
+// it then auto-goes-public at that time. With NO schedule, an auto-dropped clip must go
+// PUBLIC immediately, otherwise it stays private forever (Studio shows "Oops" on the
+// public edit page and nobody can see it). So privacy is data-driven: scheduled=>private,
+// otherwise=>public. An explicit meta.privacy overrides ('public'|'private'|'unlisted').
+const VALID_PRIV=['public','private','unlisted'];
+let privacy = publishAt ? 'private' : 'public';
+if (meta && typeof meta.privacy==='string' && VALID_PRIV.includes(meta.privacy.toLowerCase())) privacy = meta.privacy.toLowerCase();
+return [{ json: Object.assign({}, src, { yt_title:title, yt_description:description, yt_tags:tags, yt_hashtags:hashtagBlock, yt_pin_comment:pinComment, yt_publish_at:publishAt, yt_privacy:privacy, yt_format:fmt, yt_topic:topic }), binary: $('Compose YT prompt').item.binary }];
