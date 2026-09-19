@@ -19,10 +19,23 @@ COMPACT STRUCTURE (the "sandwich that teaches", tight form):
 Enforced gates: story/teaching separation (structure_check) + the 5-10 min
 duration band (see main()).
 
-Every line is tagged: {section, speaker, lang, text}. speaker must be a CAST id
-(Coach, Macal, Nour, TaxiDriver, Barista, Landlord, Interviewer, Friend_M,
-Friend_F, Official) so the synth routes it to the right voice. Coach lines are
-Egyptian Arabic; story lines are English (natural, level-appropriate).
+Every line is tagged: {section, speaker, lang, text, direction?}. speaker must be
+a CAST id (Coach, Macal, Nour, TaxiDriver, Barista, Landlord, Interviewer,
+Friend_M, Friend_F, Official) so the synth routes it to the right voice. Coach
+lines are Egyptian Arabic; story lines are English (natural, level-appropriate).
+
+NOTE — the "direction" field is FORWARD-LOOKING METADATA (scoped, not yet wired):
+  Each line may carry an optional "direction" — a short acting note for the voice
+  performance, e.g. "anxious, rapid" or "slow breath, long pause". It is NEVER
+  spoken and NEVER shown. As of this generator, "direction" is generated and
+  preserved in script.json but is NOT YET CONSUMED by any synth or assembly stage
+  (a grep of pipeline/ + kaggle/ confirms no reader today). It exists so a FUTURE
+  "direction -> params/prosody mapper" in the synthesis layer can translate these
+  acting notes into actionable audio parameters (e.g. Chatterbox/Qwen exaggeration
+  & cfg_weight, per-line pacing/silence, or DAW envelope automation). Tracked as
+  Phase-C work; see the repo tracking issues. Treat it today as intent-capture:
+  writing rich, correct directions now means the mapper has good data to act on
+  later — but changing a "direction" value has ZERO effect on current audio output.
 
 Continuity: season.json holds story-so-far + phrases-taught + current episode.
 Difficulty scales across the season (A2 -> B1 -> B2).
