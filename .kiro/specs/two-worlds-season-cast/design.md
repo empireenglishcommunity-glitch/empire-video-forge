@@ -10,8 +10,9 @@
 [Season plan: season.json]  (10 episodes, situations, cast registry, Macal stage map)
      |
      v
-(A) SCRIPTS   gen_episode.py + DeepSeek R1(beats)/V3(dialogue) via OpenRouter,
-              short 5-10 min, structure+duration gates, x10  -> owner review
+(A) SCRIPTS   gen_episode.py + DeepSeek V3 (direct API; R1 fallback), single-pass,
+              short ~5-6 min, STRUCTURE gate (duration = informational, gate removed),
+              x10  -> owner review
      |
      v
 (B) CAST      derive full cast from 10 scripts
@@ -28,7 +29,8 @@ Two engines, one manifest pipeline:
   (text description + seed), reproducible per character across episodes.
 - **Arabic → VoiceTut** (unchanged). Coach voice "Sayed", character named **Mahmoud**.
 - Both feed the existing **manifest** (`manifest_lib.py`), assembled by
-  `assemble_audio.py` behind the **structure gate** + **duration gate**.
+  `assemble_audio.py` behind the **structure gate** (the **duration gate was removed** per
+  owner decision — length is now informational only, not a hard stop).
 
 ## 2. Engine facts to VERIFY before building (Phase B, Task B1)
 > These are assumptions to confirm against Qwen3-TTS primary docs BEFORE committing.
@@ -63,6 +65,24 @@ Two engines, one manifest pipeline:
   assembly chain.
 
 ## 2b. Scriptwriting engine — DeepSeek (R1 + V3)
+
+> **⚙️ AS BUILT (reconciled after Phase A — this is the LIVE reality on the server):**
+> - **Provider = the DIRECT DeepSeek API, not OpenRouter free.** Live server `.env`:
+>   `EEC_LLM_BACKEND=openai`, `EEC_LLM_BASE_URL=https://api.deepseek.com`,
+>   `EEC_LLM_MODEL=deepseek-chat` (**V3**, primary), `EEC_LLM_FALLBACKS=deepseek-reasoner`
+>   (**R1**, fallback). We switched off the OpenRouter `:free` path because R1-via-free
+>   returned unparseable JSON and was slow — i.e. we adopted the "paid escape hatch" below,
+>   which is still **~$0.01 for a 10-episode season** (negligible, preserves the $0-ish goal).
+> - **Authoring is SINGLE-PASS (V3 writes each section directly)**, NOT the two-pass
+>   R1-beats→V3-dialogue flow. The plan explicitly permitted this ("*may* gain a two-pass
+>   mode; if not, a single strong model is used"). V3 alone produces on-brand, craft-compliant
+>   scripts, so two-pass was not needed. R1 remains wired as the fallback model.
+> - **`llm_backend.py` has model-list rotation + retry/backoff on 429/5xx** (the resilience
+>   requirement below is met for the direct-API case).
+> - Everything else below (per-line `direction`, commercial-safe, gates) holds as written.
+>
+> _Original plan text preserved below for rationale/history._
+
 Scripts are authored with **DeepSeek** via the existing OpenRouter free tier — a
 **config change to `llm_backend.py`, not a new dependency**. That module already selects
 models by env (`EEC_LLM_MODEL`), supports a comma-separated fallback list

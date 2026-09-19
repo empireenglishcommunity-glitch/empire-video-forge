@@ -123,7 +123,8 @@ Every casting decision must satisfy both:
   stage is chosen by the episode's position** in the season.
 - R4.2 Arabic (Mahmoud/Coach) synthesized on VoiceTut as today.
 - R4.3 Every episode passes the existing **structure gate** (story/teaching separation,
-  series-bible §10) and **duration gate** (5-10 min).
+  series-bible §10). _(The **duration gate was REMOVED** per owner decision — target is
+  ~5-6 min but length is now informational, not a hard stop.)_
 - R4.4 Assembly + delivery use the existing manifest-driven pipeline unchanged.
 - R4.5 **Ep1 is re-synthesized** on the new cast (Macal Stage 1) to match the season.
 

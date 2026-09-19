@@ -4,6 +4,26 @@
 > execution follows. **Nothing runs without the owner's explicit command.** Gates are
 > hard stops. Legend: 🤖 = agent does · 🧑 = owner does (GPU / reviews / decisions).
 
+> ### 📌 SPEC AMENDMENTS (decisions made during execution — the current truth)
+> These override the original plan text where they differ; kept here so the spec never
+> drifts from reality.
+> 1. **Season name = "Yalla Fluent"** (subtitle "The 90-Day English Drama"). ("Two Worlds"
+>    survives only as the Ep10 title + legacy spec-folder name.)
+> 2. **Duration gate REMOVED** (owner decision "C"). Episodes target ~5-6 min but length is
+>    **informational only** — never a hard stop. Only the **structure gate** blocks.
+> 3. **Scriptwriting = DeepSeek via the DIRECT API** (`api.deepseek.com`; `deepseek-chat`/V3
+>    primary, `deepseek-reasoner`/R1 fallback), **single-pass** (not two-pass, not
+>    OpenRouter-free). See design §2b "AS BUILT".
+> 4. **English TTS = Qwen3-TTS** (Apache-2.0); **Chatterbox is retired** (archived, removed
+>    in Phase E). `cast.json` still lists Chatterbox — rewritten to Qwen3-TTS in **B.7**
+>    (tracked as issue **#52**). Not drift — scheduled.
+> 5. **`direction` acting-note tag** = forward-looking metadata; generated + preserved but
+>    NOT yet consumed by synth/assembly. Its consumer (direction→prosody mapper) is
+>    **Phase C** work, tracked as issue **#53**.
+> 6. **Status:** GATE 0.5 ✅, GATE 0 ✅, GATE A ✅ all passed. **Currently in Phase B, at B.3**
+>    (owner reviews voice-design specs). Verification docs live in
+>    `.kiro/specs/eec-podcast-automation/` (`qwen3-tts-verification.md`, `voice-design-specs.md`).
+
 ## Execution rules
 1. Work strictly in phase order; do not start a phase until the previous phase's gate
    is signed off by the owner.
@@ -69,55 +89,71 @@
 Goal: a stronger, model-authored series bible — premise, character histories/motives,
 season arc — that stays on-brand. Everything downstream inherits from it, so it's the
 one creative artifact most worth the owner's eyes.
-- [ ] 0.5.1 🤖 Prompt **DeepSeek R1 (showrunner)** to regenerate the series bible —
+- [x] 0.5.1 🤖 Prompt **DeepSeek R1 (showrunner)** to regenerate the series bible —
       richer premise, deeper character histories + hidden motives, a compelling Season-1
       arc — **constrained by the brand guardrails above** (fed in explicitly). Preserve
       cast realism + pedagogy + the honesty rules.
-- [ ] 0.5.2 🤖 Produce a proposed **`series-bible.md` v2** (draft) + a one-page summary
+- [x] 0.5.2 🤖 Produce a proposed **`series-bible.md` v2** (draft) + a one-page summary
       of what changed vs. the current bible, for fast review.
-- [ ] 0.5.3 🧑 **Owner reviews** the regenerated bible; iterate 🤖↔🧑 until on-brand + loved.
-- [ ] 0.5.4 🧑 **GATE 0.5:** owner approves the series bible. Bible LOCKED.
+- [x] 0.5.3 🧑 **Owner reviews** the regenerated bible; iterate 🤖↔🧑 until on-brand + loved.
+- [x] 0.5.4 🧑 **GATE 0.5:** owner approves the series bible. Bible LOCKED. ✅ (bible =
+      "YALLA FLUENT", promoted to canonical via PR #46; scripting-craft §3.4/§3.5 folded in.)
 
 ## PHASE 0 — Lock the season plan (arc + stage split)
 Goal: from the approved bible, lock the season spine so scripts stay consistent.
-- [ ] 0.1 🤖 From the locked bible, have the model **propose** the Season-1 episode list
+- [x] 0.1 🤖 From the locked bible, have the model **propose** the Season-1 episode list
       (10 titles/situations/levels) + the **Macal stage→episode split** (default
       S1=Eps1-3, S2=Eps4-7, S3=Eps8-10). Owner nudges rather than authors.
-- [ ] 0.2 🧑 Owner reviews/adjusts the proposed episode list + stage split.
-- [ ] 0.3 🤖 Write the approved plan into `season.json` (`episodes[]`, `macal_stage_map`).
-- [ ] 0.4 🧑 **GATE 0:** owner approves the season plan. Arc + stage split LOCKED.
+- [x] 0.2 🧑 Owner reviews/adjusts the proposed episode list + stage split.
+- [x] 0.3 🤖 Write the approved plan into `season.json` (`episodes[]`, `macal_stage_map`).
+- [x] 0.4 🧑 **GATE 0:** owner approves the season plan. Arc + stage split LOCKED. ✅
+      (season.json: 10 eps, macal_stage_map 1-3/4-7/8-10; locked via PR #48.)
 
 ## PHASE A — Season scripts (must precede casting)
 Goal: all 10 short scripts exist + approved, so the full cast is known.
-- [ ] A.0 🤖 **Adopt DeepSeek for scriptwriting**: set `EEC_LLM_MODEL` /
-      `EEC_LLM_FALLBACKS` (DeepSeek R1 + V3, via OpenRouter free) in the server `.env`;
-      confirm the exact free model strings resolve; add the optional two-pass
-      (R1 beats → V3 dialogue) mode to `gen_episode.py`, and have V3 emit a per-line
-      **`direction`** acting note (schema §3.3). Verify one test generation + that the
-      gates ignore `direction`.
-- [ ] A.1 🤖 Generate **Eps 2-10** short scripts (`gen_episode.py`, ~7 min, `--no-advance`
-      handling per episode), each passing **structure + duration gates** AND applying the
-      **scripting-craft rules (design §3.4)**: in-media-res + per-section word budgets;
-      Macal voice-stage phonetic markers; the REQUIRED mistake→correction→triumph loop;
-      target phrases in act1 reused in act2; guest-accent clarity.
-- [ ] A.2 🤖 Reconcile Ep1 into the season (it already exists short); ensure continuity
-      (`story_so_far`) flows across all 10.
-- [ ] A.3 🧑 **Review all 10 short scripts** against the **QA checklist (design §3.5)**
-      (story + teaching). Iterate 🤖↔🧑 until good.
-- [ ] A.4 🤖 **Derive the full cast list** from the 10 approved scripts (every speaker).
-- [ ] A.5 🧑 **GATE A:** owner approves the 10 scripts + the derived cast list. Scripts LOCKED.
+- [x] A.0 🤖 **Adopt DeepSeek for scriptwriting**: set `EEC_LLM_MODEL` /
+      `EEC_LLM_FALLBACKS` in the server `.env`; confirm the model strings resolve; have
+      V3 emit a per-line **`direction`** acting note (schema §3.3). Verify one test
+      generation + that the gates ignore `direction`. ✅ **DONE, with one DECISION:**
+      live config is **direct DeepSeek API** (`EEC_LLM_BASE_URL=https://api.deepseek.com`,
+      `EEC_LLM_MODEL=deepseek-chat` = V3, `EEC_LLM_FALLBACKS=deepseek-reasoner` = R1) —
+      NOT the OpenRouter free tier the plan first imagined, because R1-via-free returned
+      unparseable JSON + was slow; the direct API is the documented "paid escape hatch"
+      (~$0.01/season, negligible). **Two-pass mode (R1 beats→V3 dialogue) was NOT built —
+      single-pass V3 is used**, which the plan explicitly permits ("MAY gain… if not, a
+      single strong model is used"). `direction` is emitted on every line; gates ignore it.
+- [x] A.1 🤖 Generate **Eps 2-10** short scripts (`gen_episode.py`, ~7 min, `--no-advance`
+      per episode), each passing the **structure gate** AND applying the
+      **scripting-craft rules (design §3.4)**: in-media-res; Macal voice-stage markers;
+      the REQUIRED mistake→correction→triumph loop; target phrases in act1 reused in act2;
+      guest-accent clarity. ✅ (NOTE: the **duration gate was REMOVED** per owner decision
+      "C" — length is now informational only, not a hard gate.)
+- [x] A.2 🤖 Reconcile Ep1 into the season (regenerated short with the others); continuity
+      (`story_so_far`) flows across all 10. ✅
+- [x] A.3 🧑 **Review all 10 short scripts** against the **QA checklist (design §3.5)**.
+      Iterate 🤖↔🧑 until good. ✅ (owner reviewed; applied fixes: ep01 brand bridge,
+      ep08 pacing beat; plus enrichment pass — phrase_of_episode, Accent Lab drills,
+      trackable Telegram CTA — merged via PR #50.)
+- [x] A.4 🤖 **Derive the full cast list** from the 10 approved scripts (every speaker). ✅
+      (11 speakers; `season1-cast-derived.md` refreshed from final scripts via PR #54.)
+- [x] A.5 🧑 **GATE A:** owner approves the 10 scripts + the derived cast list. Scripts
+      LOCKED. ✅ (owner approved this session.)
 
 ## PHASE B — Cast & voice design (Qwen3-TTS)
 Goal: a locked `cast.json` with an owner-approved voice per character.
-- [ ] B.1 🤖 **Verify Qwen3-TTS engine facts** (design §2, V1-V6): model id, license,
+- [x] B.1 🤖 **Verify Qwen3-TTS engine facts** (design §2, V1-V6): model id, license,
       **VoiceDesign + VoiceClone** APIs, VoiceClone reproducibility (Option B),
       Kaggle install (1.7B, bf16, ~8GB VRAM on T4), output format. Document findings;
-      adjust design if reality differs.
-- [ ] B.2 🤖 Draft **voice-design specs** for the whole roster: Macal's 3 stages (with
-      **explicit L2 acoustic markers** for Stage 1 — rolled r's, crisp T's, deliberate
-      pacing, earnest), Nour (native American), TaxiDriver (Indian), + every derived
-      guest by realism.
-- [ ] B.3 🧑 Review/tweak the voice-design descriptions (owner is the casting director).
+      adjust design if reality differs. ✅ (`qwen3-tts-verification.md`, PR #55. Confirmed
+      Apache-2.0; Option B = official "Voice Design then Clone"; 1.7B is a FAMILY —
+      `-VoiceDesign` + `-Base`; **Kaggle T4 caveat: use `attn_implementation="sdpa"`, NOT
+      FlashAttention2 (T4 is Turing)**; load the two models sequentially.)
+- [x] B.2 🤖 Draft **voice-design specs** for the whole roster: Macal's 3 stages (with
+      **explicit L2 acoustic markers**), Nour (native American), TaxiDriver (Indian), +
+      every derived guest by realism. ✅ (`voice-design-specs.md`, PR #56 — 11 voices,
+      3-4 candidates each, grounded in the bible.)
+- [ ] B.3 🧑 **← CURRENT STEP.** Review/tweak the voice-design descriptions (owner is the
+      casting director).
 - [ ] B.4 🤖 Build `kaggle/audition_qwen.py` (paste-safe): 3-4 candidates/character
       (Macal = 3 stages) reading real Season-1 lines → labeled clips + zip.
 - [ ] B.5 🧑 **Run the audition on Kaggle**; download the clips.
@@ -150,8 +186,8 @@ Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.4 🧑 **Re-synth Ep1 English on Qwen3-TTS** (Macal Stage 1) via the new notebook;
       drop WAVs into `episodes/ep01/synth/`. (Coach/Arabic already done; if the Mahmoud
       self-intro line changed, re-synth just that Arabic line too.)
-- [ ] C.5 🤖 Re-assemble Ep1 through the gates (structure + duration), verify 5-10 min +
-      100% rendered + clean; deliver plain audio to Drive `raw-audio`.
+- [ ] C.5 🤖 Re-assemble Ep1 through the **structure gate**, verify 100% rendered + clean
+      (duration informational, ~5-6 min expected); deliver plain audio to Drive `raw-audio`.
 - [ ] C.6 🧑 **GATE C:** owner listens to the new Ep1 and approves the cast on a real
       episode (or requests fixes → iterate).
 
@@ -199,12 +235,12 @@ Goal: synthesize the rest of the season against the locked cast.
   synth), voice picks, audio reviews, publishing.
 
 ## Gate checklist (hard stops — owner sign-off required)
-- GATE 0.5: series bible (regenerated) approved (bible locked).
-- GATE 0: season plan / arc + Macal stage split approved (spine locked).
-- GATE A: 10 scripts + cast list approved (scripts locked).
-- GATE B: cast.json voices approved (cast locked).
-- GATE C: new Ep1 audio approved (cast proven on a real episode).
-- GATE D: season audio approved.
+- [x] GATE 0.5: series bible (regenerated) approved (bible locked). ✅
+- [x] GATE 0: season plan / arc + Macal stage split approved (spine locked). ✅
+- [x] GATE A: 10 scripts + cast list approved (scripts locked). ✅
+- [ ] GATE B: cast.json voices approved (cast locked). ← next gate (Phase B in progress: B.3)
+- [ ] GATE C: new Ep1 audio approved (cast proven on a real episode).
+- [ ] GATE D: season audio approved.
 
 ## Notes / open decisions carried from planning
 - **Series bible is regenerated by the models (Phase 0.5)** within brand guardrails,
