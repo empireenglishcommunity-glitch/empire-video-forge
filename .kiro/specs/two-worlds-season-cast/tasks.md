@@ -152,6 +152,20 @@ Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.6 🧑 **GATE C:** owner listens to the new Ep1 and approves the cast on a real
       episode (or requests fixes → iterate).
 
+## PHASE C.5 — Mastering & Packaging (post-production; design §4b)
+Goal: a `dist/` folder with broadcast-ready audio + a ready-to-publish text asset.
+- [ ] C5.1 🤖 Upgrade `assemble_audio.py`'s final master to a chain: **two-pass loudnorm**
+      (−16 LUFS, robust JSON parse), gentle EQ, and a **conservative `silenceremove`**.
+      Do NOT add a duplicate loudnorm.
+- [ ] C5.2 🧑 **Ear-validate on Ep1:** confirm the silence-trim does NOT collapse the
+      intentional line/coach gaps or the story→coach beat. If it harms pacing, drop the
+      trim, keep loudnorm+EQ.
+- [ ] C5.3 🤖 Build `metadata.py`: from the script + `timeline.master.json` timings,
+      call DeepSeek (strict JSON) → `seo_title`, `show_notes`, `timestamps` (from the
+      timeline), `social_quotes`, `vocabulary_key` (EN+AR). Obey EEC honesty guardrails.
+      Write to `dist/epNN/`.
+- [ ] C5.4 🧑 Owner reviews the first packaged asset; iterate the prompt if needed.
+
 ## PHASE D — Batch the season (after Ep1 proven)
 Goal: synthesize the rest of the season against the locked cast.
 - [ ] D.1 🧑 Run the two Kaggle notebooks (EN Qwen3-TTS + AR VoiceTut) for **Eps 2-10**

@@ -264,6 +264,40 @@ Every episode contains one planted-error arc that is both pedagogy and drama:
   `lineNNN_*.wav` + a pass manifest, same contract as today.
 - `kaggle/synth_episode_ar.py` — UNCHANGED (VoiceTut; Coach lines; ignores `direction`).
 
+## 4b. Post-production: Mastering & Packaging (Phase C.5)
+> Owner-suggested enhancements. Built in Phase C/D; the goal is a `dist/` folder with a
+> broadcast-ready audio file AND a ready-to-publish text asset — no DAW needed.
+
+### 4b.1 Automated mastering (UPGRADE the existing assembly master, not a new pass)
+`assemble_audio.py` already ends with a single loudnorm pass. Upgrade THAT step (do not
+add a second, duplicate loudnorm) to a mastering chain:
+- **Two-pass loudnorm (EBU R128 → −16 LUFS, TP −1.5, LRA 11):** pass 1 measures, pass 2
+  applies with the measured stats + `linear=true` (avoids the volume "pumping" a
+  single pass can cause across the Arabic↔English switches). Parse pass-1 JSON
+  **robustly** (locate the JSON block reliably — NOT the fragile `split("{\n")[-1]`
+  trick from the suggestion).
+- **Gentle EQ** for "podcast mic" presence (a mild high-pass + presence lift), tuned not
+  to over-color VoiceTut/Qwen3-TTS output.
+- **Silence truncation** (`silenceremove`) to collapse unnatural internal dead air —
+  **CONSERVATIVE and Ep1-validated by ear.** ⚠️ Our assembler inserts *intentional* gaps
+  (line `gap`, larger `coach-gap`, the story→coach beat). The trim must NOT collapse
+  those. Tune threshold/duration so only clearly-unnatural dead air is removed; verify on
+  Ep1 before applying season-wide. If it harms pacing, drop it and keep loudnorm+EQ.
+- Output stays 48 kHz; the plain-audio contract to Drive is unchanged (just cleaner).
+
+### 4b.2 Automated packaging & metadata (new `metadata.py`, DeepSeek)
+After mastering, generate a publish-ready text asset from the episode script + the
+**real** timings:
+- **Timestamps come from `timeline.master.json`** (the exact per-line start/end from
+  assembly) — NOT guessed from word counts. Map them to section starts (cold_open,
+  coach_break1, act2, …).
+- Feed the script + those timestamps to **DeepSeek** with a strict **JSON schema**:
+  `seo_title` (≤~60 chars), `show_notes` (3 paras, SEO), `timestamps` (from the timeline),
+  `social_quotes` (2 punchy lines from Mahmoud's coaching), `vocabulary_key` (top 3
+  target English words + Arabic definitions).
+- **Brand guardrail:** all copy obeys EEC honesty rules (no "hack/secret/guaranteed",
+  no shaming). Output written to `dist/epNN/` beside the mastered audio.
+
 ## 5. Gates (unchanged, applied every episode)
 - **Structure gate** (`structure_check.py`, series-bible §10): cold_open pure story;
   Coach only in coach sections; canonical order. Enforced in generation + assembly.
