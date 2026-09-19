@@ -42,28 +42,38 @@ Goal: all 10 short scripts exist + approved, so the full cast is known.
 ## PHASE B — Cast & voice design (Qwen3-TTS)
 Goal: a locked `cast.json` with an owner-approved voice per character.
 - [ ] B.1 🤖 **Verify Qwen3-TTS engine facts** (design §2, V1-V6): model id, license,
-      voice-design/accent API, seed reproducibility, Kaggle install, output format.
-      Document findings; adjust design if reality differs.
-- [ ] B.2 🤖 Draft **voice-design specs** for the whole roster: Macal's 3 stages, Nour
-      (native American), TaxiDriver (Indian), + every derived guest by realism.
+      **VoiceDesign + VoiceClone** APIs, VoiceClone reproducibility (Option B),
+      Kaggle install (1.7B, bf16, ~8GB VRAM on T4), output format. Document findings;
+      adjust design if reality differs.
+- [ ] B.2 🤖 Draft **voice-design specs** for the whole roster: Macal's 3 stages (with
+      **explicit L2 acoustic markers** for Stage 1 — rolled r's, crisp T's, deliberate
+      pacing, earnest), Nour (native American), TaxiDriver (Indian), + every derived
+      guest by realism.
 - [ ] B.3 🧑 Review/tweak the voice-design descriptions (owner is the casting director).
 - [ ] B.4 🤖 Build `kaggle/audition_qwen.py` (paste-safe): 3-4 candidates/character
       (Macal = 3 stages) reading real Season-1 lines → labeled clips + zip.
 - [ ] B.5 🧑 **Run the audition on Kaggle**; download the clips.
 - [ ] B.6 🧑 **Pick** one voice per character + approve **Macal's 3-stage arc**
       (iterate B.2-B.5 on any character until happy).
-- [ ] B.7 🤖 Write the chosen voices into **`cast.json` (schema v2)**; set statuses to
-      `locked`.
-- [ ] B.8 🧑 **GATE B:** owner approves the locked cast.
+- [ ] B.7 🤖 For each approved voice, **save the canonical ~10-15s reference WAV**
+      (self-generated from the winning audition take) to `voice-refs/` (Macal = 3 refs,
+      one per stage); write chosen voices + `voice_ref` paths into **`cast.json`
+      (schema v2)**; set statuses to `locked`.
+- [ ] B.8 🧑 **GATE B:** owner approves the locked cast (voices + Macal arc).
 
 ## PHASE C — Wire up + prove on Ep1
 Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.1 🤖 **Rename Coach → Mahmoud**: `cast.json` (`display_name`), the Arabic
       self-intro line(s) in scripts, and the lexicon name entry. Keep speaker id `Coach`
       so gates/pipeline are untouched (design §6).
-- [ ] C.2 🤖 Build `kaggle/synth_episode_en_qwen.py` (Macal-stage-aware; passes each
-      line's **`direction`** to Qwen3-TTS for delivery) replacing the Chatterbox English
-      notebook; update `run_podcast.py`/docs; archive the Chatterbox path (not deleted).
+- [ ] C.2 🤖 Build `kaggle/synth_episode_en_qwen.py`: **VoiceClone** from each
+      character's canonical `voice_ref` (Option B; Macal picks the stage's ref via
+      `stage_map`), passing each line's **`direction`** to Qwen3-TTS for emotional
+      delivery. Replaces the Chatterbox English notebook; update `run_podcast.py`/docs;
+      archive the Chatterbox path (not deleted).
+- [ ] C.2a 🤖 **Verify `direction` sanitization**: assert the text-cleaner, text_hash/
+      manifest builder, timeline, and gates read only `text`/`speaker`/`section` and
+      never see `direction` (add a test).
 - [ ] C.3 🤖 Update `series-bible.md` casting section (realism + pedagogy + Macal arc)
       and `OPERATIONS.md` (new English engine + audition workflow).
 - [ ] C.4 🧑 **Re-synth Ep1 English on Qwen3-TTS** (Macal Stage 1) via the new notebook;

@@ -41,14 +41,22 @@ Two engines, one manifest pipeline:
   English**, and **native American** convincingly, and how to specify each. Confirm
   whether "accent strength / fluency" is dial-able enough to express **Macal's 3-stage
   arc** (or whether we express the arc via 3 distinct descriptions).
-- V4. **Reproducibility (voice identity method):** **Option A (DEFAULT, owner-chosen)** —
-  each actor is a fixed **voice-design description + seed**, no cloning, no reference
-  clips. Confirm a design+seed reproduces the same voice across runs/episodes.
-  **Option B (FALLBACK ONLY, validated in audition, not the default):** if seed-only
-  consistency proves shaky, generate one clean sample from the approved design and use
-  that **self-generated** sample as a clone reference for future episodes. Option B still
-  honors "owner provides no clips" (the reference is machine-generated). Do NOT adopt
-  Option B unless Option A fails the consistency check.
+- V4. **Voice identity method — Option B is the STANDARD (owner-decided).**
+  Pure text `voice_design`+seed re-parses the description on every call and can drift
+  subtly in pitch/timbre across episodes. So:
+  - **Phase B (audition):** use Qwen3-TTS **VoiceDesign** to *invent* each character's
+    voice from natural-language descriptions (candidates the owner picks from).
+  - **Phases C & D (production):** save the approved audition output as a clean
+    **~10-15s canonical reference WAV** per character (`voice_ref`), and synthesize with
+    Qwen3-TTS **VoiceClone** against that ref. This **locks pitch/timbre 100% across all
+    10 episodes** and is faster on the T4.
+  - The reference is **self-generated** (produced by Qwen3-TTS in the audition), not
+    supplied externally.
+  - **Macal's 3 stages** → save **3 canonical refs** (one per stage); the episode's
+    stage selects which ref to clone from.
+  - Still confirm in B.1 that VoiceClone reproduces the ref faithfully run-to-run.
+  - *(Option A — pure design+seed — is retained only as a documented fallback if
+    VoiceClone underperforms VoiceDesign on quality.)*
 - V5. **Kaggle install recipe:** exact pip/deps, GPU/VRAM needs, torch compatibility
   (validate to avoid the Chatterbox "--no-deps / silent-fail" class of problem).
 - V6. **Output format/rate** for clean handoff to the existing 24 kHz mono manifest/
@@ -67,7 +75,16 @@ models by env (`EEC_LLM_MODEL`), supports a comma-separated fallback list
     rapid") that Qwen3-TTS consumes for emotional delivery (see §3.3).
 - **Config (illustrative; exact model strings confirmed at adoption):**
   `EEC_LLM_MODEL=deepseek/deepseek-r1:free`,
-  `EEC_LLM_FALLBACKS=deepseek/deepseek-chat-v3:free, qwen/qwen3-32b:free`.
+  `EEC_LLM_FALLBACKS=deepseek/deepseek-chat-v3:free, meta-llama/llama-3.3-70b-instruct:free, qwen/qwen-2.5-72b-instruct:free`.
+- **Free-tier resilience (REQUIRED):** OpenRouter free DeepSeek endpoints hit strict
+  concurrency/429s and queue timeouts. `gen_episode.py` must have robust **retry with
+  exponential backoff + jitter** (≥5 attempts) AND rotate across the fallback list of
+  **high-capacity** free models (Llama-3.3-70B, Qwen-2.5-72B) so a rate-limit never
+  blocks a run. Verify the current backoff/rotation meets this (it has rotation; add
+  jitter/backoff if missing).
+- **Optional paid escape hatch (documented, not default):** a direct DeepSeek API key
+  (~$0.001/script; ~$0.01 for a 10-episode run) if free-tier reliability is
+  insufficient. Kept optional to preserve the $0 default.
 - **Commercial-safe** (DeepSeek R1/V3 are MIT/open), **$0** on the free tier, fallbacks
   keep runs unblocked. Output still passes the **structure** + **duration** gates.
 - `gen_episode.py` may gain an optional two-pass mode (beats→dialogue); if not, a
@@ -92,9 +109,9 @@ Adds a Qwen3-TTS voice-design model for English and a multi-stage model for Maca
     "Macal": {                         // EVOLVING — 3 stages
       "engine": "qwen3tts", "lang": "en", "role": "learner-hero",
       "stages": {
-        "1": { "voice_design": "Egyptian young man, late 20s, learner-level English, clear Egyptian accent, a little hesitant, warm/earnest", "seed": 0 },
-        "2": { "voice_design": "same man, more fluent, accent softening, more confident", "seed": 0 },
-        "3": { "voice_design": "same man, confident, near-native American English, warm", "seed": 0 }
+        "1": { "voice_design": "young adult male, native Arabic speaker from Cairo speaking English, clear Egyptian L2 accent, rolled r's, crisp T sounds, slightly slow deliberate pacing, earnest", "voice_ref": "voice-refs/macal_s1.wav", "seed": 0 },
+        "2": { "voice_design": "same man, more fluent, Egyptian accent softening, more confident", "voice_ref": "voice-refs/macal_s2.wav", "seed": 0 },
+        "3": { "voice_design": "same man, confident, near-native American English, warm", "voice_ref": "voice-refs/macal_s3.wav", "seed": 0 }
       },
       "stage_map": { "1": [1,2,3], "2": [4,5,6,7], "3": [8,9,10] },   // episode -> stage
       "status": "pending-audition"
@@ -102,12 +119,12 @@ Adds a Qwen3-TTS voice-design model for English and a multi-stage model for Maca
     "Nour": {
       "engine": "qwen3tts", "lang": "en", "role": "guide/friend",
       "voice_design": "native American-born woman, warm, clear, confident, pure American accent",
-      "seed": 0, "status": "pending-audition"
+      "voice_ref": "voice-refs/nour.wav", "seed": 0, "status": "pending-audition"
     },
     "TaxiDriver": {
       "engine": "qwen3tts", "lang": "en", "role": "Dubai taxi driver",
       "voice_design": "middle-aged Indian man, Indian English accent, friendly, easygoing",
-      "seed": 0, "status": "pending-audition"
+      "voice_ref": "voice-refs/taxidriver.wav", "seed": 0, "status": "pending-audition"
     }
     // ... + full season roster derived from the 10 scripts, each cast by realism
   },
@@ -118,11 +135,17 @@ Adds a Qwen3-TTS voice-design model for English and a multi-stage model for Maca
 }
 ```
 Notes:
-- `voice_design` is the exact field name Qwen3-TTS uses (confirmed in V2); `seed`
-  ensures reproducibility (V4).
-- **Macal** resolves to a concrete voice per episode via `stage_map` (episode → stage
-  → that stage's `voice_design`+`seed`).
-- Non-Macal English characters have a single fixed `voice_design`+`seed`.
+- **Two fields per English character:** `voice_design` (the natural-language
+  description used at AUDITION to invent the voice) and `voice_ref` (the canonical
+  ~10-15s WAV, self-generated from the approved audition, used in PRODUCTION via
+  VoiceClone — see V4 / Option B). `seed` is retained for the fallback design path.
+- **Production synth uses `voice_ref`** (VoiceClone) for pitch/timbre locking; the
+  per-line `direction` still drives emotion on top of the cloned identity.
+- **Macal** has **3 stage refs**: each stage stores its own `voice_design` + `voice_ref`;
+  the episode resolves the stage via `stage_map`, then clones that stage's `voice_ref`.
+- Non-Macal English characters have one fixed `voice_design` + `voice_ref`.
+- `voice_ref` paths live under `voice-refs/` in the repo (self-generated; committed so
+  Kaggle can fetch them), replacing the retired Chatterbox refs.
 
 ### 3.2 `season.json` (extended)
 ```jsonc
@@ -161,6 +184,11 @@ Rules:
 - `direction` is a performance note only — it is **stripped from any on-screen text**
   and never spoken. The audio-cleaner already removes bracketed/parenthetical stage
   directions from `text`; `direction` lives in its own field so it's never read aloud.
+- **VERIFY (safety):** the text-cleaner, **text_hash / manifest** builder, subtitle/
+  timeline generator, and the structure+duration gates must read ONLY `text`/`speaker`/
+  `section` and **ignore `direction` entirely**. A leak of `direction` into `text` would
+  corrupt manifest alignment or gate checks. Add an explicit test asserting `direction`
+  never reaches the synthesized `text` or the hash input.
 - Arabic (Coach/Mahmoud, VoiceTut) currently ignores `direction` (VoiceTut has no
   natural-language emotion control); it applies only to Qwen3-TTS English lines.
 - The structure + duration gates operate on `text`/`speaker`/`section` as before —
@@ -203,7 +231,8 @@ Rules:
 ## 8. Risks & mitigations
 | Risk | Mitigation |
 |---|---|
-| Qwen3-TTS accent fidelity (Egyptian/Indian/American) uncertain | Audition proves each accent before commit; iterate descriptions; accept closest good option |
+| **Macal's Egyptian L2 English accent** — "Egyptian man speaking English" may render as plain American (L2 transfer accents aren't native dialect profiles) | **Primary audition risk.** Use explicit **acoustic-marker** prompts (rolled r's, crisp T's, deliberate pacing, earnest tone) AND **script-level L2 reinforcement** (DeepSeek V3 writes slight L2 phrasing/hesitation — "Um, yeah... tonight?" — in Stage-1 lines). Validate early; if unachievable, decide a fallback with the owner |
+| Qwen3-TTS accent fidelity (Indian/American) uncertain | Audition proves each accent before commit; iterate descriptions; accept closest good option |
 | Macal's arc may be stepped, not smooth | Express arc as **3 distinct designed voices**, not a gradient; owner approves all 3 |
 | Voice consistency across episodes | Lock `voice_design` + `seed`; audition verifies same-voice reproducibility |
 | Kaggle setup for a new engine (install/VRAM) | Validate recipe against primary docs (V5) before owner runs; provide paste-safe cells |

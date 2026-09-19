@@ -70,12 +70,17 @@ Every casting decision must satisfy both:
 ### R2 — Cast & voices
 - R2.1 **Mahmoud (Coach)** — Arabic, VoiceTut voice "Sayed" (unchanged). Named Mahmoud
   in-script; introduces himself by name.
-- R2.2 **Macal** — Egyptian-accented English, **3 evolving stages**:
-  - Stage 1: learner-level, clear Egyptian accent, a little hesitant.
+- R2.2 **Macal** — Egyptian-**accented L2** English, **3 evolving stages**:
+  - Stage 1: learner-level, clear Egyptian L2 accent, a little hesitant.
   - Stage 2: more fluent, accent softening, more confident.
   - Stage 3: confident, near-American (the season payoff).
   Warm, earnest throughout. Default stage→episode map: **S1=Eps1-3, S2=Eps4-7,
   S3=Eps8-10** (tunable).
+  - R2.2a **L2 accent is a known hard case** (it's a transfer accent, not a native
+    dialect profile): Stage-1 voice prompts use **explicit acoustic markers** (rolled
+    r's, crisp T's, deliberate pacing), AND the **scripts reinforce it** — DeepSeek V3
+    writes slight L2 phrasing/hesitation in early-stage Macal lines. This is a primary
+    thing the audition must validate.
 - R2.3 **Nour** — **native American-born**, warm/clear/confident **pure American**
   English (a model of the target accent). Not British.
 - R2.4 **TaxiDriver** — **Indian English**, middle-aged, friendly working-man warmth.

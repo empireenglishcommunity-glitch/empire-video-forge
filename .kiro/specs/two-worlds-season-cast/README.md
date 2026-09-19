@@ -21,7 +21,12 @@ designed **Qwen3-TTS** actor voices (English) + VoiceTut (Arabic, Coach = **Mahm
   **unchanged**. Fish Audio S2 Pro was **evaluated and rejected** (non-commercial
   self-host license / fragile free API) — not used anywhere.
 - Coach renamed **Mahmoud** (introduces himself by name; voice "Sayed" kept).
-- **Macal** = Egyptian-accented English, **3 evolving stages** across the season.
+- **Voice consistency = Option B (VoiceClone from self-generated refs):** invent each
+  voice via VoiceDesign in the audition, save a canonical ~10-15s WAV, then clone from it
+  in production to lock pitch/timbre across all 10 episodes. Per-line `direction` drives
+  emotion on top.
+- **Macal** = Egyptian-**L2**-accented English, **3 evolving stages** across the season
+  (explicit acoustic-marker prompts + script-level L2 reinforcement).
 - **Nour** = native American-born (pure American accent — the taught target).
 - **TaxiDriver** = Indian English (realism: Dubai drivers are typically South-Asian).
 - Work at **season level**: write + approve all 10 scripts, then cast everyone once.
