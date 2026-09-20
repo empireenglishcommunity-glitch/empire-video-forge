@@ -124,3 +124,29 @@
 - **Rule now lives in:** `pipeline/cast.json` → `cast.Coach.voice`.
 - **Status:** ✅ config done; **audible on the next Ep1 re-synth** (Coach lines re-render in
   Abdelrahman — part of the pending Ep1 re-synth batch, no script regen needed for this one).
+
+### FIX-004 — Mahmoud (Coach) Arabic mispronunciations (Wave 1 seed)
+- **Location:** Coach lines, all episodes
+- **Speaker:** Coach (Mahmoud, VoiceTut Abdelrahman, Arabic)
+- **Symptom:** many Egyptian words mispronounced (owner reported: يلا, هنتمرن, البيت, اسمعوا, في دبي→run-together, fluent).
+- **Root cause:** words missing from `egyptian_lexicon.json` (VoiceTut guesses MSA voweling); AND one existing entry was WRONG (يلا→يَاللَّا).
+- **Scope:** 🔴 Systemic — lexicon (G2P dict) applies to every episode.
+- **Fix (Wave 1):** DeepSeek drafted Egyptian tashkeel for the top ~69 high-frequency Coach
+  words (extracted from real Ep1 Coach lines) + reported failures → merged into
+  egyptian_lexicon.json (34→103 words; **65 added, 1 CORRECTED: يلا يَاللَّا→يَلَّا**). Added
+  phrase/brand entries (في دبي→فِي دُبَيّ to stop run-together, فلونت, يلا فلونت). DeepSeek =
+  Egyptian-colloquial source (NOT MSA CATT alone; not ElevenLabs — licensing).
+- **Rule now lives in:** `pipeline/egyptian_lexicon.json` (+ `prepare_ar()` applies longest-first).
+- **Known edge case (Wave 2):** hamza variants (انا vs أنا) — normalize in the factory.
+- **Status:** Wave 1 seeded ✅; audible on next Ep1 re-synth; Wave 2 factory will cover the full season + verify via ASR.
+
+### FIX-005 — Mahmoud (Coach) speaks too fast
+- **Location:** Coach lines, all episodes
+- **Speaker:** Coach (Mahmoud, Abdelrahman)
+- **Symptom:** talks too fast; needs human pacing for his character (a warm, deliberate TEACHER).
+- **Desired state:** unhurried, clear, breathes at teaching beats — teacher pace (calmer than a normal speaker; different from Macal's learner-hesitation).
+- **Scope:** 🔴 Systemic — teacher-prosody transform + `cast.Coach.speed` → every Coach line.
+- **Fix:** `kaggle/calibrate_mahmoud_pacing.py` tests RAW vs teacher-PROSODY (light '...'
+  breaths at boundaries) × speeds 0.80/0.85/0.90/1.00, loading the Wave-1 lexicon so owner
+  hears pacing + pronunciation together. Owner picks → bake teacher_prosody() + speed into synth.
+- **Status:** calibration built; owner to run + pick (W1d). Then baked into synth_episode_v2.py like Macal.
