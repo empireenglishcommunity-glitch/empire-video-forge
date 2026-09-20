@@ -16,7 +16,7 @@ each character's voice is 100% consistent across all episodes (Option B — no d
 | `ravi_ref1.wav` | TaxiDriver / Ravi | **Mozilla Common Voice** (`fixie-ai/common_voice_17_0`, en, accent "India and South Asia") | **CC0 public domain** (commercial-safe; attribution kept for provenance) |
 
 **Not here (by design):**
-- **Mahmoud (Coach)** = VoiceTut voice **Omar** — generated from voice name + Arabic text, no ref clip.
+- **Mahmoud (Coach)** = VoiceTut voice **Abdelrahman** — generated from voice name + Arabic text, no ref clip.
 - **Macal** = VoiceTut voice **Abdullah** reading **raw English** — no ref clip, no transliteration.
 
 All clips are 24 kHz-family mono WAV; the assembly chain normalizes to 24 kHz regardless.

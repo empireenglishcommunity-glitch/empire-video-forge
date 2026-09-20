@@ -88,7 +88,7 @@ Every casting decision must satisfy both:
 - R1b.4 Every generated script still passes the **structure** and **duration** gates.
 
 ### R2 — Cast & voices
-- R2.1 **Mahmoud (Coach)** — Arabic, VoiceTut voice **"Omar"** (locked in Phase B;
+- R2.1 **Mahmoud (Coach)** — Arabic, VoiceTut voice **"Abdelrahman"** (owner-updated from Omar;
   replaced the old placeholder "Sayed"). Named Mahmoud in-script; introduces himself by name.
 - R2.2 **Macal** — Egyptian-**accented** English via **VoiceTut ("Abdullah"), reading raw
   English** (locked Phase B). Accent stays Egyptian across ALL stages; the **3 stages are a
