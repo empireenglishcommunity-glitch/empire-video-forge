@@ -114,17 +114,24 @@ def pull_refs(config, split, accent_needles, want, label):
     """Stream a CV config; keep clean clips whose accent matches any needle
     (or ANY clip if accent_needles is None, e.g. the Arabic-language config)."""
     picked = []
-    print(f"\n[{label}] streaming {CV}:{config} ({split}) ...", flush=True)
-    try:
-        ds = load_dataset(CV, config, split=split, streaming=True)
-        # force plain-numpy audio decoding (avoid torchcodec lazy decoder if possible)
+    # `split` may be one name or a list of candidates — try each until one opens
+    # (configs differ: some call it 'validated', others 'validation'/'train').
+    split_candidates = split if isinstance(split, (list, tuple)) else [split]
+    ds = None
+    for sp in split_candidates:
+        print(f"\n[{label}] streaming {CV}:{config} ({sp}) ...", flush=True)
         try:
-            from datasets import Audio
-            ds = ds.cast_column("audio", Audio(decode=True))
-        except Exception:
-            pass
-    except Exception as e:
-        print(f"  could not open {config}:{split} — {str(e)[:100]}", flush=True)
+            ds = load_dataset(CV, config, split=sp, streaming=True)
+            try:
+                from datasets import Audio
+                ds = ds.cast_column("audio", Audio(decode=True))
+            except Exception:
+                pass
+            break
+        except Exception as e:
+            print(f"  could not open {config}:{sp} — {str(e)[:90]}", flush=True)
+            ds = None
+    if ds is None:
         return picked
     seen = 0
     for row in ds:
@@ -152,17 +159,22 @@ def pull_refs(config, split, accent_needles, want, label):
         print(f"  (no matching clips found for {label} in {config}:{split})", flush=True)
     return picked
 
+SPLITS = ["validated", "validation", "train"]   # try in order; configs differ
+
 # RAVI: English clips tagged an Indian / South-Asian accent
-ravi_refs = pull_refs("en", "validated",
+ravi_refs = pull_refs("en", SPLITS,
                       ["india", "indian", "south asia", "south-asia"], N_REF, "Ravi")
 
-# MACAL: a real Arabic speaker's voice. First try en clips tagged an Arabic-region
-# accent; if none, fall back to the Arabic-language config (genuine Arabic timbre,
-# cloned cross-lingually to speak English).
-macal_refs = pull_refs("en", "validated",
-                       ["arab", "egypt", "middle east", "levant"], N_REF, "Macal")
+# MACAL: we need a real Arabic/Egyptian colour. Common Voice has very few en clips
+# tagged an Arab accent, so the RELIABLE source is the Arabic-language config `ar`
+# (a genuine Arabic speaker's timbre) — Qwen clones the voice cross-lingually and
+# has it speak ENGLISH, carrying the Arabic colour. Try `ar` FIRST now, then fall
+# back to any en clip tagged an Arab/Egyptian/Middle-East/Gulf/Levant accent.
+macal_refs = pull_refs("ar", SPLITS, None, N_REF, "Macal")
 if not macal_refs:
-    macal_refs = pull_refs("ar", "validated", None, N_REF, "Macal")
+    macal_refs = pull_refs("en", SPLITS,
+                           ["arab", "egypt", "middle east", "levant", "gulf",
+                            "north africa", "saudi", "emirat"], N_REF, "Macal")
 
 # ==========================================================================
 # STEP 2 — CLONE each ref through Qwen, reading real Season-1 lines ---------
@@ -182,17 +194,22 @@ except Exception:
 rendered = []
 def do_clone(ref, text, tag, note, name):
     out = os.path.join(OUT, f"{tag}.wav")
-    for attempt in range(1, 3):
+    arr, _ = sf.read(ref["file"])
+    # attempt 1: with ref_text (best quality). attempt 2: x_vector-only (no ref_text)
+    # — robust when the ref is Arabic and we generate English (cross-lingual clone).
+    attempts = [
+        dict(ref_audio=(arr, ref["sr"]), ref_text=ref.get("text") or None),
+        dict(ref_audio=(arr, ref["sr"]), x_vector_only_mode=True),
+    ]
+    for i, kw in enumerate(attempts, 1):
         try:
-            arr, _ = sf.read(ref["file"])
-            prompt = clone.create_voice_clone_prompt(ref_audio=(arr, ref["sr"]),
-                                                     ref_text=ref["text"] or None)
+            prompt = clone.create_voice_clone_prompt(**kw)
             wavs, sr = clone.generate_voice_clone(text=text, language=LANG, voice_clone_prompt=prompt)
             sf.write(out, wavs[0], sr)
             rendered.append({"name": name, "tag": tag, "file": os.path.basename(out), "note": note})
-            print(f"  OK {tag}", flush=True); return
+            print(f"  OK {tag}" + ("" if i == 1 else " (x-vector mode)"), flush=True); return
         except Exception as e:
-            print(f"  .. {tag} attempt {attempt}: {str(e)[:80]}", flush=True); time.sleep(3)
+            print(f"  .. {tag} attempt {i}: {str(e)[:80]}", flush=True); time.sleep(2)
     print(f"  !! {tag} failed", flush=True)
 
 # Ravi: one clone per candidate ref, reading his line
