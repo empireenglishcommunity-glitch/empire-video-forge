@@ -15,6 +15,7 @@
 | Friend_F | **cand1** | light expat | locked-candidate |
 | Official | **cand2** | Gulf formal | locked-candidate |
 | Friend_M | **cand1** | light expat | locked-candidate |
+| **TaxiDriver / Ravi** | **B.6e ref-clone: Common Voice `en` Indian-accent `Ravi_ref1`** | Indian English (REAL) | locked-candidate ✅ (owner: "what we're looking for") |
 
 _(Tarek is intentionally near-native/polished, so American-leaning is fine for him.)_
 
@@ -78,6 +79,17 @@ switch to **real human reference clips → Qwen VoiceClone** (route A2), sourced
    (identity fixed by the ref; fluency travels via the script + rate).
 3. Owner listens, picks the ref that sounds most authentic + natural (B.6e).
 This keeps it commercial-safe (CC0), $0, and — finally — a REAL accent.
+
+### B.6e run #1 result (owner)
+- ✅ **Ravi = `Ravi_ref1`** (Common Voice `en`, "India and South Asia" accent) — owner:
+  "what we're looking for." **LOCKED-candidate.** Real Indian accent, clone clean.
+- ❌ **Macal = 0 refs** — two bugs (both fixed): (1) no `en` clips tagged an Arab accent in
+  the scan window; (2) the `ar`-config fallback crashed on split name `validated` (that
+  config uses `validation`). **Fixes:** `pull_refs` now tries split candidates
+  `[validated, validation, train]`; Macal now sources the **`ar` config FIRST** (real
+  Arabic timbre, cloned cross-lingually to English) with a widened en-accent fallback;
+  `do_clone` adds an `x_vector_only_mode` retry for robust cross-lingual cloning.
+  → **Re-run B.6e for Macal only** (Ravi already locked).
 
 ### Prior brainstorm (options considered)
 1. **Real reference audio → VoiceClone** (strongest): clone from a short real Egyptian-
