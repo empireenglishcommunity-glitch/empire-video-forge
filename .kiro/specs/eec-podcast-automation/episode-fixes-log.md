@@ -47,4 +47,16 @@
 - **Status:** open | fixed | verified
 -->
 
-_(none yet — awaiting the owner's Ep1 issue list)_
+### FIX-001 — Macal speaks too fast (not natural/human)
+- **Location:** all Macal lines (e.g. Ep1 lines 16/18/20)
+- **Speaker:** Macal (VoiceTut "Abdullah", English)
+- **Symptom:** speaking too fast — line16 **4.82 wps**, line20 4.1 wps, line18 3.64 wps.
+- **Desired state:** natural, deliberate human pace; as a hesitant Egyptian **learner** he
+  should be the SLOWEST voice — target ~1.8–2.2 words/sec (~110–135 wpm).
+- **Root cause:** VoiceTut base `speed`=1.0 is too fast for Macal; not the direction mapper
+  (his fast lines' directions were neutral).
+- **Scope:** 🔴 **Systemic** — fix in `cast.json` Macal `speed` → applies to every Macal line, every episode.
+- **Fix:** lower Macal `speed` (1.0 → **calibrating**: 0.75 / 0.85 / 0.95 audition first, since
+  VoiceTut speed direction must be confirmed by ear before locking).
+- **Rule now lives in:** `pipeline/cast.json` → `cast.Macal.speed`.
+- **Status:** in progress — calibration audition built (`kaggle/calibrate_macal_speed.py`).

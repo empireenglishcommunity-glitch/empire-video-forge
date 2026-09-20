@@ -47,9 +47,10 @@
       "arc": "language-only (S1->S3); no per-stage voice refs",
       "num_step": 64,
       "guidance_scale": 2.5,
-      "speed": 1.0,
+      "speed": 0.85,
       "status": "locked",
-      "note": "Owner B.6f: VoiceTut voice 'Abdullah' reads RAW English text with an Egyptian accent — no Latin->Arabic transliteration needed. Different voice from Sayed (Mahmoud)."
+      "note": "Owner B.6f: VoiceTut voice 'Abdullah' reads RAW English text with an Egyptian accent — no Latin->Arabic transliteration needed. Different voice from Sayed (Mahmoud).",
+      "_pacing_note": "FIX-001: Macal was ~4 wps (too fast). Lowered speed 1.0->0.85 for a natural, deliberate Egyptian-learner pace (~2 wps). VoiceTut speed<1.0 = slower. Applies to ALL Macal lines every episode."
     },
     "Nour": {
       "engine": "qwen3-tts-design",
