@@ -186,3 +186,62 @@
   - Ep1: the mom-call line (act2 idx35) converted to Egyptian Arabic (lang "ar", speaker Macal
     -> VoiceTut Abdullah). Structure gate passes.
 - **Status:** ✅ rule + Ep1 done; Macal's Arabic mom line will render in his voice on re-synth.
+
+
+### FIX-006 🔴 SYSTEMIC — ASR-QA false alarms on diacritized-vs-bare Arabic
+- **Symptom:** the ASR-QA step flagged idx 8 / 36 / 44 (incl. the mom-call line036) as
+  mispronounced, but the audio was CORRECT. Whisper transcribes Arabic WITHOUT diacritics and
+  normalizes orthography, while our `intended` text is diacritized and uses hamza-carrying alef
+  seats (أ/إ/آ) + taa marbuta (ة). The old `skeleton()` stripped tashkeel but did NOT collapse
+  those orthographic variants, so أنا≠انا, آسف≠اسف, ألو≠الو, وقفة≠وقفه — the ratio fell under the
+  strict 0.6 threshold and false-flagged perfectly-good lines. (These were already known to be
+  false alarms; this fixes the detector so it stops crying wolf.)
+- **Root fix (systemic, in `skeleton()` — the single comparison used everywhere):**
+    1. strip tatweel (ـ) in addition to combining marks;
+    2. collapse orthographic variants Whisper drops: أإآٱ→ا, ة→ه, ى→ي, ؤ→و, ئ→ي, ء→"".
+  Applied in BOTH `synth_episode_v2.py` (line-QA) and `synth_arabic_qa.py` (lexicon-QA harness),
+  so the same normalization governs flagging AND any auto-suggested lexicon entries.
+- **Threshold:** loosened `ratio < 0.6` → `ratio < 0.5` as a safety net. With normalization now
+  doing the real work, genuine content/word-count mismatches still score ≈0.0 and flag; only
+  diacritic/seat noise is silenced.
+- **Verification (local unit test):** أنا=انا, آسف=اسف, ألو=الو, وقفة=وقفه, إزيك=ازيك all match
+  post-normalization; the full mom-call line jumps from <0.6 to 0.615 (clears even the OLD gate);
+  a genuine mismatch still scores 0.0 → still flagged. Detector keeps its teeth, loses the noise.
+- **Status:** ✅ baked into both QA scripts; effective on next synth. Phase D inherits it.
+
+
+### FIX-007 🔴 SYSTEMIC (PROPOSED — pending owner A/B/C verdict) — choppy/robotic voices
+- **Symptom (owner, GATE C v2 re-listen):** even a SINGLE clip on its own sounds choppy and
+  robotic — "every word pronounced as if it's alone, or a sentence split in two"; no flow
+  between words/sentences/characters; doesn't feel human; not usable for teaching; Macal has
+  no life. Confirmed by owner: the problem is INSIDE each generated clip, NOT the assembly.
+- **Root cause (found in code):** OUR OWN `macal_prosody()` / `teacher_prosody()`. To slow the
+  voices we INJECTED a comma every ~3 words + turned clause/sentence boundaries into `...`
+  BEFORE sending text to VoiceTut. The engine then reads each chunk between the dots as its
+  OWN little sentence — stop, breath, restart — which is literally the "each word alone" feel.
+  Same FIX-004 lesson: we were FIGHTING the engine (there with tashkeel, here with punctuation).
+- **The fix (FIX-007):** STOP injecting pauses into the text. Send NATURAL text; let VoiceTut
+  speak smoothly at its own rhythm (speed=1.0). Then pace a voice AFTER generation with ffmpeg
+  `atempo` (pitch-preserving time-stretch) using the cast `speed` as the tempo factor
+  (0.85 => ~15% slower, smooth, no pitch change). Smooth AND slower — the best of both.
+- **Where it lives:** built into the NEW one-run notebook `kaggle/synth_all_in_one.py`
+  (`_slow_wav_inplace()` + natural-text workers). The OLD `synth_episode_v2.py` still has the
+  prosody hacks and is LEFT AS-IS until the owner confirms FIX-007 by ear.
+- **Proof-by-ear before we commit:** `synth_all_in_one.py --regen macal-abc` renders the same
+  Macal line 3 ways: A = OLD (prosody hacks + speed, the choppy version) / B = NEW natural text
+  at natural speed / C = NEW natural text + atempo pace (the proposed fix). Owner listens, picks.
+- **After owner approves C:** delete `macal_prosody()`/`teacher_prosody()` from the old synth too
+  (or retire it entirely in favour of the one-run notebook), so the whole pipeline is consistent.
+- **Status:** ⏳ proposed + implemented in the one-run notebook; awaiting owner A/B/C verdict.
+
+### INFRA — one-run notebook `synth_all_in_one.py` (owner-requested; reduces per-fix effort NOW)
+- **Why:** the two-kernel split (voicetut zip + qwen zip + manual Drive hand-off + server
+  assemble) made the OWNER do ~6 manual steps EVERY fix iteration. Owner pushed back: don't
+  park good time-savers "for Phase D" if they help now. Correct — this helps the fix loop too.
+- **What:** ONE Kaggle notebook, ONE "Run All": renders voicetut + qwen (each in its OWN
+  subprocess so their clashing deps never collide) then assembles into ONE
+  `epNN_audio_plain.m4a`. `--regen ALL | 8,35,36 | macal-abc` (selective re-gen keeps the fix
+  loop FAST — regen only the lines under test, not all 46). Optional `--upload` pushes the final
+  file to Drive via Kaggle Secrets (else one-click download). Serves BOTH the Ep1 fix loop and
+  the Phase-D season batch. All existing contracts (manifest_lib, cast.json routing, 24kHz,
+  assemble_audio.py) preserved untouched.

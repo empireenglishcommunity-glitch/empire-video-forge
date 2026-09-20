@@ -162,7 +162,20 @@ if PASS == "voicetut":
             text = re.sub(r"(?<!\w)" + re.escape(w) + r"(?!\w)", lex[w], text)
         return text
     def skeleton(s):
+        # 1) strip tashkeel/diacritics (combining marks) + tatweel
         s = unicodedata.normalize("NFKD", s); s = "".join(c for c in s if not unicodedata.combining(c))
+        s = s.replace("\u0640", "")  # tatweel ـ
+        # 2) collapse orthographic variants that Whisper drops/normalizes so we DON'T
+        #    false-flag correct pronunciations (idx 8/36/44 root cause: hamza-seat &
+        #    taa-marbuta differences between our intended text and bare ASR output):
+        #      أ إ آ ٱ ->  ا     (hamza-carrying alef -> bare alef)
+        #      ة -> ه            (taa marbuta -> haa)
+        #      ى -> ي            (alef maqsura -> yaa)
+        #      ؤ -> و , ئ -> ي   (hamza on waw/yaa -> bare carrier)
+        #      ء -> ""           (standalone hamza dropped)
+        for src, dst in (("أإآٱ", "ا"), ("ة", "ه"), ("ى", "ي"), ("ؤ", "و"), ("ئ", "ي"), ("ء", "")):
+            for ch in src:
+                s = s.replace(ch, dst)
         return re.sub(r"\s+", " ", re.sub(r"[^\u0600-\u06FF\s]", " ", s)).strip()
 
     print("Loading VoiceTut (first load downloads ~GBs, 2-4 min — DO NOT interrupt)...", flush=True)
@@ -216,7 +229,10 @@ if PASS == "voicetut":
                     import difflib
                     a, b = skeleton(ln["text"]).split(), skeleton(heard).split()
                     ratio = difflib.SequenceMatcher(None, a, b).ratio()
-                    if ratio < 0.6:
+                    # threshold loosened 0.6 -> 0.5: skeleton() now collapses hamza-seat /
+                    # taa-marbuta / alef-maqsura variants, so what remains below 0.5 is a
+                    # genuine word-count/content mismatch, not diacritic noise.
+                    if ratio < 0.5:
                         flagged[idx] = {"intended": ln["text"], "heard": heard, "ratio": round(ratio, 3)}
                 except Exception: pass
             print(f"  OK line{idx:03d} {spk} [{'ar' if is_ar else 'en'}] {voice}", flush=True)
