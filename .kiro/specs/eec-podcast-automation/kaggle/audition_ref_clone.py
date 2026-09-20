@@ -58,6 +58,53 @@ def dur_ok(arr, sr):
     d = len(arr) / float(sr)
     return REF_MIN <= d <= REF_MAX
 
+def extract_audio(a):
+    """Return (float32 mono np.array, sr) from a datasets 'audio' cell, robust across
+    versions: old dict {'array','sampling_rate'}, new torchcodec AudioDecoder, or a
+    path/bytes. Returns (None, None) if it can't be read."""
+    if a is None:
+        return None, None
+    # 1) old-style dict
+    if isinstance(a, dict):
+        if a.get("array") is not None and a.get("sampling_rate"):
+            arr = np.asarray(a["array"], dtype="float32")
+            return _mono(arr), int(a["sampling_rate"])
+        # dict may carry a path or raw bytes instead of a decoded array
+        if a.get("path") and os.path.exists(a["path"]):
+            return _read_path(a["path"])
+        if a.get("bytes"):
+            return _read_bytes(a["bytes"])
+        return None, None
+    # 2) new torchcodec AudioDecoder (datasets >= ~3.x): has get_all_samples()
+    if hasattr(a, "get_all_samples"):
+        try:
+            s = a.get_all_samples()
+            arr = np.asarray(s.data, dtype="float32"); sr = int(s.sample_rate)
+            return _mono(arr), sr
+        except Exception:
+            pass
+    # 3) a plain path or bytes
+    if isinstance(a, str) and os.path.exists(a):
+        return _read_path(a)
+    if isinstance(a, (bytes, bytearray)):
+        return _read_bytes(a)
+    return None, None
+
+def _mono(arr):
+    arr = np.asarray(arr, dtype="float32")
+    if arr.ndim > 1:                       # (channels, samples) or (samples, channels)
+        ax = 0 if arr.shape[0] < arr.shape[-1] else -1
+        arr = arr.mean(axis=ax)
+    return np.ascontiguousarray(arr.reshape(-1))
+
+def _read_path(p):
+    import soundfile as _sf
+    arr, sr = _sf.read(p, dtype="float32"); return _mono(arr), int(sr)
+
+def _read_bytes(b):
+    import soundfile as _sf
+    arr, sr = _sf.read(io.BytesIO(bytes(b)), dtype="float32"); return _mono(arr), int(sr)
+
 # ==========================================================================
 # STEP 1 — SOURCE real reference clips from Common Voice (streaming) --------
 # ==========================================================================
@@ -70,6 +117,12 @@ def pull_refs(config, split, accent_needles, want, label):
     print(f"\n[{label}] streaming {CV}:{config} ({split}) ...", flush=True)
     try:
         ds = load_dataset(CV, config, split=split, streaming=True)
+        # force plain-numpy audio decoding (avoid torchcodec lazy decoder if possible)
+        try:
+            from datasets import Audio
+            ds = ds.cast_column("audio", Audio(decode=True))
+        except Exception:
+            pass
     except Exception as e:
         print(f"  could not open {config}:{split} — {str(e)[:100]}", flush=True)
         return picked
@@ -83,10 +136,9 @@ def pull_refs(config, split, accent_needles, want, label):
             continue
         if (row.get("down_votes") or 0) > 0:      # prefer clean, upvoted clips
             continue
-        a = row.get("audio")
-        if not a or "array" not in a:
+        arr, sr = extract_audio(row.get("audio"))
+        if arr is None or sr is None or len(arr) == 0:
             continue
-        arr = np.asarray(a["array"], dtype="float32"); sr = a["sampling_rate"]
         if not dur_ok(arr, sr):
             continue
         idx = len(picked) + 1
