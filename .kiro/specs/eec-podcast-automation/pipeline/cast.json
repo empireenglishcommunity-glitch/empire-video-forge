@@ -21,98 +21,179 @@
   "cast": {
     "Coach": {
       "display_name": "Mahmoud",
-      "engine": "voicetut", "voice": "Omar", "lang": "ar", "dialect": "egyptian",
+      "engine": "voicetut",
+      "voice": "Omar",
+      "lang": "ar",
+      "dialect": "egyptian",
       "text_mode": "arabic",
-      "role": "the host/teacher/narrator", "performance": "warm, encouraging, clear",
-      "num_step": 64, "guidance_scale": 2.5, "speed": 1.0,
+      "role": "the host/teacher/narrator",
+      "performance": "warm, encouraging, clear",
+      "num_step": 64,
+      "guidance_scale": 2.5,
+      "speed": 1.0,
       "status": "locked",
       "note": "Owner B.6g: re-auditioned all 17 VoiceTut voices; picked 'Omar' as Mahmoud (replaced the old placeholder 'Sayed'). Distinct from Macal (Abdullah)."
     },
     "Macal": {
       "display_name": "Macal",
-      "engine": "voicetut", "voice": "Abdullah", "lang": "en", "dialect": "egyptian",
+      "engine": "voicetut",
+      "voice": "Abdullah",
+      "lang": "en",
+      "dialect": "egyptian",
       "text_mode": "raw_english",
       "accent": "egyptian-accented english (real, from the VoiceTut engine)",
       "role": "learner-hero",
       "performance": "earnest, hopeful; growth shown via LANGUAGE (fluency/contractions/confidence in the script), NOT an accent shift — accent stays Egyptian across all 3 stages",
       "arc": "language-only (S1->S3); no per-stage voice refs",
-      "num_step": 64, "guidance_scale": 2.5, "speed": 1.0,
+      "num_step": 64,
+      "guidance_scale": 2.5,
+      "speed": 1.0,
       "status": "locked",
       "note": "Owner B.6f: VoiceTut voice 'Abdullah' reads RAW English text with an Egyptian accent — no Latin->Arabic transliteration needed. Different voice from Sayed (Mahmoud)."
     },
     "Nour": {
-      "engine": "qwen3-tts-design", "lang": "en",
+      "engine": "qwen3-tts-design",
+      "lang": "en",
       "voice_design": "Adult female, 29, born and raised in Chicago USA. Warm, confident, clear General American accent - natural flap-T, full linking and reductions, relaxed native rhythm. Encouraging, friendly, articulate.",
       "audition_pick": "cand2",
-      "accent": "general american", "role": "guide/friend (American-born)",
-      "performance": "warm, confident, encouraging", "status": "locked"
+      "accent": "general american",
+      "role": "guide/friend (American-born)",
+      "performance": "warm, confident, encouraging",
+      "status": "locked",
+      "voice_ref": "voice-refs/nour_ref.wav",
+      "production_engine": "qwen3-tts-clone",
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
     },
     "Tarek": {
-      "engine": "qwen3-tts-design", "lang": "en",
+      "engine": "qwen3-tts-design",
+      "lang": "en",
       "voice_design": "Adult male, 30, Egyptian from Cairo, highly fluent and polished English with only a faint accent. Fast, articulate, charismatic and a little slick. Warm surface, competitive underneath.",
       "audition_pick": "cand3",
-      "accent": "polished egyptian (near-native)", "role": "the rival",
-      "performance": "confident, charming, competitive", "status": "locked"
+      "accent": "polished egyptian (near-native)",
+      "role": "the rival",
+      "performance": "confident, charming, competitive",
+      "status": "locked",
+      "voice_ref": "voice-refs/tarek_ref.wav",
+      "production_engine": "qwen3-tts-clone",
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
     },
     "Interviewer": {
       "display_name": "Farida",
-      "engine": "qwen3-tts-design", "lang": "en",
+      "engine": "qwen3-tts-design",
+      "lang": "en",
       "voice_design": "Adult female, 40, Emirati from the Gulf, professional English with a light Gulf-Arabic accent - measured, precise, slightly clipped. Dry, composed, quietly authoritative.",
       "audition_pick": "cand1",
-      "accent": "gulf english", "role": "Dune & Co. HR lead",
-      "performance": "measured, dry, authoritative", "status": "locked"
+      "accent": "gulf english",
+      "role": "Dune & Co. HR lead",
+      "performance": "measured, dry, authoritative",
+      "status": "locked",
+      "voice_ref": "voice-refs/farida_ref.wav",
+      "production_engine": "qwen3-tts-clone",
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
     },
     "Barista": {
       "display_name": "Aisha",
-      "engine": "qwen3-tts-design", "lang": "en",
+      "engine": "qwen3-tts-design",
+      "lang": "en",
       "voice_design": "Young female, 24, Filipina from Manila, friendly Filipino English accent - clear syllable-timed rhythm, crisp consonants, gently melodic intonation. Bright, upbeat, eager to please.",
       "audition_pick": "cand2",
-      "accent": "filipino english", "role": "cafe barista",
-      "performance": "bright, upbeat, helpful", "status": "locked"
+      "accent": "filipino english",
+      "role": "cafe barista",
+      "performance": "bright, upbeat, helpful",
+      "status": "locked",
+      "voice_ref": "voice-refs/aisha_ref.wav",
+      "production_engine": "qwen3-tts-clone",
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
     },
     "Landlord": {
       "display_name": "Qureshi",
-      "engine": "qwen3-tts-design", "lang": "en",
+      "engine": "qwen3-tts-design",
+      "lang": "en",
       "voice_design": "Older male, 55, Pakistani, English with a Pakistani/Urdu accent - retroflex t/d, rolled r, deliberate measured delivery, formal older-generation phrasing. Steady, mature, a bit stern but not unkind.",
       "audition_pick": "cand1",
-      "accent": "pakistani english", "role": "landlord/building manager",
-      "performance": "steady, mature, firm", "status": "locked"
+      "accent": "pakistani english",
+      "role": "landlord/building manager",
+      "performance": "steady, mature, firm",
+      "status": "locked",
+      "voice_ref": "voice-refs/qureshi_ref.wav",
+      "production_engine": "qwen3-tts-clone",
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
     },
     "TaxiDriver": {
       "display_name": "Ravi",
-      "engine": "qwen3-tts-clone", "lang": "en",
+      "engine": "qwen3-tts-clone",
+      "lang": "en",
       "voice_ref": "voice-refs/ravi_ref1.wav",
       "ref_source": "Mozilla Common Voice (CC0 public domain), fixie-ai/common_voice_17_0, en config, accent 'India and South Asia'",
-      "accent": "indian english (real, cloned)", "role": "taxi driver (Kerala)",
-      "performance": "warm, chatty, easygoing", "status": "locked",
+      "accent": "indian english (real, cloned)",
+      "role": "taxi driver (Kerala)",
+      "performance": "warm, chatty, easygoing",
+      "status": "locked",
       "note": "Owner B.6e: cloned from a real CC0 Common Voice Indian-accent clip via Qwen VoiceClone. CC0 = commercial-safe, no attribution required (attribution kept for provenance)."
     },
     "Friend_F": {
-      "engine": "qwen3-tts-design", "lang": "en",
+      "engine": "qwen3-tts-design",
+      "lang": "en",
       "voice_design": "Young adult female, warm friendly English with a light international/expat accent, natural conversational pace, upbeat and supportive peer.",
       "audition_pick": "cand1",
-      "accent": "light expat", "role": "minor female friend",
-      "performance": "warm, supportive", "status": "locked"
+      "accent": "light expat",
+      "role": "minor female friend",
+      "performance": "warm, supportive",
+      "status": "locked",
+      "voice_ref": "voice-refs/friendf_ref.wav",
+      "production_engine": "qwen3-tts-clone",
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
     },
     "Official": {
-      "engine": "qwen3-tts-design", "lang": "en",
+      "engine": "qwen3-tts-design",
+      "lang": "en",
       "voice_design": "Adult male, composed formal English with a light Gulf accent, polite and businesslike, neutral authority.",
       "audition_pick": "cand2",
-      "accent": "gulf formal", "role": "airport/office official",
-      "performance": "polite, composed", "status": "locked"
+      "accent": "gulf formal",
+      "role": "airport/office official",
+      "performance": "polite, composed",
+      "status": "locked",
+      "voice_ref": "voice-refs/official_ref.wav",
+      "production_engine": "qwen3-tts-clone",
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
     },
     "Friend_M": {
-      "engine": "qwen3-tts-design", "lang": "en",
+      "engine": "qwen3-tts-design",
+      "lang": "en",
       "voice_design": "Young adult male, casual friendly English with a light expat accent, easygoing peer tone.",
       "audition_pick": "cand1",
-      "accent": "light expat", "role": "minor male friend",
-      "performance": "easygoing, familiar", "status": "locked"
+      "accent": "light expat",
+      "role": "minor male friend",
+      "performance": "easygoing, familiar",
+      "status": "locked",
+      "voice_ref": "voice-refs/friendm_ref.wav",
+      "production_engine": "qwen3-tts-clone",
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
     }
   },
   "arabic_voice_pool": {
     "_comment": "All 17 VoiceTut voices are usable (the shared lexicon fixed the pronunciation stumbles). Full pool available for future Arabic casting. TAKEN: Omar=Mahmoud (Coach), Abdullah=Macal. ('Sayed' was the old placeholder Coach, now free.)",
-    "male": ["Sayed", "Omar", "Essam", "Ahmed", "Abdullah", "Abdelrahman", "Kamal", "Hossam", "Mohamed", "Zaki", "Aly"],
-    "female": ["Yasmin", "Sarah", "Asmaa", "Esraa", "Hanan", "Omnia"]
+    "male": [
+      "Sayed",
+      "Omar",
+      "Essam",
+      "Ahmed",
+      "Abdullah",
+      "Abdelrahman",
+      "Kamal",
+      "Hossam",
+      "Mohamed",
+      "Zaki",
+      "Aly"
+    ],
+    "female": [
+      "Yasmin",
+      "Sarah",
+      "Asmaa",
+      "Esraa",
+      "Hanan",
+      "Omnia"
+    ]
   },
   "retired_engines": {
     "chatterbox": "RETIRED — superseded by Qwen3-TTS (Apache-2.0) for English. Kept out of the pipeline; archived per Phase E."
