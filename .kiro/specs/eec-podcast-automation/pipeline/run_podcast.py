@@ -10,20 +10,21 @@ hands finished files back via for-youtube / for-platforms (published separately)
 
 Pipeline (each stage fail-soft + logged):
   1. SCRIPT   — gen_episode.py writes episodes/epNN/script.json (skipped if present).
-                Uses the OpenRouter LLM backend (EEC_LLM_*), NOT Gemini. [Gemini-free]
-  2. VOICES   — ALL per-line WAVs (English Chatterbox + Arabic Coach VoiceTut) come
-                from the two Kaggle GPU batches (synth_episode_en.py / _ar.py). We do
-                NOT synthesize on the server (3.7GB RAM, no GPU). This stage VERIFIES
-                episodes/epNN/synth/ has a merged manifest with every line rendered,
-                and stops with a clear message if the owner hasn't run/downloaded them.
+                Uses the DeepSeek LLM backend (EEC_LLM_*, direct api.deepseek.com).
+  2. VOICES   — ALL per-line WAVs come from the two Kaggle GPU batches of the unified
+                synth (synth_episode_v2.py, PASS=voicetut + PASS=qwen): VoiceTut renders
+                Mahmoud (Arabic) + Macal (raw English); Qwen3-TTS VoiceClone renders
+                Nour + guests + Ravi from voice-refs/. (Chatterbox retired.) We do NOT
+                synthesize on the server (no GPU). This stage VERIFIES episodes/epNN/synth/
+                has a merged manifest with every line rendered, and stops with a clear
+                message if the owner hasn't run/downloaded them.
   3. ASSEMBLE — assemble_audio.py --plain stitches everything (manifest-driven) into
                 epNN_audio_plain.m4a.
   4. DELIVER  — drive_upload.py pushes the plain .m4a into output/Podcast/raw-audio.
 
-Why voices aren't synthesized here: VoiceTut + Chatterbox need a GPU and clash in one
-kernel, so both run as Kaggle batches (two notebooks). This orchestrator automates
-everything that CAN run unattended on the server. The OLD server-side Gemini-Kore
-Coach step is REMOVED — the Coach is now a VoiceTut voice in the Arabic batch.
+Why voices aren't synthesized here: VoiceTut + Qwen3-TTS need a GPU and clash in one
+kernel, so both run as Kaggle batches (synth_episode_v2.py run twice: PASS=voicetut,
+PASS=qwen). This orchestrator automates everything that CAN run unattended on the server.
 
 Usage:
   python3 run_podcast.py --episode 2 [--skip-deliver] [--script-only]
@@ -76,7 +77,7 @@ def verify_voices(ep_dir, script, logf):
     synth = os.path.join(ep_dir, "synth")
     if not os.path.isdir(synth):
         log(logf, f"2. VOICES not ready: no {synth}/ — run the two Kaggle batches "
-                  "(synth_episode_ar.py + synth_episode_en.py), drop both zips in "
+                  "(synth_episode_v2.py, PASS=voicetut then PASS=qwen), drop both zips in "
                   "Drive raw-audio, and download/extract them here.")
         return False
     # merge manifests via the shared lib (kept next to assemble_audio.py)
