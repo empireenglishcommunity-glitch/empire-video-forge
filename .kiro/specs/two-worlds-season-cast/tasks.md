@@ -21,8 +21,8 @@
 >    NOT yet consumed by synth/assembly. Its consumer (direction→prosody mapper) is
 >    **Phase C** work, tracked as issue **#53**.
 > 6. **Status:** GATE 0.5 ✅, GATE 0 ✅, GATE A ✅ all passed. B.1/B.2/B.3 ✅. **Currently at
->    B.4** (build the audition notebook; 12 distinct English voices — each minor role its
->    own). Verification docs live in
+>    B.5** (owner runs the audition notebook on Kaggle; 12 distinct English voices — each
+>    minor role its own). Verification docs live in
 >    `.kiro/specs/eec-podcast-automation/` (`qwen3-tts-verification.md`, `voice-design-specs.md`).
 
 ## Execution rules
@@ -157,10 +157,11 @@ Goal: a locked `cast.json` with an owner-approved voice per character.
       Owner approved Macal's 3-stage arc + all guests; ONE change — **each minor role
       (Official/Friend_M/Friend_F) gets its OWN voice, no reuse** → **12 distinct English
       voices** (Macal ×3 + 9).
-- [ ] B.4 🤖 **← CURRENT STEP.** Build `kaggle/audition_qwen.py` (paste-safe): 3-4
-      candidates/character (Macal = 3 stages; **12 distinct English voices** total incl.
-      each minor role) reading real Season-1 lines → labeled clips + zip.
-- [ ] B.5 🧑 **Run the audition on Kaggle**; download the clips.
+- [x] B.4 🤖 Build `kaggle/audition_qwen.py` (paste-safe): 3-4 candidates/character
+      (Macal = 3 stages; **12 distinct English voices** total incl. each minor role)
+      reading real Season-1 lines → labeled clips + zip. ✅ (merged PR #59; 36 clips;
+      T4-safe sdpa; emits index.html contact sheet + zip + audition_index.json.)
+- [ ] B.5 🧑 **← CURRENT STEP. Run the audition on Kaggle**; download the clips.
 - [ ] B.6 🧑 **Pick** one voice per character + approve **Macal's 3-stage arc**
       (iterate B.2-B.5 on any character until happy).
 - [ ] B.7 🤖 For each approved voice, **save the canonical ~10-15s reference WAV**
