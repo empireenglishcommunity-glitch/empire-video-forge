@@ -88,8 +88,25 @@
   practicing/recording English). Never stage a private call home as English; reframe as Macal
   rehearsing/recording an English voice note (fits "family thinks he made it" thread + the
   ep title "The Voice Note"), or leave it to Mahmoud's Arabic narration.
-- **Fix (Ep1):** reframe the mom scene so Macal's English is plausible (recording/practicing a
-  voice note) — regenerate the affected sections with the rule active. **[pending owner OK on
-  regeneration scope]**
+- **Fix (Ep1) — DECIDED (owner-approved):** reframe the mom scene as **Macal recording a
+  voice note to his family, deliberately in English, performing the polished "successful
+  expat" image they believe** (fits the season thread + the ep title "The Voice Note"); his
+  English then cracks on the real Dune & Co. call. Scope = **FULL Ep1 regeneration** with the
+  new rule active (cleanest continuity — coach breaks/target phrases re-derive). Timing =
+  **batch with all other Ep1 script fixes → ONE regeneration, ONE re-synth** (see the
+  Pending Ep1 Regeneration Batch below).
 - **Rule now lives in:** `series-bible.md` §4 + `pipeline/gen_episode.py` story-act craft.
-- **Status:** rule LOCKED ✅; Ep1 script reframe pending (regeneration scope decision).
+- **Status:** rule LOCKED ✅; Ep1 reframe QUEUED in the regeneration batch (framing + scope + timing all owner-approved).
+
+---
+
+## ⏳ PENDING Ep1 REGENERATION BATCH
+> Script-level fixes that require regenerating Ep1's script. We collect ALL of them from the
+> owner's listen-through, then do **ONE** full Ep1 regeneration + **ONE** re-synth (efficient).
+> Synth-time/param fixes (like FIX-001 pacing) apply automatically on that same re-synth.
+- [ ] **FIX-002** — reframe mom scene as an English voice-note Macal performs for family
+      ("successful expat" image); English cracks on the real call. (full-episode regen)
+- _(add further Ep1 script/story issues here as the owner reports them)_
+
+**Also auto-applied on the Ep1 re-synth (no regen needed):**
+- FIX-001 — Macal prosody pauses + speed 0.85 (already baked into `synth_episode_v2.py`).
