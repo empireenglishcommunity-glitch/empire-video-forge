@@ -172,3 +172,17 @@
   (light '...' breaths after sentence enders + before taught phrases; lighter than Macal's) +
   `cast.Coach.speed=0.80`. Applied to Coach Arabic lines only, synth-time (script.json clean).
 - **Status:** ✅ VERIFIED; audible on next Ep1 re-synth.
+
+### FIX-002 UPDATE — Macal is BILINGUAL (code-switches), richer than the reframe
+- **Owner refinement:** instead of avoiding the mom-call, let Macal ANSWER his mom in
+  EGYPTIAN ARABIC (his VoiceTut voice speaks both). Performed English for the image + real
+  Arabic with family = a deliberate character beat, and the realistic version.
+- **Changes (systemic):**
+  - `structure_check.py`: story-section rules now block only the COACH, not all Arabic — a
+    STORY CHARACTER (Macal) may code-switch to Arabic. (Coach-in-story still blocked; verified.)
+  - `gen_episode.py`: the auto-drop drops Coach-in-story only (not lang=='ar'); story sep_rule
+    + language-realism craft + cold_open brief updated to the bilingual code-switch rule.
+  - `series-bible.md`: LANGUAGE REALISM rule rewritten to "Macal bilingual / code-switches".
+  - Ep1: the mom-call line (act2 idx35) converted to Egyptian Arabic (lang "ar", speaker Macal
+    -> VoiceTut Abdullah). Structure gate passes.
+- **Status:** ✅ rule + Ep1 done; Macal's Arabic mom line will render in his voice on re-synth.

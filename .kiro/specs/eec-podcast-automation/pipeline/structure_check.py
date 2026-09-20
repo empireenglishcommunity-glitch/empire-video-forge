@@ -59,17 +59,21 @@ def check_script(script):
         spk = ln.get("speaker") or ""
         lang = ln.get("lang") or ""
 
-        # Rule 1: cold_open is pure story — no Coach, no Arabic.
-        if sec == "cold_open" and (spk == COACH_SPEAKER or lang == "ar"):
+        # Rule 1: cold_open is pure story — no COACH (Mahmoud). A STORY CHARACTER may
+        # code-switch to Arabic (e.g. Macal answering his Egyptian family) — that's
+        # intentional bilingual realism, NOT the teaching leaking in. Only the Coach is banned.
+        if sec == "cold_open" and spk == COACH_SPEAKER:
             violations.append(_v(i, sec, spk, lang, "cold_open_pure_story",
-                                 "cold_open must be pure in-world English scene "
-                                 "(no Coach / no Arabic)"))
+                                 "cold_open is an in-world scene — the Coach (Mahmoud) must "
+                                 "not appear (story characters may code-switch to Arabic)"))
             continue
 
-        # Rule 2: Coach speaks only in COACH sections.
-        if sec in STORY_SECTIONS and (spk == COACH_SPEAKER or lang == "ar"):
+        # Rule 2: the COACH speaks only in COACH sections (keeps the teacher's voice out of
+        # the drama = the real 'no teaching mid-story' rule). A story character speaking
+        # Arabic in a story scene is ALLOWED (bilingual code-switch, e.g. Macal + family).
+        if sec in STORY_SECTIONS and spk == COACH_SPEAKER:
             violations.append(_v(i, sec, spk, lang, "coach_in_story",
-                                 f"Coach/Arabic line inside STORY section '{sec}' "
+                                 f"Coach (Mahmoud) inside STORY section '{sec}' "
                                  "— move it to the adjacent coach section"))
             continue
 

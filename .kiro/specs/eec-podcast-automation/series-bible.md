@@ -107,17 +107,18 @@ Each thread is tied to a learning situation. Drama creates the need; English mee
 - Macal’s accent evolves in locked voice stages.
 - Scenes are mostly English. Coach sections are Arabic.
 - **LANGUAGE REALISM RULE (LOCKED — the world must make sense):** Characters speak English
-  ONLY where English is realistic in-world — Dubai's mixed-nationality work & social life
-  (office, taxi, café, interviews, networking), OR when Macal is *deliberately practicing/
-  recording his English*. **Never stage an intimate all-Egyptian scene (e.g. a private phone
-  call home to his Arabic-speaking mother/family) as natural English dialogue** — that breaks
-  the reality (they'd speak Arabic). If such a beat is needed, frame it so English is
-  plausible: Macal is **rehearsing/recording a voice note in English** (he's an anxious
-  learner prepping for Rising Voices, and his family believes he's "made it" — so he performs
-  polished English), OR the moment is **narrated in Arabic by Mahmoud** in a coach beat, not
-  played as English dialogue. Egyptian home life is Arabic and stays mostly off-scene or in
-  Mahmoud's framing. This protects both realism AND the teaching mission (story=English,
-  teaching=Arabic; never two Arabic-speaking characters in a story scene).
+  where it's realistic in-world — Dubai's mixed-nationality work & social life (office, taxi,
+  café, interviews, networking), OR when Macal is *deliberately practicing/recording his
+  English*. **Macal is BILINGUAL and CODE-SWITCHES:** he performs polished English for the
+  image/work, but drops into **natural Egyptian Arabic in intimate family moments** (e.g.
+  answering his mother's call). His voice engine (VoiceTut) speaks both, so his Arabic lines
+  are written in Egyptian Arabic with `lang:"ar"` and rendered in his own voice. **Never
+  stage an intimate all-Egyptian family conversation in ENGLISH** — that breaks the reality;
+  either play it as Macal answering *in Arabic*, or reframe it as him *recording/rehearsing
+  an English voice note* (he's an anxious learner and his family believes he's "made it", so
+  he performs polished English). The contrast between his performed English and his real
+  Arabic is a deliberate character beat. **Mahmoud (the Coach) still never appears in a story
+  scene** — that's the teaching/story separation. Guests speak English (Dubai lingua franca).
 - No forbidden marketing: no “hack,” no “secret” gimmick, no “guaranteed,” no “fluent in X days,” no shaming.
 - Use: system, step by step, real, consistency, confidence.
 
