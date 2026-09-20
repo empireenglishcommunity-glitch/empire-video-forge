@@ -3,7 +3,7 @@
 ## 🏆 FULL CAST — LOCKED (all 11 speakers decided)
 | Character | Engine | Voice / source | Text | Note |
 |---|---|---|---|---|
-| **Mahmoud** (Coach) | VoiceTut | **Omar** | Arabic | host/teacher — ✅ owner B.6g re-audition (replaced Sayed) |
+| **Mahmoud** (Coach) | VoiceTut | **Abdelrahman** | Arabic | host/teacher — ✅ owner (changed from Omar, then Sayed) |
 | **Macal** | **VoiceTut** | **Abdullah** | **raw English** | ✅ owner B.6f: Egyptian accent, reads English directly — NO transliteration needed. Arc = language-only (accent stays Egyptian all 3 stages) |
 | **Nour** | Qwen3-TTS | VoiceDesign **cand2** | English | General American |
 | **Tarek** | Qwen3-TTS | VoiceDesign **cand3** | English | polished Egyptian |

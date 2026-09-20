@@ -21,8 +21,8 @@
 >    NOT yet consumed by synth/assembly. Its consumer (direction→prosody mapper) is
 >    **Phase C** work, tracked as issue **#53**.
 > 6. **CAST — LOCKED after the Phase B audition (overrides the original voice model):**
->    - **Mahmoud (Coach) = VoiceTut voice "Omar"** (owner re-auditioned all 17; replaced
->      the old placeholder "Sayed"). Everywhere the spec says Coach="Sayed", read **Omar**.
+>    - **Mahmoud (Coach) = VoiceTut voice "Abdelrahman"** (owner re-auditioned; picked Omar then changed to Abdelrahman; replaced
+>      the old placeholder "Sayed"). Everywhere the spec says Coach="Sayed" or "Omar", read **Abdelrahman**.
 >    - **Macal = VoiceTut voice "Abdullah", reading RAW English** — VoiceTut renders English
 >      with a real Egyptian accent, so Macal is on the ARABIC engine, NOT Qwen. **No
 >      Latin→Arabic transliteration step needed** (owner picked the raw-English strategy).
@@ -187,7 +187,7 @@ Goal: a locked `cast.json` with an owner-approved voice per character.
 - [x] B.6 🧑 **Pick** one voice per character. ✅ Iterated heavily: Qwen VoiceDesign picks
       for Nour+guests (B.6); Ravi via real CC0 Common-Voice clone (B.6e); **Macal via
       VoiceTut "Abdullah" raw-English** (B.6f, arc=language-only per owner); **Mahmoud via
-      VoiceTut "Omar"** (B.6g re-audition). Full picks in `cast-decisions-b6.md`.
+      VoiceTut "Abdelrahman"** (B.6g re-audition; Omar->Abdelrahman). Full picks in `cast-decisions-b6.md`.
 - [x] B.7 🤖 Save canonical reference WAVs to `voice-refs/` + write voices + `voice_ref`
       into **`cast.json` v2**, statuses `locked`. ✅ 9 refs frozen (8 Qwen VoiceDesign
       takes + Ravi CC0 source); Mahmoud+Macal (VoiceTut) need no refs. (NOTE: NOT "Macal =
@@ -199,7 +199,7 @@ Goal: a locked `cast.json` with an owner-approved voice per character.
 Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.1 🤖 **Coach → Mahmoud** naming: `cast.json` `display_name` (DONE — done in B.7),
       the Arabic self-intro line(s) in scripts, and the lexicon name entry. Keep speaker id
-      `Coach` so gates/pipeline are untouched (design §6). NOTE: Coach voice is now **Omar**
+      `Coach` so gates/pipeline are untouched (design §6). NOTE: Coach voice is now **Abdelrahman**
       (not Sayed).
 - [ ] C.1a 🤖 **Lexicon additions (design §2c Tier 2):** add hand-verified entries for
       **Mahmoud (مَحْمُود)**, **"Yalla Fluent"**, **EEC**, and standing loan-words
@@ -207,7 +207,7 @@ Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.2 🤖 Build the new synth routing (replaces the Chatterbox English notebook;
       archive Chatterbox, don't delete; update `run_podcast.py`/docs). Route each line by
       `cast.json` engine:
-      - **VoiceTut** for **Mahmoud (Omar, Arabic)** AND **Macal (Abdullah, RAW English)** —
+      - **VoiceTut** for **Mahmoud (Abdelrahman, Arabic)** AND **Macal (Abdullah, RAW English)** —
         Macal's English goes through VoiceTut verbatim (no transliteration); NO stage refs,
         one voice all season (arc is language-only, already in the scripts).
       - **Qwen3-TTS VoiceClone** for Nour + English guests, cloning each from its frozen
@@ -225,7 +225,7 @@ Goal: the new engine + cast produces a real, approved episode.
 - [ ] C.3 🤖 Update `series-bible.md` casting section (realism + pedagogy + Macal arc)
       and `OPERATIONS.md` (new English engine + audition workflow).
 - [ ] C.4 🧑 **Re-synth Ep1** via the new routing: Macal (VoiceTut/Abdullah, raw English)
-      + Mahmoud (VoiceTut/Omar, Arabic) on the VoiceTut pass; Nour + any Ep1 guests
+      + Mahmoud (VoiceTut/Abdelrahman, Arabic) on the VoiceTut pass; Nour + any Ep1 guests
       (Qwen VoiceClone from their refs) on the Qwen pass. Drop WAVs into
       `episodes/ep01/synth/`.
 - [ ] C.5 🤖 Re-assemble Ep1 through the **structure gate**, verify 100% rendered + clean

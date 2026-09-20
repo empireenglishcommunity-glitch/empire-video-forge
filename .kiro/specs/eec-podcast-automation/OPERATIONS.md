@@ -19,7 +19,7 @@ script (server, LLM)  →  voices (OFF-SERVER, Kaggle GPU ×2)  →  assemble pl
 ## Voice cast & synth (Phase C — CURRENT, 3 engines)
 The locked cast (`pipeline/cast.json` v2) uses **three engines**, routed **by speaker**
 (not by language) in `kaggle/synth_episode_v2.py`:
-- **VoiceTut** — **Mahmoud** (Coach, voice `Omar`, Arabic) **and Macal** (voice `Abdullah`,
+- **VoiceTut** — **Mahmoud** (Coach, voice `Abdelrahman`, Arabic) **and Macal** (voice `Abdullah`,
   **raw English** → real Egyptian accent, no transliteration). Both in the `PASS=voicetut` run.
 - **Qwen3-TTS VoiceClone** — **Nour + guests + Ravi**, each cloned from its frozen
   `voice-refs/*.wav` (Option B, no drift). The `PASS=qwen` run.

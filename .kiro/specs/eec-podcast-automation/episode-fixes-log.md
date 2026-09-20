@@ -110,3 +110,17 @@
 
 **Also auto-applied on the Ep1 re-synth (no regen needed):**
 - FIX-001 — Macal prosody pauses + speed 0.85 (already baked into `synth_episode_v2.py`).
+
+
+### FIX-003 — Coach (Mahmoud) voice change: Omar → Abdelrahman
+- **Location:** all Coach/Mahmoud Arabic lines, every episode
+- **Speaker:** Coach (Mahmoud)
+- **Symptom / request:** owner prefers a different Coach voice.
+- **Desired state:** Mahmoud = VoiceTut **"Abdelrahman"** (was Omar; earlier Sayed).
+- **Scope:** 🔴 **Systemic** — `cast.json` `cast.Coach.voice` → applies to every Coach line, every episode.
+- **Fix:** set `cast.Coach.voice="Abdelrahman"` (verified: valid VoiceTut voice, free, distinct
+  from Macal=Abdullah). Updated all spec references (bible §7, requirements R2.1, OPERATIONS,
+  voice-refs/README, cast-decisions-b6, tasks.md SPEC AMENDMENTS + Phase C).
+- **Rule now lives in:** `pipeline/cast.json` → `cast.Coach.voice`.
+- **Status:** ✅ config done; **audible on the next Ep1 re-synth** (Coach lines re-render in
+  Abdelrahman — part of the pending Ep1 re-synth batch, no script regen needed for this one).

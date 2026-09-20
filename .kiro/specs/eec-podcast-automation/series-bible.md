@@ -202,7 +202,7 @@ Balanced. Real, believable, warm, funny, honest. Genuine dramatic tension with c
 Three commercial-safe engines, routed per speaker:
 | Character | Engine | Voice / ref |
 |---|---|---|
-| Mahmoud (Coach) | VoiceTut | `Omar` (Arabic) |
+| Mahmoud (Coach) | VoiceTut | `Abdelrahman` (Arabic) |
 | Macal | VoiceTut | `Abdullah` — **raw English → real Egyptian accent** (no transliteration) |
 | Nour, Tarek, Farida, Aisha, Qureshi, Friend_F, Official, Friend_M | Qwen3-TTS VoiceClone | frozen `voice-refs/*.wav` (Option B) |
 | Ravi | Qwen3-TTS VoiceClone | `voice-refs/ravi_ref1.wav` (real CC0 Indian-accent clip) |
