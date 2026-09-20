@@ -62,7 +62,25 @@ script = json.load(open(fetch(f"episodes/ep{EPISODE:02d}/script.json", "/kaggle/
 cast   = json.load(open(fetch("pipeline/cast.json", "/kaggle/working/cast.json")))
 LEX    = json.load(open(fetch("pipeline/egyptian_lexicon.json", "/kaggle/working/lex.json")))
 CASTM  = cast["cast"]
-print(f"Episode {EPISODE}: {script.get('title')} — {len(script['lines'])} lines | PASS={PASS}", flush=True)
+# English phonetic overrides for Macal's VoiceTut English (synth-boundary; script stays clean)
+try:
+    ENPHON = json.load(open(fetch("pipeline/english_phonetic_map.json",
+                                  "/kaggle/working/enphon.json"))).get("map", {})
+except Exception:
+    ENPHON = {}
+print(f"Episode {EPISODE}: {script.get('title')} — {len(script['lines'])} lines | PASS={PASS} "
+      f"| en_phonetic_overrides={len(ENPHON)}", flush=True)
+
+def apply_en_phonetic(text):
+    """Whole-word, case-insensitive respelling of English words VoiceTut mispronounces.
+    Applied ONLY to Macal's English at synth time — never touches script.json."""
+    if not ENPHON:
+        return text
+    def repl(m):
+        return ENPHON[m.group(0).lower()]
+    for w in sorted(ENPHON, key=len, reverse=True):
+        text = re.sub(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])", repl, text, flags=re.IGNORECASE)
+    return text
 
 MANIFEST_PATH = f"{WORK}/manifest.json"
 manifest = manifest_lib.load_or_init(MANIFEST_PATH, script)
@@ -137,7 +155,8 @@ if PASS == "voicetut":
         spk = ln["speaker"]; spec = CASTM.get(spk, {})
         voice = spec.get("voice", "Omar")
         is_ar = (ln.get("lang") == "ar")
-        text = prepare_ar(ln["text"]) if is_ar else ln["text"]   # Macal English = RAW, no translit
+        # Arabic -> lexicon tashkeel; Macal English -> raw text with phonetic overrides applied
+        text = prepare_ar(ln["text"]) if is_ar else apply_en_phonetic(ln["text"])
         base = {"num_step": spec.get("num_step", 64),
                 "guidance_scale": spec.get("guidance_scale", 2.5),
                 "speed": spec.get("speed", 1.0)}
