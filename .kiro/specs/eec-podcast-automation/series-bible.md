@@ -37,9 +37,14 @@
 - **Flaw:** Translates from Arabic, avoids speaking until it’s “perfect,” treats mistakes as shame.
 - **Hidden motive/secret:** His family believes he is already a manager at Dune & Co. The lie is small but growing. If his mother visits, it collapses.
 - **Voice evolution:**  
-  - **S1 (Eps 1–3):** Clear Egyptian L2 accent, hesitant.  
-  - **S2 (Eps 4–7):** More fluent, softening.  
-  - **S3 (Eps 8–10):** Confident, near-American.
+  - **S1 (Eps 1–3):** Egyptian-accented English, hesitant.  
+  - **S2 (Eps 4–7):** More fluent, more confident.  
+  - **S3 (Eps 8–10):** Confident and fluent — jokes, negotiates.
+- **VOICE-PRODUCTION NOTE (locked in Phase B):** Macal is voiced by **VoiceTut ("Abdullah")**,
+  which keeps a **real Egyptian accent across ALL stages**. His growth is shown through
+  **language** — fluency, contractions, confidence, complexity — **not an accent shift**.
+  (This is truer to real adult learning and honors the brand rule against promising a
+  "native accent." The stages below describe LANGUAGE progression; the accent stays Egyptian.)
 - **Function:** The learner’s heart. His English growth is earned, not magic.
 
 ### Nour — American-Born Target-Accent Model
@@ -115,7 +120,7 @@ Each thread is tied to a learning situation. Drama creates the need; English mee
 |---|---|---|---|---|
 | **S1** | 1–3 | Clear Egyptian L2 accent, hesitant; pauses; Arabic rhythm; avoids contractions. | Simple present, “I want,” “I live here since…” | “I… I want to say something. Give me one minute.” |
 | **S2** | 4–7 | More fluent, softening; uses contractions; self-corrects; occasional transfer. | Past simple, present perfect emerging, conditionals. | “I’ve been working on this for a while, and… actually, let me say it again.” |
-| **S3** | 8–10 | Confident, near-American; rhythm closer to Nour; can joke and negotiate. | Complex sentences, nuanced intonation, strategic pauses. | “I didn’t come this far to shrink. Let me tell you what I’m building.” |
+| **S3** | 8–10 | Confident and fluent (accent stays Egyptian — growth is in language, not accent); can joke and negotiate. | Complex sentences, nuanced intonation, strategic pauses. | “I didn’t come this far to shrink. Let me tell you what I’m building.” |
 
 ### Episode Grid
 

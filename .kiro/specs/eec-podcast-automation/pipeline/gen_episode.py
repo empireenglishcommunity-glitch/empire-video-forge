@@ -182,8 +182,10 @@ def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season
         "2": ("MACAL VOICE = STAGE 2 (mid, more fluent). Contractions now appear "
               "('I've been', 'I'm not sure'); occasional self-correction ('I mean...'); "
               "basic linking; emerging present-perfect/conditionals. Growing confidence."),
-        "3": ("MACAL VOICE = STAGE 3 (late, confident, near-American). Natural reductions "
-              "in casual lines ('gonna','wanna'), native-like stress, can joke/negotiate."),
+        "3": ("MACAL VOICE = STAGE 3 (late, fluent & confident — but STILL an Egyptian "
+              "speaker, NOT native). Uses casual reductions ('gonna','wanna'), idioms, "
+              "humor, can joke/negotiate; complex sentences and strong rhythm. His growth "
+              "is in FLUENCY and CONFIDENCE, not losing his accent."),
     }.get(stage, "")
 
     STORY_ACTS = {"cold_open", "act1", "act2", "act3", "act4"}
