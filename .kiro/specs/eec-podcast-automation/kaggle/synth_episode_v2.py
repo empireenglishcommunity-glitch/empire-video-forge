@@ -71,6 +71,27 @@ except Exception:
 print(f"Episode {EPISODE}: {script.get('title')} — {len(script['lines'])} lines | PASS={PASS} "
       f"| en_phonetic_overrides={len(ENPHON)}", flush=True)
 
+def macal_prosody(text):
+    """FIX-001 (owner-approved 'BOTH_SLOW'): make Macal's English read like a hesitant
+    Egyptian learner by inserting PROSODIC PAUSES at the synth boundary — commas as breath
+    groups (~every 3 words) + '...' at clause/sentence boundaries. VoiceTut's `speed` alone
+    couldn't slow him (floors ~3 wps); pauses + speed 0.85 gave the natural pace the owner
+    approved. script.json stays clean — this is synth-time only, and adds NO real words."""
+    # commas every ~3 words as breath groups (skip if the chunk already ends in punctuation)
+    out, buf = [], []
+    for w in text.split():
+        buf.append(w)
+        if len(buf) >= 3 and buf[-1][-1:] not in ".,!?…":
+            out.append(" ".join(buf) + ","); buf = []
+    if buf:
+        out.append(" ".join(buf))
+    t = " ".join(out)
+    # clause/sentence boundaries -> short hesitation pauses
+    t = re.sub(r"([.!?])\s+", r"\1.. ", t)   # after sentence enders
+    t = re.sub(r",\s+", r"... ", t)          # breath-group commas -> longer breath
+    return t
+
+
 def apply_en_phonetic(text):
     """Whole-word, case-insensitive respelling of English words VoiceTut mispronounces.
     Applied ONLY to Macal's English at synth time — never touches script.json."""
@@ -155,8 +176,14 @@ if PASS == "voicetut":
         spk = ln["speaker"]; spec = CASTM.get(spk, {})
         voice = spec.get("voice", "Omar")
         is_ar = (ln.get("lang") == "ar")
-        # Arabic -> lexicon tashkeel; Macal English -> raw text with phonetic overrides applied
-        text = prepare_ar(ln["text"]) if is_ar else apply_en_phonetic(ln["text"])
+        # Arabic -> lexicon tashkeel. Macal English -> phonetic overrides THEN prosody pauses
+        # (FIX-001 'BOTH_SLOW'). Other English-on-VoiceTut speakers (none today) skip prosody.
+        if is_ar:
+            text = prepare_ar(ln["text"])
+        else:
+            text = apply_en_phonetic(ln["text"])
+            if spk == "Macal":
+                text = macal_prosody(text)
         base = {"num_step": spec.get("num_step", 64),
                 "guidance_scale": spec.get("guidance_scale", 2.5),
                 "speed": spec.get("speed", 1.0)}
