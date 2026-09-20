@@ -60,16 +60,16 @@ cv_no  = structure_check.check_script({"lines": [coach_no]})
 cv_dir = structure_check.check_script({"lines": [coach_dir]})
 check(cv_no == cv_dir, "structure gate ignores direction on Coach lines too")
 
-# 5) sanity: the synth reads direction ONLY via direction_params (never into text).
-#    Confirm the v2 synth never concatenates direction into the synthesized text.
-syn = open(os.path.join(ROOT, "kaggle/synth_episode_v2.py")).read()
-# the only place 'direction' may appear is the mapper input; it must never be added to text
+# 5) sanity: the synth never concatenates a line's 'direction' (acting note) into the
+#    synthesized text. synth_all_in_one.py is now the single source of truth (the legacy
+#    synth_episode_v2.py was deleted in the owner-directed cleanup).
+syn = open(os.path.join(ROOT, "kaggle/synth_all_in_one.py")).read()
 bad = any(
     ("direction" in ln and ("text" in ln) and ("+" in ln or "format" in ln or "f\"" in ln or "f'" in ln))
     for ln in syn.splitlines()
     if "direction_params" not in ln and "ln.get(\"direction\")" not in ln and "# " not in ln
 )
-check(not bad, "v2 synth never concatenates 'direction' into synthesized text")
+check(not bad, "synth never concatenates 'direction' into synthesized text")
 
 print()
 if failures:

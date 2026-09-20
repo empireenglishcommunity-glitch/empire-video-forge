@@ -11,8 +11,8 @@ hands finished files back via for-youtube / for-platforms (published separately)
 Pipeline (each stage fail-soft + logged):
   1. SCRIPT   — gen_episode.py writes episodes/epNN/script.json (skipped if present).
                 Uses the DeepSeek LLM backend (EEC_LLM_*, direct api.deepseek.com).
-  2. VOICES   — ALL per-line WAVs come from the two Kaggle GPU batches of the unified
-                synth (synth_episode_v2.py, PASS=voicetut + PASS=qwen): VoiceTut renders
+  2. VOICES   — ALL per-line WAVs come from the Kaggle GPU run of the unified synth
+                (kaggle/synth_all_in_one.py — single source of truth): VoiceTut renders
                 Mahmoud (Arabic) + Macal (raw English); Qwen3-TTS VoiceClone renders
                 Nour + guests + Ravi from voice-refs/. (Chatterbox retired.) We do NOT
                 synthesize on the server (no GPU). This stage VERIFIES episodes/epNN/synth/
@@ -23,8 +23,8 @@ Pipeline (each stage fail-soft + logged):
   4. DELIVER  — drive_upload.py pushes the plain .m4a into output/Podcast/raw-audio.
 
 Why voices aren't synthesized here: VoiceTut + Qwen3-TTS need a GPU and clash in one
-kernel, so both run as Kaggle batches (synth_episode_v2.py run twice: PASS=voicetut,
-PASS=qwen). This orchestrator automates everything that CAN run unattended on the server.
+env, so synth_all_in_one.py runs them in isolated subprocesses on a Kaggle GPU. This
+orchestrator automates everything that CAN run unattended on the server (mastering).
 
 Usage:
   python3 run_podcast.py --episode 2 [--skip-deliver] [--script-only]
@@ -76,9 +76,9 @@ def verify_voices(ep_dir, script, logf):
     bind = os.path.join(os.path.dirname(ep_dir), "..", "bin")
     synth = os.path.join(ep_dir, "synth")
     if not os.path.isdir(synth):
-        log(logf, f"2. VOICES not ready: no {synth}/ — run the two Kaggle batches "
-                  "(synth_episode_v2.py, PASS=voicetut then PASS=qwen), drop both zips in "
-                  "Drive raw-audio, and download/extract them here.")
+        log(logf, f"2. VOICES not ready: no {synth}/ — run the Kaggle synth "
+                  "(synth_all_in_one.py --episode N --regen ALL), then drop its output "
+                  "(lineNNN_*.wav + manifest.json) here.")
         return False
     # merge manifests via the shared lib (kept next to assemble_audio.py)
     sys.path.insert(0, os.path.join(ep_dir, "..", "..", "bin"))

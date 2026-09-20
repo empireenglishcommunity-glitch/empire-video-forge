@@ -30,10 +30,13 @@
       "performance": "warm, encouraging, clear",
       "num_step": 64,
       "guidance_scale": 2.5,
-      "speed": 0.8,
+      "speed": 1.0,
+      "post_processing": {
+        "atempo": 0.8
+      },
       "status": "locked",
       "note": "Owner picked 'Abdelrahman' as Mahmoud (changed from Omar, and earlier from the placeholder Sayed). Distinct from Macal (Abdullah).",
-      "_pacing_note": "FIX-005 (owner-approved): PROSODY teacher pacing + speed 0.80. teacher_prosody() in synth_episode_v2.py adds light '...' breaths at sentence/colon boundaries. Warm deliberate teacher (lighter than Macal's learner hesitation)."
+      "_pacing_note": "FIX-007 (owner-approved by ear, option C): the ENGINE runs at natural speed (speed=1.0); pacing is a POST-PROCESSING step — post_processing.atempo=0.80 (pitch-preserving ffmpeg time-stretch) slows Mahmoud to a warm, deliberate teacher pace WITHOUT the choppiness the old text-injected prosody caused (FIX-001/005, removed). num_step/guidance_scale/speed are pure TTS engine params; atempo is applied after synthesis."
     },
     "Macal": {
       "display_name": "Macal",
@@ -48,10 +51,13 @@
       "arc": "language-only (S1->S3); no per-stage voice refs",
       "num_step": 64,
       "guidance_scale": 2.5,
-      "speed": 0.85,
+      "speed": 1.0,
+      "post_processing": {
+        "atempo": 0.85
+      },
       "status": "locked",
       "note": "Owner B.6f: VoiceTut voice 'Abdullah' reads RAW English text with an Egyptian accent — no Latin->Arabic transliteration needed. Different voice from Sayed (Mahmoud).",
-      "_pacing_note": "FIX-001 (owner-approved 'BOTH_SLOW'): VoiceTut speed alone couldn't slow Macal (floored ~3 wps). Solution = synth-boundary PROSODY (commas + '...' via macal_prosody() in synth_episode_v2.py) + speed 0.85. Owner approved by ear. Applies to all Macal lines every episode."
+      "_pacing_note": "FIX-007 (owner-approved by ear, option C): the ENGINE runs at natural speed (speed=1.0); pacing is a POST-PROCESSING step — post_processing.atempo=0.85 (pitch-preserving ffmpeg time-stretch) gives Macal a natural learner pace WITHOUT the choppiness of the old text-injected prosody (FIX-001, removed). num_step/guidance_scale/speed are pure TTS engine params; atempo is applied after synthesis."
     },
     "Nour": {
       "engine": "qwen3-tts-design",

@@ -99,6 +99,17 @@ def _prepare_ar(text, lex):
     return text
 
 
+# Brand names ASR reliably mangles (it's not trained on them) — drop them from BOTH
+# the intended and heard skeletons before comparison so a brand-word mishearing can
+# never lower the ratio and false-flag a correct line. (owner-directed: "Yalla Fluent"
+# heard as "الله فلوانت" on Ep1 line5 was a false positive.)
+_BRAND_IGNORE = [
+    # Arabic renderings + common ASR mishearings of "Yalla Fluent"
+    "يلا", "يالا", "فلونت", "فلوانت", "فلوينت", "فلونط",
+    "الله فلوانت", "الله فلونت",
+    # (Latin form is already stripped by the Arabic-only filter below, but list for docs)
+]
+
 def _skeleton(s):
     import unicodedata
     s = unicodedata.normalize("NFKD", s); s = "".join(c for c in s if not unicodedata.combining(c))
@@ -106,7 +117,25 @@ def _skeleton(s):
     for src, dst in (("أإآٱ", "ا"), ("ة", "ه"), ("ى", "ي"), ("ؤ", "و"), ("ئ", "ي"), ("ء", "")):
         for ch in src:
             s = s.replace(ch, dst)
-    return re.sub(r"\s+", " ", re.sub(r"[^\u0600-\u06FF\s]", " ", s)).strip()
+    s = re.sub(r"\s+", " ", re.sub(r"[^\u0600-\u06FF\s]", " ", s)).strip()
+    # strip brand tokens (multi-word first) from the normalized skeleton
+    for brand in sorted(_BRAND_IGNORE, key=lambda b: -len(b)):
+        bs = _skeleton_brand(brand)
+        if bs:
+            s = re.sub(r"(?<!\S)" + re.escape(bs) + r"(?!\S)", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _skeleton_brand(b):
+    """Normalize a brand token the SAME way _skeleton normalizes text (so they match),
+    but without recursion/brand-stripping."""
+    import unicodedata
+    b = unicodedata.normalize("NFKD", b); b = "".join(c for c in b if not unicodedata.combining(c))
+    b = b.replace("\u0640", "")
+    for src, dst in (("أإآٱ", "ا"), ("ة", "ه"), ("ى", "ي"), ("ؤ", "و"), ("ئ", "ي"), ("ء", "")):
+        for ch in src:
+            b = b.replace(ch, dst)
+    return re.sub(r"\s+", " ", re.sub(r"[^\u0600-\u06FF\s]", " ", b)).strip()
 
 
 def _apply_en_phonetic(text, enphon):
@@ -194,15 +223,18 @@ def worker_voicetut(args):
         # NO macal_prosody / teacher_prosody injection. Pace comes from atempo below.
         text = _prepare_ar(ln["text"], LEX["lexicon"]) if is_ar else _apply_en_phonetic(ln["text"], enphon)
         # engine runs at NATURAL speed; we pace afterwards with atempo (pitch-safe)
+        # PURE TTS engine params (num_step/guidance_scale/speed). These are NOT pacing:
+        # the engine always runs at its own natural speed (cast 'speed', default 1.0).
         params = {"num_step": spec.get("num_step", 64),
                   "guidance_scale": spec.get("guidance_scale", 2.5),
-                  "speed": 1.0}
+                  "speed": float(spec.get("speed", 1.0))}
+        # PACING is a POST-PROCESSING step, kept in its own cast.json namespace so it's
+        # never confused with an engine param (owner-directed cleanup). atempo<1.0 slows.
+        pace = float(spec.get("post_processing", {}).get("atempo", 1.0))
         out = f"{work}/{manifest_lib.line_filename(idx, spk)}"
         try:
             vt.synthesize(text, speaker=voice, output=out, **params)
-            # pace: cast 'speed' becomes the atempo factor (0.85 => 15% slower, smooth)
-            pace = float(spec.get("speed", 1.0))
-            _slow_wav_inplace(out, pace)
+            _slow_wav_inplace(out, pace)   # FIX-007: pitch-preserving pace, applied post-synth
             dur = sf.info(out).duration if os.path.exists(out) else 0.0
             manifest_lib.mark(manifest, idx, status="rendered", engine="voicetut",
                               voice=voice, params={**params, "atempo": pace},
@@ -312,7 +344,7 @@ def worker_macal_abc(args):
     branch, work = args["branch"], args["work"]
     cast = json.load(open(f"{work}/cast.json", encoding="utf-8"))["cast"]
     spec = cast["Macal"]; voice = spec.get("voice", "Abdullah")
-    pace = float(spec.get("speed", 0.85))
+    pace = float(spec.get("post_processing", {}).get("atempo", 0.85))
     try:
         enphon = json.load(open(f"{work}/enphon.json", encoding="utf-8")).get("map", {})
     except Exception:
