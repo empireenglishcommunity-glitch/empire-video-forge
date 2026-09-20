@@ -90,24 +90,26 @@ Warm working-man; 12 years in Dubai; writes Malayalam poetry; tests small talk w
 
 ---
 
-## 8. Friend_F — minor female friend (11 lines, eps unclear-role)
-No fixed bible identity → cast for warmth + realism (Dubai-expat peer). Can share a designed
-guest voice if the owner prefers.
+## 8. Friend_F — minor female friend (11 lines)
+No fixed bible identity → cast for warmth + realism (Dubai-expat peer). **Owner decision:
+gets its OWN designed voice** (no reuse), distinct from Nour/Aisha/Farida.
 - 🎯 **FF1:** `Young adult female, warm friendly English with a light international/expat accent, natural conversational pace, upbeat and supportive peer.`
 - **FF2:** `Bright young woman, neutral mildly-accented English, casual and warm.`
 - **FF3:** `Friendly female voice, clear English, relaxed and encouraging.`
 
 ---
 
-## 9. Landlord already covered (6). — Official — minor role (2 lines)
-Airport/office official; composed, formal.
+## 9. Official — minor role (2 lines)
+Airport/office official; composed, formal. **Owner decision: gets its OWN designed voice**
+(no reuse), distinct from Qureshi/Farida.
 - 🎯 **O1:** `Adult male, composed formal English with a light Gulf accent, polite and businesslike, neutral authority.`
 - **O2:** `Mature male voice, professional accented English, courteous and efficient.`
 
 ---
 
 ## 10. Friend_M — minor male friend (1 line)
-No fixed identity → quick guest voice.
+No fixed identity. **Owner decision: gets its OWN designed voice** (no reuse), distinct
+from Macal/Tarek/Ravi.
 - 🎯 **FM1:** `Young adult male, casual friendly English with a light expat accent, easygoing peer tone.`
 - **FM2:** `Relaxed young man, neutral mildly-accented English, warm and informal.`
 
@@ -123,16 +125,24 @@ No fixed identity → quick guest voice.
 | 5 | Barista/Aisha | 1 | Filipino English | med |
 | 6 | Landlord/Qureshi | 1 | Pakistani English | med |
 | 7 | TaxiDriver/Ravi | 1 | Indian English | med |
-| 8 | Friend_F | 1 | light expat | low |
-| 9 | Official | 1 (may reuse) | Gulf formal | low |
-| 10 | Friend_M | 1 (may reuse) | light expat | low |
+| 8 | Friend_F | 1 (own) | light expat | low |
+| 9 | Official | 1 (own) | Gulf formal | low |
+| 10 | Friend_M | 1 (own) | light expat | low |
 
-**→ 11 distinct voices to audition (Macal = 3 of them). Minor roles (Official/Friend_M/Friend_F)
-may reuse a designed guest voice to save audition time — owner decides in B.6.**
+✅ **Owner decision (B.3): every role — including the minor ones (Official / Friend_M /
+Friend_F) — gets its OWN designed voice. No reuse.**
 
-## Notes for the owner (B.3 review)
-- These are **starting descriptions** — easy to tweak. Tell me any character whose vibe is
-  off and I'll rewrite before we render.
+**Count:** 10 English speaking characters. Macal = **3** stage voices; the other 9 = **1**
+each → **12 distinct English voices** to design/audition. (Mahmoud/Arabic is separate on
+VoiceTut — not auditioned here.)
+
+## B.3 review — OUTCOME (owner-approved)
+✅ **B.3 SIGNED OFF.** Owner approved Macal's 3-stage arc + all guest personalities as
+drafted, with ONE change: **each minor role (Official / Friend_M / Friend_F) gets its own
+designed voice — no reuse.** Roster is now **12 distinct English voices** (Macal ×3 + 9).
+Proceeding to B.4 (build the audition notebook).
+
+## Notes carried into the audition (B.4–B.6)
 - **Macal's arc is the make-or-break.** If S1's Egyptian L2 accent renders as plain American
   in the audition, that's the flagged risk — we'll strengthen the acoustic markers, lean on
   script-level L2 phrasing, or (last resort) discuss a fallback. Worth listening to Macal S1
