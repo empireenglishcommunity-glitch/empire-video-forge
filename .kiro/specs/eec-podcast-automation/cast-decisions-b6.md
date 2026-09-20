@@ -91,6 +91,34 @@ This keeps it commercial-safe (CC0), $0, and — finally — a REAL accent.
   `do_clone` adds an `x_vector_only_mode` retry for robust cross-lingual cloning.
   → **Re-run B.6e for Macal only** (Ravi already locked).
 
+## B.6f — MACAL via VoiceTut (owner insight; the promising lead)
+All Qwen/Common-Voice routes failed to give Macal an Egyptian accent. **Owner recalled
+that VoiceTut (our Arabic engine, already running for Mahmoud) pronounced ENGLISH with a
+natural Egyptian accent in earlier tests.** So we test VoiceTut AS Macal's English voice.
+
+**Owner decisions:**
+- Use **any male voice** for the proof test; a proper Macal voice audition comes later
+  IF this works (voice must differ from Sayed = Mahmoud/Coach).
+- **ARC = option (a): Macal keeps an Egyptian accent across ALL 3 stages;** his growth is
+  shown through **language** (fluency, contractions, confidence — already written into the
+  scripts), NOT an accent shift toward American. Truer to real adult learning + avoids the
+  "near-American" promise the brand guardrails forbid.
+
+**Proof test built:** `kaggle/audition_macal_voicetut.py` — renders Macal's 3 stage lines
+across a few male voices (Omar/Essam/Ahmed/Abdullah) in THREE text strategies:
+(1) raw English, (2) Arabic-script transliteration of the English, (3) mixed. Tells us
+which makes VoiceTut read English intelligibly + authentically Egyptian.
+
+### ⚠️ Spec impact IF this is adopted (to fold into design/tasks on confirmation)
+- **Macal moves from the English engine (Qwen3-TTS) to the Arabic engine (VoiceTut).**
+- The **Option-B "3 stage voice-refs / VoiceClone"** concept **no longer applies to Macal**
+  (arc is language-only; one VoiceTut voice all season). It still applies to Nour + guests
+  (Qwen). Macal's stage map stays in `season.json` for SCRIPT fluency, not voice cloning.
+- English-with-Egyptian-accent text may need a **Latin→Arabic-script transliteration step**
+  for Macal's lines (whichever strategy wins the proof test) — a new small pipeline piece.
+- Qwen3-TTS remains the engine for Nour + all English guests. Ravi = Common Voice ref-clone.
+- Macal S3 "near-American" line/marker in the bible/season.json is revised to fit arc (a).
+
 ### Prior brainstorm (options considered)
 1. **Real reference audio → VoiceClone** (strongest): clone from a short real Egyptian-
    English / Indian-English sample instead of designing from text. Qwen3-TTS clones accent
