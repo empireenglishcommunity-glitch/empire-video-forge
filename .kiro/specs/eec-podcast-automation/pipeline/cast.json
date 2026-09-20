@@ -62,7 +62,8 @@
       "status": "locked",
       "voice_ref": "voice-refs/nour_ref.wav",
       "production_engine": "qwen3-tts-clone",
-      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)",
+      "ref_text": "Macal? You look like you just saw a ghost. What happened?"
     },
     "Tarek": {
       "engine": "qwen3-tts-design",
@@ -75,7 +76,8 @@
       "status": "locked",
       "voice_ref": "voice-refs/tarek_ref.wav",
       "production_engine": "qwen3-tts-clone",
-      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)",
+      "ref_text": "Ah, of course you know the receptionist here too. Everyone loves Tarek."
     },
     "Interviewer": {
       "display_name": "Farida",
@@ -89,7 +91,8 @@
       "status": "locked",
       "voice_ref": "voice-refs/farida_ref.wav",
       "production_engine": "qwen3-tts-clone",
-      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)",
+      "ref_text": "Dune and Company. We need your answer by Friday. Are you still with us?"
     },
     "Barista": {
       "display_name": "Aisha",
@@ -103,7 +106,8 @@
       "status": "locked",
       "voice_ref": "voice-refs/aisha_ref.wav",
       "production_engine": "qwen3-tts-clone",
-      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)",
+      "ref_text": "Hello, sir. What can I get for you today?"
     },
     "Landlord": {
       "display_name": "Qureshi",
@@ -117,7 +121,8 @@
       "status": "locked",
       "voice_ref": "voice-refs/qureshi_ref.wav",
       "production_engine": "qwen3-tts-clone",
-      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)",
+      "ref_text": "Macal, I'm not raising the rent because I want to. The building costs more now."
     },
     "TaxiDriver": {
       "display_name": "Ravi",
@@ -129,7 +134,8 @@
       "role": "taxi driver (Kerala)",
       "performance": "warm, chatty, easygoing",
       "status": "locked",
-      "note": "Owner B.6e: cloned from a real CC0 Common Voice Indian-accent clip via Qwen VoiceClone. CC0 = commercial-safe, no attribution required (attribution kept for provenance)."
+      "note": "Owner B.6e: cloned from a real CC0 Common Voice Indian-accent clip via Qwen VoiceClone. CC0 = commercial-safe, no attribution required (attribution kept for provenance).",
+      "_ref_note": "ref is a raw CC0 Common Voice clip; transcript not saved -> clone via x_vector_only_mode"
     },
     "Friend_F": {
       "engine": "qwen3-tts-design",
@@ -142,7 +148,8 @@
       "status": "locked",
       "voice_ref": "voice-refs/friendf_ref.wav",
       "production_engine": "qwen3-tts-clone",
-      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)",
+      "ref_text": "You double-booked my suite. I flew fourteen hours for this. Fourteen!"
     },
     "Official": {
       "engine": "qwen3-tts-design",
@@ -155,7 +162,8 @@
       "status": "locked",
       "voice_ref": "voice-refs/official_ref.wav",
       "production_engine": "qwen3-tts-clone",
-      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)",
+      "ref_text": "Mr. Macal? This is Dune and Company. Thank you for your voice note. It was good."
     },
     "Friend_M": {
       "engine": "qwen3-tts-design",
@@ -168,7 +176,8 @@
       "status": "locked",
       "voice_ref": "voice-refs/friendm_ref.wav",
       "production_engine": "qwen3-tts-clone",
-      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)"
+      "_ref_note": "canonical winning VoiceDesign take, frozen; production VoiceClones from this ref (Option B, no drift)",
+      "ref_text": "Bro, that was Tarek. He says the team is watching. Do not embarrass us."
     }
   },
   "arabic_voice_pool": {
