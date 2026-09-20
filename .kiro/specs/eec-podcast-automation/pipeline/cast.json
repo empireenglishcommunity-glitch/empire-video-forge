@@ -30,9 +30,10 @@
       "performance": "warm, encouraging, clear",
       "num_step": 64,
       "guidance_scale": 2.5,
-      "speed": 1.0,
+      "speed": 0.8,
       "status": "locked",
-      "note": "Owner picked 'Abdelrahman' as Mahmoud (changed from Omar, and earlier from the placeholder Sayed). Distinct from Macal (Abdullah)."
+      "note": "Owner picked 'Abdelrahman' as Mahmoud (changed from Omar, and earlier from the placeholder Sayed). Distinct from Macal (Abdullah).",
+      "_pacing_note": "FIX-005 (owner-approved): PROSODY teacher pacing + speed 0.80. teacher_prosody() in synth_episode_v2.py adds light '...' breaths at sentence/colon boundaries. Warm deliberate teacher (lighter than Macal's learner hesitation)."
     },
     "Macal": {
       "display_name": "Macal",

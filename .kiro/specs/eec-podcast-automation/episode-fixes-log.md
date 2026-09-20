@@ -166,3 +166,9 @@
 - **Still-open stragglers:** وقفة (ة-ending) + متفهمش (cluster) — now go BARE; re-synth will
   show if bare fixes them; if متفهمش still fails, ONE targeted respelling (verified by ASR).
 - **Status:** light-touch lexicon done ✅; audible on next Ep1 re-synth; two stragglers to confirm.
+
+### FIX-005 VERIFIED — Mahmoud pacing baked in
+- Owner picked **PROSODY @ speed 0.80**. Baked `teacher_prosody()` into synth_episode_v2.py
+  (light '...' breaths after sentence enders + before taught phrases; lighter than Macal's) +
+  `cast.Coach.speed=0.80`. Applied to Coach Arabic lines only, synth-time (script.json clean).
+- **Status:** ✅ VERIFIED; audible on next Ep1 re-synth.

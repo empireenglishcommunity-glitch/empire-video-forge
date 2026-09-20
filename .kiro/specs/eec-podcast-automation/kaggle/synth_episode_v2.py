@@ -92,6 +92,17 @@ def macal_prosody(text):
     return t
 
 
+def teacher_prosody(text):
+    """FIX-005 (owner-approved 'PROSODY @ 0.80'): Mahmoud = warm, DELIBERATE teacher.
+    LIGHTER than Macal's hesitation — a teacher is calm, not broken. Add a short breath
+    '...' after sentence enders and before a taught phrase (colon), keep his own commas.
+    Applied at synth boundary to Coach Arabic lines; script.json stays clean. Paired with
+    Coach speed=0.80 in cast.json."""
+    t = re.sub(r"([.!؟])\s+", r"\1.. ", text)   # after AR/Latin sentence enders
+    t = re.sub(r"([:؛])\s+", r"\1... ", t)       # after colon (before a taught phrase) = breath
+    return t
+
+
 def apply_en_phonetic(text):
     """Whole-word, case-insensitive respelling of English words VoiceTut mispronounces.
     Applied ONLY to Macal's English at synth time — never touches script.json."""
@@ -180,6 +191,8 @@ if PASS == "voicetut":
         # (FIX-001 'BOTH_SLOW'). Other English-on-VoiceTut speakers (none today) skip prosody.
         if is_ar:
             text = prepare_ar(ln["text"])
+            if spk == "Coach":
+                text = teacher_prosody(text)   # FIX-005: Mahmoud deliberate teacher pacing
         else:
             text = apply_en_phonetic(ln["text"])
             if spk == "Macal":
