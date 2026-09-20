@@ -187,6 +187,18 @@ Balanced. Real, believable, warm, funny, honest. Genuine dramatic tension with c
 - **CTA variants:** Instagram voice note, WhatsApp challenge, EEC community prompt.
 - **Season 2 seed:** Cairo learner, Tarek as co-founder, Nour staying, Macal teaching a new learner—still learning himself.
 
+### Voice cast & engines (LOCKED — Phase B; source of truth = `pipeline/cast.json`)
+Three commercial-safe engines, routed per speaker:
+| Character | Engine | Voice / ref |
+|---|---|---|
+| Mahmoud (Coach) | VoiceTut | `Omar` (Arabic) |
+| Macal | VoiceTut | `Abdullah` — **raw English → real Egyptian accent** (no transliteration) |
+| Nour, Tarek, Farida, Aisha, Qureshi, Friend_F, Official, Friend_M | Qwen3-TTS VoiceClone | frozen `voice-refs/*.wav` (Option B) |
+| Ravi | Qwen3-TTS VoiceClone | `voice-refs/ravi_ref1.wav` (real CC0 Indian-accent clip) |
+
+Macal's accent stays Egyptian across ALL stages — growth is in **language**, not accent.
+Synth = `kaggle/synth_episode_v2.py` (run PASS=voicetut + PASS=qwen). Chatterbox retired.
+
 
 ---
 
