@@ -80,7 +80,7 @@ SEASON1 = [
 # The floors are the ~7-min baseline; --minutes scales them (see build_acts).
 # (act_key, brief, base_min_words)
 BASE_ACTS = [
-    ("cold_open", "a punchy COLD OPEN (~15-20 sec): drop the listener straight into a tense/curious moment, then a beat of intrigue. 3-4 story lines, SHORT and gripping. PURE STORY — only in-world characters (Macal + guests) speaking English. ABSOLUTELY NO Coach line and NO Arabic here; the Coach first speaks in coach_intro.", 55),
+    ("cold_open", "a punchy COLD OPEN (~15-20 sec): drop the listener straight into a tense/curious moment, then a beat of intrigue. 3-4 story lines, SHORT and gripping. PURE STORY — only in-world characters (Macal + guests), mostly English. ABSOLUTELY NO Coach line here (the Coach first speaks in coach_intro). Macal MAY code-switch to a short Egyptian-Arabic line (lang \"ar\") only if the hook is an intimate family moment — otherwise keep it English.", 55),
     ("coach_intro", "the COACH INTRO (Egyptian Arabic, Coach only): warmly welcome the listener in one breath, set today's situation, and name the 2-3 English phrases to listen for. 3-4 lines. Warm and fun, NO rambling.", 110),
     ("act1", "ACT 1 — the main scene: 8-12 lines of natural {level} English between Macal and the guest(s). Tight and real — establish the situation and land the target phrases in context. Keep it moving, no filler.", 220),
     ("coach_break1", "COACH BREAK 1 (Egyptian Arabic, Coach): unpack the 2-3 key English phrases from Act 1 (meaning + when to use + one quick example each) + 1 common mistake. 4-6 lines. Warm, concise, no padding.", 140),
@@ -190,10 +190,14 @@ def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season
 
     STORY_ACTS = {"cold_open", "act1", "act2", "act3", "act4"}
     if act_key in STORY_ACTS:
-        sep_rule = ("SECTION TYPE: STORY (in-world scene). Speakers are ONLY story "
-                    "characters (Macal, Nour, guests) speaking ENGLISH. Mahmoud/Coach does "
-                    "NOT appear and there is NO Arabic here — teaching happens later in the "
-                    "coach break, never mid-scene.")
+        sep_rule = ("SECTION TYPE: STORY (in-world scene). Speakers are story characters "
+                    "(Macal, Nour, guests) — mostly ENGLISH. Mahmoud/Coach does NOT appear "
+                    "(no teaching mid-scene). LANGUAGE REALISM: characters speak English where "
+                    "it's realistic (Dubai work/social/mixed settings, or Macal practicing/"
+                    "recording English). Macal is BILINGUAL and may CODE-SWITCH to Egyptian "
+                    "ARABIC when the moment is intimate/with family (e.g. answering his mother's "
+                    "call) — write those lines in natural Egyptian Arabic with lang \"ar\". Do "
+                    "NOT stage an all-Egyptian family conversation in English. Guests stay English.")
         craft = (
             "SCRIPTING CRAFT (mandatory):\n"
             "- START IN-MEDIA-RES: drop into a scene ALREADY in motion. No 'hello, my "
@@ -204,13 +208,14 @@ def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season
             "- LANGUAGE REALISM (mandatory): characters speak English ONLY where it's "
             "realistic in-world — Dubai's mixed-nationality work/social life (office, taxi, "
             "cafe, interviews, networking), OR when Macal is deliberately PRACTICING/RECORDING "
-            "his English. NEVER write an intimate all-Egyptian scene (e.g. a private phone "
-            "call home to his Arabic-speaking mother/family) as natural English dialogue — "
-            "they would speak Arabic; that breaks the world. If such a beat is needed, frame "
-            "it so English is plausible: Macal is rehearsing/recording an English voice note "
-            "(anxious learner performing polished English for family who think he 'made it'), "
-            "OR leave the intimate Arabic moment to Mahmoud's Arabic coach narration — do NOT "
-            "stage it as English dialogue. Never put two Arabic-speaking characters in a story scene.\n"
+            "his English. Macal is BILINGUAL: he performs polished English for the image/work, "
+            "but CODE-SWITCHES to natural EGYPTIAN ARABIC in intimate family moments (write "
+            "those lines in Egyptian Arabic with lang \"ar\" — his VoiceTut voice speaks both). "
+            "So a private call home to his Arabic-speaking mother is either (a) staged as Macal "
+            "answering IN ARABIC, or (b) reframed as him rehearsing/recording an English voice "
+            "note (anxious learner performing success for family who think he 'made it'). NEVER "
+            "stage an intimate all-Egyptian family conversation in ENGLISH — that breaks the "
+            "world. Mahmoud (Coach) still never appears in a story scene.\n"
             "- Land the episode's TARGET PHRASES naturally in dialogue (don't announce them)."
         )
         if act_key == "act1":
@@ -470,19 +475,20 @@ def main():
     script["lines"] = cleaned
 
     # STRUCTURE ENFORCEMENT (series-bible §10): acts are generated in isolation, so a
-    # model can still leak a Coach/Arabic line into a STORY section. Auto-correct the
-    # ONE safe way — drop any Coach/Arabic line that leaked into a STORY section (it's
-    # stray commentary; real teaching lives in the coach sections) — then HARD-GATE on
-    # the validator so a structurally-messy script can never be saved as final.
+    # model can still leak the COACH (Mahmoud) into a STORY section. Auto-correct the ONE
+    # safe way — drop any COACH line that leaked into a STORY section (it's stray teaching
+    # commentary; real teaching lives in the coach sections). NOTE: a STORY CHARACTER
+    # speaking Arabic (e.g. Macal code-switching with family) is ALLOWED — bilingual realism
+    # — so we drop on speaker=="Coach" only, NOT on lang=="ar". Then HARD-GATE on the validator.
     STORY = structure_check.STORY_SECTIONS
     kept, dropped = [], []
     for l in script["lines"]:
-        if l.get("section") in STORY and (l.get("speaker") == "Coach" or l.get("lang") == "ar"):
+        if l.get("section") in STORY and l.get("speaker") == "Coach":
             dropped.append(l)
         else:
             kept.append(l)
     if dropped:
-        print(f"  STRUCTURE: dropped {len(dropped)} stray Coach/Arabic line(s) that "
+        print(f"  STRUCTURE: dropped {len(dropped)} stray Coach line(s) that "
               f"leaked into STORY sections (teaching belongs in coach breaks):",
               flush=True)
         for l in dropped[:10]:
