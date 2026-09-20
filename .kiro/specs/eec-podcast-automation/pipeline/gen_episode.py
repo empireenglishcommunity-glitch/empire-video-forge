@@ -201,6 +201,16 @@ def act_prompt(ep, title, level, situation, act_key, act_desc, min_words, season
             f"- {MACAL_STAGE}\n"
             "- GUESTS keep authentic Dubai accents (Indian/Filipino/Pakistani/Gulf as "
             "cast) BUT stay CLEAR and level-appropriate — no dense slang, no rapid-fire.\n"
+            "- LANGUAGE REALISM (mandatory): characters speak English ONLY where it's "
+            "realistic in-world — Dubai's mixed-nationality work/social life (office, taxi, "
+            "cafe, interviews, networking), OR when Macal is deliberately PRACTICING/RECORDING "
+            "his English. NEVER write an intimate all-Egyptian scene (e.g. a private phone "
+            "call home to his Arabic-speaking mother/family) as natural English dialogue — "
+            "they would speak Arabic; that breaks the world. If such a beat is needed, frame "
+            "it so English is plausible: Macal is rehearsing/recording an English voice note "
+            "(anxious learner performing polished English for family who think he 'made it'), "
+            "OR leave the intimate Arabic moment to Mahmoud's Arabic coach narration — do NOT "
+            "stage it as English dialogue. Never put two Arabic-speaking characters in a story scene.\n"
             "- Land the episode's TARGET PHRASES naturally in dialogue (don't announce them)."
         )
         if act_key == "act1":

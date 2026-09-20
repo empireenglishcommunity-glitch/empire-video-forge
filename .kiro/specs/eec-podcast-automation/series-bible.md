@@ -106,7 +106,18 @@ Each thread is tied to a learning situation. Drama creates the need; English mee
 - Guests keep Dubai-real accents: Indian English, Pakistani English, Filipino English, Gulf English, Egyptian English.
 - Macal’s accent evolves in locked voice stages.
 - Scenes are mostly English. Coach sections are Arabic.
-- Cliffhangers are story-driven, not language quizzes.
+- **LANGUAGE REALISM RULE (LOCKED — the world must make sense):** Characters speak English
+  ONLY where English is realistic in-world — Dubai's mixed-nationality work & social life
+  (office, taxi, café, interviews, networking), OR when Macal is *deliberately practicing/
+  recording his English*. **Never stage an intimate all-Egyptian scene (e.g. a private phone
+  call home to his Arabic-speaking mother/family) as natural English dialogue** — that breaks
+  the reality (they'd speak Arabic). If such a beat is needed, frame it so English is
+  plausible: Macal is **rehearsing/recording a voice note in English** (he's an anxious
+  learner prepping for Rising Voices, and his family believes he's "made it" — so he performs
+  polished English), OR the moment is **narrated in Arabic by Mahmoud** in a coach beat, not
+  played as English dialogue. Egyptian home life is Arabic and stays mostly off-scene or in
+  Mahmoud's framing. This protects both realism AND the teaching mission (story=English,
+  teaching=Arabic; never two Arabic-speaking characters in a story scene).
 - No forbidden marketing: no “hack,” no “secret” gimmick, no “guaranteed,” no “fluent in X days,” no shaming.
 - Use: system, step by step, real, consistency, confidence.
 
