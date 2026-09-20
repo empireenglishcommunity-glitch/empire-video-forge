@@ -1,0 +1,6287 @@
+{
+  "total_unique": 897,
+  "total_tokens": 2466,
+  "in_lexicon": 77,
+  "remaining": 820,
+  "words": [
+    {
+      "word": "في",
+      "count": 72,
+      "normalized": "في",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "يلا",
+      "count": 46,
+      "normalized": "يلا",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "من",
+      "count": 46,
+      "normalized": "من",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "مش",
+      "count": 39,
+      "normalized": "مش",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "على",
+      "count": 38,
+      "normalized": "علي",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "يعني",
+      "count": 34,
+      "normalized": "يعني",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "يا",
+      "count": 29,
+      "normalized": "يا",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "دي",
+      "count": 29,
+      "normalized": "دي",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "أنا",
+      "count": 27,
+      "normalized": "انا",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "لما",
+      "count": 26,
+      "normalized": "لما",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "مع",
+      "count": 25,
+      "normalized": "مع",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "جماعة",
+      "count": 24,
+      "normalized": "جماعه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "إحنا",
+      "count": 19,
+      "normalized": "احنا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "عشان",
+      "count": 18,
+      "normalized": "عشان",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "مكال",
+      "count": 18,
+      "normalized": "مكال",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "النهارده",
+      "count": 18,
+      "normalized": "النهارده",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بس",
+      "count": 17,
+      "normalized": "بس",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "زي",
+      "count": 17,
+      "normalized": "زي",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الحلقة",
+      "count": 15,
+      "normalized": "الحلقه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "واحدة",
+      "count": 14,
+      "normalized": "واحده",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "عن",
+      "count": 14,
+      "normalized": "عن",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "معايا",
+      "count": 14,
+      "normalized": "معايا",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "بالك",
+      "count": 13,
+      "normalized": "بالك",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ماكال",
+      "count": 13,
+      "normalized": "ماكال",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ما",
+      "count": 13,
+      "normalized": "ما",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "محمود",
+      "count": 12,
+      "normalized": "محمود",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "عبارة",
+      "count": 12,
+      "normalized": "عباره",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الـ",
+      "count": 12,
+      "normalized": "الـ",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "طيب",
+      "count": 12,
+      "normalized": "طيب",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "فلونت",
+      "count": 11,
+      "normalized": "فلونت",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "النهاردة",
+      "count": 11,
+      "normalized": "النهارده",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "تاني",
+      "count": 11,
+      "normalized": "تاني",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "قال",
+      "count": 11,
+      "normalized": "قال",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "كلمة",
+      "count": 11,
+      "normalized": "كلمه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "صوتك",
+      "count": 11,
+      "normalized": "صوتك",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "أهلا",
+      "count": 10,
+      "normalized": "اهلا",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "أول",
+      "count": 10,
+      "normalized": "اول",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "كويس",
+      "count": 10,
+      "normalized": "كويس",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "قول",
+      "count": 10,
+      "normalized": "قول",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "أي",
+      "count": 10,
+      "normalized": "اي",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "سجل",
+      "count": 10,
+      "normalized": "سجل",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "حاجة",
+      "count": 10,
+      "normalized": "حاجه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ده",
+      "count": 9,
+      "normalized": "ده",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "إيه",
+      "count": 9,
+      "normalized": "ايه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "تلاتة",
+      "count": 9,
+      "normalized": "تلاته",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "نسمع",
+      "count": 9,
+      "normalized": "نسمع",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "جملة",
+      "count": 9,
+      "normalized": "جمله",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "مثلا",
+      "count": 9,
+      "normalized": "مثلا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "العربي",
+      "count": 9,
+      "normalized": "العربي",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الإنجليزي",
+      "count": 9,
+      "normalized": "الانجليزي",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "إنت",
+      "count": 9,
+      "normalized": "انت",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بنقول",
+      "count": 9,
+      "normalized": "بنقول",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "وعبارة",
+      "count": 9,
+      "normalized": "وعباره",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "هي",
+      "count": 9,
+      "normalized": "هي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "صغير",
+      "count": 9,
+      "normalized": "صغير",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "تعبيرات",
+      "count": 9,
+      "normalized": "تعبيرات",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "تليجرام",
+      "count": 8,
+      "normalized": "تليجرام",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "دلوقتي",
+      "count": 8,
+      "normalized": "دلوقتي",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "صوت",
+      "count": 8,
+      "normalized": "صوت",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بسرعة",
+      "count": 8,
+      "normalized": "بسرعه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "وابعتها",
+      "count": 8,
+      "normalized": "وابعتها",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "تقول",
+      "count": 8,
+      "normalized": "تقول",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "غلطة",
+      "count": 8,
+      "normalized": "غلطه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الصح",
+      "count": 8,
+      "normalized": "الصح",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "فيه",
+      "count": 8,
+      "normalized": "فيه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "مرة",
+      "count": 8,
+      "normalized": "مره",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "المشهد",
+      "count": 8,
+      "normalized": "المشهد",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بعض",
+      "count": 8,
+      "normalized": "بعض",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "هنا",
+      "count": 8,
+      "normalized": "هنا",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "كرر",
+      "count": 8,
+      "normalized": "كرر",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "كده",
+      "count": 8,
+      "normalized": "كده",
+      "in_lexicon": true,
+      "first_ep": 4
+    },
+    {
+      "word": "بها",
+      "count": 8,
+      "normalized": "بها",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "كل",
+      "count": 7,
+      "normalized": "كل",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "معانا",
+      "count": 7,
+      "normalized": "معانا",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "اللي",
+      "count": 7,
+      "normalized": "اللي",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "خد",
+      "count": 7,
+      "normalized": "خد",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "ودلوقتي",
+      "count": 7,
+      "normalized": "ودلوقتي",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "نوت",
+      "count": 7,
+      "normalized": "نوت",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الجاية",
+      "count": 7,
+      "normalized": "الجايه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وخد",
+      "count": 7,
+      "normalized": "وخد",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "سنتين",
+      "count": 7,
+      "normalized": "سنتين",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بـ",
+      "count": 7,
+      "normalized": "بـ",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بأدب",
+      "count": 7,
+      "normalized": "بادب",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "عايز",
+      "count": 7,
+      "normalized": "عايز",
+      "in_lexicon": true,
+      "first_ep": 3
+    },
+    {
+      "word": "واحد",
+      "count": 7,
+      "normalized": "واحد",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "يالا",
+      "count": 7,
+      "normalized": "يالا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "أكتر",
+      "count": 6,
+      "normalized": "اكتر",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "غير",
+      "count": 6,
+      "normalized": "غير",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بتقول",
+      "count": 6,
+      "normalized": "بتقول",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "نلخص",
+      "count": 6,
+      "normalized": "نلخص",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "ونشجعك",
+      "count": 6,
+      "normalized": "ونشجعك",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "جدا",
+      "count": 6,
+      "normalized": "جدا",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بيبقى",
+      "count": 6,
+      "normalized": "بيبقي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "تعبير",
+      "count": 6,
+      "normalized": "تعبير",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الصوت",
+      "count": 6,
+      "normalized": "الصوت",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "يوم",
+      "count": 5,
+      "normalized": "يوم",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "كلام",
+      "count": 5,
+      "normalized": "كلام",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "كبير",
+      "count": 5,
+      "normalized": "كبير",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "فيها",
+      "count": 5,
+      "normalized": "فيها",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "الحكاية",
+      "count": 5,
+      "normalized": "الحكايه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "التليفون",
+      "count": 5,
+      "normalized": "التليفون",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "سؤال",
+      "count": 5,
+      "normalized": "سؤال",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "حد",
+      "count": 5,
+      "normalized": "حد",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الغلطة",
+      "count": 5,
+      "normalized": "الغلطه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "اسمع",
+      "count": 5,
+      "normalized": "اسمع",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "غلط",
+      "count": 5,
+      "normalized": "غلط",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "صح",
+      "count": 5,
+      "normalized": "صح",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "وكمان",
+      "count": 5,
+      "normalized": "وكمان",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بصوت",
+      "count": 5,
+      "normalized": "بصوت",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "هنسمع",
+      "count": 5,
+      "normalized": "هنسمع",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "كبيرة",
+      "count": 5,
+      "normalized": "كبيره",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ودي",
+      "count": 5,
+      "normalized": "ودي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الوقت",
+      "count": 5,
+      "normalized": "الوقت",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "تسأل",
+      "count": 5,
+      "normalized": "تسال",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "صغيرة",
+      "count": 5,
+      "normalized": "صغيره",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الغلط",
+      "count": 5,
+      "normalized": "الغلط",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الجملة",
+      "count": 5,
+      "normalized": "الجمله",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "معال",
+      "count": 5,
+      "normalized": "معال",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "لأ",
+      "count": 5,
+      "normalized": "لا",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الكلام",
+      "count": 5,
+      "normalized": "الكلام",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "مثال",
+      "count": 5,
+      "normalized": "مثال",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "والـ",
+      "count": 5,
+      "normalized": "والـ",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بيكم",
+      "count": 4,
+      "normalized": "بيكم",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "ومعاكم",
+      "count": 4,
+      "normalized": "ومعاكم",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "وبعدين",
+      "count": 4,
+      "normalized": "وبعدين",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "عبارات",
+      "count": 4,
+      "normalized": "عبارات",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "لسه",
+      "count": 4,
+      "normalized": "لسه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "لأن",
+      "count": 4,
+      "normalized": "لان",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بنفس",
+      "count": 4,
+      "normalized": "بنفس",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ومش",
+      "count": 4,
+      "normalized": "ومش",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "أسرع",
+      "count": 4,
+      "normalized": "اسرع",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بالإنجليزي",
+      "count": 4,
+      "normalized": "بالانجليزي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "جرب",
+      "count": 4,
+      "normalized": "جرب",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "اسمعوا",
+      "count": 4,
+      "normalized": "اسمعوا",
+      "in_lexicon": true,
+      "first_ep": 3
+    },
+    {
+      "word": "حلوة",
+      "count": 4,
+      "normalized": "حلوه",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "زمن",
+      "count": 4,
+      "normalized": "زمن",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بتاع",
+      "count": 4,
+      "normalized": "بتاع",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "تفتح",
+      "count": 4,
+      "normalized": "تفتح",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "تدخل",
+      "count": 4,
+      "normalized": "تدخل",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بتتكلم",
+      "count": 4,
+      "normalized": "بتتكلم",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "عايش",
+      "count": 4,
+      "normalized": "عايش",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "إنك",
+      "count": 4,
+      "normalized": "انك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "ترد",
+      "count": 4,
+      "normalized": "ترد",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "الضغط",
+      "count": 4,
+      "normalized": "الضغط",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "دباي",
+      "count": 3,
+      "normalized": "دباي",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "هو",
+      "count": 3,
+      "normalized": "هو",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "صعب",
+      "count": 3,
+      "normalized": "صعب",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وتاني",
+      "count": 3,
+      "normalized": "وتاني",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بهدوء",
+      "count": 3,
+      "normalized": "بهدوء",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "معاك",
+      "count": 3,
+      "normalized": "معاك",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "أهم",
+      "count": 3,
+      "normalized": "اهم",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "وتلاتة",
+      "count": 3,
+      "normalized": "وتلاته",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "لاب",
+      "count": 3,
+      "normalized": "لاب",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الكلمة",
+      "count": 3,
+      "normalized": "الكلمه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ردد",
+      "count": 3,
+      "normalized": "ردد",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "ولما",
+      "count": 3,
+      "normalized": "ولما",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "العبارة",
+      "count": 3,
+      "normalized": "العباره",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "لك",
+      "count": 3,
+      "normalized": "لك",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "لأنها",
+      "count": 3,
+      "normalized": "لانها",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وأنا",
+      "count": 3,
+      "normalized": "وانا",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "ويس",
+      "count": 3,
+      "normalized": "ويس",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "واضح",
+      "count": 3,
+      "normalized": "واضح",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "لوحدك",
+      "count": 3,
+      "normalized": "لوحدك",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "عنده",
+      "count": 3,
+      "normalized": "عنده",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "حلقة",
+      "count": 3,
+      "normalized": "حلقه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "فلوئنت",
+      "count": 3,
+      "normalized": "فلوئنت",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الشغل",
+      "count": 3,
+      "normalized": "الشغل",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بيقول",
+      "count": 3,
+      "normalized": "بيقول",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "كتير",
+      "count": 3,
+      "normalized": "كتير",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "امشي",
+      "count": 3,
+      "normalized": "امشي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "التاكسي",
+      "count": 3,
+      "normalized": "التاكسي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "مدة",
+      "count": 3,
+      "normalized": "مده",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ليه",
+      "count": 3,
+      "normalized": "ليه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الأمريكي",
+      "count": 3,
+      "normalized": "الامريكي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الأكسنت",
+      "count": 3,
+      "normalized": "الاكسنت",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بتفتح",
+      "count": 3,
+      "normalized": "بتفتح",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "فويس",
+      "count": 3,
+      "normalized": "فويس",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "وركز",
+      "count": 3,
+      "normalized": "وركز",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بطل",
+      "count": 3,
+      "normalized": "بطل",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "كمان",
+      "count": 3,
+      "normalized": "كمان",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "نفكك",
+      "count": 3,
+      "normalized": "نفكك",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "أوي",
+      "count": 3,
+      "normalized": "اوي",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "تقولها",
+      "count": 3,
+      "normalized": "تقولها",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "اللسان",
+      "count": 3,
+      "normalized": "اللسان",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "شوية",
+      "count": 3,
+      "normalized": "شويه",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "التحدي",
+      "count": 3,
+      "normalized": "التحدي",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "لـ",
+      "count": 3,
+      "normalized": "لـ",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "تالت",
+      "count": 3,
+      "normalized": "تالت",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الكلمات",
+      "count": 3,
+      "normalized": "الكلمات",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بيتفاوض",
+      "count": 3,
+      "normalized": "بيتفاوض",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "إزاي",
+      "count": 3,
+      "normalized": "ازاي",
+      "in_lexicon": true,
+      "first_ep": 5
+    },
+    {
+      "word": "تفاوض",
+      "count": 3,
+      "normalized": "تفاوض",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "عالي",
+      "count": 3,
+      "normalized": "عالي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "لي",
+      "count": 3,
+      "normalized": "لي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "مجموعة",
+      "count": 3,
+      "normalized": "مجموعه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الفكرة",
+      "count": 3,
+      "normalized": "الفكره",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "تقولش",
+      "count": 3,
+      "normalized": "تقولش",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "الفرق",
+      "count": 3,
+      "normalized": "الفرق",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "واقف",
+      "count": 3,
+      "normalized": "واقف",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "تعابير",
+      "count": 3,
+      "normalized": "تعابير",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "ناوي",
+      "count": 3,
+      "normalized": "ناوي",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "المدة",
+      "count": 3,
+      "normalized": "المده",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "قصتك",
+      "count": 3,
+      "normalized": "قصتك",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "توضيح",
+      "count": 3,
+      "normalized": "توضيح",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "نتعلم",
+      "count": 2,
+      "normalized": "نتعلم",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "وبس",
+      "count": 2,
+      "normalized": "وبس",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "أما",
+      "count": 2,
+      "normalized": "اما",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "البيت",
+      "count": 2,
+      "normalized": "البيت",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "بتاعنا",
+      "count": 2,
+      "normalized": "بتاعنا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "كلنا",
+      "count": 2,
+      "normalized": "كلنا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "العيلة",
+      "count": 2,
+      "normalized": "العيله",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "سوا",
+      "count": 2,
+      "normalized": "سوا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "خليكم",
+      "count": 2,
+      "normalized": "خليكم",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بينا",
+      "count": 2,
+      "normalized": "بينا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بنقولها",
+      "count": 2,
+      "normalized": "بنقولها",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الويش",
+      "count": 2,
+      "normalized": "الويش",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "تو",
+      "count": 2,
+      "normalized": "تو",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ويش",
+      "count": 2,
+      "normalized": "ويش",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "متفهمش",
+      "count": 2,
+      "normalized": "متفهمش",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "فرصة",
+      "count": 2,
+      "normalized": "فرصه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "طبيعية",
+      "count": 2,
+      "normalized": "طبيعيه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "المقابلة",
+      "count": 2,
+      "normalized": "المقابله",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "لكن",
+      "count": 2,
+      "normalized": "لكن",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "القوة",
+      "count": 2,
+      "normalized": "القوه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "حلو",
+      "count": 2,
+      "normalized": "حلو",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وماكال",
+      "count": 2,
+      "normalized": "وماكال",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "مشكلة",
+      "count": 2,
+      "normalized": "مشكله",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "صاحبي",
+      "count": 2,
+      "normalized": "صاحبي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "كم",
+      "count": 2,
+      "normalized": "كم",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "والتالتة",
+      "count": 2,
+      "normalized": "والتالته",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "أدب",
+      "count": 2,
+      "normalized": "ادب",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ولطف",
+      "count": 2,
+      "normalized": "ولطف",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "نشوف",
+      "count": 2,
+      "normalized": "نشوف",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "أو",
+      "count": 2,
+      "normalized": "او",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "كدا",
+      "count": 2,
+      "normalized": "كدا",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بين",
+      "count": 2,
+      "normalized": "بين",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "قوية",
+      "count": 2,
+      "normalized": "قويه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ليدل",
+      "count": 2,
+      "normalized": "ليدل",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بيدر",
+      "count": 2,
+      "normalized": "بيدر",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "نرجع",
+      "count": 2,
+      "normalized": "نرجع",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "دورك",
+      "count": 2,
+      "normalized": "دورك",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الخفيفة",
+      "count": 2,
+      "normalized": "الخفيفه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "متخافش",
+      "count": 2,
+      "normalized": "متخافش",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "هنشجعك",
+      "count": 2,
+      "normalized": "هنشجعك",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "لنا",
+      "count": 2,
+      "normalized": "لنا",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "عليك",
+      "count": 2,
+      "normalized": "عليك",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "وأنت",
+      "count": 2,
+      "normalized": "وانت",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "والنهارده",
+      "count": 2,
+      "normalized": "والنهارده",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "مشهد",
+      "count": 2,
+      "normalized": "مشهد",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "التانية",
+      "count": 2,
+      "normalized": "التانيه",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "تشرب",
+      "count": 2,
+      "normalized": "تشرب",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "متأكد",
+      "count": 2,
+      "normalized": "متاكد",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "قولها",
+      "count": 2,
+      "normalized": "قولها",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "المضارع",
+      "count": 2,
+      "normalized": "المضارع",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "النطق",
+      "count": 2,
+      "normalized": "النطق",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "ناعم",
+      "count": 2,
+      "normalized": "ناعم",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بعدي",
+      "count": 2,
+      "normalized": "بعدي",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "ولا",
+      "count": 2,
+      "normalized": "ولا",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "عاش",
+      "count": 2,
+      "normalized": "عاش",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "أنت",
+      "count": 2,
+      "normalized": "انت",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "اتعلمنا",
+      "count": 2,
+      "normalized": "اتعلمنا",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "واجب",
+      "count": 2,
+      "normalized": "واجب",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "لازم",
+      "count": 2,
+      "normalized": "لازم",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الدنيا",
+      "count": 2,
+      "normalized": "الدنيا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "لتلاتة",
+      "count": 2,
+      "normalized": "لتلاته",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "معناها",
+      "count": 2,
+      "normalized": "معناها",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بنستخدمها",
+      "count": 2,
+      "normalized": "بنستخدمها",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "العادية",
+      "count": 2,
+      "normalized": "العاديه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الموقف",
+      "count": 2,
+      "normalized": "الموقف",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "نطمنه",
+      "count": 2,
+      "normalized": "نطمنه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "نتأكد",
+      "count": 2,
+      "normalized": "نتاكد",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "فاهمين",
+      "count": 2,
+      "normalized": "فاهمين",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "المصري",
+      "count": 2,
+      "normalized": "المصري",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "اللينكينغ",
+      "count": 2,
+      "normalized": "اللينكينغ",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "برافو",
+      "count": 2,
+      "normalized": "برافو",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "طلع",
+      "count": 2,
+      "normalized": "طلع",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "تلجرام",
+      "count": 2,
+      "normalized": "تلجرام",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بقى",
+      "count": 2,
+      "normalized": "بقي",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "وإنت",
+      "count": 2,
+      "normalized": "وانت",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "مفاوضة",
+      "count": 2,
+      "normalized": "مفاوضه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "لاحظ",
+      "count": 2,
+      "normalized": "لاحظ",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "إن",
+      "count": 2,
+      "normalized": "ان",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "والجملة",
+      "count": 2,
+      "normalized": "والجمله",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "شرط",
+      "count": 2,
+      "normalized": "شرط",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "أقوى",
+      "count": 2,
+      "normalized": "اقوي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "طريقة",
+      "count": 2,
+      "normalized": "طريقه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "أعمل",
+      "count": 2,
+      "normalized": "اعمل",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "مؤدب",
+      "count": 2,
+      "normalized": "مؤدب",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "ريت",
+      "count": 2,
+      "normalized": "ريت",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "عملها",
+      "count": 2,
+      "normalized": "عملها",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "المشكلة",
+      "count": 2,
+      "normalized": "المشكله",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الماضي",
+      "count": 2,
+      "normalized": "الماضي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "حياة",
+      "count": 2,
+      "normalized": "حياه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "الفولو",
+      "count": 2,
+      "normalized": "الفولو",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "أب",
+      "count": 2,
+      "normalized": "اب",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "وما",
+      "count": 2,
+      "normalized": "وما",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بتقولها",
+      "count": 2,
+      "normalized": "بتقولها",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "إني",
+      "count": 2,
+      "normalized": "اني",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "وثقة",
+      "count": 2,
+      "normalized": "وثقه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بنفسي",
+      "count": 2,
+      "normalized": "بنفسي",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "عني",
+      "count": 2,
+      "normalized": "عني",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "صاحب",
+      "count": 2,
+      "normalized": "صاحب",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "ودلوأتي",
+      "count": 2,
+      "normalized": "ودلواتي",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "نطق",
+      "count": 2,
+      "normalized": "نطق",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "ورا",
+      "count": 2,
+      "normalized": "ورا",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "ورايا",
+      "count": 2,
+      "normalized": "ورايا",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "كاملة",
+      "count": 2,
+      "normalized": "كامله",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "دول",
+      "count": 2,
+      "normalized": "دول",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "مستنيين",
+      "count": 2,
+      "normalized": "مستنيين",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "نور",
+      "count": 2,
+      "normalized": "نور",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بتبقى",
+      "count": 2,
+      "normalized": "بتبقي",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "رأيي",
+      "count": 2,
+      "normalized": "رايي",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "كنت",
+      "count": 2,
+      "normalized": "كنت",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "مفتوحة",
+      "count": 2,
+      "normalized": "مفتوحه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "رأيك",
+      "count": 2,
+      "normalized": "رايك",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "حكاية",
+      "count": 2,
+      "normalized": "حكايه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "ترجمة",
+      "count": 2,
+      "normalized": "ترجمه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "حرفية",
+      "count": 2,
+      "normalized": "حرفيه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "نقطة",
+      "count": 2,
+      "normalized": "نقطه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بداية",
+      "count": 2,
+      "normalized": "بدايه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "الناس",
+      "count": 2,
+      "normalized": "الناس",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "كرروا",
+      "count": 2,
+      "normalized": "كرروا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "خدنا",
+      "count": 2,
+      "normalized": "خدنا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "تلات",
+      "count": 2,
+      "normalized": "تلات",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "وفاكر",
+      "count": 2,
+      "normalized": "وفاكر",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "صحبي",
+      "count": 2,
+      "normalized": "صحبي",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وطارق",
+      "count": 2,
+      "normalized": "وطارق",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "خلي",
+      "count": 2,
+      "normalized": "خلي",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "حكي",
+      "count": 2,
+      "normalized": "حكي",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "ترتب",
+      "count": 2,
+      "normalized": "ترتب",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وآخر",
+      "count": 2,
+      "normalized": "واخر",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "ركز",
+      "count": 2,
+      "normalized": "ركز",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بالظبط",
+      "count": 2,
+      "normalized": "بالظبط",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "ومتخافش",
+      "count": 2,
+      "normalized": "ومتخافش",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "مستنيك",
+      "count": 2,
+      "normalized": "مستنيك",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "اديني",
+      "count": 2,
+      "normalized": "اديني",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "لحظة",
+      "count": 2,
+      "normalized": "لحظه",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "أفكر",
+      "count": 2,
+      "normalized": "افكر",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "تربط",
+      "count": 2,
+      "normalized": "تربط",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "كلامك",
+      "count": 2,
+      "normalized": "كلامك",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "بقلبك",
+      "count": 2,
+      "normalized": "بقلبك",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "شائعة",
+      "count": 2,
+      "normalized": "شائعه",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "الي",
+      "count": 2,
+      "normalized": "الي",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "بيودي",
+      "count": 2,
+      "normalized": "بيودي",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "المعنى",
+      "count": 2,
+      "normalized": "المعني",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وعن",
+      "count": 2,
+      "normalized": "وعن",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "إنجليزي",
+      "count": 1,
+      "normalized": "انجليزي",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "وإحنا",
+      "count": 1,
+      "normalized": "واحنا",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "مبسوطين",
+      "count": 1,
+      "normalized": "مبسوطين",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "مصري",
+      "count": 1,
+      "normalized": "مصري",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بيحكي",
+      "count": 1,
+      "normalized": "بيحكي",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "لأمه",
+      "count": 1,
+      "normalized": "لامه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وقلبه",
+      "count": 1,
+      "normalized": "وقلبه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "مرتاح",
+      "count": 1,
+      "normalized": "مرتاح",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "خالص",
+      "count": 1,
+      "normalized": "خالص",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "نبقى",
+      "count": 1,
+      "normalized": "نبقي",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "متفهمين",
+      "count": 1,
+      "normalized": "متفهمين",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "اسم",
+      "count": 1,
+      "normalized": "اسم",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "البرنامج",
+      "count": 1,
+      "normalized": "البرنامج",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بتسمعوه",
+      "count": 1,
+      "normalized": "بتسمعوه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "هنتمرن",
+      "count": 1,
+      "normalized": "هنتمرن",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "ونبعت",
+      "count": 1,
+      "normalized": "ونبعت",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "لبعض",
+      "count": 1,
+      "normalized": "لبعض",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بيرن",
+      "count": 1,
+      "normalized": "بيرن",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "والشغل",
+      "count": 1,
+      "normalized": "والشغل",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بيسأله",
+      "count": 1,
+      "normalized": "بيساله",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ترى",
+      "count": 1,
+      "normalized": "تري",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "هيقول",
+      "count": 1,
+      "normalized": "هيقول",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "واسمعوا",
+      "count": 1,
+      "normalized": "واسمعوا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ركزوا",
+      "count": 1,
+      "normalized": "ركزوا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "تقابل",
+      "count": 1,
+      "normalized": "تقابل",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ولو",
+      "count": 1,
+      "normalized": "ولو",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "مفهمتش",
+      "count": 1,
+      "normalized": "مفهمتش",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ونتعلم",
+      "count": 1,
+      "normalized": "ونتعلم",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "منه",
+      "count": 1,
+      "normalized": "منه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وقفة",
+      "count": 1,
+      "normalized": "وقفه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "سريعة",
+      "count": 1,
+      "normalized": "سريعه",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "تشرفت",
+      "count": 1,
+      "normalized": "تشرفت",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "بالكلام",
+      "count": 1,
+      "normalized": "بالكلام",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "وبتديك",
+      "count": 1,
+      "normalized": "وبتديك",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "تسمع",
+      "count": 1,
+      "normalized": "تسمع",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "حرج",
+      "count": 1,
+      "normalized": "حرج",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "مهتم",
+      "count": 1,
+      "normalized": "مهتم",
+      "in_lexicon": true,
+      "first_ep": 1
+    },
+    {
+      "word": "تشرفنا",
+      "count": 1,
+      "normalized": "تشرفنا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "للحاجتين",
+      "count": 1,
+      "normalized": "للحاجتين",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الواكسنت",
+      "count": 1,
+      "normalized": "الواكسنت",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "إنته",
+      "count": 1,
+      "normalized": "انته",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "مبتقولش",
+      "count": 1,
+      "normalized": "مبتقولش",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "كلها",
+      "count": 1,
+      "normalized": "كلها",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الشدة",
+      "count": 1,
+      "normalized": "الشده",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بتفرق",
+      "count": 1,
+      "normalized": "بتفرق",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "هتفتح",
+      "count": 1,
+      "normalized": "هتفتح",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الأبواب",
+      "count": 1,
+      "normalized": "الابواب",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "للناس",
+      "count": 1,
+      "normalized": "للناس",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "محترم",
+      "count": 1,
+      "normalized": "محترم",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "بتعلم",
+      "count": 1,
+      "normalized": "بتعلم",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وكمل",
+      "count": 1,
+      "normalized": "وكمل",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "فخد",
+      "count": 1,
+      "normalized": "فخد",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "الواجب",
+      "count": 1,
+      "normalized": "الواجب",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "قصير",
+      "count": 1,
+      "normalized": "قصير",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "عشر",
+      "count": 1,
+      "normalized": "عشر",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ثواني",
+      "count": 1,
+      "normalized": "ثواني",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وقول",
+      "count": 1,
+      "normalized": "وقول",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وبالثقة",
+      "count": 1,
+      "normalized": "وبالثقه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "اتفقنا",
+      "count": 1,
+      "normalized": "اتفقنا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ونقول",
+      "count": 1,
+      "normalized": "ونقول",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "وإيه",
+      "count": 1,
+      "normalized": "وايه",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "يتحسن",
+      "count": 1,
+      "normalized": "يتحسن",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "المايك",
+      "count": 1,
+      "normalized": "المايك",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "روح",
+      "count": 1,
+      "normalized": "روح",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "مستني",
+      "count": 1,
+      "normalized": "مستني",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "سماع",
+      "count": 1,
+      "normalized": "سماع",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "ولاقينا",
+      "count": 1,
+      "normalized": "ولاقينا",
+      "in_lexicon": false,
+      "first_ep": 1
+    },
+    {
+      "word": "راكب",
+      "count": 1,
+      "normalized": "راكب",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "تاكسي",
+      "count": 1,
+      "normalized": "تاكسي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ومتأخر",
+      "count": 1,
+      "normalized": "ومتاخر",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "والسواق",
+      "count": 1,
+      "normalized": "والسواق",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "راجو",
+      "count": 1,
+      "normalized": "راجو",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "له",
+      "count": 1,
+      "normalized": "له",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "هنتعلم",
+      "count": 1,
+      "normalized": "هنتعلم",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "مهمة",
+      "count": 1,
+      "normalized": "مهمه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الأولاني",
+      "count": 1,
+      "normalized": "الاولاني",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "والتانية",
+      "count": 1,
+      "normalized": "والتانيه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "وراجو",
+      "count": 1,
+      "normalized": "وراجو",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "هتسمع",
+      "count": 1,
+      "normalized": "هتسمع",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "وثاني",
+      "count": 1,
+      "normalized": "وثاني",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "فالدماغ",
+      "count": 1,
+      "normalized": "فالدماغ",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بيجيب",
+      "count": 1,
+      "normalized": "بيجيب",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "أبسط",
+      "count": 1,
+      "normalized": "ابسط",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "عادية",
+      "count": 1,
+      "normalized": "عاديه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "العالم",
+      "count": 1,
+      "normalized": "العالم",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بتعمل",
+      "count": 1,
+      "normalized": "بتعمل",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "المهم",
+      "count": 1,
+      "normalized": "المهم",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "هنشتغل",
+      "count": 1,
+      "normalized": "هنشتغل",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "حرف",
+      "count": 1,
+      "normalized": "حرف",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ييجي",
+      "count": 1,
+      "normalized": "ييجي",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "حرفين",
+      "count": 1,
+      "normalized": "حرفين",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "متحركين",
+      "count": 1,
+      "normalized": "متحركين",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "دال",
+      "count": 1,
+      "normalized": "دال",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ناعمة",
+      "count": 1,
+      "normalized": "ناعمه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ليتل",
+      "count": 1,
+      "normalized": "ليتل",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بتين",
+      "count": 1,
+      "normalized": "بتين",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "خفيف",
+      "count": 1,
+      "normalized": "خفيف",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ممتاز",
+      "count": 1,
+      "normalized": "ممتاز",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "للأحداث",
+      "count": 1,
+      "normalized": "للاحداث",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "نراجع",
+      "count": 1,
+      "normalized": "نراجع",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "كنا",
+      "count": 1,
+      "normalized": "كنا",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "بنسأل",
+      "count": 1,
+      "normalized": "بنسال",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "وبنطلب",
+      "count": 1,
+      "normalized": "وبنطلب",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "وبنقول",
+      "count": 1,
+      "normalized": "وبنقول",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "أبواب",
+      "count": 1,
+      "normalized": "ابواب",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "دبي",
+      "count": 1,
+      "normalized": "دبي",
+      "in_lexicon": true,
+      "first_ep": 2
+    },
+    {
+      "word": "وهنرد",
+      "count": 1,
+      "normalized": "وهنرد",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "منا",
+      "count": 1,
+      "normalized": "منا",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "ارفع",
+      "count": 1,
+      "normalized": "ارفع",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "خطوة",
+      "count": 1,
+      "normalized": "خطوه",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "نشوفك",
+      "count": 1,
+      "normalized": "نشوفك",
+      "in_lexicon": false,
+      "first_ep": 2
+    },
+    {
+      "word": "الكوتش",
+      "count": 1,
+      "normalized": "الكوتش",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بتاعكم",
+      "count": 1,
+      "normalized": "بتاعكم",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "رايح",
+      "count": 1,
+      "normalized": "رايح",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "يشتري",
+      "count": 1,
+      "normalized": "يشتري",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "قهوة",
+      "count": 1,
+      "normalized": "قهوه",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "لنور",
+      "count": 1,
+      "normalized": "لنور",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "يطلب",
+      "count": 1,
+      "normalized": "يطلب",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "لوحده",
+      "count": 1,
+      "normalized": "لوحده",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "والباريستا",
+      "count": 1,
+      "normalized": "والباريستا",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "آيشا",
+      "count": 1,
+      "normalized": "ايشا",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بتساعده",
+      "count": 1,
+      "normalized": "بتساعده",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "الأولى",
+      "count": 1,
+      "normalized": "الاولي",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "وبصوا",
+      "count": 1,
+      "normalized": "وبصوا",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بيقلد",
+      "count": 1,
+      "normalized": "بيقلد",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "البريطاني",
+      "count": 1,
+      "normalized": "البريطاني",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "يحس",
+      "count": 1,
+      "normalized": "يحس",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "الباريستا",
+      "count": 1,
+      "normalized": "الباريستا",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بتسألك",
+      "count": 1,
+      "normalized": "بتسالك",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "تسمعها",
+      "count": 1,
+      "normalized": "تسمعها",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "الكافيهات",
+      "count": 1,
+      "normalized": "الكافيهات",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "عارف",
+      "count": 1,
+      "normalized": "عارف",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "الإجابة",
+      "count": 1,
+      "normalized": "الاجابه",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "توصف",
+      "count": 1,
+      "normalized": "توصف",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "المستمر",
+      "count": 1,
+      "normalized": "المستمر",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "البسيط",
+      "count": 1,
+      "normalized": "البسيط",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "باعيش",
+      "count": 1,
+      "normalized": "باعيش",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "فبننقلها",
+      "count": 1,
+      "normalized": "فبننقلها",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "نلعب",
+      "count": 1,
+      "normalized": "نلعب",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "المعمل",
+      "count": 1,
+      "normalized": "المعمل",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "صوتين",
+      "count": 1,
+      "normalized": "صوتين",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "وواحد",
+      "count": 1,
+      "normalized": "وواحد",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "مجهور",
+      "count": 1,
+      "normalized": "مجهور",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بيطلع",
+      "count": 1,
+      "normalized": "بيطلع",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "السنان",
+      "count": 1,
+      "normalized": "السنان",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "لو",
+      "count": 1,
+      "normalized": "لو",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "قلتها",
+      "count": 1,
+      "normalized": "قلتها",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "تري",
+      "count": 1,
+      "normalized": "تري",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بالتاء",
+      "count": 1,
+      "normalized": "بالتاء",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "زات",
+      "count": 1,
+      "normalized": "زات",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "دات",
+      "count": 1,
+      "normalized": "دات",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بتحسن",
+      "count": 1,
+      "normalized": "بتحسن",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "وأهم",
+      "count": 1,
+      "normalized": "واهم",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بصوتك",
+      "count": 1,
+      "normalized": "بصوتك",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "صوتي",
+      "count": 1,
+      "normalized": "صوتي",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "فويسنوت",
+      "count": 1,
+      "normalized": "فويسنوت",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "بيت",
+      "count": 1,
+      "normalized": "بيت",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "استعمل",
+      "count": 1,
+      "normalized": "استعمل",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "الصحيح",
+      "count": 1,
+      "normalized": "الصحيح",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "وخلينا",
+      "count": 1,
+      "normalized": "وخلينا",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "نسمعك",
+      "count": 1,
+      "normalized": "نسمعك",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "نتكلم",
+      "count": 1,
+      "normalized": "نتكلم",
+      "in_lexicon": false,
+      "first_ep": 3
+    },
+    {
+      "word": "موقف",
+      "count": 1,
+      "normalized": "موقف",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "كلاينت",
+      "count": 1,
+      "normalized": "كلاينت",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "زعلانة",
+      "count": 1,
+      "normalized": "زعلانه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "وهو",
+      "count": 1,
+      "normalized": "وهو",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "يهدي",
+      "count": 1,
+      "normalized": "يهدي",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "ونتسلي",
+      "count": 1,
+      "normalized": "ونتسلي",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "عمل",
+      "count": 1,
+      "normalized": "عمل",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "صعبة",
+      "count": 1,
+      "normalized": "صعبه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "هدى",
+      "count": 1,
+      "normalized": "هدي",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "خدوا",
+      "count": 1,
+      "normalized": "خدوا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بالكم",
+      "count": 1,
+      "normalized": "بالكم",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "آسف",
+      "count": 1,
+      "normalized": "اسف",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بجد",
+      "count": 1,
+      "normalized": "بجد",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "سيبني",
+      "count": 1,
+      "normalized": "سيبني",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "أصلح",
+      "count": 1,
+      "normalized": "اصلح",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الكلاينت",
+      "count": 1,
+      "normalized": "الكلاينت",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "زعلان",
+      "count": 1,
+      "normalized": "زعلان",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "ونحنا",
+      "count": 1,
+      "normalized": "ونحنا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "عايزين",
+      "count": 1,
+      "normalized": "عايزين",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "أتأكد",
+      "count": 1,
+      "normalized": "اتاكد",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "نعيد",
+      "count": 1,
+      "normalized": "نعيد",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "المعلومة",
+      "count": 1,
+      "normalized": "المعلومه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بصوغة",
+      "count": 1,
+      "normalized": "بصوغه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "والغلطة",
+      "count": 1,
+      "normalized": "والغلطه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "المشتركة",
+      "count": 1,
+      "normalized": "المشتركه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "يهمك",
+      "count": 1,
+      "normalized": "يهمك",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بنعملها",
+      "count": 1,
+      "normalized": "بنعملها",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الأمريكان",
+      "count": 1,
+      "normalized": "الامريكان",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بيوصلوا",
+      "count": 1,
+      "normalized": "بيوصلوا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بيفصلوها",
+      "count": 1,
+      "normalized": "بيفصلوها",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بتسمع",
+      "count": 1,
+      "normalized": "بتسمع",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "كملنا",
+      "count": 1,
+      "normalized": "كملنا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "راجعوا",
+      "count": 1,
+      "normalized": "راجعوا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بطولها",
+      "count": 1,
+      "normalized": "بطولها",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "تسمعوا",
+      "count": 1,
+      "normalized": "تسمعوا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "المفتاح",
+      "count": 1,
+      "normalized": "المفتاح",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بيستخدمها",
+      "count": 1,
+      "normalized": "بيستخدمها",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الكل",
+      "count": 1,
+      "normalized": "الكل",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الحياة",
+      "count": 1,
+      "normalized": "الحياه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "مكان",
+      "count": 1,
+      "normalized": "مكان",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "قولوها",
+      "count": 1,
+      "normalized": "قولوها",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "سجلوا",
+      "count": 1,
+      "normalized": "سجلوا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "قولوا",
+      "count": 1,
+      "normalized": "قولوا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "وورونا",
+      "count": 1,
+      "normalized": "وورونا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "وماتخافوش",
+      "count": 1,
+      "normalized": "وماتخافوش",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بنشجع",
+      "count": 1,
+      "normalized": "بنشجع",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "ابعتوا",
+      "count": 1,
+      "normalized": "ابعتوا",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "الفويس",
+      "count": 1,
+      "normalized": "الفويس",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "مستخطرين",
+      "count": 1,
+      "normalized": "مستخطرين",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "واشطر",
+      "count": 1,
+      "normalized": "واشطر",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "مكالمة",
+      "count": 1,
+      "normalized": "مكالمه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "هل",
+      "count": 1,
+      "normalized": "هل",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "حيقدر",
+      "count": 1,
+      "normalized": "حيقدر",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "يثبت",
+      "count": 1,
+      "normalized": "يثبت",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "نفسه",
+      "count": 1,
+      "normalized": "نفسه",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "تفوتوش",
+      "count": 1,
+      "normalized": "تفوتوش",
+      "in_lexicon": false,
+      "first_ep": 4
+    },
+    {
+      "word": "بيواجه",
+      "count": 1,
+      "normalized": "بيواجه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الإيجار",
+      "count": 1,
+      "normalized": "الايجار",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "غلي",
+      "count": 1,
+      "normalized": "غلي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "والفيزا",
+      "count": 1,
+      "normalized": "والفيزا",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "لها",
+      "count": 1,
+      "normalized": "لها",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "تسعين",
+      "count": 1,
+      "normalized": "تسعين",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بخناقة",
+      "count": 1,
+      "normalized": "بخناقه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "مايت",
+      "count": 1,
+      "normalized": "مايت",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "وعد",
+      "count": 1,
+      "normalized": "وعد",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "احتمال",
+      "count": 1,
+      "normalized": "احتمال",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "والاحتمال",
+      "count": 1,
+      "normalized": "والاحتمال",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بيدي",
+      "count": 1,
+      "normalized": "بيدي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "مجال",
+      "count": 1,
+      "normalized": "مجال",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "للكلام",
+      "count": 1,
+      "normalized": "للكلام",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "لحد",
+      "count": 1,
+      "normalized": "لحد",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "ساعتها",
+      "count": 1,
+      "normalized": "ساعتها",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بتعترف",
+      "count": 1,
+      "normalized": "بتعترف",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بوجهة",
+      "count": 1,
+      "normalized": "بوجهه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "نظر",
+      "count": 1,
+      "normalized": "نظر",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الطرف",
+      "count": 1,
+      "normalized": "الطرف",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "التاني",
+      "count": 1,
+      "normalized": "التاني",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بتحط",
+      "count": 1,
+      "normalized": "بتحط",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "طلبك",
+      "count": 1,
+      "normalized": "طلبك",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الشرط",
+      "count": 1,
+      "normalized": "الشرط",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "والنتيجة",
+      "count": 1,
+      "normalized": "والنتيجه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "تدي",
+      "count": 1,
+      "normalized": "تدي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بتخلي",
+      "count": 1,
+      "normalized": "بتخلي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الطلب",
+      "count": 1,
+      "normalized": "الطلب",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بالمصري",
+      "count": 1,
+      "normalized": "بالمصري",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بتييجي",
+      "count": 1,
+      "normalized": "بتييجي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الفعل",
+      "count": 1,
+      "normalized": "الفعل",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الكامل",
+      "count": 1,
+      "normalized": "الكامل",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بالأمريكي",
+      "count": 1,
+      "normalized": "بالامريكي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الطبيعي",
+      "count": 1,
+      "normalized": "الطبيعي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "تعال",
+      "count": 1,
+      "normalized": "تعال",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "نتمرن",
+      "count": 1,
+      "normalized": "نتمرن",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الكسلانة",
+      "count": 1,
+      "normalized": "الكسلانه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "وفي",
+      "count": 1,
+      "normalized": "وفي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بتاعتنا",
+      "count": 1,
+      "normalized": "بتاعتنا",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "المقطع",
+      "count": 1,
+      "normalized": "المقطع",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الثاني",
+      "count": 1,
+      "normalized": "الثاني",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "بيختفي",
+      "count": 1,
+      "normalized": "بيختفي",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "ونتيجة",
+      "count": 1,
+      "normalized": "ونتيجه",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "طلب",
+      "count": 1,
+      "normalized": "طلب",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "ومتنساش",
+      "count": 1,
+      "normalized": "ومتنساش",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "اللاندلورد",
+      "count": 1,
+      "normalized": "اللاندلورد",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "المدير",
+      "count": 1,
+      "normalized": "المدير",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "أسمع",
+      "count": 1,
+      "normalized": "اسمع",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "وواضح",
+      "count": 1,
+      "normalized": "وواضح",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "الخفيف",
+      "count": 1,
+      "normalized": "الخفيف",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "وابعتوا",
+      "count": 1,
+      "normalized": "وابعتوا",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "هنسمعكم",
+      "count": 1,
+      "normalized": "هنسمعكم",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "وهنسجعكم",
+      "count": 1,
+      "normalized": "وهنسجعكم",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "عيلة",
+      "count": 1,
+      "normalized": "عيله",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "أربع",
+      "count": 1,
+      "normalized": "اربع",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "أيام",
+      "count": 1,
+      "normalized": "ايام",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "عندك",
+      "count": 1,
+      "normalized": "عندك",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "تتمرن",
+      "count": 1,
+      "normalized": "تتمرن",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "أشوفكم",
+      "count": 1,
+      "normalized": "اشوفكم",
+      "in_lexicon": false,
+      "first_ep": 5
+    },
+    {
+      "word": "اجتماع",
+      "count": 1,
+      "normalized": "اجتماع",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "نتوركينج",
+      "count": 1,
+      "normalized": "نتوركينج",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "والكلم",
+      "count": 1,
+      "normalized": "والكلم",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "ماشي",
+      "count": 1,
+      "normalized": "ماشي",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بالسرعة",
+      "count": 1,
+      "normalized": "بالسرعه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "يدخل",
+      "count": 1,
+      "normalized": "يدخل",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "جوه",
+      "count": 1,
+      "normalized": "جوه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "ويقول",
+      "count": 1,
+      "normalized": "ويقول",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "رأيه",
+      "count": 1,
+      "normalized": "رايه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "يتلخبط",
+      "count": 1,
+      "normalized": "يتلخبط",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "تارك",
+      "count": 1,
+      "normalized": "تارك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "سبقه",
+      "count": 1,
+      "normalized": "سبقه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "لحسابه",
+      "count": 1,
+      "normalized": "لحسابه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "تلاته",
+      "count": 1,
+      "normalized": "تلاته",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "حلوين",
+      "count": 1,
+      "normalized": "حلوين",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "تلحق",
+      "count": 1,
+      "normalized": "تلحق",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بعدين",
+      "count": 1,
+      "normalized": "بعدين",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "سمع",
+      "count": 1,
+      "normalized": "سمع",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "وبتحصل",
+      "count": 1,
+      "normalized": "وبتحصل",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "فالعقل",
+      "count": 1,
+      "normalized": "فالعقل",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بيحولها",
+      "count": 1,
+      "normalized": "بيحولها",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "حرفي",
+      "count": 1,
+      "normalized": "حرفي",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بتحب",
+      "count": 1,
+      "normalized": "بتحب",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "فالأصح",
+      "count": 1,
+      "normalized": "فالاصح",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "معلش",
+      "count": 1,
+      "normalized": "معلش",
+      "in_lexicon": true,
+      "first_ep": 6
+    },
+    {
+      "word": "سمعت",
+      "count": 1,
+      "normalized": "سمعت",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "نص",
+      "count": 1,
+      "normalized": "نص",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "قدرتش",
+      "count": 1,
+      "normalized": "قدرتش",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "أمنع",
+      "count": 1,
+      "normalized": "امنع",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "نفسي",
+      "count": 1,
+      "normalized": "نفسي",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "تيجي",
+      "count": 1,
+      "normalized": "تيجي",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "أسفه",
+      "count": 1,
+      "normalized": "اسفه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "قطعت",
+      "count": 1,
+      "normalized": "قطعت",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "هتكلم",
+      "count": 1,
+      "normalized": "هتكلم",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "هيكلم",
+      "count": 1,
+      "normalized": "هيكلم",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بتوري",
+      "count": 1,
+      "normalized": "بتوري",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "آخر",
+      "count": 1,
+      "normalized": "اخر",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "بتخلص",
+      "count": 1,
+      "normalized": "بتخلص",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "شاطر",
+      "count": 1,
+      "normalized": "شاطر",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "ووريني",
+      "count": 1,
+      "normalized": "ووريني",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "وصلنا",
+      "count": 1,
+      "normalized": "وصلنا",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "لآخر",
+      "count": 1,
+      "normalized": "لاخر",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "مفتاحك",
+      "count": 1,
+      "normalized": "مفتاحك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "وتوري",
+      "count": 1,
+      "normalized": "وتوري",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "وعلى",
+      "count": 1,
+      "normalized": "وعلي",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "فكرة",
+      "count": 1,
+      "normalized": "فكره",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "اخترت",
+      "count": 1,
+      "normalized": "اخترت",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "المسؤولية",
+      "count": 1,
+      "normalized": "المسؤوليه",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "هعمل",
+      "count": 1,
+      "normalized": "هعمل",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "هستنى",
+      "count": 1,
+      "normalized": "هستني",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "تخليك",
+      "count": 1,
+      "normalized": "تخليك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "رجليك",
+      "count": 1,
+      "normalized": "رجليك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "أسمعك",
+      "count": 1,
+      "normalized": "اسمعك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "وخلي",
+      "count": 1,
+      "normalized": "وخلي",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "نطقك",
+      "count": 1,
+      "normalized": "نطقك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "ورينا",
+      "count": 1,
+      "normalized": "ورينا",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "أكسنتك",
+      "count": 1,
+      "normalized": "اكسنتك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "سماعك",
+      "count": 1,
+      "normalized": "سماعك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "وهنشجعك",
+      "count": 1,
+      "normalized": "وهنشجعك",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "أصلا",
+      "count": 1,
+      "normalized": "اصلا",
+      "in_lexicon": false,
+      "first_ep": 6
+    },
+    {
+      "word": "والنهاردة",
+      "count": 1,
+      "normalized": "والنهارده",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بيسجل",
+      "count": 1,
+      "normalized": "بيسجل",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "الفيديو",
+      "count": 1,
+      "normalized": "الفيديو",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بتاعه",
+      "count": 1,
+      "normalized": "بتاعه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "وبصراحة",
+      "count": 1,
+      "normalized": "وبصراحه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "خايف",
+      "count": 1,
+      "normalized": "خايف",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "حقيقية",
+      "count": 1,
+      "normalized": "حقيقيه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "خشوا",
+      "count": 1,
+      "normalized": "خشوا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "وخلوا",
+      "count": 1,
+      "normalized": "وخلوا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "ودنكم",
+      "count": 1,
+      "normalized": "ودنكم",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "تعالوا",
+      "count": 1,
+      "normalized": "تعالوا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "نشوفهم",
+      "count": 1,
+      "normalized": "نشوفهم",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "تعبر",
+      "count": 1,
+      "normalized": "تعبر",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بتبدأ",
+      "count": 1,
+      "normalized": "بتبدا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بيها",
+      "count": 1,
+      "normalized": "بيها",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "طفولتك",
+      "count": 1,
+      "normalized": "طفولتك",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "وتالتا",
+      "count": 1,
+      "normalized": "وتالتا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "للخطط",
+      "count": 1,
+      "normalized": "للخطط",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بتجي",
+      "count": 1,
+      "normalized": "بتجي",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "لحن",
+      "count": 1,
+      "normalized": "لحن",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بطلع",
+      "count": 1,
+      "normalized": "بطلع",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "فوق",
+      "count": 1,
+      "normalized": "فوق",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "الأسئلة",
+      "count": 1,
+      "normalized": "الاسئله",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "وبينزل",
+      "count": 1,
+      "normalized": "وبينزل",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "الجمل",
+      "count": 1,
+      "normalized": "الجمل",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "إسمعوا",
+      "count": 1,
+      "normalized": "اسمعوا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بقولو",
+      "count": 1,
+      "normalized": "بقولو",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "مسطح",
+      "count": 1,
+      "normalized": "مسطح",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "إرفعوا",
+      "count": 1,
+      "normalized": "ارفعوا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "الآخر",
+      "count": 1,
+      "normalized": "الاخر",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "تبدأ",
+      "count": 1,
+      "normalized": "تبدا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "خططك",
+      "count": 1,
+      "normalized": "خططك",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "البداية",
+      "count": 1,
+      "normalized": "البدايه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "القلب",
+      "count": 1,
+      "normalized": "القلب",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "وفيها",
+      "count": 1,
+      "normalized": "وفيها",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "إحساس",
+      "count": 1,
+      "normalized": "احساس",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "الدور",
+      "count": 1,
+      "normalized": "الدور",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "النغمة",
+      "count": 1,
+      "normalized": "النغمه",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "اتدربنا",
+      "count": 1,
+      "normalized": "اتدربنا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "عليها",
+      "count": 1,
+      "normalized": "عليها",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "هنقيمك",
+      "count": 1,
+      "normalized": "هنقيمك",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "عائلة",
+      "count": 1,
+      "normalized": "عائله",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "وأصواتنا",
+      "count": 1,
+      "normalized": "واصواتنا",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "بتكبر",
+      "count": 1,
+      "normalized": "بتكبر",
+      "in_lexicon": false,
+      "first_ep": 7
+    },
+    {
+      "word": "ومعاك",
+      "count": 1,
+      "normalized": "ومعاك",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "مقابلة",
+      "count": 1,
+      "normalized": "مقابله",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وهمية",
+      "count": 1,
+      "normalized": "وهميه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بيتدربوا",
+      "count": 1,
+      "normalized": "بيتدربوا",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "والدرس",
+      "count": 1,
+      "normalized": "والدرس",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "كله",
+      "count": 1,
+      "normalized": "كله",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "تتلخبط",
+      "count": 1,
+      "normalized": "تتلخبط",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "ودنك",
+      "count": 1,
+      "normalized": "ودنك",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "واسمع",
+      "count": 1,
+      "normalized": "واسمع",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "تحتاج",
+      "count": 1,
+      "normalized": "تحتاج",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بيتحسن",
+      "count": 1,
+      "normalized": "بيتحسن",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "ودوس",
+      "count": 1,
+      "normalized": "ودوس",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بلاي",
+      "count": 1,
+      "normalized": "بلاي",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بيتكرر",
+      "count": 1,
+      "normalized": "بيتكرر",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "المقابلات",
+      "count": 1,
+      "normalized": "المقابلات",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بيستخدموه",
+      "count": 1,
+      "normalized": "بيستخدموه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "يشوفوا",
+      "count": 1,
+      "normalized": "يشوفوا",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "عملت",
+      "count": 1,
+      "normalized": "عملت",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "مين",
+      "count": 1,
+      "normalized": "مين",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "براحة",
+      "count": 1,
+      "normalized": "براحه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وعشان",
+      "count": 1,
+      "normalized": "وعشان",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "كلامه",
+      "count": 1,
+      "normalized": "كلامه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "مرتب",
+      "count": 1,
+      "normalized": "مرتب",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "يبان",
+      "count": 1,
+      "normalized": "يبان",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "روبوت",
+      "count": 1,
+      "normalized": "روبوت",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وتالت",
+      "count": 1,
+      "normalized": "وتالت",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "السؤال",
+      "count": 1,
+      "normalized": "السؤال",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "يكون",
+      "count": 1,
+      "normalized": "يكون",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "غامض",
+      "count": 1,
+      "normalized": "غامض",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "متردش",
+      "count": 1,
+      "normalized": "متردش",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "علطول",
+      "count": 1,
+      "normalized": "علطول",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بسأل",
+      "count": 1,
+      "normalized": "بسال",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بيكسبك",
+      "count": 1,
+      "normalized": "بيكسبك",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "ثانية",
+      "count": 1,
+      "normalized": "ثانيه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وبيوري",
+      "count": 1,
+      "normalized": "وبيوري",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "دقيق",
+      "count": 1,
+      "normalized": "دقيق",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "جاية",
+      "count": 1,
+      "normalized": "جايه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "تتكلم",
+      "count": 1,
+      "normalized": "تتكلم",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بدأت",
+      "count": 1,
+      "normalized": "بدات",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "ولسه",
+      "count": 1,
+      "normalized": "ولسه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "مستمرة",
+      "count": 1,
+      "normalized": "مستمره",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بنستخدم",
+      "count": 1,
+      "normalized": "بنستخدم",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بنضغط",
+      "count": 1,
+      "normalized": "بنضغط",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "المهمة",
+      "count": 1,
+      "normalized": "المهمه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "الأسماء",
+      "count": 1,
+      "normalized": "الاسماء",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "الأفعال",
+      "count": 1,
+      "normalized": "الافعال",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "الصفات",
+      "count": 1,
+      "normalized": "الصفات",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وبنبلع",
+      "count": 1,
+      "normalized": "وبنبلع",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "الصغيرة",
+      "count": 1,
+      "normalized": "الصغيره",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "هات",
+      "count": 1,
+      "normalized": "هات",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بيعمل",
+      "count": 1,
+      "normalized": "بيعمل",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "دوس",
+      "count": 1,
+      "normalized": "دوس",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "حست",
+      "count": 1,
+      "normalized": "حست",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "تركز",
+      "count": 1,
+      "normalized": "تركز",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "لغتك",
+      "count": 1,
+      "normalized": "لغتك",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "تطلع",
+      "count": 1,
+      "normalized": "تطلع",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "للقصة",
+      "count": 1,
+      "normalized": "للقصه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "التدريب",
+      "count": 1,
+      "normalized": "التدريب",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "تحكي",
+      "count": 1,
+      "normalized": "تحكي",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "قصة",
+      "count": 1,
+      "normalized": "قصه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "مرتبة",
+      "count": 1,
+      "normalized": "مرتبه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وهي",
+      "count": 1,
+      "normalized": "وهي",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بلطف",
+      "count": 1,
+      "normalized": "بلطف",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "هتسمعها",
+      "count": 1,
+      "normalized": "هتسمعها",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "فخلي",
+      "count": 1,
+      "normalized": "فخلي",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "حاضر",
+      "count": 1,
+      "normalized": "حاضر",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "وبداية",
+      "count": 1,
+      "normalized": "وبدايه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "واضحة",
+      "count": 1,
+      "normalized": "واضحه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "رسالة",
+      "count": 1,
+      "normalized": "رساله",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "صوتية",
+      "count": 1,
+      "normalized": "صوتيه",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "قصيرة",
+      "count": 1,
+      "normalized": "قصيره",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "النبر",
+      "count": 1,
+      "normalized": "النبر",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بنتعلم",
+      "count": 1,
+      "normalized": "بنتعلم",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "بكرة",
+      "count": 1,
+      "normalized": "بكره",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "سلام",
+      "count": 1,
+      "normalized": "سلام",
+      "in_lexicon": false,
+      "first_ep": 8
+    },
+    {
+      "word": "والليلة",
+      "count": 1,
+      "normalized": "والليله",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "قدام",
+      "count": 1,
+      "normalized": "قدام",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "غرفة",
+      "count": 1,
+      "normalized": "غرفه",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وبيعمل",
+      "count": 1,
+      "normalized": "وبيعمل",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "بيتش",
+      "count": 1,
+      "normalized": "بيتش",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "حياته",
+      "count": 1,
+      "normalized": "حياته",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "الرجال",
+      "count": 1,
+      "normalized": "الرجال",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "يكسب",
+      "count": 1,
+      "normalized": "يكسب",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "الغرفة",
+      "count": 1,
+      "normalized": "الغرفه",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وبنفس",
+      "count": 1,
+      "normalized": "وبنفس",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "هتقوله",
+      "count": 1,
+      "normalized": "هتقوله",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "سر",
+      "count": 1,
+      "normalized": "سر",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وركزوا",
+      "count": 1,
+      "normalized": "وركزوا",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "تكسب",
+      "count": 1,
+      "normalized": "تكسب",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وقت",
+      "count": 1,
+      "normalized": "وقت",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "ثم",
+      "count": 1,
+      "normalized": "ثم",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "أولا",
+      "count": 1,
+      "normalized": "اولا",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "هرب",
+      "count": 1,
+      "normalized": "هرب",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "ذكاء",
+      "count": 1,
+      "normalized": "ذكاء",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "محتاج",
+      "count": 1,
+      "normalized": "محتاج",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "تجمع",
+      "count": 1,
+      "normalized": "تجمع",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "أفكارك",
+      "count": 1,
+      "normalized": "افكارك",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "ثانيا",
+      "count": 1,
+      "normalized": "ثانيا",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "بطريقة",
+      "count": 1,
+      "normalized": "بطريقه",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "هادية",
+      "count": 1,
+      "normalized": "هاديه",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وواثقة",
+      "count": 1,
+      "normalized": "وواثقه",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وثالثا",
+      "count": 1,
+      "normalized": "وثالثا",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "السبب",
+      "count": 1,
+      "normalized": "السبب",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "الحقيقي",
+      "count": 1,
+      "normalized": "الحقيقي",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وتخلي",
+      "count": 1,
+      "normalized": "وتخلي",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "تحس",
+      "count": 1,
+      "normalized": "تحس",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "بيك",
+      "count": 1,
+      "normalized": "بيك",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "مايقولهاش",
+      "count": 1,
+      "normalized": "مايقولهاش",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "حط",
+      "count": 1,
+      "normalized": "حط",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "توضحها",
+      "count": 1,
+      "normalized": "توضحها",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "الحوار",
+      "count": 1,
+      "normalized": "الحوار",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "إسمع",
+      "count": 1,
+      "normalized": "اسمع",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "كررها",
+      "count": 1,
+      "normalized": "كررها",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "اتكلمنا",
+      "count": 1,
+      "normalized": "اتكلمنا",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "بثقة",
+      "count": 1,
+      "normalized": "بثقه",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "عجباك",
+      "count": 1,
+      "normalized": "عجباك",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "هنسجلها",
+      "count": 1,
+      "normalized": "هنسجلها",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "منك",
+      "count": 1,
+      "normalized": "منك",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "نوتة",
+      "count": 1,
+      "normalized": "نوته",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "وحط",
+      "count": 1,
+      "normalized": "وحط",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "استناك",
+      "count": 1,
+      "normalized": "استناك",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "ونسمع",
+      "count": 1,
+      "normalized": "ونسمع",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "لكنتك",
+      "count": 1,
+      "normalized": "لكنتك",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "عايلة",
+      "count": 1,
+      "normalized": "عايله",
+      "in_lexicon": false,
+      "first_ep": 9
+    },
+    {
+      "word": "الإنترفيو",
+      "count": 1,
+      "normalized": "الانترفيو",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "الأخير",
+      "count": 1,
+      "normalized": "الاخير",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "دون",
+      "count": 1,
+      "normalized": "دون",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "أند",
+      "count": 1,
+      "normalized": "اند",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "كو",
+      "count": 1,
+      "normalized": "كو",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "وقرار",
+      "count": 1,
+      "normalized": "وقرار",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "المحك",
+      "count": 1,
+      "normalized": "المحك",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "مفتاح",
+      "count": 1,
+      "normalized": "مفتاح",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "وبيختار",
+      "count": 1,
+      "normalized": "وبيختار",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "مستقبله",
+      "count": 1,
+      "normalized": "مستقبله",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "شغلي",
+      "count": 1,
+      "normalized": "شغلي",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بيتكلم",
+      "count": 1,
+      "normalized": "بيتكلم",
+      "in_lexicon": true,
+      "first_ep": 10
+    },
+    {
+      "word": "لهجتي",
+      "count": 1,
+      "normalized": "لهجتي",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "تستعملها",
+      "count": 1,
+      "normalized": "تستعملها",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "يشكك",
+      "count": 1,
+      "normalized": "يشكك",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "قدرتك",
+      "count": 1,
+      "normalized": "قدرتك",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بسبب",
+      "count": 1,
+      "normalized": "بسبب",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بتعرض",
+      "count": 1,
+      "normalized": "بتعرض",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "مؤدبة",
+      "count": 1,
+      "normalized": "مؤدبه",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "الرقم",
+      "count": 1,
+      "normalized": "الرقم",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "واللقب",
+      "count": 1,
+      "normalized": "واللقب",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بدل",
+      "count": 1,
+      "normalized": "بدل",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بتوضح",
+      "count": 1,
+      "normalized": "بتوضح",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "نية",
+      "count": 1,
+      "normalized": "نيه",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "وخطة",
+      "count": 1,
+      "normalized": "وخطه",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "فبنقلدها",
+      "count": 1,
+      "normalized": "فبنقلدها",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بيقولها",
+      "count": 1,
+      "normalized": "بيقولها",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "ملزوقين",
+      "count": 1,
+      "normalized": "ملزوقين",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "وكلمة",
+      "count": 1,
+      "normalized": "وكلمه",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "تانية",
+      "count": 1,
+      "normalized": "تانيه",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "خفيفة",
+      "count": 1,
+      "normalized": "خفيفه",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "ربط",
+      "count": 1,
+      "normalized": "ربط",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بقيت",
+      "count": 1,
+      "normalized": "بقيت",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "أمريكي",
+      "count": 1,
+      "normalized": "امريكي",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "اليوم",
+      "count": 1,
+      "normalized": "اليوم",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "الأهم",
+      "count": 1,
+      "normalized": "الاهم",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "الربط",
+      "count": 1,
+      "normalized": "الربط",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "الناعم",
+      "count": 1,
+      "normalized": "الناعم",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "تيليجرام",
+      "count": 1,
+      "normalized": "تيليجرام",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "مستحكمين",
+      "count": 1,
+      "normalized": "مستحكمين",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بنسمع",
+      "count": 1,
+      "normalized": "بنسمع",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "لهجتك",
+      "count": 1,
+      "normalized": "لهجتك",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "بتتحنم",
+      "count": 1,
+      "normalized": "بتتحنم",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "ورنا",
+      "count": 1,
+      "normalized": "ورنا",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "ونشوف",
+      "count": 1,
+      "normalized": "ونشوف",
+      "in_lexicon": false,
+      "first_ep": 10
+    },
+    {
+      "word": "الجاي",
+      "count": 1,
+      "normalized": "الجاي",
+      "in_lexicon": false,
+      "first_ep": 10
+    }
+  ]
+}
