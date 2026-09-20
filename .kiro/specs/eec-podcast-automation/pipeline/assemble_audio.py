@@ -49,7 +49,14 @@ SR = 24000  # both engines emit 24kHz mono; keep the whole chain at one rate
 
 
 def run(cmd, **kw):
-    return subprocess.run(cmd, check=True, capture_output=True, text=True, **kw)
+    """Run a command, but on failure SURFACE ffmpeg/ffprobe's stderr instead of
+    swallowing it (the silent capture_output hid the real cause on Kaggle)."""
+    try:
+        return subprocess.run(cmd, check=True, capture_output=True, text=True, **kw)
+    except subprocess.CalledProcessError as e:
+        tail = (e.stderr or "").strip().splitlines()[-12:]
+        print("  ffmpeg/ffprobe FAILED:\n    " + "\n    ".join(tail), file=sys.stderr)
+        raise
 
 
 def probe_dur(path):
@@ -337,12 +344,35 @@ def main():
 
         suffix = "_plain" if args.plain else ""
         out_audio = os.path.join(ep_dir, f"ep{ep:02d}_audio{suffix}.m4a")
-        aac = ["ffmpeg", "-y", "-i", body]
+        # RESILIENT final encode. Some ffmpeg builds (e.g. Kaggle's) can choke on the
+        # loudnorm filter or lack the native 'aac' encoder. Try the best option first,
+        # then degrade gracefully so a full render is never lost at the last step:
+        #   1) loudnorm + native aac  (broadcast level, .m4a)
+        #   2) native aac, NO filter  (skips a bad loudnorm build)
+        #   3) libmp3lame .mp3        (if the aac encoder is unavailable)
+        af = "loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000"
+        attempts = []
         if not args.no_normalize:
-            # loudnorm resamples internally; pin the final rate to a clean 48k
-            aac += ["-af", "loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000"]
-        aac += ["-ar", "48000", "-c:a", "aac", "-b:a", "160k", out_audio]
-        run(aac)
+            attempts.append((["-af", af, "-ar", "48000", "-c:a", "aac", "-b:a", "160k"], out_audio))
+        attempts.append((["-ar", "48000", "-c:a", "aac", "-b:a", "160k"], out_audio))  # no filter
+        mp3_out = os.path.splitext(out_audio)[0] + ".mp3"
+        attempts.append((["-ar", "48000", "-c:a", "libmp3lame", "-b:a", "192k"], mp3_out))  # last resort
+        last_err = None
+        for enc, dst in attempts:
+            try:
+                run(["ffmpeg", "-y", "-i", body, *enc, dst])
+                out_audio = dst
+                if "libmp3lame" in enc:
+                    print("  NOTE: aac encoder unavailable — wrote MP3 instead", file=sys.stderr)
+                elif "-af" not in enc and not args.no_normalize:
+                    print("  NOTE: loudnorm unavailable on this ffmpeg — wrote un-normalized audio",
+                          file=sys.stderr)
+                break
+            except subprocess.CalledProcessError as e:
+                last_err = e
+                continue
+        else:
+            raise last_err
 
         master = {"episode": ep, "title": script.get("title"),
                   "phrase_of_episode": script.get("phrase_of_episode"),

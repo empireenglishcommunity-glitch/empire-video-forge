@@ -424,12 +424,15 @@ def assemble(work, ep):
     print("\n===== ASSEMBLE (plain, dry voices) =====", flush=True)
     sh([sys.executable, f"{epdir}/assemble_audio.py", "--episode", str(ep),
         "--dir", epdir, "--wav-dir", synth, "--plain"])
-    out = f"{epdir}/ep{ep:02d}_audio_plain.m4a"
-    if os.path.exists(out):
-        # surface it at the working root for a one-click download
-        final = f"{work}/ep{ep:02d}_audio_plain.m4a"
+    # the resilient encoder may emit .m4a OR (fallback) .mp3 — find whatever it wrote
+    cands = sorted(glob.glob(f"{epdir}/ep{ep:02d}_audio_plain.*"),
+                   key=lambda p: os.path.getmtime(p), reverse=True)
+    out = next((c for c in cands if c.endswith((".m4a", ".mp3"))), None)
+    if out and os.path.exists(out):
+        final = f"{work}/ep{ep:02d}_audio_plain{os.path.splitext(out)[1]}"
         shutil.copy(out, final)
         print(f"\n✅ FINAL: {final}", flush=True)
+        return final
     return out
 
 
@@ -535,12 +538,14 @@ def main():
                             "episode": ep, "regen": regen}, QWEN_INSTALL)
 
     if not args.no_assemble:
-        out = assemble(work, ep)
-        final = f"{work}/ep{ep:02d}_audio_plain.m4a"
-        if args.upload and os.path.exists(final):
+        final = assemble(work, ep)
+        if final and args.upload and os.path.exists(final):
             drive_upload(final, f"Yalla Fluent - Ep{ep:02d} - {os.path.basename(final)}",
                          args.drive_folder)
-        print(f"\n👉 Download the single final file from the Kaggle output panel: {final}")
+        if final:
+            print(f"\n👉 Download the single final file from the Kaggle output panel: {final}")
+        else:
+            print("\n⚠️  assembly produced no output file — see the ffmpeg error above")
     else:
         print("\n--no-assemble: skipped final mix. WAVs + manifest are in", work)
 
