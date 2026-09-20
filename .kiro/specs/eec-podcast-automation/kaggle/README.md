@@ -1,4 +1,53 @@
-# Two Worlds — Kaggle synth notebooks (free GPU)
+# Yalla Fluent — Kaggle synth (free GPU)
+
+## ⭐ RECOMMENDED: one-run pipeline — `synth_all_in_one.py`
+
+**One notebook, one "Run All"** → renders **every** voice (VoiceTut + Qwen) and
+**assembles** them into a single final `epNN_audio_plain.m4a`. No two-zip hand-off,
+no server round-trip. The two engines' clashing deps are kept apart by running each
+in its **own subprocess** (the orchestrator installs that engine's libs, runs it,
+then moves on). Serves both the **Ep1 fix loop** (selective re-gen) and the
+**Phase-D season batch** (hands-off).
+
+**Kaggle:** New Notebook → Accelerator **GPU T4 x1**, Internet **ON**.
+
+```python
+# CELL 1 — fetch the runner
+!pip -q install requests soundfile
+import urllib.request
+urllib.request.urlretrieve(
+  "https://raw.githubusercontent.com/empireenglishcommunity-glitch/"
+  "empire-video-forge/main/.kiro/specs/eec-podcast-automation/kaggle/"
+  "synth_all_in_one.py", "synth_all_in_one.py")
+```
+```python
+# CELL 2 — run the whole pipeline
+!python synth_all_in_one.py --episode 1
+```
+
+**Options**
+| flag | effect |
+|------|--------|
+| `--regen ALL` | (default) render the whole episode |
+| `--regen 8,35,36` | render ONLY these global line indices — fast fix-loop iterations |
+| `--regen macal-abc` | build the **A/B/C choppiness listen test** (see FIX-007) and stop |
+| `--engines voicetut` | run only one engine |
+| `--no-assemble` | synth only, skip the final `.m4a` |
+| `--upload` | auto-push the final `.m4a` to Drive (needs Kaggle Secrets `EEC_GDRIVE_REFRESH_TOKEN` / `EEC_GDRIVE_CLIENT_ID` / `EEC_GDRIVE_CLIENT_SECRET`; else just download it) |
+| `--branch main` | repo branch to pull scripts/cast from |
+
+**Output** (under `/kaggle/working/epNN/`): `epNN_audio_plain.m4a` (the single file to
+grab), all `lineNNN_<Speaker>.wav`, and `manifest.json`.
+
+### FIX-007 choppiness A/B/C listen test
+`--regen macal-abc` renders the same Macal line three ways so you can judge by ear:
+- **A** = OLD (comma/`...` injected + engine speed) — the choppy version you heard.
+- **B** = NEW natural text at natural speed — baseline smoothness.
+- **C** = NEW natural text + `atempo` pacing — smooth **and** slowed (**the proposed fix**).
+
+---
+
+# Two Worlds — legacy per-pass notebooks (free GPU)
 
 These are the **production** synthesizers. The cast + voice engines are LOCKED:
 - **Arabic** → VoiceTut (Egyptian voices, Coach = "Sayed") through the shared
