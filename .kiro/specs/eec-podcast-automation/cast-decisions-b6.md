@@ -1,5 +1,27 @@
 # Yalla Fluent — cast picks & open items (Phase B, task B.6)
 
+## 🏆 FULL CAST — LOCKED (all 11 speakers decided)
+| Character | Engine | Voice / source | Text | Note |
+|---|---|---|---|---|
+| **Mahmoud** (Coach) | VoiceTut | **Sayed** | Arabic | host/teacher (already locked) |
+| **Macal** | **VoiceTut** | **Abdullah** | **raw English** | ✅ owner B.6f: Egyptian accent, reads English directly — NO transliteration needed. Arc = language-only (accent stays Egyptian all 3 stages) |
+| **Nour** | Qwen3-TTS | VoiceDesign **cand2** | English | General American |
+| **Tarek** | Qwen3-TTS | VoiceDesign **cand3** | English | polished Egyptian |
+| **Interviewer/Farida** | Qwen3-TTS | VoiceDesign **cand1** | English | Gulf English |
+| **Barista/Aisha** | Qwen3-TTS | VoiceDesign **cand2** | English | Filipino English |
+| **Landlord/Qureshi** | Qwen3-TTS | VoiceDesign **cand1** | English | Pakistani English |
+| **TaxiDriver/Ravi** | Qwen3-TTS clone | Common Voice **`Ravi_ref1`** (CC0, Indian accent) | English | ✅ real Indian accent |
+| **Friend_F** | Qwen3-TTS | VoiceDesign **cand1** | English | light expat |
+| **Official** | Qwen3-TTS | VoiceDesign **cand2** | English | Gulf formal |
+| **Friend_M** | Qwen3-TTS | VoiceDesign **cand1** | English | light expat |
+
+**Key outcomes:** Macal solved via VoiceTut (owner picked **Abdullah** + **raw** text —
+so no Latin→Arabic transliteration step is needed). Ravi solved via CC0 Common Voice
+ref-clone. 3 engines total: VoiceTut (Mahmoud + Macal), Qwen3-TTS VoiceDesign (Nour +
+guests), Qwen3-TTS VoiceClone (Ravi). → proceed to B.7 (cast.json v2) + GATE B.
+
+---
+
 > Owner's audition picks from the B.5 Kaggle run (VoiceDesign, 36 clips). 8 of 10
 > characters LOCKED-candidate. **2 sent back for rework** — Macal & TaxiDriver — because
 > the described accent rendered as near-native American (the B.1-flagged VoiceDesign risk).
