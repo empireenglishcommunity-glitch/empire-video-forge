@@ -16,9 +16,22 @@ script (server, LLM)  →  voices (OFF-SERVER, Kaggle GPU ×2)  →  assemble pl
 (server, ffmpeg)  →  deliver to Drive raw-audio  →  [you: music/video/cover]  →  publish
 ```
 
+## Voice cast & synth (Phase C — CURRENT, 3 engines)
+The locked cast (`pipeline/cast.json` v2) uses **three engines**, routed **by speaker**
+(not by language) in `kaggle/synth_episode_v2.py`:
+- **VoiceTut** — **Mahmoud** (Coach, voice `Omar`, Arabic) **and Macal** (voice `Abdullah`,
+  **raw English** → real Egyptian accent, no transliteration). Both in the `PASS=voicetut` run.
+- **Qwen3-TTS VoiceClone** — **Nour + guests + Ravi**, each cloned from its frozen
+  `voice-refs/*.wav` (Option B, no drift). The `PASS=qwen` run.
+- Run `synth_episode_v2.py` **twice** on Kaggle (PASS=voicetut, then PASS=qwen), download
+  both zips, drop their contents into `episodes/epNN/synth/`; the assembler merges them.
+- **Chatterbox is RETIRED** (old notebooks in `kaggle/_archive/`, not run).
+- Macal's 3 "stages" are a **language** progression (fluency/confidence in the script),
+  **not** an accent shift — his accent stays Egyptian all season. No per-stage voice refs.
+
 ## Ground rules (do not break these)
 - **Never synth voices on the server.** No GPU + only ~1.7 GB free RAM. Voices are
-  made on **Kaggle free GPU** in two notebooks.
+  made on **Kaggle free GPU** — `synth_episode_v2.py` run twice (VoiceTut + Qwen passes).
 - **Never disrupt the 12 live containers.** All server ffmpeg is low-priority; heavy
   work is off-box.
 - **The manifest is the source of truth**, not filenames. Assembly refuses to run
@@ -35,7 +48,7 @@ script (server, LLM)  →  voices (OFF-SERVER, Kaggle GPU ×2)  →  assemble pl
 | Server scripts | `/opt/eec-podcast/bin/` (mirror of repo `pipeline/`) |
 | Episode data | `/opt/eec-podcast/episodes/epNN/` |
 | Season memory | `/opt/eec-podcast/season.json` |
-| Chatterbox voice refs (LIVE — never delete) | `/opt/eec-podcast/voices/refs/` |
+| Canonical voice refs (LIVE — never delete) | repo `voice-refs/*.wav` (Qwen clone sources: Nour/guests/Ravi) |
 | Branding assets | `/opt/eec-podcast/assets/` (music/, sfx/, fonts/) |
 | Secrets | `/opt/eec-podcast/.env` (chmod 600) |
 | Kaggle notebooks | repo `.kiro/specs/eec-podcast-automation/kaggle/` |

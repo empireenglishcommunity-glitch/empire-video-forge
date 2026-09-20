@@ -39,7 +39,9 @@
 >    - **THREE engines total:** VoiceTut (Mahmoud + Macal), Qwen3-TTS VoiceDesign→Clone
 >      (Nour + guests), Qwen3-TTS VoiceClone (Ravi). Chatterbox retired. `cast.json` v2 is
 >      the source of truth. Decisions detailed in `cast-decisions-b6.md`.
-> 7. **Status:** GATE 0.5 ✅, GATE 0 ✅, GATE A ✅ passed. B.1–B.7 ✅ (cast locked, refs saved).
+> 7. **Status:** GATE 0.5 ✅, GATE 0 ✅, GATE A ✅, **GATE B ✅ passed — Phase B COMPLETE**
+>    (cast locked in cast.json v2, 9 refs saved). **Now starting Phase C** (wire the 3-engine
+>    synth + prove Ep1). Umbrella vision captured in `.kiro/specs/eec-virtual-studio/`.
 >    **Currently at GATE B** (owner approves the locked cast). Verification/decision docs in
 >    `.kiro/specs/eec-podcast-automation/` (`qwen3-tts-verification.md`, `voice-design-specs.md`,
 >    `cast-decisions-b6.md`, `voice-refs/README.md`).
