@@ -186,3 +186,25 @@
   - Ep1: the mom-call line (act2 idx35) converted to Egyptian Arabic (lang "ar", speaker Macal
     -> VoiceTut Abdullah). Structure gate passes.
 - **Status:** ✅ rule + Ep1 done; Macal's Arabic mom line will render in his voice on re-synth.
+
+
+### FIX-006 🔴 SYSTEMIC — ASR-QA false alarms on diacritized-vs-bare Arabic
+- **Symptom:** the ASR-QA step flagged idx 8 / 36 / 44 (incl. the mom-call line036) as
+  mispronounced, but the audio was CORRECT. Whisper transcribes Arabic WITHOUT diacritics and
+  normalizes orthography, while our `intended` text is diacritized and uses hamza-carrying alef
+  seats (أ/إ/آ) + taa marbuta (ة). The old `skeleton()` stripped tashkeel but did NOT collapse
+  those orthographic variants, so أنا≠انا, آسف≠اسف, ألو≠الو, وقفة≠وقفه — the ratio fell under the
+  strict 0.6 threshold and false-flagged perfectly-good lines. (These were already known to be
+  false alarms; this fixes the detector so it stops crying wolf.)
+- **Root fix (systemic, in `skeleton()` — the single comparison used everywhere):**
+    1. strip tatweel (ـ) in addition to combining marks;
+    2. collapse orthographic variants Whisper drops: أإآٱ→ا, ة→ه, ى→ي, ؤ→و, ئ→ي, ء→"".
+  Applied in BOTH `synth_episode_v2.py` (line-QA) and `synth_arabic_qa.py` (lexicon-QA harness),
+  so the same normalization governs flagging AND any auto-suggested lexicon entries.
+- **Threshold:** loosened `ratio < 0.6` → `ratio < 0.5` as a safety net. With normalization now
+  doing the real work, genuine content/word-count mismatches still score ≈0.0 and flag; only
+  diacritic/seat noise is silenced.
+- **Verification (local unit test):** أنا=انا, آسف=اسف, ألو=الو, وقفة=وقفه, إزيك=ازيك all match
+  post-normalization; the full mom-call line jumps from <0.6 to 0.615 (clears even the OLD gate);
+  a genuine mismatch still scores 0.0 → still flagged. Detector keeps its teeth, loses the noise.
+- **Status:** ✅ baked into both QA scripts; effective on next synth. Phase D inherits it.

@@ -59,6 +59,12 @@ def prepare(text):
 def skeleton(s):
     s = unicodedata.normalize("NFKD", s)
     s = "".join(c for c in s if not unicodedata.combining(c))
+    s = s.replace("\u0640", "")  # tatweel ـ
+    # collapse orthographic variants Whisper drops (hamza-seat / taa-marbuta / alef-maqsura)
+    # so we don't suggest bogus lexicon entries for correct pronunciations:
+    for src, dst in (("أإآٱ", "ا"), ("ة", "ه"), ("ى", "ي"), ("ؤ", "و"), ("ئ", "ي"), ("ء", "")):
+        for ch in src:
+            s = s.replace(ch, dst)
     s = re.sub(r"[^\u0600-\u06FF\s]", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 
