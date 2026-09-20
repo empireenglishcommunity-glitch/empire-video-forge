@@ -72,3 +72,24 @@
 - **Resolution:** owner **listened to BOTH_SLOW and approved by ear** (wps metric said "still
   fast" but pauses make it read as a natural, hesitant learner — ear is the judge).
 - **Status:** ✅ **VERIFIED** (owner-approved). Baked into the synth; will apply on the next Macal synth.
+
+
+### FIX-002 — Language realism: Macal speaks English to his Arabic-speaking mom
+- **Location:** Ep1 cold_open + act1 (lines 1, 5, 11, 12, 13 — the mom voice-note/call)
+- **Speaker:** Macal
+- **Symptom:** Macal talks to his mother (in Alexandria, Egypt) in English. An Egyptian son
+  would speak ARABIC to his mom — the English breaks the reality of the world.
+- **Desired state:** the world must make sense — characters speak English only where it's
+  realistic; intimate all-Egyptian scenes aren't staged as English dialogue.
+- **Root cause:** the generator had no language-realism rule; it wrote every scene in English.
+- **Scope:** 🔴 **Systemic** — a LANGUAGE REALISM RULE now in the bible (§4) + `gen_episode.py`
+  story-act prompt, so ALL future scripts obey it (Option B, owner-approved).
+- **Fix (rule):** English only where realistic (Dubai work/social life, or Macal deliberately
+  practicing/recording English). Never stage a private call home as English; reframe as Macal
+  rehearsing/recording an English voice note (fits "family thinks he made it" thread + the
+  ep title "The Voice Note"), or leave it to Mahmoud's Arabic narration.
+- **Fix (Ep1):** reframe the mom scene so Macal's English is plausible (recording/practicing a
+  voice note) — regenerate the affected sections with the rule active. **[pending owner OK on
+  regeneration scope]**
+- **Rule now lives in:** `series-bible.md` §4 + `pipeline/gen_episode.py` story-act craft.
+- **Status:** rule LOCKED ✅; Ep1 script reframe pending (regeneration scope decision).
