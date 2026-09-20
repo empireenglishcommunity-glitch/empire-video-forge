@@ -1,0 +1,4 @@
+{
+  "_comment": "SYNTH-BOUNDARY phonetic overrides for Macal's ENGLISH lines rendered by VoiceTut (an Egyptian-Arabic engine that occasionally stumbles on English phonetic quirks). Maps a source English word (as written in script.json) -> a respelled hint that VoiceTut pronounces correctly. Applied ONLY at synth time to Macal's English text; script.json stays clean + human-readable. Same self-hardening pattern as egyptian_lexicon.json: fix a word ONCE, every future episode says it right. Whole-word, case-insensitive match. EMPTY = no-op (safe). Grow it from the episode-fixes-log as issues surface.",
+  "map": {}
+}
