@@ -1,0 +1,57 @@
+{
+  "seed": {
+    "synthesize_signature": "(text: 'str', *, speaker: 'Optional[str]' = None, ref_audio: 'Optional[str]' = None, ref_text: 'Optional[str]' = None, instruct: 'Optional[str]' = None, language: 'Optional[str]' = None, normalize: 'bool' = True, output: 'Optional[str]' = None, params: 'Optional[GenerationParams]' = None, **param_overrides) -> 'np.ndarray'",
+    "seed_param_present": false,
+    "runs": [
+      {
+        "run": 0,
+        "mean_abs": 0.012975,
+        "dur": 2.0
+      },
+      {
+        "run": 1,
+        "mean_abs": 0.015952,
+        "dur": 1.8
+      },
+      {
+        "run": 2,
+        "mean_abs": 0.010874,
+        "dur": 1.99
+      }
+    ],
+    "mean_abs_stdev": 0.00208336,
+    "identical_output": false
+  },
+  "per_line": [
+    {
+      "line": "L05",
+      "cer": 0.067,
+      "intended": "أَهْلًا بِيكُم يا جَمَاعَة فِي يَلَّا فْلُوِنْت! أَنَا مَحْمُود، وَالنَّهَارْدَه هَنْعِيشْ مَعَ مَكَّال فِي دُبَاي.",
+      "heard": "أهلا بكم يا جماعة في يلا فلونت  أنا محمود والنهاردة هنعيش مع مكان في دبي"
+    },
+    {
+      "line": "L06",
+      "cer": 0.231,
+      "intended": "مَكَّال بَيِسَجِّلْ ڤُويْس نُوتْ لِأُمُّه، وَبَيِقُولْ إِنْ كُلِّ حَاجَة تَمَام.",
+      "heard": "ميكال بيسجل voice note لأمه وبيقول إن كل حاجة تمام"
+    },
+    {
+      "line": "L09",
+      "cer": 0.056,
+      "intended": "يَلَّا، نِسْمَعْ الْقِصَّة مَعَ بَعْض!",
+      "heard": "يلا نسمع القصة مع بعض"
+    },
+    {
+      "line": "L31",
+      "cer": 0.0,
+      "intended": "يَلَّا نْرُوحْ لِلْأَحْدَاثْ... الْمَشْهَدْ الْجَايْ!",
+      "heard": "يلا نروح للأحداث المشهد الجاي"
+    },
+    {
+      "line": "L45",
+      "cer": 0.093,
+      "intended": "إِحْنَا هِنِسْمَعْ صَوْتْكُمْ، وَنِشَجِّعْكُمْ وَاحِدْ وَاحِدْ. الْمَكَانْ دَه بَيْتُكُمْ.",
+      "heard": "إحنا هنسمع صوتكو ونشجعكو واحد واحد  المكان ده بيتكو"
+    }
+  ]
+}
