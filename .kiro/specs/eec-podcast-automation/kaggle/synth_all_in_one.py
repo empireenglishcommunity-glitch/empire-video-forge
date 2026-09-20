@@ -364,12 +364,16 @@ def worker_macal_abc(args):
 #  then assembles.  This is what CELL 2 calls.
 # ==========================================================================
 VT_INSTALL = [
-    'pip -q install -U "transformers>=5.3.0"',
-    "pip -q install git+https://github.com/k2-fsa/OmniVoice.git",
-    "pip -q install voicetut-tts catt-tashkeel faster-whisper soundfile",
+    # NOTE: each entry is an ARGUMENT LIST (no shell, no quotes). When passing a
+    # list to subprocess there is NO shell to strip quotes, so a token must be the
+    # bare requirement, e.g. "transformers>=5.3.0" (a literal '"' inside the token
+    # makes pip fail with 'Invalid requirement').
+    ["install", "-U", "transformers>=5.3.0"],
+    ["install", "git+https://github.com/k2-fsa/OmniVoice.git"],
+    ["install", "voicetut-tts", "catt-tashkeel", "faster-whisper", "soundfile"],
 ]
 QWEN_INSTALL = [
-    "pip -q install -U qwen-tts soundfile",
+    ["install", "-U", "qwen-tts", "soundfile"],
 ]
 
 
@@ -377,8 +381,9 @@ def run_worker(engine, args, installs):
     """Install engine deps, then run its worker in a FRESH python subprocess so
     the two engines' libraries never coexist in one interpreter."""
     print(f"\n===== ENGINE: {engine} — installing deps =====", flush=True)
-    for cmd in installs:
-        sh([sys.executable, "-m", *cmd.split()])
+    for pip_args in installs:
+        # python -m pip -q install ... (quiet, no shell)
+        sh([sys.executable, "-m", "pip", "-q", *pip_args])
     print(f"===== ENGINE: {engine} — synthesizing =====", flush=True)
     payload = json.dumps(args)
     sh([sys.executable, os.path.abspath(__file__), "__worker", engine, payload])
