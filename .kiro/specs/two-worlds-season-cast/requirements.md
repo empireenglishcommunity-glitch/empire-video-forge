@@ -88,12 +88,14 @@ Every casting decision must satisfy both:
 - R1b.4 Every generated script still passes the **structure** and **duration** gates.
 
 ### R2 — Cast & voices
-- R2.1 **Mahmoud (Coach)** — Arabic, VoiceTut voice "Sayed" (unchanged). Named Mahmoud
-  in-script; introduces himself by name.
-- R2.2 **Macal** — Egyptian-**accented L2** English, **3 evolving stages**:
-  - Stage 1: learner-level, clear Egyptian L2 accent, a little hesitant.
-  - Stage 2: more fluent, accent softening, more confident.
-  - Stage 3: confident, near-American (the season payoff).
+- R2.1 **Mahmoud (Coach)** — Arabic, VoiceTut voice **"Omar"** (locked in Phase B;
+  replaced the old placeholder "Sayed"). Named Mahmoud in-script; introduces himself by name.
+- R2.2 **Macal** — Egyptian-**accented** English via **VoiceTut ("Abdullah"), reading raw
+  English** (locked Phase B). Accent stays Egyptian across ALL stages; the **3 stages are a
+  LANGUAGE progression, not an accent shift** (arc option a):
+  - Stage 1: learner-level, hesitant, uncontracted, simple tenses.
+  - Stage 2: more fluent, contractions, self-corrects, more confident.
+  - Stage 3: fluent & confident — idioms, humor, negotiates — **still Egyptian-accented**.
   Warm, earnest throughout. Default stage→episode map: **S1=Eps1-3, S2=Eps4-7,
   S3=Eps8-10** (tunable).
   - R2.2a **L2 accent is a known hard case** (it's a transfer accent, not a native

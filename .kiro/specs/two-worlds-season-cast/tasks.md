@@ -20,10 +20,29 @@
 > 5. **`direction` acting-note tag** = forward-looking metadata; generated + preserved but
 >    NOT yet consumed by synth/assembly. Its consumer (direction→prosody mapper) is
 >    **Phase C** work, tracked as issue **#53**.
-> 6. **Status:** GATE 0.5 ✅, GATE 0 ✅, GATE A ✅ all passed. B.1/B.2/B.3 ✅. **Currently at
->    B.5** (owner runs the audition notebook on Kaggle; 12 distinct English voices — each
->    minor role its own). Verification docs live in
->    `.kiro/specs/eec-podcast-automation/` (`qwen3-tts-verification.md`, `voice-design-specs.md`).
+> 6. **CAST — LOCKED after the Phase B audition (overrides the original voice model):**
+>    - **Mahmoud (Coach) = VoiceTut voice "Omar"** (owner re-auditioned all 17; replaced
+>      the old placeholder "Sayed"). Everywhere the spec says Coach="Sayed", read **Omar**.
+>    - **Macal = VoiceTut voice "Abdullah", reading RAW English** — VoiceTut renders English
+>      with a real Egyptian accent, so Macal is on the ARABIC engine, NOT Qwen. **No
+>      Latin→Arabic transliteration step needed** (owner picked the raw-English strategy).
+>    - **Macal's arc = LANGUAGE-ONLY (option a):** his accent stays Egyptian across ALL 3
+>      stages; growth shows via fluency/contractions/confidence in the SCRIPT, not an accent
+>      shift. **The "3 canonical stage-refs / near-American S3" model is DROPPED for Macal**
+>      (he has no voice_ref; VoiceTut generates from voice name + text). The S3 "near-
+>      American" bible/line marker is reinterpreted as "more fluent/confident, still Egyptian."
+>    - **Nour + English guests (Tarek, Farida, Aisha, Qureshi, Friend_F/M, Official) = Qwen3-TTS**,
+>      owner-picked VoiceDesign takes, FROZEN as `voice-refs/*.wav` and VoiceCloned in
+>      production (Option B, no drift).
+>    - **Ravi = Qwen3-TTS VoiceClone of a real CC0 Common Voice Indian-accent clip**
+>      (`voice-refs/ravi_ref1.wav`) — synthetic accents failed; a real reference works.
+>    - **THREE engines total:** VoiceTut (Mahmoud + Macal), Qwen3-TTS VoiceDesign→Clone
+>      (Nour + guests), Qwen3-TTS VoiceClone (Ravi). Chatterbox retired. `cast.json` v2 is
+>      the source of truth. Decisions detailed in `cast-decisions-b6.md`.
+> 7. **Status:** GATE 0.5 ✅, GATE 0 ✅, GATE A ✅ passed. B.1–B.7 ✅ (cast locked, refs saved).
+>    **Currently at GATE B** (owner approves the locked cast). Verification/decision docs in
+>    `.kiro/specs/eec-podcast-automation/` (`qwen3-tts-verification.md`, `voice-design-specs.md`,
+>    `cast-decisions-b6.md`, `voice-refs/README.md`).
 
 ## Execution rules
 1. Work strictly in phase order; do not start a phase until the previous phase's gate
@@ -161,36 +180,48 @@ Goal: a locked `cast.json` with an owner-approved voice per character.
       (Macal = 3 stages; **12 distinct English voices** total incl. each minor role)
       reading real Season-1 lines → labeled clips + zip. ✅ (merged PR #59; 36 clips;
       T4-safe sdpa; emits index.html contact sheet + zip + audition_index.json.)
-- [ ] B.5 🧑 **← CURRENT STEP. Run the audition on Kaggle**; download the clips.
-- [ ] B.6 🧑 **Pick** one voice per character + approve **Macal's 3-stage arc**
-      (iterate B.2-B.5 on any character until happy).
-- [ ] B.7 🤖 For each approved voice, **save the canonical ~10-15s reference WAV**
-      (self-generated from the winning audition take) to `voice-refs/` (Macal = 3 refs,
-      one per stage); write chosen voices + `voice_ref` paths into **`cast.json`
-      (schema v2)**; set statuses to `locked`.
-- [ ] B.8 🧑 **GATE B:** owner approves the locked cast (voices + Macal arc).
+- [x] B.5 🧑 Run the audition on Kaggle; download the clips. ✅ (owner ran B.5 + the
+      accent-rework reruns B.6c/e + VoiceTut proofs B.6f/g.)
+- [x] B.6 🧑 **Pick** one voice per character. ✅ Iterated heavily: Qwen VoiceDesign picks
+      for Nour+guests (B.6); Ravi via real CC0 Common-Voice clone (B.6e); **Macal via
+      VoiceTut "Abdullah" raw-English** (B.6f, arc=language-only per owner); **Mahmoud via
+      VoiceTut "Omar"** (B.6g re-audition). Full picks in `cast-decisions-b6.md`.
+- [x] B.7 🤖 Save canonical reference WAVs to `voice-refs/` + write voices + `voice_ref`
+      into **`cast.json` v2**, statuses `locked`. ✅ 9 refs frozen (8 Qwen VoiceDesign
+      takes + Ravi CC0 source); Mahmoud+Macal (VoiceTut) need no refs. (NOTE: NOT "Macal =
+      3 stage refs" — that model was dropped; Macal is VoiceTut, arc language-only.)
+      See `voice-refs/README.md`. PR #71.
+- [ ] B.8 🧑 **← CURRENT STEP. GATE B:** owner approves the locked cast.
 
 ## PHASE C — Wire up + prove on Ep1
 Goal: the new engine + cast produces a real, approved episode.
-- [ ] C.1 🤖 **Rename Coach → Mahmoud**: `cast.json` (`display_name`), the Arabic
-      self-intro line(s) in scripts, and the lexicon name entry. Keep speaker id `Coach`
-      so gates/pipeline are untouched (design §6).
+- [ ] C.1 🤖 **Coach → Mahmoud** naming: `cast.json` `display_name` (DONE — done in B.7),
+      the Arabic self-intro line(s) in scripts, and the lexicon name entry. Keep speaker id
+      `Coach` so gates/pipeline are untouched (design §6). NOTE: Coach voice is now **Omar**
+      (not Sayed).
 - [ ] C.1a 🤖 **Lexicon additions (design §2c Tier 2):** add hand-verified entries for
       **Mahmoud (مَحْمُود)**, **"Yalla Fluent"**, **EEC**, and standing loan-words
       (interview→إِنْتَرْفْيُو, session→سِشْن, feedback→فِيدْبَاك) to `egyptian_lexicon.json`.
-- [ ] C.2 🤖 Build `kaggle/synth_episode_en_qwen.py`: **VoiceClone** from each
-      character's canonical `voice_ref` (Option B; Macal picks the stage's ref via
-      `stage_map`), passing each line's **`direction`** to Qwen3-TTS for emotional
-      delivery. Replaces the Chatterbox English notebook; update `run_podcast.py`/docs;
-      archive the Chatterbox path (not deleted).
+- [ ] C.2 🤖 Build the new synth routing (replaces the Chatterbox English notebook;
+      archive Chatterbox, don't delete; update `run_podcast.py`/docs). Route each line by
+      `cast.json` engine:
+      - **VoiceTut** for **Mahmoud (Omar, Arabic)** AND **Macal (Abdullah, RAW English)** —
+        Macal's English goes through VoiceTut verbatim (no transliteration); NO stage refs,
+        one voice all season (arc is language-only, already in the scripts).
+      - **Qwen3-TTS VoiceClone** for Nour + English guests, cloning each from its frozen
+        `voice-refs/*.wav` (Option B).
+      - **Qwen3-TTS VoiceClone** for Ravi from `voice-refs/ravi_ref1.wav`.
+      Pass each line's **`direction`** through where the engine supports it (Phase-C mapper,
+      #53). Confirm VoiceTut can batch English (Macal) lines in the same pass as Arabic.
 - [ ] C.2a 🤖 **Verify `direction` sanitization**: assert the text-cleaner, text_hash/
       manifest builder, timeline, and gates read only `text`/`speaker`/`section` and
       never see `direction` (add a test).
 - [ ] C.3 🤖 Update `series-bible.md` casting section (realism + pedagogy + Macal arc)
       and `OPERATIONS.md` (new English engine + audition workflow).
-- [ ] C.4 🧑 **Re-synth Ep1 English on Qwen3-TTS** (Macal Stage 1) via the new notebook;
-      drop WAVs into `episodes/ep01/synth/`. (Coach/Arabic already done; if the Mahmoud
-      self-intro line changed, re-synth just that Arabic line too.)
+- [ ] C.4 🧑 **Re-synth Ep1** via the new routing: Macal (VoiceTut/Abdullah, raw English)
+      + Mahmoud (VoiceTut/Omar, Arabic) on the VoiceTut pass; Nour + any Ep1 guests
+      (Qwen VoiceClone from their refs) on the Qwen pass. Drop WAVs into
+      `episodes/ep01/synth/`.
 - [ ] C.5 🤖 Re-assemble Ep1 through the **structure gate**, verify 100% rendered + clean
       (duration informational, ~5-6 min expected); deliver plain audio to Drive `raw-audio`.
 - [ ] C.6 🧑 **GATE C:** owner listens to the new Ep1 and approves the cast on a real
@@ -243,7 +274,7 @@ Goal: synthesize the rest of the season against the locked cast.
 - [x] GATE 0.5: series bible (regenerated) approved (bible locked). ✅
 - [x] GATE 0: season plan / arc + Macal stage split approved (spine locked). ✅
 - [x] GATE A: 10 scripts + cast list approved (scripts locked). ✅
-- [ ] GATE B: cast.json voices approved (cast locked). ← next gate (Phase B in progress: B.3)
+- [ ] GATE B: cast.json voices approved (cast locked). ← **CURRENT gate** (all cast work done; awaiting owner sign-off)
 - [ ] GATE C: new Ep1 audio approved (cast proven on a real episode).
 - [ ] GATE D: season audio approved.
 
