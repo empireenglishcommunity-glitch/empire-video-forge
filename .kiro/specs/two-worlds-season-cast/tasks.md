@@ -20,8 +20,9 @@
 > 5. **`direction` acting-note tag** = forward-looking metadata; generated + preserved but
 >    NOT yet consumed by synth/assembly. Its consumer (direction→prosody mapper) is
 >    **Phase C** work, tracked as issue **#53**.
-> 6. **Status:** GATE 0.5 ✅, GATE 0 ✅, GATE A ✅ all passed. **Currently in Phase B, at B.3**
->    (owner reviews voice-design specs). Verification docs live in
+> 6. **Status:** GATE 0.5 ✅, GATE 0 ✅, GATE A ✅ all passed. B.1/B.2/B.3 ✅. **Currently at
+>    B.4** (build the audition notebook; 12 distinct English voices — each minor role its
+>    own). Verification docs live in
 >    `.kiro/specs/eec-podcast-automation/` (`qwen3-tts-verification.md`, `voice-design-specs.md`).
 
 ## Execution rules
@@ -152,10 +153,13 @@ Goal: a locked `cast.json` with an owner-approved voice per character.
       **explicit L2 acoustic markers**), Nour (native American), TaxiDriver (Indian), +
       every derived guest by realism. ✅ (`voice-design-specs.md`, PR #56 — 11 voices,
       3-4 candidates each, grounded in the bible.)
-- [ ] B.3 🧑 **← CURRENT STEP.** Review/tweak the voice-design descriptions (owner is the
-      casting director).
-- [ ] B.4 🤖 Build `kaggle/audition_qwen.py` (paste-safe): 3-4 candidates/character
-      (Macal = 3 stages) reading real Season-1 lines → labeled clips + zip.
+- [x] B.3 🧑 Review/tweak the voice-design descriptions (owner is the casting director). ✅
+      Owner approved Macal's 3-stage arc + all guests; ONE change — **each minor role
+      (Official/Friend_M/Friend_F) gets its OWN voice, no reuse** → **12 distinct English
+      voices** (Macal ×3 + 9).
+- [ ] B.4 🤖 **← CURRENT STEP.** Build `kaggle/audition_qwen.py` (paste-safe): 3-4
+      candidates/character (Macal = 3 stages; **12 distinct English voices** total incl.
+      each minor role) reading real Season-1 lines → labeled clips + zip.
 - [ ] B.5 🧑 **Run the audition on Kaggle**; download the clips.
 - [ ] B.6 🧑 **Pick** one voice per character + approve **Macal's 3-stage arc**
       (iterate B.2-B.5 on any character until happy).
