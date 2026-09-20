@@ -28,8 +28,30 @@ clean American. These two need a stronger approach (see brainstorm below).
   native is fine; the ARC is the point, so S1→S3 must actually travel).
 - **TaxiDriver / Ravi** — needs a genuine Indian (Kerala) English colour.
 
-## Brainstorm — how to get the accents (decision pending owner)
-See the chat for the full options discussion; candidate strategies:
+## Accent-rework audition (B.6b) — BUILT: `kaggle/audition_accent_rework.py`
+Owner chose the **C1 + Piper comparison**. The notebook A/B/C-tests three ways to get a
+REAL accent for Macal (Egyptian/Arabic-L1) and Ravi (Indian/Hindi-L1):
+- **A (C1)** — Qwen VoiceDesign as a *native Arabic / native Hindi speaker* speaking English
+  (accent from L1 timbre, not a text label). Fully in-stack, Apache-2.0, no caveat.
+- **B (Piper)** — real accented English from the **L2-ARCTIC** Piper voice
+  (`en_US-l2arctic-medium`, 24 non-native speakers). **Arabic-L1:** ABA, YBAA, ZHAA, SKA;
+  **Hindi-L1:** ASI, RRBI, TNI, SVBI. Accent is authentic (baked into the training data).
+- **C (Piper→Qwen clone)** — clone the accented clip through Qwen VoiceClone (authentic
+  accent + Qwen audio quality). Usually the winner. Also a C1→Qwen-clone variant (no Piper).
+
+### Licensing findings (verified this session)
+- **Qwen3-TTS** (A + the clone engine): **Apache-2.0** — clean, our default. The C1 and
+  C1→clone routes are 100% clean.
+- **Piper** `piper-tts` v1.8.0 = OHF-Voice `piper1-gpl`, **engine license GPL-3.0**. Running
+  it server-side to *produce WAVs* is fine (audio output isn't a GPL derivative); we must NOT
+  bundle/link piper's code into distributed software. Acceptable for our use.
+- ⚠️ **L2-ARCTIC training data is research-licensed.** So a Piper-L2ARCTIC voice used
+  DIRECTLY in commercial output is a gray area. Mitigation: prefer route **C1** (no L2-ARCTIC)
+  or use Piper only as an **accent reference to clone from + concept proof**; CONFIRM the
+  license before locking any Piper-derived voice for production (B.7). The audition itself
+  is fine.
+
+### Prior brainstorm (options considered)
 1. **Real reference audio → VoiceClone** (strongest): clone from a short real Egyptian-
    English / Indian-English sample instead of designing from text. Qwen3-TTS clones accent
    from the ref. Needs a rights-clean reference clip per accent.
