@@ -56,7 +56,15 @@
 - **Root cause:** VoiceTut base `speed`=1.0 is too fast for Macal; not the direction mapper
   (his fast lines' directions were neutral).
 - **Scope:** 🔴 **Systemic** — fix in `cast.json` Macal `speed` → applies to every Macal line, every episode.
-- **Fix:** lower Macal `speed` (1.0 → **calibrating**: 0.75 / 0.85 / 0.95 audition first, since
-  VoiceTut speed direction must be confirmed by ear before locking).
-- **Rule now lives in:** `pipeline/cast.json` → `cast.Macal.speed`.
-- **Status:** in progress — calibration audition built (`kaggle/calibrate_macal_speed.py`).
+- **Fix (round 1 — INSUFFICIENT):** lowering `speed` barely helped — calibration showed even
+  `speed=0.75` left Macal at **3.1–3.9 wps** (still "too fast"). VoiceTut `speed` is a WEAK lever
+  and floors out above target. So speed alone can't fix this.
+- **Fix (round 2 — the real lever):** **prosodic PAUSES in the synth text** — commas as breath
+  groups + `...` at clause boundaries (the same technique the Arabic coach uses, design §Layer-1).
+  A hesitant learner pauses; that drops the pace to ~2 wps and sounds human. Applied at the
+  **synth boundary** (script.json stays clean, like `english_phonetic_map`). Testing variants
+  RAW/COMMA/ELLIPSIS/BOTH_SLOW via `kaggle/calibrate_macal_prosody.py`.
+- **Rule will live in:** a synth-boundary "Macal prosody" transform in `synth_episode_v2.py`
+  (+ possibly `cast.Macal.speed` as a secondary nudge). Applies to all Macal lines, every ep.
+- **Scope note:** likely ⚫ Engine-limit on `speed` → 🔴 Systemic via prosody transform.
+- **Status:** in progress — round-1 (speed) ruled out; round-2 (prosody) audition built.
