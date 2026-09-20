@@ -191,7 +191,7 @@ Goal: a locked `cast.json` with an owner-approved voice per character.
       takes + Ravi CC0 source); Mahmoud+Macal (VoiceTut) need no refs. (NOTE: NOT "Macal =
       3 stage refs" — that model was dropped; Macal is VoiceTut, arc language-only.)
       See `voice-refs/README.md`. PR #71.
-- [ ] B.8 🧑 **← CURRENT STEP. GATE B:** owner approves the locked cast.
+- [x] B.8 🧑 **GATE B:** owner approves the locked cast. ✅ **PASSED** (owner reviewed cast.json v2 + refs, signed off). Phase B COMPLETE.
 
 ## PHASE C — Wire up + prove on Ep1
 Goal: the new engine + cast produces a real, approved episode.
@@ -211,8 +211,12 @@ Goal: the new engine + cast produces a real, approved episode.
       - **Qwen3-TTS VoiceClone** for Nour + English guests, cloning each from its frozen
         `voice-refs/*.wav` (Option B).
       - **Qwen3-TTS VoiceClone** for Ravi from `voice-refs/ravi_ref1.wav`.
-      Pass each line's **`direction`** through where the engine supports it (Phase-C mapper,
-      #53). Confirm VoiceTut can batch English (Macal) lines in the same pass as Arabic.
+      Pass each line's **`direction`** through where the engine supports it. Confirm VoiceTut
+      can batch English (Macal) lines in the same pass as Arabic.
+- [ ] C.2b 🤖 **direction -> params/prosody mapper (owner-approved, issue #53):** build the
+      mapper that turns each line's `direction` acting-note into engine params (VoiceTut
+      speed/guidance; Qwen expressive params) + per-line pacing. Owner decision: **keep it
+      MINIMAL for Ep1** (prove the voices first at GATE C), then enrich after. Do NOT drop it.
 - [ ] C.2a 🤖 **Verify `direction` sanitization**: assert the text-cleaner, text_hash/
       manifest builder, timeline, and gates read only `text`/`speaker`/`section` and
       never see `direction` (add a test).
@@ -274,7 +278,7 @@ Goal: synthesize the rest of the season against the locked cast.
 - [x] GATE 0.5: series bible (regenerated) approved (bible locked). ✅
 - [x] GATE 0: season plan / arc + Macal stage split approved (spine locked). ✅
 - [x] GATE A: 10 scripts + cast list approved (scripts locked). ✅
-- [ ] GATE B: cast.json voices approved (cast locked). ← **CURRENT gate** (all cast work done; awaiting owner sign-off)
+- [x] GATE B: cast.json voices approved (cast locked). ✅ PASSED
 - [ ] GATE C: new Ep1 audio approved (cast proven on a real episode).
 - [ ] GATE D: season audio approved.
 
