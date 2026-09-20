@@ -245,3 +245,18 @@
   file to Drive via Kaggle Secrets (else one-click download). Serves BOTH the Ep1 fix loop and
   the Phase-D season batch. All existing contracts (manifest_lib, cast.json routing, 24kHz,
   assemble_audio.py) preserved untouched.
+
+
+### FIX-007 ✅ VERIFIED — choppiness fixed (owner picked C by ear)
+- **Owner verdict on the A/B/C listen test:** "this is good C (natural+paced)". Approach C
+  (NATURAL text + pitch-preserving ffmpeg `atempo`) sounds smooth and human. Confirmed root
+  cause was our own text-injected pauses (macal_prosody/teacher_prosody).
+- **Locked in everywhere:**
+  - `synth_all_in_one.py` (one-run notebook) — already natural-text + atempo.
+  - `synth_episode_v2.py` (legacy two-pass) — DELETED `macal_prosody()` + `teacher_prosody()`;
+    replaced with `slow_wav_inplace(path, factor)` (atempo). VoiceTut now runs at speed=1.0 and
+    every voicetut line is paced afterwards by its cast `speed` (Macal 0.85, Coach 0.80). Manifest
+    records `params.atempo` for reproducibility.
+- **cast.json** `speed` values are now interpreted as the ATEMPO factor (post-gen pace), not an
+  engine speed — same numbers (Macal 0.85, Coach 0.80), new (correct) mechanism.
+- **Status:** ✅ VERIFIED + baked into both synth paths. Choppiness gone. Phase D inherits it.

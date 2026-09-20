@@ -71,36 +71,24 @@ except Exception:
 print(f"Episode {EPISODE}: {script.get('title')} — {len(script['lines'])} lines | PASS={PASS} "
       f"| en_phonetic_overrides={len(ENPHON)}", flush=True)
 
-def macal_prosody(text):
-    """FIX-001 (owner-approved 'BOTH_SLOW'): make Macal's English read like a hesitant
-    Egyptian learner by inserting PROSODIC PAUSES at the synth boundary — commas as breath
-    groups (~every 3 words) + '...' at clause/sentence boundaries. VoiceTut's `speed` alone
-    couldn't slow him (floors ~3 wps); pauses + speed 0.85 gave the natural pace the owner
-    approved. script.json stays clean — this is synth-time only, and adds NO real words."""
-    # commas every ~3 words as breath groups (skip if the chunk already ends in punctuation)
-    out, buf = [], []
-    for w in text.split():
-        buf.append(w)
-        if len(buf) >= 3 and buf[-1][-1:] not in ".,!?…":
-            out.append(" ".join(buf) + ","); buf = []
-    if buf:
-        out.append(" ".join(buf))
-    t = " ".join(out)
-    # clause/sentence boundaries -> short hesitation pauses
-    t = re.sub(r"([.!?])\s+", r"\1.. ", t)   # after sentence enders
-    t = re.sub(r",\s+", r"... ", t)          # breath-group commas -> longer breath
-    return t
+def slow_wav_inplace(path, factor):
+    """FIX-007 (owner-approved by ear, option C): pace a rendered WAV by `factor` with
+    ffmpeg `atempo` (pitch-preserving time-stretch), replacing it in place.
 
-
-def teacher_prosody(text):
-    """FIX-005 (owner-approved 'PROSODY @ 0.80'): Mahmoud = warm, DELIBERATE teacher.
-    LIGHTER than Macal's hesitation — a teacher is calm, not broken. Add a short breath
-    '...' after sentence enders and before a taught phrase (colon), keep his own commas.
-    Applied at synth boundary to Coach Arabic lines; script.json stays clean. Paired with
-    Coach speed=0.80 in cast.json."""
-    t = re.sub(r"([.!؟])\s+", r"\1.. ", text)   # after AR/Latin sentence enders
-    t = re.sub(r"([:؛])\s+", r"\1... ", t)       # after colon (before a taught phrase) = breath
-    return t
+    This REPLACES the old macal_prosody()/teacher_prosody() text hacks (FIX-001/005),
+    which injected commas + '...' into the text and made VoiceTut read every ~3-word
+    chunk as its own sentence -> the choppy, robotic 'every word alone' sound. We now
+    send NATURAL text to the engine (speed=1.0) and slow the AUDIO afterwards. Same
+    FIX-004 lesson: stop fighting the engine. `factor` is the cast `speed` (e.g. 0.85 =>
+    ~15% slower, smooth, no pitch change). atempo is valid for 0.5..2.0."""
+    import subprocess
+    if abs(factor - 1.0) < 1e-3:
+        return
+    f = max(0.5, min(2.0, factor))
+    tmp = path + ".slow.wav"
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", path,
+                    "-af", f"atempo={round(f,4)}", "-ar", "24000", "-ac", "1", tmp], check=True)
+    os.replace(tmp, path)
 
 
 def apply_en_phonetic(text):
@@ -200,27 +188,27 @@ if PASS == "voicetut":
         spk = ln["speaker"]; spec = CASTM.get(spk, {})
         voice = spec.get("voice", "Omar")
         is_ar = (ln.get("lang") == "ar")
-        # Arabic -> lexicon tashkeel. Macal English -> phonetic overrides THEN prosody pauses
-        # (FIX-001 'BOTH_SLOW'). Other English-on-VoiceTut speakers (none today) skip prosody.
+        # FIX-007 (owner-approved 'C'): send NATURAL text — NO comma/'...' injection.
+        # Arabic -> light-touch lexicon; Macal English -> phonetic overrides only. Pace
+        # comes AFTER synth via atempo (slow_wav_inplace), never by mangling the text.
         if is_ar:
             text = prepare_ar(ln["text"])
-            if spk == "Coach":
-                text = teacher_prosody(text)   # FIX-005: Mahmoud deliberate teacher pacing
         else:
             text = apply_en_phonetic(ln["text"])
-            if spk == "Macal":
-                text = macal_prosody(text)
+        # engine runs at NATURAL speed; cast 'speed' is applied afterwards as the atempo factor
+        pace = float(spec.get("speed", 1.0))
         base = {"num_step": spec.get("num_step", 64),
                 "guidance_scale": spec.get("guidance_scale", 2.5),
-                "speed": spec.get("speed", 1.0)}
+                "speed": 1.0}
         params = direction_params(ln.get("direction"), base)
         out = f"{WORK}/{manifest_lib.line_filename(idx, spk)}"
         try:
             vt.synthesize(text, speaker=voice, output=out, **params)
+            slow_wav_inplace(out, pace)   # FIX-007: pitch-preserving pace, smooth not choppy
             dur = sf.info(out).duration if os.path.exists(out) else 0.0
             manifest_lib.mark(manifest, idx, status="rendered", engine="voicetut",
-                              voice=voice, params=params, duration=round(dur, 3),
-                              synth_pass="voicetut")
+                              voice=voice, params={**params, "atempo": pace},
+                              duration=round(dur, 3), synth_pass="voicetut")
             # ASR-QA on Arabic lines only
             if asr is not None and is_ar and dur > 0:
                 try:
