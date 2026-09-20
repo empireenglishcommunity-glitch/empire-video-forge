@@ -64,7 +64,11 @@
   A hesitant learner pauses; that drops the pace to ~2 wps and sounds human. Applied at the
   **synth boundary** (script.json stays clean, like `english_phonetic_map`). Testing variants
   RAW/COMMA/ELLIPSIS/BOTH_SLOW via `kaggle/calibrate_macal_prosody.py`.
-- **Rule will live in:** a synth-boundary "Macal prosody" transform in `synth_episode_v2.py`
-  (+ possibly `cast.Macal.speed` as a secondary nudge). Applies to all Macal lines, every ep.
-- **Scope note:** likely ⚫ Engine-limit on `speed` → 🔴 Systemic via prosody transform.
-- **Status:** in progress — round-1 (speed) ruled out; round-2 (prosody) audition built.
+- **Rule now lives in:** `macal_prosody()` in `kaggle/synth_episode_v2.py` (synth-boundary:
+  commas ~every 3 words + `...` at clause boundaries) + `cast.Macal.speed=0.85`. Applied only
+  to Macal's English at synth time — `script.json` stays clean. Applies to ALL Macal lines,
+  every episode.
+- **Scope:** ⚫ Engine-limit on VoiceTut `speed` → resolved 🔴 **Systemic** via the prosody transform.
+- **Resolution:** owner **listened to BOTH_SLOW and approved by ear** (wps metric said "still
+  fast" but pauses make it read as a natural, hesitant learner — ear is the judge).
+- **Status:** ✅ **VERIFIED** (owner-approved). Baked into the synth; will apply on the next Macal synth.
