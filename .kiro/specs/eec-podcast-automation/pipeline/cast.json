@@ -22,20 +22,20 @@
     "Coach": {
       "display_name": "Mahmoud",
       "engine": "voicetut",
-      "voice": "Abdelrahman",
+      "voice": "Essam",
       "lang": "ar",
       "dialect": "egyptian",
       "text_mode": "arabic",
       "role": "the host/teacher/narrator",
       "performance": "warm, encouraging, clear",
       "num_step": 64,
-      "guidance_scale": 2.5,
+      "guidance_scale": 1.5,
       "speed": 1.0,
       "post_processing": {
         "atempo": 0.8
       },
       "status": "locked",
-      "note": "Owner picked 'Abdelrahman' as Mahmoud (changed from Omar, and earlier from the placeholder Sayed). Distinct from Macal (Abdullah).",
+      "note": "FIX-008 (diagnostic-driven, owner ear-confirmed): Mahmoud = 'Essam' at guidance_scale=1.5. Was 'Abdelrahman' @ gs2.5 which scored UTMOS ~3.03 (jittery/unstable pitch). A UTMOS audition of the VoiceTut male pool ranked Essam highest (~3.69 @ gs1.5); lowering guidance_scale from 2.5->1.5 calms the pitch jitter. Owner confirmed the Essam sample sounds human. (Earlier picks: Abdelrahman, Omar, placeholder Sayed — all free.)",
       "_pacing_note": "FIX-007 (owner-approved by ear, option C): the ENGINE runs at natural speed (speed=1.0); pacing is a POST-PROCESSING step — post_processing.atempo=0.80 (pitch-preserving ffmpeg time-stretch) slows Mahmoud to a warm, deliberate teacher pace WITHOUT the choppiness the old text-injected prosody caused (FIX-001/005, removed). num_step/guidance_scale/speed are pure TTS engine params; atempo is applied after synthesis."
     },
     "Macal": {
@@ -189,7 +189,7 @@
     }
   },
   "arabic_voice_pool": {
-    "_comment": "All 17 VoiceTut voices are usable (the shared lexicon fixed the pronunciation stumbles). Full pool available for future Arabic casting. TAKEN: Abdelrahman=Mahmoud (Coach), Abdullah=Macal. ('Sayed' and 'Omar' were earlier Coach picks, now free.)",
+    "_comment": "All 17 VoiceTut voices are usable. Full pool available for future Arabic casting. TAKEN: Essam=Mahmoud (Coach, FIX-008 — highest UTMOS in audition), Abdullah=Macal. ('Sayed', 'Omar', 'Abdelrahman' were earlier Coach picks, now free.)",
     "male": [
       "Sayed",
       "Omar",

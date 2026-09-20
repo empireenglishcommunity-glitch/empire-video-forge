@@ -260,3 +260,34 @@
 - **cast.json** `speed` values are now interpreted as the ATEMPO factor (post-gen pace), not an
   engine speed — same numbers (Macal 0.85, Coach 0.80), new (correct) mechanism.
 - **Status:** ✅ VERIFIED + baked into both synth paths. Choppiness gone. Phase D inherits it.
+
+
+### FIX-008 ✅ — Mahmoud (Coach) voice re-cast: Abdelrahman → Essam @ gs1.5 (diagnostic-driven)
+- **Trigger:** owner GATE-C listen = "it's shit". The Diagnostic Pipeline (WhisperX+Praat+UTMOS→DeepSeek)
+  proved the cause OBJECTIVELY: mean UTMOS 3.64, but ALL 6 flagged lines were Coach/Mahmoud (mean 3.03),
+  while Macal 4.06 (FIX-007 worked), Qwen guests 4.5+. Signature = low UTMOS + HIGH pitch_std (62–108 Hz)
+  = jittery/unstable synthesis (not monotone), worst on short drills + Arabic/English code-switch lines.
+- **Ruled out (web-verified):** Qwen for Arabic — base Qwen3-TTS has NO Arabic in its codec vocab (10 langs).
+  VoiceTut is our only vetted commercial-safe Arabic engine → fix must come from WITHIN VoiceTut.
+- **Audition (autonomous, UTMOS-scored, 50 clips = 5 voices × 2 gs × 5 hard Coach lines):**
+  Essam gs1.5 = **3.69** (WINNER), Essam gs2.5 3.65, Omar gs1.5 3.65, Hossam 3.44, Ahmed 3.18,
+  Abdelrahman(old) 3.06–3.17 (WORST). Two levers confirmed: (1) voice choice dominates; (2) lowering
+  guidance_scale 2.5→1.5 calms the jitter for almost every voice.
+- **Change:** cast.json Coach → voice "Essam", guidance_scale 1.5 (was Abdelrahman/2.5). Owner
+  ear-confirmed the Essam sample ("the clip is great").
+- **Status:** ✅ voice locked. Pending: full Ep1 regen + re-diagnose to confirm Coach UTMOS ≥ ~3.7 in context.
+
+### FIX-009 ✅ — Arabic script-spelling errors (هنيش, دباي) — spelling-first, not lexicon
+- **Root cause (same class as FIX-004):** the SCRIPT text was mis-spelled/mis-diacritized, so VoiceTut
+  read the wrong word LITERALLY. Not a voice fault, not a lexicon miss.
+  - «هَنِيشْ» (ha-neesh) → «هَنْعِيشْ» (ha-nʿeesh, "we will live") — a whole ع sound was dropped.
+  - «فِي دُبَاي» (English-transliteration, reads "daa-bay") → «فِي دُبَيّ» (du-bay) — owner ear-caught
+    "fa-daabee". Note the lexicon ALREADY had دبي→دُبَيّ but the script's دُبَاي spelling never matched it.
+- **Fix (spelling-first, per the review-queue approach):** corrected in the scripts, season-wide
+  (هنعيش in ep01; دباي→دُبَيّ in ep01/ep03/ep06). Lexicon left alone (FIX-004 lesson: don't over-lexicon).
+- **Tooling verdicts from the Essam QA run:**
+  - **Best-of-N seed = DROPPED:** VoiceTut synthesize() has no seed param; output varies randomly but
+    uncontrollably → would be a blind 3× lottery. Not worth it.
+  - **Review-queue (review.csv) = KEPT:** works, but most ASR flags are Whisper artifacts (drops ي, hears
+    masri -كُم as -كو which is CORRECT, hears English loanwords as English). Essam avg CER 0.089 = good.
+- **Status:** ✅ both known words fixed + verified spelling. Full-episode re-diagnose will re-check CER.
