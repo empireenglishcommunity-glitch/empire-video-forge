@@ -21,11 +21,12 @@
   "cast": {
     "Coach": {
       "display_name": "Mahmoud",
-      "engine": "voicetut", "voice": "Sayed", "lang": "ar", "dialect": "egyptian",
+      "engine": "voicetut", "voice": "Omar", "lang": "ar", "dialect": "egyptian",
       "text_mode": "arabic",
       "role": "the host/teacher/narrator", "performance": "warm, encouraging, clear",
       "num_step": 64, "guidance_scale": 2.5, "speed": 1.0,
-      "status": "locked"
+      "status": "locked",
+      "note": "Owner B.6g: re-auditioned all 17 VoiceTut voices; picked 'Omar' as Mahmoud (replaced the old placeholder 'Sayed'). Distinct from Macal (Abdullah)."
     },
     "Macal": {
       "display_name": "Macal",
@@ -109,7 +110,7 @@
     }
   },
   "arabic_voice_pool": {
-    "_comment": "All 17 VoiceTut voices are usable (the shared lexicon fixed the pronunciation stumbles). Full pool available for future Arabic casting. Sayed=Mahmoud, Abdullah=Macal are taken.",
+    "_comment": "All 17 VoiceTut voices are usable (the shared lexicon fixed the pronunciation stumbles). Full pool available for future Arabic casting. TAKEN: Omar=Mahmoud (Coach), Abdullah=Macal. ('Sayed' was the old placeholder Coach, now free.)",
     "male": ["Sayed", "Omar", "Essam", "Ahmed", "Abdullah", "Abdelrahman", "Kamal", "Hossam", "Mohamed", "Zaki", "Aly"],
     "female": ["Yasmin", "Sarah", "Asmaa", "Esraa", "Hanan", "Omnia"]
   },
