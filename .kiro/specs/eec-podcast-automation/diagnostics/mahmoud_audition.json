@@ -1,0 +1,476 @@
+{
+  "rows": [
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs25",
+      "line": "L05",
+      "utmos": 3.368,
+      "pitch_std": 49.3,
+      "file": "aud_Abdelrahman_gs25_L05.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs25",
+      "line": "L23",
+      "utmos": 2.855,
+      "pitch_std": 77.6,
+      "file": "aud_Abdelrahman_gs25_L23.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs25",
+      "line": "L27",
+      "utmos": 3.09,
+      "pitch_std": 59.5,
+      "file": "aud_Abdelrahman_gs25_L27.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs25",
+      "line": "L29",
+      "utmos": 3.173,
+      "pitch_std": 73.7,
+      "file": "aud_Abdelrahman_gs25_L29.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs25",
+      "line": "L31",
+      "utmos": 3.364,
+      "pitch_std": 99.5,
+      "file": "aud_Abdelrahman_gs25_L31.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs15",
+      "line": "L05",
+      "utmos": 3.108,
+      "pitch_std": 59.2,
+      "file": "aud_Abdelrahman_gs15_L05.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs15",
+      "line": "L23",
+      "utmos": 2.825,
+      "pitch_std": 88.2,
+      "file": "aud_Abdelrahman_gs15_L23.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs15",
+      "line": "L27",
+      "utmos": 3.035,
+      "pitch_std": 71.2,
+      "file": "aud_Abdelrahman_gs15_L27.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs15",
+      "line": "L29",
+      "utmos": 3.576,
+      "pitch_std": 74.5,
+      "file": "aud_Abdelrahman_gs15_L29.wav"
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs15",
+      "line": "L31",
+      "utmos": 2.743,
+      "pitch_std": 94.4,
+      "file": "aud_Abdelrahman_gs15_L31.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs25",
+      "line": "L05",
+      "utmos": 3.712,
+      "pitch_std": 63.1,
+      "file": "aud_Omar_gs25_L05.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs25",
+      "line": "L23",
+      "utmos": 3.22,
+      "pitch_std": 73.3,
+      "file": "aud_Omar_gs25_L23.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs25",
+      "line": "L27",
+      "utmos": 3.753,
+      "pitch_std": 57.9,
+      "file": "aud_Omar_gs25_L27.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs25",
+      "line": "L29",
+      "utmos": 3.783,
+      "pitch_std": 127.5,
+      "file": "aud_Omar_gs25_L29.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs25",
+      "line": "L31",
+      "utmos": 3.067,
+      "pitch_std": 98.1,
+      "file": "aud_Omar_gs25_L31.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs15",
+      "line": "L05",
+      "utmos": 3.679,
+      "pitch_std": 77.7,
+      "file": "aud_Omar_gs15_L05.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs15",
+      "line": "L23",
+      "utmos": 3.659,
+      "pitch_std": 102.4,
+      "file": "aud_Omar_gs15_L23.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs15",
+      "line": "L27",
+      "utmos": 3.426,
+      "pitch_std": 89.5,
+      "file": "aud_Omar_gs15_L27.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs15",
+      "line": "L29",
+      "utmos": 4.0,
+      "pitch_std": 87.1,
+      "file": "aud_Omar_gs15_L29.wav"
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs15",
+      "line": "L31",
+      "utmos": 3.479,
+      "pitch_std": 37.8,
+      "file": "aud_Omar_gs15_L31.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs25",
+      "line": "L05",
+      "utmos": 3.511,
+      "pitch_std": 25.5,
+      "file": "aud_Essam_gs25_L05.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs25",
+      "line": "L23",
+      "utmos": 3.351,
+      "pitch_std": 25.3,
+      "file": "aud_Essam_gs25_L23.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs25",
+      "line": "L27",
+      "utmos": 3.748,
+      "pitch_std": 16.1,
+      "file": "aud_Essam_gs25_L27.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs25",
+      "line": "L29",
+      "utmos": 4.114,
+      "pitch_std": 82.7,
+      "file": "aud_Essam_gs25_L29.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs25",
+      "line": "L31",
+      "utmos": 3.528,
+      "pitch_std": 20.2,
+      "file": "aud_Essam_gs25_L31.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs15",
+      "line": "L05",
+      "utmos": 3.621,
+      "pitch_std": 22.6,
+      "file": "aud_Essam_gs15_L05.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs15",
+      "line": "L23",
+      "utmos": 3.646,
+      "pitch_std": 63.4,
+      "file": "aud_Essam_gs15_L23.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs15",
+      "line": "L27",
+      "utmos": 3.916,
+      "pitch_std": 30.4,
+      "file": "aud_Essam_gs15_L27.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs15",
+      "line": "L29",
+      "utmos": 3.716,
+      "pitch_std": 46.8,
+      "file": "aud_Essam_gs15_L29.wav"
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs15",
+      "line": "L31",
+      "utmos": 3.554,
+      "pitch_std": 28.3,
+      "file": "aud_Essam_gs15_L31.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs25",
+      "line": "L05",
+      "utmos": 2.977,
+      "pitch_std": 23.6,
+      "file": "aud_Ahmed_gs25_L05.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs25",
+      "line": "L23",
+      "utmos": 2.695,
+      "pitch_std": 25.2,
+      "file": "aud_Ahmed_gs25_L23.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs25",
+      "line": "L27",
+      "utmos": 3.533,
+      "pitch_std": 23.2,
+      "file": "aud_Ahmed_gs25_L27.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs25",
+      "line": "L29",
+      "utmos": 3.493,
+      "pitch_std": 22.5,
+      "file": "aud_Ahmed_gs25_L29.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs25",
+      "line": "L31",
+      "utmos": 3.169,
+      "pitch_std": 27.1,
+      "file": "aud_Ahmed_gs25_L31.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs15",
+      "line": "L05",
+      "utmos": 3.403,
+      "pitch_std": 24.1,
+      "file": "aud_Ahmed_gs15_L05.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs15",
+      "line": "L23",
+      "utmos": 3.045,
+      "pitch_std": 25.9,
+      "file": "aud_Ahmed_gs15_L23.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs15",
+      "line": "L27",
+      "utmos": 3.418,
+      "pitch_std": 24.5,
+      "file": "aud_Ahmed_gs15_L27.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs15",
+      "line": "L29",
+      "utmos": 2.898,
+      "pitch_std": 63.2,
+      "file": "aud_Ahmed_gs15_L29.wav"
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs15",
+      "line": "L31",
+      "utmos": 3.136,
+      "pitch_std": 19.9,
+      "file": "aud_Ahmed_gs15_L31.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs25",
+      "line": "L05",
+      "utmos": 3.512,
+      "pitch_std": 34.6,
+      "file": "aud_Hossam_gs25_L05.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs25",
+      "line": "L23",
+      "utmos": 2.894,
+      "pitch_std": 78.9,
+      "file": "aud_Hossam_gs25_L23.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs25",
+      "line": "L27",
+      "utmos": 3.282,
+      "pitch_std": 54.2,
+      "file": "aud_Hossam_gs25_L27.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs25",
+      "line": "L29",
+      "utmos": 3.616,
+      "pitch_std": 103.0,
+      "file": "aud_Hossam_gs25_L29.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs25",
+      "line": "L31",
+      "utmos": 3.332,
+      "pitch_std": 36.4,
+      "file": "aud_Hossam_gs25_L31.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs15",
+      "line": "L05",
+      "utmos": 3.935,
+      "pitch_std": 33.9,
+      "file": "aud_Hossam_gs15_L05.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs15",
+      "line": "L23",
+      "utmos": 3.039,
+      "pitch_std": 97.1,
+      "file": "aud_Hossam_gs15_L23.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs15",
+      "line": "L27",
+      "utmos": 3.617,
+      "pitch_std": 66.3,
+      "file": "aud_Hossam_gs15_L27.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs15",
+      "line": "L29",
+      "utmos": 3.412,
+      "pitch_std": 92.5,
+      "file": "aud_Hossam_gs15_L29.wav"
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs15",
+      "line": "L31",
+      "utmos": 3.17,
+      "pitch_std": 30.2,
+      "file": "aud_Hossam_gs15_L31.wav"
+    }
+  ],
+  "summary": [
+    {
+      "voice": "Essam",
+      "setting": "gs15",
+      "mean_utmos": 3.691,
+      "min_utmos": 3.554,
+      "n": 5
+    },
+    {
+      "voice": "Essam",
+      "setting": "gs25",
+      "mean_utmos": 3.65,
+      "min_utmos": 3.351,
+      "n": 5
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs15",
+      "mean_utmos": 3.649,
+      "min_utmos": 3.426,
+      "n": 5
+    },
+    {
+      "voice": "Omar",
+      "setting": "gs25",
+      "mean_utmos": 3.507,
+      "min_utmos": 3.067,
+      "n": 5
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs15",
+      "mean_utmos": 3.435,
+      "min_utmos": 3.039,
+      "n": 5
+    },
+    {
+      "voice": "Hossam",
+      "setting": "gs25",
+      "mean_utmos": 3.327,
+      "min_utmos": 2.894,
+      "n": 5
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs15",
+      "mean_utmos": 3.18,
+      "min_utmos": 2.898,
+      "n": 5
+    },
+    {
+      "voice": "Ahmed",
+      "setting": "gs25",
+      "mean_utmos": 3.173,
+      "min_utmos": 2.695,
+      "n": 5
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs25",
+      "mean_utmos": 3.17,
+      "min_utmos": 2.855,
+      "n": 5
+    },
+    {
+      "voice": "Abdelrahman",
+      "setting": "gs15",
+      "mean_utmos": 3.057,
+      "min_utmos": 2.743,
+      "n": 5
+    }
+  ]
+}
