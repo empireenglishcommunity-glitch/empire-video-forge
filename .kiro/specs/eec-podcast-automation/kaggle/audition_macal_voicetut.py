@@ -23,9 +23,15 @@
 #
 # ⚠️ Kaggle GPU=T4, Internet ON, fresh notebook.
 # --------------------------------------------------------------------------
-# CELL 1 (install + restart) — copy EXACTLY, run, wait for the restart:
+# CELL 1 (install + restart) — copy EXACTLY, run, wait for the restart.
+# VoiceTut needs its companion 'omnivoice' (from git) + transformers>=5.3.0. Do NOT
+# reinstall torch (breaks Kaggle's GPU torch). This is the PROVEN recipe from the
+# Arabic synth notebook — plain `pip install voicetut-tts` alone fails with
+# "No module named 'omnivoice'".
 #
-#   !pip install -q voicetut-tts soundfile
+#   !pip install -q -U "transformers>=5.3.0"
+#   !pip install -q git+https://github.com/k2-fsa/OmniVoice.git
+#   !pip install -q voicetut-tts catt-tashkeel soundfile
 #   import os; os._exit(0)
 #
 # CELL 2 (this file) — after the restart. Just run it.
