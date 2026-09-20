@@ -187,16 +187,26 @@ elif PASS == "qwen":
     clone = load()
     print("Qwen ready.\n", flush=True)
 
-    # build one reusable clone-prompt per DISTINCT voice_ref (speed + consistency)
+    # build one reusable clone-prompt per DISTINCT voice_ref (speed + consistency).
+    # If the cast entry has a ref_text (the exact line the ref clip spoke), use ICL mode
+    # (higher quality). Otherwise clone from the speaker embedding only
+    # (x_vector_only_mode=True) — required because ref_text=None in ICL mode errors:
+    # "ref_text is required when x_vector_only_mode=False".
     prompt_cache = {}
-    def get_prompt(ref_rel):
-        if ref_rel not in prompt_cache:
+    def get_prompt(ref_rel, ref_text):
+        key = (ref_rel, bool(ref_text))
+        if key not in prompt_cache:
             local = f"/kaggle/working/{os.path.basename(ref_rel)}"
             if not os.path.exists(local):
                 fetch(ref_rel, local)
             arr, sr = sf.read(local)
-            prompt_cache[ref_rel] = clone.create_voice_clone_prompt(ref_audio=(arr, sr), ref_text=None)
-        return prompt_cache[ref_rel]
+            if ref_text:
+                prompt_cache[key] = clone.create_voice_clone_prompt(
+                    ref_audio=(arr, sr), ref_text=ref_text)
+            else:
+                prompt_cache[key] = clone.create_voice_clone_prompt(
+                    ref_audio=(arr, sr), x_vector_only_mode=True)
+        return prompt_cache[key]
 
     for idx, ln in my_lines:
         spk = ln["speaker"]; spec = CASTM.get(spk, {})
@@ -207,7 +217,7 @@ elif PASS == "qwen":
                               voice=None, synth_pass="qwen")
             print(f"  !! line{idx:03d} {spk}: no voice_ref in cast.json", flush=True); continue
         try:
-            prompt = get_prompt(ref)
+            prompt = get_prompt(ref, spec.get("ref_text"))
             wavs, sr = clone.generate_voice_clone(text=ln["text"], language="English",
                                                   voice_clone_prompt=prompt)
             sf.write(out, wavs[0], sr)
