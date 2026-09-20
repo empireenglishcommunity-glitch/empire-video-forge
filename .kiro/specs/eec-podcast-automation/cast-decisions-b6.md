@@ -51,6 +51,34 @@ REAL accent for Macal (Egyptian/Arabic-L1) and Ravi (Indian/Hindi-L1):
   license before locking any Piper-derived voice for production (B.7). The audition itself
   is fine.
 
+## B.6d — A2 route CHOSEN (all synthetic approaches rejected)
+Owner heard the A/B/C accent-rework (B.6c) and rejected all of it — no synthetic route
+(describe / native-L1-design / Piper / clone-of-those) produced a convincing accent. So we
+switch to **real human reference clips → Qwen VoiceClone** (route A2), sourced rights-clean.
+
+### License vetting (verified this session)
+- **Mozilla Common Voice = CC0 (public domain)** — the cleanest license; explicitly OK for
+  commercial use, no attribution required. Contributors self-tag clips with `accent` +
+  `locale` + `age`/`gender` + `sentence`, so we can filter for **English spoken by
+  Indian-accented speakers** (for Ravi) and use the **Arabic (`ar`) config** for an
+  Egyptian/Arabic voice speaking (reference timbre for Macal). ✅ **This is our source.**
+- **OpenSLR = mixed** — some CC-BY-SA (usable w/ attribution) but several are CC BY-NC-ND
+  (SLR100, non-commercial → unusable) and most Indian sets are native-language, not English.
+  Kept as a secondary/backup, not primary.
+- Practical access: the official `mozilla-foundation/common_voice_*` HF repos are GATED; use
+  the non-gated mirror **`fixie-ai/common_voice_17_0`** (same CC0 data, exposes accent/locale
+  fields, streamable on Kaggle).
+
+### Plan (B.6d/B.6e)
+1. On Kaggle, stream `fixie-ai/common_voice_17_0`: pull a few candidate English clips tagged
+   Indian accent (Ravi) + a few Arabic-config clips (Macal ref timbre), high up_votes, clean,
+   ~5-15s. Save the raw refs + their transcripts (needed for VoiceClone `ref_text`).
+2. Clone each through Qwen `-Base` → render the character reading real Season-1 lines.
+   Macal: 3 stages come from ONE Egyptian ref by varying only the SPOKEN L2 phrasing/pacing
+   (identity fixed by the ref; fluency travels via the script + rate).
+3. Owner listens, picks the ref that sounds most authentic + natural (B.6e).
+This keeps it commercial-safe (CC0), $0, and — finally — a REAL accent.
+
 ### Prior brainstorm (options considered)
 1. **Real reference audio → VoiceClone** (strongest): clone from a short real Egyptian-
    English / Indian-English sample instead of designing from text. Qwen3-TTS clones accent
