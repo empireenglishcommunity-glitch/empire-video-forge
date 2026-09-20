@@ -150,3 +150,19 @@
   breaths at boundaries) × speeds 0.80/0.85/0.90/1.00, loading the Wave-1 lexicon so owner
   hears pacing + pronunciation together. Owner picks → bake teacher_prosody() + speed into synth.
 - **Status:** calibration built; owner to run + pick (W1d). Then baked into synth_episode_v2.py like Macal.
+
+### FIX-004 UPDATE — ROOT CAUSE CONFIRMED: we were over-tashkeeling (H2)
+- **Diagnostic result (owner):** BARE text = "all amazing" — VoiceTut natively says جماعة (hard-g),
+  يلا (right vowel), and correctly KEEPS qaf on قانون/القاهرة/ثقافة while making قلب->hamza.
+  So VoiceTut's own Egyptian brain is correct; **OUR lexicon tashkeel was FIGHTING it and
+  causing the errors** (confirmed: وقفة->our وَقْفَة made a hard-ت ending; متفهمش->our مِتِفْهَمِش
+  made it robotic; the يلا->يَاللَّا bug earlier).
+- **Root fix (systemic):** LIGHT-TOUCH lexicon — kept only 12 entries (brand/loan words +
+  3 proven stumbles متنساش-class); DISABLED the other 91 (preserved in `_disabled_lexicon`,
+  re-enable individually only if a word regresses bare). Stop fighting the model.
+- **Impact:** the 818-word Wave-2 tashkeel factory is now MOSTLY UNNECESSARY — its role
+  shrinks to "find the FEW words VoiceTut truly can't say (like متفهمش) via ASR-verify and fix
+  only those," not tashkeel-everything. Big simplification (owner's "stop the word-by-word grind").
+- **Still-open stragglers:** وقفة (ة-ending) + متفهمش (cluster) — now go BARE; re-synth will
+  show if bare fixes them; if متفهمش still fails, ONE targeted respelling (verified by ASR).
+- **Status:** light-touch lexicon done ✅; audible on next Ep1 re-synth; two stragglers to confirm.

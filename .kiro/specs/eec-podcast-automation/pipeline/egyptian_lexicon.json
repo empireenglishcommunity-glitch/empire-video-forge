@@ -1,6 +1,32 @@
 {
   "_comment": "Egyptian pronunciation lexicon for Two Worlds. Maps hard/colloquial Egyptian words to a diacritized (tashkeel) spelling that the TTS reads with the CORRECT Egyptian pronunciation. Fed to VoiceTut via add_lexicon(). Grows over time: solve each hard word ONCE, every cast voice says it right forever. The value is the fully-voweled Egyptian form.",
   "lexicon": {
+    "متنساش": "مَتِنْسَاش",
+    "متنسوش": "مَتِنْسُوش",
+    "متقلقش": "مَتِقْلَقْش",
+    "انترفيو": "إِنْتَرْفْيُو",
+    "إنترفيو": "إِنْتَرْفْيُو",
+    "سيشن": "سِيشِن",
+    "سشن": "سِيشِن",
+    "فيدباك": "فِيدْبَاك",
+    "في دبي": "فِي دُبَيّ",
+    "دبي": "دُبَيّ",
+    "فلونت": "فْلُوَنْت",
+    "يلا فلونت": "يَلَّا فْلُوَنْت"
+  },
+  "names_en_ar": {
+    "Macal": "مَاكَال",
+    "Nour": "نُور",
+    "Dubai": "دُبَيّ",
+    "Mahmoud": "مَحْمُود",
+    "Yalla Fluent": "يَاللَّا فْلُوَنْت",
+    "EEC": "إِي إِي سِي",
+    "Empire English Community": "إِمْبَايَر إِنْجْلِيش كُومْيُونِتِي",
+    "interview": "إِنْتَرْفْيُو",
+    "session": "سِيشِن",
+    "feedback": "فِيدْبَاك"
+  },
+  "_disabled_lexicon": {
     "الجداد": "الجُدَاد",
     "جداد": "جُدَاد",
     "دلوقتي": "دِلْوَأْتِي",
@@ -18,9 +44,6 @@
     "بص": "بُصّ",
     "عشان": "عَشَان",
     "علشان": "عَلَشَان",
-    "متنساش": "مَتِنْسَاش",
-    "متنسوش": "مَتِنْسُوش",
-    "متقلقش": "مَتِقْلَقْش",
     "مفيش": "مَفِيش",
     "معندناش": "مَعَنْدِنَاش",
     "بتاعتك": "بِتَاعْتَك",
@@ -30,11 +53,6 @@
     "عاملة": "عَامْلَة",
     "إزاي": "إِزَّاي",
     "محمود": "مَحْمُود",
-    "انترفيو": "إِنْتَرْفْيُو",
-    "إنترفيو": "إِنْتَرْفْيُو",
-    "سيشن": "سِيشِن",
-    "سشن": "سِيشِن",
-    "فيدباك": "فِيدْبَاك",
     "في": "فِي",
     "اللي": "اللِّي",
     "التليفون": "التِّلِيفُون",
@@ -99,22 +117,7 @@
     "حرج": "حَرَج",
     "مهتم": "مُهْتَمّ",
     "نلخص": "نِلَخَّص",
-    "بسرعة": "بِسُرْعَة",
-    "في دبي": "فِي دُبَيّ",
-    "دبي": "دُبَيّ",
-    "فلونت": "فْلُوَنْت",
-    "يلا فلونت": "يَلَّا فْلُوَنْت"
+    "بسرعة": "بِسُرْعَة"
   },
-  "names_en_ar": {
-    "Macal": "مَاكَال",
-    "Nour": "نُور",
-    "Dubai": "دُبَيّ",
-    "Mahmoud": "مَحْمُود",
-    "Yalla Fluent": "يَاللَّا فْلُوَنْت",
-    "EEC": "إِي إِي سِي",
-    "Empire English Community": "إِمْبَايَر إِنْجْلِيش كُومْيُونِتِي",
-    "interview": "إِنْتَرْفْيُو",
-    "session": "سِيشِن",
-    "feedback": "فِيدْبَاك"
-  }
+  "_disabled_reason": "FIX-004 root-cause: VoiceTut is Egyptian-native and pronounces these correctly on BARE text; our tashkeel was fighting it and CAUSING errors (وقفة->hard-t, متفهمش->robotic, يلا bug). Diagnostic confirmed bare is correct. Kept only brand/loan words + a few proven stumbles. Re-enable a specific word ONLY if a re-synth proves it regresses bare."
 }
