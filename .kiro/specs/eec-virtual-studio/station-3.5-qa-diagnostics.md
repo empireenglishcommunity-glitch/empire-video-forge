@@ -5,9 +5,15 @@
 > episodes (and future seasons) instead of relying on the owner's ear alone, and so every
 > defect feeds the `episode-fixes-log.md` + phonetic maps automatically.
 >
-> **Status:** SPEC (design captured). **Build scheduled AFTER GATE C** (most valuable once
-> we're batching episodes). A tiny down-payment (objective pacing metrics) is used now in
-> the FIX-001 Macal-speed calibration.
+> **Status:** ✅ BUILT AND RUN FOR REAL (superseding the "scheduled after GATE C" plan below
+> — the GATE-C crisis made this urgent immediately). `kaggle/diagnose_episode.py` implements
+> WhisperX + Parselmouth + UTMOS (chosen over NISQA specifically for its non-commercial
+> licensing risk, exactly per the caveat below) → DeepSeek report. First real run diagnosed
+> Ep1 and objectively found the root cause of the owner's "it's shit" verdict (Mahmoud/
+> VoiceTut UTMOS 3.03 vs. 4+ for every other voice) — see `episode-fixes-log.md` FIX-008.
+> Now reused as the objective half of the Engine Proof / Voice-Quality Gate
+> (`.kiro/specs/engine-proof-voice-quality-gate/`). The architecture below (as originally
+> designed) matches what was actually built.
 
 ## Why (owner + developer vision)
 Ep1 QA today = the owner listens and reports issues. That works for one episode but doesn't
