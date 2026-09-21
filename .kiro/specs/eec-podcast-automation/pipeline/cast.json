@@ -1,21 +1,31 @@
 {
-  "_comment": "Yalla Fluent CAST REGISTRY v2 — the voice-identity library. Each character maps to an engine + voice identity + text mode + default performance. The synth pipeline reads this to route every script line to the right voice. LOCKED after the Phase B audition (GATE B). Three engines: VoiceTut (Egyptian-Arabic; Mahmoud + Macal), Qwen3-TTS VoiceDesign (Nour + English guests), Qwen3-TTS VoiceClone (Ravi, from a CC0 Common Voice reference). Chatterbox is RETIRED (superseded by Qwen3-TTS).",
+  "_comment": "Yalla Fluent CAST REGISTRY v2 — the voice-identity library. Each character maps to an engine + voice identity + text mode + default performance. The synth pipeline reads this to route every script line to the right voice. LOCKED after the Phase B audition (GATE B); Coach re-cast in FIX-008 (diagnostic-driven). Chatterbox is RETIRED (superseded by Qwen3-TTS).",
+  "_architecture": "TWO ENGINES PER LANGUAGE (owner directive — never a single point of failure; push every engine to its best, same discipline for text AND voice): ARABIC = VoiceTut (the only vetted, commercial-safe, Egyptian-diagnosed engine — LOCKED PRODUCTION for all Arabic). ENGLISH = Qwen3-TTS (LOCKED PRODUCTION, per-line VoiceClone/VoiceDesign, used for every English character today) + MOSS-TTSD (AUDITIONED CANDIDATE — native multi-speaker turn-taking in one generation, Apache-2.0, verified working on Kaggle T4x2 after fixing a device_map bug; see kaggle/moss_ttsd/README.md. Not yet in production routing — pending a head-to-head vs Qwen3-TTS on the Engine Proof stress test). MOSS-TTSD's own docs also list Arabic support, which is an OPEN QUESTION for a future audition — NOT pursued yet; VoiceTut remains the sole Arabic engine until/unless the owner decides otherwise.",
   "schema_version": 2,
   "engines": {
     "voicetut": {
       "role": "egyptian",
+      "status": "LOCKED PRODUCTION — the only Arabic engine",
       "model": "mohammedaly22/VoiceTut-TTS",
-      "note": "Egyptian-Arabic engine. Also renders ENGLISH text with a natural Egyptian accent (used for Macal). Shared Egyptian lexicon (egyptian_lexicon.json) applies to Arabic text. params: num_step=64, guidance_scale=2.5, speed=1.0. Requires companion 'omnivoice' (git+k2-fsa/OmniVoice) + transformers>=5.3.0; do NOT reinstall torch."
+      "note": "Egyptian-Arabic engine. Also renders ENGLISH text with a natural Egyptian accent (used for Macal). Shared Egyptian lexicon (egyptian_lexicon.json) applies to Arabic text. params: num_step=64, guidance_scale=1.5-2.5 (per-voice, see cast entries), speed=1.0. Requires companion 'omnivoice' (git+k2-fsa/OmniVoice) + transformers>=5.3.0; do NOT reinstall torch."
     },
     "qwen3-tts-design": {
       "role": "english-design",
+      "status": "LOCKED PRODUCTION — primary English engine",
       "model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
       "note": "Apache-2.0. Natural-language voice design (instruct=description). Used to invent Nour + English guest voices. Load with attn_implementation='sdpa' (T4/Turing; NOT flash_attention_2)."
     },
     "qwen3-tts-clone": {
       "role": "english-clone",
+      "status": "LOCKED PRODUCTION — primary English engine",
       "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
-      "note": "Apache-2.0. VoiceClone from a reference clip (create_voice_clone_prompt + generate_voice_clone). Used for Ravi (real Indian accent cloned from a CC0 Common Voice clip). Load with attn_implementation='sdpa'."
+      "note": "Apache-2.0. VoiceClone from a reference clip (create_voice_clone_prompt + generate_voice_clone). Used for Ravi (real Indian accent cloned from a CC0 Common Voice clip) and as the production clone step for every VoiceDesign character (Option B, no drift). Load with attn_implementation='sdpa'."
+    },
+    "moss-ttsd": {
+      "role": "english-dialogue-candidate",
+      "status": "AUDITIONED CANDIDATE — not yet routed in production",
+      "model": "OpenMOSS-Team/MOSS-TTSD-v1.0",
+      "note": "Apache-2.0. 8B multi-speaker DIALOGUE model (native [S1]/[S2]... turn-taking in ONE generation, up to 5 speakers, up to 60min) — architecturally different from our per-line clone-and-stitch approach, which is the reason to audition it. Needs Kaggle T4x2 (~19-23GB bf16); device_map='auto' is BROKEN for this model (see kaggle/moss_ttsd/README.md for the working custom device_map fix). First successful generation verified 2026-09-21. Next: score it against Qwen3-TTS on the same 5-min English stress-test script (Engine Proof) before any production decision."
     }
   },
   "cast": {

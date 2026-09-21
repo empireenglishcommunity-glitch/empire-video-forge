@@ -199,17 +199,22 @@ Balanced. Real, believable, warm, funny, honest. Genuine dramatic tension with c
 - **CTA variants:** Instagram voice note, WhatsApp challenge, EEC community prompt.
 - **Season 2 seed:** Cairo learner, Tarek as co-founder, Nour staying, Macal teaching a new learner—still learning himself.
 
-### Voice cast & engines (LOCKED — Phase B; source of truth = `pipeline/cast.json`)
-Three commercial-safe engines, routed per speaker:
+### Voice cast & engines (LOCKED — Phase B + FIX-008; source of truth = `pipeline/cast.json`)
+**TWO ENGINES PER LANGUAGE** (owner directive — never a single point of failure; push
+every engine to its best), routed per speaker:
 | Character | Engine | Voice / ref |
 |---|---|---|
-| Mahmoud (Coach) | VoiceTut | `Abdelrahman` (Arabic) |
+| Mahmoud (Coach) | VoiceTut (Arabic — sole, locked) | `Essam` @ `guidance_scale=1.5` (FIX-008, diagnostic-driven re-cast from `Abdelrahman`) |
 | Macal | VoiceTut | `Abdullah` — **raw English → real Egyptian accent** (no transliteration) |
-| Nour, Tarek, Farida, Aisha, Qureshi, Friend_F, Official, Friend_M | Qwen3-TTS VoiceClone | frozen `voice-refs/*.wav` (Option B) |
+| Nour, Tarek, Farida, Aisha, Qureshi, Friend_F, Official, Friend_M | Qwen3-TTS VoiceClone (English — locked, production) | frozen `voice-refs/*.wav` (Option B) |
 | Ravi | Qwen3-TTS VoiceClone | `voice-refs/ravi_ref1.wav` (real CC0 Indian-accent clip) |
+| *(candidate, not yet routed)* | MOSS-TTSD (English — audited, native multi-speaker dialogue) | see `kaggle/moss_ttsd/README.md`; pending head-to-head vs Qwen3-TTS |
 
 Macal's accent stays Egyptian across ALL stages — growth is in **language**, not accent.
-Synth = `kaggle/synth_episode_v2.py` (run PASS=voicetut + PASS=qwen). Chatterbox retired.
+Synth = `kaggle/synth_all_in_one.py` (single source of truth, one run, both engines in
+isolated subprocesses). Chatterbox retired. Scripting is ALSO two engines: DeepSeek
+writes, Qwen-text (OpenRouter) runs the mandatory adversarial dialogue-polish pass
+(`dialogue_polish.py`) before any script reaches voice generation.
 
 
 ---

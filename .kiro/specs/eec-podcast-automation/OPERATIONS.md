@@ -16,22 +16,36 @@ script (server, LLM)  →  voices (OFF-SERVER, Kaggle GPU ×2)  →  assemble pl
 (server, ffmpeg)  →  deliver to Drive raw-audio  →  [you: music/video/cover]  →  publish
 ```
 
-## Voice cast & synth (Phase C — CURRENT, 3 engines)
-The locked cast (`pipeline/cast.json` v2) uses **three engines**, routed **by speaker**
-(not by language) in `kaggle/synth_episode_v2.py`:
-- **VoiceTut** — **Mahmoud** (Coach, voice `Abdelrahman`, Arabic) **and Macal** (voice `Abdullah`,
-  **raw English** → real Egyptian accent, no transliteration). Both in the `PASS=voicetut` run.
-- **Qwen3-TTS VoiceClone** — **Nour + guests + Ravi**, each cloned from its frozen
-  `voice-refs/*.wav` (Option B, no drift). The `PASS=qwen` run.
-- Run `synth_episode_v2.py` **twice** on Kaggle (PASS=voicetut, then PASS=qwen), download
-  both zips, drop their contents into `episodes/epNN/synth/`; the assembler merges them.
+## Voice cast & synth — TWO ENGINES PER LANGUAGE (owner directive)
+The locked cast (`pipeline/cast.json` v2) routes **by speaker's language**, one
+production engine per language today, with a candidate engine being audited for
+English. See `cast.json`'s `_architecture` note for the full picture:
+- **ARABIC = VoiceTut** (LOCKED, sole Arabic engine) — **Mahmoud** (Coach, voice
+  `Essam` @ `guidance_scale=1.5`, FIX-008) **and Macal** (voice `Abdullah`, **raw
+  English** → real Egyptian accent, no transliteration).
+- **ENGLISH = Qwen3-TTS VoiceClone** (LOCKED, production) — **Nour + guests + Ravi**,
+  each cloned from its frozen `voice-refs/*.wav` (Option B, no drift).
+- **ENGLISH candidate = MOSS-TTSD** (AUDITIONED, not yet routed) — an 8B native
+  multi-speaker dialogue model (turn-taking in ONE generation, unlike our per-line
+  clone-and-stitch). Verified working on Kaggle T4×2 (see `kaggle/moss_ttsd/README.md`
+  for the device_map fix required). Pending a head-to-head score vs Qwen3-TTS on the
+  Engine Proof stress test before any production decision.
+- Both TTS engines run via `kaggle/synth_all_in_one.py` (single source of truth —
+  the old two-kernel `synth_episode_v2.py` is DELETED) in **isolated subprocesses**
+  so their conflicting deps never clash in one Python env.
 - **Chatterbox is RETIRED** (old notebooks in `kaggle/_archive/`, not run).
 - Macal's 3 "stages" are a **language** progression (fluency/confidence in the script),
   **not** an accent shift — his accent stays Egyptian all season. No per-stage voice refs.
+- **Scripting is ALSO two engines** (same discipline, applied to text): DeepSeek writes
+  (`gen_episode.py` → `llm_backend.chat(engine="deepseek")`), then Qwen-text (via
+  OpenRouter, `engine="qwen"`) runs a MANDATORY adversarial dialogue-polish pass
+  (`dialogue_polish.py`) that hunts clichés/stiff lines before any script reaches
+  voice generation. Coach's Arabic text is never rewritten by the critic — only a
+  delivery note may be added.
 
 ## Ground rules (do not break these)
 - **Never synth voices on the server.** No GPU + only ~1.7 GB free RAM. Voices are
-  made on **Kaggle free GPU** — `synth_episode_v2.py` run twice (VoiceTut + Qwen passes).
+  made on **Kaggle free GPU** — `synth_all_in_one.py --regen ALL` (one run, both engines).
 - **Never disrupt the 12 live containers.** All server ffmpeg is low-priority; heavy
   work is off-box.
 - **The manifest is the source of truth**, not filenames. Assembly refuses to run
