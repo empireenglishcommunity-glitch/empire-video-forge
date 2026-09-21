@@ -1,23 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-EEC "Two Worlds" — pluggable LLM backend (escape Gemini quota).
+EEC "Yalla Fluent" — pluggable, MULTI-ENGINE LLM backend for scripting.
 
-Script-writing is just an LLM call. This module abstracts WHICH model writes,
-so the story generator no longer depends on Gemini's daily free cap. Three
-backends, selected by env EEC_LLM_BACKEND (or auto):
+Script-writing is just an LLM call, and we deliberately run it on TWO NAMED
+WRITER ENGINES (owner directive: "we need 2 engines instead of saying one
+engine... trying our best to make every engine the best" — same philosophy as
+the two TTS engines, VoiceTut + Qwen3-TTS/MOSS-TTSD, applied to text):
 
-  1. "openai"  — any OpenAI-compatible endpoint (Groq/Cerebras/OpenRouter/etc.,
-                 all card-free free tiers serving Qwen/Llama/Gemma). Set
-                 EEC_LLM_BASE_URL + EEC_LLM_KEY + EEC_LLM_MODEL. Runs anywhere
-                 (server, no GPU). Rotate keys/providers for effectively unlimited.
-  2. "local"   — a local HuggingFace model (Qwen instruct) on a GPU (Kaggle).
-                 Truly unlimited; same workflow as our TTS. Set EEC_LLM_MODEL to
-                 a HF id (default a T4-fittable Qwen).
-  3. "gemini"  — the old path, kept ONLY as an optional failover.
+  * "deepseek" — DeepSeek (api.deepseek.com, deepseek-chat/-reasoner). Our
+                 primary writer to date; strong reasoning + long-context plotting.
+  * "qwen"     — Qwen3 text (via OpenRouter, qwen/qwen3-max by default). A genuinely
+                 separate model family, used as (a) an independent second writer for
+                 blind A/B script comparison, and (b) the ADVERSARIAL DIALOGUE-POLISH
+                 pass — a different model actively hunting the first writer's clichés/
+                 stiff lines catches things a model can't see in its own prose.
+                 Reuses the existing OPENROUTER_KEY (already in .env) — zero new infra.
 
-All backends expose one function: chat(prompt, temperature) -> text.
-Qwen (Apache-2.0) is our default model — the top open LLM for Arabic + multilingual.
+Legacy generic backends (kept, unnamed/env-selected, for existing callers):
+  1. "openai"  — any OpenAI-compatible endpoint. EEC_LLM_BASE_URL + EEC_LLM_KEY +
+                 EEC_LLM_MODEL (+EEC_LLM_FALLBACKS). This is currently DeepSeek.
+  2. "local"   — a local HuggingFace model on a GPU (Kaggle). Set EEC_LLM_MODEL.
+  3. "gemini"  — old path, optional failover only.
+
+Two ways to call:
+  chat(prompt, temperature)                    -> unnamed/env-resolved (back-compat)
+  chat(prompt, temperature, engine="qwen")      -> explicit NAMED engine (deepseek|qwen)
+  available_engines() -> {"deepseek": bool, "qwen": bool}   (credentials present?)
 """
 import os, json, urllib.request, urllib.error
 
@@ -26,6 +35,16 @@ BACKEND = os.environ.get("EEC_LLM_BACKEND", "auto")
 # sensible defaults
 DEFAULT_OPENAI_MODEL = os.environ.get("EEC_LLM_MODEL", "qwen/qwen3-32b")  # provider-named
 DEFAULT_LOCAL_MODEL = os.environ.get("EEC_LLM_MODEL", "Qwen/Qwen2.5-14B-Instruct-AWQ")
+
+# ---- named engine 1: DeepSeek (explicit, regardless of EEC_LLM_* env state) ----
+DEEPSEEK_BASE_URL = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
+DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+DEEPSEEK_FALLBACKS = os.environ.get("DEEPSEEK_FALLBACKS", "deepseek-reasoner")
+
+# ---- named engine 2: Qwen3 text (via OpenRouter — same key as OPENROUTER_KEY) ----
+QWEN_TEXT_BASE_URL = os.environ.get("QWEN_TEXT_BASE_URL", "https://openrouter.ai/api/v1")
+QWEN_TEXT_MODEL = os.environ.get("QWEN_TEXT_MODEL", "qwen/qwen3-max")
+QWEN_TEXT_FALLBACKS = os.environ.get("QWEN_TEXT_FALLBACKS", "qwen/qwen3-235b-a22b-2507")
 
 
 # ---- backend 1: OpenAI-compatible free API (OpenRouter/Groq/Cerebras/...) --
@@ -63,10 +82,15 @@ def _chat_openai(prompt, temperature):
     """Transient 429/5xx on free models are per-MINUTE/capacity, not daily.
     Rotate across the model list AND retry with short backoff, so the caller
     rarely sees a failure. ~6 rounds over the models."""
-    import time
     base = os.environ["EEC_LLM_BASE_URL"].rstrip("/")
     key = os.environ["EEC_LLM_KEY"]
-    models = _openai_models()
+    return _rotate_and_call(base, key, _openai_models(), prompt, temperature)
+
+
+def _rotate_and_call(base, key, models, prompt, temperature):
+    """Shared retry/rotation loop used by every named + generic OpenAI-compatible
+    engine: try each model in the list, rotate on 429/502/503, backoff between rounds."""
+    import time
     last_err = None
     for rnd in range(6):
         for model in models:
@@ -81,7 +105,35 @@ def _chat_openai(prompt, temperature):
                 last_err = e
                 continue
         time.sleep(min(8 * (rnd + 1), 40))  # all models busy -> short wait, retry round
-    raise last_err if last_err else RuntimeError("all free models busy")
+    raise last_err if last_err else RuntimeError("all models busy")
+
+
+# ---- NAMED engines: deterministic, explicit — NOT affected by EEC_LLM_* env ----
+def _chat_deepseek(prompt, temperature):
+    key = os.environ.get("DEEPSEEK_API_KEY") or os.environ.get("EEC_LLM_KEY")
+    if not key:
+        raise RuntimeError("DeepSeek unavailable: set DEEPSEEK_API_KEY (or EEC_LLM_KEY)")
+    models = [DEEPSEEK_MODEL] + [m.strip() for m in DEEPSEEK_FALLBACKS.split(",") if m.strip()]
+    return _rotate_and_call(DEEPSEEK_BASE_URL.rstrip("/"), key, models, prompt, temperature)
+
+
+def _chat_qwen_text(prompt, temperature):
+    key = os.environ.get("OPENROUTER_KEY") or os.environ.get("QWEN_TEXT_KEY")
+    if not key:
+        raise RuntimeError("Qwen-text unavailable: set OPENROUTER_KEY (or QWEN_TEXT_KEY)")
+    models = [QWEN_TEXT_MODEL] + [m.strip() for m in QWEN_TEXT_FALLBACKS.split(",") if m.strip()]
+    return _rotate_and_call(QWEN_TEXT_BASE_URL.rstrip("/"), key, models, prompt, temperature)
+
+
+NAMED_ENGINES = {"deepseek": _chat_deepseek, "qwen": _chat_qwen_text}
+
+
+def available_engines():
+    """Which NAMED engines have live credentials right now (no network call)."""
+    return {
+        "deepseek": bool(os.environ.get("DEEPSEEK_API_KEY") or os.environ.get("EEC_LLM_KEY")),
+        "qwen": bool(os.environ.get("OPENROUTER_KEY") or os.environ.get("QWEN_TEXT_KEY")),
+    }
 
 
 # ---- backend 2: local Qwen on GPU (Kaggle) — truly unlimited ---------------
@@ -133,7 +185,15 @@ def _resolve():
     return "local"
 
 
-def chat(prompt, temperature=0.95):
+def chat(prompt, temperature=0.95, engine=None):
+    """engine=None            -> legacy env-resolved backend (unchanged behavior).
+    engine="deepseek"|"qwen"  -> explicit NAMED writer engine, independent of
+                                 EEC_LLM_* env state (used for the two-writer /
+                                 adversarial-polish workflow)."""
+    if engine is not None:
+        if engine not in NAMED_ENGINES:
+            raise ValueError(f"unknown engine {engine!r}; choose from {list(NAMED_ENGINES)}")
+        return NAMED_ENGINES[engine](prompt, temperature)
     b = _resolve()
     return {"openai": _chat_openai, "local": _chat_local, "gemini": _chat_gemini}[b](prompt, temperature)
 
@@ -144,3 +204,4 @@ def which():
 
 if __name__ == "__main__":
     print("backend:", which())
+    print("named engines available:", available_engines())
