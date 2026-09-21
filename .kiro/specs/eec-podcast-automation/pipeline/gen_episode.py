@@ -51,6 +51,7 @@ import os, sys, json, re, argparse, time, urllib.request, urllib.error
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import llm_backend  # pluggable: local Qwen (Kaggle) / free OpenAI-compatible API / gemini
 import structure_check  # LOCKED story/teaching separation rule (series-bible §10)
+import dialogue_polish  # ADVERSARIAL 2nd-writer polish pass (owner: mandatory, not later)
 
 MODEL = os.environ.get("EEC_SCRIPT_MODEL", "gemini-3.6-flash")
 HOME = os.environ.get("EEC_PODCAST_HOME", "/opt/eec-podcast")
@@ -504,6 +505,41 @@ def main():
               "section(s).", file=sys.stderr)
         sys.exit(4)
     print("  STRUCTURE OK — story/teaching separation clean")
+
+    # ADVERSARIAL DIALOGUE-POLISH PASS (owner directive: mandatory, not "later" —
+    # every clip starts with a script). A SECOND, independent model (Qwen-text, via
+    # llm_backend's named "qwen" engine) reads the STORY dialogue cold and hunts for
+    # on-the-nose lines, exposition-as-dialogue, dead greetings, cliché idiom — the
+    # things DeepSeek (the writer) reliably misses in its own prose. Scoped to STORY
+    # English lines only; Coach's diacritized Arabic gets a narrower delivery-only
+    # pass (never rewriting the text) — see dialogue_polish.py docstring for why.
+    if not os.environ.get("EEC_SKIP_POLISH"):
+        polished, polish_report = dialogue_polish.polish_story_lines(
+            script["lines"], title=title, situation=situation)
+        script["lines"] = polished
+        print(f"  DIALOGUE POLISH (qwen critic): reviewed {polish_report['reviewed']} story "
+              f"lines, flagged {polish_report['flagged']}, applied {polish_report['applied']}"
+              + (f", skipped {len(polish_report['skipped'])}" if polish_report.get("skipped") else "")
+              + (f" | {polish_report['error']}" if polish_report.get("error") else ""))
+        for l in script["lines"]:
+            if l.get("_polish_note"):
+                print(f"    - [{l['section']}][{l['speaker']}] fixed: {l['_polish_note']}")
+
+        coach_lines = [l for l in script["lines"] if l.get("speaker") == structure_check.COACH_SPEAKER]
+        if coach_lines:
+            coach_polished, coach_report = dialogue_polish.polish_coach_direction(coach_lines)
+            ci = iter(coach_polished)
+            script["lines"] = [next(ci) if l.get("speaker") == structure_check.COACH_SPEAKER else l
+                               for l in script["lines"]]
+            print(f"  COACH DELIVERY NOTES (qwen critic, Arabic text untouched): "
+                  f"applied {coach_report['applied']}/{coach_report['reviewed']}"
+                  + (f" | {coach_report['error']}" if coach_report.get("error") else ""))
+    else:
+        print("  DIALOGUE POLISH: skipped (EEC_SKIP_POLISH set)")
+
+    # strip internal polish bookkeeping before saving (never part of the audio contract)
+    for l in script["lines"]:
+        l.pop("_polish_note", None)
 
     # PHRASE OF THE EPISODE (#2): fill en/ar. The coach_outro was written to name it;
     # ask the model to extract the single phrase-of-the-episode from the final script as
