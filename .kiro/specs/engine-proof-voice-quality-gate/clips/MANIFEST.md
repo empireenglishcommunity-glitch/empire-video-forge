@@ -70,4 +70,31 @@ artifacts (gaps, transitions) rather than voice quality per se at this duration.
 numbers are **not a real quality signal** and must not be used to judge the clips; the
 per-line/per-chunk table above is the valid comparison, and the owner's ear-test is final.
 
+### D.3 — ASR-QA/CER sanity pass on the Arabic clip (`ar_cer_report.json`)
+Ran WhisperX-style transcription (faster-whisper large-v3) + the FIX-006 skeleton
+normalization (hamza-seat/taa-marbuta/alef-maqsura collapse + brand-name ignore) on all 96
+Arabic lines, comparing intended vs. heard text.
+
+**17/96 lines flagged (ratio < 0.5) — but on inspection, ZERO represent an actual TTS
+mispronunciation.** Breakdown:
+- **12/17 are code-switch measurement artifacts**: these lines are 40-60% English words
+  (email, call, design, content, deadline, notes, group, feedback, file, client, review,
+  update). The skeleton comparator strips non-Arabic characters from both sides before
+  scoring — so once the English portion is removed, only a short Arabic fragment remains,
+  which naturally scores a low ratio even when BOTH the Arabic and the English were spoken
+  correctly. This is the same class of issue FIX-006 already solved for brand names
+  (يلا/فلونت) but not yet extended to generic embedded English words — logged as a
+  **follow-up improvement to the ASR-QA tool itself** (not a synthesis bug, not gate-blocking).
+- **2/17 are DELIBERATE mispronunciation lines** (line022 "ri-view", line092 "أَبْ-ديت") —
+  the script intentionally has Esraa attempt the WRONG pronunciation right before Mahmoud
+  corrects her (the drill/teaching pattern from G4.1). Whisper transcribing these as garbled
+  is the CORRECT/expected outcome for an intentionally-wrong line, not a defect.
+- **3/17 are ASR transcription noise on legitimately correct Arabic** (Whisper's own
+  phonetic-spelling variance, e.g. مظبوط/مصبوط, or misreading "عَشَرَة" as the digit "10") —
+  not a synthesis issue.
+
+**Conclusion: G3.2 (CER/pronunciation sanity) effectively PASSES** — no هنعيش/دبي-class
+script-spelling regression was found. The 17 flags are a measurement-tool limitation
+(documented, follow-up noted), not a synthesis defect.
+
 ## Next: Phase E — deliver all clips + this diagnostic summary to the owner for the ear-test
