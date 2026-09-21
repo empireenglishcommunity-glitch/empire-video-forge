@@ -33,4 +33,41 @@ not committed to git (binary audio, large files). This manifest is the record of
   embed_tokens's device)
 - Result: **7/7 chunks rendered, 270.8s (~4.5 min)**
 
-## Next: Phase D — objective diagnostic on all 3, then Phase E — owner ear-test
+## Phase D — objective diagnostic results (WhisperX/Parselmouth/UTMOS via Kaggle,
+`proof_diagnostic_report.json` in this dir)
+
+Delivery mechanism: per-line/per-chunk audio + the 3 whole clips were packaged as a
+private Kaggle Dataset (`empireenglish/yalla-fluent-engine-proof-clips`, 81MB) since these
+are throwaway stress-test files, not committed episode content — the diagnostic kernel
+mounts the dataset (`dataset_sources` in `kernel-metadata.json`) rather than fetching from
+GitHub raw (our usual pattern for repo-committed files).
+
+### Per-line / per-chunk scores (the meaningful numbers — G3.1 bar is UTMOS ≥ 3.7)
+| Clip | n | mean UTMOS | min UTMOS | flagged |
+|---|---|---|---|---|
+| Arabic (VoiceTut) | 96 lines | **3.702** ✅ clears bar | 2.505 | 2/96 |
+| English (Qwen3-TTS) | 66 lines | **4.333** ✅ | 3.416 | 0/66 |
+| English (MOSS-TTSD) | 7 chunks (66 lines) | 3.526 ⚠️ below bar | 3.287 | 0/7 |
+
+- **Arabic clears G3.1** (mean 3.702 ≥ 3.7), consistent with FIX-008's Essam/Esraa scores.
+  Both flagged lines are **Mahmoud saying "call"** (line014 mid-sentence code-switch,
+  line052 the drill line teaching the word) — a specific, root-cause-able finding: VoiceTut
+  may destabilize on this particular embedded English word. Worth a targeted follow-up
+  (not blocking this gate — 2/96 = 2% flag rate, well within noise) if it recurs elsewhere.
+- **Qwen3-TTS clears G3.1 comfortably** (4.333, zero flags) — strongest result of the three.
+- **MOSS-TTSD is measured PER-CHUNK (10 lines/chunk), not per-line** — a coarser unit, so one
+  weak stretch in a chunk pulls its whole average down even if most lines were fine. This
+  is an inherent measurement-granularity difference (its native multi-speaker generation
+  doesn't produce discrete per-line files), NOT necessarily a real quality gap of the same
+  size the number suggests. Treat 3.526 as a directional signal, not a like-for-like score
+  against the other two — the owner's ear-test (G5) is what actually resolves this.
+
+### Whole-clip scores — NOT comparable, included for completeness only
+`{"arabic_whole": 1.795, "english_qwen_whole": 2.977, "english_ttsd_whole": 2.714}`
+UTMOS was trained on short single-utterance audio, not 5-minute multi-speaker
+concatenations with silence gaps and speaker/voice changes — it scores long-form structural
+artifacts (gaps, transitions) rather than voice quality per se at this duration. These
+numbers are **not a real quality signal** and must not be used to judge the clips; the
+per-line/per-chunk table above is the valid comparison, and the owner's ear-test is final.
+
+## Next: Phase E — deliver all clips + this diagnostic summary to the owner for the ear-test
