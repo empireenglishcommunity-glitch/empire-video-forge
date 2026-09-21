@@ -1,0 +1,425 @@
+{
+  "title": "استراحة القهوة",
+  "lines": [
+    {
+      "speaker": "Mahmoud",
+      "text": "إِزَّيَّكُم يا جَماعَة، إِنْتُو مِرْتاحين وِلا إيه؟",
+      "direction": "Warm and inviting, slightly upbeat"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "يَلا بَلا! إِحْنا لِسَّه طالْعين مِن الـ meeting.",
+      "direction": "Playful energy, quick pace"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "أَنا تَعْبانَة شُوَيَّة بَس تَمام.",
+      "direction": "Tired but positive, gentle pace"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "طَيِّب، خُدُوا نَفَس. إِحْنا مِش مُسْتَعْجِلين."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "لأ خُد نَفَس إِنْتَ! الديدلاين بُكْرَة الصُبْح!",
+      "direction": "Urgent, slightly stressed tone"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "إِسْراء عَنْدَها حَقّ. الأَجَنْدا لِسَّه طَويلَة.",
+      "direction": "Calm but firm, measured pace"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "مَعاكُنّ. خَلّينا نِرَتِّب الأَولوِيَّات واحِدَة واحِدَة.",
+      "direction": "Reassuring and organized, steady pace"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "أَصْلًا أَنا باعِتِّلُهُم الـ email الصُبْح وَما رَدُّوش.",
+      "direction": "Slightly frustrated, natural conversational pace"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "رَدُّوا لِيَّ أَنا. قالوا هَيِفْتَحُوا الـ file بُكْرَة."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "حِلْو. يَعْني إِحْنا ماشْيين في السِّكَّة الصَح."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "ماشْيين إيه؟! أَنا لِسَّه مِتْلَخْبِطَة خالِص!",
+      "direction": "Confused and overwhelmed, faster pace"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "خَلاص يا إِسْراء، واحِدَة واحِدَة وبِهُدُوء.",
+      "direction": "Soothing, slower and calm"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "أُومال، إِنْتَ لِسَّه مَقولْتِلْناش عَن الـ client الجْديد."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "آه صَح. عَنْدي call مَعاهُم بُكْرَة بَعْد الضُّهْر."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "بُكْرَة بَعْد الضُّهْر؟! إِحْنا مِش هَنِلْحَق نِخَلِّص حاجَة!",
+      "direction": "Panicked, sharp emphasis on 'بُكْرَة'"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "ما تِقْلَقِيش. هَنِقْسِم الشُّغْل مَع بَعْض."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "طَيِّب، أَنا هَاخُد الـ design وهِنْتَ تْخُد الـ content."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "وأَنا هَعْمِل الـ review عَلى الكُل."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "مُمْتاز. بَس خَلي بالِك مِن نُطْق الكَلِمَة دِي.",
+      "direction": "Gentle correction, warm and encouraging"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "أَنْهِي كَلِمَة؟"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "قُولِي وَرايا: re-view.",
+      "direction": "Clear, slow modeling of pronunciation"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "ri-view.",
+      "direction": "Hesitant attempt—keep it tentative"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "لأ. re-view. الحَرْف الأَوَّل re.",
+      "direction": "Patient correction, emphasize 're-' clearly"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "آه، re-view. تَمام كِدَه؟"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "أَيْوَة، كِدَه مَظْبوط."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "أَنا كُمان عَنْدي سُؤال عَن الـ schedule."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "اِسْأَلي يا نادْيَة، إِحْنا كُلِّنا سامْعين."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "الـ deadline الأَصْلي يَوْم إيه بِالظَّبْط؟"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "الخَميس! ومِش فاضِل غِير تلاتَة أَيّام!",
+      "direction": "Alarmed, stress 'تلاتَة أَيّام'"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "مَعْلُوماتي إِنُّه الخَميس الجاي، أَيُّوه."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "طَيِّب كِدَه أَحْسَن. كُنْت فاكْراه الأُسْبُوع الجاي."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "يا نَهار! لَو الأُسْبُوع الجاي كُنَّا خَلَصْنا!",
+      "direction": "Exaggerated relief, playful despair"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "خَلاص، بِسْكُوت شُوَيَّة. هَنِشْتَغَل بِخُطَّة واضْحَة.",
+      "direction": "Firm but calm, authoritative pause"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "مُوافْقَة. أَنا هَبْدَأ بِالـ design حالًا."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "وأَنا هَبْعَتْلُكُم الـ notes عَلى الـ group."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "بِالظَّبْط. يَلا نِبْدَأ، وِخَلّونا نِرَكِّز."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "يَلا بينا! إِحْنا هَنِخَلِّص دِي النَّهارْدَه."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "طَيِّب يا جَماعَة، قَبْل ما نِتْفَرَّق، عَنْدي presentation بُكْرَة الصُّبْح."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "presentation إيه تاني؟! إِنْتَ مَقولْتِلْناش حاجَة!",
+      "direction": "Surprised and slightly annoyed"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "يا سَلااام! طَيِّب تِحِب نِساعْدَك في حاجَة؟"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "لأ شُكْرًا، هُوَ بَسيط. بَس عاوِز مِنُّكُم حاجَة واحْدَة."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "إيه هِيَّ؟ قول بِسُرْعَة عَشان لِسَّه فاضِل شُغْل."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "خَلّينا نِعْمِل call الساعَة عَشَرَة بُكْرَة، كُلِّنا مَع بَعْض."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "عَشَرَة تَمام. أَنا هَكون صاحْيانَة مِن بَدْري."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "عَشَرَة؟! دِي بَدْري أَوِي! ما تِخَلّيها حْدَاشَر؟",
+      "direction": "Complaining about early hour, groggy tone"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "لأ، عَشَرَة أَحْسَن. بَعْد كِدَه كُلِّ واحِد يِرُوح عَلى شُغْلُه."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "مَعاك. وَبَعْد الـ call هَبْعَتْلُكُم الـ feedback عَلى الشُّغْل."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "الـ feedback كان كويس آخِر مَرَّة، فَاتْمَنَّى يِفْضَل كِدَه."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "إِنْ شاء الله. بَس خَلي بالِك مِن نُطْق كَلْمَة تانْيَة.",
+      "direction": "Gentle reminder, warm tone"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "أَنْهِي كَلِمَة بَقى؟ إِنْتَ ناوِي تْعَلِّمْني إِنْجْليزي النَّهارْدَه كُلُّه؟",
+      "direction": "Playfully exasperated"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "سيبيه يا إِسْراء، الرَّجُل بِيْساعِدَك."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "قُولِي وَرايا: call.",
+      "direction": "Clear, slow modeling"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "كول.",
+      "direction": "Mispronounced—keep it inaccurate but natural"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "لأ. call. الحَرْف الأَخير لامْ خَفيفَة. call.",
+      "direction": "Precise correction, soft 'l' emphasis"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "آه، call. تَمام كِدَه؟"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "أَيْوَة، كِدَه مَظْبوط خالِص."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "طَيِّب أَنا هَمْشي بَقى، لازِم أَرْتاح شُوَيَّة."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "أَنا كُمان هَمْشي. بَس خُد بالِك، الديدلاين قُرَّب.",
+      "direction": "Gentle warning, concerned tone"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "مِتْقَلْقِيش، إِحْنا هَنِخَلِّص كُل حاجَة في وَقْتْها."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "يا رَبّ يِكُون كِدَه. يَلا سَلام."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "سَلام يا جَماعَة، وَنِشوفْكُم بُكْرَة."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "سَلام. وِما تِنْسوش الـ call الساعَة عَشَرَة."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "حاضِر! مِش هَنِسى. يَلا باي."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "باي يا إِسْراء. وِإِنْتَ يا مَحْمود، نَوْم بَدْري النَّهارْدَه."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "هَحاوِل. تَصْبَحوا عَلى خير."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "وَإِنْتَ مِن أَهْلُه. يَلا بينا نِخَلِّص."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "طَيِّب، أَنا هَبْدَأ بِالـ design حالًا لَمَّا أُوصَل البيت."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "مُمْتاز. وَأَنا هَجَهِّز الـ content قَبْل ما أَنام."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "وأَنا هَبْعَتْلُكُم الـ notes عَلى الـ group حالًا."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "تَمام. يَلا نِرَكِّز ونِخَلِّص دِي الشُّغْلَة."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "بِالظَّبْط. وِرَبِّنا يُوَفَّقْنا كُلِّنا."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "صَباح الخير يا جَماعَة، إِحْنا كُلِّنا مَع بَعْض عَلى الـ call زَي ما اتَّفَقْنا."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "صَباح الفُل يا مَحْمود، أَنا جاهْزَة ومِسْتَنْيَة مِن بَدْري."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "أَنا كُمان مَعاكُم، بِس لِسَّه صاحْيانَة بَالعافْيَة.",
+      "direction": "Sleepy but present, relaxed pace"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "طَيِّب، خَلّينا نِسْمَع رَد الـ client عَلى الـ requirements الجْديدَة."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "أُومال، أَنا باعِتَّة لُهُم الـ file إِمْبارِح بِالليل."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "لَحْظَة، هُوَ بَيْرَنّ دِلْوَقْتي. أَهْلًا يا أُسْتاذ، إِحْنا مَعاك."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "إِحْنا كُلِّنا سامْعين، اتْفَضَّل."
+    },
+    {
+      "speaker": "Nadia",
+      "text": "أَنا هَبْدَأ أَسْجِل الـ notes حالًا."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "إيه؟ عاوِز تْغَيَّر الـ logo كُلُّه؟ دِلْوَقْتي؟!",
+      "direction": "Shocked disbelief, sharp rise in pitch"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "يا نَهار إِسْوِد! الديدلاين بُكْرَة الصُبْح!",
+      "direction": "Dramatic panic, fast and loud"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "إِسْكُتوا شُوَيَّة، خَلّينا نِفْهَم هُوَ عاوِز إيه بِالظَّبْط.",
+      "direction": "Calm authority, firm but quiet"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "طَيِّب يا فَنْدِم، إِحْنا هَنِخَلِّص دِي الحاجَة، ما تِقْلَقِش خالِص."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "إِزَّيَّ ما نِقْلَقِش؟! دِي كارْثَة حَقيقِيَّة!",
+      "direction": "High anxiety, rapid delivery"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "إِسْراء، خُدِي نَفَس. عَنْدي فِكْرَة: لازِم نِعْمِل follow-up مَعاهُم بَعْد الضُّهْر."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "مُمْتاز يا نادْيَة. وَإِحْنا كُمان عَمِلْنا update لِلْـ design قَبْل كِدَه، يَعْني مِش هَنِبْدَأ مِن الصِفْر."
+    },
+    {
+      "speaker": "Esraa",
+      "text": "طَيِّب أَنا هَبْعَتْلُهُم الـ email حالًا وأَشوف رَدُّهُم."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "بِالظَّبْط. بَس خَلي بالِك مِن نُطْق كَلِمَة دِي كُمان.",
+      "direction": "Light, encouraging correction"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "أَنْهِي كَلِمَة بَقى؟ إِنْتَ بْتِتْعَلِّمْني إِنْجْليزي في وَسْط الأَزْمَة؟",
+      "direction": "Exhausted sarcasm, dry tone"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "سيبيه يا إِسْراء، بِيْساعِدَك عَشان الـ client الجاي."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "قُولِي وَرايا: up-date.",
+      "direction": "Clear, syllable-by-syllable modeling"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "أَبْ-ديت.",
+      "direction": "Incorrect attempt—keep it off but natural"
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "لأ. up-date. أُول الحَرْف up. كِدَه تَمام.",
+      "direction": "Gentle, precise correction with emphasis on 'up'"
+    },
+    {
+      "speaker": "Esraa",
+      "text": "آه، up-date. كِدَه مَظْبوط يا مَحْمود؟"
+    },
+    {
+      "speaker": "Nadia",
+      "text": "أَيْوَة كِدَه. يَلا نِرْجَع لِلشُّغْل بَقى، الوَقْت بِيْجْري."
+    },
+    {
+      "speaker": "Mahmoud",
+      "text": "مَعاكُنّ. يَلا يا جَماعَة، كُلِّنا نِرَكِّز ونِخَلِّص دِي الحاجَة قَبْل ما يِفُوت الوَقْت. يَلا بَيْنا!",
+      "direction": "Energetic rallying call, strong pace"
+    }
+  ]
+}

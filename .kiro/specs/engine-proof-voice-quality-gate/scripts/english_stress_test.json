@@ -1,0 +1,269 @@
+{
+  "title": "The Server Room Standoff",
+  "lines": [
+    {
+      "speaker": "Nour",
+      "text": "Okay, so I just got off the phone with the client, and they're moving the demo up to tomorrow morning. Eight a.m. sharp."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Tomorrow? Nour, come on. That's not funny."
+    },
+    {
+      "speaker": "Nour",
+      "text": "I'm not laughing, Tarek. Eight a.m. They confirmed it twice."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "But the pipeline's still failing on the third stage. We haven't even—"
+    },
+    {
+      "speaker": "Nour",
+      "text": "I know. I know exactly where we are. That's why I called this meeting."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "Let her finish, Tarek. Go on, Nour."
+    },
+    {
+      "speaker": "Nour",
+      "text": "Thank you. Look, the data migration is done. The auth layer is solid. It's just the transcription stage that keeps choking."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Choking? It's not choking, it's dying. It dies every single time we push more than forty seconds of audio."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "Forty seconds. That's a hard limit, or is it a timing issue?"
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Honestly? We don't know yet. It could be memory. It could be the model weights loading twice. It could be—"
+    },
+    {
+      "speaker": "Nour",
+      "text": "It's the weights. I checked the logs at two this morning. It's loading the model twice on the second worker."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Wait— seriously? You found that at two a.m. and you didn't wake me?"
+    },
+    {
+      "speaker": "Nour",
+      "text": "You were asleep, Tarek. You needed it. And I wasn't sure yet."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "I don't need sleep, I need— okay. Okay, fine. So it's a config bug. That's fixable. That's actually fixable."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "How long to fix it, and how long to verify it?"
+    },
+    {
+      "speaker": "Nour",
+      "text": "The fix itself? Twenty minutes. Verifying it against the full test set—that’s where things go sideways."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "How long?"
+    },
+    {
+      "speaker": "Nour",
+      "text": "Four hours. Maybe five if the cache is cold."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Five hours. It's nine p.m. now. That puts us at two, maybe three in the morning."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "Then we start now and we don't stop until it's green."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Qureshi, c’mon—the team’s been grinding since seven. They’re running on fumes."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "I'm not asking the whole team. I'm asking the three of us. And I'll be in the room the entire time."
+    },
+    {
+      "speaker": "Nour",
+      "text": "He's right. If we hand this off half-fixed and it breaks on stage tomorrow, we don't get a second demo."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Fine. Fine. But I'm ordering food first. Real food. Not the vending machine stuff."
+    },
+    {
+      "speaker": "Nour",
+      "text": "Deal. Get the biryani place on Clement."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "The one with the— oh, that one. Yeah. Okay. Extra raita?"
+    },
+    {
+      "speaker": "Nour",
+      "text": "Obviously extra raita. Who raised you?"
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "While you two negotiate dinner, I'll pull the staging logs from last night. Nour, send me the worker config."
+    },
+    {
+      "speaker": "Nour",
+      "text": "Sending now. And Tarek—"
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Yeah?"
+    },
+    {
+      "speaker": "Nour",
+      "text": "I'm sorry I didn't wake you. I should have."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "No, you shouldn't have. You were right. I would've panicked and made it worse."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "That’s the realest thing I’ve heard outta either of you all week."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Hey—"
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "I'm not insulting you. I'm saying you're both learning. That's good. Now, the config."
+    },
+    {
+      "speaker": "Nour",
+      "text": "Sent. Check your inbox."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "Got it. Hm. There it is. Two model initializations on worker two. You were right, Nour."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "So we just delete the duplicate call?"
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "Not quite. We need to know why it's being called twice. If we just delete it, it might come back."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Ugh. Of course. Nothing's ever simple."
+    },
+    {
+      "speaker": "Nour",
+      "text": "Nothing's ever simple, and the demo is in eleven hours. Let's move."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Okay, I'm on the duplicate init. Nour, you take the test harness. Qureshi, you—"
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "I'll watch the logs and keep the client calm if they call. Which they will."
+    },
+    {
+      "speaker": "Nour",
+      "text": "They always call right when your coffee spills."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "That's why I'm here. Go."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Alright. Let's save this thing."
+    },
+    {
+      "speaker": "Nour",
+      "text": "Wait— Tarek, hold on. Don't touch worker two yet."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Why? It's a duplicate, it's waste, I'm killing it."
+    },
+    {
+      "speaker": "Nour",
+      "text": "Because if worker one is the one loading it and worker two is just echoing the call, killing it fixes nothing. Check the init sequence first."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Fine, fine— pulling the sequence now. Give me ten seconds."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "Ten seconds is generous. I count eight."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "That's it. Worker one is fine. Worker two is fine. It's the scheduler firing both at the same time because the health check times out at three seconds."
+    },
+    {
+      "speaker": "Nour",
+      "text": "Three seconds? That's—"
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Ridiculous, I know. Someone set it in the dev config and it never got changed."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "So the fix is a single number."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "A single number. After eleven hours of panic, it's one number."
+    },
+    {
+      "speaker": "Nour",
+      "text": "I could hug you right now."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Please don't. I haven't eaten since noon."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "Change it. Run the test. I'll tell the client we're still on track."
+    },
+    {
+      "speaker": "Nour",
+      "text": "On track. Try saying that without flinching."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "I've said worse with a straighter face."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Qureshi, I swear—"
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "—swear what? That you'll name your firstborn after me? Save it, Tarek. Just run the test."
+    },
+    {
+      "speaker": "Tarek",
+      "text": "Fine. But if this works, I'm billing the client for emotional damages."
+    },
+    {
+      "speaker": "Nour",
+      "text": "And dinner. He's billing them for dinner too."
+    },
+    {
+      "speaker": "Qureshi",
+      "text": "Done. Now everyone stop talking before I remember I hired you."
+    }
+  ]
+}
